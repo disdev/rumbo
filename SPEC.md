@@ -1,4 +1,4 @@
-# DGAC Prep — Piero's Private Pilot Study Platform
+# DGAC Prep — Private Pilot Study Platform
 
 Foundation spec. This document is the single source of truth for what to build. It captures every decision made during planning; when implementation questions arise, resolve them in the direction of the **Design Principles** below.
 
@@ -6,25 +6,25 @@ Foundation spec. This document is the single source of truth for what to build. 
 
 ## 1. Purpose and users
 
-A web app that runs an 8-week, PHAK-first study program for the DGAC (Peru) private pilot written knowledge exam, for a single student (Piero), with a progress dashboard for his mentor (Dustin).
+A web app that runs an 8-week, PHAK-first study program for the DGAC (Peru) private pilot written knowledge exam, for a single student, with a progress dashboard for their mentor.
 
 **Core philosophy — the book is the plan, the questions are the verification.** The curriculum is organized by PHAK (Pilot's Handbook of Aeronautical Knowledge, Spanish edition) chapters, not by question bank categories. The 901-question official-style bank exists to verify that reading stuck, never as the syllabus. The DGAC's own balotario notice states questions are shuffled specifically to defeat memorization; the app's design must reinforce understanding over recall of question IDs.
 
 **Two users, two surfaces:**
-- **Piero (student):** the study app. All student-facing content is in **Spanish**.
-- **Dustin (mentor):** a `/progreso` dashboard. May be in English. Read-only view of all activity; used to run a weekly Sunday check-in.
+- **Student:** the study app. All student-facing content is in **Spanish**.
+- **Mentor:** a `/progreso` dashboard. May be in English. Read-only view of all activity; used to run a weekly Sunday check-in.
 
 ---
 
 ## 2. Design principles
 
-1. **ADHD-first structure.** Piero has ADHD tendencies. Every design choice reduces decisions, provides immediate feedback, makes progress visible, and keeps work in short timed blocks. The app supplies the executive function so his attention only has to do the actual work.
+1. **ADHD-first structure.** The target student profile includes ADHD tendencies. Every design choice reduces decisions, provides immediate feedback, makes progress visible, and keeps work in short timed blocks. The app supplies the executive function so his attention only has to do the actual work.
 2. **Zero-decision session start.** One button ("Comenzar sesión") walks him through the day's blocks in order. He never chooses what to study; the plan chooses.
 3. **Immediate feedback, per item.** Answer → submit → reveal correct answer with worked steps/explanation. Never batch feedback to the end of a set.
 4. **Mastery gates, not calendar gates.** Content unlocks by demonstrated performance (defined in §7), not by date. The 8-week calendar is the pacing default, not the gate.
 5. **Fresh problems defeat memorization.** Math problems are generated from parameterized templates with randomized values. Bank questions resurface with shuffled option order.
 6. **Lean architecture.** One student. No accounts, no login UI, no frameworks beyond necessity. Static-first, offline-capable. But structure all content as **data, not code** (question banks, templates, curriculum as JSON) so a second student could be onboarded later without a rewrite.
-7. **Honest measurement.** The app measures accuracy and activity; Dustin's live weekly spot-checks measure understanding. The app must never make it easy to fake progress (e.g., free-recall gate requires actual text entry; tier advancement uses unseen problems).
+7. **Honest measurement.** The app measures accuracy and activity; the mentor's live weekly spot-checks measure understanding. The app must never make it easy to fake progress (e.g., free-recall gate requires actual text entry; tier advancement uses unseen problems).
 
 ---
 
@@ -32,7 +32,7 @@ A web app that runs an 8-week, PHAK-first study program for the DGAC (Peru) priv
 
 ### 3.1 Question bank
 - Source: `cards.json` (already exists; import into repo at `data/bank.json`).
-- **901 questions**, fields: `category`, `question`, `options` (array of 3), `answer` (index of correct option), `reason` (explanation; present on most but not all), `pages` (array of PHAK page refs in Dustin's Spanish extraction), `figures` (array of PNG filenames; present on 186 questions).
+- **901 questions**, fields: `category`, `question`, `options` (array of 3), `answer` (index of correct option), `reason` (explanation; present on most but not all), `pages` (array of PHAK page refs in the Spanish extraction), `figures` (array of PNG filenames; present on 186 questions).
 - Categories and counts:
 
 | Category | Count | Notes |
@@ -54,8 +54,8 @@ A web app that runs an 8-week, PHAK-first study program for the DGAC (Peru) priv
 - **Exam format:** 3 options per question, one correct, order randomized at exam time. Mirror this: always shuffle option order on every presentation.
 
 ### 3.2 PHAK chapter map
-- Each bank question's `pages` array references Dustin's Spanish PHAK extraction pagination.
-- **TODO (build task, Dustin input pending):** a `data/chapters.json` mapping chapter → page range. Initial version may be inferred by clustering the `pages` values per category (categories map roughly to chapters); Dustin corrects boundaries. Once mapped, every non-fraseología, non-reglamentación question belongs to a chapter, and the app can compute per-chapter coverage — including PHAK sections with **zero** questions, which are surfaced to Dustin as "the bank can't measure this; check it in teach-back."
+- Each bank question's `pages` array references the Spanish PHAK extraction's pagination.
+- **TODO (build task, mentor input pending):** a `data/chapters.json` mapping chapter → page range. Initial version may be inferred by clustering the `pages` values per category (categories map roughly to chapters); the mentor corrects boundaries. Once mapped, every non-fraseología, non-reglamentación question belongs to a chapter, and the app can compute per-chapter coverage — including PHAK sections with **zero** questions, which are surfaced to the mentor as "the bank can't measure this; check it in teach-back."
 
 ### 3.3 Math problem templates
 Generated, not stored. Six families, each a template with randomized parameters and three tiers. E6B **is permitted** on the exam; Families 5–6 display a reminder: "resuelve primero mentalmente, luego verifica con el E6B."
@@ -103,12 +103,12 @@ Parameter generation rules per tier live in `data/math-templates.json` (ranges, 
 ### 4.3 The chapter study loop
 For each PHAK reading assignment:
 1. **Leer** — app displays the assigned page range (reading happens in the physical/PDF book; app just assigns and confirms).
-2. **Recuerdo libre (gate):** book closed, a text box, 5-minute timer: write everything remembered, own words. Minimum length threshold (e.g., 300 characters) to unlock the section's questions. Stored and visible to Dustin (§8) — he audits that these are genuine recall, not transcription.
+2. **Recuerdo libre (gate):** book closed, a text box, 5-minute timer: write everything remembered, own words. Minimum length threshold (e.g., 300 characters) to unlock the section's questions. Stored and visible to the mentor (§8) — he audits that these are genuine recall, not transcription.
 3. **Preguntas** — that section's bank questions, immediate per-question feedback showing `reason` and `pages`.
 4. **Miss routing:** every miss creates a "volver a las páginas X–Y" assignment and re-queues the question (with shuffled options) 2 days later.
 
 ### 4.4 Daily session template (6 hours, 3 sessions, Mon–Sat)
-The session runner walks these blocks in order with a visible timer (25 min work / 5 min break; breaks instruct leaving the room). Hard stop messaging at 6:00 pm; Sunday is rest + Dustin check-in only.
+The session runner walks these blocks in order with a visible timer (25 min work / 5 min break; breaks instruct leaving the room). Hard stop messaging at 6:00 pm; Sunday is rest + mentor check-in only.
 
 | Session | Blocks |
 |---|---|
@@ -116,7 +116,7 @@ The session runner walks these blocks in order with a visible timer (25 min work
 | **Sesión 2** 12:00–2:15 | remaining chapter questions + 10 spaced-review Qs · reglamentación block · vuelo de escritorio (written scenario) or chart reading (week ≥5) · redo of today's misses with work shown |
 | **Sesión 3** 4:30–6:00 | fraseología rapid-fire · teach-back prompt (app shows the concept; the explaining happens out loud to a human — app just confirms done) · oral script review / tomorrow's read-ahead |
 
-**Vuelo de escritorio:** one scenario per week (seed content exists in the v2 plan doc for weeks 1–7; store in `data/scenarios.json`). Student writes a ≤5-line answer in the app; visible to Dustin.
+**Vuelo de escritorio:** one scenario per week (seed content exists in the v2 plan doc for weeks 1–7; store in `data/scenarios.json`). Student writes a ≤5-line answer in the app; visible to the mentor.
 
 ---
 
@@ -124,7 +124,7 @@ The session runner walks these blocks in order with a visible timer (25 min work
 
 ### 5.1 Session mode (primary surface)
 - "Comenzar sesión de hoy" → sequential block runner. Current block full-screen, timer visible, next-up hidden until reached.
-- Skipping a block requires a reason (logged, shown to Dustin). No silent skips.
+- Skipping a block requires a reason (logged, shown to the mentor). No silent skips.
 - Session/streak state survives refresh and offline periods (localStorage-first, §9).
 
 ### 5.2 Math ladder
@@ -134,17 +134,17 @@ The session runner walks these blocks in order with a visible timer (25 min work
 
 ### 5.3 Bank question player
 - Shuffled options every time. Submit → instant reveal: correct answer highlighted, `reason` text, `pages` reference, figure (if any) shown above question.
-- **Explain-the-distractors mode** (periodic, configurable ~every 5th concept question): before reveal, student must tag why each wrong option is wrong (free text, one line each). Not scored; stored for Dustin.
+- **Explain-the-distractors mode** (periodic, configurable ~every 5th concept question): before reveal, student must tag why each wrong option is wrong (free text, one line each). Not scored; stored for the mentor.
 - Spaced repetition at **concept level** (chapter/section), not question-ID level: a mastered section resurfaces at expanding intervals (1d, 3d, 7d, 14d) using *different* questions from the same page range where available.
 
 ### 5.4 Fraseología rapid-fire mode
 - Card: Spanish ATC phrase → 3 English options, shuffled. Big touch targets, instant right/wrong flash, auto-advance. Streak counter and daily card count. Leitner-style boxes (wrong → box 1, right → promote) drive selection.
 
-### 5.5 Simulacros (weeks 6–8, and on demand for Dustin)
+### 5.5 Simulacros (weeks 6–8, and on demand for the mentor)
 - Full-length timed exam drawn at the **bank's category proportions**, options shuffled, no feedback until the end.
 - Math questions inside simulacros use **generated variants** (fresh numbers), not stored bank text, wherever a template family applies.
 - Results screen: total %, per-category %, per-chapter %; every miss auto-joins the error deck.
-- Pass target displayed: **85%** (buffer over the official pass mark — confirm and set actual pass mark as config once Piero gets it from the flight school; `config.json`).
+- Pass target displayed: **85%** (buffer over the official pass mark — confirm and set actual pass mark as config once confirmed with the flight school; `config.json`).
 
 ### 5.6 Error deck (mazo de errores)
 - Auto-assembled: any bank question missed twice, or math family/parameter-pattern missed twice, enters the deck with its `reason`/worked steps.
@@ -166,7 +166,7 @@ Calendar never overrides a gate; gates never hold back the daily tracks (fraseol
 
 ---
 
-## 7. Progress dashboard (`/progreso`, Dustin only)
+## 7. Progress dashboard (`/progreso`, mentor only)
 
 Access via shared secret (query param or entered once, stored). Shows:
 - **Tracker grid** (families × tiers) computed from real results, with dates and scores.
@@ -178,14 +178,14 @@ Access via shared secret (query param or entered once, stored). Shows:
 - **Error deck contents** and simulacro history with per-category breakdowns.
 - **Spot-check helper:** button that generates 3 fresh problems from the student's highest claimed tiers (for the live Sunday check), printable/screen-shareable, answers hidden behind a toggle.
 
-Weekly Sunday check-in protocol (from the accountability guide) is embedded as a checklist on this page: registro/streaks → free-recall audit → live math spot-check → teach-back (Dustin picks concept; the section list with coverage gaps helps) → 5-phrase fraseología lightning round → set next week.
+Weekly Sunday check-in protocol (from the accountability guide) is embedded as a checklist on this page: registro/streaks → free-recall audit → live math spot-check → teach-back (mentor picks concept; the section list with coverage gaps helps) → 5-phrase fraseología lightning round → set next week.
 
 ---
 
 ## 8. Architecture
 
 - **Hosting:** Cloudflare Pages (static SPA) + Pages Functions + **D1 (SQLite)**. Free tier is far beyond one-student volume.
-- **Frontend:** framework-light. Vanilla or a minimal reactive layer; no build complexity that isn't earning its keep. Mobile-friendly (Piero may use a phone/tablet), touch-first for rapid-fire mode. Full-screen session mode to reduce tab-adjacent distraction; in-app session timer so leaving is visible.
+- **Frontend:** framework-light. Vanilla or a minimal reactive layer; no build complexity that isn't earning its keep. Mobile-friendly (the student may use a phone/tablet), touch-first for rapid-fire mode. Full-screen session mode to reduce tab-adjacent distraction; in-app session timer so leaving is visible.
 - **Data flow:** **localStorage is the source of truth** for in-progress state; a sync layer pushes results to D1 when online and replays queued writes after connectivity gaps (Peru connectivity assumption: the app must be fully usable offline for an entire day, syncing later).
 - **API (Pages Functions):**
   - `POST /api/result` — append a result row (idempotent via client-generated UUID).
@@ -235,8 +235,8 @@ Structure everything so these can be added later — this app doubles as a valid
 
 ## 10. Open items / config to confirm
 
-1. **Official pass mark** — Piero confirming with flight school; store in `config.json` (target display stays 85% regardless).
-2. **`chapters.json` boundaries** — infer from page clustering, Dustin corrects.
-3. **Figure PNGs** — Dustin supplies the image set matching the `figures` filenames.
+1. **Official pass mark** — student confirming with flight school; store in `config.json` (target display stays 85% regardless).
+2. **`chapters.json` boundaries** — infer from page clustering, the mentor corrects.
+3. **Figure PNGs** — the mentor supplies the image set matching the `figures` filenames.
 4. **RAP source excerpts** — optional later enrichment for reglamentación reveals where `reason` is missing.
 5. **Some bank entries lack `reason`** — reveal falls back to correct-answer-plus-pages; flag these in a report so explanations can be backfilled over time.
