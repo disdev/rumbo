@@ -328,7 +328,7 @@
         {
           "type": "notebook",
           "id": "3-6-n1",
-          "prompt": "Dibuja la cola de un avión y etiqueta las 4 superficies: estabilizador vertical, estabilizador horizontal, timón y elevador. Junto al timón escribe \"guiñada (pedales)\" y junto al elevador \"cabeceo (bastón)\"."
+          "prompt": "Tapa el diagrama y escribe de memoria: ¿qué superficie mueves con los pedales y qué hace? ¿Y con el bastón? Luego dibuja la cola y etiqueta las 4 superficies."
         },
         {
           "type": "check",
@@ -606,11 +606,27 @@
         },
         {
           "type": "table",
-          "headers": ["Material", "Ventaja principal", "Dónde lo ves"],
+          "headers": [
+            "Material",
+            "Ventaja principal",
+            "Dónde lo ves"
+          ],
           "rows": [
-            ["Madera y tela", "Liviano y simple", "Aviones antiguos y clásicos"],
-            ["Aluminio (aleación)", "Fuerte, liviano, trabajable", "Cessna, Piper de escuela"],
-            ["Compuestos (fibra)", "Formas suaves, sin corrosión", "Aviones modernos (Cirrus, Diamond)"]
+            [
+              "Madera y tela",
+              "Liviano y simple",
+              "Aviones antiguos y clásicos"
+            ],
+            [
+              "Aluminio (aleación)",
+              "Fuerte, liviano, trabajable",
+              "Cessna, Piper de escuela"
+            ],
+            [
+              "Compuestos (fibra)",
+              "Formas suaves, sin corrosión",
+              "Aviones modernos (Cirrus, Diamond)"
+            ]
           ]
         },
         {
@@ -658,7 +674,7 @@
         {
           "type": "notebook",
           "id": "3-12-n1",
-          "prompt": "Cierra la lección y dibuja de memoria un avión completo etiquetando TODO lo que recuerdes: los 5 componentes mayores y al menos 6 piezas internas o móviles (largueros, costillas, alerones, flaps, timón, elevador...). Luego compara con tus dibujos anteriores y completa lo que faltó."
+          "prompt": "Cierra la lección y dibuja de memoria un avión completo: los 5 componentes mayores y al menos 6 piezas más (largueros, alerones, flaps, timón…). Después abre tus dibujos anteriores y completa lo que faltó."
         },
         {
           "type": "check",

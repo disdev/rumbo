@@ -428,7 +428,7 @@
         {
           "type": "callout",
           "style": "examen",
-          "md": "Del banco: para el enfriamiento interno el motor depende de **la circulación del aceite lubricante**; temperatura de aceite anormalmente alta → **nivel de aceite demasiado bajo**; aceite y culata calientes a la vez → **demasiada potencia y mezcla demasiado pobre**. También: la primera acción tras arrancar es **ajustar RPM y verificar los indicadores del motor**."
+          "md": "Del banco: para el enfriamiento interno el motor depende de **la circulación del aceite lubricante**; temperatura de aceite anormalmente alta → **nivel de aceite demasiado bajo**; aceite y culata calientes a la vez → **demasiada potencia y mezcla demasiado pobre**. Ojo: hay una pregunta gemela que pide la **causa más probable** de aceite y culata sobrecalentados — ahí la respuesta es **combustible de grado inferior al especificado**. También: la primera acción tras arrancar es **ajustar RPM y verificar los indicadores del motor**."
         },
         {
           "type": "notebook",

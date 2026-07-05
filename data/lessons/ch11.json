@@ -78,7 +78,7 @@
         },
         {
           "type": "text",
-          "md": "También la puedes calcular sin tocar el altímetro: **PA = elevación + (29.92 − ajuste) × 1,000**. Ejemplo del banco: aeropuerto a 3,563 ft, ajuste 29.96. PA = 3,563 + (29.92 − 29.96) × 1,000 = 3,563 − 40 = **3,523 ft**. Fíjate en el signo: presión real más alta que 29.92 → PA *menor* que la elevación; presión más baja → PA *mayor*."
+          "md": "También la puedes calcular sin tocar el altímetro: **PA = elevación + (29.92 − ajuste) × 1,000**. Ejemplo del banco: aeropuerto a 3,563 ft, ajuste 29.96. PA = 3,563 + (29.92 − 29.96) × 1,000 = 3,563 − 40 = **3,523 ft** (el banco redondea a **3,527**: marca la más cercana). Fíjate en el signo: presión real más alta que 29.92 → PA *menor* que la elevación; presión más baja → PA *mayor*."
         },
         {
           "type": "guided_math",

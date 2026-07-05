@@ -5,7 +5,7 @@ import { derive, dayKey, weekday } from './derive.js';
 import { planDay } from './planner.js';
 import { initSync, flush, relogin, requestFeedback, restoreProgress } from './sync.js';
 import { runSession, loadCursor } from './session.js';
-import { el, fmtTime } from './players.js';
+import { el, fmtTime, flashCelebrate } from './players.js';
 import { FAMILY_IDS } from './mathgen.js';
 import { lessonList } from './lessons.js';
 import { earnedBadges } from './badges.js';
@@ -30,8 +30,15 @@ function refresh() {
 }
 
 function append(ev) {
+  // Logro nuevo = diferencia del set derivado antes/después del append (§5.9):
+  // la celebración llega EN el momento, no recién al volver al inicio.
+  const before = state ? new Set(earnedBadges(state).map(b => b.id)) : new Set();
   const row = rawAppend(ev, data.config.content_version);
   flush();
+  refresh();
+  for (const b of earnedBadges(state)) {
+    if (!before.has(b.id)) flashCelebrate(app, `🎉 ¡Logro! ${b.emoji} ${b.title}`);
+  }
   return row;
 }
 
@@ -146,7 +153,7 @@ function renderHome() {
     const label = plan.dayType === 'minimo' ? 'Comenzar día mínimo'
       : plan.dayType === 'reanudacion' ? 'Reanudar — día ligero'
       : sessionsDone > 0 || state.activityToday.any ? 'Continuar sesión de hoy' : 'Comenzar sesión de hoy';
-    if (plan.dayType === 'reanudacion') nodes.push(el('p', { class: 'note center' }, `Faltaste ${state.missedRun} días. No pasa nada: hoy es un día ligero para retomar el ritmo.`));
+    if (plan.dayType === 'reanudacion') nodes.push(el('p', { class: 'note center' }, `Pasaron ${state.missedRun} días sin sesión — no pasa nada, la vida pasa. Hoy es un día ligero para retomar el ritmo.`));
     nodes.push(el('button', { class: 'start-btn', onclick: () => start(plan) }, label));
   }
 

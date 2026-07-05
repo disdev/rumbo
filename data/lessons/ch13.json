@@ -346,7 +346,7 @@
         {
           "type": "callout",
           "style": "ojo",
-          "md": "Trampa favorita del examen (Figura 14 del banco): en un PIREP **todas las alturas son MSL**, no AGL. Si te piden la altura del techo sobre el terreno, resta la elevación: base a 7,200 ft MSL sobre terreno de 1,295 ft = techo a **5,905 ft AGL**."
+          "md": "Trampa favorita del examen (Figura 14 del banco): en un PIREP **todas las alturas son MSL**, no AGL. Si te piden la altura del techo sobre el terreno, resta la elevación: en la Figura 14 la base del techo está a 1,800 ft MSL sobre terreno de 1,295 ft = techo a **505 ft AGL**."
         },
         {
           "type": "notebook",

@@ -16,6 +16,8 @@ function consecutiveCompletos(state) {
 
 export const BADGES = [
   { id: 'primera-leccion', emoji: '📖', title: 'Primera lección', desc: 'Completaste tu primera lección', earned: s => [...s.lessons.values()].some(l => l.completed) },
+  { id: 'primer-dia', emoji: '🌅', title: 'Primer día completo', desc: 'Un día entero del plan, hecho', earned: s => [...s.dayLog.values()].includes('completo') },
+  { id: 'racha-3', emoji: '⚡', title: 'Tres seguidos', desc: '3 días seguidos estudiando', earned: s => s.streaks.overall >= 3 },
   { id: 'primer-nivel', emoji: '🪜', title: 'Primer escalón', desc: 'Superaste tu primer nivel de matemática', earned: s => Object.values(s.ladder).some(l => l.passedTier >= 1) },
   { id: 'cuaderno-25', emoji: '📓', title: 'Cuaderno en marcha', desc: '25 apuntes en tu cuaderno', earned: s => s.notebooksTotal >= 25 },
   { id: 'racha-7', emoji: '🔥', title: 'Semana de fuego', desc: '7 días seguidos estudiando', earned: s => s.streaks.overall >= 7 },

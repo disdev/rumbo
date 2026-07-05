@@ -69,7 +69,10 @@ async function runBlock(root, block, ctx, { session, minimo }) {
   const { config } = ctx.data;
   const wrap = el('div', { class: 'session-wrap' });
   const blockRoot = el('div', { class: 'block-root' });
-  let seconds = config.schedule.block_minutes * 60;
+  // una lección completa dura más que un bloque normal: temporizador acorde,
+  // para no pintar de rojo un comportamiento normal y esperado
+  const blockMins = block.type === 'leccion' ? config.schedule.block_minutes * 2 : config.schedule.block_minutes;
+  let seconds = blockMins * 60;
   const timerEl = el('span', { class: 'block-timer' }, fmtTime(seconds));
   const iv = setInterval(() => {
     seconds--;
@@ -81,11 +84,14 @@ async function runBlock(root, block, ctx, { session, minimo }) {
   let skipResolve;
   const skipped = new Promise(res => { skipResolve = res; });
 
-  function askSkip() {
-    const reason = prompt('Saltar exige un motivo (lo verá el mentor):');
-    if (reason && reason.trim().length >= 3) {
+  function askSkip(hint = '') {
+    const reason = prompt(`${hint}¿Por qué saltas este bloque? Un motivo corto basta (queda en el registro que revisa tu mentor):`);
+    if (reason === null) return; // canceló: el bloque sigue, sin drama
+    if (reason.trim().length >= 3) {
       ctx.append({ kind: 'block', detail: { type: block.type, chapter: block.chapter || null, skipped: true, reason: reason.trim(), session } });
       skipResolve({ skipped: true });
+    } else {
+      askSkip('Unas palabras más, porfa. ');
     }
   }
 

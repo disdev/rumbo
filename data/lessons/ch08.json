@@ -260,7 +260,7 @@
         },
         {
           "type": "text",
-          "md": "¿Cuándo coinciden? En **condiciones estándar** (29.92 inHg y 15 °C al nivel del mar), la altitud de presión es igual a la verdadera. Si la temperatura es la estándar, la de densidad es igual a la de presión. Y la indicada es igual a la verdadera cuando tienes el ajuste correcto **y** la temperatura es estándar. La de densidad no se vuela: se usa para calcular **performance** — con calor y altura, tu avión rinde como si estuviera mucho más arriba."
+          "md": "¿Cuándo coinciden? En **condiciones estándar** (29.92 inHg y 15 °C al nivel del mar), la altitud de presión es igual a la verdadera. Si la temperatura es la estándar, la de densidad es igual a la de presión. Y la indicada es igual a la verdadera **al nivel del mar en condiciones estándar** — así, tal cual, lo pregunta el banco. La de densidad no se vuela: se usa para calcular **performance** — con calor y altura, tu avión rinde como si estuviera mucho más arriba."
         },
         {
           "type": "callout",

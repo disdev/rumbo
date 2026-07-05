@@ -181,6 +181,11 @@
           "md": "Cerca del suelo (los primeros **~2,000 pies**) entra un tercer jugador: la **fricción** con el terreno. Frena el viento y debilita el efecto de Coriolis, así que el viento en superficie cruza las isobaras y **cambia de dirección respecto al viento en altura**. Por eso a 5,000 pies el viento puede ser del suroeste mientras en la pista es del sur: **es la fricción**."
         },
         {
+          "type": "callout",
+          "style": "memoria",
+          "md": "El viento en superficie **cruza las isobaras** y cambia de dirección respecto al de altura. El culpable siempre es la **fricción** (primeros ~2,000 ft)."
+        },
+        {
           "type": "text",
           "md": "Y las brisas que ya conoces: de día la tierra se calienta más rápido que el mar; el aire sobre la tierra sube y el **aire fresco y denso del mar entra a reemplazarlo** — la **brisa de mar** de la costa por la tarde. De noche se invierte (**brisa de tierra**). En la sierra: de día el aire sube por las laderas soleadas (**brisa de valle**) y de noche el aire frío se descuelga cerro abajo (**brisa de montaña**)."
         },
@@ -302,12 +307,32 @@
         },
         {
           "type": "table",
-          "headers": ["", "Aire estable", "Aire inestable"],
+          "headers": [
+            "",
+            "Aire estable",
+            "Aire inestable"
+          ],
           "rows": [
-            ["Nubes", "Estratos (en capas)", "Cúmulos (en torres)"],
-            ["Vuelo", "Suave", "Turbulento"],
-            ["Visibilidad", "Mala (bruma atrapada)", "Buena"],
-            ["Precipitación", "Llovizna o lluvia continua", "Chubascos"]
+            [
+              "Nubes",
+              "Estratos (en capas)",
+              "Cúmulos (en torres)"
+            ],
+            [
+              "Vuelo",
+              "Suave",
+              "Turbulento"
+            ],
+            [
+              "Visibilidad",
+              "Mala (bruma atrapada)",
+              "Buena"
+            ],
+            [
+              "Precipitación",
+              "Llovizna o lluvia continua",
+              "Chubascos"
+            ]
           ]
         },
         {
@@ -479,7 +504,11 @@
       "blocks": [
         {
           "type": "text",
-          "md": "¿Y si la nube se sienta en la pista? Eso es la **niebla**: una nube a ras de suelo, que aparece cuando T y Td se juntan abajo. Cada tipo se forma distinto. **De radiación**: en noches **despejadas y calmadas** el suelo se enfría por radiación y enfría el aire húmedo sobre terreno bajo y plano; el sol de la mañana la quema. **De advección**: aire húmedo que el **viento** empuja sobre una superficie más fría — clásica de costas, como el aire del mar entrando a tierra en invierno."
+          "md": "¿Y si la nube se sienta en la pista? Eso es la **niebla**: una nube a ras de suelo, que aparece cuando T y Td se juntan abajo. Cada tipo se forma distinto. **De radiación**: en noches **despejadas y calmadas** el suelo se enfría por radiación y enfría el aire húmedo sobre terreno bajo y plano; el sol de la mañana la quema."
+        },
+        {
+          "type": "text",
+          "md": "**De advección**: aire húmedo que el **viento** empuja sobre una superficie más fría — clásica de costas, como el aire del mar entrando a tierra en invierno."
         },
         {
           "type": "text",

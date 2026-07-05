@@ -119,7 +119,7 @@ function askQuestion(root, q, ctx, { index, total, explainMode, noFeedback = fal
 
     function submit(chosenIdx) {
       if (explainMode && explainInputs.some(inp => inp.value.trim().length < 3)) {
-        note.textContent = 'Primero explica por qué cada opción incorrecta está mal.';
+        note.textContent = 'Antes de responder, escribe por qué descartas cada opción incorrecta — una línea corta basta, no tiene que ser perfecta.';
         return;
       }
       const chosen = opts[chosenIdx];
@@ -172,7 +172,7 @@ function askQuestion(root, q, ctx, { index, total, explainMode, noFeedback = fal
 function showScore(root, score, total, { reviewChapter = null, ctx = null } = {}) {
   const nodes = [
     el('h2', {}, `${score} / ${total}`),
-    el('p', {}, score / total >= 0.8 ? '¡Buen trabajo!' : 'Los errores vuelven en 2 días — y hoy los rehaces en la Sesión 2.'),
+    el('p', {}, score / total >= 0.8 ? '¡Buen trabajo! 💪' : 'Lo que fallaste no se pierde: la app te lo vuelve a traer sola hasta que sea tuyo. Equivocarse aquí es parte del plan.'),
   ];
   // Miss routing (§4.3): volver a la sección de la lección es un tap, no tarea
   if (reviewChapter && ctx) {
@@ -220,7 +220,7 @@ export async function drillPlayer(root, block, ctx) {
   const attemptsToday = (ctx.state.ladder[fam]?.attempts || []).filter(a => a.day === ctx.todayKey && a.tier === tier).length;
   if (!errordeck && attemptsToday >= 2) {
     root.replaceChildren(el('div', { class: 'card center' },
-      el('p', {}, `Ya hiciste 2 intentos de ${fam} nivel ${tier} hoy. Vuelve mañana con la mente fresca — así se consolida.`),
+      el('p', {}, `Ya hiciste los 2 intentos de hoy en el nivel ${tier}. Dormir también entrena: mañana, mismo nivel, números nuevos.`),
       el('button', { class: 'primary', onclick: () => root.dispatchEvent(new Event('blockdone')) }, 'Continuar')));
     return waitDone(root);
   }
@@ -240,11 +240,12 @@ export async function drillPlayer(root, block, ctx) {
 
   const perfect = score === n;
   if (perfect) flashCelebrate(root, '¡10 de 10! 💪🎉');
+  else if (passed) flashCelebrate(root, `¡Nivel ${tier} superado! 🪜🎉`);
   const canRetry = !passed && attemptsToday === 0;
   const nodes = [el('h2', {}, `${score} / ${n}`)];
-  if (passed && tier < 3) nodes.push(el('p', {}, `✅ Nivel ${tier} superado. Mañana: nivel ${tier + 1}.`));
-  else if (passed) nodes.push(el('p', {}, `✅ Nivel 3 de ${fam} dominado.`));
-  else nodes.push(el('p', {}, `Se avanza con ${config.math.advance_score}/${n} — nunca con ${config.math.advance_score - 1} (§SPEC). ${canRetry ? 'Puedes reintentar HOY una vez, después de un descanso de 5 minutos.' : 'Mañana, mismo nivel, números nuevos.'}`));
+  if (passed && tier < 3) nodes.push(el('p', {}, `✅ ¡Nivel ${tier} superado! Mañana te espera el nivel ${tier + 1}.`));
+  else if (passed) nodes.push(el('p', {}, '👑 ¡Nivel 3 dominado! Esta familia ya es tuya.'));
+  else nodes.push(el('p', {}, `Se pasa de nivel con ${config.math.advance_score}/${n}, y hoy no tocó — no pasa nada: cada intento suma reps. ${canRetry ? 'Puedes reintentar HOY una vez, después de un descanso de 5 minutos.' : 'Mañana, mismo nivel, números nuevos — la receta ya la tienes.'}`));
   if (perfect && tier < 3) nodes.push(el('button', { class: 'ghost', onclick: () => previewNext() }, `Probar 3 del nivel ${tier + 1} (no cuenta)`));
   if (!passed) nodes.push(el('button', { class: 'ghost', onclick: () => reviewRecipe() }, 'Repasar la receta paso a paso 🧭'));
   if (canRetry) nodes.push(el('button', { class: 'ghost', onclick: () => retry() }, 'Reintentar tras el descanso'));
@@ -260,7 +261,7 @@ export async function drillPlayer(root, block, ctx) {
     root.dispatchEvent(new Event('blockdone'));
   }
   async function retry() {
-    await breakScreen(root, 5 * 60, 'Descanso obligatorio antes del reintento. Sal de la habitación.');
+    await breakScreen(root, 5 * 60, 'Descanso de 5 minutos antes del reintento. Sal de la habitación — tu cerebro sigue ordenando la receta mientras caminas.');
     ctx.refresh();
     await drillPlayer(root, block, ctx);
     root.dispatchEvent(new Event('blockdone'));
@@ -393,7 +394,7 @@ function rapidCard(root, q, { index, total, streak }) {
       setTimeout(() => resolve({ correct: opts[i].correct }), opts[i].correct ? 450 : 1600);
     }
     const card = el('div', { class: 'card rapid' },
-      el('div', { class: 'progress-line' }, `${index}/${total} · racha ${streak} 🔥`),
+      el('div', { class: 'progress-line' }, `${index}/${total}${streak >= 2 ? ` · racha ${streak} 🔥` : ''}`),
       el('p', { class: 'question' }, q.question),
       ...buttons);
     root.replaceChildren(card);
@@ -508,7 +509,7 @@ export async function simulacroPlayer(root, block, ctx) {
   const pct = Math.round(100 * score / items.length);
   root.replaceChildren(el('div', { class: 'card' },
     el('h2', { class: 'center' }, `${pct}%`),
-    el('p', { class: 'center' }, pct >= config.gates.listo_simulacro_pct ? `≥ ${config.gates.listo_simulacro_pct}% — objetivo alcanzado 🏅` : `Objetivo: ${config.gates.listo_simulacro_pct}%. Cada error entró al mazo.`),
+    el('p', { class: 'center' }, pct >= config.gates.listo_simulacro_pct ? `≥ ${config.gates.listo_simulacro_pct}% — objetivo alcanzado 🏅` : `Objetivo: ${config.gates.listo_simulacro_pct}%. Cada error ya entró al mazo — esa es tu lista exacta de qué estudiar, no una condena.`),
     el('table', { class: 'cat-table' }, ...Object.entries(byCat).map(([c, v]) =>
       el('tr', {}, el('td', {}, c), el('td', {}, `${v.ok}/${v.n}`), el('td', {}, `${Math.round(100 * v.ok / v.n)}%`)))),
     el('button', { class: 'primary', onclick: () => root.dispatchEvent(new Event('blockdone')) }, 'Continuar')));

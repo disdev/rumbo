@@ -517,16 +517,16 @@
       "id": "15-10",
       "title": "Altitudes de crucero VFR: la regla semicircular",
       "key_points": [
-        "La regla aplica en crucero, con rumbo magnético, por encima de 3000 ft sobre el terreno.",
-        "Rumbo magnético 000°–179°: miles IMPARES + 500 ft (3500, 5500, 7500...).",
-        "Rumbo magnético 180°–359°: miles PARES + 500 ft (4500, 6500, 8500...).",
+        "La regla aplica en crucero, según el CURSO magnético (no el rumbo), por encima de 3000 ft sobre el terreno.",
+        "Curso magnético 000°–179°: miles IMPARES + 500 ft (3500, 5500, 7500...).",
+        "Curso magnético 180°–359°: miles PARES + 500 ft (4500, 6500, 8500...).",
         "El +500 separa a los VFR de los IFR, que vuelan los miles exactos.",
-        "Ejemplo del banco: rumbo 135° → impar + 500; rumbo 175° a FL115 → 11 500 ft."
+        "Ejemplo del banco: curso 135° → impar + 500; curso 175° a FL115 → 11 500 ft."
       ],
       "blocks": [
         {
           "type": "text",
-          "md": "¿Cómo evitamos chocarnos de frente en el cielo? Igual que en una carretera de doble sentido: cada dirección tiene su carril. La **regla semicircular** parte la rosa de rumbos en dos: si tu **rumbo magnético** está entre **000° y 179°** (mitad este), vuelas miles **IMPARES + 500 ft**; si está entre **180° y 359°** (mitad oeste), miles **PARES + 500 ft**."
+          "md": "¿Cómo evitamos chocarnos de frente en el cielo? Igual que en una carretera de doble sentido: cada dirección tiene su carril. La **regla semicircular** parte la rosa en dos según tu **curso magnético** (tu camino sobre el suelo, no adonde apunta la nariz): entre **000° y 179°** (mitad este), vuelas miles **IMPARES + 500 ft**; entre **180° y 359°** (mitad oeste), miles **PARES + 500 ft**."
         },
         {
           "type": "diagram",
@@ -535,7 +535,7 @@
         },
         {
           "type": "text",
-          "md": "¿Y por qué el **+500**? Porque los miles \"redondos\" (4000, 5000...) son de los IFR. El +500 te pone medio piso entre tú y ellos. Ejemplos: rumbo 135° → 3500, 5500 o 7500 ft; rumbo 270° → 4500, 6500 u 8500 ft."
+          "md": "¿Y por qué el **+500**? Porque los miles \"redondos\" (4000, 5000...) son de los IFR. El +500 te pone medio piso entre tú y ellos. Ejemplos: curso 135° → 3500, 5500 o 7500 ft; curso 270° → 4500, 6500 u 8500 ft."
         },
         {
           "type": "callout",
@@ -545,17 +545,17 @@
         {
           "type": "callout",
           "style": "examen",
-          "md": "Del banco: rumbo magnético **135°** → cualquier altitud **impar de miles + 500 ft**. Rumbo **175°** cerca de FL115 → **11 500 ft**. Los impares + 500 corresponden a rumbos **000° a 179°**."
+          "md": "Del banco: curso magnético **135°** → cualquier altitud **impar de miles + 500 ft**. Curso **175°** cerca de FL115 → **11 500 ft**. Y ojo con la pregunta trampa: la regla se basa en el **CURSO magnético de 000° a 179°** — el «rumbo magnético» aparece como distractor y es incorrecto."
         },
         {
           "type": "notebook",
           "id": "15-10-n1",
-          "prompt": "Dibuja la rosa semicircular y resuelve: ¿qué altitudes VFR sirven para rumbo 090°? ¿Y para 200°? ¿Y para 359°? Escribe dos opciones válidas por rumbo."
+          "prompt": "Dibuja la rosa semicircular y resuelve: ¿qué altitudes VFR sirven para curso 090°? ¿Y para 200°? ¿Y para 359°? Escribe dos opciones válidas por curso."
         },
         {
           "type": "check",
           "id": "15-10-c1",
-          "q": "¿Qué altitud de crucero VFR es apropiada para un rumbo magnético de 135°?",
+          "q": "¿Qué altitud de crucero VFR es apropiada para un curso magnético de 135°?",
           "options": [
             "Miles pares + 500 ft (ej. 4500 ft)",
             "Miles impares + 500 ft (ej. 5500 ft)",
@@ -567,7 +567,7 @@
         {
           "type": "check",
           "id": "15-10-c2",
-          "q": "Vuelas con rumbo magnético 250° en crucero, sobre 3000 ft del terreno. ¿Cuál altitud es correcta?",
+          "q": "Vuelas con curso magnético 250° en crucero, sobre 3000 ft del terreno. ¿Cuál altitud es correcta?",
           "options": ["5500 ft", "6000 ft", "6500 ft"],
           "answer": 2,
           "why": "250° está en 180°–359°: pares + 500 → 4500, 6500, 8500 ft…"

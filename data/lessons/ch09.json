@@ -123,7 +123,7 @@
           "headers": ["Velocidad", "Qué significa", "Dónde se ve"],
           "rows": [
             ["Vne", "Nunca exceder", "Línea roja del velocímetro"],
-            ["Vno", "Máx. en aire turbulento", "Fin del arco verde"],
+            ["Vno", "Máx. de crucero estructural (pásala solo en aire calmado)", "Fin del arco verde"],
             ["Vfe", "Máx. con flaps extendidos", "Fin del arco blanco"],
             ["Va", "Máx. de maniobra", "Solo en el POH o placard"]
           ]

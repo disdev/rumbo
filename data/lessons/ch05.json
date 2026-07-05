@@ -657,7 +657,7 @@
         "El ángulo de ataque crítico es siempre el mismo: no cambia con el peso, la altitud ni la actitud.",
         "La velocidad indicada de pérdida no cambia con la altitud.",
         "Mayor factor de carga → pérdida a mayor velocidad: Vs crece con la raíz del factor de carga (√G).",
-        "En un giro, ambas alas entran en pérdida a la vez.",
+        "En una barrena, ambas alas están en pérdida; la del lado del giro, más profundamente.",
         "La barrena es una pérdida agravada con guiñada: para entrar en barrena, primero hay que estar en pérdida.",
         "Recuperación conceptual de barrena: potencia al mínimo, pedal contrario al giro y bajar la nariz."
       ],
@@ -673,16 +673,16 @@
         },
         {
           "type": "text",
-          "md": "Dos datos de examen: la velocidad **indicada** de pérdida no cambia con la altitud (el velocímetro 'siente' la misma presión). Y con factor de carga la pérdida llega a **mayor velocidad**: Vs crece con la raíz del factor de carga (√G). A 60° de banqueo (2G), tu velocidad de pérdida sube ~41%. Además, en un giro **ambas alas** entran en pérdida a la vez, sin importar hacia dónde vires."
+          "md": "Dos datos de examen: la velocidad **indicada** de pérdida no cambia con la altitud (el velocímetro 'siente' la misma presión). Y con factor de carga la pérdida llega a **mayor velocidad**: Vs crece con la raíz del factor de carga (√G). A 60° de banqueo (2G), tu velocidad de pérdida sube ~41%. Ojo: en un viraje coordinado normal las alas **no** están en pérdida — eso solo pasa si excedes el ángulo crítico."
         },
         {
           "type": "text",
-          "md": "¿Y la **barrena** (spin)? Es una pérdida 'agravada': el avión cae girando como un **trompo**, con un ala más profundamente en pérdida que la otra. Para que haya barrena, primero **tiene que haber pérdida** más guiñada. La mejor defensa: controla tu ángulo de ataque y vuela coordinado. La recuperación, en concepto: potencia al mínimo, pedal contrario al giro y bajar la nariz para romper la pérdida."
+          "md": "¿Y la **barrena** (spin)? Es una pérdida 'agravada': el avión cae girando como un **trompo**, con **ambas alas** en pérdida — la del lado del giro, más profundamente. Para que haya barrena, primero **tiene que haber pérdida** más guiñada. La mejor defensa: controla tu ángulo de ataque y vuela coordinado. La recuperación, en concepto: potencia al mínimo, pedal contrario al giro y bajar la nariz para romper la pérdida."
         },
         {
           "type": "callout",
           "style": "examen",
-          "md": "Seguras del banco: el ángulo de ataque de pérdida **no cambia con el peso**; la velocidad indicada de pérdida **no cambia con la altitud**; mayor factor de carga → pérdida a **mayor velocidad**; y para entrar en barrena el avión debe estar **en pérdida**."
+          "md": "Seguras del banco: el ángulo de ataque de pérdida **no cambia con el peso**; la velocidad indicada de pérdida **no cambia con la altitud**; mayor factor de carga → pérdida a **mayor velocidad**; y para entrar en barrena el avión debe estar **en pérdida**. Ojo: el banco pregunta «durante un giro a la izquierda, ¿qué ala(s) entran en pérdida?» — se refiere a la barrena: responde **ambas alas**."
         },
         {
           "type": "notebook",

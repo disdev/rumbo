@@ -3,7 +3,7 @@
 // cero decisiones. Los checks nunca bloquean por corrección; el cuaderno es
 // auto-reporte. Todo queda en el log (lesson_progress / lesson_check / notebook).
 
-import { el } from './players.js';
+import { el, flashCelebrate, breakScreen } from './players.js';
 import { WIDGETS } from './widgets.js';
 import { guidedExample, practicaBurst, notebookPrompt } from './guided.js';
 import { generateProblem } from './mathgen.js';
@@ -162,10 +162,18 @@ export async function leccionPlayer(root, block, ctx) {
   let idx = lesson.sections.findIndex(s => !seen.has(s.id));
   if (idx === -1) idx = 0; // todo visto: repaso rápido desde el inicio
 
+  const mid = Math.ceil(lesson.sections.length / 2);
+  let breakOffered = false;
   while (idx < lesson.sections.length) {
     const isLast = idx === lesson.sections.length - 1;
     await runSection(root, lesson, idx, ctx, { mode: 'primera', isLast });
     idx++;
+    // una lección entera es larga: celebra la mitad y ofrece el descanso normal
+    if (idx === mid && !isLast) flashCelebrate(root, '¡Mitad de la lección! 🧗');
+    if (idx >= mid && !breakOffered && idx < lesson.sections.length) {
+      breakOffered = true;
+      await breakScreen(root, 5 * 60, 'Media lección hecha. Cinco minutos de aire y vuelves por el resto.');
+    }
   }
 }
 
@@ -174,7 +182,7 @@ function dots(lesson, idx) {
     ...lesson.sections.map((s, i) => el('span', { class: `dot ${i < idx ? 'done' : i === idx ? 'now' : ''}` })));
 }
 
-function runSection(root, lesson, idx, ctx, { mode, isLast }) {
+function runSection(root, lesson, idx, ctx, { mode, isLast, gateOpen = false }) {
   return new Promise(async (resolve) => {
     const sec = lesson.sections[idx];
     const chapter = String(lesson.chapter);
@@ -188,7 +196,7 @@ function runSection(root, lesson, idx, ctx, { mode, isLast }) {
       isLast && mode === 'primera' ? 'Terminé la lección ✅' : 'Continuar →');
     const gateNote = el('p', { class: 'note center' }, '');
     function updateGate() {
-      const ready = checksState.answered >= checksState.total;
+      const ready = gateOpen || checksState.answered >= checksState.total;
       contBtn.disabled = !ready;
       gateNote.textContent = ready ? '' : `Responde ${checksState.total - checksState.answered} pregunta(s) rápida(s) de esta sección para seguir (equivocarse está perfecto).`;
     }
@@ -210,8 +218,8 @@ function runSection(root, lesson, idx, ctx, { mode, isLast }) {
       ctx.append({ kind: 'drill', family, tier, score: g.stepsCorrect, total: g.stepsTotal, detail: { mode: 'guiada', lesson: sec.id } });
       await notebookPrompt(root, ctx, { id: `${sec.id}-receta`, prompt: 'Copia esta receta en tu cuaderno, paso por paso, con el ejemplo resuelto.', context: 'math' });
       await practicaBurst(root, { family, tier }, ctx);
-      // re-monta la sección (los checks respondidos se re-preguntan: repaso gratis)
-      resolve(runSection(root, lesson, idx, ctx, { mode, isLast }));
+      // re-monta la sección con la puerta abierta: el progreso ya ganado no se pierde
+      resolve(runSection(root, lesson, idx, ctx, { mode, isLast, gateOpen: true }));
     }, { once: true });
 
     function finish() {

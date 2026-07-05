@@ -533,7 +533,7 @@
             "El ángulo de ataque crítico es siempre el mismo: no cambia con el peso, la altitud ni la actitud.",
             "La velocidad indicada de pérdida no cambia con la altitud.",
             "Mayor factor de carga → pérdida a mayor velocidad: Vs crece con la raíz del factor de carga (√G).",
-            "En un giro, ambas alas entran en pérdida a la vez.",
+            "En una barrena, ambas alas están en pérdida; la del lado del giro, más profundamente.",
             "La barrena es una pérdida agravada con guiñada: para entrar en barrena, primero hay que estar en pérdida.",
             "Recuperación conceptual de barrena: potencia al mínimo, pedal contrario al giro y bajar la nariz."
           ]
@@ -1862,11 +1862,11 @@
           "id": "15-10",
           "title": "Altitudes de crucero VFR: la regla semicircular",
           "key_points": [
-            "La regla aplica en crucero, con rumbo magnético, por encima de 3000 ft sobre el terreno.",
-            "Rumbo magnético 000°–179°: miles IMPARES + 500 ft (3500, 5500, 7500...).",
-            "Rumbo magnético 180°–359°: miles PARES + 500 ft (4500, 6500, 8500...).",
+            "La regla aplica en crucero, según el CURSO magnético (no el rumbo), por encima de 3000 ft sobre el terreno.",
+            "Curso magnético 000°–179°: miles IMPARES + 500 ft (3500, 5500, 7500...).",
+            "Curso magnético 180°–359°: miles PARES + 500 ft (4500, 6500, 8500...).",
             "El +500 separa a los VFR de los IFR, que vuelan los miles exactos.",
-            "Ejemplo del banco: rumbo 135° → impar + 500; rumbo 175° a FL115 → 11 500 ft."
+            "Ejemplo del banco: curso 135° → impar + 500; curso 175° a FL115 → 11 500 ft."
           ]
         },
         {
