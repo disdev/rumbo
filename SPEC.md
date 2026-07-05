@@ -132,7 +132,7 @@ For each chapter assignment:
 4. **Miss routing:** every miss triggers two *distinct* events, logged as separate result kinds: (a) a same-day **redo with work shown** in Sesión 2 (§4.4) — immediate correction; (b) a spaced **re-queue** of the question (shuffled options) on the next study day at least 2 days out (never Sunday) — a retention check. Each miss also creates a "volver a la sección" assignment — a tappable link into the relevant lesson section (§5.8), with the PHAK page range as secondary reference.
 
 ### 4.4 Daily session template (6 hours, 3 sessions, Mon–Sat)
-The session runner walks these blocks in order with a visible timer (25 min work / 5 min break; breaks instruct leaving the room). Sesiones 1–2 (135 min) hold four 25/5 blocks plus slack; Sesión 3 (90 min) holds three; the hard stop truncates whatever block is running. Hard stop messaging at 6:00 pm; Sunday is rest + mentor check-in only.
+The session runner walks these blocks in order with a visible timer (25 min work / 5 min break; breaks instruct leaving the room). Sesiones 1–2 (135 min) hold four 25/5 blocks plus slack; Sesión 3 (90 min) holds three. **Times are anchors, not limits (mentor directive 2026-07-05): the goal is covering the day's material, not covering it by a clock time.** Session start times are the external-cue schedule, and the 25/5 rhythm still paces the work, but nothing truncates: if he's still working at 6:00 pm, the app lets him keep going until the day's blocks are done. Running long is logged (planned vs. actual, visible on `/progreso`) — a pacing signal for the Sunday check-in, never a stop. Sunday is rest + mentor check-in only.
 
 | Session | Blocks |
 |---|---|
@@ -202,9 +202,12 @@ The teaching surface (§1, content model in §3.4). A full-screen player inside 
 - **Review mode:** any previously seen lesson/section is re-openable from the chapter list at any time (re-reading is never restricted); miss-routing "volver a la sección" links (§4.3) and teach-back prompts (§4.4) open the player directly to the target section.
 - **Widgets** render inline from the registry; a widget failing to load degrades to its captioned static fallback image — a lesson must never be blocked by a widget bug.
 
----
+### 5.9 Logros (gamification)
+Badges and micro-celebrations, tuned for ADHD reward cadence (mentor directive 2026-07-05). Two layers:
 
-## 6. Gates (enforced by the app)
+- **Micro-celebrations (immediate, repeatable):** small in-flow flashes the moment they happen — 4 correct answers in a row inside any quiz block ("¡4 seguidas! 🔥"), a 10-streak in fraseología, a clean 10/10 drill. Purely visual, sub-second, never a modal that interrupts the next question.
+- **Badges (one-time, collected):** a permanent shelf on the home screen. Earned badges are **derived from the result log** (pure replay, §8 — no new stored state; the "newly earned" moment is detected by comparing the derived set before/after an append). Catalog lives in `src/js/badges.js` as data + pure predicates. Starter set spans all tracks so early wins come fast: primera lección completada, primer capítulo cerrado, primer nivel de matemática superado, familia dominada (nivel 3), 4 familias en nivel 2, racha de 7 días, semana perfecta (6 completos), 100/500/1000 problemas de matemática resueltos, 25/100 apuntes de cuaderno, racha ×15 en fraseología, primer simulacro, simulacro ≥85%, mazo de errores vaciado.
+- **Never a gate, never a shame surface:** badges only ever add; there is no "lost badge" state, and absence is silent. `/progreso` shows earned badges with dates (§7).
 
 | Gate | Criterion | On failure |
 |---|---|---|
@@ -228,6 +231,7 @@ Behind Cloudflare Access (§8) — mentor-only policy, email OTP login. Shows:
 - **Chapter progress:** lesson completion/recalled/questioned/closed per chapter; per-chapter question %; list of PHAK sections with zero bank coverage (for teach-back targeting).
 - **Lesson detail:** time per section, comprehension-check accuracy per section (where understanding breaks *during* teaching, before recall/questions confirm it), and notebook-prompt completion per chapter — the Sunday check-in audits the physical cuaderno against the logged prompts.
 - **Math reps:** per-family lifetime rep volume, guided/práctica/maintenance breakdown, and maintenance-SRS adherence (§5.2).
+- **Logros:** earned badges with dates (§5.9).
 - **Free-recall entries** (full text, newest first) — Sunday audit material.
 - **Vuelo de escritorio answers**, distractor-explanation entries, and teach-back audio recordings (§4.4).
 - **Error deck contents** and simulacro history with per-category breakdowns.

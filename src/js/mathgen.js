@@ -35,6 +35,7 @@ const GEN = {
         answer: w * f, unit: 'lb',
         worked: `${fmt(w)} × ${f} = ${fmt(w * f)} lb`,
         distract: [w * wrongF, w],
+        stepVals: [f, w * f],
       };
     }
     const ew = pick(rng, t.empty_weights), gal = pick(rng, t.fuel_gal), occ = pick(rng, t.occupants_lb);
@@ -45,6 +46,7 @@ const GEN = {
       answer: gross * f3, unit: 'lb',
       worked: `${fmt(ew)} + ${gal}×6 + ${fmt(occ)} = ${fmt(gross)} lb; ${fmt(gross)} × ${f3} = ${fmt(gross * f3)} lb`,
       distract: [gross * t._factors[pick(rng, angles.filter(a => a !== angle3))], (ew + occ) * f3],
+      stepVals: [gal * 6, gross, f3, gross * f3],
     };
   },
 
@@ -58,6 +60,7 @@ const GEN = {
         answer: ft, unit: 'ft (con signo: + sube, − baja)',
         worked: `(${to.toFixed(2)} − ${from.toFixed(2)}) × 1000 = ${ft > 0 ? '+' : ''}${ft} ft`,
         distract: [-ft, ft * 10],
+        stepVals: [Math.round((to - from) * 100) / 100, ft],
       };
     }
     if (tier === 2) {
@@ -69,6 +72,7 @@ const GEN = {
         answer: ft, unit: 'ft (con signo)',
         worked: `(${to.toFixed(2)} − ${from.toFixed(2)}) × 1000 = ${ft > 0 ? '+' : ''}${ft} ft`,
         distract: [-ft, Math.round(ft / 10)],
+        stepVals: [Math.round((to - from) * 100) / 100, ft],
       };
     }
     const elev = pick(rng, t.elevations), set = pick(rng, t.settings);
@@ -78,6 +82,7 @@ const GEN = {
       answer: pa, unit: 'ft',
       worked: `${fmt(elev)} + (29.92 − ${set.toFixed(2)}) × 1000 = ${fmt(pa)} ft`,
       distract: [Math.round(elev - (29.92 - set) * 1000), elev],
+      stepVals: [Math.round((29.92 - set) * 100) / 100, Math.round((29.92 - set) * 1000), pa],
     };
   },
 
@@ -92,6 +97,7 @@ const GEN = {
         answer: agl, unit: 'ft AGL',
         worked: `(${temp} − ${fmt(td)}) ÷ 4.4 × 1000 = ${fmt(agl)} ft AGL`,
         distract: [agl + 1000, Math.round((temp - td) * 100)],
+        stepVals: [Number(spread), agl],
       };
     }
     const elev = pick(rng, t.elevations);
@@ -100,6 +106,7 @@ const GEN = {
       answer: agl + elev, unit: 'ft MSL',
       worked: `(${temp} − ${fmt(td)}) ÷ 4.4 × 1000 = ${fmt(agl)} ft AGL; ${fmt(agl)} + ${fmt(elev)} = ${fmt(agl + elev)} ft MSL`,
       distract: [agl, agl + elev + 1000],
+      stepVals: [Number(spread), agl, agl + elev],
     };
   },
 
@@ -112,6 +119,7 @@ const GEN = {
         answer: pa, unit: 'ft',
         worked: `${fmt(elev)} + (29.92 − ${set.toFixed(2)}) × 1000 = ${fmt(pa)} ft`,
         distract: [Math.round(elev - (29.92 - set) * 1000), elev + 1000],
+        stepVals: [Math.round((29.92 - set) * 100) / 100, Math.round((29.92 - set) * 1000), pa],
       };
     }
     if (tier === 2) {
@@ -124,6 +132,7 @@ const GEN = {
         answer: da, unit: 'ft',
         worked: `ISA = 15 − 2×${pa / 1000} = ${fmt(isa)} °C; DA = ${fmt(pa)} + 120 × (${fmt(oat)} − ${fmt(isa)}) = ${fmt(da)} ft`,
         distract: [pa - 120 * off, pa],
+        stepVals: [isa, off, da],
       };
     }
     const elev = pick(rng, t.elevations), set = pick(rng, t.settings), off = pick(rng, t.oat_offsets);
@@ -136,6 +145,7 @@ const GEN = {
       answer: da, unit: 'ft',
       worked: `PA = ${fmt(elev)} + (29.92 − ${set.toFixed(2)}) × 1000 = ${fmt(pa)} ft; ISA = 15 − 2×${pa / 1000} = ${fmt(isa)} °C; DA = ${fmt(pa)} + 120 × (${fmt(oat)} − ${fmt(isa)}) = ${fmt(da)} ft`,
       distract: [pa, Math.round(pa - 120 * (oat - isa))],
+      stepVals: [Math.round((29.92 - set) * 100) / 100, pa, isa, Math.round((oat - isa) * 10) / 10, da],
     };
   },
 
@@ -147,6 +157,7 @@ const GEN = {
         answer: w * arm, unit: 'lb-in',
         worked: `${fmt(w)} × ${arm} = ${fmt(w * arm)} lb-in`,
         distract: [w * (arm + 2), Math.round(w * arm / 10)],
+        stepVals: [w * arm],
       };
     }
     if (tier === 2) {
@@ -160,6 +171,7 @@ const GEN = {
         answer: cg, unit: 'in',
         worked: `M = ${fmt(e.w)}×${e.arm} + ${fmt(pax)}×${t.front_arm} + ${fw}×${t.fuel_arm} = ${fmt(totM)}; W = ${fmt(totW)}; CG = ${fmt(totM)} ÷ ${fmt(totW)} ≈ ${fmt(cg)} in`,
         distract: [Math.round((totM / (totW - fw)) * 10) / 10, e.arm],
+        stepVals: [fw, totM, totW, cg],
       };
     }
     const b = pick(rng, t.base), gal = pick(rng, t.burn_gal);
@@ -172,6 +184,7 @@ const GEN = {
       answer: cg, unit: 'in',
       worked: `M = ${fmt(b.w)}×${b.arm} − ${fw}×${t.fuel_arm} = ${fmt(newM)}; W = ${fmt(b.w)} − ${fw} = ${fmt(newW)}; CG = ${fmt(newM)} ÷ ${fmt(newW)} ≈ ${fmt(cg)} in`,
       distract: [b.arm, Math.round(((b.w * b.arm + fw * t.fuel_arm) / (b.w + fw)) * 10) / 10],
+      stepVals: [fw, newM, newW, cg],
     };
   },
 
@@ -184,6 +197,7 @@ const GEN = {
         answer: min, unit: 'min',
         worked: `${fmt(d)} ÷ ${gs} = ${fmt(h)} h = ${fmt(min)} min`,
         distract: [min + 30, Math.round(d / 60 * 60 + 15)],
+        stepVals: [h, min],
       };
     }
     if (tier === 2) {
@@ -194,6 +208,7 @@ const GEN = {
         answer: min, unit: 'min',
         worked: `GS = ${tas} ${wind < 0 ? '−' : '+'} ${Math.abs(wind)} = ${gs} kt; ${fmt(d)} ÷ ${gs} = ${fmt(h)} h = ${fmt(min)} min`,
         distract: [Math.round(d / (tas - wind) * 60), Math.round(d / tas * 60)],
+        stepVals: [gs, h, min],
       };
     }
     const tas = pick(rng, t.tas), wind = pick(rng, t.winds), h = pick(rng, t.hours);
@@ -205,6 +220,7 @@ const GEN = {
       answer: Math.round(fuel * 10) / 10, unit: 'gal',
       worked: `GS = ${gs} kt; t = ${fmt(d)} ÷ ${gs} = ${fmt(h)} h; combustible = ${fmt(h)}×${burn} + ${resmin / 60}×${burn} = ${fmt(Math.round(fuel * 10) / 10)} gal`,
       distract: [Math.round(h * burn * 10) / 10, Math.round((h + 1) * burn * 10) / 10],
+      stepVals: [gs, h, Math.round(h * burn * 10) / 10, Math.round((resmin / 60) * burn * 10) / 10, Math.round(fuel * 10) / 10],
     };
   },
 };
@@ -227,6 +243,17 @@ export function generateProblem(templates, familyId, tier, { rng = Math.random, 
   if (!fam) throw new Error(`familia desconocida: ${familyId}`);
   const spec = tierSpec(fam, tier);
   const g = GEN[familyId](rng, spec, tier);
+  // Pasos de resolución guiada (SPEC §3.3): etiquetas/fórmulas en el JSON,
+  // valores del generador — cada problema generado sabe mostrar su solución.
+  const stepMeta = fam.steps?.[String(tier)] || [];
+  const stepVals = g.stepVals || [];
+  if (stepMeta.length !== stepVals.length) throw new Error(`steps desalineados: ${familyId} n${tier} (${stepMeta.length} meta, ${stepVals.length} valores)`);
+  const steps = stepMeta.map((m, i) => ({
+    label: fill(m.label, g.vars), formula: fill(m.formula, g.vars),
+    value: stepVals[i], unit: m.unit || '',
+    tolerancePct: Number.isInteger(stepVals[i]) && Math.abs(stepVals[i]) < 10000 ? 0 : 2,
+  }));
+
   const prob = {
     familyId, tier,
     text: fill(spec.wording, g.vars),
@@ -234,6 +261,7 @@ export function generateProblem(templates, familyId, tier, { rng = Math.random, 
     answer: g.answer,
     unit: g.unit,
     worked: g.worked,
+    steps,
     tolerancePct: Number.isInteger(g.answer) && Math.abs(g.answer) < 10000 ? 0 : 2,
     params: g.vars,
   };

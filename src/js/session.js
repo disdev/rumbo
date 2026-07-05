@@ -36,15 +36,6 @@ export async function runSession(root, plan, ctx, onExit) {
     const session = plan.sessions[s];
     for (let b = (s === cursor.s ? cursor.b : 0); b < session.blocks.length; b++) {
       saveCursor({ date: ctx.todayKey, s, b });
-      if (limaHHMM() >= config.schedule.hard_stop) {
-        root.replaceChildren(el('div', { class: 'card center' },
-          el('h3', {}, '🛑 Son las 6:00 pm'),
-          el('p', {}, 'El día terminó. Lo que quedó, quedó — mañana sigue el plan. Descansa de verdad.'),
-          el('button', { class: 'primary', onclick: onExit }, 'Cerrar el día')));
-        ctx.append({ kind: 'block', detail: { type: 'session_end', session: s + 1, minimo, truncated: true } });
-        return;
-      }
-
       const block = session.blocks[b];
       const done = await runBlock(root, block, ctx, { session: session.name, minimo });
       if (!done.skipped) ctx.append({ kind: 'block', detail: { type: block.type, chapter: block.chapter || null, done: true, session: s + 1 } });
@@ -97,10 +88,18 @@ async function runBlock(root, block, ctx, { session, minimo }) {
     }
   }
 
+  // Sin límite duro (§4.4): pasada la hora de cierre planificada, una nota
+  // suave — el objetivo es cubrir el material, no el reloj.
+  const plannedEnd = config.schedule.sessions[config.schedule.sessions.length - 1]?.end || '18:00';
+  const lateNote = limaHHMM() >= plannedEnd
+    ? el('p', { class: 'note center' }, '🌙 Ya pasó la hora del plan — termina el material a tu ritmo. Si necesitas parar, para: mañana sigue.')
+    : '';
+
   wrap.append(
     el('header', { class: 'block-header' },
       el('span', { class: 'block-title' }, `${session}${minimo ? ' · mínimo' : ''} — ${block.title}`),
       timerEl, skipBtn),
+    lateNote,
     blockRoot);
   root.replaceChildren(wrap);
 

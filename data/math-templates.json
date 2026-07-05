@@ -7,6 +7,22 @@
       "formula": "peso soportado = peso × factor G   (30°→1.2 · 45°→1.5 · 60°→2.0)",
       "unit": "lb",
       "factors": { "30": 1.2, "45": 1.5, "60": 2.0 },
+      "steps": {
+        "1": [
+          { "label": "Identifica el factor G para {angle}° de banqueo", "formula": "30°→1.2 · 45°→1.5 · 60°→2.0", "unit": "" },
+          { "label": "Multiplica el peso por el factor G", "formula": "peso soportado = peso × factor G", "unit": "lb" }
+        ],
+        "2": [
+          { "label": "Identifica el factor G para {angle}° de banqueo", "formula": "30°→1.2 · 45°→1.5 · 60°→2.0", "unit": "" },
+          { "label": "Multiplica el peso por el factor G", "formula": "peso soportado = peso × factor G", "unit": "lb" }
+        ],
+        "3": [
+          { "label": "Convierte el combustible a libras", "formula": "lb = galones × 6", "unit": "lb" },
+          { "label": "Suma el peso total", "formula": "vacío + combustible + ocupantes", "unit": "lb" },
+          { "label": "Identifica el factor G para {angle}°", "formula": "30°→1.2 · 45°→1.5 · 60°→2.0", "unit": "" },
+          { "label": "Multiplica el peso total por el factor G", "formula": "peso soportado = peso × factor G", "unit": "lb" }
+        ]
+      },
       "tiers": {
         "1": {
           "weights": [2000, 2200, 2300, 2400, 2500, 3000],
@@ -29,6 +45,21 @@
       "name": "Ajustes de altímetro",
       "formula": "0.01\" Hg ≈ 10 ft — subir el ajuste sube la indicación",
       "unit": "ft",
+      "steps": {
+        "1": [
+          { "label": "Calcula la diferencia de ajuste (nuevo − anterior)", "formula": "Δ = {to} − {from}", "unit": "in Hg" },
+          { "label": "Convierte a pies (con signo)", "formula": "Δ × 1000", "unit": "ft" }
+        ],
+        "2": [
+          { "label": "Calcula la diferencia de ajuste (nuevo − anterior)", "formula": "Δ = {to} − {from}", "unit": "in Hg" },
+          { "label": "Convierte a pies (con signo)", "formula": "Δ × 1000", "unit": "ft" }
+        ],
+        "3": [
+          { "label": "Diferencia con el estándar", "formula": "Δ = 29.92 − {set}", "unit": "in Hg" },
+          { "label": "Convierte la diferencia a pies", "formula": "corrección = Δ × 1000", "unit": "ft" },
+          { "label": "Suma la elevación del aeropuerto", "formula": "PA = {elev} + corrección", "unit": "ft" }
+        ]
+      },
       "tiers": {
         "1": {
           "from": [29.92],
@@ -52,6 +83,21 @@
       "formula": "base AGL = (T − Td en °F) ÷ 4.4 × 1000",
       "unit": "ft",
       "spreads_f": { "4.4": 1000, "6.6": 1500, "8.8": 2000, "11": 2500, "13.2": 3000, "15.4": 3500, "17.6": 4000, "22": 5000 },
+      "steps": {
+        "1": [
+          { "label": "Calcula el spread (temperatura − punto de rocío)", "formula": "spread = {t} − {td}", "unit": "°F" },
+          { "label": "Divide entre 4.4 y multiplica por 1000", "formula": "base AGL = spread ÷ 4.4 × 1000", "unit": "ft AGL" }
+        ],
+        "2": [
+          { "label": "Calcula el spread (temperatura − punto de rocío)", "formula": "spread = {t} − {td}", "unit": "°F" },
+          { "label": "Divide entre 4.4 y multiplica por 1000", "formula": "base AGL = spread ÷ 4.4 × 1000", "unit": "ft AGL" }
+        ],
+        "3": [
+          { "label": "Calcula el spread (temperatura − punto de rocío)", "formula": "spread = {t} − {td}", "unit": "°F" },
+          { "label": "Base sobre el terreno", "formula": "base AGL = spread ÷ 4.4 × 1000", "unit": "ft AGL" },
+          { "label": "Suma la elevación del aeropuerto", "formula": "base MSL = AGL + {elev}", "unit": "ft MSL" }
+        ]
+      },
       "tiers": {
         "1": {
           "temps_f": [70, 75, 80, 85],
@@ -73,6 +119,25 @@
       "name": "Altitud de presión y densidad",
       "formula": "PA = elevación + (29.92 − ajuste) × 1000 · ISA = 15 − 2·(PA/1000) °C · DA = PA + 120 × (OAT − ISA)",
       "unit": "ft",
+      "steps": {
+        "1": [
+          { "label": "Diferencia con el estándar", "formula": "Δ = 29.92 − {set}", "unit": "in Hg" },
+          { "label": "Convierte la diferencia a pies", "formula": "corrección = Δ × 1000", "unit": "ft" },
+          { "label": "Suma la elevación", "formula": "PA = {elev} + corrección", "unit": "ft" }
+        ],
+        "2": [
+          { "label": "Temperatura ISA a esta altitud", "formula": "ISA = 15 − 2 × (PA ÷ 1000)", "unit": "°C" },
+          { "label": "Cuánto más caliente que ISA está el aire", "formula": "dif = OAT − ISA", "unit": "°C" },
+          { "label": "Altitud de densidad", "formula": "DA = PA + 120 × dif", "unit": "ft" }
+        ],
+        "3": [
+          { "label": "Diferencia con el estándar", "formula": "Δ = 29.92 − {set}", "unit": "in Hg" },
+          { "label": "Altitud de presión", "formula": "PA = {elev} + Δ × 1000", "unit": "ft" },
+          { "label": "Temperatura ISA a esa PA", "formula": "ISA = 15 − 2 × (PA ÷ 1000)", "unit": "°C" },
+          { "label": "Cuánto más caliente que ISA", "formula": "dif = OAT − ISA", "unit": "°C" },
+          { "label": "Altitud de densidad", "formula": "DA = PA + 120 × dif", "unit": "ft" }
+        ]
+      },
       "tiers": {
         "1": {
           "elevations": [1000, 2000, 3000, 4000, 5000],
@@ -97,6 +162,23 @@
       "name": "Peso y balance",
       "formula": "momento = peso × brazo · CG = Σmomento ÷ Σpeso · avgas = 6 lb/gal",
       "unit": "",
+      "steps": {
+        "1": [
+          { "label": "Multiplica peso por brazo", "formula": "momento = {w} × {arm}", "unit": "lb-in" }
+        ],
+        "2": [
+          { "label": "Convierte el combustible a libras", "formula": "lb = {gal} gal × 6", "unit": "lb" },
+          { "label": "Suma los momentos (peso × brazo de cada cosa)", "formula": "M = {ew}×{ea} + {pax}×{pa} + comb×{fa}", "unit": "lb-in" },
+          { "label": "Suma los pesos", "formula": "W = {ew} + {pax} + comb", "unit": "lb" },
+          { "label": "Divide momento total entre peso total", "formula": "CG = M ÷ W", "unit": "in" }
+        ],
+        "3": [
+          { "label": "Convierte el combustible quemado a libras", "formula": "lb = {gal} gal × 6", "unit": "lb" },
+          { "label": "Resta su momento al momento inicial", "formula": "M = {w}×{arm} − comb×{fa}", "unit": "lb-in" },
+          { "label": "Resta su peso al peso inicial", "formula": "W = {w} − comb", "unit": "lb" },
+          { "label": "Divide el nuevo momento entre el nuevo peso", "formula": "CG = M ÷ W", "unit": "in" }
+        ]
+      },
       "tiers": {
         "1": {
           "weights": [1200, 1400, 1500, 1600, 1800, 2000],
@@ -124,6 +206,24 @@
       "name": "Tiempo–velocidad–distancia–combustible",
       "formula": "t = d ÷ GS · GS = TAS ± viento · combustible = t × consumo + reserva",
       "unit": "",
+      "steps": {
+        "1": [
+          { "label": "Divide distancia entre velocidad", "formula": "t = {d} ÷ {gs}", "unit": "h" },
+          { "label": "Convierte a minutos", "formula": "min = horas × 60", "unit": "min" }
+        ],
+        "2": [
+          { "label": "Calcula la velocidad sobre el suelo", "formula": "GS = TAS ± viento ({winddir}: resta si es de frente)", "unit": "kt" },
+          { "label": "Divide distancia entre GS", "formula": "t = {d} ÷ GS", "unit": "h" },
+          { "label": "Convierte a minutos", "formula": "min = horas × 60", "unit": "min" }
+        ],
+        "3": [
+          { "label": "Calcula la velocidad sobre el suelo", "formula": "GS = TAS ± viento ({winddir})", "unit": "kt" },
+          { "label": "Tiempo de vuelo en horas", "formula": "t = {d} ÷ GS", "unit": "h" },
+          { "label": "Combustible de la ruta", "formula": "ruta = t × {burn}", "unit": "gal" },
+          { "label": "Combustible de reserva ({resmin} min)", "formula": "reserva = ({resmin} ÷ 60) × {burn}", "unit": "gal" },
+          { "label": "Suma ruta + reserva", "formula": "total = ruta + reserva", "unit": "gal" }
+        ]
+      },
       "tiers": {
         "1": {
           "gs": [90, 100, 120, 150],
