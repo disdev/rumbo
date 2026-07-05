@@ -3,6 +3,8 @@
 An 8-week, PHAK-first study program for the DGAC (Peru) private pilot written exam. One student, one mentor. Offline-first PWA on Cloudflare Pages. **SPEC.md is the source of truth** — read it before changing anything.
 
 **Deployed (2026-07-04):** https://rumbo-atk.pages.dev — student app; `/progreso/` — mentor dashboard.
+
+**Lecciones (2026-07-05):** the app now teaches every assigned PHAK chapter in-app (`data/lessons/chNN.json`, rendered by `src/js/lessons.js`), with guided step-by-step math, notebook prompts, checks, and badges. Content workflow: edit lesson JSON → `node scripts/validate-lessons.mjs` → `node scripts/sync-chapters.mjs` (regenerates `chapters.json` sections + the SW precache index) → bump `content_version` in `data/config.json` → deploy. Authoring rules: `docs/lesson-authoring.md`. Tests: `node --test tests/*.mjs`.
 Cloudflare account `dspeer@outlook.com` · D1 `rumbo` · R2 `rumbo-audio` · Access team `little-bar-6fd6.cloudflareaccess.com` (two apps: site-wide for student+mentor, mentor-only for `/progreso*` + `/api/progress`; 1-month sessions, email OTP). Only rows stamped with `STUDENT_EMAIL` count toward progress — the mentor can use the student app without polluting it.
 
 ## Layout
@@ -13,8 +15,11 @@ progreso/                 mentor dashboard (English)
 functions/api/            Pages Functions: result, log, progress, audio, feedback
 data/                     bank.json (901 questions), figures/, config, chapters,
                           math-templates, scenarios
-sw.js, manifest.webmanifest, icons/   PWA + offline precache (incl. all figures)
-schema.sql, wrangler.toml scripts/import-bank.mjs
+data/lessons/             chNN.json (16 authored chapter lessons) + diagrams/ + index.json
+sw.js, manifest.webmanifest, icons/   PWA + offline precache (figures + lessons + diagrams)
+schema.sql, wrangler.toml
+scripts/                  import-bank.mjs, validate-lessons.mjs, sync-chapters.mjs
+tests/                    node:test suites (mathgen steps, derive rules)
 ```
 
 ## Local development
