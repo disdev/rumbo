@@ -18,6 +18,7 @@
         "El MEF (cifra de elevación máxima) es lo más alto de cada cuadrante: terreno más obstáculos, redondeado hacia arriba, en cientos de pies MSL.",
         "Volar por encima del MEF del cuadrante te libra de todo lo que hay abajo; en ruta se toma el MEF más alto de los cuadrantes que se cruzan.",
         "La leyenda de tintes del borde de la carta traduce cada color a una banda de elevación (p. ej. tostado claro = 2 000–2 500 ft MSL).",
+        "La carta de área terminal (TAC) tiene escala 1:250 000 — el doble de detalle — y se publica alrededor de los terminales con Clase B.",
         "Las cartas caducan: siempre se usa la edición vigente porque frecuencias y obstáculos cambian."
       ],
       "blocks": [
@@ -45,6 +46,10 @@
         {
           "type": "text",
           "md": "El color del terreno también es dato de examen: en el borde de la carta hay una **leyenda de tintes** (*hypsometric tints*) que traduce cada tono a una banda de elevación — por ejemplo, un tostado claro puede significar 'terreno entre 2 000 y 2 500 ft MSL'. El banco te muestra un área de color y pregunta entre qué elevaciones varía el terreno: la respuesta está en esa leyenda, no adivinando."
+        },
+        {
+          "type": "text",
+          "md": "¿Y si vuelas cerca de un aeropuerto grande, con espacio Clase B? Ahí existe una carta con más zoom: la **carta de área terminal** (*VFR Terminal Area Chart, TAC*), escala **1:250 000** — el doble de detalle que la seccional. Misma simbología, menos territorio: se publica solo alrededor de los grandes terminales. Regla simple: para el viaje, la seccional; para meterte al enjambre de un aeropuerto grande, la TAC."
         },
         {
           "type": "callout",
@@ -104,6 +109,18 @@
           ],
           "answer": 0,
           "why": "La carta muestra mucho más que terreno; con edición vencida vuelas con información falsa."
+        },
+        {
+          "type": "check",
+          "id": "16-1-c5",
+          "q": "Vas a entrar a la zona de un aeropuerto grande con espacio Clase B. ¿Qué carta te da MÁS detalle?",
+          "options": [
+            "La carta de área terminal (TAC), escala 1:250 000.",
+            "La seccional, escala 1:500 000 — es la de mayor detalle que existe.",
+            "Cualquiera de las dos: tienen la misma escala."
+          ],
+          "answer": 0,
+          "why": "La TAC dobla el detalle de la seccional (1:250 000) y se publica alrededor de los terminales grandes."
         }
       ]
     },
@@ -113,6 +130,7 @@
       "key_points": [
         "Aeropuertos AZULES tienen torre de control (Clases B, C, D, E con torre); MAGENTA no tienen torre.",
         "Las marcas alrededor del círculo del aeropuerto indican que hay combustible disponible.",
+        "La casilla de datos del aeropuerto se lee: frecuencia CT, elevación en ft MSL, L = luces, largo de pista en cientos de pies.",
         "En un obstáculo, el número en negrita es la cima en pies MSL y el número entre paréntesis es la altura AGL.",
         "Altitud mínima para librar un obstáculo por 500 ft = cima MSL + 500; sobre área congestionada, el más alto + 1 000 ft.",
         "Los cuadros de PRECAUCIÓN avisan de peligros como globos cautivos en cable, con la altura en pies MSL.",
@@ -142,9 +160,13 @@
           "md": "¿Y si el obstáculo está sobre una **zona congestionada** (ciudad, urbanización)? Ahí la regla de altitudes mínimas exige **1 000 ft sobre el obstáculo más alto**. Ejemplo del banco: torres de TV con cima a 2 549 ft MSL al sur de una ciudad → 2 549 + 1 000 = **3 549 ft MSL** mínimo. Un cuadro de **PRECAUCIÓN** en la carta avisa de peligros especiales, como un globo cautivo en cable — su altura también viene en **MSL**."
         },
         {
+          "type": "text",
+          "md": "Junto a cada aeropuerto hay una **casilla de datos** que se lee como ficha de jugador: nombre, frecuencia de torre (**CT**), **elevación del campo** en ft MSL, una **L** si la pista tiene luces, y el **largo de la pista en cientos de pies**. Ejemplo: «19 L 55 122.7» = elevación **19 ft**, con luces, pista de **5 500 ft**, frecuencia 122.7. La trampa del banco: confundir la elevación (19) con el largo de pista (55)."
+        },
+        {
           "type": "callout",
           "style": "examen",
-          "md": "Cae tal cual: «los aeropuertos con torre subyacentes a Clase B, C, D y E se muestran en **azul**», la altura MSL de un obstáculo (usa el número en **negrita**), qué significa la **bandera** (checkpoint visual), qué aeropuertos tienen **combustible**, y las sumas «cima + 500» (obstáculo aislado) y «cima + 1 000» (área congestionada)."
+          "md": "Cae tal cual: «los aeropuertos con torre subyacentes a Clase B, C, D y E se muestran en **azul**», la altura MSL de un obstáculo (usa el número en **negrita**), qué significa la **bandera** (checkpoint visual), qué aeropuertos tienen **combustible**, la **elevación** del aeropuerto en su casilla de datos, y las sumas «cima + 500» (obstáculo aislado) y «cima + 1 000» (área congestionada)."
         },
         {
           "type": "notebook",
@@ -198,6 +220,14 @@
           ],
           "answer": 0,
           "why": "Con torre = azul, y aplica a los que están bajo Clase B, C, D y E — redacción literal del banco."
+        },
+        {
+          "type": "check",
+          "id": "16-2-c5",
+          "q": "La casilla de datos de un aeropuerto en la seccional dice «19 L 55 122.7». ¿Cuál es la elevación del campo?",
+          "options": ["19 ft MSL.", "55 ft MSL.", "1 900 ft MSL."],
+          "answer": 0,
+          "why": "El primer número es la elevación (19 ft); el 55 es el largo de pista en cientos de pies (5 500 ft) — la trampa clásica del banco."
         }
       ]
     },
@@ -208,6 +238,7 @@
         "La latitud son los paralelos: miden 0° a 90° hacia el Norte o el Sur desde el Ecuador.",
         "La longitud son los meridianos: miden 0° a 180° al Este u Oeste desde Greenwich, y cruzan el Ecuador en ángulo recto.",
         "Cada grado tiene 60 minutos; 1 minuto de latitud = 1 milla náutica.",
+        "1 NM = 1.852 km ≈ 1.15 millas terrestres (SM); un nudo es 1 NM por hora.",
         "Perú está en latitud SUR y longitud OESTE (Lima ≈ 12°S 77°W).",
         "Para ubicar un punto en la carta: primero latitud (arriba/abajo), luego longitud (izquierda/derecha).",
         "La aviación usa una sola hora mundial: UTC u hora Zulu (Z); en Perú, hora local + 5 = hora Z.",
@@ -221,6 +252,10 @@
         {
           "type": "text",
           "md": "Cada grado se divide en **60 minutos** ('). Dato de oro: **1 minuto de latitud = 1 milla náutica (NM)** — por eso los pilotos miden distancias en NM. Perú vive en latitud **Sur** y longitud **Oeste**: Lima está cerca de **12°S 77°W**. En la carta, los números de la cuadrícula te dejan ubicar cualquier aeropuerto en segundos."
+        },
+        {
+          "type": "text",
+          "md": "Ojo con las unidades: la **milla náutica (NM)** mide **1.852 km**, más larga que la **milla terrestre** (*statute mile, SM*) de 1.609 km — la de los carros. La conversión: **1 NM ≈ 1.15 SM**. Y un **nudo (kt)** es simplemente 1 NM por hora. Cuenta rápida: 60 NM ≈ 111 km ≈ 69 SM. Cuando el banco mezcla millas, pregúntate SIEMPRE cuáles son."
         },
         {
           "type": "text",
@@ -280,6 +315,14 @@
           "options": ["1130.", "1030.", "0930."],
           "answer": 1,
           "why": "0930 + 2 h = 1130 en el huso de salida; el destino va 1 hora atrás → 1030 local."
+        },
+        {
+          "type": "check",
+          "id": "16-3-c5",
+          "q": "Un tramo mide 60 NM. ¿Aproximadamente cuántos kilómetros son?",
+          "options": ["111 km.", "60 km.", "97 km."],
+          "answer": 0,
+          "why": "1 NM = 1.852 km → 60 × 1.852 ≈ 111 km (y en millas terrestres, unas 69 SM)."
         }
       ]
     },
@@ -634,6 +677,8 @@
         "Para cada tramo se anota distancia, rumbo, GS estimada, tiempo y combustible.",
         "En vuelo se anota la hora real en cada checkpoint y se compara con la planeada.",
         "Si llegas tarde a los checkpoints, tu GS real es menor: recalcula tiempo y combustible al destino.",
+        "El plan de vuelo VFR le dice a búsqueda y rescate dónde buscarte — y hay que CERRARLO al aterrizar.",
+        "El Suplemento de Cartas (Chart Supplement) es el directorio oficial con los datos completos de cada aeródromo.",
         "La reserva legal VFR es 30 minutos de día (45 de noche) ADEMÁS del combustible del viaje."
       ],
       "blocks": [
@@ -653,6 +698,10 @@
         {
           "type": "text",
           "md": "Un buen checkpoint se elige en tierra, no en el aire. Busca cosas **únicas y lineales**: el cruce de un río con la carretera, una mina, la punta de una laguna. Evita lo repetible: 'un cerro' (hay veinte iguales), 'un pueblito' (todos se parecen desde arriba). Tramos de 10–20 NM entre checkpoints funcionan bien a velocidades de avioneta: ni tan cerca que no descanses, ni tan lejos que un error crezca."
+        },
+        {
+          "type": "text",
+          "md": "Al log súmale dos aliados. El **plan de vuelo VFR** (*flight plan*): un formulario con tu ruta, velocidad, autonomía y personas a bordo que presentas al servicio de tránsito antes de salir. No es un trámite tonto: si no llegas, **búsqueda y rescate sabe dónde buscarte**. Eso sí — al aterrizar hay que **cerrarlo**: si no lo cierras (~30 minutos tras tu hora estimada), te empiezan a buscar de verdad. Y el **Suplemento de Cartas** (*Chart Supplement*): el directorio oficial con TODOS los datos de cada aeródromo."
         },
         {
           "type": "callout",
@@ -707,6 +756,18 @@
           ],
           "answer": 1,
           "why": "La reserva es intocable en la planificación: si el cálculo ya no cierra, se reabastece o se divierte — en el aire, temprano."
+        },
+        {
+          "type": "check",
+          "id": "16-8-c5",
+          "q": "Aterrizas en tu destino tras un vuelo con plan de vuelo VFR activado. ¿Qué te falta hacer?",
+          "options": [
+            "Cerrar el plan de vuelo — si no lo haces, se activa la búsqueda y rescate.",
+            "Nada: el plan se cierra solo cuando el radar detecta tu aterrizaje.",
+            "Presentar el plan de vuelo del regreso, que cancela automáticamente el anterior."
+          ],
+          "answer": 0,
+          "why": "El plan no se cierra solo: si no avisas (~30 min tras tu ETA), empiezan a buscarte de verdad."
         }
       ]
     },
@@ -808,6 +869,7 @@
         "Con el curso puesto adelante, 'vuela hacia la aguja' para reinterceptar; cada punto son ~2°.",
         "TO/HACIA: el curso seleccionado te acerca a la estación; FROM/DESDE: te aleja.",
         "Truco de posición: con indicación TO estás del lado del RECÍPROCO del OBS; con FROM, del lado del OBS.",
+        "Para volar directo a la estación: gira el OBS hasta centrar la aguja con TO — ese curso te lleva al VOR.",
         "Chequeo con VOT: CDI centrado con 0° FROM o 180° TO, sin importar tu posición; error máx ±4°.",
         "Tolerancias: VOT y punto en tierra ±4°, chequeo en vuelo ±6°, entre dos VOR del avión 4°."
       ],
@@ -828,6 +890,10 @@
         {
           "type": "text",
           "md": "El banco tiene una familia entera de «¿dónde está el avión?» con carátulas de VOR. El truco que las resuelve: con **TO**, estás del lado del **recíproco** del OBS respecto a la estación; con **FROM**, del lado del **OBS**. Ejemplo real: OBS 253° con TO → recíproco 073° → estás al **este-noreste** de la estación. El CDI afina de qué lado de esa línea: aguja a la derecha = el curso pasa a tu derecha."
+        },
+        {
+          "type": "text",
+          "md": "¿Y para volar DIRECTO a la estación? Sin trigonometría: **gira el OBS hasta que la aguja se centre con indicación TO** — el curso que queda seleccionado es tu curso magnético hacia el VOR. Mantén ese rumbo (corrigiendo el viento) con la aguja centrada, y llegas. Las preguntas del banco «¿qué curso pones en el OBS para ir del aeropuerto X al VOR?» se resuelven midiendo en la carta el curso hacia la estación — y la **rosa del VOR** ya te lo da en magnético."
         },
         {
           "type": "callout",
@@ -887,6 +953,18 @@
           "options": ["Unos 4°.", "Unos 2°.", "Unos 10°."],
           "answer": 0,
           "why": "Cada punto de la escala ≈ 2°: dos puntos son ~4° fuera del curso."
+        },
+        {
+          "type": "check",
+          "id": "16-10-c5",
+          "q": "Quieres volar directo HACIA un VOR cercano. ¿Cómo obtienes el curso en tu receptor?",
+          "options": [
+            "Giras el OBS hasta centrar la aguja con indicación TO: ese curso te lleva a la estación.",
+            "Giras el OBS hasta centrar la aguja con indicación FROM: ese curso te lleva a la estación.",
+            "Pones tu rumbo actual en el OBS y esperas a que la aguja se centre sola."
+          ],
+          "answer": 0,
+          "why": "Centrada con TO, el OBS muestra el curso magnético HACIA la estación; centrada con FROM te muestra el radial que te aleja."
         }
       ]
     },

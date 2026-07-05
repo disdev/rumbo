@@ -30,7 +30,8 @@
         "La tropopausa separa la tropósfera de la estratósfera.",
         "Todo proceso físico del clima va acompañado o es resultado de un intercambio de calor.",
         "El vapor de agua, aunque escaso, es el ingrediente clave de todo el clima.",
-        "El vapor transporta energía: al condensarse libera calor y al evaporarse lo absorbe."
+        "El vapor transporta energía: al condensarse libera calor y al evaporarse lo absorbe.",
+        "El aire caliente puede contener más vapor de agua que el aire frío."
       ],
       "blocks": [
         {
@@ -43,7 +44,7 @@
         },
         {
           "type": "text",
-          "md": "¿Y por qué tanto alboroto con el vapor de agua? Porque es el único ingrediente que cambia de estado ahí arriba: se evapora, se condensa, se congela. Cada cambio de estado mueve **calor** — condensarse lo libera, evaporarse lo absorbe. El vapor es el camión repartidor de energía de la atmósfera: donde hay vapor moviéndose, hay calor moviéndose. Y esa es la idea madre: **clima = calor moviéndose**."
+          "md": "¿Y por qué tanto alboroto con el vapor de agua? Porque es el único ingrediente que cambia de estado ahí arriba: se evapora, se condensa, se congela. Cada cambio de estado mueve **calor** — condensarse lo libera, evaporarse lo absorbe. El vapor es el camión repartidor de energía de la atmósfera: donde hay vapor moviéndose, hay calor moviéndose. Y esa es la idea madre: **clima = calor moviéndose**. Un dato más: **el aire caliente puede cargar más vapor que el aire frío**."
         },
         {
           "type": "callout",
@@ -102,6 +103,18 @@
           ],
           "answer": 0,
           "why": "Cada condensación o evaporación mueve calor — y el clima es, en el fondo, calor moviéndose."
+        },
+        {
+          "type": "check",
+          "id": "12-1-c5",
+          "q": "La cantidad de vapor de agua que puede contener el aire depende de:",
+          "options": [
+            "La temperatura del aire.",
+            "La presión atmosférica.",
+            "La estabilidad de la masa de aire."
+          ],
+          "answer": 0,
+          "why": "El aire caliente carga más vapor que el frío — por eso enfriar el aire lo acerca a la saturación."
         }
       ]
     },
@@ -195,7 +208,8 @@
         "En una baja el aire converge y sube, formando nubes y mal tiempo.",
         "En el hemisferio norte la alta gira horario y la baja antihorario.",
         "En el Perú (hemisferio sur) el giro se invierte, pero el buen o mal tiempo asociado no cambia.",
-        "Presión bajando en los reportes = se acerca una baja = el tiempo empeora."
+        "Presión bajando en los reportes = se acerca una baja = el tiempo empeora.",
+        "La presión estándar al nivel del mar es 29.92 inHg (1013.2 hPa) y cae ~1 inHg por cada 1,000 pies."
       ],
       "blocks": [
         {
@@ -214,6 +228,10 @@
         {
           "type": "text",
           "md": "Esto te sirve para leer tendencias: si en los reportes la presión viene **bajando**, se acerca una baja — espera que el techo baje y el tiempo se ponga feo. Si viene **subiendo**, una alta toma el control y el panorama mejora. Un vistazo a cómo cambió el QNH en las últimas horas es un pronóstico gratis."
+        },
+        {
+          "type": "text",
+          "md": "¿Y cómo se mide la presión? Con el **barómetro** (de mercurio o aneroide, el mismo corazón de tu altímetro). El valor estándar al nivel del mar: **29.92 inHg = 1013.2 hPa**. Y la regla de dedo: la presión **cae ~1 inHg por cada 1,000 pies** que subes. Ejemplo: a 5,000 ft esperas alrededor de 29.92 − 5 ≈ 25 inHg. Las estaciones convierten su presión local al nivel del mar para poder compararse — de ahí salen las isobaras del mapa."
         },
         {
           "type": "notebook",
@@ -267,6 +285,18 @@
           ],
           "answer": 0,
           "why": "En el HN la baja gira antihorario. Recuerda: en el Perú (hemisferio sur) el giro real es el inverso, pero el examen viene en 'modo norte'."
+        },
+        {
+          "type": "check",
+          "id": "12-3-c5",
+          "q": "La presión atmosférica estándar al nivel del mar es:",
+          "options": [
+            "29.92 inHg (1013.2 hPa).",
+            "1013.2 inHg (29.92 hPa).",
+            "25.00 inHg (843.2 hPa)."
+          ],
+          "answer": 0,
+          "why": "Par de memoria: 29.92 inHg = 1013.2 hPa — y al subir, la presión cae ~1 inHg por cada 1,000 pies."
         }
       ]
     },
@@ -587,6 +617,7 @@
       "key_points": [
         "El punto de rocío es la temperatura a la que el aire debe enfriarse para saturarse.",
         "El aire caliente puede contener más vapor de agua que el aire frío.",
+        "La humedad relativa es el % de vapor respecto al máximo posible: al 100% (T = Td) el aire se satura, y el vapor se condensa sobre núcleos de condensación (polvo, sal, humo).",
         "La humedad entra al aire por evaporación y sublimación.",
         "Nube, niebla o rocío se forman cuando el vapor de agua se condensa (T = Td).",
         "Base de los cúmulos ≈ (T − Td) ÷ 4.4 (°F) o ÷ 2.5 (°C), × 1,000 pies AGL.",
@@ -601,6 +632,35 @@
         {
           "type": "text",
           "md": "El vapor entra al aire por **evaporación** (desde líquido) y **sublimación** (directo desde el hielo). Y ojo con esta idea fina del banco: la nube, la niebla o el rocío se forman cuando **el vapor se condensa** — no basta con que haya vapor presente. Cuando la temperatura y el punto de rocío se igualan (**T = Td**), el aire se satura y aparece la nube. Si la diferencia T−Td es pequeña y sigue bajando: espera **niebla o nubes bajas**."
+        },
+        {
+          "type": "text",
+          "md": "Dos términos finos. La **humedad relativa** (*relative humidity*) es el porcentaje de vapor que el aire carga respecto al máximo que puede cargar a esa temperatura: al **100% está saturado** (T = Td). Y el vapor no se condensa en el aire limpio porque sí: necesita **núcleos de condensación** — polvillo, sal marina, humo — donde agarrarse para formar gotitas. Por eso el aire costero, cargado de sal, fabrica niebla con tanta facilidad."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Término",
+            "Qué es"
+          ],
+          "rows": [
+            [
+              "Humedad relativa (relative humidity)",
+              "% de vapor respecto al máximo posible a esa temperatura"
+            ],
+            [
+              "Saturación",
+              "Aire al 100% de humedad relativa (T = Td)"
+            ],
+            [
+              "Punto de rocío / Td (dew point)",
+              "Temperatura a la que el aire se satura al enfriarse"
+            ],
+            [
+              "Núcleos de condensación",
+              "Partículas (polvo, sal, humo) donde el vapor se condensa"
+            ]
+          ]
         },
         {
           "type": "text",
@@ -696,7 +756,8 @@
         "Altas: prefijo cirro- (cristales de hielo); medias: prefijo alto-; bajas: stratus y sus parientes.",
         "Nimbus significa nube de lluvia.",
         "Los estratos indican aire estable: vuelo suave pero mala visibilidad — como la garúa limeña.",
-        "Los cúmulos elevados avisan turbulencia convectiva; el cumulonimbus tiene la mayor turbulencia de todas."
+        "Los cúmulos elevados avisan turbulencia convectiva; el cumulonimbus tiene la mayor turbulencia de todas.",
+        "El techo (ceiling) es la capa de nubes más baja reportada como broken u overcast, o la visibilidad vertical en cielo oscurecido."
       ],
       "blocks": [
         {
@@ -752,6 +813,10 @@
           "caption": "Las cuatro familias por altura: bajas, medias, altas y de desarrollo vertical — el cumulonimbus las atraviesa todas."
         },
         {
+          "type": "text",
+          "md": "Dos palabras que oirás en cada reporte. El **techo** (*ceiling*) es la altura, sobre el suelo, de la capa de nubes más baja reportada como **quebrada (broken) o cubierta (overcast)** — o la visibilidad vertical dentro de un cielo oscurecido; las capas *few* o *scattered* NO hacen techo. La **visibilidad** es la mayor distancia a la que puedes ver e identificar objetos destacados. Techo y visibilidad, juntos, deciden si tu vuelo VFR es legal y sensato."
+        },
+        {
           "type": "notebook",
           "id": "12-8-n1",
           "prompt": "Dibuja una regla vertical de 0 a 40,000 ft y ubica las 4 familias con un ejemplo cada una: stratus abajo, altocumulus al medio, cirrus arriba y un cumulonimbus atravesando todo. Marca las líneas de 6,500 y 20,000 ft."
@@ -803,6 +868,18 @@
           ],
           "answer": 0,
           "why": "Un cúmulo que crece en torre es convección fuerte hecha nube: espera sacudones debajo y adentro."
+        },
+        {
+          "type": "check",
+          "id": "12-8-c5",
+          "q": "Para la aviación, el 'techo' (ceiling) se define como la altura de:",
+          "options": [
+            "La capa de nubes más baja reportada como quebrada (broken) o cubierta (overcast).",
+            "La capa de nubes más baja reportada como escasa (few) o dispersa (scattered).",
+            "La nube más alta visible desde la superficie."
+          ],
+          "answer": 0,
+          "why": "Techo = la capa broken u overcast más baja (o la visibilidad vertical en cielo oscurecido); few y scattered no cuentan."
         }
       ]
     },
@@ -815,7 +892,8 @@
         "La niebla de ladera (upslope) necesita viento que empuje aire húmedo y estable cuesta arriba.",
         "Advección y ladera dependen del viento para existir; la de radiación necesita calma.",
         "La niebla de vapor (aire frío sobre agua tibia) trae turbulencia de bajo nivel y engelamiento.",
-        "Gránulos de hielo en superficie = lluvia congelante a mayor altitud (hay una inversión)."
+        "Gránulos de hielo en superficie = lluvia congelante a mayor altitud (hay una inversión).",
+        "La virga es precipitación que se evapora antes de llegar al suelo; el granizo solo nace de cumulonimbus."
       ],
       "blocks": [
         {
@@ -834,6 +912,43 @@
           "type": "callout",
           "style": "examen",
           "md": "Del banco: ¿qué nieblas **dependen del viento** para existir? → **advección y ladera (upslope)**. ¿En cuál hay turbulencia baja y engelamiento peligroso? → **la de vapor**. ¿Gránulos de hielo en superficie? → **lluvia congelante a mayor altitud** (inversión)."
+        },
+        {
+          "type": "text",
+          "md": "Y ya que hablamos de lo que cae del cielo: **precipitación** es cualquier agua — líquida o congelada — que cae de una nube. Cada tipo te cuenta algo del aire que atravesó:"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Precipitación",
+            "Qué te avisa"
+          ],
+          "rows": [
+            [
+              "Llovizna (drizzle)",
+              "Gotas finas de estratos: aire estable"
+            ],
+            [
+              "Lluvia congelante (freezing rain)",
+              "Se congela al tocar: el peor engelamiento"
+            ],
+            [
+              "Gránulos de hielo (ice pellets)",
+              "Lluvia congelante más arriba: hay inversión"
+            ],
+            [
+              "Nieve (snow)",
+              "Cristales de hielo que caen sin derretirse"
+            ],
+            [
+              "Granizo (hail)",
+              "Piedras de hielo: solo nacen en un Cb"
+            ],
+            [
+              "Virga",
+              "Se evapora antes de llegar al suelo; abajo puede haber descendentes"
+            ]
+          ]
         },
         {
           "type": "notebook",
@@ -1013,6 +1128,18 @@
           ],
           "answer": 0,
           "why": "La rampa del frente cálido produce la secuencia cirrus → altostratus → nimbostratus con lluvia continua por delante."
+        },
+        {
+          "type": "check",
+          "id": "12-10-c5",
+          "q": "Ves cortinas de lluvia que cuelgan de una nube pero se evaporan antes de llegar al suelo. Eso se llama:",
+          "options": [
+            "Virga.",
+            "Llovizna congelante.",
+            "Nube rollo (roll cloud)."
+          ],
+          "answer": 0,
+          "why": "La virga se evapora en el aire seco bajo la nube; esa evaporación enfría el aire y puede generar descendentes fuertes."
         }
       ]
     },
@@ -1055,7 +1182,7 @@
         {
           "type": "callout",
           "style": "clave",
-          "md": "Regla de oro: esquiva las tormentas severas por **20 millas náuticas** como mínimo. Y nunca vueles por debajo de un Cb 'porque abajo se ve clarito': justo ahí viven la cizalladura y el microburst."
+          "md": "Regla de oro: esquiva las tormentas severas por **20 millas náuticas** como mínimo. Y nunca vueles por debajo de un Cb 'porque abajo se ve clarito': justo ahí viven la cizalladura y el microburst. Las más severas pueden hasta parir **tornados** (la 'nube de embudo' que ves como distractor en el banco: eso es un tornado que aún no toca tierra, no una lenticular)."
         },
         {
           "type": "notebook",

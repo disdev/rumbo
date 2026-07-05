@@ -466,7 +466,7 @@
         },
         {
           "type": "text",
-          "md": "Para ayudar a igualar la presión del oído usas la **maniobra de Valsalva**: tapa tu nariz, cierra la boca y sopla **suave**. También sirve bostezar, tragar o mascar chicle. ¿El problema mayor? Volar **resfriado o congestionado**: la mucosidad tapa los conductos y el aire no puede igualarse, causando dolor fuerte o hasta daño."
+          "md": "Para ayudar a igualar la presión del oído usas la **maniobra de Valsalva**: tapa tu nariz, cierra la boca y sopla **suave**. También sirve bostezar, tragar o mascar chicle. ¿El problema mayor? Volar **resfriado o congestionado**: la mucosidad tapa los conductos y el aire no puede igualarse, causando dolor fuerte o hasta daño. Ese bloqueo doloroso del oído se llama **aerotitis** (u otitis barotraumática); el de los senos, **aerosinusitis**."
         },
         {
           "type": "table",
@@ -744,6 +744,19 @@
           "md": "El banco pregunta: adaptación nocturna = **evitar luces blancas brillantes 30 min antes**; escaneo diurno = **sectores de máx 10°, 1 seg cada uno**; escaneo nocturno = **visión periférica/descentrada, mirando al costado**. La **bruma** hace ver el tráfico más lejano."
         },
         {
+          "type": "text",
+          "md": "¿Sabes cuándo chocan más los aviones en el aire? En **días claros** y **cerca de los aeropuertos**, no en el mal tiempo: hay más tráfico y todos se confían. Por eso el escaneo es tu seguro de vida. Y hay una trampa: un avión en **curso de colisión** contigo se queda **quieto** en tu parabrisas —no se mueve a los lados—, solo crece. Si algo no se mueve pero se agranda, viene hacia ti."
+        },
+        {
+          "type": "text",
+          "md": "Otra trampa de los ojos: la **miopía de campo vacío**. Cuando no hay nada en qué enfocar —cielo azul liso, bruma, noche—, el ojo se relaja y enfoca a solo unos metros por delante, y dejas de ver el tráfico lejano. El truco: enfoca de vez en cuando algo lejano y real (una nube, la punta del ala) para 'resetear' el ojo antes de seguir escaneando."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**No se mueve pero crece = viene hacia ti.** Un avión en curso de colisión no se desplaza en tu parabrisas; se queda en el mismo punto y se agranda. Escanea por sectores para cazarlo a tiempo."
+        },
+        {
           "type": "notebook",
           "id": "17-9-n1",
           "prompt": "Escribe la diferencia entre conos y bastones (para qué sirve cada uno). Luego anota las dos reglas de escaneo: la de DÍA (sectores y tiempo) y la de NOCHE (cómo mirar el objeto)."
@@ -795,6 +808,18 @@
           ],
           "answer": 1,
           "why": "La bruma engaña haciendo ver los objetos más lejanos: puedes creer que un avión está lejos cuando está cerca."
+        },
+        {
+          "type": "check",
+          "id": "17-9-c5",
+          "q": "¿Cómo puedes saber que otro avión está en curso de colisión contigo?",
+          "options": [
+            "Se verá cada vez más grande y más cercano muy rápido desde lejos.",
+            "No habrá movimiento relativo aparente entre tu avión y el otro (se queda en el mismo punto).",
+            "La nariz de cada avión apuntará al mismo punto en el espacio."
+          ],
+          "answer": 1,
+          "why": "Si el otro avión no se desplaza en tu parabrisas pero crece, van al mismo punto: eso es curso de colisión."
         }
       ]
     },

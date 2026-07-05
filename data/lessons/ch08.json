@@ -178,7 +178,8 @@
         "El altímetro mide presión estática con cápsulas aneroides selladas.",
         "Las cápsulas se expanden al subir porque la presión exterior disminuye.",
         "Aguja larga = centenas de pies; corta y gruesa = miles; fina con triángulo = decenas de miles.",
-        "Se lee de la aguja más lenta a la más rápida: decenas de miles, miles, centenas."
+        "Se lee de la aguja más lenta a la más rápida: decenas de miles, miles, centenas.",
+        "En crucero VFR, rumbo magnético 000–179 usa miles impares + 500; 180–359, miles pares + 500."
       ],
       "blocks": [
         {
@@ -208,6 +209,10 @@
           "type": "callout",
           "style": "examen",
           "md": "En el examen, la «Figura 3» muestra tres altímetros y te pide leerlos — incluso cuál marca **más de 10,000 pies**. Si dominas las tres agujas, son puntos gratis."
+        },
+        {
+          "type": "text",
+          "md": "Bonus que paga doble: tu altitud de crucero VFR se elige por el **rumbo magnético**. De **000° a 179°** vuelas miles **impares** + 500 (3,500; 5,500; 9,500…); de **180° a 359°**, miles **pares** + 500 (4,500; 6,500…). Ejemplo trabajado: un altímetro marca **9,500 ft** — impar + 500 — así que es altitud de crucero para rumbos del este, como **080° magnético**. La «Figura 82» del examen combina lectura de altímetro con esta regla."
         },
         {
           "type": "notebook",
@@ -245,6 +250,14 @@
           "options": ["se expanden cuando la presión estática disminuye al subir.", "reciben presión de impacto del tubo pitot.", "giran por rigidez giroscópica."],
           "answer": 0,
           "why": "Son cápsulas selladas que reaccionan a la presión estática; el altímetro no usa el pitot."
+        },
+        {
+          "type": "check",
+          "id": "8-3-c5",
+          "q": "En crucero VFR, un altímetro marca 9,500 pies. ¿Para qué rumbos es correcta esa altitud?",
+          "options": ["Rumbos magnéticos 000–179°, por ejemplo 080°.", "Rumbos magnéticos 180–359°.", "Cualquier rumbo, siempre que el ajuste esté puesto."],
+          "answer": 0,
+          "why": "Impar + 500 corresponde a rumbos magnéticos 000–179; par + 500, a 180–359."
         }
       ]
     },
@@ -417,7 +430,8 @@
         "El velocímetro compara la presión de impacto del pitot contra la presión estática.",
         "IAS es lo que lees; CAS corrige errores de instalación y posición.",
         "TAS corrige por altitud y temperatura; crece ~2% por cada 1,000 ft de altura.",
-        "GS es la TAS más o menos el efecto del viento."
+        "GS es la TAS más o menos el efecto del viento.",
+        "El termómetro de aire exterior (OAT) da la temperatura para calcular TAS y altitud de densidad."
       ],
       "blocks": [
         {
@@ -441,6 +455,10 @@
         {
           "type": "text",
           "md": "Números rápidos: a 10,000 ft con IAS de 100 kt, la TAS ≈ 100 + 2% × 10 = **120 kt**. Si llevas 20 kt de viento en contra, tu GS = 120 − 20 = **100 kt**. Fíjate: la aguja decía 100 y sobre el mapa avanzas a 100 — pero por dos correcciones que se cancelaron de casualidad."
+        },
+        {
+          "type": "text",
+          "md": "Un ayudante olvidado: el **termómetro de aire exterior** (outside air temperature, OAT), esa sonda que asoma por el parabrisas o el fuselaje. Te da la temperatura del aire en °C — el dato que necesitas para calcular la **TAS** exacta y la **altitud de densidad**, y para oler el riesgo de **hielo** cuando vuelas cerca de 0 °C con humedad visible."
         },
         {
           "type": "callout",
@@ -483,6 +501,14 @@
           "options": ["La presión de impacto del pitot contra la presión estática.", "La presión estática contra la presión de la cabina.", "La presión de impacto contra la succión de la bomba de vacío."],
           "answer": 0,
           "why": "La diferencia entre impacto y estática es la presión dinámica: tu velocidad respecto al aire."
+        },
+        {
+          "type": "check",
+          "id": "8-6-c5",
+          "q": "¿Para qué usas la lectura del termómetro de aire exterior (OAT)?",
+          "options": ["Para calcular TAS y altitud de densidad, y anticipar formación de hielo.", "Para corregir la desviación de la brújula magnética.", "Para ajustar la ventanita de Kollsman del altímetro."],
+          "answer": 0,
+          "why": "La temperatura exterior alimenta los cálculos de TAS y densidad, y avisa del riesgo de engelamiento."
         }
       ]
     },
@@ -587,7 +613,8 @@
         "La cifra estable tarda de 6 a 9 segundos en aparecer.",
         "La tendencia (si subes o bajas) se muestra de inmediato.",
         "El variómetro usa únicamente la fuente estática.",
-        "En vuelo nivelado el variómetro marca cero; perseguir su aguja produce oscilaciones."
+        "En vuelo nivelado el variómetro marca cero; perseguir su aguja produce oscilaciones.",
+        "El variómetro instantáneo (IVSI) añade acelerómetros que eliminan casi todo el retraso."
       ],
       "blocks": [
         {
@@ -601,6 +628,10 @@
         {
           "type": "text",
           "md": "¿Cómo lo usas de verdad? En crucero, tu chequeo de nivelado es: variómetro en **cero** y altímetro clavado. Para descender a 500 fpm, primero fija la actitud, espera esos segundos y recién ajusta con la cifra. Perseguir la aguja del VSI a cada segundo te hace ir en sube y baja — como corregir la bici mirando la rueda en vez del camino."
+        },
+        {
+          "type": "text",
+          "md": "Algunos aviones traen el **variómetro instantáneo** (IVSI, instantaneous vertical speed indicator): añade **acelerómetros** que detectan el cambio de altitud al instante y eliminan casi todo el retraso. Si tu panel dice IVSI, la cifra ya no te hace esperar — pero sigue viviendo de la fuente estática, igual que su hermano lento."
         },
         {
           "type": "callout",
@@ -635,6 +666,14 @@
           "options": ["6 a 9 segundos.", "Alrededor de 1 minuto.", "Nada: es instantánea."],
           "answer": 0,
           "why": "La fuga calibrada necesita 6–9 s para estabilizar la cifra; solo la tendencia es inmediata."
+        },
+        {
+          "type": "check",
+          "id": "8-8-c4",
+          "q": "¿Qué ventaja tiene el variómetro instantáneo (IVSI) sobre el VSI común?",
+          "options": ["Usa acelerómetros que eliminan casi todo el retraso de la indicación.", "No necesita la fuente estática para funcionar.", "Indica también el ángulo de banqueo del avión."],
+          "answer": 0,
+          "why": "El IVSI complementa la fuga calibrada con acelerómetros; sigue siendo un instrumento de presión estática."
         }
       ]
     },
@@ -647,7 +686,8 @@
         "El indicador de actitud muestra cabeceo y alabeo a la vez; el avioncito se alinea con el horizonte.",
         "La dirección de banqueo se determina por la relación del avioncito en miniatura con la barra de horizonte.",
         "La bomba de vacío mueve el indicador de actitud y el direccional; el coordinador suele ser eléctrico.",
-        "Si falla el vacío, actitud y direccional se degradan lentamente y mienten sin avisar."
+        "Si falla el vacío, actitud y direccional se degradan lentamente y mienten sin avisar.",
+        "En paneles de vidrio, la ADC procesa pitot-estática y el AHRS reemplaza a los giroscopios."
       ],
       "blocks": [
         {
@@ -665,6 +705,20 @@
         {
           "type": "text",
           "md": "¿Quién hace girar estos trompos? Normalmente una **bomba de vacío** (vacuum pump) del motor mueve el indicador de actitud y el direccional; el coordinador de virajes suele ser **eléctrico**. Está repartido a propósito: si falla el vacío, pierdes actitud y direccional **lentamente** — se van acostando y mienten sin avisar — pero el coordinador te queda vivo."
+        },
+        {
+          "type": "text",
+          "md": "¿Y los aviones modernos con pantallas? El **panel de vidrio** (glass cockpit) reemplaza los seis relojes por una pantalla. Los datos ya no vienen de cápsulas ni trompos: una **computadora de datos de aire** (ADC) procesa el pitot y la estática, y un **AHRS** — giroscopios electrónicos de estado sólido — entrega actitud y rumbo. Lo que no cambia: los conceptos que estás aprendiendo, y los instrumentos analógicos de respaldo siguen en el panel por si la pantalla falla."
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["PFD (pantalla de vuelo primaria)", "Reúne velocidad, actitud, altitud y rumbo en una sola pantalla"],
+            ["MFD (pantalla multifunción)", "Mapa, motor, tráfico e información complementaria"],
+            ["ADC (computadora de datos de aire)", "Convierte las presiones pitot y estática en cifras"],
+            ["AHRS", "Sistema de referencia de actitud y rumbo: reemplaza a los giroscopios"]
+          ]
         },
         {
           "type": "callout",
@@ -712,6 +766,14 @@
           "options": ["Falló la bomba de vacío.", "Se taparon las tomas estáticas.", "Falló el alternador."],
           "answer": 0,
           "why": "Actitud y direccional viven del vacío: al fallar mienten despacio, mientras el coordinador eléctrico dice la verdad."
+        },
+        {
+          "type": "check",
+          "id": "8-9-c5",
+          "q": "En un panel de vidrio, ¿qué componente entrega la información de actitud y rumbo?",
+          "options": ["El AHRS.", "La computadora de datos de aire (ADC).", "La bomba de vacío del motor."],
+          "answer": 0,
+          "why": "El AHRS reemplaza a los giroscopios; la ADC procesa pitot y estática (velocidad y altitud)."
         }
       ]
     },
@@ -724,7 +786,8 @@
         "El coordinador de virajes muestra el régimen de alabeo y de viraje, no el ángulo de banqueo.",
         "El coordinador indica el movimiento de la aeronave sobre los ejes de guiñada y alabeo.",
         "Viraje estándar: 3° por segundo, es decir 360° en 2 minutos.",
-        "Bolita del inclinómetro centrada = viraje coordinado; se corrige pisando el pedal del lado de la bolita."
+        "Bolita del inclinómetro centrada = viraje coordinado; se corrige pisando el pedal del lado de la bolita.",
+        "El indicador de viraje y deslizamiento solo muestra el régimen de guiñada; el coordinador añade el alabeo."
       ],
       "blocks": [
         {
@@ -738,6 +801,10 @@
         {
           "type": "text",
           "md": "¿Qué mide exactamente ese avioncito? El movimiento sobre **dos ejes a la vez**: alabeo (roll) y guiñada (yaw). Cuando inclinas las alas reacciona al instante con el régimen de alabeo; ya establecido el viraje, muestra el régimen de viraje. Lo que **no** te dice: el ángulo de banqueo ni la actitud — para eso está el indicador de actitud."
+        },
+        {
+          "type": "text",
+          "md": "Su antecesor todavía vuela: el **indicador de viraje y deslizamiento** (turn-and-slip indicator), con una aguja vertical en vez de avioncito. La diferencia: la aguja solo muestra el régimen de **guiñada** (rate of turn); el coordinador, con su giroscopio montado en ángulo, siente además el **alabeo**. Y si una pregunta mete al indicador de viraje y deslizamiento en el sistema pitot-estática, está mal: es giroscópico, igual que el coordinador."
         },
         {
           "type": "diagram",
@@ -785,6 +852,14 @@
           "options": ["Pisas el pedal derecho.", "Pisas el pedal izquierdo.", "Reduces el banqueo con el bastón."],
           "answer": 0,
           "why": "«Pisa la bolita»: pedal del mismo lado hacia donde se escapó."
+        },
+        {
+          "type": "check",
+          "id": "8-10-c5",
+          "q": "¿Qué diferencia al coordinador de virajes del indicador de viraje y deslizamiento?",
+          "options": ["El coordinador muestra además el régimen de alabeo; la aguja del otro, solo el de viraje.", "El coordinador usa el sistema pitot-estática y el otro no.", "El indicador de viraje y deslizamiento muestra el ángulo de banqueo exacto."],
+          "answer": 0,
+          "why": "El giroscopio inclinado del coordinador siente guiñada y alabeo; la aguja clásica solo el régimen de viraje."
         }
       ]
     },
@@ -797,6 +872,7 @@
         "La inclinación magnética (dip) causa los errores de viraje y de aceleración.",
         "Hemisferio norte: UNOS al virar (se atrasa desde el norte, se adelanta desde el sur) y ANDS al acelerar.",
         "En el hemisferio sur — donde está Perú — esos errores se invierten; el examen pregunta por el hemisferio norte.",
+        "Al acelerar o desacelerar en rumbo norte o sur, la brújula indica correctamente: sin error.",
         "La brújula solo es precisa en vuelo recto, nivelado y a velocidad constante."
       ],
       "blocks": [
@@ -817,13 +893,18 @@
           "md": "Ponlo en escena (hemisferio norte): vuelas rumbo norte y entras en un viraje a la derecha, hacia el este. Al inicio la brújula se atrasa tanto que llega a indicar un giro hacia el **oeste** — ¡el lado contrario! Y desde rumbo sur: viras a la derecha y la brújula sí marca giro a la derecha, pero **más rápido de lo que realmente ocurre**. El banco pregunta exactamente estos dos casos."
         },
         {
+          "type": "text",
+          "md": "¿Y si aceleras en rumbo **norte o sur**? Nada: la brújula indica **correctamente** — el error de aceleración solo aparece en rumbos este/oeste, así como los errores de viraje pegan más fuerte cerca del norte y del sur. Un defecto más para tu colección: el **error de oscilación** — en turbulencia la tarjeta baila y toca promediar sus vaivenes."
+        },
+        {
           "type": "table",
           "headers": ["Situación (hemisferio norte)", "La brújula indica"],
           "rows": [
             ["Viras desde rumbo norte", "Se atrasa; al inicio marca giro al lado contrario (undershoot)"],
             ["Viras desde rumbo sur", "Se adelanta; exagera el giro (overshoot)"],
             ["Aceleras en rumbo este/oeste", "Giro hacia el norte"],
-            ["Desaceleras en rumbo este/oeste", "Giro hacia el sur"]
+            ["Desaceleras en rumbo este/oeste", "Giro hacia el sur"],
+            ["Aceleras o desaceleras en rumbo norte/sur", "Correctamente: sin error de aceleración"]
           ]
         },
         {
@@ -877,6 +958,14 @@
           "options": ["Solo en vuelo recto y nivelado, sin aceleración.", "Siempre que la velocidad con respecto al aire sea constante.", "En virajes con banqueo menor de 18°."],
           "answer": 0,
           "why": "Cualquier viraje o cambio de velocidad despierta los errores de dip; recta, nivelada y a velocidad constante, dice la verdad."
+        },
+        {
+          "type": "check",
+          "id": "8-11-c5",
+          "q": "En el hemisferio norte, si una aeronave acelera o desacelera, la brújula magnética normalmente indica:",
+          "options": ["Correctamente cuando se dirige al norte o al sur.", "Un giro hacia el norte en cualquier rumbo.", "Un giro hacia el sur en cualquier rumbo."],
+          "answer": 0,
+          "why": "ANDS solo actúa en rumbos este/oeste; en rumbo norte o sur la aceleración no engaña a la brújula."
         }
       ]
     },

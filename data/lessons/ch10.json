@@ -217,7 +217,8 @@
         "El brazo de un peso es su distancia horizontal al datum; positivo hacia atrás.",
         "Lo que está delante del datum tiene brazo negativo y su momento se resta.",
         "Poner el datum delante de la nariz hace que todos los brazos sean positivos.",
-        "El CG (centro de gravedad) es el punto donde el avión colgaría en equilibrio perfecto."
+        "El CG (centro de gravedad) es el punto donde el avión colgaría en equilibrio perfecto.",
+        "En aviones grandes el CG se expresa como porcentaje de la cuerda aerodinámica media (MAC)."
       ],
       "blocks": [
         {
@@ -241,6 +242,22 @@
           "type": "callout",
           "style": "ojo",
           "md": "Dónde esté el datum NO cambia el resultado final del peso y balance — es solo el km 0 del mapa. Lo que sí cambia son los números de brazo del manual: usa siempre los de TU avión, nunca los de otro."
+        },
+        {
+          "type": "text",
+          "md": "Un término más, de aviones grandes: la **cuerda aerodinámica media** o **MAC** (*mean aerodynamic chord*), la cuerda \"promedio\" del ala. En esos manuales la posición del CG no se da en pulgadas sino como **porcentaje del MAC** (ej. \"CG al 25% MAC\"): qué tan atrás cae el CG a lo largo de esa cuerda. En tu avioneta seguirás usando pulgadas desde el datum, pero que la sigla no te asuste."
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["Datum", "plano de referencia del fabricante: el \"km 0\" de las medidas"],
+            ["Estación (station)", "posición del fuselaje, en pulgadas desde el datum"],
+            ["Brazo (arm)", "distancia horizontal de un peso al datum; negativo si está delante"],
+            ["CG", "punto de equilibrio del avión: el fulcro volador"],
+            ["Límites de CG (CG range)", "rango delantero-trasero aprobado donde el CG puede caer"],
+            ["MAC", "cuerda aerodinámica media; el CG se expresa como % del MAC en aviones grandes"]
+          ]
         },
         {
           "type": "notebook",
@@ -294,6 +311,18 @@
           ],
           "answer": 0,
           "why": "Las estaciones son direcciones del mapa: pulgadas desde el datum, no desde el CG ni un límite de peso."
+        },
+        {
+          "type": "check",
+          "id": "10-3-c5",
+          "q": "En el manual de un avión grande lees \"CG al 25% del MAC\". El MAC es…",
+          "options": [
+            "la cuerda aerodinámica media del ala, usada como referencia para ubicar el CG",
+            "el momento máximo certificado por el fabricante",
+            "la distancia desde el datum hasta la cola"
+          ],
+          "answer": 0,
+          "why": "MAC = mean aerodynamic chord: en aviones grandes el CG se expresa como porcentaje de esa cuerda promedio."
         }
       ]
     },
@@ -305,7 +334,8 @@
         "La carga útil es el peso máximo menos el peso vacío: ocupantes, equipaje y combustible utilizable.",
         "El peso bruto (gross) es el peso total del avión cargado.",
         "El peso de rampa puede superar al de despegue porque el taxi quema combustible.",
-        "Existen máximos separados de rampa, despegue y aterrizaje."
+        "Existen máximos separados de rampa, despegue y aterrizaje.",
+        "La carga paga (payload) es la carga útil sin el combustible utilizable."
       ],
       "blocks": [
         {
@@ -337,6 +367,10 @@
           "type": "callout",
           "style": "clave",
           "md": "En avioneta chica casi nunca puedes llevar **asientos llenos Y tanques llenos**. Decidir qué recortas (combustible o equipaje) ANTES de llegar al avión es trabajo del piloto al mando."
+        },
+        {
+          "type": "text",
+          "md": "Dos apellidos más que verás en los manuales. La **carga paga** (*payload*) son solo personas y equipaje: la carga útil SIN el combustible utilizable. Y en manuales modernos (formato GAMA) el peso vacío se llama **peso vacío básico** (*basic empty weight*) e incluye el aceite COMPLETO, no solo el no drenable. Para el examen manda la definición clásica: peso vacío = avión + equipo fijo + combustible inutilizable + aceite no drenable."
         },
         {
           "type": "notebook",
@@ -390,6 +424,18 @@
           ],
           "answer": 0,
           "why": "Carga útil = 2,400 − 1,500 = 900 lb; menos 420 de ocupantes y equipaje quedan 480 lb para combustible."
+        },
+        {
+          "type": "check",
+          "id": "10-4-c5",
+          "q": "La carga paga (payload) de un avión incluye…",
+          "options": [
+            "pasajeros, equipaje y carga — pero NO el combustible utilizable",
+            "pasajeros, equipaje y el combustible utilizable",
+            "el combustible inutilizable y el aceite no drenable"
+          ],
+          "answer": 0,
+          "why": "Payload = lo que pagaría pasaje: gente y maletas. La carga útil sí incluye además el combustible utilizable."
         }
       ]
     },
@@ -602,7 +648,9 @@
         "Si el punto cae fuera del envelope, no se vuela hasta reacomodar la carga.",
         "A mayor peso, el rango de CG permitido se angosta.",
         "El envelope de categoría utilitaria es más chico y restrictivo que el de categoría normal.",
-        "Algunos gráficos usan momento ÷ 100 o ÷ 1,000 en el eje horizontal en vez del CG."
+        "Algunos gráficos usan momento ÷ 100 o ÷ 1,000 en el eje horizontal en vez del CG.",
+        "La gráfica de carga (loading graph) entrega el momento de cada ítem sin multiplicar.",
+        "El método de tablas compara el momento total contra el mínimo y máximo permitidos para ese peso."
       ],
       "blocks": [
         {
@@ -621,6 +669,14 @@
           "type": "diagram",
           "src": "ch10-envelope.svg",
           "caption": "El punto A (2,095 lb, CG 41.0) cae dentro: legal. El punto B cae fuera: ese avión no despega así."
+        },
+        {
+          "type": "text",
+          "md": "En el POH el método gráfico viene en pareja. Antes del envelope está la **gráfica de carga** (*loading graph*): entras con el peso de cada ítem (ocupantes, combustible, equipaje), subes hasta la línea de ese ítem y lees su **momento** ya calculado — sin multiplicar nada. Sumas pesos y momentos, y con esos totales entras al envelope. Es la misma tabla de la sección anterior, pero dibujada."
+        },
+        {
+          "type": "text",
+          "md": "Tercera vía: el **método de tablas** (*table method*). El manual trae tablas donde buscas el peso de cada estación y lees su momento directo, más una tabla final con el momento **mínimo y máximo** permitido para cada peso total. Si tu momento total cae entre esos dos, estás dentro de límites. Cero multiplicaciones: puro buscar y comparar."
         },
         {
           "type": "callout",
@@ -679,6 +735,18 @@
           ],
           "answer": 0,
           "why": "Cada categoría tiene su envelope: las maniobras de utilitaria exigen cumplir su figura más chica."
+        },
+        {
+          "type": "check",
+          "id": "10-7-c5",
+          "q": "En la gráfica de carga (loading graph) del POH entras con el peso de cada ítem y lees directamente…",
+          "options": [
+            "su momento, ya calculado por el fabricante",
+            "su brazo en pulgadas desde el datum",
+            "el peso máximo permitido en esa estación"
+          ],
+          "answer": 0,
+          "why": "Cada línea de la gráfica hace la multiplicación peso × brazo por ti: te entrega el momento listo para sumar."
         }
       ]
     },
@@ -964,6 +1032,94 @@
           ],
           "answer": 0,
           "why": "Mover carga corrige el CG sin tocar el peso; agregar combustible te pasa del máximo y despegar así es ilegal."
+        }
+      ]
+    },
+    {
+      "id": "10-11",
+      "title": "¿De quién es la responsabilidad? Registros, piso y alas parejas",
+      "key_points": [
+        "El piloto al mando es responsable de calcular el peso y balance antes de cada vuelo.",
+        "Los datos oficiales viven en el manual (AFM/POH) y en los registros de peso y balance del avión.",
+        "Tras instalar o quitar equipo, el mecánico actualiza el peso vacío y su CG en los registros.",
+        "El compartimiento de equipaje tiene un placard de peso máximo Y un límite de carga por área del piso.",
+        "El límite de piso se mide en libras por pie cuadrado: manda el límite más restrictivo.",
+        "El balance lateral se mantiene quemando combustible parejo de los tanques de ambas alas."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Quién hace este cálculo? Tú, el piloto al mando, antes de CADA vuelo — no es tarea del mecánico ni \"viene hecho de fábrica\". Los datos oficiales viven en el **manual de vuelo (AFM/POH)** y en los **registros de peso y balance** del avión: el peso vacío actual, su brazo y la lista de equipo instalado. Son de ESE avión con ESA matrícula: dos aviones \"idénticos\" casi nunca pesan igual."
+        },
+        {
+          "type": "text",
+          "md": "¿Y si le instalan una radio nueva o le quitan un asiento? El peso vacío y su CG cambian. El mecánico calcula los valores nuevos y los asienta en los registros — y desde ese día tus cálculos parten de ahí. Antes de volar un avión que no conoces, revisa la fecha del último peso y balance: usar datos viejos es calcular con un avión que ya no existe."
+        },
+        {
+          "type": "text",
+          "md": "El equipaje tiene DOS límites. El **placard** del compartimiento dice el peso máximo total (ej. \"120 lb máx\"). Y el piso tiene un **límite de carga por área** (*floor load limit*, en libras por pie cuadrado): una pesa chica y densa puede romper el piso sin acercarse al placard, porque concentra todo su peso en un puntito. Manda siempre el límite más restrictivo — y amarra la carga para que no viaje sola."
+        },
+        {
+          "type": "text",
+          "md": "Casi todo el capítulo mira el CG adelante-atrás, pero también existe el **balance lateral** (ala izquierda vs derecha). El combustible vive en las alas: si quemas horas de un solo tanque, la otra ala queda pesada y volarás con alerón metido para compensar — más resistencia, menos alcance. Por eso alternas tanques (o usas la posición BOTH, si existe) para quemar parejo."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Tres fuentes, un orden: registros del avión (peso vacío ACTUAL) → POH (brazos y límites) → tu cálculo del día. Si falta cualquiera de las tres, el vuelo no está listo."
+        },
+        {
+          "type": "notebook",
+          "id": "10-11-n1",
+          "prompt": "Escribe una checklist de 5 líneas titulada \"Antes de cargar\": dónde busco el peso vacío actual, quién lo actualiza tras un cambio de equipo, cuáles son los DOS límites del equipaje, y cómo mantengo el balance lateral en vuelo."
+        },
+        {
+          "type": "check",
+          "id": "10-11-c1",
+          "q": "¿Quién es responsable de que el avión esté dentro de peso y balance antes de cada vuelo?",
+          "options": [
+            "El piloto al mando",
+            "El mecánico que firmó la última inspección",
+            "El fabricante, al certificar el avión"
+          ],
+          "answer": 0,
+          "why": "El fabricante da los datos y el mecánico los actualiza, pero el cálculo de cada vuelo es tuyo como piloto al mando."
+        },
+        {
+          "type": "check",
+          "id": "10-11-c2",
+          "q": "Instalan un equipo de radio nuevo en tu avión. ¿Qué pasa con el peso y balance?",
+          "options": [
+            "El peso vacío y su CG cambian: los registros deben actualizarse antes de tus próximos cálculos",
+            "Nada: los equipos electrónicos no cuentan como peso",
+            "Solo cambia si el equipo pesa más de 50 libras"
+          ],
+          "answer": 0,
+          "why": "Todo equipo fijo instalado forma parte del peso vacío: cualquier cambio altera el punto de partida de tus cuentas."
+        },
+        {
+          "type": "check",
+          "id": "10-11-c3",
+          "q": "El placard del equipaje dice \"120 lb máx\" y el piso admite 50 lb por pie cuadrado. Cargas una pesa de 45 lb que apoya sobre medio pie cuadrado. ¿Hay problema?",
+          "options": [
+            "Sí: 45 ÷ 0.5 = 90 lb/pie², casi el doble del límite del piso",
+            "No: 45 lb está muy por debajo de las 120 lb del placard",
+            "No: el límite del piso solo aplica a cargas líquidas"
+          ],
+          "answer": 0,
+          "why": "El límite de área manda aunque respetes el placard: el peso concentrado en poca superficie puede romper el piso."
+        },
+        {
+          "type": "check",
+          "id": "10-11-c4",
+          "q": "Vuelas dos horas alimentando el motor solo del tanque izquierdo. ¿Qué notarás?",
+          "options": [
+            "El ala derecha pesada: necesitarás alerón para nivelar, con más resistencia y menos alcance",
+            "Nada: el diedro corrige solo el desbalance lateral",
+            "El CG se mueve hacia adelante por el combustible quemado"
+          ],
+          "answer": 0,
+          "why": "Quemar de un solo lado desequilibra las alas: compensas con alerón y lo pagas en resistencia y alcance."
         }
       ]
     }

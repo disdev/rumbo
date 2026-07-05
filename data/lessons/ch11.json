@@ -512,6 +512,7 @@
         "Con obstáculo al final de la pista se usa Vx; libre de obstáculos se usa Vy.",
         "Vx es más lenta que Vy, y ambas se acercan al subir hasta juntarse en el techo absoluto.",
         "El techo de servicio es donde el mejor régimen de ascenso cae a 100 ft/min; el absoluto, donde llega a cero.",
+        "El ángulo de ascenso depende del empuje sobrante; el régimen de ascenso, de la potencia sobrante.",
         "La DA alta reduce el régimen de ascenso: en día caliente subes más pobre."
       ],
       "blocks": [
@@ -537,6 +538,10 @@
         {
           "type": "text",
           "md": "¿Hasta dónde puede subir tu avión? Hay dos techos. El **techo de servicio (service ceiling)** es la altitud donde el mejor régimen de ascenso cae a solo **100 ft/min**: el límite práctico. El **techo absoluto** es donde el régimen llega a **cero**: ahí Vx y Vy ya son la misma velocidad y el avión no sube ni un pie más. Con DA alta ambos techos \"bajan\" hacia ti: un día caliente te puede dejar sin margen sobre la cordillera."
+        },
+        {
+          "type": "text",
+          "md": "¿Y de dónde sale el ascenso? Del **sobrante**. El **ángulo** de ascenso depende del **empuje sobrante** (el exceso de empuje sobre la resistencia); el **régimen** depende de la **potencia sobrante**. Por eso el peso y la DA alta castigan tanto la subida: se comen esa reserva. Un avión pesado o en aire delgado tiene menos empuje y menos potencia de sobra — menos ángulo y menos ft/min — aunque lleves el motor a fondo."
         },
         {
           "type": "notebook",
@@ -578,6 +583,14 @@
           ],
           "answer": 1,
           "why": "Vx solo se necesita mientras hay obstáculo; después, Vy te da más pies por minuto y mejor refrigeración del motor."
+        },
+        {
+          "type": "check",
+          "id": "11-7-c5",
+          "q": "¿De qué depende el RÉGIMEN (rate) de ascenso de un avión?",
+          "options": ["De la potencia sobrante (exceso de potencia)", "Del empuje sobrante (exceso de empuje)", "De la sustentación sobrante del ala"],
+          "answer": 0,
+          "why": "Régimen (ft/min) = potencia sobrante; el ÁNGULO de ascenso es el que depende del empuje sobrante."
         }
       ]
     },
@@ -588,6 +601,7 @@
         "Alcance (range) es la máxima distancia por combustible; autonomía (endurance) es el máximo tiempo en el aire.",
         "La máxima autonomía se vuela a la potencia mínima que mantiene el vuelo nivelado.",
         "El viento afecta el alcance pero no la autonomía.",
+        "El máximo alcance se vuela a la velocidad de máxima fineza (L/D máximo); con viento de frente conviene volar un poco más rápido.",
         "En crucero normal se usa 65–75 % de potencia y se empobrece la mezcla según el POH.",
         "A mayor altitud, con el mismo porcentaje de potencia, la velocidad verdadera (TAS) es mayor.",
         "Las tablas de crucero del POH dan TAS, flujo de combustible y ajuste de potencia por altitud y temperatura."
@@ -614,6 +628,10 @@
           "type": "callout",
           "style": "examen",
           "md": "Las preguntas de la **Figura 35** piden leer la tabla de crucero: *¿qué TAS a 10,500 ft?*, *¿qué flujo (GPH) al 65 % de potencia?*, *¿cuántos galones para 500 NM?* Método: fila de altitud → columna de temperatura → GPH × horas de vuelo = galones."
+        },
+        {
+          "type": "text",
+          "md": "¿Y si lo que quieres es el máximo **alcance**? Vuela a la velocidad de **máxima fineza (L/D máximo)**: el mejor trato distancia-combustible, la misma velocidad de tu mejor planeo. Dos ajustes finos: con **viento de frente**, vuela un poco MÁS rápido — escapas antes del aire que te frena; con viento de cola, un poco más lento para aprovecharlo más rato. Y conforme quemas combustible y pesas menos, la velocidad de máximo alcance también baja un poco."
         },
         {
           "type": "notebook",
@@ -655,11 +673,85 @@
           ],
           "answer": 0,
           "why": "El viento cambia cuánto AVANZAS por galón (alcance); las horas que el motor puede girar con ese combustible (autonomía) no dependen del viento."
+        },
+        {
+          "type": "check",
+          "id": "11-8-c5",
+          "q": "Quieres el máximo alcance y llevas un viento de frente fuerte. ¿Qué haces con la velocidad?",
+          "options": ["La aumento un poco sobre la de L/D máximo", "La reduzco un poco para quemar menos por hora", "La mantengo exacta: el viento no cambia la velocidad óptima"],
+          "answer": 0,
+          "why": "Con viento de frente conviene volar algo más rápido que L/D máx: pasas menos tiempo expuesto al aire que te frena."
         }
       ]
     },
     {
       "id": "11-9",
+      "title": "La curva de potencia: volar lento también cuesta",
+      "key_points": [
+        "La potencia requerida para el vuelo nivelado dibuja una curva en U: volar muy lento exige mucha potencia, igual que volar muy rápido.",
+        "La velocidad máxima nivelada está donde la potencia requerida alcanza a la potencia disponible.",
+        "En la región de comando normal (el lado rápido de la curva), volar más rápido exige más potencia.",
+        "En la región de comando invertido (detrás de la curva), volar MÁS LENTO exige MÁS potencia.",
+        "Se cae en comando invertido en aproximaciones lentas y arrastradas, con la nariz arriba.",
+        "Para salir del hundimiento: potencia al máximo y bajar un poco la nariz; solo jalar el bastón lo empeora."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cuándo pedaleas más duro en bici: a paso de tortuga, tambaleándote, o a toda velocidad? En los dos extremos. Volar es igual: la **potencia requerida** para mantener el vuelo nivelado dibuja una **curva en U** — volar muy lento cuesta mucha potencia (gran ángulo de ataque, mucha resistencia inducida) y volar muy rápido también. La **potencia disponible** es lo que tu motor puede entregar: donde las dos curvas se cruzan está tu **velocidad máxima nivelada**."
+        },
+        {
+          "type": "text",
+          "md": "El lado lento de la U esconde una trampa: la **región de comando invertido** (region of reversed command), volar \"detrás de la curva de potencia\". Ahí la lógica se voltea: para volar MÁS LENTO necesitas MÁS potencia. Sucede en aproximaciones lentas y arrastradas: vas hundido, nariz arriba, y si solo jalas el bastón te frenas y te hundes peor. La salida correcta: **potencia y bajar un poco la nariz** para recuperar velocidad."
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["Potencia disponible (power available)", "Lo que el motor y la hélice pueden entregar a esa altitud"],
+            ["Potencia requerida (power required)", "La necesaria para mantener vuelo nivelado a cada velocidad"],
+            ["Comando normal", "Lado rápido de la curva: más velocidad pide más potencia"],
+            ["Comando invertido", "Detrás de la curva: más LENTO pide MÁS potencia"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Detrás de la curva, la solución al hundimiento NUNCA es solo levantar la nariz: eso te frena más y te hunde más. **Potencia primero**, nariz un poco abajo, y sales de la región."
+        },
+        {
+          "type": "notebook",
+          "id": "11-9-n1",
+          "prompt": "Dibuja la curva en U de la potencia requerida (velocidad en horizontal, potencia en vertical). Sombrea el lado lento y escríbele 'comando invertido: más lento = más potencia'. Traza la línea de potencia disponible por encima y marca el cruce: 'velocidad máxima nivelada'."
+        },
+        {
+          "type": "check",
+          "id": "11-9-c1",
+          "q": "¿Qué caracteriza a la región de comando invertido?",
+          "options": ["Volar más lento exige más potencia", "Volar más rápido exige más potencia", "Los mandos responden al revés de lo normal"],
+          "answer": 0,
+          "why": "Detrás de la curva de potencia, reducir velocidad dispara la resistencia inducida: mantener el vuelo pide MÁS potencia. Los mandos siguen funcionando igual."
+        },
+        {
+          "type": "check",
+          "id": "11-9-c2",
+          "q": "En una aproximación lenta y arrastrada el avión empieza a hundirse. ¿Corrección correcta?",
+          "options": ["Solo levantar la nariz hasta dejar de bajar", "Agregar potencia y bajar un poco la nariz", "Reducir potencia y mantener la actitud"],
+          "answer": 1,
+          "why": "Detrás de la curva, jalar el bastón solo te frena y hunde más: potencia y nariz abajo para recuperar velocidad."
+        },
+        {
+          "type": "check",
+          "id": "11-9-c3",
+          "q": "¿Dónde está la velocidad máxima de vuelo nivelado?",
+          "options": ["Donde la potencia requerida iguala a la potencia disponible", "En el punto más bajo de la curva de potencia requerida", "Justo por encima de la velocidad de pérdida"],
+          "answer": 0,
+          "why": "Más allá de ese cruce el motor ya no tiene potencia sobrante; el punto más bajo de la curva es la velocidad de mínima potencia (máxima autonomía)."
+        }
+      ]
+    },
+    {
+      "id": "11-10",
       "title": "Aterrizaje: la distancia sobre el obstáculo de 50 ft",
       "key_points": [
         "La cifra clave de aterrizaje es la distancia total desde 50 ft sobre el obstáculo hasta detenerse.",
@@ -667,6 +759,7 @@
         "El viento de frente acorta la distancia de aterrizaje.",
         "Con DA alta tocas con el mismo IAS pero mayor velocidad sobre el suelo: más pista para frenar.",
         "En pista mojada o contaminada los frenos agarran menos y puede haber hidroplaneo.",
+        "La velocidad mínima de hidroplaneo dinámico es ~9 × la raíz cuadrada de la presión de la llanta en psi.",
         "En pista mojada date un margen extra generoso y toca firme en el primer tercio de la pista."
       ],
       "blocks": [
@@ -679,6 +772,11 @@
           "md": "¿Pista **mojada o contaminada** (agua encharcada, barro, pasto largo)? Los frenos agarran menos, y con agua puedes **hidroplanear**: la llanta flota sobre una película de agua y deja de frenar y de dirigir. Regla sana: en pista mojada date un **margen extra generoso** sobre lo que dice la tabla — una mitad más es prudente — y toca firme, en el primer tercio de la pista. Si no alcanza: motor y al aire, sin dudar."
         },
         {
+          "type": "callout",
+          "style": "clave",
+          "md": "Fórmula del **hidroplaneo dinámico**: velocidad mínima ≈ **9 × √(presión de la llanta en psi)**. Llanta a 36 psi → 9 × √36 = 9 × 6 = **54 kt**. Por encima de esa velocidad sobre agua encharcada la llanta puede flotar: por eso en pista mojada tocas firme y SIN exceso de velocidad."
+        },
+        {
           "type": "text",
           "md": "Estás en final y la pista brilla de mojada. Decide ANTES de tocar: ¿la distancia de la tabla más su margen del 50 % cabe en la pista? Si no, motor y al aire. Y en la sierra, ojo con la trampa silenciosa: te aproximas con tu **IAS de siempre**, pero en aire delgado ese IAS es una **TAS — y una velocidad sobre el suelo — mayores**. Tocas más rápido y frenas más metros, con la misma lectura del velocímetro."
         },
@@ -689,12 +787,12 @@
         },
         {
           "type": "notebook",
-          "id": "11-9-n1",
+          "id": "11-10-n1",
           "prompt": "Dibuja el perfil de un aterrizaje: obstáculo con el avión pasando a 50 ft, punto de toque y punto donde se detiene. Marca con una llave la 'distancia total sobre 50 ft'. Al costado, lista lo que la ALARGA: peso, DA alta, viento de cola, pista abajo, pista mojada."
         },
         {
           "type": "check",
-          "id": "11-9-c1",
+          "id": "11-10-c1",
           "q": "¿Qué mide la 'distancia total de aterrizaje sobre un obstáculo de 50 ft'?",
           "options": ["Desde el toque hasta detenerse", "Desde que cruzas el obstáculo a 50 ft hasta detenerte", "La longitud mínima legal de la pista"],
           "answer": 1,
@@ -702,7 +800,7 @@
         },
         {
           "type": "check",
-          "id": "11-9-c2",
+          "id": "11-10-c2",
           "q": "¿Qué riesgo aparece al aterrizar en pista con agua encharcada?",
           "options": ["Hidroplaneo: la llanta flota y no frena ni dirige", "Mayor eficiencia de frenado por el agua fría", "Nada cambia si tocas suave"],
           "answer": 0,
@@ -710,7 +808,7 @@
         },
         {
           "type": "check",
-          "id": "11-9-c3",
+          "id": "11-10-c3",
           "q": "¿Cuál de estas condiciones ACORTA la distancia de aterrizaje?",
           "options": ["Viento de frente", "Pendiente de pista hacia abajo", "Altitud de densidad alta"],
           "answer": 0,
@@ -718,7 +816,7 @@
         },
         {
           "type": "check",
-          "id": "11-9-c4",
+          "id": "11-10-c4",
           "q": "Aterrizas en un aeropuerto de sierra con tu IAS de aproximación de siempre. ¿Por qué necesitas más pista?",
           "options": [
             "Porque el IAS de pérdida aumenta con la altitud",
@@ -727,11 +825,19 @@
           ],
           "answer": 1,
           "why": "En aire delgado el mismo IAS corresponde a una TAS mayor: tocas más rápido sobre el suelo y frenar toma más metros."
+        },
+        {
+          "type": "check",
+          "id": "11-10-c5",
+          "q": "Tus llantas están infladas a 49 psi. ¿Sobre qué velocidad aproximada puede empezar el hidroplaneo dinámico en pista inundada?",
+          "options": ["49 kt", "63 kt", "81 kt"],
+          "answer": 1,
+          "why": "9 × √49 = 9 × 7 = 63 kt: por encima de esa velocidad la llanta puede flotar sobre la película de agua."
         }
       ]
     },
     {
-      "id": "11-10",
+      "id": "11-11",
       "title": "El viento: componente de frente y componente cruzado",
       "key_points": [
         "El viento se descompone en componente de frente (a lo largo de la pista) y cruzado (de costado).",
@@ -776,12 +882,12 @@
         },
         {
           "type": "notebook",
-          "id": "11-10-n1",
+          "id": "11-11-n1",
           "prompt": "Copia la tabla de porcentajes (30°→50 %, 45°→70 %, 60°→90 % — usa la versión redondeada para el vuelo). Resuelve: pista 36, viento 030°/20 kt. ¿Ángulo? (30°). ¿Cruzado? (≈10 kt). ¿Frente? (≈17 kt). Dibuja las dos flechas sobre una pista."
         },
         {
           "type": "check",
-          "id": "11-10-c1",
+          "id": "11-11-c1",
           "q": "Aterrizas en la pista 18 y la torre reporta viento 220°/30 kt. ¿Cuál es el componente cruzado aproximado?",
           "options": ["19 kt", "23 kt", "30 kt"],
           "answer": 0,
@@ -789,7 +895,7 @@
         },
         {
           "type": "check",
-          "id": "11-10-c2",
+          "id": "11-11-c2",
           "q": "Tu componente cruzado máximo es 12 kt y el viento forma 30° con la pista. ¿Cuál es el viento máximo aceptable?",
           "options": ["16 kt", "20 kt", "24 kt"],
           "answer": 2,
@@ -797,7 +903,7 @@
         },
         {
           "type": "check",
-          "id": "11-10-c3",
+          "id": "11-11-c3",
           "q": "Viento del norte (360°) a 20 kt y tu límite de cruzado es 13 kt. ¿Qué pista eliges: 6, 29 o 32?",
           "options": ["Pista 6", "Pista 29", "Pista 32"],
           "answer": 2,
@@ -805,7 +911,7 @@
         },
         {
           "type": "check",
-          "id": "11-10-c4",
+          "id": "11-11-c4",
           "q": "Tu componente cruzado máximo demostrado es 25 kt y el viento forma 45° con la pista. ¿Viento máximo aceptable?",
           "options": ["25 kt", "29 kt", "35 kt"],
           "answer": 2,

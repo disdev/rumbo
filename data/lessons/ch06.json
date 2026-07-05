@@ -106,7 +106,8 @@
         "El ala del alerón que baja gana curvatura, genera más sustentación y sube.",
         "El resultado es alabeo sobre el eje longitudinal.",
         "Bastón a la derecha: alerón derecho arriba, alerón izquierdo abajo, el avión alabea a la derecha.",
-        "Van hacia las puntas por brazo de palanca: más momento de alabeo con menos deflexión."
+        "Van hacia las puntas por brazo de palanca: más momento de alabeo con menos deflexión.",
+        "El flaperón combina las funciones del flap y del alerón en una sola superficie."
       ],
       "blocks": [
         {
@@ -129,6 +130,10 @@
             ["A la izquierda", "Sube", "Baja", "Alabeo a la izquierda"],
             ["A la derecha", "Baja", "Sube", "Alabeo a la derecha"]
           ]
+        },
+        {
+          "type": "text",
+          "md": "Hay una superficie dos-en-uno: el **flaperón (flaperon)**. Combina el trabajo del **flap y del alerón** a la vez: los dos bajan juntos para dar más sustentación (como flaps) y, encima de eso, se mueven en direcciones opuestas para alabear (como alerones). Un mezclador en el varillaje junta tus dos órdenes. Lo ves en algunos aviones ligeros deportivos: menos piezas en el ala, mismos controles en tu mano."
         },
         {
           "type": "notebook",
@@ -166,6 +171,14 @@
           "options": ["Para quedar dentro del chorro de la hélice.", "Para tener más brazo de palanca respecto al eje longitudinal: más alabeo con menos deflexión.", "Para aumentar la sustentación total del ala en crucero."],
           "answer": 1,
           "why": "Como empujar la puerta por el borde: la misma fuerza, aplicada lejos del eje, produce más momento."
+        },
+        {
+          "type": "check",
+          "id": "6-2-c5",
+          "q": "¿Qué es un flaperón?",
+          "options": ["Una superficie que combina las funciones del flap y del alerón.", "Un alerón que se bloquea cuando bajas los flaps.", "Un flap montado en el borde de ataque del ala."],
+          "answer": 0,
+          "why": "Flap + alerón en una sola pieza: bajan juntos para sustentar y se mueven opuestos para alabear."
         }
       ]
     },
@@ -575,6 +588,7 @@
         "Las ranuras fijas (slots) guían aire con energía sobre el ala y retrasan la pérdida a un ángulo de ataque mayor.",
         "Los slats móviles se deslizan hacia adelante y abren la ranura cuando hace falta.",
         "Los flaps de borde de ataque aumentan la curvatura por delante; se usan con los flaps traseros en aviones grandes.",
+        "El cuff es una extensión fija del borde de ataque, hacia abajo y adelante, que suaviza la pérdida a costa de algo de crucero.",
         "Los spoilers se levantan sobre el ala: reducen la sustentación y aumentan la resistencia.",
         "Los planeadores usan spoilers para controlar el descenso; en tierra ayudan a frenar."
       ],
@@ -587,6 +601,10 @@
           "type": "diagram",
           "src": "ch06-borde-ataque.svg",
           "caption": "Slat abierto a gran ángulo de ataque: el aire con energía pasa por la ranura, se mantiene pegado al ala y retrasa la pérdida."
+        },
+        {
+          "type": "text",
+          "md": "Hay un cuarto ayudante que no se mueve: el **cuff de borde de ataque (leading edge cuff)**. Es una extensión **fija** que prolonga el borde de ataque hacia **abajo y adelante**, como ponerle visera a una gorra. Con ella el aire se mantiene pegado al ala a ángulos de ataque mayores: la pérdida llega más tarde y más avisada. El precio: un poco de velocidad de crucero."
         },
         {
           "type": "text",
@@ -603,6 +621,7 @@
             ["Slot (ranura fija)", "Borde de ataque", "Canal siempre abierto: retrasa la pérdida a mayor ángulo de ataque"],
             ["Slat (móvil)", "Borde de ataque", "Se desliza adelante y abre la ranura solo cuando hace falta"],
             ["Flap de borde de ataque", "Borde de ataque", "Suma curvatura por delante (aviones grandes)"],
+            ["Cuff (fijo)", "Borde de ataque", "Extensión fija hacia abajo y adelante: pérdida más tardía y suave"],
             ["Spoiler", "Sobre el ala", "Mata sustentación y suma resistencia"]
           ]
         },
@@ -642,6 +661,14 @@
           "options": ["Porque bajar la nariz haría entrar en pérdida al planeador.", "Porque los spoilers aumentan la sustentación y suavizan el contacto.", "Porque los spoilers empinan el descenso sin ganar velocidad; picar la nariz lo aceleraría y flotaría de largo."],
           "answer": 2,
           "why": "Los spoilers cambian la sustentación, no la velocidad: puede bajar más manteniendo su velocidad de aproximación."
+        },
+        {
+          "type": "check",
+          "id": "6-8-c5",
+          "q": "El cuff de borde de ataque…",
+          "options": ["Es una extensión fija hacia abajo y adelante que permite volar a mayor ángulo de ataque, a cambio de algo de crucero.", "Es una placa móvil que se levanta sobre el ala para matar sustentación.", "Es una ranura que se abre automáticamente solo durante el despegue."],
+          "answer": 0,
+          "why": "No tiene partes móviles: rediseña la entrada del ala para que la pérdida llegue más tarde y más suave."
         }
       ]
     },
@@ -802,6 +829,80 @@
           "options": ["Puedes desatender el vuelo: el sistema es responsable mientras esté activado.", "Debes seguir supervisándolo y estar listo para desconectarlo: reduce carga de trabajo, no responsabilidad.", "Solo funcionará si el avión además tiene fly-by-wire."],
           "answer": 1,
           "why": "El autopilot es un asistente: el piloto al mando sigue siendo responsable y lo supervisa en todo momento."
+        }
+      ]
+    },
+    {
+      "id": "6-11",
+      "title": "Los mandos con viento: virajes sobre referencias en tierra",
+      "key_points": [
+        "En las maniobras de referencia en tierra el viento cambia tu velocidad sobre el suelo aunque la velocidad del aire sea constante.",
+        "Para mantener el trazo sobre el suelo, la inclinación se ajusta todo el tiempo: más velocidad sobre el suelo, más inclinación.",
+        "La inclinación más pronunciada va con viento de cola; la más suave, con viento de frente.",
+        "En el rumbo rectangular, las esquinas pegadas a la pierna con viento de frente se giran menos de 90°; las pegadas a la de viento de cola, más de 90°.",
+        "En los giros en S, si un semicírculo sale más chico es porque la inclinación aumentó demasiado rápido en la primera parte del giro.",
+        "La corrección de deriva (crab) mantiene la nariz cruzada al viento en los tramos rectos."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué un círculo perfecto en el aire sale ovalado dibujado en el suelo? Piensa en cruzar una piscina con corriente: nadas parejo, pero el agua te arrastra. El viento hace lo mismo: tu velocidad del aire no cambia, pero tu **velocidad sobre el suelo** sí. En las **maniobras de referencia en tierra** (ground reference maneuvers) el trazo que importa es el del suelo, así que en los tramos rectos cruzas la nariz al viento — la **corrección de deriva (crab)** — y en los virajes ajustas la inclinación."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "La regla de oro: **a más velocidad sobre el suelo, más inclinación**. La inclinación más pronunciada va donde llevas **viento de cola**; la más suave, con **viento de frente**. Y se ajusta continuamente, no por escalones."
+        },
+        {
+          "type": "text",
+          "md": "El **rumbo rectangular** (rectangular course) es volar un rectángulo alrededor de un campo, como el circuito de tránsito. En las piernas con viento cruzado vas con la nariz cruzada al viento. Por esas correcciones, no todas las esquinas son de 90°: en las esquinas pegadas a la pierna con **viento de frente** giras **menos de 90°** (la deriva te ahorra parte del giro); en las pegadas a la pierna con **viento de cola**, **más de 90°**."
+        },
+        {
+          "type": "text",
+          "md": "Los **giros en S** (S-turns): semicírculos iguales a cada lado de una carretera, cruzándola con las alas niveladas. Cruzas primero con viento de cola: velocidad sobre el suelo máxima → entras con la inclinación **más pronunciada** y la vas soltando. En el lado contra el viento, entras suave y vas aumentando. ¿Un semicírculo te sale chico y no completas el giro antes de recruzar la línea? Inclinaste **demasiado rápido** en la primera parte de ese giro."
+        },
+        {
+          "type": "table",
+          "headers": ["Momento", "Velocidad sobre el suelo", "Inclinación"],
+          "rows": [
+            ["Con viento de cola", "Máxima", "La más pronunciada"],
+            ["Con viento cruzado", "Intermedia", "Media + corrección de deriva"],
+            ["Con viento de frente", "Mínima", "La más suave"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco lo pregunta con figuras: en el rumbo rectangular, ¿en qué esquinas giras **menos de 90°**? En las pegadas a la pierna con viento de frente. Y en los giros en S, si el semicírculo sale chico y el giro no se completa antes de cruzar la referencia, la causa es **inclinación aumentada demasiado rápido en la primera parte del giro**."
+        },
+        {
+          "type": "notebook",
+          "id": "6-11-n1",
+          "prompt": "Dibuja un rectángulo con una flecha grande de viento. Marca la pierna con viento de cola y la de viento de frente, y anota en cada esquina si el giro es de más o de menos de 90°. Debajo, dibuja los giros en S sobre una carretera y escribe dónde va la inclinación máxima."
+        },
+        {
+          "type": "check",
+          "id": "6-11-c1",
+          "q": "Vuelas un rumbo rectangular con viento. ¿En qué esquinas giras menos de 90°?",
+          "options": ["En las esquinas pegadas a la pierna con viento de cola.", "En las esquinas pegadas a la pierna con viento de frente.", "En ninguna: con viento todas las esquinas son de más de 90°."],
+          "answer": 1,
+          "why": "Al entrar o salir de la pierna con viento de frente, la nariz ya va (o irá) cruzada al viento: esa corrección te ahorra parte del giro."
+        },
+        {
+          "type": "check",
+          "id": "6-11-c2",
+          "q": "Practicando giros en S, el semicírculo de un lado te sale siempre más chico y no completas el giro antes de recruzar la carretera. ¿La causa más probable?",
+          "options": ["La inclinación aumentó demasiado rápido durante la primera parte del giro.", "La inclinación se redujo demasiado rápido durante la última parte del giro.", "Cruzaste la carretera con las alas niveladas."],
+          "answer": 0,
+          "why": "Mucha inclinación muy pronto cierra el radio: el semicírculo queda chico y llegas a la referencia sin terminar el giro."
+        },
+        {
+          "type": "check",
+          "id": "6-11-c3",
+          "q": "En una maniobra de referencia en tierra, ¿cuándo usas la inclinación más pronunciada?",
+          "options": ["Con viento de frente, cuando la velocidad sobre el suelo es mínima.", "Con viento de cola, cuando la velocidad sobre el suelo es máxima.", "Nunca cambia: la inclinación se mantiene constante toda la maniobra."],
+          "answer": 1,
+          "why": "El suelo es la referencia: cuanto más rápido pasas sobre él, más cerrado debes girar para mantener el trazo."
         }
       ]
     }

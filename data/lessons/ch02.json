@@ -212,7 +212,8 @@
         "Los pasos son: Detectar el cambio, Estimar si hay que reaccionar, Choose (elegir el resultado deseado), Identificar acciones, Do (hacer la mejor acción) y Evaluar el efecto.",
         "DECIDE es un ciclo: si al evaluar el resultado no es el deseado, el proceso vuelve a empezar.",
         "El resultado deseado se elige antes de identificar las acciones: la C va antes que la I.",
-        "El proceso evita las dos reacciones malas: congelarse o actuar por impulso."
+        "El proceso evita las dos reacciones malas: congelarse o actuar por impulso.",
+        "El modelo 3P (Percibir–Procesar–Ejecutar) es el ciclo continuo de gestión de riesgo durante todo el vuelo."
       ],
       "blocks": [
         {
@@ -244,6 +245,10 @@
           "type": "callout",
           "style": "clave",
           "md": "DECIDE mata las dos reacciones malas: **congelarte** (no hacer nada) y el **impulso** (hacer lo primero que se te ocurre). Fíjate que eliges el resultado ANTES de escoger la acción — la C va antes que la I. Primero sabes a dónde quieres llegar; recién ahí comparas caminos."
+        },
+        {
+          "type": "text",
+          "md": "DECIDE es para cuando algo ya cambió. Para el día a día existe un ciclo aún más simple: las **3 P** — **Percibir** (*Perceive*) los peligros del vuelo, **Procesar** (*Process*) qué nivel de riesgo implican, y **Ejecutar** (*Perform*) la acción que reduce ese riesgo. Lo repites durante todo el vuelo, como mirar los espejos en la moto: no esperas a que aparezca el problema — lo andas buscando."
         },
         {
           "type": "notebook",
@@ -297,6 +302,18 @@
           ],
           "answer": 0,
           "why": "Tras detectar (D) viene estimar (E): medir la seriedad del cambio antes de elegir resultado y acciones."
+        },
+        {
+          "type": "check",
+          "id": "2-3-c5",
+          "q": "Según el modelo 3P del ADM, después de percibir un peligro, ¿qué corresponde hacer?",
+          "options": [
+            "Procesar: evaluar el nivel de riesgo que ese peligro implica.",
+            "Ejecutar de inmediato la primera acción correctiva.",
+            "Comunicar el peligro al ATC antes de cualquier otra cosa."
+          ],
+          "answer": 0,
+          "why": "3P = Percibir, Procesar, Ejecutar (Perceive–Process–Perform): entre ver el peligro y actuar, siempre evalúas el riesgo."
         }
       ]
     },
@@ -304,6 +321,7 @@
       "id": "2-4",
       "title": "Medir el riesgo: la matriz y PAVE",
       "key_points": [
+        "Un peligro (hazard) es una condición real o percibida; el riesgo (risk) es la evaluación de su impacto futuro sobre el vuelo.",
         "El riesgo se evalúa cruzando probabilidad (¿qué tan posible?) con severidad (¿qué tan grave?).",
         "Un riesgo probable y grave es inaceptable: se cambia el plan, no se acepta.",
         "La gestión de riesgos se basa en conciencia situacional, reconocimiento de problemas y buen juicio.",
@@ -313,7 +331,25 @@
       "blocks": [
         {
           "type": "text",
+          "md": "Primero, dos palabras que el examen ama confundir. Un **peligro** (*hazard*) es la condición real o percibida que puede causar daño: la niebla, el cerro, la pista corta. El **riesgo** (*risk*) es tu evaluación de cuánto puede afectar ese peligro a TU vuelo. El mismo peligro puede ser riesgo bajo para un vuelo y altísimo para otro: la niebla no cambia — tus opciones sí."
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["Peligro (hazard)", "Condición real o percibida que puede causar daño"],
+            ["Riesgo (risk)", "Impacto futuro de ese peligro sobre tu vuelo: probabilidad × severidad"],
+            ["Mitigar", "Cambiar algo del plan hasta que el riesgo baje a aceptable"]
+          ]
+        },
+        {
+          "type": "text",
           "md": "¿Cómo decides si un riesgo vale la pena? No con el estómago: con dos preguntas. ¿Qué tan **probable** es que salga mal? Y si sale mal, ¿qué tan **grave** sería (**severidad**)? Cruzas las dos en una **matriz de riesgo**: probable y grave = inaceptable, cambias el plan; improbable y leve = aceptable. Y ojo: la gestión de riesgos se apoya en tres pilares — **conciencia situacional**, **reconocimiento del problema** y **buen juicio**."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "La regla del riesgo: **riesgo = probabilidad × severidad**. Uso: niebla en destino al anochecer → probable (alta) × grave (sin alterno cerca) = **inaceptable** → cambias el plan hasta que uno de los dos factores baje."
         },
         {
           "type": "diagram",
@@ -401,6 +437,18 @@
           ],
           "answer": 1,
           "why": "Las expectativas de otros que te empujan a completar el vuelo son presiones externas — la E de PAVE."
+        },
+        {
+          "type": "check",
+          "id": "2-4-c5",
+          "q": "La niebla pronosticada sobre tu aeropuerto de destino es, en términos del ADM:",
+          "options": [
+            "Un peligro (hazard): una condición que puede causar daño.",
+            "Un riesgo: la probabilidad y severidad ya evaluadas.",
+            "Una presión externa sobre el piloto."
+          ],
+          "answer": 0,
+          "why": "La niebla es el peligro; el riesgo es tu evaluación de cuánto afecta a TU vuelo cruzando probabilidad y severidad."
         }
       ]
     },
@@ -412,6 +460,7 @@
         "Las letras: Illness (enfermedad), Medication (medicación), Stress (estrés), Alcohol, Fatigue (fatiga), Emotion (emoción).",
         "Basta una sola respuesta desfavorable en IMSAFE para no volar.",
         "El piloto es el responsable de determinar su aptitud para cada vuelo, aunque tenga certificado médico vigente.",
+        "Los estresores pueden ser físicos (ruido, vibración, calor), fisiológicos (fatiga, hambre) o psicológicos (plata, familia, exámenes).",
         "IMSAFE evalúa al piloto, no al avión; la parte médica se profundiza en el capítulo 17."
       ],
       "blocks": [
@@ -434,6 +483,10 @@
         {
           "type": "text",
           "md": "¿Y quién decide si pasas o no pasas IMSAFE? **Tú.** Aunque tengas el certificado médico vigente y firmado, el responsable de determinar si estás en condiciones de volar **hoy, este vuelo**, es **el piloto** — no la autoridad aeronáutica ni el médico examinador. El certificado dice que *en general* estás apto; IMSAFE responde por *este día en particular*."
+        },
+        {
+          "type": "text",
+          "md": "La S del estrés merece una lupa: los **estresores** (lo que te estresa) se dividen en **físicos** — ruido, vibración, calor, falta de oxígeno —, **fisiológicos** — fatiga, hambre, enfermedad — y **psicológicos** — plata, familia, exámenes. Un poco de estrés te mantiene alerta, como los nervios antes de un partido; pero pasado tu punto óptimo, el rendimiento **cae en picada**. Y el estrés se acumula: si tu vida ya viene cargada, el vuelo añade la suya encima."
         },
         {
           "type": "callout",
@@ -497,6 +550,18 @@
           ],
           "answer": 1,
           "why": "La cólera del momento es la E (emotion); la S es la presión acumulada de fondo, no un estallido puntual."
+        },
+        {
+          "type": "check",
+          "id": "2-5-c5",
+          "q": "El ruido y la vibración constantes de la cabina son estresores de tipo:",
+          "options": [
+            "Físico: vienen del entorno que te rodea.",
+            "Fisiológico: vienen del estado de tu cuerpo.",
+            "Psicológico: vienen de tus preocupaciones."
+          ],
+          "answer": 0,
+          "why": "Físicos = entorno (ruido, vibración, calor); fisiológicos = el cuerpo (fatiga, hambre); psicológicos = la mente (plata, familia)."
         }
       ]
     },
@@ -926,6 +991,91 @@
           ],
           "answer": 0,
           "why": "Sin referencias visuales el oído interno engaña: continuar VFR dentro de IMC lleva a la desorientación o al CFIT."
+        }
+      ]
+    },
+    {
+      "id": "2-11",
+      "title": "Las trampas operacionales: ponles nombre",
+      "key_points": [
+        "Las trampas operacionales son patrones clásicos de mala decisión con nombre propio.",
+        "Presión de grupo, mentalidad fija (mind-set), get-there-itis, síndrome del pato (duck-under), carrera scud y continuar VFR en IMC son las más conocidas.",
+        "Ir detrás del avión, perder la conciencia de posición, volar sin reserva de combustible y volar fuera del sobre completan la lista.",
+        "El descuido de la planificación, la inspección prevuelo y el checklist nace casi siempre de la confianza excesiva.",
+        "Ante un margen de performance dudoso, la decisión conservadora — esperar y recalcular — es la correcta."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "Los pilotos llevan décadas cayendo en las mismas trampas — tanto, que cada una tiene nombre. Ya conoces varias: el «tengo que llegar», la carrera scud, VFR en nubes, ir detrás del avión. La lista completa se llama **trampas operacionales** (*operational pitfalls*), y el examen usa sus nombres como distractores unos de otros: si no sabes qué es el «síndrome del pato», no puedes descartarlo."
+        },
+        {
+          "type": "table",
+          "headers": ["Trampa", "Qué es"],
+          "rows": [
+            ["Presión de grupo (peer pressure)", "Decidir por lo que dirán los demás, no por la situación"],
+            ["Mentalidad fija (mind-set)", "No aceptar que la situación cambió: seguir el plan viejo"],
+            ["Get-there-itis", "La urgencia de llegar distorsiona el juicio"],
+            ["Síndrome del pato (duck-under)", "Bajar de los mínimos en la aproximación «para ver la pista»"],
+            ["Carrera scud", "Volar cada vez más bajo para no perder de vista el terreno"],
+            ["Ir detrás del avión", "Los eventos te mandan a ti: dejas de anticipar"],
+            ["Sin reserva de combustible", "Volar sin margen legal ni personal de combustible"],
+            ["Volar fuera del sobre", "Exceder los límites de performance de la aeronave"]
+          ]
+        },
+        {
+          "type": "text",
+          "md": "Dos más cierran la lista: la **pérdida de conciencia de posición** — no saber bien dónde estás, pariente de ir detrás del avión — y el **descuido de la planificación, la inspección prevuelo y el checklist**, que casi siempre nace de la confianza excesiva: «siempre sale bien». Fíjate el patrón: toda trampa empieza con una decisión que parecía pequeña. Por eso el antídoto general es tu ADM completo — reconocer, medir y decidir temprano."
+        },
+        {
+          "type": "text",
+          "md": "¿Y «volar fuera del sobre» en la vida real? Escenario del banco: pista de grava de 2,100 pies, temperatura más alta de lo esperado, y calculas 1,980 pies de despegue sobre un obstáculo de 50 pies. ¿120 pies de margen? Casi nada. La mejor opción: **esperar a que baje la temperatura y recalcular** el rendimiento — nunca «probar a ver si sube». Los números justos no se negocian: se esperan o se cambian."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco cruza las trampas como distractores: «síndrome del pato debajo» aparece como distractor de VFR-en-IMC, «presión de grupo» como distractor de carrera scud, y «volar fuera del sobre» como distractor de los checklists. Aprende cada nombre para poder descartarlos."
+        },
+        {
+          "type": "notebook",
+          "id": "2-11-n1",
+          "prompt": "Copia la tabla de trampas operacionales (trampa → qué es) y marca las tres en las que más fácil caerías tú. Para cada una escribe la frase exacta que te dirías para salir de la trampa."
+        },
+        {
+          "type": "check",
+          "id": "2-11-c1",
+          "q": "En una aproximación, descender por debajo de los mínimos «solo un poquito, para ver la pista» se llama:",
+          "options": [
+            "Síndrome del pato (duck-under).",
+            "Carrera scud.",
+            "Mentalidad fija (mind-set)."
+          ],
+          "answer": 0,
+          "why": "El duck-under es bajar de mínimos en la aproximación; la carrera scud es volar bajo en ruta para mantener el terreno a la vista."
+        },
+        {
+          "type": "check",
+          "id": "2-11-c2",
+          "q": "Pista de grava de 2,100 pies, temperatura más cálida de lo esperado: calculas 1,980 pies de despegue sobre un obstáculo de 50 pies. ¿Cuál es la mejor opción?",
+          "options": [
+            "Despegar con viento en contra: te dará el tiempo extra para trepar.",
+            "Esperar a que baje la temperatura y recalcular el rendimiento de despegue.",
+            "Probar un despegue sin los pasajeros para verificar que el ascenso alcanza."
+          ],
+          "answer": 1,
+          "why": "Con 120 pies de margen no se experimenta: la decisión conservadora es esperar y recalcular; las otras dos son probar suerte."
+        },
+        {
+          "type": "check",
+          "id": "2-11-c3",
+          "q": "El clima en ruta cambió, pero sigues ejecutando el plan original «porque así lo planeaste». ¿Qué trampa operacional es?",
+          "options": [
+            "Mentalidad fija (mind-set): no aceptar que la situación cambió.",
+            "Resignación: darte por vencido ante la situación.",
+            "Complacencia: bajar la guardia porque todo va bien."
+          ],
+          "answer": 0,
+          "why": "El mind-set es aferrarse al plan viejo cuando la realidad ya es otra; resignación y complacencia son fallas distintas."
         }
       ]
     }

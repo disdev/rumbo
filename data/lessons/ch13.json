@@ -96,7 +96,8 @@
         "La estación se identifica con cuatro letras OACI: SPJC es Lima (Jorge Chávez), SPZO es Cusco.",
         "121400Z significa día 12 del mes a las 14:00 UTC (Zulu); Perú está en UTC−5.",
         "El viento se codifica dddffKT: dirección en grados VERDADEROS y velocidad en nudos.",
-        "G indica ráfagas, VRB dirección variable y 00000KT calma."
+        "G indica ráfagas, VRB dirección variable y 00000KT calma.",
+        "AUTO en un METAR indica una estación automática (tipo AWOS/ASOS), sin observador humano."
       ],
       "blocks": [
         {
@@ -115,6 +116,10 @@
         {
           "type": "text",
           "md": "¿Y qué dispara un **SPECI**? Un cambio que no puede esperar a la siguiente hora: el viento gira o arrecia de golpe, la visibilidad cruza un mínimo, empieza o termina una tormenta, cae granizo, o el techo sube o baja bruscamente. Regla mental: METAR es la foto de rutina cada hora; SPECI es la foto extra porque algo cambió de forma **significativa**."
+        },
+        {
+          "type": "text",
+          "md": "Un detalle más: si tras la hora ves `AUTO` — como en `METAR SPQT 121500Z AUTO 09004KT...` — la observación la hizo una **estación automática** (equipos tipo AWOS/ASOS: sensores que miden viento, visibilidad, nubes y presión solos), sin observador humano. Funciona 24/7, pero sus sensores solo «ven» el cielo justo encima: puede no captar un banco de niebla o un CB a un costado del campo. Si no aparece AUTO, hubo una persona observando o corrigiendo el informe."
         },
         {
           "type": "notebook",
@@ -152,6 +157,14 @@
           "options": ["Las 07:00 del día 6.", "Las 12:00 del día 6.", "Las 17:00 del día 6."],
           "answer": 0,
           "why": "12:00Z menos 5 horas = 07:00 hora local; sumar en vez de restar es el error típico."
+        },
+        {
+          "type": "check",
+          "id": "13-2-c5",
+          "q": "En `METAR SPQT 121500Z AUTO 09004KT...`, la palabra AUTO indica que:",
+          "options": ["La observación proviene de una estación automática, sin observador humano.", "El informe se repite automáticamente cada 15 minutos.", "El viento es variable y debe confirmarse con la torre."],
+          "answer": 0,
+          "why": "AUTO marca una observación de estación automática (tipo AWOS/ASOS); sin esa palabra, hubo intervención humana."
         }
       ]
     },
@@ -163,12 +176,17 @@
         "En los METAR de EE.UU. la visibilidad va en millas terrestres (SM).",
         "CAVOK: visibilidad ≥ 10 km, sin nubes bajo 5,000 ft y sin fenómenos significativos.",
         "La intensidad va antes del código: − ligera, sin signo moderada, + fuerte; VC significa en la vecindad.",
-        "Códigos clave: RA lluvia, DZ llovizna, SH chubasco, TS tormenta, FG niebla (vis < 1,000 m), BR neblina, HZ bruma."
+        "Códigos clave: RA lluvia, DZ llovizna, SH chubasco, TS tormenta, FG niebla (vis < 1,000 m), BR neblina, HZ bruma.",
+        "La cifra reportada es la visibilidad prevaleciente: la mayor visibilidad alcanzada en al menos la mitad del horizonte."
       ],
       "blocks": [
         {
           "type": "text",
           "md": "Después del viento viene la **visibilidad**. En el formato OACI (el de Perú) son cuatro dígitos en **metros**: `0800` = 800 m, `4000` = 4 km, y `9999` = 10 km o más. En EE.UU. — y en las figuras del banco DGAC, que usa METAR gringos — va en millas terrestres: `1 1/2SM`. Si el día está perfecto verás `CAVOK`: visibilidad ≥ 10 km, sin nubes bajo 5,000 ft y sin fenómenos significativos."
+        },
+        {
+          "type": "text",
+          "md": "Esa cifra tiene nombre técnico: es la visibilidad **prevaleciente** (prevailing visibility). No es la visibilidad en TODAS las direcciones, sino la mayor que se alcanza en **al menos la mitad del horizonte**. Como cuando miras la cancha desde el arco: puede haber neblina hacia un córner, pero si ves claro la mayor parte del campo, esa distancia clara es la que «prevalece» — y la que va en el METAR."
         },
         {
           "type": "text",
@@ -230,6 +248,14 @@
           "options": ["Visibilidad ≥ 10 km, sin nubes bajo 5,000 ft y sin fenómenos significativos.", "Cielo totalmente despejado, con cualquier visibilidad.", "Visibilidad ≥ 5 km y que no esté lloviendo."],
           "answer": 0,
           "why": "CAVOK exige las tres cosas a la vez: visibilidad de 10 km o más, nada de nubes bajo 5,000 ft y ningún fenómeno significativo."
+        },
+        {
+          "type": "check",
+          "id": "13-3-c5",
+          "q": "La visibilidad que se reporta en un METAR es la visibilidad prevaleciente, es decir:",
+          "options": ["La mayor visibilidad alcanzada en al menos la mitad del horizonte.", "La menor visibilidad medida en cualquier dirección.", "La visibilidad medida únicamente en el eje de la pista en uso."],
+          "answer": 0,
+          "why": "Prevaleciente = la que domina en la mitad o más del círculo del horizonte; no la peor ni la de una sola dirección."
         }
       ]
     },
@@ -645,6 +671,7 @@
         "El pronóstico de vientos en altura usa dirección VERDADERA, nudos y temperatura en °C.",
         "2321-04 se decodifica: viento del 230° a 21 nudos, temperatura −4 °C.",
         "9900 significa viento ligero y variable, de menos de 5 nudos.",
+        "Si la dirección codificada supera 36, el viento pasa de 100 kt: réstale 50 a la dirección y súmale 100 a la velocidad.",
         "No se pronostica viento para niveles a menos de 1,500 ft sobre la elevación de la estación.",
         "La carta de superficie muestra frentes e isobaras; las cartas SIGWX pronostican zonas de clima peligroso."
       ],
@@ -669,6 +696,11 @@
         {
           "type": "text",
           "md": "Otra fila típica de la Figura 17: a 6,000 ft lees `2006+03` = viento del **200° verdadero a 6 nudos**, temperatura **+3 °C**. Las trampas del banco: reagrupar mal los dígitos (leer «060° a 20 nudos»), convertir a magnético lo que es verdadero, o inventar una temperatura donde el pronóstico no la da — si la casilla está en blanco, la respuesta correcta es «no se pronostica», no «viento calmo»."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Regla de los 100 nudos: la dirección codificada nunca pasa de 36 (= 360°). Si ves un número **mayor que 36**, el viento supera los 100 kt: **réstale 50 a la dirección y súmale 100 a la velocidad**. Ejemplo trabajado: `7321-30` → dirección 73 − 50 = 23 → **230°**; velocidad 21 + 100 = **121 kt**; temperatura **−30 °C**. Típico de niveles altos, cerca de la corriente en chorro."
         },
         {
           "type": "notebook",
@@ -706,11 +738,89 @@
           "options": ["No se pronostica viento a menos de 1,500 ft sobre la elevación de la estación.", "A esa altura el viento siempre se asume calmo.", "Porque bajo 3,000 ft el viento se reporta en dirección magnética, en otra tabla."],
           "answer": 0,
           "why": "3,000 − 2,000 = 1,000 ft sobre la estación: menos del margen de 1,500 ft, así que ese nivel queda en blanco."
+        },
+        {
+          "type": "check",
+          "id": "13-9-c5",
+          "q": "En un pronóstico de vientos en altura de un nivel alto lees `7545`. El viento es:",
+          "options": ["Del 250° a 145 nudos.", "Del 750° a 45 nudos.", "Del 255° a 45 nudos."],
+          "answer": 0,
+          "why": "75 > 36 activa la regla de los 100 kt: 75 − 50 = 25 → 250°, y 45 + 100 = 145 nudos."
         }
       ]
     },
     {
       "id": "13-10",
+      "title": "Radar, satélite y el clima en tu pantalla",
+      "key_points": [
+        "El radar meteorológico detecta SOLO precipitación; la intensidad de los ecos indica qué tan fuerte cae.",
+        "Sin ecos no significa cielo despejado: el radar no ve nubes, niebla ni turbulencia en aire claro.",
+        "El satélite sí muestra nubes: imagen visible de día e infrarroja (por temperatura de los topes) también de noche.",
+        "Las radiosondas (globos sonda) miden temperatura, humedad y viento en altura: la base de los pronósticos.",
+        "La imagen de radar por datalink o internet llega con varios minutos de retraso: sirve para rodear clima, nunca para meterse entre tormentas."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y las imágenes de colores que ves en las apps del clima? Son del **radar meteorológico**: emite pulsos que rebotan en las gotas y regresan como **ecos**. Verde = precipitación ligera, amarillo = moderada, rojo = fuerte. Pero ojo con lo que el radar **no** ve: detecta SOLO precipitación. No ve nubes, ni niebla, ni turbulencia en aire claro. Una pantalla limpia no promete un cielo limpio — puede haber una capa de estratos tapando toda tu ruta sin un solo eco."
+        },
+        {
+          "type": "text",
+          "md": "El **satélite** sí ve las nubes, desde arriba: la imagen **visible** es una foto de día; la **infrarroja** mide la temperatura de los topes (tope más frío = nube más alta) y funciona también de noche — así se detectan los CB creciendo. ¿Y quién mide el aire en altura? Las **radiosondas**: globos sonda que suben midiendo temperatura, humedad y viento — junto con los PIREP, alimentan los modelos de pronóstico."
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["eco de radar", "retorno del pulso al rebotar en precipitación"],
+            ["imagen visible", "foto satelital de las nubes, solo de día"],
+            ["imagen infrarroja", "satélite que mide temperatura de topes, día y noche"],
+            ["radiosonda", "globo sonda que mide el aire en altura"],
+            ["datalink (FIS-B)", "clima transmitido a una pantalla en cabina"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "La imagen de radar que llega a tu tableta o pantalla por **datalink** o internet NO es en vivo: se arma y transmite con **varios minutos de retraso**, y una tormenta puede moverse y crecer mucho en ese tiempo. Úsala de forma **estratégica** — decidir con anticipación por dónde NO ir — jamás de forma táctica para colarte entre dos celdas rojas."
+        },
+        {
+          "type": "text",
+          "md": "Hoy casi todo este capítulo vive en internet: METAR, TAF, SIGMET, cartas y radar en portales oficiales (en EE.UU., aviationweather.gov; en Perú, los servicios de CORPAC y SENAMHI). La regla no cambia: la fuente debe ser **oficial y aeronáutica**, y la imagen bonita complementa — nunca reemplaza — tu briefing y tus METAR/TAF decodificados."
+        },
+        {
+          "type": "notebook",
+          "id": "13-10-n1",
+          "prompt": "Haz en tu cuaderno una tabla de tres filas: RADAR, SATÉLITE, RADIOSONDA. Para cada una escribe qué mide, qué NO puede ver, y un ejemplo de decisión de vuelo que tomarías con esa información."
+        },
+        {
+          "type": "check",
+          "id": "13-10-c1",
+          "q": "El radar meteorológico detecta:",
+          "options": ["Solo precipitación: no ve nubes, niebla ni turbulencia en aire claro.", "Todas las nubes, incluida la niebla.", "La turbulencia, incluso en aire claro."],
+          "answer": 0,
+          "why": "Los ecos son rebotes en gotas de precipitación; una zona sin ecos puede estar igual llena de nubes o niebla."
+        },
+        {
+          "type": "check",
+          "id": "13-10-c2",
+          "q": "La imagen de radar que recibes por datalink en cabina debe usarse para:",
+          "options": ["Planear con anticipación por dónde rodear el mal clima.", "Navegar en tiempo real entre dos celdas de tormenta.", "Sustituir el briefing cuando vas apurado."],
+          "answer": 0,
+          "why": "Llega con minutos de retraso: sirve para evitar zonas de forma estratégica, nunca para colarte tácticamente entre tormentas."
+        },
+        {
+          "type": "check",
+          "id": "13-10-c3",
+          "q": "¿Qué imagen satelital te permite vigilar el crecimiento de nubes convectivas durante la noche?",
+          "options": ["La infrarroja: mide la temperatura de los topes sin necesitar luz.", "La visible: es la de mayor resolución.", "Ninguna: el satélite solo funciona de día."],
+          "answer": 0,
+          "why": "La infrarroja detecta topes cada vez más fríos (nubes subiendo) a cualquier hora; la visible necesita luz de día."
+        }
+      ]
+    },
+    {
+      "id": "13-11",
       "title": "ATIS y VOLMET: el clima que te habla por radio",
       "key_points": [
         "El ATIS es una grabación continua con el clima actual, la pista en uso y avisos del aeropuerto; cada versión lleva una letra.",
@@ -739,12 +849,12 @@
         },
         {
           "type": "notebook",
-          "id": "13-10-n1",
+          "id": "13-11-n1",
           "prompt": "Escribe en tu cuaderno un ATIS inventado para SPZO con este formato: identificación (letra), viento, visibilidad, nubes, temperatura/punto de rocío, QNH y pista en uso. Luego léelo en voz alta como si fueras la grabación."
         },
         {
           "type": "check",
-          "id": "13-10-c1",
+          "id": "13-11-c1",
           "q": "¿Para qué escuchas el ATIS antes de llamar a la torre?",
           "options": ["Para conocer el clima actual y la pista en uso sin saturar la frecuencia del controlador.", "Para pedir permiso de puesta en marcha.", "Para recibir el pronóstico de las próximas 24 horas."],
           "answer": 0,
@@ -752,7 +862,7 @@
         },
         {
           "type": "check",
-          "id": "13-10-c2",
+          "id": "13-11-c2",
           "q": "¿Qué diferencia al VOLMET del ATIS?",
           "options": ["El VOLMET transmite METAR, SPECI y TAF de VARIOS aeropuertos por HF, para aeronaves en ruta.", "El VOLMET es la grabación de un solo aeropuerto con su pista en uso, en VHF.", "El VOLMET solo se emite cuando hay clima peligroso en ruta."],
           "answer": 0,
@@ -760,7 +870,7 @@
         },
         {
           "type": "check",
-          "id": "13-10-c3",
+          "id": "13-11-c3",
           "q": "Copiaste «información Alfa», pero al llamar, la torre dice que la información vigente es Bravo. ¿Qué significa?",
           "options": ["El ATIS se actualizó: hay información nueva que debes copiar.", "Es solo el indicativo del controlador de turno.", "Que debes cambiar a otra frecuencia llamada Bravo."],
           "answer": 0,
@@ -769,7 +879,7 @@
       ]
     },
     {
-      "id": "13-11",
+      "id": "13-12",
       "title": "El briefing pre-vuelo: arma tu panorama completo",
       "key_points": [
         "Al pedir un briefing indica que eres piloto, si vuelas SOLO VFR, tipo de aeronave, ruta, destino, hora de salida y tiempo estimado en ruta.",
@@ -807,12 +917,12 @@
         },
         {
           "type": "notebook",
-          "id": "13-11-n1",
+          "id": "13-12-n1",
           "prompt": "Escribe en tu cuaderno tu guion de llamada para pedir un briefing estándar de un vuelo SPJC→SPZO que sale en 45 minutos: qué dices y en qué orden. Debajo, lista los 6 productos que revisarías tú mismo antes de llamar, del cuadro grande al detalle."
         },
         {
           "type": "check",
-          "id": "13-11-c1",
+          "id": "13-12-c1",
           "q": "Para obtener el informe meteorológico más completo para tu vuelo, solicitas:",
           "options": ["Un briefing estándar.", "Un briefing abreviado.", "Un briefing de pronóstico."],
           "answer": 0,
@@ -820,7 +930,7 @@
         },
         {
           "type": "check",
-          "id": "13-11-c2",
+          "id": "13-12-c2",
           "q": "Pides el clima para un vuelo que saldrá dentro de 8 horas. Te corresponde:",
           "options": ["Un briefing de pronóstico (outlook).", "Un briefing estándar.", "Un SPECI."],
           "answer": 0,
@@ -828,7 +938,7 @@
         },
         {
           "type": "check",
-          "id": "13-11-c3",
+          "id": "13-12-c3",
           "q": "Recibiste un briefing completo hace dos horas y solo quieres ACTUALIZARLO antes de salir. Pides:",
           "options": ["Un briefing abreviado.", "Otro briefing estándar.", "Un briefing de pronóstico."],
           "answer": 0,
@@ -836,7 +946,7 @@
         },
         {
           "type": "check",
-          "id": "13-11-c4",
+          "id": "13-12-c4",
           "q": "Al llamar por teléfono para tu briefing meteorológico, debes indicar entre lo primero:",
           "options": ["Si tienes la intención de volar solo VFR.", "Tu tiempo total de vuelo y tus habilitaciones.", "El nombre completo y la dirección del piloto al mando."],
           "answer": 0,

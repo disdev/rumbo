@@ -19,7 +19,8 @@
         "Cuando la torre cierra, el aeropuerto opera como no controlado.",
         "Control de tierra autoriza el rodaje; la torre autoriza pista, despegue y aterrizaje; tras aterrizar cambias a tierra cuando la torre lo indica.",
         "Señales luminosas: verde fija en vuelo = autorizado a aterrizar; verde intermitente en tierra = autorizado a rodar; roja y verde alternadas = precaución extrema.",
-        "Con falla de radio: observa el flujo del tráfico, entra al patrón y busca las señales luminosas de la torre."
+        "Con falla de radio: observa el flujo del tráfico, entra al patrón y busca las señales luminosas de la torre.",
+        "Avisos de tráfico por radar: el reloj se basa en tu trayectoria terrestre; el servicio básico de radar da alertas y avisos a VFR, y el TRSA agrega secuenciación y separación a los participantes."
       ],
       "blocks": [
         {
@@ -63,6 +64,32 @@
           "type": "callout",
           "style": "examen",
           "md": "Del banco, tal cual: **verde fija** en vuelo = autorizado a aterrizar; **verde intermitente** en tierra = autorizado a rodar; **roja fija** en vuelo = cede el paso y sigue circulando; **blanca intermitente** en tierra = regresa a tu punto de partida; **roja y verde alternadas** = precaución extrema."
+        },
+        {
+          "type": "text",
+          "md": "Un dato fino del **ATIS**: si la grabación **no menciona** condición de cielo ni visibilidad, es buena noticia: **techo de al menos 5,000 ft y visibilidad de 5 millas o más**. Lo que no se dice también informa."
+        },
+        {
+          "type": "text",
+          "md": "La torre además tiene ojos: el **radar**. Volando VFR puedes recibir el **servicio básico de radar**: alertas de seguridad, **avisos de tráfico** y vectores limitados. En un **TRSA** (área de servicio de radar terminal) te dan además **secuenciación y separación** — si participas, porque para VFR es voluntario. ¿Quieres los avisos desde el despegue? Pídelos a **control de tierra en el contacto inicial**, antes de rodar."
+        },
+        {
+          "type": "text",
+          "md": "Los avisos llegan en clave de reloj: «tráfico a las 2 en punto, 5 millas». Las 12 son tu **trayectoria terrestre** (*ground track*), **no tu nariz**: si vuelas corrigiendo deriva, ajusta la mirada. Ejemplos: rumbo 360° con viento calmo, «tráfico a las 9» = mira al **oeste**; rumbo 090°, «tráfico a las 3 en punto» = 90° a la derecha de tu trayectoria: al **sur**. Y «a las 2» = entre tu frente y 90° a la derecha."
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["Aviso de tráfico (traffic advisory)", "Posición de otro tránsito, en clave de reloj sobre tu trayectoria"],
+            ["Servicio básico de radar", "Alertas de seguridad, avisos de tráfico y vectores limitados para VFR"],
+            ["TRSA (área de servicio de radar terminal)", "Secuenciación y separación para las aeronaves VFR participantes"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Del banco: el reloj de los avisos se basa en tu **trayectoria terrestre**; el **servicio básico de radar** = alertas de seguridad, avisos de tráfico y vectores limitados a VFR; el **TRSA** = **secuenciación y separación** para VFR participantes; saliendo VFR, pides el servicio a **control de tierra en el contacto inicial**."
         },
         {
           "type": "notebook",
@@ -121,6 +148,18 @@
           ],
           "answer": 0,
           "why": "Con radio muda te unes al flujo del patrón y esperas la autorización por señal luminosa."
+        },
+        {
+          "type": "check",
+          "id": "14-1-c5",
+          "q": "Vuelas con rumbo 090° y el ATC avisa: «tráfico a las 3 en punto, 2 millas, hacia el oeste». ¿Hacia dónde debes mirar?",
+          "options": [
+            "Al sur",
+            "Al norte",
+            "Al oeste"
+          ],
+          "answer": 0,
+          "why": "Las 3 en punto son 90° a la derecha de tu trayectoria terrestre (090°): hacia el sur."
         }
       ]
     },
@@ -215,7 +254,8 @@
         "Sobre un umbral desplazado se puede rodar, despegar y terminar el aterrizaje, pero NO tocar tierra antes del umbral.",
         "La barra de demarcación amarilla separa el umbral desplazado de la zona anterior.",
         "Los chevrones amarillos marcan un área inutilizable (blast pad / zona de parada): ni rodar, ni despegar, ni aterrizar.",
-        "Una X grande sobre la pista significa pista cerrada."
+        "Una X grande sobre la pista significa pista cerrada.",
+        "El carril para vehículos se marca con líneas blancas; la espera calle/calle es una sola línea amarilla discontinua."
       ],
       "blocks": [
         {
@@ -243,6 +283,10 @@
           "type": "callout",
           "style": "examen",
           "md": "Cae con figuras: la zona de flechas blancas «no se puede utilizar para aterrizar, pero sí para rodaje y despegue». La barra de demarcación amarilla indica que hay un **umbral desplazado**. Y una pista marcada con **X** grandes está **cerrada**."
+        },
+        {
+          "type": "text",
+          "md": "Dos marcas más que salen en la Figura 64 del banco: el **carril para vehículos** — líneas **blancas** continuas que encierran el camino de los carros de servicio (a veces con interior tipo cierre) — y la marca de espera **calle/calle** (*taxiway/taxiway*): **una sola línea amarilla discontinua** cruzando la calle de rodaje, donde te detienes solo si el ATC te lo pide."
         },
         {
           "type": "notebook",
@@ -296,6 +340,18 @@
           ],
           "answer": 0,
           "why": "La X marca pista cerrada: prohibido despegar y aterrizar en ella."
+        },
+        {
+          "type": "check",
+          "id": "14-3-c5",
+          "q": "La marca de posición de espera entre dos calles de rodaje (calle/calle) consiste en:",
+          "options": [
+            "Una sola línea amarilla discontinua que cruza la calle de rodaje",
+            "Cuatro líneas amarillas: dos sólidas y dos discontinuas",
+            "Dos líneas blancas continuas que encierran marcas tipo cierre"
+          ],
+          "answer": 0,
+          "why": "Las cuatro líneas guardan una PISTA; la calle/calle usa una sola línea discontinua; las blancas marcan el carril vehicular."
         }
       ]
     },
@@ -529,6 +585,7 @@
         "Las luces de borde de calle de rodaje son azules omnidireccionales; las de eje, verdes.",
         "Luces controladas por el piloto: 7 clics = alta, 5 = media, 3 = baja.",
         "Luces de posición de otras aeronaves: roja en el ala izquierda, verde en la derecha, blanca en la cola; roja y verde fijas de frente = viene hacia ti.",
+        "Las luces de posición van encendidas del atardecer al amanecer; roja fija con roja intermitente adelante = tráfico cruzando hacia tu izquierda.",
         "Enciende las luces de aterrizaje bajo 10,000 ft dentro de 10 millas de un aeropuerto y en visibilidad reducida."
       ],
       "blocks": [
@@ -556,9 +613,18 @@
           "md": "Tu radar visual de noche: las **luces de posición** de otros aviones — **roja** en la punta izquierda, **verde** en la derecha, **blanca** en la cola. Si ves roja y verde fijas adelante, a tu altitud… viene **de frente**. ¿Solo la blanca? Se aleja de ti. Y una buena práctica de visibilidad: **enciende tus luces de aterrizaje** por debajo de 10,000 ft dentro de 10 millas de cualquier aeropuerto, y especialmente con visibilidad reducida."
         },
         {
+          "type": "text",
+          "md": "Dos remates nocturnos: la norma exige las **luces de posición encendidas del atardecer al amanecer**. Y si ves una **roja fija junto a una roja intermitente** (su baliza) adelante y a tu altitud, le estás viendo el ala izquierda: ese avión **cruza hacia tu izquierda**."
+        },
+        {
           "type": "callout",
           "style": "examen",
           "md": "Tres favoritas del banco: faro de día = clima bajo mínimos VFR; bordes de calle de rodaje = luces **azules omnidireccionales**; helipuerto iluminado = faro **verde, amarillo y blanco**."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "También del banco: luces de posición **del atardecer al amanecer** (salvo Alaska); **roja fija + roja intermitente** a tu altitud = el otro avión **cruza a la izquierda**; **blanca fija + roja intermitente** = se **aleja** de ti."
         },
         {
           "type": "notebook",
@@ -939,14 +1005,16 @@
     },
     {
       "id": "14-10",
-      "title": "Radio sin torre: la CTAF y los auto-anuncios",
+      "title": "La radio: CTAF, auto-anuncios y cómo se dice",
       "key_points": [
         "En aeropuertos sin torre se usa la frecuencia común de advertencia de tráfico (CTAF).",
         "Se monitorea la CTAF desde 10 millas antes de llegar hasta aterrizar (y de salida hasta 10 millas fuera).",
         "Los auto-anuncios informan posición e intenciones; nadie autoriza — tú informas.",
         "Se anuncia al rodar, antes de entrar a pista, en cada tramo del patrón y al despejar la pista.",
         "UNICOM puede dar información (viento, combustible) pero no es control de tráfico.",
-        "Si no hay torre, FSS ni UNICOM, la CTAF es la frecuencia MULTICOM: 122.9 MHz."
+        "Si no hay torre, FSS ni UNICOM, la CTAF es la frecuencia MULTICOM: 122.9 MHz.",
+        "Al llamar a la torre para despegar indica tu posición, sobre todo al salir desde una intersección de pista.",
+        "Altitudes por radio: 4,500 = «cuatro mil quinientos»; 10,500 = «un cero mil quinientos»."
       ],
       "blocks": [
         {
@@ -962,9 +1030,22 @@
           "md": "¿Y cuál es la CTAF? La encuentras en la carta aeronáutica y en la publicación del aeropuerto. Puede ser la frecuencia de una estación **UNICOM** (una estación privada: te da viento, pista en uso, combustible… pero **no controla tráfico**), la frecuencia de la torre cuando está cerrada, o — si no hay ninguna estación en el campo — la frecuencia **MULTICOM** (122.9 MHz), donde solo hablan pilotos con pilotos."
         },
         {
+          "type": "text",
+          "md": "Hablar por radio tiene su gramática. El **contacto inicial**: a quién llamas + quién eres + dónde/qué + qué quieres. Con una estación de servicio de vuelo (FSS) suena así: «**McAlester Radio, Hawk seis seis seis Charlie Bravo, recibiendo Ardmore VORTAC, cambio**». Y al llamar a la torre para despegar, di tu **posición en el aeropuerto** — sobre todo si sales desde una **intersección** de pista, para que la torre sepa desde dónde arrancas."
+        },
+        {
+          "type": "text",
+          "md": "Las **altitudes** se cantan con reglas: hasta 9,999 ft se dicen en miles y cientos — 4,500 = «**cuatro mil quinientos**». Desde 10,000 ft, los dígitos de las decenas de mil van uno por uno: 10,500 = «**un cero mil quinientos**». Así nadie confunde 10,500 con 1,500 en una frecuencia saturada."
+        },
+        {
           "type": "callout",
           "style": "examen",
           "md": "El banco pregunta el procedimiento recomendado al llegar a un aeropuerto sin torre: **anunciar posición e intenciones en la CTAF a 10 millas y en cada tramo del patrón**. **UNICOM** es una estación privada que puede darte información (viento, combustible), pero no autoriza nada."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Más del banco: 4,500 ft MSL = «**cuatro mil quinientos**»; 10,500 ft = «**un cero mil quinientos**». Las frecuencias UNICOM asignadas a **helipuertos**: **123.05 y 123.075 MHz**. Y al pedir despegue, reporta tu posición **al salir de una intersección de pista**."
         },
         {
           "type": "notebook",
@@ -1018,19 +1099,33 @@
           ],
           "answer": 0,
           "why": "UNICOM es una estación privada de información; no emite autorizaciones."
+        },
+        {
+          "type": "check",
+          "id": "14-10-c5",
+          "q": "¿Cuál es el método correcto para indicar 10,500 ft MSL al ATC?",
+          "options": [
+            "«Un cero mil quinientos»",
+            "«Diez mil quinientos»",
+            "«Uno cero cinco cero cero»"
+          ],
+          "answer": 0,
+          "why": "Desde 10,000 ft las decenas de mil se dicen dígito por dígito: un-cero-mil-quinientos."
         }
       ]
     },
     {
       "id": "14-11",
-      "title": "Estela turbulenta en el circuito: esquivar a los grandes",
+      "title": "Esquivar a los demás: estela turbulenta y ver-y-evitar",
       "key_points": [
         "Los vórtices de punta de ala existen siempre que el ala genera sustentación y se hunden bajo la trayectoria.",
         "La estela es peor con un avión pesado, limpio (sin flaps) y lento.",
         "Despegando detrás de un grande: rota ANTES de su punto de rotación y sube por el lado de donde viene el viento.",
         "Aterrizando detrás de un grande: mantente por ENCIMA de su trayectoria y toca tierra DESPUÉS de su punto de toque.",
         "Un viento de cola ligero es la condición más peligrosa para la estela al aterrizar.",
-        "Los vórtices nacen en la rotación y mueren en el toque; un viento cruzado de 2–3 nudos puede mantener un vórtice sobre la pista."
+        "Los vórtices nacen en la rotación y mueren en el toque; un viento cruzado de 2–3 nudos puede mantener un vórtice sobre la pista.",
+        "La mayoría de colisiones en el aire ocurren en días claros; escanea toda el área antes de cada maniobra.",
+        "Otro avión sin movimiento relativo aparente que crece en tu parabrisas está en curso de colisión."
       ],
       "blocks": [
         {
@@ -1059,6 +1154,10 @@
           "type": "callout",
           "style": "memoria",
           "md": "Despega ANTES de donde él rotó; aterriza DESPUÉS de donde él tocó. Y siempre por encima de su camino. Su estela vive ENTRE su rotación y su toque: tú quédate fuera de ese tramo."
+        },
+        {
+          "type": "text",
+          "md": "La estela no es el único fantasma: el otro avión también. Dato incómodo: la mayoría de las **colisiones en el aire** ocurren en **días claros** y con buena visibilidad — la confianza mata. Antes de **cada maniobra**, escanea visualmente **toda el área**. Y la señal de alarma definitiva: si otro avión **no presenta movimiento relativo aparente** (está clavado en el mismo punto de tu parabrisas) y **crece de tamaño**… están en **curso de colisión**. Actúa de inmediato."
         },
         {
           "type": "notebook",
@@ -1112,19 +1211,33 @@
           ],
           "answer": 0,
           "why": "Su estela terminó donde él tocó: rota más allá de ese punto y quedas fuera de ella."
+        },
+        {
+          "type": "check",
+          "id": "14-11-c5",
+          "q": "Un avión adelante permanece clavado en el mismo punto de tu parabrisas, sin movimiento relativo aparente, y crece de tamaño. Eso indica que:",
+          "options": [
+            "Está en curso de colisión contigo",
+            "Se aleja de ti en tu misma dirección",
+            "Pasará con separación segura por tu derecha"
+          ],
+          "answer": 0,
+          "why": "Sin movimiento relativo aparente y creciendo = curso de colisión: cambia rumbo o altitud ya."
         }
       ]
     },
     {
       "id": "14-12",
-      "title": "Incursiones en pista, LAHSO y seguridad en la rampa",
+      "title": "Incursiones, LAHSO, la rampa y tu red de seguridad",
       "key_points": [
         "Una incursión en pista es la presencia indebida de una aeronave, vehículo o persona en una pista.",
         "Para prevenirlas: escribe las instrucciones, colaciona todo «hold short», usa el diagrama del aeropuerto y, si te pierdes, detente y pregunta.",
         "LAHSO: aterrizar y detenerse antes de un punto; puedes (y debes) rechazarla si no puedes cumplirla.",
         "Trata la hélice siempre como si fuera a girar; nunca camines por su arco.",
         "Señal de marshalling con los brazos cruzados sobre la cabeza = ALTO.",
-        "Si te desorientas rodando: detente, avisa y pide rodaje progresivo."
+        "Si te desorientas rodando: detente, avisa y pide rodaje progresivo.",
+        "El plan de vuelo VFR sirve para activar búsqueda y rescate; su casilla de nivel lleva la altitud de crucero VFR.",
+        "El ELT transmite en 406 MHz; antes de apagar el motor monitorea 121.5 para confirmar que no se activó."
       ],
       "blocks": [
         {
@@ -1143,6 +1256,15 @@
           "type": "callout",
           "style": "ojo",
           "md": "La hélice no perdona: aunque el motor esté apagado, moverla (o cruzar su arco) con un cilindro caliente puede hacerla girar de golpe. Rodéala SIEMPRE."
+        },
+        {
+          "type": "text",
+          "md": "Tu **red de seguridad** para cuando algo sale mal: el **plan de vuelo VFR**. No siempre es obligatorio, pero preséntalo: si no llegas, alguien activa la **búsqueda y rescate**. En el formulario, la casilla de **nivel** (ítem 15) lleva tu **altitud de crucero VFR**. Y el **ELT** — tu grito automático de auxilio — transmite en **406 MHz** hacia satélites. Antes de apagar el motor, **monitorea 121.5** para confirmar que no se activó solo con un aterrizaje duro."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Del banco: ¿por qué presentar un plan de vuelo VFR? Para tener **búsqueda y rescate** en caso de emergencia. Ítem 15 (nivel) = **altitud de crucero VFR**. El ELT activado transmite en **406 MHz**, y verificas que no se disparó **monitoreando 121.5 antes de apagar el motor**."
         },
         {
           "type": "notebook",
@@ -1196,6 +1318,18 @@
           ],
           "answer": 0,
           "why": "Brazos cruzados sobre la cabeza = ALTO."
+        },
+        {
+          "type": "check",
+          "id": "14-12-c5",
+          "q": "¿Por qué deberías presentar un plan de vuelo VFR?",
+          "options": [
+            "Para que haya búsqueda y rescate si no llegas a destino",
+            "Porque es obligatorio en todo vuelo de travesía VFR",
+            "Para recibir separación radar durante toda la ruta"
+          ],
+          "answer": 0,
+          "why": "El plan de vuelo VFR existe para activar búsqueda y rescate en caso de emergencia."
         }
       ]
     }

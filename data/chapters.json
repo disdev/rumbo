@@ -48,13 +48,15 @@
             "Los pasos son: Detectar el cambio, Estimar si hay que reaccionar, Choose (elegir el resultado deseado), Identificar acciones, Do (hacer la mejor acción) y Evaluar el efecto.",
             "DECIDE es un ciclo: si al evaluar el resultado no es el deseado, el proceso vuelve a empezar.",
             "El resultado deseado se elige antes de identificar las acciones: la C va antes que la I.",
-            "El proceso evita las dos reacciones malas: congelarse o actuar por impulso."
+            "El proceso evita las dos reacciones malas: congelarse o actuar por impulso.",
+            "El modelo 3P (Percibir–Procesar–Ejecutar) es el ciclo continuo de gestión de riesgo durante todo el vuelo."
           ]
         },
         {
           "id": "2-4",
           "title": "Medir el riesgo: la matriz y PAVE",
           "key_points": [
+            "Un peligro (hazard) es una condición real o percibida; el riesgo (risk) es la evaluación de su impacto futuro sobre el vuelo.",
             "El riesgo se evalúa cruzando probabilidad (¿qué tan posible?) con severidad (¿qué tan grave?).",
             "Un riesgo probable y grave es inaceptable: se cambia el plan, no se acepta.",
             "La gestión de riesgos se basa en conciencia situacional, reconocimiento de problemas y buen juicio.",
@@ -70,6 +72,7 @@
             "Las letras: Illness (enfermedad), Medication (medicación), Stress (estrés), Alcohol, Fatigue (fatiga), Emotion (emoción).",
             "Basta una sola respuesta desfavorable en IMSAFE para no volar.",
             "El piloto es el responsable de determinar su aptitud para cada vuelo, aunque tenga certificado médico vigente.",
+            "Los estresores pueden ser físicos (ruido, vibración, calor), fisiológicos (fatiga, hambre) o psicológicos (plata, familia, exámenes).",
             "IMSAFE evalúa al piloto, no al avión; la parte médica se profundiza en el capítulo 17."
           ]
         },
@@ -130,6 +133,17 @@
             "La decisión correcta es el viraje de 180 grados hecho temprano, cuando aún hay opciones.",
             "Este escenario combina get-there-itis, impulsividad e invulnerabilidad: es el más mortal de la aviación general."
           ]
+        },
+        {
+          "id": "2-11",
+          "title": "Las trampas operacionales: ponles nombre",
+          "key_points": [
+            "Las trampas operacionales son patrones clásicos de mala decisión con nombre propio.",
+            "Presión de grupo, mentalidad fija (mind-set), get-there-itis, síndrome del pato (duck-under), carrera scud y continuar VFR en IMC son las más conocidas.",
+            "Ir detrás del avión, perder la conciencia de posición, volar sin reserva de combustible y volar fuera del sobre completan la lista.",
+            "El descuido de la planificación, la inspección prevuelo y el checklist nace casi siempre de la confianza excesiva.",
+            "Ante un margen de performance dudoso, la decisión conservadora — esperar y recalcular — es la correcta."
+          ]
         }
       ]
     },
@@ -176,6 +190,7 @@
             "El revestimiento (skin) cubre todo y en alas semimonocasco también ayuda a cargar esfuerzo.",
             "Muchas alas llevan los tanques de combustible en su interior; por eso se drenan muestras bajo el ala en el prevuelo.",
             "El ala se une al fuselaje en la raíz; el extremo libre es la punta.",
+            "El borde de ataque es el frente del ala; el borde de salida, la parte trasera; la envergadura, la distancia de punta a punta.",
             "La carga extra que puede imponerse al ala depende de la velocidad del avión."
           ]
         },
@@ -235,7 +250,8 @@
             "El triciclo permite frenar con más fuerza, da mejor visibilidad al rodar y mantiene el avión recto en el aterrizaje.",
             "Tren convencional: dos ruedas principales + rueda o patín de cola; útil en pistas rústicas por la mayor luz de la hélice.",
             "El convencional da poca visibilidad hacia adelante al rodar y es más propenso al trompo (ground loop).",
-            "El trompo ocurre porque en el convencional el CG va detrás de las ruedas principales y exagera cualquier giro."
+            "El trompo ocurre porque en el convencional el CG va detrás de las ruedas principales y exagera cualquier giro.",
+            "El tren no siempre son ruedas: los hidroaviones usan flotadores y en nieve se montan esquíes."
           ]
         },
         {
@@ -270,6 +286,7 @@
             "El aluminio se corroe: en el prevuelo se busca pintura hinchada, polvillo blanco y remaches deteriorados, sobre todo cerca del mar.",
             "Los materiales compuestos (fibra de vidrio, fibra de carbono) crecen: se moldean en formas suaves y no se corroen.",
             "Un golpe puede dañar los compuestos por dentro sin dejar marca visible por fuera.",
+            "Los compuestos llevan malla metálica contra rayos; el removedor de pintura daña su resina — nunca usarlo. El panel puede ser análogo o cabina de cristal (pantallas).",
             "Los primeros aviones usaban madera y tela; algunos clásicos aún vuelan así.",
             "Además de la estructura, el avión tiene subsistemas: sistema eléctrico, controles de vuelo (cables y varillas) y frenos.",
             "El panel de instrumentos es parte del avión: te dice velocidad, altitud, rumbo y estado del motor."
@@ -325,6 +342,7 @@
             "Tercera ley de Newton: a toda acción corresponde una reacción igual y opuesta.",
             "El ala desvía aire hacia abajo (downwash) y el aire empuja el ala hacia arriba.",
             "La mano inclinada fuera de la ventana del carro sube por la misma razón que un ala.",
+            "Newton dejó tres leyes: inercia, fuerza = masa × aceleración, y acción-reacción; las tres se aplican al vuelo.",
             "Bernoulli y Newton no compiten: describen juntos la misma sustentación."
           ]
         },
@@ -337,7 +355,8 @@
             "La cuerda es la línea recta imaginaria del borde de ataque al borde de salida.",
             "La combadura (camber) es la curvatura del perfil respecto a la cuerda.",
             "Extradós = superficie superior; intradós = superficie inferior.",
-            "La envergadura es la distancia de punta a punta de ala."
+            "La envergadura es la distancia de punta a punta de ala.",
+            "La hélice y las superficies de cola también son perfiles alares: la \"sustentación\" de la hélice apunta hacia adelante y es el empuje."
           ]
         },
         {
@@ -357,6 +376,8 @@
             "La sustentación nace de presión baja arriba y presión alta abajo del ala.",
             "Al mismo tiempo, el ala desvía aire hacia abajo y recibe la reacción hacia arriba.",
             "La sustentación actúa perpendicular al viento relativo.",
+            "El efecto Magnus (la pelota con comba) demuestra que aire más rápido = presión más baja.",
+            "La fórmula de la sustentación es L = ½ ρ V² S CL.",
             "La sustentación depende de densidad, velocidad (al cuadrado), área del ala y ángulo de ataque.",
             "Más velocidad o más ángulo de ataque = más sustentación, hasta el ángulo crítico.",
             "Al volar más lento, mantienes la altura compensando con más ángulo de ataque."
@@ -524,7 +545,8 @@
             "El ángulo diedro (alas en V abierta) da estabilidad lateral, contra el alabeo.",
             "Al ladearse, el avión resbala y el ala baja recibe más ángulo de ataque: más sustentación y se endereza solo.",
             "La estabilidad direccional (contra la guiñada) la da la deriva vertical, detrás del CG.",
-            "El efecto veleta regresa la nariz hacia el viento relativo, como las plumas de un dardo."
+            "El efecto veleta regresa la nariz hacia el viento relativo, como las plumas de un dardo.",
+            "Deriva fuerte con diedro débil produce inestabilidad espiral; lo contrario, balanceo del holandés."
           ]
         },
         {
@@ -535,7 +557,9 @@
             "Al banquear, la componente vertical de la sustentación disminuye y el avión tiende a descender.",
             "Para mantener la altitud en el viraje hay que aumentar el ángulo de ataque (jalar el bastón).",
             "La guiñada adversa apunta la nariz hacia afuera del viraje por la resistencia del alerón que baja.",
-            "La guiñada adversa se corrige con el timón de dirección hacia el lado del viraje."
+            "La guiñada adversa se corrige con el timón de dirección hacia el lado del viraje.",
+            "A más banqueo el radio de viraje se achica; a más velocidad, se agranda.",
+            "En maniobras de referencia en tierra se banquea más donde la velocidad sobre el suelo es mayor (viento de cola)."
           ]
         },
         {
@@ -548,7 +572,8 @@
             "Valores de examen: 30° → ≈1.2 G, 45° → ≈1.5 G, 60° → 2 G.",
             "Peso soportado = peso × factor de carga (ej.: 2,300 lb a 60° → 4,600 lb).",
             "El exceso de carga que se puede imponer al ala depende de la velocidad del avión.",
-            "Pasando 60° de banqueo, el factor de carga crece de forma explosiva."
+            "Pasando 60° de banqueo, el factor de carga crece de forma explosiva.",
+            "Los límites dependen de la categoría (normal +3.8G, utilitaria +4.4G, acrobática +6.0G); a Va o menos, el avión entra en pérdida antes de excederlos."
           ]
         },
         {
@@ -561,7 +586,8 @@
             "Mayor factor de carga → pérdida a mayor velocidad: Vs crece con la raíz del factor de carga (√G).",
             "En una barrena, ambas alas están en pérdida; la del lado del giro, más profundamente.",
             "La barrena es una pérdida agravada con guiñada: para entrar en barrena, primero hay que estar en pérdida.",
-            "Recuperación conceptual de barrena: potencia al mínimo, pedal contrario al giro y bajar la nariz."
+            "Recuperación conceptual de barrena: potencia al mínimo, pedal contrario al giro y bajar la nariz.",
+            "La recuperación de la pérdida empieza por reducir el ángulo de ataque; la potencia ayuda pero no sustituye."
           ]
         }
       ]
@@ -596,7 +622,8 @@
             "El ala del alerón que baja gana curvatura, genera más sustentación y sube.",
             "El resultado es alabeo sobre el eje longitudinal.",
             "Bastón a la derecha: alerón derecho arriba, alerón izquierdo abajo, el avión alabea a la derecha.",
-            "Van hacia las puntas por brazo de palanca: más momento de alabeo con menos deflexión."
+            "Van hacia las puntas por brazo de palanca: más momento de alabeo con menos deflexión.",
+            "El flaperón combina las funciones del flap y del alerón en una sola superficie."
           ]
         },
         {
@@ -667,6 +694,7 @@
             "Las ranuras fijas (slots) guían aire con energía sobre el ala y retrasan la pérdida a un ángulo de ataque mayor.",
             "Los slats móviles se deslizan hacia adelante y abren la ranura cuando hace falta.",
             "Los flaps de borde de ataque aumentan la curvatura por delante; se usan con los flaps traseros en aviones grandes.",
+            "El cuff es una extensión fija del borde de ataque, hacia abajo y adelante, que suaviza la pérdida a costa de algo de crucero.",
             "Los spoilers se levantan sobre el ala: reducen la sustentación y aumentan la resistencia.",
             "Los planeadores usan spoilers para controlar el descenso; en tierra ayudan a frenar."
           ]
@@ -696,6 +724,18 @@
             "El piloto automático reduce la carga de trabajo manteniendo actitud, rumbo o altitud.",
             "Un autopilot de un solo eje controla los alerones: es un nivelador de alas.",
             "El piloto siempre supervisa al piloto automático."
+          ]
+        },
+        {
+          "id": "6-11",
+          "title": "Los mandos con viento: virajes sobre referencias en tierra",
+          "key_points": [
+            "En las maniobras de referencia en tierra el viento cambia tu velocidad sobre el suelo aunque la velocidad del aire sea constante.",
+            "Para mantener el trazo sobre el suelo, la inclinación se ajusta todo el tiempo: más velocidad sobre el suelo, más inclinación.",
+            "La inclinación más pronunciada va con viento de cola; la más suave, con viento de frente.",
+            "En el rumbo rectangular, las esquinas pegadas a la pierna con viento de frente se giran menos de 90°; las pegadas a la de viento de cola, más de 90°.",
+            "En los giros en S, si un semicírculo sale más chico es porque la inclinación aumentó demasiado rápido en la primera parte del giro.",
+            "La corrección de deriva (crab) mantiene la nariz cruzada al viento en los tramos rectos."
           ]
         }
       ]
@@ -753,7 +793,8 @@
             "Con hélice de paso fijo, la primera indicación de hielo es una pérdida de RPM.",
             "Al aplicar calor de carburador con hielo presente: las RPM caen aún más y luego suben gradualmente mientras el hielo se derrite.",
             "El calor de carburador enriquece la mezcla (aire caliente = menos denso) y disminuye el rendimiento del motor.",
-            "Los carburadores de flotador son más susceptibles al hielo que la inyección de combustible."
+            "Los carburadores de flotador son más susceptibles al hielo que la inyección de combustible.",
+            "Los sistemas antihielo (anti-ice) previenen la formación de hielo; los de deshielo (de-ice, como las botas neumáticas) eliminan el ya formado."
           ]
         },
         {
@@ -764,7 +805,8 @@
             "Ventajas: menos susceptible al hielo, mezcla más uniforme entre cilindros, mejor control de la mezcla y respuesta más rápida del acelerador.",
             "Desventajas: arranque difícil con el motor caliente, posible tapón de vapor (vapor lock) en días calurosos y mayor complejidad.",
             "Los carburadores de flotador son MÁS susceptibles al hielo que los sistemas de inyección.",
-            "El turbocargador usa los gases de escape para comprimir el aire de admisión y mantener la potencia en altura."
+            "El turbocargador usa los gases de escape para comprimir el aire de admisión y mantener la potencia en altura.",
+            "Motores de turbina: turborreactor (chorro puro), turbofán (ventilador, aviones de línea), turbohélice (la turbina mueve una hélice) y turboeje (helicópteros)."
           ]
         },
         {
@@ -798,7 +840,8 @@
             "Drenar antes de volar: el colador (gascolator) Y los sumideros de cada tanque — el agua es más pesada y se asienta abajo.",
             "Llenar los tanques después del último vuelo del día evita la condensación de humedad en el espacio de aire.",
             "AVGAS por colores: 80 rojo, 100 verde, 100LL azul; el Jet A es incoloro o pajizo — ¡jamás en un motor de pistones!",
-            "El selector de combustible (IZQ/DER/AMBOS/OFF) y el cebador (primer) completan el sistema."
+            "El selector de combustible (IZQ/DER/AMBOS/OFF) y el cebador (primer) completan el sistema.",
+            "No confíes solo en los aforadores: verifica la cantidad visualmente y calcula por tiempo de consumo; al reabastecer, conecta el cable a tierra contra la estática."
           ]
         },
         {
@@ -810,7 +853,8 @@
             "Tras arrancar, la presión de aceite debe subir en unos 30 segundos (algo más en clima frío); si no, apaga el motor.",
             "Temperatura de aceite anormalmente alta: causa probable, nivel de aceite demasiado bajo.",
             "Temperatura de aceite Y de culata altas a la vez: probable exceso de potencia con mezcla demasiado pobre.",
-            "Presión de aceite baja en vuelo = emergencia: el motor puede gripar."
+            "Presión de aceite baja en vuelo = emergencia: el motor puede gripar.",
+            "La mayoría de avionetas usan cárter húmedo (wet sump): el aceite se almacena en el cárter del propio motor y el nivel se revisa con la varilla (dipstick)."
           ]
         },
         {
@@ -832,7 +876,8 @@
             "Encendido dual: dos magnetos y dos bujías por cilindro — da seguridad (redundancia) y mejor rendimiento por una combustión más completa.",
             "En el run-up se chequean los magnetos: una pequeña caída de RPM en cada uno es normal.",
             "Si el cable de tierra del magneto se desconecta, el motor NO se puede apagar con la llave: la hélice queda 'viva'.",
-            "Al propulsar la hélice a mano, un piloto competente debe estar en los controles de la cabina."
+            "Al propulsar la hélice a mano, un piloto competente debe estar en los controles de la cabina.",
+            "El arrancador eléctrico, alimentado por la batería, gira el cigüeñal con la llave en START; antes de arrancar se grita '¡Libre!' para alejar a todos de la hélice."
           ]
         },
         {
@@ -844,7 +889,8 @@
             "El alternador entrega buena corriente incluso a bajas RPM; el amperímetro muestra si la batería se carga (+) o se descarga (−).",
             "El sistema de vacío hace girar los giróscopos de actitud y rumbo (se profundiza en el capítulo 8).",
             "La calefacción de cabina calienta aire alrededor del escape: una fisura puede meter monóxido de carbono (CO), incoloro e inodoro.",
-            "Ante sospecha de CO (dolor de cabeza, somnolencia): cierra la calefacción y abre las ventilaciones."
+            "Ante sospecha de CO (dolor de cabeza, somnolencia): cierra la calefacción y abre las ventilaciones.",
+            "Para volar alto se necesita oxígeno suplementario (solo oxígeno de aviación, que viene seco) o cabina presurizada."
           ]
         }
       ]
@@ -887,7 +933,8 @@
             "El altímetro mide presión estática con cápsulas aneroides selladas.",
             "Las cápsulas se expanden al subir porque la presión exterior disminuye.",
             "Aguja larga = centenas de pies; corta y gruesa = miles; fina con triángulo = decenas de miles.",
-            "Se lee de la aguja más lenta a la más rápida: decenas de miles, miles, centenas."
+            "Se lee de la aguja más lenta a la más rápida: decenas de miles, miles, centenas.",
+            "En crucero VFR, rumbo magnético 000–179 usa miles impares + 500; 180–359, miles pares + 500."
           ]
         },
         {
@@ -921,7 +968,8 @@
             "El velocímetro compara la presión de impacto del pitot contra la presión estática.",
             "IAS es lo que lees; CAS corrige errores de instalación y posición.",
             "TAS corrige por altitud y temperatura; crece ~2% por cada 1,000 ft de altura.",
-            "GS es la TAS más o menos el efecto del viento."
+            "GS es la TAS más o menos el efecto del viento.",
+            "El termómetro de aire exterior (OAT) da la temperatura para calcular TAS y altitud de densidad."
           ]
         },
         {
@@ -944,7 +992,8 @@
             "La cifra estable tarda de 6 a 9 segundos en aparecer.",
             "La tendencia (si subes o bajas) se muestra de inmediato.",
             "El variómetro usa únicamente la fuente estática.",
-            "En vuelo nivelado el variómetro marca cero; perseguir su aguja produce oscilaciones."
+            "En vuelo nivelado el variómetro marca cero; perseguir su aguja produce oscilaciones.",
+            "El variómetro instantáneo (IVSI) añade acelerómetros que eliminan casi todo el retraso."
           ]
         },
         {
@@ -956,7 +1005,8 @@
             "El indicador de actitud muestra cabeceo y alabeo a la vez; el avioncito se alinea con el horizonte.",
             "La dirección de banqueo se determina por la relación del avioncito en miniatura con la barra de horizonte.",
             "La bomba de vacío mueve el indicador de actitud y el direccional; el coordinador suele ser eléctrico.",
-            "Si falla el vacío, actitud y direccional se degradan lentamente y mienten sin avisar."
+            "Si falla el vacío, actitud y direccional se degradan lentamente y mienten sin avisar.",
+            "En paneles de vidrio, la ADC procesa pitot-estática y el AHRS reemplaza a los giroscopios."
           ]
         },
         {
@@ -968,7 +1018,8 @@
             "El coordinador de virajes muestra el régimen de alabeo y de viraje, no el ángulo de banqueo.",
             "El coordinador indica el movimiento de la aeronave sobre los ejes de guiñada y alabeo.",
             "Viraje estándar: 3° por segundo, es decir 360° en 2 minutos.",
-            "Bolita del inclinómetro centrada = viraje coordinado; se corrige pisando el pedal del lado de la bolita."
+            "Bolita del inclinómetro centrada = viraje coordinado; se corrige pisando el pedal del lado de la bolita.",
+            "El indicador de viraje y deslizamiento solo muestra el régimen de guiñada; el coordinador añade el alabeo."
           ]
         },
         {
@@ -980,6 +1031,7 @@
             "La inclinación magnética (dip) causa los errores de viraje y de aceleración.",
             "Hemisferio norte: UNOS al virar (se atrasa desde el norte, se adelanta desde el sur) y ANDS al acelerar.",
             "En el hemisferio sur — donde está Perú — esos errores se invierten; el examen pregunta por el hemisferio norte.",
+            "Al acelerar o desacelerar en rumbo norte o sur, la brújula indica correctamente: sin error.",
             "La brújula solo es precisa en vuelo recto, nivelado y a velocidad constante."
           ]
         },
@@ -1057,6 +1109,7 @@
           "key_points": [
             "El avión debe volar con sus documentos a bordo: certificado de matrícula, certificado de aeronavegabilidad, manual de vuelo y libro de a bordo, entre otros.",
             "El truco americano ARROW resume: aeronavegabilidad, matrícula (registration), radio, limitaciones operativas (manual) y peso y balance.",
+            "El certificado de matrícula acredita la inscripción del avión en el registro de la autoridad, pero no prueba propiedad; queda sin efecto si el avión se vende o la matrícula se cancela.",
             "En Perú la lista exacta la fija el RAP e incluye además el libro de a bordo y la póliza de seguros.",
             "El piloto lleva sus propios documentos: licencia apropiada y certificado médico vigente.",
             "Los documentos se presentan a los inspectores designados por la AAC cuando los soliciten."
@@ -1071,6 +1124,7 @@
             "Especial: experimental, restringida, deportiva ligera y permisos especiales de vuelo.",
             "No vence por fecha: sigue vigente mientras la aeronave se mantenga y opere conforme a los reglamentos.",
             "Las aeronaves experimentales no vuelan sobre áreas densamente pobladas ni rutas congestionadas sin autorización.",
+            "La categoría restringida es para aeronaves de propósito especial, como las agrícolas; en el banco, lo prohibido para ellas es el vuelo dentro del espacio aéreo Clase D.",
             "Debe estar exhibido a bordo, visible para tripulación y pasajeros.",
             "El permiso especial de vuelo autoriza un traslado concreto de una aeronave que no cumple todas las condiciones, por ejemplo llevarla al taller."
           ]
@@ -1085,7 +1139,7 @@
             "Una inspección anual reemplaza a la de 100 horas; una de 100 horas NO reemplaza a la anual.",
             "La anual la hace un mecánico con habilitación de inspector o un taller aprobado.",
             "La fecha de la última inspección se busca en los registros de mantenimiento.",
-            "El transpondedor se inspecciona cada 24 meses calendario y el ELT cada 12.",
+            "El transpondedor se inspecciona cada 24 meses calendario y el ELT cada 12; el paracaídas tipo asiento se repliega por plegador certificado cada 120 días.",
             "La batería del ELT se cambia tras 1 hora de uso acumulado o al 50% de su vida útil, y el ELT solo se prueba en los primeros 5 minutos de cada hora."
           ]
         },
@@ -1110,7 +1164,8 @@
             "Las AD pueden ser de emergencia (cumplimiento inmediato) o con plazo, y de una sola vez o recurrentes.",
             "El cumplimiento de las AD se demuestra en los registros de mantenimiento.",
             "El responsable de cumplir las AD es el propietario u operador.",
-            "Un boletín de servicio (SB) es una recomendación del fabricante: voluntario, salvo que una AD lo vuelva obligatorio."
+            "Un boletín de servicio (SB) es una recomendación del fabricante: voluntario, salvo que una AD lo vuelva obligatorio.",
+            "La circular de asesoramiento (AC) es material informativo de la autoridad, disponible para todos los pilotos en la página web del SRVSOP."
           ]
         },
         {
@@ -1168,7 +1223,8 @@
             "El brazo de un peso es su distancia horizontal al datum; positivo hacia atrás.",
             "Lo que está delante del datum tiene brazo negativo y su momento se resta.",
             "Poner el datum delante de la nariz hace que todos los brazos sean positivos.",
-            "El CG (centro de gravedad) es el punto donde el avión colgaría en equilibrio perfecto."
+            "El CG (centro de gravedad) es el punto donde el avión colgaría en equilibrio perfecto.",
+            "En aviones grandes el CG se expresa como porcentaje de la cuerda aerodinámica media (MAC)."
           ]
         },
         {
@@ -1179,7 +1235,8 @@
             "La carga útil es el peso máximo menos el peso vacío: ocupantes, equipaje y combustible utilizable.",
             "El peso bruto (gross) es el peso total del avión cargado.",
             "El peso de rampa puede superar al de despegue porque el taxi quema combustible.",
-            "Existen máximos separados de rampa, despegue y aterrizaje."
+            "Existen máximos separados de rampa, despegue y aterrizaje.",
+            "La carga paga (payload) es la carga útil sin el combustible utilizable."
           ]
         },
         {
@@ -1214,7 +1271,9 @@
             "Si el punto cae fuera del envelope, no se vuela hasta reacomodar la carga.",
             "A mayor peso, el rango de CG permitido se angosta.",
             "El envelope de categoría utilitaria es más chico y restrictivo que el de categoría normal.",
-            "Algunos gráficos usan momento ÷ 100 o ÷ 1,000 en el eje horizontal en vez del CG."
+            "Algunos gráficos usan momento ÷ 100 o ÷ 1,000 en el eje horizontal en vez del CG.",
+            "La gráfica de carga (loading graph) entrega el momento de cada ítem sin multiplicar.",
+            "El método de tablas compara el momento total contra el mínimo y máximo permitidos para ese peso."
           ]
         },
         {
@@ -1249,6 +1308,18 @@
             "El CG siempre se mueve hacia el lado al que moviste el peso.",
             "Si sales del envelope puedes mover carga, quitar equipaje o drenar combustible.",
             "Despegar fuera del envelope no es una opción: es ilegal y peligroso."
+          ]
+        },
+        {
+          "id": "10-11",
+          "title": "¿De quién es la responsabilidad? Registros, piso y alas parejas",
+          "key_points": [
+            "El piloto al mando es responsable de calcular el peso y balance antes de cada vuelo.",
+            "Los datos oficiales viven en el manual (AFM/POH) y en los registros de peso y balance del avión.",
+            "Tras instalar o quitar equipo, el mecánico actualiza el peso vacío y su CG en los registros.",
+            "El compartimiento de equipaje tiene un placard de peso máximo Y un límite de carga por área del piso.",
+            "El límite de piso se mide en libras por pie cuadrado: manda el límite más restrictivo.",
+            "El balance lateral se mantiene quemando combustible parejo de los tanques de ambas alas."
           ]
         }
       ]
@@ -1343,6 +1414,7 @@
             "Con obstáculo al final de la pista se usa Vx; libre de obstáculos se usa Vy.",
             "Vx es más lenta que Vy, y ambas se acercan al subir hasta juntarse en el techo absoluto.",
             "El techo de servicio es donde el mejor régimen de ascenso cae a 100 ft/min; el absoluto, donde llega a cero.",
+            "El ángulo de ascenso depende del empuje sobrante; el régimen de ascenso, de la potencia sobrante.",
             "La DA alta reduce el régimen de ascenso: en día caliente subes más pobre."
           ]
         },
@@ -1353,6 +1425,7 @@
             "Alcance (range) es la máxima distancia por combustible; autonomía (endurance) es el máximo tiempo en el aire.",
             "La máxima autonomía se vuela a la potencia mínima que mantiene el vuelo nivelado.",
             "El viento afecta el alcance pero no la autonomía.",
+            "El máximo alcance se vuela a la velocidad de máxima fineza (L/D máximo); con viento de frente conviene volar un poco más rápido.",
             "En crucero normal se usa 65–75 % de potencia y se empobrece la mezcla según el POH.",
             "A mayor altitud, con el mismo porcentaje de potencia, la velocidad verdadera (TAS) es mayor.",
             "Las tablas de crucero del POH dan TAS, flujo de combustible y ajuste de potencia por altitud y temperatura."
@@ -1360,6 +1433,18 @@
         },
         {
           "id": "11-9",
+          "title": "La curva de potencia: volar lento también cuesta",
+          "key_points": [
+            "La potencia requerida para el vuelo nivelado dibuja una curva en U: volar muy lento exige mucha potencia, igual que volar muy rápido.",
+            "La velocidad máxima nivelada está donde la potencia requerida alcanza a la potencia disponible.",
+            "En la región de comando normal (el lado rápido de la curva), volar más rápido exige más potencia.",
+            "En la región de comando invertido (detrás de la curva), volar MÁS LENTO exige MÁS potencia.",
+            "Se cae en comando invertido en aproximaciones lentas y arrastradas, con la nariz arriba.",
+            "Para salir del hundimiento: potencia al máximo y bajar un poco la nariz; solo jalar el bastón lo empeora."
+          ]
+        },
+        {
+          "id": "11-10",
           "title": "Aterrizaje: la distancia sobre el obstáculo de 50 ft",
           "key_points": [
             "La cifra clave de aterrizaje es la distancia total desde 50 ft sobre el obstáculo hasta detenerse.",
@@ -1367,11 +1452,12 @@
             "El viento de frente acorta la distancia de aterrizaje.",
             "Con DA alta tocas con el mismo IAS pero mayor velocidad sobre el suelo: más pista para frenar.",
             "En pista mojada o contaminada los frenos agarran menos y puede haber hidroplaneo.",
+            "La velocidad mínima de hidroplaneo dinámico es ~9 × la raíz cuadrada de la presión de la llanta en psi.",
             "En pista mojada date un margen extra generoso y toca firme en el primer tercio de la pista."
           ]
         },
         {
-          "id": "11-10",
+          "id": "11-11",
           "title": "El viento: componente de frente y componente cruzado",
           "key_points": [
             "El viento se descompone en componente de frente (a lo largo de la pista) y cruzado (de costado).",
@@ -1402,7 +1488,8 @@
             "La tropopausa separa la tropósfera de la estratósfera.",
             "Todo proceso físico del clima va acompañado o es resultado de un intercambio de calor.",
             "El vapor de agua, aunque escaso, es el ingrediente clave de todo el clima.",
-            "El vapor transporta energía: al condensarse libera calor y al evaporarse lo absorbe."
+            "El vapor transporta energía: al condensarse libera calor y al evaporarse lo absorbe.",
+            "El aire caliente puede contener más vapor de agua que el aire frío."
           ]
         },
         {
@@ -1425,7 +1512,8 @@
             "En una baja el aire converge y sube, formando nubes y mal tiempo.",
             "En el hemisferio norte la alta gira horario y la baja antihorario.",
             "En el Perú (hemisferio sur) el giro se invierte, pero el buen o mal tiempo asociado no cambia.",
-            "Presión bajando en los reportes = se acerca una baja = el tiempo empeora."
+            "Presión bajando en los reportes = se acerca una baja = el tiempo empeora.",
+            "La presión estándar al nivel del mar es 29.92 inHg (1013.2 hPa) y cae ~1 inHg por cada 1,000 pies."
           ]
         },
         {
@@ -1469,6 +1557,7 @@
           "key_points": [
             "El punto de rocío es la temperatura a la que el aire debe enfriarse para saturarse.",
             "El aire caliente puede contener más vapor de agua que el aire frío.",
+            "La humedad relativa es el % de vapor respecto al máximo posible: al 100% (T = Td) el aire se satura, y el vapor se condensa sobre núcleos de condensación (polvo, sal, humo).",
             "La humedad entra al aire por evaporación y sublimación.",
             "Nube, niebla o rocío se forman cuando el vapor de agua se condensa (T = Td).",
             "Base de los cúmulos ≈ (T − Td) ÷ 4.4 (°F) o ÷ 2.5 (°C), × 1,000 pies AGL.",
@@ -1485,7 +1574,8 @@
             "Altas: prefijo cirro- (cristales de hielo); medias: prefijo alto-; bajas: stratus y sus parientes.",
             "Nimbus significa nube de lluvia.",
             "Los estratos indican aire estable: vuelo suave pero mala visibilidad — como la garúa limeña.",
-            "Los cúmulos elevados avisan turbulencia convectiva; el cumulonimbus tiene la mayor turbulencia de todas."
+            "Los cúmulos elevados avisan turbulencia convectiva; el cumulonimbus tiene la mayor turbulencia de todas.",
+            "El techo (ceiling) es la capa de nubes más baja reportada como broken u overcast, o la visibilidad vertical en cielo oscurecido."
           ]
         },
         {
@@ -1497,7 +1587,8 @@
             "La niebla de ladera (upslope) necesita viento que empuje aire húmedo y estable cuesta arriba.",
             "Advección y ladera dependen del viento para existir; la de radiación necesita calma.",
             "La niebla de vapor (aire frío sobre agua tibia) trae turbulencia de bajo nivel y engelamiento.",
-            "Gránulos de hielo en superficie = lluvia congelante a mayor altitud (hay una inversión)."
+            "Gránulos de hielo en superficie = lluvia congelante a mayor altitud (hay una inversión).",
+            "La virga es precipitación que se evapora antes de llegar al suelo; el granizo solo nace de cumulonimbus."
           ]
         },
         {
@@ -1570,7 +1661,8 @@
             "La estación se identifica con cuatro letras OACI: SPJC es Lima (Jorge Chávez), SPZO es Cusco.",
             "121400Z significa día 12 del mes a las 14:00 UTC (Zulu); Perú está en UTC−5.",
             "El viento se codifica dddffKT: dirección en grados VERDADEROS y velocidad en nudos.",
-            "G indica ráfagas, VRB dirección variable y 00000KT calma."
+            "G indica ráfagas, VRB dirección variable y 00000KT calma.",
+            "AUTO en un METAR indica una estación automática (tipo AWOS/ASOS), sin observador humano."
           ]
         },
         {
@@ -1581,7 +1673,8 @@
             "En los METAR de EE.UU. la visibilidad va en millas terrestres (SM).",
             "CAVOK: visibilidad ≥ 10 km, sin nubes bajo 5,000 ft y sin fenómenos significativos.",
             "La intensidad va antes del código: − ligera, sin signo moderada, + fuerte; VC significa en la vecindad.",
-            "Códigos clave: RA lluvia, DZ llovizna, SH chubasco, TS tormenta, FG niebla (vis < 1,000 m), BR neblina, HZ bruma."
+            "Códigos clave: RA lluvia, DZ llovizna, SH chubasco, TS tormenta, FG niebla (vis < 1,000 m), BR neblina, HZ bruma.",
+            "La cifra reportada es la visibilidad prevaleciente: la mayor visibilidad alcanzada en al menos la mitad del horizonte."
           ]
         },
         {
@@ -1650,12 +1743,24 @@
             "El pronóstico de vientos en altura usa dirección VERDADERA, nudos y temperatura en °C.",
             "2321-04 se decodifica: viento del 230° a 21 nudos, temperatura −4 °C.",
             "9900 significa viento ligero y variable, de menos de 5 nudos.",
+            "Si la dirección codificada supera 36, el viento pasa de 100 kt: réstale 50 a la dirección y súmale 100 a la velocidad.",
             "No se pronostica viento para niveles a menos de 1,500 ft sobre la elevación de la estación.",
             "La carta de superficie muestra frentes e isobaras; las cartas SIGWX pronostican zonas de clima peligroso."
           ]
         },
         {
           "id": "13-10",
+          "title": "Radar, satélite y el clima en tu pantalla",
+          "key_points": [
+            "El radar meteorológico detecta SOLO precipitación; la intensidad de los ecos indica qué tan fuerte cae.",
+            "Sin ecos no significa cielo despejado: el radar no ve nubes, niebla ni turbulencia en aire claro.",
+            "El satélite sí muestra nubes: imagen visible de día e infrarroja (por temperatura de los topes) también de noche.",
+            "Las radiosondas (globos sonda) miden temperatura, humedad y viento en altura: la base de los pronósticos.",
+            "La imagen de radar por datalink o internet llega con varios minutos de retraso: sirve para rodear clima, nunca para meterse entre tormentas."
+          ]
+        },
+        {
+          "id": "13-11",
           "title": "ATIS y VOLMET: el clima que te habla por radio",
           "key_points": [
             "El ATIS es una grabación continua con el clima actual, la pista en uso y avisos del aeropuerto; cada versión lleva una letra.",
@@ -1666,7 +1771,7 @@
           ]
         },
         {
-          "id": "13-11",
+          "id": "13-12",
           "title": "El briefing pre-vuelo: arma tu panorama completo",
           "key_points": [
             "Al pedir un briefing indica que eres piloto, si vuelas SOLO VFR, tipo de aeronave, ruta, destino, hora de salida y tiempo estimado en ruta.",
@@ -1698,7 +1803,8 @@
             "Cuando la torre cierra, el aeropuerto opera como no controlado.",
             "Control de tierra autoriza el rodaje; la torre autoriza pista, despegue y aterrizaje; tras aterrizar cambias a tierra cuando la torre lo indica.",
             "Señales luminosas: verde fija en vuelo = autorizado a aterrizar; verde intermitente en tierra = autorizado a rodar; roja y verde alternadas = precaución extrema.",
-            "Con falla de radio: observa el flujo del tráfico, entra al patrón y busca las señales luminosas de la torre."
+            "Con falla de radio: observa el flujo del tráfico, entra al patrón y busca las señales luminosas de la torre.",
+            "Avisos de tráfico por radar: el reloj se basa en tu trayectoria terrestre; el servicio básico de radar da alertas y avisos a VFR, y el TRSA agrega secuenciación y separación a los participantes."
           ]
         },
         {
@@ -1720,7 +1826,8 @@
             "Sobre un umbral desplazado se puede rodar, despegar y terminar el aterrizaje, pero NO tocar tierra antes del umbral.",
             "La barra de demarcación amarilla separa el umbral desplazado de la zona anterior.",
             "Los chevrones amarillos marcan un área inutilizable (blast pad / zona de parada): ni rodar, ni despegar, ni aterrizar.",
-            "Una X grande sobre la pista significa pista cerrada."
+            "Una X grande sobre la pista significa pista cerrada.",
+            "El carril para vehículos se marca con líneas blancas; la espera calle/calle es una sola línea amarilla discontinua."
           ]
         },
         {
@@ -1759,6 +1866,7 @@
             "Las luces de borde de calle de rodaje son azules omnidireccionales; las de eje, verdes.",
             "Luces controladas por el piloto: 7 clics = alta, 5 = media, 3 = baja.",
             "Luces de posición de otras aeronaves: roja en el ala izquierda, verde en la derecha, blanca en la cola; roja y verde fijas de frente = viene hacia ti.",
+            "Las luces de posición van encendidas del atardecer al amanecer; roja fija con roja intermitente adelante = tráfico cruzando hacia tu izquierda.",
             "Enciende las luces de aterrizaje bajo 10,000 ft dentro de 10 millas de un aeropuerto y en visibilidad reducida."
           ]
         },
@@ -1801,38 +1909,44 @@
         },
         {
           "id": "14-10",
-          "title": "Radio sin torre: la CTAF y los auto-anuncios",
+          "title": "La radio: CTAF, auto-anuncios y cómo se dice",
           "key_points": [
             "En aeropuertos sin torre se usa la frecuencia común de advertencia de tráfico (CTAF).",
             "Se monitorea la CTAF desde 10 millas antes de llegar hasta aterrizar (y de salida hasta 10 millas fuera).",
             "Los auto-anuncios informan posición e intenciones; nadie autoriza — tú informas.",
             "Se anuncia al rodar, antes de entrar a pista, en cada tramo del patrón y al despejar la pista.",
             "UNICOM puede dar información (viento, combustible) pero no es control de tráfico.",
-            "Si no hay torre, FSS ni UNICOM, la CTAF es la frecuencia MULTICOM: 122.9 MHz."
+            "Si no hay torre, FSS ni UNICOM, la CTAF es la frecuencia MULTICOM: 122.9 MHz.",
+            "Al llamar a la torre para despegar indica tu posición, sobre todo al salir desde una intersección de pista.",
+            "Altitudes por radio: 4,500 = «cuatro mil quinientos»; 10,500 = «un cero mil quinientos»."
           ]
         },
         {
           "id": "14-11",
-          "title": "Estela turbulenta en el circuito: esquivar a los grandes",
+          "title": "Esquivar a los demás: estela turbulenta y ver-y-evitar",
           "key_points": [
             "Los vórtices de punta de ala existen siempre que el ala genera sustentación y se hunden bajo la trayectoria.",
             "La estela es peor con un avión pesado, limpio (sin flaps) y lento.",
             "Despegando detrás de un grande: rota ANTES de su punto de rotación y sube por el lado de donde viene el viento.",
             "Aterrizando detrás de un grande: mantente por ENCIMA de su trayectoria y toca tierra DESPUÉS de su punto de toque.",
             "Un viento de cola ligero es la condición más peligrosa para la estela al aterrizar.",
-            "Los vórtices nacen en la rotación y mueren en el toque; un viento cruzado de 2–3 nudos puede mantener un vórtice sobre la pista."
+            "Los vórtices nacen en la rotación y mueren en el toque; un viento cruzado de 2–3 nudos puede mantener un vórtice sobre la pista.",
+            "La mayoría de colisiones en el aire ocurren en días claros; escanea toda el área antes de cada maniobra.",
+            "Otro avión sin movimiento relativo aparente que crece en tu parabrisas está en curso de colisión."
           ]
         },
         {
           "id": "14-12",
-          "title": "Incursiones en pista, LAHSO y seguridad en la rampa",
+          "title": "Incursiones, LAHSO, la rampa y tu red de seguridad",
           "key_points": [
             "Una incursión en pista es la presencia indebida de una aeronave, vehículo o persona en una pista.",
             "Para prevenirlas: escribe las instrucciones, colaciona todo «hold short», usa el diagrama del aeropuerto y, si te pierdes, detente y pregunta.",
             "LAHSO: aterrizar y detenerse antes de un punto; puedes (y debes) rechazarla si no puedes cumplirla.",
             "Trata la hélice siempre como si fuera a girar; nunca camines por su arco.",
             "Señal de marshalling con los brazos cruzados sobre la cabeza = ALTO.",
-            "Si te desorientas rodando: detente, avisa y pide rodaje progresivo."
+            "Si te desorientas rodando: detente, avisa y pide rodaje progresivo.",
+            "El plan de vuelo VFR sirve para activar búsqueda y rescate; su casilla de nivel lleva la altitud de crucero VFR.",
+            "El ELT transmite en 406 MHz; antes de apagar el motor monitorea 121.5 para confirmar que no se activó."
           ]
         }
       ]
@@ -1893,6 +2007,8 @@
             "Toda operación en clase C exige transponder con Modo C; la acción inicial antes de entrar es contactar al control de aproximación.",
             "Saliendo de un aeropuerto satélite dentro de clase C, comunícate con el ATC tan pronto como sea posible después del despegue.",
             "La clase C típica: techo a 4000 ft AGL sobre el aeropuerto principal y área exterior de 20 NM.",
+            "El núcleo de la clase C tiene 5 NM de radio, con un escalón de 10 NM encima.",
+            "Las dimensiones laterales de la clase D se basan en los procedimientos por instrumentos para los que se establece.",
             "Un aeropuerto es clase D solo mientras su torre opera; al cerrar la torre, el espacio revierte a E o a E más G."
           ]
         },
@@ -1938,6 +2054,8 @@
             "En la carta, cada espacio muestra dos números: arriba el techo, abajo el piso; SFC significa superficie.",
             "En una aerovía por debajo de 10 000 ft, la visibilidad VFR mínima es 5 km.",
             "Al subir o bajar VFR en una aerovía, haz virajes suaves a ambos lados para escanear el espacio.",
+            "FL significa nivel de vuelo: centenas de pies con altímetro en presión estándar (FL245 = 24 500 ft).",
+            "AGL es altura sobre el terreno; MSL o AMSL es altitud sobre el nivel medio del mar.",
             "Antes de volar, revisa en la carta qué espacios cruzará tu ruta y a qué altitudes."
           ]
         },
@@ -1951,6 +2069,7 @@
             "En áreas restringidas hay peligros a menudo invisibles (artillería aérea, misiles guiados); la entrada la autoriza la agencia controladora.",
             "En la carta se identifican con código: letra del país, tipo y número (ej. SP-P115, SP-R32).",
             "Las áreas militares o de alerta concentran entrenamiento: extrema la vigilancia.",
+            "Las rutas de entrenamiento militar (MTR) llevan vuelo rápido y bajo; las áreas de tiro controlado (CFA) no se publican en la carta porque su actividad se suspende cuando un avión se aproxima.",
             "Las restricciones temporales (tipo TFR) aparecen por NOTAM: revísalos antes de cada vuelo."
           ]
         },
@@ -1962,6 +2081,7 @@
             "Lo pide el piloto y lo autoriza el ATC: en clase D, la torre de control.",
             "Requiere visibilidad de al menos 1500 m y mantenerse libre de nubes.",
             "Es una herramienta de excepción, no un plan: úsala para salir de un apuro, no para meterte en uno.",
+            "En aeropuertos grandes y saturados el SVFR de ala fija está prohibido; la carta lo marca con «NO SVFR».",
             "De noche el SVFR tiene restricciones adicionales según la reglamentación."
           ]
         },
@@ -2010,6 +2130,7 @@
             "El MEF (cifra de elevación máxima) es lo más alto de cada cuadrante: terreno más obstáculos, redondeado hacia arriba, en cientos de pies MSL.",
             "Volar por encima del MEF del cuadrante te libra de todo lo que hay abajo; en ruta se toma el MEF más alto de los cuadrantes que se cruzan.",
             "La leyenda de tintes del borde de la carta traduce cada color a una banda de elevación (p. ej. tostado claro = 2 000–2 500 ft MSL).",
+            "La carta de área terminal (TAC) tiene escala 1:250 000 — el doble de detalle — y se publica alrededor de los terminales con Clase B.",
             "Las cartas caducan: siempre se usa la edición vigente porque frecuencias y obstáculos cambian."
           ]
         },
@@ -2019,6 +2140,7 @@
           "key_points": [
             "Aeropuertos AZULES tienen torre de control (Clases B, C, D, E con torre); MAGENTA no tienen torre.",
             "Las marcas alrededor del círculo del aeropuerto indican que hay combustible disponible.",
+            "La casilla de datos del aeropuerto se lee: frecuencia CT, elevación en ft MSL, L = luces, largo de pista en cientos de pies.",
             "En un obstáculo, el número en negrita es la cima en pies MSL y el número entre paréntesis es la altura AGL.",
             "Altitud mínima para librar un obstáculo por 500 ft = cima MSL + 500; sobre área congestionada, el más alto + 1 000 ft.",
             "Los cuadros de PRECAUCIÓN avisan de peligros como globos cautivos en cable, con la altura en pies MSL.",
@@ -2033,6 +2155,7 @@
             "La latitud son los paralelos: miden 0° a 90° hacia el Norte o el Sur desde el Ecuador.",
             "La longitud son los meridianos: miden 0° a 180° al Este u Oeste desde Greenwich, y cruzan el Ecuador en ángulo recto.",
             "Cada grado tiene 60 minutos; 1 minuto de latitud = 1 milla náutica.",
+            "1 NM = 1.852 km ≈ 1.15 millas terrestres (SM); un nudo es 1 NM por hora.",
             "Perú está en latitud SUR y longitud OESTE (Lima ≈ 12°S 77°W).",
             "Para ubicar un punto en la carta: primero latitud (arriba/abajo), luego longitud (izquierda/derecha).",
             "La aviación usa una sola hora mundial: UTC u hora Zulu (Z); en Perú, hora local + 5 = hora Z.",
@@ -2094,6 +2217,8 @@
             "Para cada tramo se anota distancia, rumbo, GS estimada, tiempo y combustible.",
             "En vuelo se anota la hora real en cada checkpoint y se compara con la planeada.",
             "Si llegas tarde a los checkpoints, tu GS real es menor: recalcula tiempo y combustible al destino.",
+            "El plan de vuelo VFR le dice a búsqueda y rescate dónde buscarte — y hay que CERRARLO al aterrizar.",
+            "El Suplemento de Cartas (Chart Supplement) es el directorio oficial con los datos completos de cada aeródromo.",
             "La reserva legal VFR es 30 minutos de día (45 de noche) ADEMÁS del combustible del viaje."
           ]
         },
@@ -2118,6 +2243,7 @@
             "Con el curso puesto adelante, 'vuela hacia la aguja' para reinterceptar; cada punto son ~2°.",
             "TO/HACIA: el curso seleccionado te acerca a la estación; FROM/DESDE: te aleja.",
             "Truco de posición: con indicación TO estás del lado del RECÍPROCO del OBS; con FROM, del lado del OBS.",
+            "Para volar directo a la estación: gira el OBS hasta centrar la aguja con TO — ese curso te lleva al VOR.",
             "Chequeo con VOT: CDI centrado con 0° FROM o 180° TO, sin importar tu posición; error máx ±4°.",
             "Tolerancias: VOT y punto en tierra ±4°, chequeo en vuelo ±6°, entre dos VOR del avión 4°."
           ]

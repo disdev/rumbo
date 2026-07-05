@@ -255,7 +255,8 @@
         "Con hélice de paso fijo, la primera indicación de hielo es una pérdida de RPM.",
         "Al aplicar calor de carburador con hielo presente: las RPM caen aún más y luego suben gradualmente mientras el hielo se derrite.",
         "El calor de carburador enriquece la mezcla (aire caliente = menos denso) y disminuye el rendimiento del motor.",
-        "Los carburadores de flotador son más susceptibles al hielo que la inyección de combustible."
+        "Los carburadores de flotador son más susceptibles al hielo que la inyección de combustible.",
+        "Los sistemas antihielo (anti-ice) previenen la formación de hielo; los de deshielo (de-ice, como las botas neumáticas) eliminan el ya formado."
       ],
       "blocks": [
         {
@@ -284,6 +285,10 @@
           "type": "callout",
           "style": "memoria",
           "md": "**\"De −7 a 21, el hielo gana\"** — y para la secuencia del calor: **B-S** = primero **B**aja, después **S**ube."
+        },
+        {
+          "type": "text",
+          "md": "¿Y el hielo FUERA del motor? Para el engelamiento estructural existen dos familias de sistemas. Los **antihielo** (anti-ice) lo *previenen*: calefacción del tubo pitot, antihielo de hélice, líquido en los bordes de ataque. Los de **deshielo** (de-ice) lo *eliminan* cuando ya se pegó: las **botas neumáticas** (de-ice boots) se inflan y lo quiebran. Tu avión de entrenamiento casi seguro NO está certificado para vuelo en hielo: si ves engelamiento, sal de esa condición de inmediato."
         },
         {
           "type": "notebook",
@@ -321,6 +326,14 @@
           "options": ["Enriquece la mezcla y disminuye el rendimiento del motor", "Empobrece la mezcla y aumenta el rendimiento del motor", "No afecta ni la mezcla ni el rendimiento"],
           "answer": 0,
           "why": "El aire caliente es menos denso: la mezcla se enriquece y el motor rinde menos — por eso las RPM caen al aplicarlo."
+        },
+        {
+          "type": "check",
+          "id": "7-4-c5",
+          "q": "Los sistemas antihielo (anti-ice) se diferencian de los de deshielo (de-ice) en que:",
+          "options": ["Previenen la formación de hielo en vez de eliminar el ya formado", "Eliminan el hielo ya formado en vez de prevenirlo", "Solo protegen el carburador, no la estructura"],
+          "answer": 0,
+          "why": "Anti-ice previene (pitot caliente, líquido); de-ice elimina lo ya pegado (botas neumáticas que se inflan)."
         }
       ]
     },
@@ -332,7 +345,8 @@
         "Ventajas: menos susceptible al hielo, mezcla más uniforme entre cilindros, mejor control de la mezcla y respuesta más rápida del acelerador.",
         "Desventajas: arranque difícil con el motor caliente, posible tapón de vapor (vapor lock) en días calurosos y mayor complejidad.",
         "Los carburadores de flotador son MÁS susceptibles al hielo que los sistemas de inyección.",
-        "El turbocargador usa los gases de escape para comprimir el aire de admisión y mantener la potencia en altura."
+        "El turbocargador usa los gases de escape para comprimir el aire de admisión y mantener la potencia en altura.",
+        "Motores de turbina: turborreactor (chorro puro), turbofán (ventilador, aviones de línea), turbohélice (la turbina mueve una hélice) y turboeje (helicópteros)."
       ],
       "blocks": [
         {
@@ -363,6 +377,20 @@
           "md": "El banco compara: los carburadores de flotador son **más susceptibles** al hielo que la inyección de combustible. La inyección no es inmune (el hielo de impacto en la toma de aire existe), pero es mucho menos propensa."
         },
         {
+          "type": "text",
+          "md": "¿Y los aviones grandes, sin pistones? Usan **motores de turbina** (turbine engines): comprimen aire, queman combustible de forma continua y aprovechan el chorro de gases. Solo necesitas reconocer los cuatro tipos — mira la tabla. El que más verás en aviación general grande es el **turbohélice** (turboprop): una turbina que mueve una hélice a través de engranajes reductores."
+        },
+        {
+          "type": "table",
+          "headers": ["Motor de turbina", "Idea clave"],
+          "rows": [
+            ["Turborreactor (turbojet)", "Empuje directo del chorro de gases; jets antiguos"],
+            ["Turbofán (turbofan)", "Un gran ventilador da la mayor parte del empuje; aviones de línea"],
+            ["Turbohélice (turboprop)", "La turbina mueve una hélice mediante engranajes reductores"],
+            ["Turboeje (turboshaft)", "La turbina mueve un eje: helicópteros"]
+          ]
+        },
+        {
           "type": "notebook",
           "id": "7-5-n1",
           "prompt": "Escribe dos listas: \"INYECCIÓN — PRO\" (menos hielo, mezcla pareja, mejor respuesta) y \"INYECCIÓN — CONTRA\" (arranque en caliente difícil, vapor lock, más compleja). Al lado dibuja un turbo: flecha de gases de escape → rueda → flecha de aire comprimido al motor."
@@ -390,6 +418,14 @@
           "options": ["Los gases de escape del motor", "Una correa conectada al cigüeñal", "Un motor eléctrico alimentado por el alternador"],
           "answer": 0,
           "why": "El turbo recicla la energía de los gases de escape para comprimir el aire de admisión y mantener la potencia en altura."
+        },
+        {
+          "type": "check",
+          "id": "7-5-c4",
+          "q": "¿Qué tipo de motor de turbina usa la energía de la turbina para mover una hélice?",
+          "options": ["Turborreactor (turbojet)", "Turbohélice (turboprop)", "Turbofán (turbofan)"],
+          "answer": 1,
+          "why": "El turbohélice conecta la turbina a una hélice mediante engranajes reductores; el turbofán mueve un ventilador y el turborreactor da chorro puro."
         }
       ]
     },
@@ -537,7 +573,8 @@
         "Drenar antes de volar: el colador (gascolator) Y los sumideros de cada tanque — el agua es más pesada y se asienta abajo.",
         "Llenar los tanques después del último vuelo del día evita la condensación de humedad en el espacio de aire.",
         "AVGAS por colores: 80 rojo, 100 verde, 100LL azul; el Jet A es incoloro o pajizo — ¡jamás en un motor de pistones!",
-        "El selector de combustible (IZQ/DER/AMBOS/OFF) y el cebador (primer) completan el sistema."
+        "El selector de combustible (IZQ/DER/AMBOS/OFF) y el cebador (primer) completan el sistema.",
+        "No confíes solo en los aforadores: verifica la cantidad visualmente y calcula por tiempo de consumo; al reabastecer, conecta el cable a tierra contra la estática."
       ],
       "blocks": [
         {
@@ -561,6 +598,10 @@
           "type": "callout",
           "style": "clave",
           "md": "AVGAS por colores: **80 = rojo**, **100 = verde**, **100LL = AZUL** (el que usarás). El combustible de turbina **Jet A es incoloro o pajizo** — en un motor de pistones lo destruye. En la preflight, mira el color de la muestra."
+        },
+        {
+          "type": "text",
+          "md": "Dos hábitos más. Los **aforadores** (fuel gauges) del panel pueden mentir: confía en tu **verificación visual** de los tanques y en el cálculo por **tiempo de consumo**, no solo en las agujas. Y al reabastecer: el combustible fluyendo genera **electricidad estática**, y una chispa cerca de los vapores es un incendio. Por eso se conecta el **cable a tierra** (ground wire) entre el surtidor y el avión ANTES de abrir el tapón del tanque."
         },
         {
           "type": "callout",
@@ -603,6 +644,14 @@
           "options": ["El piloto al mando", "El propietario u operador", "El mecánico que hizo la inspección anual"],
           "answer": 0,
           "why": "El piloto al mando decide si el avión es seguro para ESE vuelo; mantenerlo aeronavegable en el tiempo es del propietario/operador."
+        },
+        {
+          "type": "check",
+          "id": "7-8-c5",
+          "q": "Antes de reabastecer combustible se conecta un cable a tierra entre el surtidor y la aeronave para:",
+          "options": ["Evitar que una chispa de electricidad estática encienda los vapores", "Acelerar el flujo de combustible hacia el tanque", "Medir con precisión la cantidad de combustible cargada"],
+          "answer": 0,
+          "why": "El combustible en movimiento acumula carga estática; el cable a tierra la descarga antes de que salte una chispa."
         }
       ]
     },
@@ -615,7 +664,8 @@
         "Tras arrancar, la presión de aceite debe subir en unos 30 segundos (algo más en clima frío); si no, apaga el motor.",
         "Temperatura de aceite anormalmente alta: causa probable, nivel de aceite demasiado bajo.",
         "Temperatura de aceite Y de culata altas a la vez: probable exceso de potencia con mezcla demasiado pobre.",
-        "Presión de aceite baja en vuelo = emergencia: el motor puede gripar."
+        "Presión de aceite baja en vuelo = emergencia: el motor puede gripar.",
+        "La mayoría de avionetas usan cárter húmedo (wet sump): el aceite se almacena en el cárter del propio motor y el nivel se revisa con la varilla (dipstick)."
       ],
       "blocks": [
         {
@@ -635,6 +685,16 @@
             ["Aceite + culata altas: ¿operando con qué?", "Mucha potencia + mezcla pobre"],
             ["Aceite + culata altas: ¿causa más probable?", "Combustible de grado inferior"],
             ["Presión de aceite cayendo en vuelo", "Emergencia: aterriza pronto"]
+          ]
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["Cárter húmedo (wet sump)", "El aceite vive en el cárter del propio motor — lo usual en avionetas"],
+            ["Cárter seco (dry sump)", "El aceite se guarda en un tanque aparte, fuera del motor"],
+            ["Varilla medidora (dipstick)", "Con ella verificas el nivel de aceite en cada preflight"],
+            ["Viscosidad", "Qué tan \"espeso\" es el aceite; usa el grado que pide el manual"]
           ]
         },
         {
@@ -678,6 +738,14 @@
           "options": ["Ajustar las RPM adecuadas y verificar los indicadores del motor", "Pasar los magnetos momentáneamente a OFF para verificar la conexión a tierra", "Probar cada freno y el freno de estacionamiento"],
           "answer": 0,
           "why": "Recién arrancado, confirma que el motor está sano: RPM correctas y las agujas (presión de aceite primero) en rango."
+        },
+        {
+          "type": "check",
+          "id": "7-9-c5",
+          "q": "Tu avioneta tiene lubricación de cárter húmedo (wet sump). Eso significa que:",
+          "options": ["El aceite se almacena en el cárter del propio motor", "El aceite se guarda en un tanque separado, fuera del motor", "El motor no necesita bomba de aceite"],
+          "answer": 0,
+          "why": "En el sistema de cárter húmedo el propio cárter del motor es el depósito; el cárter seco usa un tanque aparte."
         }
       ]
     },
@@ -703,6 +771,16 @@
         {
           "type": "text",
           "md": "En tierra también sufre: rodando (taxi) vas lentísimo y el aire casi no circula — por eso los run-ups largos en clima caliente recalientan el motor. Vigila la temperatura de culata y la de aceite antes de despegar. Y grábate el orden de prioridades si el motor se apaga en vuelo: **primero VUELA el avión** (actitud de planeo + velocidad adecuada); recién después buscas la causa (combustible, mezcla, magnetos) y un campo donde aterrizar."
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["Capó (cowling)", "La \"carcasa\" que cubre el motor y encauza el aire de refrigeración"],
+            ["Deflectores (baffles)", "Chapas que obligan al aire a pegarse a los cilindros"],
+            ["Aletas de refrigeración (cooling fins)", "Aumentan la superficie del cilindro para botar calor"],
+            ["Compuertas de capó (cowl flaps)", "Se abren para botar más aire caliente (ascenso, taxi)"]
+          ]
         },
         {
           "type": "callout",
@@ -745,6 +823,14 @@
           "options": ["Establecer de inmediato la actitud de planeo y la velocidad adecuada", "Revisar rápido si se agotó el combustible", "Determinar la dirección del viento para planear el aterrizaje forzoso"],
           "answer": 0,
           "why": "Primero vuela el avión: con un planeo estable ganas el tiempo y la altura para todo lo demás."
+        },
+        {
+          "type": "check",
+          "id": "7-10-c5",
+          "q": "Si tu avión tiene compuertas de capó (cowl flaps), ¿cuándo conviene abrirlas?",
+          "options": ["En ascenso o rodaje: mucha potencia con poco flujo de aire", "En crucero rápido, para ganar velocidad", "En descenso con el motor al ralentí"],
+          "answer": 0,
+          "why": "Abiertas dejan salir más aire caliente justo cuando el motor trabaja duro y recibe poco aire: ascenso y taxi."
         }
       ]
     },
@@ -756,7 +842,8 @@
         "Encendido dual: dos magnetos y dos bujías por cilindro — da seguridad (redundancia) y mejor rendimiento por una combustión más completa.",
         "En el run-up se chequean los magnetos: una pequeña caída de RPM en cada uno es normal.",
         "Si el cable de tierra del magneto se desconecta, el motor NO se puede apagar con la llave: la hélice queda 'viva'.",
-        "Al propulsar la hélice a mano, un piloto competente debe estar en los controles de la cabina."
+        "Al propulsar la hélice a mano, un piloto competente debe estar en los controles de la cabina.",
+        "El arrancador eléctrico, alimentado por la batería, gira el cigüeñal con la llave en START; antes de arrancar se grita '¡Libre!' para alejar a todos de la hélice."
       ],
       "blocks": [
         {
@@ -775,6 +862,10 @@
         {
           "type": "text",
           "md": "¿Qué buscas exactamente en ese chequeo? Al pasar a un solo magneto, cada cilindro queda con UNA bujía: la combustión es un pelito menos eficiente y las RPM caen un poco — eso es lo **normal y esperado**. Una caída **excesiva** o motor áspero = bujía o magneto con problema. Caída **nula** = sospecha del cable de tierra. Al terminar, la llave siempre vuelve a **BOTH**: con los dos magnetos vuelas."
+        },
+        {
+          "type": "text",
+          "md": "¿Y cómo arranca todo esto? Con el **arrancador** (starter): un motor eléctrico alimentado por la **batería** que hace girar el cigüeñal cuando llevas la llave a **START**; al soltarla vuelve a BOTH y los magnetos ya mantienen la chispa solos. Antes de girar la llave, la regla sagrada: mira alrededor, grita **\"¡Libre!\"** (\"clear prop!\") por la ventanilla y espera unos segundos, para que nadie esté cerca de la hélice."
         },
         {
           "type": "callout",
@@ -822,6 +913,14 @@
           "options": ["Un piloto competente esté en los controles de la cabina", "Se grite \"¡contacto!\" antes de tocar la hélice", "El freno de estacionamiento esté suelto para poder mover el avión"],
           "answer": 0,
           "why": "Si el motor arranca sin nadie competente en los mandos, el avión se convierte en un peligro sin control."
+        },
+        {
+          "type": "check",
+          "id": "7-11-c5",
+          "q": "Justo antes de arrancar el motor gritas \"¡Libre!\" por la ventanilla. ¿Para qué?",
+          "options": ["Para advertir a cualquier persona que se aleje de la hélice", "Para avisar a la torre que vas a encender el motor", "Para probar que el intercomunicador funciona"],
+          "answer": 0,
+          "why": "La hélice arrancando es mortal: el grito y la pausa dan tiempo a que cualquiera cerca se aparte."
         }
       ]
     },
@@ -834,7 +933,8 @@
         "El alternador entrega buena corriente incluso a bajas RPM; el amperímetro muestra si la batería se carga (+) o se descarga (−).",
         "El sistema de vacío hace girar los giróscopos de actitud y rumbo (se profundiza en el capítulo 8).",
         "La calefacción de cabina calienta aire alrededor del escape: una fisura puede meter monóxido de carbono (CO), incoloro e inodoro.",
-        "Ante sospecha de CO (dolor de cabeza, somnolencia): cierra la calefacción y abre las ventilaciones."
+        "Ante sospecha de CO (dolor de cabeza, somnolencia): cierra la calefacción y abre las ventilaciones.",
+        "Para volar alto se necesita oxígeno suplementario (solo oxígeno de aviación, que viene seco) o cabina presurizada."
       ],
       "blocks": [
         {
@@ -857,6 +957,10 @@
         {
           "type": "text",
           "md": "Un último peligro silencioso: la **calefacción de cabina** calienta aire haciéndolo pasar por una camisa alrededor del **tubo de escape**. Si el escape tiene una fisura, entra **monóxido de carbono (CO)**: sin color, sin olor, y te va durmiendo. ¿Dolor de cabeza, somnolencia, mareo con la calefacción puesta? **Cierra la calefacción, abre las ventilaciones** y considera aterrizar. Un detector de CO en el panel es tu aliado."
+        },
+        {
+          "type": "text",
+          "md": "¿Y si un día vuelas alto? A mucha altitud falta oxígeno (la hipoxia la verás en el capítulo 17). Dos soluciones. **Oxígeno suplementario** (supplemental oxygen): botella con **cánula** o **máscara** — se carga solo con *oxígeno de aviación* (aviator's breathing oxygen), no medicinal ni industrial, porque estos traen humedad que puede congelarse en las líneas. O **presurización** (pressurization): la cabina se \"infla\" con aire del motor para que adentro la altitud parezca más baja. Tu avioneta de entrenamiento no tiene ninguna de las dos."
         },
         {
           "type": "callout",
@@ -891,6 +995,14 @@
           "options": ["El alternador dejó de generar y la batería está alimentando el sistema", "La batería se está sobrecargando", "Los magnetos están consumiendo corriente extra"],
           "answer": 0,
           "why": "Descarga constante = vives de la reserva de la batería: reduce el consumo eléctrico y planea aterrizar."
+        },
+        {
+          "type": "check",
+          "id": "7-12-c4",
+          "q": "Vas a cargar el sistema de oxígeno suplementario del avión. ¿Qué oxígeno debe usarse?",
+          "options": ["Oxígeno de aviación (aviator's breathing oxygen)", "Oxígeno medicinal, por ser más puro", "Oxígeno industrial, por ser más económico"],
+          "answer": 0,
+          "why": "El oxígeno de aviación viene casi sin humedad; el medicinal o industrial traen vapor de agua que puede congelarse en las líneas a gran altura."
         }
       ]
     }

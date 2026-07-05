@@ -344,6 +344,7 @@
       "key_points": [
         "El avión debe volar con sus documentos a bordo: certificado de matrícula, certificado de aeronavegabilidad, manual de vuelo y libro de a bordo, entre otros.",
         "El truco americano ARROW resume: aeronavegabilidad, matrícula (registration), radio, limitaciones operativas (manual) y peso y balance.",
+        "El certificado de matrícula acredita la inscripción del avión en el registro de la autoridad, pero no prueba propiedad; queda sin efecto si el avión se vende o la matrícula se cancela.",
         "En Perú la lista exacta la fija el RAP e incluye además el libro de a bordo y la póliza de seguros.",
         "El piloto lleva sus propios documentos: licencia apropiada y certificado médico vigente.",
         "Los documentos se presentan a los inspectores designados por la AAC cuando los soliciten."
@@ -356,6 +357,10 @@
         {
           "type": "text",
           "md": "Los gringos lo memorizan con **ARROW**: **A**irworthiness (certificado de aeronavegabilidad), **R**egistration (certificado de matrícula), **R**adio (permiso de estación, para vuelos internacionales), **O**perating limitations (manual de vuelo y placards) y **W**eight and balance (datos de peso y balance). En Perú la lista exacta la fija el RAP y suma el **libro de a bordo** — la bitácora del avión — y la **póliza de seguros**. ARROW casi calza, pero la respuesta peruana incluye el libro de a bordo."
+        },
+        {
+          "type": "text",
+          "md": "¿Y qué es exactamente la matrícula? El **certificado de matrícula** (*certificate of registration*) acredita que el avión está inscrito en el registro de la autoridad, con sus letras de identificación — en Perú comienzan con **OB**. Detalle fino: registra la aeronave, pero **no es prueba legal de propiedad**. Y no es eterno: si el avión se vende o la matrícula se cancela, el certificado queda sin efecto y hay que reinscribirlo antes de volar."
         },
         {
           "type": "diagram",
@@ -429,6 +434,18 @@
           ],
           "answer": 0,
           "why": "Las limitaciones operativas viven en el manual de vuelo aprobado y en los placards: eso cubre la O de ARROW."
+        },
+        {
+          "type": "check",
+          "id": "9-5-c5",
+          "q": "El certificado de matrícula de una aeronave…",
+          "options": [
+            "Es el título que prueba legalmente quién es el dueño",
+            "Acredita la inscripción del avión en el registro de la autoridad, pero no prueba propiedad",
+            "Vence cada 12 meses calendario, junto con la inspección anual"
+          ],
+          "answer": 1,
+          "why": "La matrícula inscribe la aeronave en el registro; no es título de propiedad y queda sin efecto si el avión se vende o se cancela la matrícula."
         }
       ]
     },
@@ -441,6 +458,7 @@
         "Especial: experimental, restringida, deportiva ligera y permisos especiales de vuelo.",
         "No vence por fecha: sigue vigente mientras la aeronave se mantenga y opere conforme a los reglamentos.",
         "Las aeronaves experimentales no vuelan sobre áreas densamente pobladas ni rutas congestionadas sin autorización.",
+        "La categoría restringida es para aeronaves de propósito especial, como las agrícolas; en el banco, lo prohibido para ellas es el vuelo dentro del espacio aéreo Clase D.",
         "Debe estar exhibido a bordo, visible para tripulación y pasajeros.",
         "El permiso especial de vuelo autoriza un traslado concreto de una aeronave que no cumple todas las condiciones, por ejemplo llevarla al taller."
       ],
@@ -461,6 +479,10 @@
           "type": "callout",
           "style": "ojo",
           "md": "Aeronave **experimental**: no puede volar sobre **áreas densamente pobladas** ni por **rutas aéreas congestionadas**, salvo autorización específica. Y recuerda: sus limitaciones van adjuntas al certificado."
+        },
+        {
+          "type": "text",
+          "md": "Otro sabor de certificado especial: la **categoría restringida** (*restricted*), para aeronaves de propósito especial — fumigación agrícola, remolque de pancartas. Por su operación particular cargan restricciones propias sobre dónde pueden volar. Ojo con la pregunta del banco: «¿qué está normalmente prohibido en categoría restringida?» tiene como respuesta oficial **«vuelo dentro del espacio aéreo Clase D»** — respóndela así en el examen, aunque el PHAK enfatiza las zonas densamente pobladas."
         },
         {
           "type": "callout",
@@ -519,6 +541,18 @@
           ],
           "answer": 0,
           "why": "El permiso especial de vuelo autoriza traslados concretos de una aeronave que no cumple todas las condiciones."
+        },
+        {
+          "type": "check",
+          "id": "9-6-c5",
+          "q": "¿Qué está normalmente prohibido cuando se opera una aeronave civil de categoría restringida?",
+          "options": [
+            "Vuelo bajo reglas de vuelo por instrumentos",
+            "Vuelo sobre una zona densamente poblada",
+            "Vuelo dentro del espacio aéreo Clase D"
+          ],
+          "answer": 2,
+          "why": "La respuesta oficial del banco DGAC es «vuelo dentro del espacio aéreo Clase D» — respóndela así en el examen."
         }
       ]
     },
@@ -532,7 +566,7 @@
         "Una inspección anual reemplaza a la de 100 horas; una de 100 horas NO reemplaza a la anual.",
         "La anual la hace un mecánico con habilitación de inspector o un taller aprobado.",
         "La fecha de la última inspección se busca en los registros de mantenimiento.",
-        "El transpondedor se inspecciona cada 24 meses calendario y el ELT cada 12.",
+        "El transpondedor se inspecciona cada 24 meses calendario y el ELT cada 12; el paracaídas tipo asiento se repliega por plegador certificado cada 120 días.",
         "La batería del ELT se cambia tras 1 hora de uso acumulado o al 50% de su vida útil, y el ELT solo se prueba en los primeros 5 minutos de cada hora."
       ],
       "blocks": [
@@ -556,12 +590,18 @@
             ["Anual", "12 meses calendario", "Todos los aviones"],
             ["100 horas", "100 h de vuelo", "Si opera por remuneración o instrucción pagada"],
             ["Transpondedor", "24 meses calendario", "Para poder usarlo en vuelo"],
-            ["ELT", "12 meses calendario", "Todos (su batería tiene reglas propias)"]
+            ["ELT", "12 meses calendario", "Todos (su batería tiene reglas propias)"],
+            ["Altímetro y sistema estático", "24 meses calendario", "Para volar IFR"],
+            ["Plegado del paracaídas", "120 días", "Si se lleva a bordo para emergencias"]
           ]
         },
         {
           "type": "text",
           "md": "El **ELT** (transmisor localizador de emergencia) tiene reglas propias que caen en el examen: se inspecciona cada **12 meses calendario**, y su batería se reemplaza — o se recarga, si es recargable — cuando el transmisor acumuló **más de 1 hora de uso** o cuando pasó el **50 % de la vida útil** de la batería. Y solo se prueba durante los **primeros 5 minutos de cada hora**, para no disparar una búsqueda y rescate de verdad."
+        },
+        {
+          "type": "text",
+          "md": "¿Paracaídas a bordo? Tiene su propio calendario: un paracaídas tipo asiento solo puede llevarse para uso de emergencia si un **plegador certificado** lo plegó dentro de los **120 días** precedentes. ¿Y cuándo es obligatorio ponérselo? Cuando el avión inclina la nariz **intencionalmente 30° o más**, hacia arriba o hacia abajo. Un dato más para tu futuro IFR: el **altímetro y el sistema estático** se inspeccionan cada **24 meses calendario**, igual que el transpondedor."
         },
         {
           "type": "callout",
@@ -620,6 +660,18 @@
           ],
           "answer": 2,
           "why": "El transpondedor se inspecciona cada 24 meses calendario: hasta el 30 de septiembre de 2022."
+        },
+        {
+          "type": "check",
+          "id": "9-7-c5",
+          "q": "Un paracaídas tipo asiento aprobado puede llevarse a bordo para uso de emergencia si fue plegado por un plegador certificado dentro de los…",
+          "options": [
+            "120 días precedentes",
+            "180 días precedentes",
+            "365 días precedentes"
+          ],
+          "answer": 0,
+          "why": "El plazo del plegado por un plegador de paracaídas certificado es de 120 días precedentes."
         }
       ]
     },
@@ -721,7 +773,8 @@
         "Las AD pueden ser de emergencia (cumplimiento inmediato) o con plazo, y de una sola vez o recurrentes.",
         "El cumplimiento de las AD se demuestra en los registros de mantenimiento.",
         "El responsable de cumplir las AD es el propietario u operador.",
-        "Un boletín de servicio (SB) es una recomendación del fabricante: voluntario, salvo que una AD lo vuelva obligatorio."
+        "Un boletín de servicio (SB) es una recomendación del fabricante: voluntario, salvo que una AD lo vuelva obligatorio.",
+        "La circular de asesoramiento (AC) es material informativo de la autoridad, disponible para todos los pilotos en la página web del SRVSOP."
       ],
       "blocks": [
         {
@@ -740,6 +793,10 @@
         {
           "type": "text",
           "md": "Ejemplo con números: una AD recurrente ordena inspeccionar el cable del timón **cada 50 horas**. Última inspección: 2000.0 h. A las 2050.0 h el avión queda **fuera de ley** hasta cumplirla — aunque el cable se vea perfecto. ¿Quién vigila ese contador? El **propietario u operador**, no el mecánico ni la DGAC. Por eso el piloto revisa los registros de mantenimiento antes de volar: ahí vive la evidencia."
+        },
+        {
+          "type": "text",
+          "md": "Hay un tercer papel en esta familia: la **circular de asesoramiento** (*Advisory Circular*, AC). La emite la autoridad, como la AD, pero no ordena: **orienta** — explica cómo cumplir los reglamentos o cómo operar con más seguridad. Es material informativo, no obligatorio, y está disponible para todos los pilotos **en la página web del SRVSOP**, el sistema regional que armoniza los reglamentos LAR."
         },
         {
           "type": "callout",
@@ -798,6 +855,18 @@
           ],
           "answer": 1,
           "why": "El SB es consejo del fabricante; solo se vuelve obligatorio si una AD lo exige."
+        },
+        {
+          "type": "check",
+          "id": "9-9-c5",
+          "q": "Las circulares de asesoramiento están disponibles para todos los pilotos y se obtienen…",
+          "options": [
+            "Comprándolas en la Oficina Regional OACI",
+            "Accediendo a la página web del SRVSOP",
+            "Solicitándolas por escrito al fabricante de la aeronave"
+          ],
+          "answer": 1,
+          "why": "Las circulares de asesoramiento son material informativo y se consultan en la página web del SRVSOP."
         }
       ]
     },

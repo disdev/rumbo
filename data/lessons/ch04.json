@@ -206,6 +206,7 @@
         "Tercera ley de Newton: a toda acción corresponde una reacción igual y opuesta.",
         "El ala desvía aire hacia abajo (downwash) y el aire empuja el ala hacia arriba.",
         "La mano inclinada fuera de la ventana del carro sube por la misma razón que un ala.",
+        "Newton dejó tres leyes: inercia, fuerza = masa × aceleración, y acción-reacción; las tres se aplican al vuelo.",
         "Bernoulli y Newton no compiten: describen juntos la misma sustentación."
       ],
       "blocks": [
@@ -216,6 +217,19 @@
         {
           "type": "text",
           "md": "Eso es la **tercera ley de Newton**: a toda acción corresponde una reacción igual y opuesta. El ala desvía una masa enorme de aire **hacia abajo** (acción); ese aire empuja el ala **hacia arriba** (reacción). El chorro desviado detrás del ala se llama **deflexión descendente** (downwash)."
+        },
+        {
+          "type": "text",
+          "md": "Newton no dejó una sola ley: dejó **tres**, y las tres vuelan contigo. Piensa en tu moto: no arranca sola (primera ley), acelera más cuanto más fuerza le das y menos pesa (segunda), y al patear el suelo, el suelo te empuja a ti (tercera)."
+        },
+        {
+          "type": "table",
+          "headers": ["Ley de Newton", "Qué dice", "En el vuelo"],
+          "rows": [
+            ["Primera (inercia)", "Un cuerpo sigue en reposo o en movimiento uniforme hasta que una fuerza lo cambie", "El avión no acelera ni vira solo: hacen falta fuerzas"],
+            ["Segunda (F = m × a)", "Fuerza = masa × aceleración", "Más empuje (o menos peso) = más aceleración"],
+            ["Tercera (acción-reacción)", "A toda acción, reacción igual y opuesta", "El ala desvía aire abajo → el aire empuja el ala arriba"]
+          ]
         },
         {
           "type": "text",
@@ -275,6 +289,18 @@
           ],
           "answer": 0,
           "why": "Downwash = deflexión descendente. El viento relativo es el flujo opuesto a la trayectoria; la combadura es la curvatura del perfil."
+        },
+        {
+          "type": "check",
+          "id": "4-3-c4",
+          "q": "Un avión estacionado en la plataforma no se mueve hasta que el empuje de la hélice actúa sobre él. ¿Qué ley de Newton lo explica?",
+          "options": [
+            "La primera ley (inercia).",
+            "La tercera ley (acción y reacción).",
+            "El principio de Bernoulli."
+          ],
+          "answer": 0,
+          "why": "Primera ley: un cuerpo permanece en reposo hasta que una fuerza externa lo cambia. La tercera es acción-reacción; Bernoulli habla de velocidad y presión."
         }
       ]
     },
@@ -287,7 +313,8 @@
         "La cuerda es la línea recta imaginaria del borde de ataque al borde de salida.",
         "La combadura (camber) es la curvatura del perfil respecto a la cuerda.",
         "Extradós = superficie superior; intradós = superficie inferior.",
-        "La envergadura es la distancia de punta a punta de ala."
+        "La envergadura es la distancia de punta a punta de ala.",
+        "La hélice y las superficies de cola también son perfiles alares: la \"sustentación\" de la hélice apunta hacia adelante y es el empuje."
       ],
       "blocks": [
         {
@@ -315,6 +342,10 @@
         {
           "type": "text",
           "md": "¿Y cómo vuelan de cabeza los aviones acrobáticos? Sus perfiles son casi **simétricos**: sin \"barriga\" marcada. Vuelan igual porque la otra mitad del secreto no es la forma, sino el **ángulo de ataque**: hasta una tabla plana genera sustentación si la inclinas contra el viento. La combadura ayuda a producir más sustentación con menos ángulo, pero no es indispensable."
+        },
+        {
+          "type": "text",
+          "md": "Y aquí la tercera dimensión del asunto: el perfil alar **no vive solo en las alas**. Cada pala de la hélice es un perfil que \"vuela\" en círculos: su sustentación apunta hacia adelante y la llamamos **empuje**. La deriva y el estabilizador de la cola también son perfiles, y el rotor de un helicóptero es un ala giratoria. Donde veas una superficie que trabaja con el aire, hay un perfil alar escondido."
         },
         {
           "type": "callout",
@@ -373,6 +404,18 @@
           ],
           "answer": 0,
           "why": "Envergadura (wingspan) = punta a punta. Este dato vuelve en el efecto suelo: se nota a menos de una envergadura de altura."
+        },
+        {
+          "type": "check",
+          "id": "4-4-c5",
+          "q": "Las palas de la hélice generan empuje porque:",
+          "options": [
+            "Son perfiles alares que producen \"sustentación\" dirigida hacia adelante.",
+            "Comprimen el aire contra el fuselaje y lo calientan.",
+            "Reman en el aire como paletas planas, sin perfil aerodinámico."
+          ],
+          "answer": 0,
+          "why": "Cada pala es un perfil alar que \"vuela\" en círculos: su sustentación apunta hacia adelante y es el empuje. Por eso la hélice también pierde eficacia cuando baja la densidad del aire."
         }
       ]
     },
@@ -479,6 +522,8 @@
         "La sustentación nace de presión baja arriba y presión alta abajo del ala.",
         "Al mismo tiempo, el ala desvía aire hacia abajo y recibe la reacción hacia arriba.",
         "La sustentación actúa perpendicular al viento relativo.",
+        "El efecto Magnus (la pelota con comba) demuestra que aire más rápido = presión más baja.",
+        "La fórmula de la sustentación es L = ½ ρ V² S CL.",
         "La sustentación depende de densidad, velocidad (al cuadrado), área del ala y ángulo de ataque.",
         "Más velocidad o más ángulo de ataque = más sustentación, hasta el ángulo crítico.",
         "Al volar más lento, mantienes la altura compensando con más ángulo de ataque."
@@ -486,7 +531,7 @@
       "blocks": [
         {
           "type": "text",
-          "md": "¿Viste un tiro libre con comba? El futbolista hace girar la pelota: de un lado el aire pasa más rápido (presión baja) y del otro más lento (presión alta), y la pelota se curva hacia el lado de presión baja. Tu ala hace el mismo truco sin girar: su forma y su inclinación aceleran el aire por arriba."
+          "md": "¿Viste un tiro libre con comba? El futbolista hace girar la pelota: de un lado el aire pasa más rápido (presión baja) y del otro más lento (presión alta), y la pelota se curva hacia el lado de presión baja. Ese fenómeno tiene nombre — el **efecto Magnus** — y es la demostración clásica de que velocidad y presión van de la mano. Tu ala hace el mismo truco sin girar: su forma y su inclinación aceleran el aire por arriba."
         },
         {
           "type": "text",
@@ -495,6 +540,11 @@
         {
           "type": "text",
           "md": "¿De qué depende cuánta sustentación fabricas? De cuatro ingredientes: la **densidad** del aire, la **velocidad** (¡al cuadrado!), el **área** del ala y el **coeficiente de sustentación**, que crece con el ángulo de ataque. Lo del cuadrado es potente: al doble de velocidad, el ala produce **cuatro veces** más sustentación con el mismo ángulo."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "La fórmula de la sustentación: **L = ½ × ρ × V² × S × CL** — densidad (ρ), velocidad al cuadrado (V²), área del ala (S) y coeficiente de sustentación (CL, que crece con el ángulo de ataque). Úsala: si pasas de 60 a 120 nudos (el doble), V² se hace 120²/60² = 14,400/3,600 = **4 veces mayor** → 4 veces más sustentación con el mismo ángulo."
         },
         {
           "type": "text",
@@ -508,7 +558,7 @@
         {
           "type": "notebook",
           "id": "4-6-n1",
-          "prompt": "Dibuja un perfil alar con flechitas cortas saliendo del extradós (presión baja arriba), flechitas empujando el intradós (presión alta abajo) y una flecha grande de sustentación perpendicular al viento relativo. Anota los cuatro ingredientes de la sustentación: densidad, velocidad², área, ángulo."
+          "prompt": "Dibuja un perfil alar con flechitas cortas saliendo del extradós (presión baja arriba), flechitas empujando el intradós (presión alta abajo) y una flecha grande de sustentación perpendicular al viento relativo. Anota los cuatro ingredientes de la sustentación: densidad, velocidad², área, ángulo — y la fórmula L = ½ ρ V² S CL."
         },
         {
           "type": "check",
@@ -557,6 +607,18 @@
           ],
           "answer": 0,
           "why": "Menos velocidad = menos sustentación; para que siga igualando al peso, compensas con más ángulo de ataque."
+        },
+        {
+          "type": "check",
+          "id": "4-6-c5",
+          "q": "Una pelota pateada con comba (girando) se curva en el aire porque:",
+          "options": [
+            "El aire pasa más rápido por un lado (presión baja) que por el otro: el efecto Magnus.",
+            "Su peso se desplaza hacia el lado del giro y la jala.",
+            "El aire desviado hacia abajo la empuja hacia arriba por acción y reacción."
+          ],
+          "answer": 0,
+          "why": "Efecto Magnus: el giro acelera el aire de un lado, la presión cae ahí y la pelota se curva hacia ese lado — la misma relación velocidad-presión de Bernoulli."
         }
       ]
     },

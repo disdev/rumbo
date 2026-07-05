@@ -261,6 +261,7 @@
         "El revestimiento (skin) cubre todo y en alas semimonocasco también ayuda a cargar esfuerzo.",
         "Muchas alas llevan los tanques de combustible en su interior; por eso se drenan muestras bajo el ala en el prevuelo.",
         "El ala se une al fuselaje en la raíz; el extremo libre es la punta.",
+        "El borde de ataque es el frente del ala; el borde de salida, la parte trasera; la envergadura, la distancia de punta a punta.",
         "La carga extra que puede imponerse al ala depende de la velocidad del avión."
       ],
       "blocks": [
@@ -284,6 +285,35 @@
           "type": "diagram",
           "src": "ch03-ala-interna.svg",
           "caption": "Ala vista desde arriba con la piel levantada: largueros, costillas, larguerillos y revestimiento."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Término",
+            "Qué es"
+          ],
+          "rows": [
+            [
+              "Borde de ataque (leading edge)",
+              "El frente del ala: lo primero que corta el aire"
+            ],
+            [
+              "Borde de salida (trailing edge)",
+              "La parte trasera: ahí van flaps y alerones"
+            ],
+            [
+              "Envergadura (wingspan)",
+              "La distancia de punta a punta del ala"
+            ],
+            [
+              "Perfil aerodinámico (airfoil)",
+              "La forma curva del ala vista en corte"
+            ],
+            [
+              "Raíz y punta (root / tip)",
+              "Donde el ala se une al fuselaje, y su extremo libre"
+            ]
+          ]
         },
         {
           "type": "callout",
@@ -342,6 +372,18 @@
           ],
           "answer": 1,
           "why": "Pregunta real del banco: a mayor velocidad el ala puede generar más fuerza; esa es la variable de la que depende la carga extra."
+        },
+        {
+          "type": "check",
+          "id": "3-3-c5",
+          "q": "¿Cómo se llama la parte delantera del ala, la primera que corta el aire?",
+          "options": [
+            "El borde de salida.",
+            "El borde de ataque.",
+            "La raíz del ala."
+          ],
+          "answer": 1,
+          "why": "Borde de ataque = el frente; el borde de salida es la parte trasera (donde van flaps y alerones); la raíz es la unión con el fuselaje."
         }
       ]
     },
@@ -794,12 +836,13 @@
         "El triciclo permite frenar con más fuerza, da mejor visibilidad al rodar y mantiene el avión recto en el aterrizaje.",
         "Tren convencional: dos ruedas principales + rueda o patín de cola; útil en pistas rústicas por la mayor luz de la hélice.",
         "El convencional da poca visibilidad hacia adelante al rodar y es más propenso al trompo (ground loop).",
-        "El trompo ocurre porque en el convencional el CG va detrás de las ruedas principales y exagera cualquier giro."
+        "El trompo ocurre porque en el convencional el CG va detrás de las ruedas principales y exagera cualquier giro.",
+        "El tren no siempre son ruedas: los hidroaviones usan flotadores y en nieve se montan esquíes."
       ],
       "blocks": [
         {
           "type": "text",
-          "md": "¿En qué se apoya el avión cuando no vuela? El **tren de aterrizaje** carga al avión al estacionar, rodar, despegar y aterrizar. Casi siempre son tres ruedas: dos **principales**, que aguantan el peso fuerte, y una tercera cuya posición define el tipo. Si va adelante, bajo la nariz, es tren **triciclo** — como los carritos de tres ruedas: estable y noble."
+          "md": "¿En qué se apoya el avión cuando no vuela? El **tren de aterrizaje (landing gear)** carga al avión al estacionar, rodar, despegar y aterrizar. Casi siempre son tres ruedas: dos **principales**, que aguantan el peso fuerte, y una tercera cuya posición define el tipo. Si va adelante, bajo la nariz, es tren **triciclo** — como los carritos de tres ruedas: estable y noble."
         },
         {
           "type": "text",
@@ -812,6 +855,10 @@
         {
           "type": "text",
           "md": "¿Por qué el trompo? En el convencional, el centro de gravedad va **detrás** de las ruedas principales. Si el avión se tuerce un poco al aterrizar, el peso \"quiere\" pasar adelante y **exagera** el giro — como empujar un carrito de supermercado al revés. En el triciclo, el CG va **delante** de las principales, y eso endereza el avión solito."
+        },
+        {
+          "type": "text",
+          "md": "¿Y si no hay pista? El tren no siempre son ruedas: los hidroaviones usan **flotadores (floats)** para posarse en el agua — piensa en los ríos de la selva — y en zonas de nieve o hielo se montan **esquíes (skis)**. Ruedas, flotadores o esquíes: los tres cuentan como tren de aterrizaje."
         },
         {
           "type": "table",
@@ -905,6 +952,18 @@
           ],
           "answer": 1,
           "why": "La mayor luz de hélice es SU ventaja en pistas rústicas; la visibilidad y el frenado fuerte son ventajas del triciclo."
+        },
+        {
+          "type": "check",
+          "id": "3-8-c5",
+          "q": "Además de ruedas, el tren de aterrizaje de un avión puede consistir en:",
+          "options": [
+            "Flotadores para el agua o esquíes para la nieve.",
+            "Un colchón de aire bajo el fuselaje.",
+            "Un paracaídas de arrastre para frenar."
+          ],
+          "answer": 0,
+          "why": "El tren puede ser de ruedas, flotadores (hidroaviones) o esquíes (nieve/hielo): los tres soportan al avión fuera del vuelo."
         }
       ]
     },
@@ -1088,6 +1147,7 @@
         "El aluminio se corroe: en el prevuelo se busca pintura hinchada, polvillo blanco y remaches deteriorados, sobre todo cerca del mar.",
         "Los materiales compuestos (fibra de vidrio, fibra de carbono) crecen: se moldean en formas suaves y no se corroen.",
         "Un golpe puede dañar los compuestos por dentro sin dejar marca visible por fuera.",
+        "Los compuestos llevan malla metálica contra rayos; el removedor de pintura daña su resina — nunca usarlo. El panel puede ser análogo o cabina de cristal (pantallas).",
         "Los primeros aviones usaban madera y tela; algunos clásicos aún vuelan así.",
         "Además de la estructura, el avión tiene subsistemas: sistema eléctrico, controles de vuelo (cables y varillas) y frenos.",
         "El panel de instrumentos es parte del avión: te dice velocidad, altitud, rumbo y estado del motor."
@@ -1103,7 +1163,15 @@
         },
         {
           "type": "text",
+          "md": "Dos datos más de los compuestos: como la fibra no conduce electricidad, estos aviones llevan una **malla metálica** en la piel para disipar la corriente de un rayo. Y cuidado en el hangar: el **removedor de pintura** ataca químicamente la resina — jamás se usa sobre un compuesto. Un derrame de combustible o aceite, en cambio, no lo daña: se limpia y listo."
+        },
+        {
+          "type": "text",
           "md": "La estructura no está sola: dentro y alrededor viven las **subestructuras** y sistemas — el **sistema eléctrico** (batería, alternador, luces, radios), los **controles de vuelo** (cables y varillas que conectan tus manos con las superficies móviles) y los **frenos**. Y en la cabina, el **panel de instrumentos**: los \"marcadores del videojuego\" que te dicen velocidad, altitud, rumbo y salud del motor. Los verás a fondo en los capítulos 7 y 8."
+        },
+        {
+          "type": "text",
+          "md": "Ese panel viene en dos estilos: relojes **análogos** de aguja, o la **cabina de cristal (glass cockpit)**: pantallas electrónicas que reúnen los instrumentos de **control** (actitud, potencia) y de **navegación** (rumbo, GPS) en una sola imagen. La información es la misma; cambia cómo se presenta."
         },
         {
           "type": "table",
@@ -1182,6 +1250,18 @@
           ],
           "answer": 0,
           "why": "Los mandos mueven las superficies mediante cables y varillas mecánicas; el eléctrico y el vacío alimentan otros equipos."
+        },
+        {
+          "type": "check",
+          "id": "3-11-c5",
+          "q": "Van a repintar un avión de material compuesto. ¿Qué producto NUNCA debe usarse sobre su superficie?",
+          "options": [
+            "Removedor de pintura: ataca químicamente la resina.",
+            "Agua con jabón: debilita la fibra de vidrio.",
+            "Combustible: disuelve la malla antirayos."
+          ],
+          "answer": 0,
+          "why": "El removedor de pintura daña la resina del compuesto; los derrames de combustible o aceite, en cambio, se limpian sin dañarlo."
         }
       ]
     },
@@ -1265,6 +1345,18 @@
           ],
           "answer": 0,
           "why": "En un ala semicantilever el montante comparte las cargas del ala: si falla, la estructura queda comprometida."
+        },
+        {
+          "type": "check",
+          "id": "3-12-c5",
+          "q": "¿Qué es una \"cabina de cristal\" (glass cockpit)?",
+          "options": [
+            "Un parabrisas reforzado de vidrio templado.",
+            "Un panel donde pantallas electrónicas reemplazan a los relojes análogos.",
+            "Una cubierta transparente que protege el panel del sol."
+          ],
+          "answer": 1,
+          "why": "Glass cockpit = pantallas que integran instrumentos de control y navegación; la información es la misma que en los relojes de aguja."
         }
       ]
     }

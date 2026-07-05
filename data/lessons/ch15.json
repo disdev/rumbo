@@ -282,6 +282,8 @@
         "Toda operación en clase C exige transponder con Modo C; la acción inicial antes de entrar es contactar al control de aproximación.",
         "Saliendo de un aeropuerto satélite dentro de clase C, comunícate con el ATC tan pronto como sea posible después del despegue.",
         "La clase C típica: techo a 4000 ft AGL sobre el aeropuerto principal y área exterior de 20 NM.",
+        "El núcleo de la clase C tiene 5 NM de radio, con un escalón de 10 NM encima.",
+        "Las dimensiones laterales de la clase D se basan en los procedimientos por instrumentos para los que se establece.",
         "Un aeropuerto es clase D solo mientras su torre opera; al cerrar la torre, el espacio revierte a E o a E más G."
       ],
       "blocks": [
@@ -296,6 +298,10 @@
         {
           "type": "text",
           "md": "Dimensiones típicas de la clase C: techo a **4000 ft AGL** sobre el aeropuerto principal y un **área exterior** de **20 NM** de radio. ¿Y la clase D? Existe **solo mientras su torre opera**: si la torre es de tiempo parcial y cierra, el espacio **revierte a clase E, o a una combinación de E y G**. En la carta, la clase D se dibuja con un **círculo azul segmentado**."
+        },
+        {
+          "type": "text",
+          "md": "¿Y de qué tamaño es una clase D? No hay molde único: sus **dimensiones laterales se basan en los procedimientos por instrumentos** para los que se estableció ese espacio — debe caber entera la trayectoria del avión que llega entre nubes. El núcleo de la clase C sí es estándar: **5 NM** de radio desde la superficie, con un escalón de **10 NM** encima — la clásica torta invertida."
         },
         {
           "type": "callout",
@@ -354,6 +360,18 @@
           ],
           "answer": 2,
           "why": "La clase D existe solo con la torre operando; al cerrar, el espacio revierte a E o E+G."
+        },
+        {
+          "type": "check",
+          "id": "15-4-c5",
+          "q": "¿En qué se basan las dimensiones laterales del espacio aéreo clase D?",
+          "options": [
+            "En un radio estándar de 5 millas desde el centro geográfico del aeropuerto",
+            "En los procedimientos por instrumentos para los cuales se establece ese espacio",
+            "En el número de aeropuertos que quedan dentro de la clase D"
+          ],
+          "answer": 1,
+          "why": "La clase D se dibuja a la medida: debe contener los procedimientos por instrumentos del aeropuerto; el radio fijo de 5 millas es el distractor."
         }
       ]
     },
@@ -620,6 +638,8 @@
         "En la carta, cada espacio muestra dos números: arriba el techo, abajo el piso; SFC significa superficie.",
         "En una aerovía por debajo de 10 000 ft, la visibilidad VFR mínima es 5 km.",
         "Al subir o bajar VFR en una aerovía, haz virajes suaves a ambos lados para escanear el espacio.",
+        "FL significa nivel de vuelo: centenas de pies con altímetro en presión estándar (FL245 = 24 500 ft).",
+        "AGL es altura sobre el terreno; MSL o AMSL es altitud sobre el nivel medio del mar.",
         "Antes de volar, revisa en la carta qué espacios cruzará tu ruta y a qué altitudes."
       ],
       "blocks": [
@@ -639,6 +659,22 @@
         {
           "type": "text",
           "md": "Trabájalo con números. Un TMA marca **FL245 / 4500 ft** y tú lo cruzas a **2000 ft**: pasas **por debajo del piso**, sin pedirle nada a nadie (pero revisa qué más vive ahí abajo: ¿una CTR?). Tu instructor va a **6000 ft**: él sí está **dentro** del TMA y necesita hablar con el ATC. Mismo cielo, 4000 ft de diferencia, reglas opuestas."
+        },
+        {
+          "type": "text",
+          "md": "¿Y qué es exactamente ese \"FL\"? **Nivel de vuelo** (*flight level*): la altitud de presión en **centenas de pies**, con el altímetro en presión estándar. La cuenta es directa: **FL245 = 245 × 100 = 24 500 ft**. Este mini-diccionario resume las etiquetas de la carta:"
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["FL (nivel de vuelo)", "altitud de presión en centenas de pies: FL245 = 24 500 ft"],
+            ["SFC (surface)", "desde la superficie del terreno"],
+            ["AGL (above ground level)", "altura sobre el terreno"],
+            ["MSL / AMSL", "altitud sobre el nivel medio del mar"],
+            ["Techo", "límite superior de un espacio aéreo"],
+            ["Piso", "límite inferior de un espacio aéreo"]
+          ]
         },
         {
           "type": "callout",
@@ -685,6 +721,14 @@
           ],
           "answer": 1,
           "why": "A 4000 ft estás sobre el techo de la CTR (3500 ft); lo que importa es qué espacio hay a tu nivel — a menudo un TMA."
+        },
+        {
+          "type": "check",
+          "id": "15-8-c4",
+          "q": "Un TMA marca su techo como FL245 en la carta. ¿A cuántos pies equivale?",
+          "options": ["2450 ft", "24 500 ft", "245 000 ft"],
+          "answer": 1,
+          "why": "FL = centenas de pies con altímetro estándar: FL245 = 245 × 100 = 24 500 ft."
         }
       ]
     },
@@ -698,6 +742,7 @@
         "En áreas restringidas hay peligros a menudo invisibles (artillería aérea, misiles guiados); la entrada la autoriza la agencia controladora.",
         "En la carta se identifican con código: letra del país, tipo y número (ej. SP-P115, SP-R32).",
         "Las áreas militares o de alerta concentran entrenamiento: extrema la vigilancia.",
+        "Las rutas de entrenamiento militar (MTR) llevan vuelo rápido y bajo; las áreas de tiro controlado (CFA) no se publican en la carta porque su actividad se suspende cuando un avión se aproxima.",
         "Las restricciones temporales (tipo TFR) aparecen por NOTAM: revísalos antes de cada vuelo."
       ],
       "blocks": [
@@ -717,6 +762,10 @@
         {
           "type": "text",
           "md": "También existen áreas de **operaciones militares** y de **alerta**: no están prohibidas, pero concentran entrenamiento intenso — pasa con mil ojos. Y hay restricciones **temporales** (el concepto de **TFR**): se activan por un evento — una visita presidencial, un desastre, ceniza volcánica — y se publican por **NOTAM**. Por eso los NOTAM se leen *antes de cada vuelo*."
+        },
+        {
+          "type": "text",
+          "md": "Faltan dos rarezas. Las **rutas de entrenamiento militar** (MTR): corredores donde los cazas practican vuelo **rápido y bajo** — si tu ruta cruza una, extrema la vigilancia. Y las **áreas de tiro controlado** (CFA): ahí la actividad peligrosa **se suspende** apenas un avión se aproxima, y por eso son las únicas que **no aparecen en la carta** — no obligan a nadie a desviarse."
         },
         {
           "type": "callout",
@@ -780,6 +829,18 @@
           ],
           "answer": 1,
           "why": "Solo la agencia controladora de esa zona autoriza el cruce; la aerovía o la base militar cercana son distractores."
+        },
+        {
+          "type": "check",
+          "id": "15-9-c5",
+          "q": "¿Por qué las áreas de tiro controlado (CFA) no aparecen en las cartas aeronáuticas?",
+          "options": [
+            "Porque su ubicación es información militar clasificada",
+            "Porque su actividad se suspende cuando un avión se aproxima al área",
+            "Porque solo se activan de noche, cuando no hay vuelo VFR"
+          ],
+          "answer": 1,
+          "why": "La actividad de una CFA se detiene apenas un avión se acerca: no obliga a nadie a cambiar de ruta, así que no se dibuja en la carta."
         }
       ]
     },
@@ -791,6 +852,7 @@
         "Lo pide el piloto y lo autoriza el ATC: en clase D, la torre de control.",
         "Requiere visibilidad de al menos 1500 m y mantenerse libre de nubes.",
         "Es una herramienta de excepción, no un plan: úsala para salir de un apuro, no para meterte en uno.",
+        "En aeropuertos grandes y saturados el SVFR de ala fija está prohibido; la carta lo marca con «NO SVFR».",
         "De noche el SVFR tiene restricciones adicionales según la reglamentación."
       ],
       "blocks": [
@@ -805,6 +867,10 @@
         {
           "type": "text",
           "md": "Escenario completo: quieres salir y reportan **visibilidad de 3000 m** con nubes bajas — por debajo del VFR básico de la zona de control. Como 3000 m ≥ 1500 m, puedes pedir: «solicito salida VFR especial». Si el tránsito IFR lo permite, te autorizan y sales manteniéndote **libre de nubes**. ¿Y si reportaran 1200 m? Ni el SVFR te salva: a esperar en tierra."
+        },
+        {
+          "type": "text",
+          "md": "Ojo: no en todos lados existe esta puerta lateral. En los aeropuertos **grandes y saturados**, el VFR especial de **ala fija está prohibido** — el flujo IFR no deja espacio para excepciones. En la carta lo reconoces por la anotación **«NO SVFR»** sobre el aeropuerto."
         },
         {
           "type": "callout",
@@ -852,6 +918,18 @@
           ],
           "answer": 0,
           "why": "El SVFR existe justo para eso: lo pides tú y se autoriza si el tránsito lo permite; despegar bajo mínimos sin él es ilegal."
+        },
+        {
+          "type": "check",
+          "id": "15-10-c4",
+          "q": "En la carta, sobre un aeropuerto internacional muy congestionado, lees la anotación «NO SVFR». ¿Qué significa?",
+          "options": [
+            "El VFR especial de ala fija no está autorizado en ese aeropuerto",
+            "El SVFR solo se autoriza de noche en ese aeropuerto",
+            "Ese aeropuerto no exige autorización para operar SVFR"
+          ],
+          "answer": 0,
+          "why": "En los aeropuertos más saturados el VFR especial de ala fija está prohibido; la anotación «NO SVFR» lo avisa en la carta."
         }
       ]
     },

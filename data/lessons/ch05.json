@@ -741,7 +741,8 @@
         "El ángulo diedro (alas en V abierta) da estabilidad lateral, contra el alabeo.",
         "Al ladearse, el avión resbala y el ala baja recibe más ángulo de ataque: más sustentación y se endereza solo.",
         "La estabilidad direccional (contra la guiñada) la da la deriva vertical, detrás del CG.",
-        "El efecto veleta regresa la nariz hacia el viento relativo, como las plumas de un dardo."
+        "El efecto veleta regresa la nariz hacia el viento relativo, como las plumas de un dardo.",
+        "Deriva fuerte con diedro débil produce inestabilidad espiral; lo contrario, balanceo del holandés."
       ],
       "blocks": [
         {
@@ -770,6 +771,10 @@
           "type": "callout",
           "style": "memoria",
           "md": "Trío para no cruzarse: **D**iedro → la**D**eo (lateral). **V**eleta → **V**ertical → guiñada (direccional). Y el CG con la cola → cabeceo (longitudinal). El examen ama intercambiarlos."
+        },
+        {
+          "type": "text",
+          "md": "¿Sabías que estas dos estabilidades compiten? Si la lateral (diedro) es fuerte y la direccional débil, el avión 'colea' en un vaivén serpenteante llamado **balanceo del holandés** (Dutch roll), molesto pero que suele apagarse solo. Al revés — deriva muy fuerte, diedro débil — aparece la **inestabilidad espiral** (spiral instability): un ladeo pequeño que nadie corrige se convierte poco a poco en una espiral cada vez más cerrada. La mayoría de los aviones acepta un toque de esta última: es lenta y fácil de corregir… si estás mirando."
         },
         {
           "type": "notebook",
@@ -823,6 +828,18 @@
           ],
           "answer": 0,
           "why": "El viento de costado empuja la superficie vertical trasera y la cola 'obedece': la nariz vuelve al viento."
+        },
+        {
+          "type": "check",
+          "id": "5-9-c5",
+          "q": "En un avión con estabilidad direccional muy fuerte y poco diedro, un ladeo pequeño que no se corrige tiende a convertirse en:",
+          "options": [
+            "Una espiral cada vez más cerrada (inestabilidad espiral).",
+            "Un vaivén serpenteante que se apaga solo (balanceo del holandés).",
+            "Una pérdida inmediata por exceso de ángulo de ataque."
+          ],
+          "answer": 0,
+          "why": "Deriva fuerte + poca estabilidad lateral: el avión sigue el viraje en vez de nivelarse solo — espiral."
         }
       ]
     },
@@ -834,7 +851,9 @@
         "Al banquear, la componente vertical de la sustentación disminuye y el avión tiende a descender.",
         "Para mantener la altitud en el viraje hay que aumentar el ángulo de ataque (jalar el bastón).",
         "La guiñada adversa apunta la nariz hacia afuera del viraje por la resistencia del alerón que baja.",
-        "La guiñada adversa se corrige con el timón de dirección hacia el lado del viraje."
+        "La guiñada adversa se corrige con el timón de dirección hacia el lado del viraje.",
+        "A más banqueo el radio de viraje se achica; a más velocidad, se agranda.",
+        "En maniobras de referencia en tierra se banquea más donde la velocidad sobre el suelo es mayor (viento de cola)."
       ],
       "blocks": [
         {
@@ -859,6 +878,19 @@
           "type": "callout",
           "style": "ojo",
           "md": "Escenario real: estás girando de básica a final y te pasas del eje de pista. La tentación es pisar más pedal para 'apurar' la nariz — eso **derrapa** el viraje, y a baja velocidad y baja altura es el escenario clásico de accidente. La corrección segura: viraje coordinado (más banqueo moderado con pedal justo) o abortar y dar la vuelta. Nunca pedal extra."
+        },
+        {
+          "type": "text",
+          "md": "Dos perillas fijan tu viraje: banqueo y velocidad. A más **banqueo**, el giro es más cerrado (menos **radio de viraje**) y el rumbo cambia más rápido (mayor **régimen de viraje**, rate of turn). A más **velocidad**, lo contrario: el radio se agranda. Ahora suma el viento: tu **velocidad sobre el suelo** cambia según vueles con viento de cola o de frente. Para dibujar un círculo perfecto sobre el terreno, banquea **más** donde la velocidad sobre el suelo es **mayor** (viento de cola) y **menos** donde es menor (viento de frente)."
+        },
+        {
+          "type": "text",
+          "md": "Esa es la base de las **maniobras de referencia en tierra** (ground reference maneuvers). En los **giros en S** sobre un camino, el banqueo más pronunciado va del lado con viento de cola; si aumentas el banqueo demasiado rápido en la primera parte del giro, el semicírculo te sale más chico. En el **curso rectangular**, vuelas con **corrección de deriva** (crab) en las piernas con viento cruzado — por eso en unas esquinas giras más de 90° y en otras, menos."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco lo pregunta con figuras: en el rumbo rectangular (Figura 62), las esquinas donde la aeronave gira **menos de 90°** son las **esquinas 1 y 4**. Y en los giros en S (Figura 66), el semicírculo consistentemente más chico ocurre en el giro **4-5-6**, porque la inclinación **se incrementa demasiado rápido durante la primera parte del giro**."
         },
         {
           "type": "notebook",
@@ -912,6 +944,18 @@
           ],
           "answer": 0,
           "why": "El pedal coordina: cancela la nariz que se va hacia afuera por la resistencia del alerón bajado."
+        },
+        {
+          "type": "check",
+          "id": "5-10-c5",
+          "q": "Practicando giros en S con viento, ¿cuándo necesitas el banqueo más pronunciado?",
+          "options": [
+            "Cuando vuelas con viento de cola y tu velocidad sobre el suelo es mayor.",
+            "Cuando vuelas contra el viento y tu velocidad sobre el suelo es menor.",
+            "Nunca: el banqueo debe mantenerse constante durante toda la maniobra."
+          ],
+          "answer": 0,
+          "why": "A mayor velocidad sobre el suelo necesitas un giro más 'apretado' para mantener el mismo radio sobre el terreno."
         }
       ]
     },
@@ -925,7 +969,8 @@
         "Valores de examen: 30° → ≈1.2 G, 45° → ≈1.5 G, 60° → 2 G.",
         "Peso soportado = peso × factor de carga (ej.: 2,300 lb a 60° → 4,600 lb).",
         "El exceso de carga que se puede imponer al ala depende de la velocidad del avión.",
-        "Pasando 60° de banqueo, el factor de carga crece de forma explosiva."
+        "Pasando 60° de banqueo, el factor de carga crece de forma explosiva.",
+        "Los límites dependen de la categoría (normal +3.8G, utilitaria +4.4G, acrobática +6.0G); a Va o menos, el avión entra en pérdida antes de excederlos."
       ],
       "blocks": [
         {
@@ -958,6 +1003,19 @@
         {
           "type": "text",
           "md": "Practica con los números reales del banco: avión de **3,300 lb** en viraje nivelado de 30° → 3,300 × 1.2 ≈ **3,960 lb**. Avión de **4,500 lb** a 45° → 4,500 × 1.5 = **6,750 lb**. Fíjate en la trampa de las alternativas: siempre aparece el peso sin multiplicar (como si el viraje no cambiara nada) y un número inflado de más. Haz la multiplicación — no adivines por 'pinta'."
+        },
+        {
+          "type": "text",
+          "md": "¿Y cuánta G aguanta tu avión? Depende de su **categoría de certificación**. Tu escudo contra pasarte es la **velocidad de maniobra (Va)**: volando a Va o menos, el ala **entra en pérdida antes** de alcanzar el factor de carga límite — la pérdida actúa como fusible que protege la estructura. Por eso en turbulencia fuerte reduces a Va o menos. Y recuerda: Va **disminuye cuando el avión pesa menos** (la encuentras en el POH, no en el velocímetro)."
+        },
+        {
+          "type": "table",
+          "headers": ["Categoría", "Límite positivo", "Límite negativo"],
+          "rows": [
+            ["Normal", "+3.8 G", "−1.52 G"],
+            ["Utilitaria (utility)", "+4.4 G", "−1.76 G"],
+            ["Acrobática (acrobatic)", "+6.0 G", "−3.0 G"]
+          ]
         },
         {
           "type": "guided_math",
@@ -1016,6 +1074,18 @@
           ],
           "answer": 0,
           "why": "A mayor velocidad, el ala puede generar más sustentación y por lo tanto imponerse más carga."
+        },
+        {
+          "type": "check",
+          "id": "5-11-c5",
+          "q": "En turbulencia fuerte vuelas a la velocidad de maniobra (Va) o menos porque así el avión:",
+          "options": [
+            "Entra en pérdida antes de exceder su factor de carga límite.",
+            "Genera menos sustentación y las ráfagas dejan de cargar el ala.",
+            "Mantiene el factor de carga en 1G aunque haya ráfagas."
+          ],
+          "answer": 0,
+          "why": "A Va o menos, la pérdida llega antes que la carga capaz de dañar la estructura: es el 'fusible' aerodinámico."
         }
       ]
     },
@@ -1029,7 +1099,8 @@
         "Mayor factor de carga → pérdida a mayor velocidad: Vs crece con la raíz del factor de carga (√G).",
         "En una barrena, ambas alas están en pérdida; la del lado del giro, más profundamente.",
         "La barrena es una pérdida agravada con guiñada: para entrar en barrena, primero hay que estar en pérdida.",
-        "Recuperación conceptual de barrena: potencia al mínimo, pedal contrario al giro y bajar la nariz."
+        "Recuperación conceptual de barrena: potencia al mínimo, pedal contrario al giro y bajar la nariz.",
+        "La recuperación de la pérdida empieza por reducir el ángulo de ataque; la potencia ayuda pero no sustituye."
       ],
       "blocks": [
         {
@@ -1053,6 +1124,11 @@
           "type": "callout",
           "style": "examen",
           "md": "Seguras del banco: el ángulo de ataque de pérdida **no cambia con el peso**; la velocidad indicada de pérdida **no cambia con la altitud**; mayor factor de carga → pérdida a **mayor velocidad**; y para entrar en barrena el avión debe estar **en pérdida**. Ojo: el banco pregunta «durante un giro a la izquierda, ¿qué ala(s) entran en pérdida?» — se refiere a la barrena: responde **ambas alas**."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Recuperación de una pérdida, en orden: **reduce el ángulo de ataque** (baja la nariz) — eso es LO PRIMERO y lo único que rompe la pérdida —, aplica potencia máxima y nivela las alas coordinado. Sin reducir el ángulo de ataque, ninguna cantidad de potencia te saca de la pérdida."
         },
         {
           "type": "notebook",
@@ -1106,6 +1182,18 @@
           ],
           "answer": 0,
           "why": "Más G exige más sustentación: alcanzas el ángulo crítico a mayor velocidad (Vs × √G)."
+        },
+        {
+          "type": "check",
+          "id": "5-12-c5",
+          "q": "La primera acción para recuperarte de una pérdida es:",
+          "options": [
+            "Reducir el ángulo de ataque bajando la nariz.",
+            "Aplicar potencia máxima manteniendo la actitud de nariz arriba.",
+            "Subir los flaps para reducir la resistencia."
+          ],
+          "answer": 0,
+          "why": "La pérdida es exceso de ángulo de ataque: solo reducirlo vuelve a adherir el flujo al ala; la potencia sola no la rompe."
         }
       ]
     }
