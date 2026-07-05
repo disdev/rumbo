@@ -6,6 +6,7 @@ import { generateProblem, checkAnswer } from './mathgen.js';
 import { selectQuestions } from './planner.js';
 import { uuid } from './store.js';
 import { startRecording, saveRecording } from './audio.js';
+import { guidedExample, firstExposure } from './guided.js';
 
 export function el(tag, attrs = {}, ...children) {
   const n = document.createElement(tag);
@@ -172,8 +173,31 @@ function waitDone(root) {
 
 export async function drillPlayer(root, block, ctx) {
   const errordeck = !!block.errordeck;
+  const maintenance = block.mode === 'maintenance';
   const { config, templates } = ctx.data;
   const fam = block.family, tier = block.tier;
+
+  // Mantenimiento (§5.2): pocos problemas, números frescos, nunca puntúa el ladder.
+  if (maintenance) {
+    const items = [];
+    for (let i = 0; i < (config.math.maintenance_size ?? 3); i++) {
+      const prob = generateProblem(templates, fam, tier);
+      const r = await askMath(root, prob, ctx, { index: i + 1, total: config.math.maintenance_size ?? 3, tier });
+      items.push({ params: prob.params, answer: prob.answer, given: r.given, correct: r.correct });
+    }
+    ctx.append({ kind: 'drill', family: fam, tier, score: items.filter(i => i.correct).length, total: items.length, detail: { mode: 'maintenance', items } });
+    root.replaceChildren(el('div', { class: 'card center' },
+      el('p', {}, `🔧 Receta engrasada: ${items.filter(i => i.correct).length}/${items.length}. El músculo se mantiene usándolo.`),
+      el('button', { class: 'primary', onclick: () => root.dispatchEvent(new Event('blockdone')) }, 'Continuar')));
+    return waitDone(root);
+  }
+
+  // Primera exposición (§5.2): receta guiada + práctica antes del primer intento puntuado.
+  if (!errordeck && !ctx.state.mathSeen?.has(`${fam}:${tier}`)) {
+    await firstExposure(root, { family: fam, tier }, ctx);
+    ctx.refresh();
+  }
+
   const attemptsToday = (ctx.state.ladder[fam]?.attempts || []).filter(a => a.day === ctx.todayKey && a.tier === tier).length;
   if (!errordeck && attemptsToday >= 2) {
     root.replaceChildren(el('div', { class: 'card center' },
@@ -202,6 +226,7 @@ export async function drillPlayer(root, block, ctx) {
   else if (passed) nodes.push(el('p', {}, `✅ Nivel 3 de ${fam} dominado.`));
   else nodes.push(el('p', {}, `Se avanza con ${config.math.advance_score}/${n} — nunca con ${config.math.advance_score - 1} (§SPEC). ${canRetry ? 'Puedes reintentar HOY una vez, después de un descanso de 5 minutos.' : 'Mañana, mismo nivel, números nuevos.'}`));
   if (perfect && tier < 3) nodes.push(el('button', { class: 'ghost', onclick: () => previewNext() }, `Probar 3 del nivel ${tier + 1} (no cuenta)`));
+  if (!passed) nodes.push(el('button', { class: 'ghost', onclick: () => reviewRecipe() }, 'Repasar la receta paso a paso 🧭'));
   if (canRetry) nodes.push(el('button', { class: 'ghost', onclick: () => retry() }, 'Reintentar tras el descanso'));
   nodes.push(el('button', { class: 'primary', onclick: () => root.dispatchEvent(new Event('blockdone')) }, 'Continuar'));
   root.replaceChildren(el('div', { class: 'card center' }, ...nodes));
@@ -218,6 +243,17 @@ export async function drillPlayer(root, block, ctx) {
     await breakScreen(root, 5 * 60, 'Descanso obligatorio antes del reintento. Sal de la habitación.');
     ctx.refresh();
     await drillPlayer(root, block, ctx);
+    root.dispatchEvent(new Event('blockdone'));
+  }
+  // Tras un intento fallido: re-camina la receta guiada con números frescos
+  // (el §4.4 "rehacer con procedimiento" para matemática). No puntúa.
+  async function reviewRecipe() {
+    for (let i = 0; i < 2; i++) {
+      const prob = generateProblem(templates, fam, tier);
+      const g = await guidedExample(root, prob, ctx, { title: `Repaso de la receta (${i + 1}/2)` });
+      ctx.append({ kind: 'drill', family: fam, tier, score: g.stepsCorrect, total: g.stepsTotal, detail: { mode: 'guiada', redo: true } });
+    }
+    await drillPlayer(root, { ...block, _afterReview: true }, ctx);
     root.dispatchEvent(new Event('blockdone'));
   }
   return waitDone(root);

@@ -41,6 +41,15 @@ export function derive(log, { config, chapters, bank }, todayKey) {
   const item = new Map(); // clave q:<id> | m:<fam>:<tier> → {box, misses, lastDays:[{day,correct}], inDeck, deckSince}
   const chapterState = new Map(); // id → {read, recallChars, recalled, latest:Map(qid→correct), closedDay, srsIdx, srsLast}
   for (const ch of chapters.chapters) chapterState.set(ch.id, { read: false, recalled: false, latest: new Map(), closedDay: null, srsIdx: 0, srsLast: null });
+  const lessons = new Map(); // chapter → {sectionsSeen, completed, checks:{n,ok}, notebooks:Set, secondsBySection}
+  const getLesson = (ch) => {
+    if (!lessons.has(ch)) lessons.set(ch, { sectionsSeen: new Set(), completed: false, checks: { n: 0, ok: 0 }, notebooks: new Set(), secondsBySection: new Map() });
+    return lessons.get(ch);
+  };
+  const mathSeen = new Set(); // 'fam:tier' — ya hubo CUALQUIER drill (guiada cuenta como primera exposición)
+  const mathReps = {}; // family → {lifetime, streak}
+  const famMaint = new Map(); // family → {lastDrillDay, maintCount}
+  let notebooksTotal = 0;
   const missQueue = []; // {qid, available (dayKey)}
   const redoByDay = new Map(); // day → [{qid|prob}]
   const activity = new Map(); // day → {math, regla, fraseo, sessionsEnded:Set, minimo, any}
@@ -102,6 +111,19 @@ export function derive(log, { config, chapters, bank }, todayKey) {
         if (!ladder[fam]) ladder[fam] = { passedTier: 0, attempts: [] };
         const L = ladder[fam];
         const passed = r.score >= config.math.advance_score;
+        // reps y racha por familia: todo problema resuelto cuenta (SPEC §5.2),
+        // en cualquier modo — guiada no trae items (son pasos, no problemas)
+        mathSeen.add(`${fam}:${r.tier}`);
+        if (!mathReps[fam]) mathReps[fam] = { lifetime: 0, streak: 0 };
+        for (const it of detail.items || []) {
+          mathReps[fam].lifetime++;
+          mathReps[fam].streak = it.correct ? mathReps[fam].streak + 1 : 0;
+        }
+        if (!famMaint.has(fam)) famMaint.set(fam, { lastDrillDay: day, maintCount: 0 });
+        const fm = famMaint.get(fam);
+        fm.lastDrillDay = day;
+        if (detail.mode === 'maintenance') fm.maintCount++;
+        if (detail.mode) break; // guiada/practica/maintenance jamás tocan el ladder (§5.2)
         if (!detail.preview && !detail.errordeck) {
           L.attempts.push({ day, tier: r.tier, score: r.score, passed });
           if (passed && r.tier === L.passedTier + 1) L.passedTier = r.tier;
@@ -170,10 +192,36 @@ export function derive(log, { config, chapters, bank }, todayKey) {
         if (detail.entry_id) feedbackByEntry.set(detail.entry_id, detail.feedback);
         break;
       }
+      case 'lesson_progress': {
+        if (!r.chapter) break;
+        const Ls = getLesson(r.chapter);
+        if (detail.section) {
+          Ls.sectionsSeen.add(detail.section);
+          Ls.secondsBySection.set(detail.section, (Ls.secondsBySection.get(detail.section) || 0) + (detail.seconds || 0));
+        }
+        if (detail.completed) {
+          Ls.completed = true;
+          const cs = chapterState.get(r.chapter);
+          if (cs) cs.read = true; // la lección ES la lectura (§4.3)
+        }
+        break;
+      }
+      case 'lesson_check': {
+        if (!r.chapter) break;
+        const Ls = getLesson(r.chapter);
+        Ls.checks.n++;
+        if (detail.correct) Ls.checks.ok++;
+        break;
+      }
+      case 'notebook': {
+        notebooksTotal++;
+        if (r.chapter) getLesson(r.chapter).notebooks.add(detail.prompt_id);
+        break;
+      }
     }
 
     // cierre de capítulo (evaluado tras cada fila que pueda afectarlo)
-    if (['quiz', 'redo', 'recall', 'block'].includes(r.kind)) {
+    if (['quiz', 'redo', 'recall', 'block', 'lesson_progress'].includes(r.kind)) {
       const chId = r.chapter || detail.chapter;
       const cs = chapterState.get(chId);
       if (cs && !cs.closedDay && cs.read && cs.recalled && cs.latest.size > 0) {
@@ -241,6 +289,18 @@ export function derive(log, { config, chapters, bank }, todayKey) {
   const lastSim = simulacros[simulacros.length - 1] || null;
   const listo = !!(lastSim && lastSim.pct >= config.gates.listo_simulacro_pct && lastSim.deckEmptyBefore);
 
+  // ---- mantenimiento de matemática (§5.2): niveles superados nunca se jubilan ----
+  const mathMaintenanceDue = [];
+  const mIntervals = config.math.maintenance_intervals_days || [1, 3, 7, 14];
+  for (const [fam, L] of Object.entries(ladder)) {
+    if (!L.passedTier) continue;
+    const fm = famMaint.get(fam);
+    if (!fm) continue;
+    const idx = Math.min(fm.maintCount, mIntervals.length - 1);
+    const due = addDays(fm.lastDrillDay, mIntervals[idx]);
+    if (due <= todayKey) mathMaintenanceDue.push({ family: fam, tier: L.passedTier });
+  }
+
   // ---- SRS de conceptos: capítulos cerrados con repaso vencido ----
   const srsDue = [];
   for (const [id, cs] of chapterState) {
@@ -267,6 +327,7 @@ export function derive(log, { config, chapters, bank }, todayKey) {
   return {
     todayKey, week, dayLog, streaks, reanudacion, missedRun,
     ladder, familiesAtN2, week6Unlocked, listo, lastSim, simulacros,
+    lessons, mathSeen, mathReps, mathMaintenanceDue, notebooksTotal,
     chapterState, catToChapter, srsDue, errorDeck,
     requeueDue, redoToday: redoByDay.get(todayKey) || [],
     itemStats: item, feedbackByEntry,
