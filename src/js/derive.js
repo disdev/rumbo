@@ -52,6 +52,7 @@ export function derive(log, { config, chapters, bank }, todayKey) {
   let notebooksTotal = 0;
   let rapidfireBest = 0;
   let everInDeck = false;
+  const hangarDone = new Map(); // activity_id → veces
   const missQueue = []; // {qid, available (dayKey)}
   const redoByDay = new Map(); // day → [{qid|prob}]
   const activity = new Map(); // day → {math, regla, fraseo, sessionsEnded:Set, minimo, any}
@@ -176,6 +177,7 @@ export function derive(log, { config, chapters, bank }, todayKey) {
       case 'scenario': scenarios.push(r); break;
       case 'distractor_explain': distractorExplains.push(r); break;
       case 'block': {
+        if (detail.type === 'hangar' && detail.activity_id) hangarDone.set(detail.activity_id, (hangarDone.get(detail.activity_id) || 0) + 1);
         if (detail.type === 'lectura' && detail.chapter && chapterState.has(detail.chapter)) chapterState.get(detail.chapter).read = true;
         if (detail.type === 'session_end') { act.sessionsEnded.add(detail.session); if (detail.minimo) act.minimo = true; }
         if (detail.type === 'teachback') teachbacks.push(r);
@@ -330,7 +332,7 @@ export function derive(log, { config, chapters, bank }, todayKey) {
   return {
     todayKey, week, dayLog, streaks, reanudacion, missedRun,
     ladder, familiesAtN2, week6Unlocked, listo, lastSim, simulacros,
-    lessons, mathSeen, mathReps, mathMaintenanceDue, notebooksTotal, rapidfireBest, everInDeck,
+    lessons, mathSeen, mathReps, mathMaintenanceDue, notebooksTotal, rapidfireBest, everInDeck, hangarDone,
     chapterState, catToChapter, srsDue, errorDeck,
     requeueDue, redoToday: redoByDay.get(todayKey) || [],
     itemStats: item, feedbackByEntry,

@@ -9,6 +9,7 @@ import { el, fmtTime, flashCelebrate, rapidfirePlayer } from './players.js';
 import { FAMILY_IDS } from './mathgen.js';
 import { lessonList } from './lessons.js';
 import { planView } from './plan-view.js';
+import { hangarView } from './hangar.js';
 import { earnedBadges } from './badges.js';
 
 const app = document.getElementById('app');
@@ -179,7 +180,11 @@ function renderHome() {
       el('h3', {}, '☀️ Domingo'),
       el('p', {}, 'Día de descanso y revisión con tu mentor. Nada de estudiar — el descanso también es parte del plan.')));
   } else if (dayType === 'completo' || sessionsDone >= plan.sessions.length) {
-    nodes.push(el('div', { class: 'card center' }, el('h3', {}, '✅ Día completo'), el('p', {}, 'Ya está. Nos vemos mañana a las 8:00.')));
+    nodes.push(el('div', { class: 'card center' },
+      el('h3', {}, '✅ Día completo'),
+      el('p', {}, 'Ya está. Nos vemos mañana a las 8:00.'),
+      el('p', { class: 'note' }, '¿Te quedó cuerda? El hangar tiene vuelos por el Perú esperándote. 👇'),
+      el('button', { class: 'primary', onclick: () => hangarView(app, ctx, renderHome) }, '🛩️ Abrir el hangar')));
   } else {
     const label = plan.dayType === 'minimo' ? 'Comenzar día mínimo'
       : plan.dayType === 'reanudacion' ? 'Reanudar — día ligero'
@@ -192,6 +197,7 @@ function renderHome() {
   nodes.push(...badgeShelf());
   nodes.push(el('h4', { class: 'section-title' }, 'Escalera de matemática'), trackerGrid());
   nodes.push(el('button', { class: 'ghost', onclick: () => planView(app, ctx, renderHome) }, '📅 Mostrar plan — las 8 semanas'));
+  nodes.push(el('button', { class: 'ghost', onclick: () => hangarView(app, ctx, renderHome) }, '🛩️ El hangar — vuelos y rutas para el tiempo libre'));
   nodes.push(el('button', { class: 'ghost', onclick: () => lessonList(app, ctx, renderHome) }, '📚 Repasar lecciones'));
   nodes.push(el('button', { class: 'ghost', onclick: quickFraseo }, '🎧 Fraseología rápida — una ronda extra'));
 

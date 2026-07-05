@@ -1,0 +1,199 @@
+{
+  "_nota": "El hangar (SPEC §5.10): actividades opcionales para cuando el día terminó temprano. Nunca son puertas, nunca son tarea. Simulador: cualquiera sirve — MSFS, X-Plane, FlightGear (gratis) o GeoFS (en el navegador). Distancias aproximadas; rumbos y detalles los saca él como práctica.",
+  "actividades": [
+    {
+      "id": "sim-costa-sur",
+      "type": "sim",
+      "week_min": 1,
+      "title": "Vuelo costero: Lima → Pisco",
+      "duration": "45–60 min",
+      "desc": "Tu primer vuelo del programa: SPJC (Lima) → SPSO (Pisco), siguiendo la costa hacia el sur a 2,500 ft. Aprox. 120 NM de puro Pacífico a la derecha y desierto a la izquierda.",
+      "briefing": [
+        "Despega de SPJC y vira hacia el sur siguiendo la línea de costa — no te puedes perder: el mar siempre a tu derecha.",
+        "Mantén 2,500 ft y velocidad de crucero. Siente las cuatro fuerzas en equilibrio (cap. 4).",
+        "Identifica en tu avión lo que estudiaste en el cap. 3: mueve alerones, elevador y timón ANTES de despegar y mira las superficies.",
+        "En la aproximación a Pisco: flaps por etapas — siente cómo baja la nariz y se inclina el descenso (cap. 3/6).",
+        "Al aterrizar, escribe en tu cuaderno: ¿qué superficie moviste para cada corrección?"
+      ]
+    },
+    {
+      "id": "sim-circuitos-pisco",
+      "type": "sim",
+      "week_min": 1,
+      "title": "Circuitos de tráfico en Pisco",
+      "duration": "30–45 min",
+      "desc": "3–4 circuitos completos en SPSO: viento en contra, cruzado, viento a favor, básico, final. El patrón del cap. 14, volado de verdad.",
+      "briefing": [
+        "Circuito estándar: virajes a la izquierda, 1,000 ft AGL.",
+        "Nombra cada tramo EN VOZ ALTA al entrar en él (upwind, crosswind, downwind, base, final — y en español).",
+        "En viento a favor, frente al punto de toque: reduce potencia, primer punto de flaps.",
+        "Cada aterrizaje: ¿centrado en el eje? ¿nariz alineada? Apunta tu mejor toque en el cuaderno."
+      ]
+    },
+    {
+      "id": "ruta-tvd-basica",
+      "type": "ruta",
+      "week_min": 1,
+      "title": "Planifica: ¿cuánto tardo a Pisco?",
+      "duration": "15–20 min",
+      "desc": "Tu primera planificación con la receta TVD: Lima → Pisco, aprox. 120 NM, en tu cuaderno.",
+      "briefing": [
+        "Asume TAS 110 kt sin viento. Calcula el tiempo (t = d ÷ GS). Ahora con 15 kt de viento de frente. ¿Cuántos minutos pierdes?",
+        "Consumo 8 gal/h + reserva de 45 min: ¿combustible mínimo? (receta del cap. 16 / familia TVD).",
+        "Verifica tus números en el simulador si vuelas la ruta — ¿acertaste el tiempo?"
+      ]
+    },
+    {
+      "id": "sim-panel-scan",
+      "type": "sim",
+      "week_min": 2,
+      "title": "Vuelo de instrumentos: el escaneo del panel",
+      "duration": "30 min",
+      "desc": "Vuelo local sobre Lima con UNA regla: cada 30 segundos, escaneo completo del panel de los seis instrumentos (cap. 8).",
+      "briefing": [
+        "Antes de despegar: nombra cada instrumento y di qué sistema lo alimenta (pitot-estática, giros, brújula).",
+        "En crucero: tapa (o ignora) el horizonte artificial 2 minutos y mantén nivelado solo con altímetro + VSI + velocímetro.",
+        "Cambia el ajuste del altímetro ±0.10 inHg y mira cuánto salta la indicación. ¿Coincide con la regla 0.01 ≈ 10 ft?",
+        "Apunta en el cuaderno qué instrumento te cuesta más leer rápido."
+      ]
+    },
+    {
+      "id": "sim-cusco-da",
+      "type": "sim",
+      "week_min": 3,
+      "title": "El desafío de Cusco: altitud de densidad real",
+      "duration": "45 min",
+      "desc": "SPZO (Cusco) está a ~10,860 ft de elevación. Despega un mediodía caluroso y SIENTE lo que el cap. 11 te contó sobre la altitud de densidad.",
+      "briefing": [
+        "ANTES de volar: calcula la DA de Cusco con 20 °C (receta PA→DA). Escríbela en el cuaderno.",
+        "Configura el sim: mediodía, 20 °C. Nota cuánta pista necesitas — compárala con un despegue en Pisco (nivel del mar).",
+        "El ascenso será PEREZOSO: eso es 'alta, caliente y…' — el avión flojo del examen.",
+        "Mezcla: en Cusco se empobrece ANTES de despegar (cap. 7). Pruébalo.",
+        "Cuidado con el terreno: el valle tiene salidas — mira la carta antes."
+      ]
+    },
+    {
+      "id": "ruta-cusco-fuel",
+      "type": "ruta",
+      "week_min": 3,
+      "title": "Planifica: peso y combustible para salir de Cusco",
+      "duration": "20 min",
+      "desc": "Planificación de performance: ¿cuánto peso puedes llevar saliendo de SPZO un día caluroso?",
+      "briefing": [
+        "Avión de 2,325 lb máx, vacío 1,467 lb. Tú + un amigo: 340 lb. Equipaje: 40 lb. ¿Cuántos galones caben sin pasarte? (avgas 6 lb/gal)",
+        "Calcula la DA con 25 °C. ¿Despegarías con los tanques que calculaste, o dejarías combustible en tierra?",
+        "Escribe tu decisión y el porqué en el cuaderno — así piensa un piloto al mando (cap. 2 + 10 + 11)."
+      ]
+    },
+    {
+      "id": "sim-selva-clima",
+      "type": "sim",
+      "week_min": 4,
+      "title": "Iquitos: leyendo el cielo de la selva",
+      "duration": "45 min",
+      "desc": "Vuelo local desde SPQT (Iquitos) con clima de tarde amazónica: cúmulos creciendo por todos lados. El cap. 12, en vivo.",
+      "briefing": [
+        "Configura el sim: 3 pm, verano, nubes cumulus dispersas con desarrollo.",
+        "Antes de despegar: temperatura y punto de rocío del sim → calcula la base de nubes con tu receta. Al subir, verifica.",
+        "Vuela HACIA un cúmulo grande (sin entrar): siente la corriente ascendente debajo. Eso es inestabilidad.",
+        "Regla de oro que hoy es juego y en la vida real es ley: a los cumulonimbus ni te acercas — 20 NM."
+      ]
+    },
+    {
+      "id": "sim-torre-spjc",
+      "type": "sim",
+      "week_min": 5,
+      "title": "Operaciones en aeropuerto grande: SPJC con tráfico",
+      "duration": "40 min",
+      "desc": "Lima con tráfico activado (o ATC del sim): rodaje, hold short, autorizaciones, patrón. El cap. 14 completo.",
+      "briefing": [
+        "Rodando: encuentra las líneas de hold short y para del lado correcto. Di en voz alta qué letrero ves.",
+        "Si tu sim tiene ATC: pide rodaje, pide despegue, colaciona. En español o inglés, pero COMPLETO.",
+        "Identifica luces de pista (bordes, umbral) y el PAPI en final: ¿2 blancas 2 rojas?",
+        "Estela turbulenta: si sale un avión grande antes que tú, ¿dónde rotas? (antes de su punto de rotación)."
+      ]
+    },
+    {
+      "id": "sim-nazca-nav",
+      "type": "sim",
+      "week_min": 6,
+      "title": "Navegación real: Pisco → Nazca y las Líneas",
+      "duration": "60–75 min",
+      "desc": "La joya del programa: SPSO → SPZA (María Reiche, Nazca), aprox. 80 NM, navegando con rumbos y checkpoints — y de premio, sobrevuelas las Líneas de Nazca.",
+      "briefing": [
+        "PRIMERO planifica (actividad de ruta de esta semana). Sin plan no hay vuelo — así funciona de verdad.",
+        "Vuela tus rumbos y tiempos. Marca cada checkpoint: ¿llegaste cuando dijiste?",
+        "Si tu sim tiene el VOR de Pisco: sintoniza, identifica, y sigue un radial de salida (cap. 16).",
+        "Sobre las Líneas: altura respetuosa y patrón suave — en la vida real hay corredores establecidos.",
+        "De vuelta, apunta: ¿cuánto error tuvo tu ETA? Ese número va bajando con la práctica."
+      ]
+    },
+    {
+      "id": "ruta-nazca-log",
+      "type": "ruta",
+      "week_min": 6,
+      "title": "Planifica: el log de navegación Pisco → Nazca",
+      "duration": "30–40 min",
+      "desc": "Tu primer log de navegación completo, como el del cap. 16: checkpoints, rumbos, tiempos, combustible.",
+      "briefing": [
+        "En SkyVector (o una carta): traza SPSO → SPZA. Mide el curso verdadero.",
+        "Aplica la variación local (~2°O: 'Oeste se sUma') → curso magnético.",
+        "Elige 3 checkpoints visibles (costa, carretera Panamericana, valles). Distancia entre cada uno.",
+        "TAS 110 kt, viento 330/10: estima GS y tiempo por tramo. Combustible con reserva de 45 min.",
+        "Guarda el log — es EL entregable de esta semana para volarlo en el sim."
+      ]
+    },
+    {
+      "id": "sim-nocturno",
+      "type": "sim",
+      "week_min": 7,
+      "title": "Vuelo nocturno sobre Lima",
+      "duration": "40 min",
+      "desc": "Lima de noche: luces de la ciudad, el aeropuerto iluminado, y tus ojos aprendiendo lo del cap. 17.",
+      "briefing": [
+        "Antes de 'despegar': 30 minutos de adaptación a la oscuridad en la vida real — en el sim, baja el brillo de la pantalla y las luces del cuarto.",
+        "Encuentra el aeropuerto por su faro (verde-blanco). Identifica pista por las luces de borde y umbral.",
+        "Mira una luz fija de la ciudad 10 segundos: ¿parece moverse? Autokinesis, en vivo.",
+        "En final: PAPI. De noche las ilusiones de pista engañan más — confía en las luces guía."
+      ]
+    },
+    {
+      "id": "sim-examen-vuelo",
+      "type": "sim",
+      "week_min": 8,
+      "title": "Tu vuelo de graduación: planifica y vuela tu propia ruta",
+      "duration": "90+ min",
+      "desc": "Tú eliges: dos aeropuertos peruanos, plan completo (ruta, combustible, peso, clima del sim), y lo vuelas de cabo a rabo. Todo lo del programa, junto.",
+      "briefing": [
+        "Sugerencias: Trujillo (SPRU) → Chiclayo (SPHI) por la costa norte, o Ayacucho (SPHO) → Cusco (SPZO) si quieres montaña seria.",
+        "Log de navegación completo + peso y balance + combustible con reserva + DA de salida y llegada.",
+        "Briefing de 2 minutos EN VOZ ALTA antes de despegar, como a un pasajero.",
+        "Vuela tu plan. Al aterrizar: ¿qué harías distinto? Eso es ADM (cap. 2)."
+      ]
+    },
+    {
+      "id": "extra-videos",
+      "type": "video",
+      "week_min": 1,
+      "title": "Videos del capítulo en curso",
+      "duration": "10–30 min",
+      "desc": "Cada lección tiene 'Videos sugeridos' al final de su menú de repaso: el mismo tema, contado por otra voz. Perfecto para el sofá.",
+      "briefing": [
+        "Ve a 📚 Repasar lecciones → tu capítulo → Videos sugeridos.",
+        "Mira uno con el cuaderno cerca: si el video explica algo distinto a como lo recordabas, apúntalo y verifícalo en la lección."
+      ]
+    },
+    {
+      "id": "extra-phak",
+      "type": "lectura",
+      "week_min": 1,
+      "title": "Profundiza en el PHAK",
+      "duration": "15–30 min",
+      "desc": "El libro completo siempre está ahí para ir más hondo que la lección. Las secciones de cada lección te dicen qué páginas tocan.",
+      "briefing": [
+        "Elige UNA sección de la lección de hoy que te haya gustado (o costado) y lee esas páginas del PHAK.",
+        "No es tarea: es leer del tema del que ya sabes — vas a notar cuánto entiendes ahora."
+      ]
+    }
+  ]
+}

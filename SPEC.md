@@ -215,6 +215,13 @@ Badges and micro-celebrations, tuned for ADHD reward cadence (mentor directive 2
 - **Badges (one-time, collected):** a permanent shelf on the home screen. Earned badges are **derived from the result log** (pure replay, §8 — no new stored state; the "newly earned" moment is detected by comparing the derived set before/after an append). Catalog lives in `src/js/badges.js` as data + pure predicates. Starter set spans all tracks so early wins come fast: primera lección completada, primer capítulo cerrado, primer nivel de matemática superado, familia dominada (nivel 3), 4 familias en nivel 2, racha de 7 días, semana perfecta (6 completos), 100/500/1000 problemas de matemática resueltos, 25/100 apuntes de cuaderno, racha ×15 en fraseología, primer simulacro, simulacro ≥85%, mazo de errores vaciado.
 - **Never a gate, never a shame surface:** badges only ever add; there is no "lost badge" state, and absence is silent. `/progreso` shows earned badges with dates (§7).
 
+### 5.10 El hangar (optional enrichment)
+For surplus time on days finished early (mentor directive 2026-07-05): a home-screen view (`data/hangar.json`, `src/js/hangar.js`) of **optional, fun, aviation-love-building activities** — Peru-specific flight-simulator flights with briefings tied to the week's material (coastal Lima→Pisco in week 1, the Cusco density-altitude challenge in week 3, Amazon weather-reading at Iquitos in week 4, the Pisco→Nazca navigation flight with the Nazca Lines overflight in week 6, a night flight in week 7, a self-planned "graduation flight" in week 8), paper/SkyVector route-planning exercises that use the math recipes for real, plus pointers to the lesson videos and PHAK deep-reading. Any simulator counts (MSFS, X-Plane, FlightGear, GeoFS). Activities unlock by program week so they accompany the material. **Never gates, never homework**: self-reported "La hice ✓" logs a `block/hangar` row (visible to the mentor), surfaced prominently on the día-completo screen. Repeats allowed and encouraged.
+
+---
+
+## 6. Gates (enforced by the app)
+
 | Gate | Criterion | On failure |
 |---|---|---|
 | Math tier advance | 9/10, fresh problems | Repeat tier next day |
