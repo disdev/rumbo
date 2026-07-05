@@ -1,0 +1,66 @@
+// GET /api/log — all result rows, ts ASC. Student-accessible (Access at the
+// edge); powers the "Restaurar progreso" client-side rebuild.
+
+// Minimal ambient Cloudflare types (no @cloudflare/workers-types dependency).
+interface D1Result {
+  success: boolean;
+}
+interface D1PreparedStatement {
+  bind(...values: unknown[]): D1PreparedStatement;
+  run(): Promise<D1Result>;
+  all<T = Record<string, unknown>>(): Promise<{ results: T[] }>;
+}
+interface D1Database {
+  prepare(query: string): D1PreparedStatement;
+  batch(statements: D1PreparedStatement[]): Promise<D1Result[]>;
+}
+interface R2Bucket {
+  put(key: string, value: ArrayBuffer): Promise<unknown>;
+  get(key: string): Promise<unknown>;
+}
+type PagesFunction<Env = unknown> = (ctx: {
+  request: Request;
+  env: Env;
+  params: Record<string, string | string[]>;
+}) => Response | Promise<Response>;
+
+interface Env {
+  DB: D1Database;
+  AUDIO: R2Bucket;
+  MENTOR_EMAIL?: string;
+  STUDENT_EMAIL?: string;
+  ANTHROPIC_API_KEY?: string;
+}
+
+function json(body: unknown, status = 200): Response {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
+export const onRequestGet: PagesFunction<Env> = async (ctx) => {
+  try {
+    // Solo las filas del estudiante cuentan para el estado (el mentor puede
+    // explorar la app sin contaminar el progreso; SPEC §8). NULL = dev local
+    // o filas previas a Access.
+    const student = ctx.env.STUDENT_EMAIL;
+    const { results } = await (student
+      ? ctx.env.DB.prepare(
+          "SELECT id, ts, user_email, kind, family, tier, chapter, category, score, total, duration_sec, detail_json FROM results WHERE user_email IS NULL OR LOWER(user_email) = LOWER(?) ORDER BY ts ASC",
+        ).bind(student)
+      : ctx.env.DB.prepare(
+          "SELECT id, ts, user_email, kind, family, tier, chapter, category, score, total, duration_sec, detail_json FROM results ORDER BY ts ASC",
+        )
+    ).all();
+    return json({ results });
+  } catch (err) {
+    console.error("GET /api/log failed:", err);
+    return json({ ok: false, error: "internal error" }, 500);
+  }
+};
+
+export const onRequest: PagesFunction<Env> = async (ctx) => {
+  if (ctx.request.method === "GET") return onRequestGet(ctx);
+  return json({ ok: false, error: "method not allowed" }, 405);
+};

@@ -1,0 +1,58 @@
+{
+  "content_version": "2026-07-04.1",
+  "timezone": "America/Lima",
+  "start_date": null,
+  "exam": {
+    "questions": 50,
+    "minutes": 90,
+    "calculator": false,
+    "pass_mark_official": null,
+    "pass_target_display": 85,
+    "category_weights": null
+  },
+  "schedule": {
+    "study_days": [1, 2, 3, 4, 5, 6],
+    "sessions": [
+      { "name": "Sesión 1", "start": "08:00", "end": "10:15" },
+      { "name": "Sesión 2", "start": "12:00", "end": "14:15" },
+      { "name": "Sesión 3", "start": "16:30", "end": "18:00" }
+    ],
+    "hard_stop": "18:00",
+    "minimo_cutoff": "15:00",
+    "block_minutes": 25,
+    "break_minutes": 5
+  },
+  "math": {
+    "attempt_size": 10,
+    "advance_score": 9,
+    "tolerance_pct": 2,
+    "preview_size": 3
+  },
+  "recall": {
+    "min_chars": 300,
+    "timer_minutes": 5
+  },
+  "tracks": {
+    "reglamentacion_daily": 9,
+    "fraseologia_daily": 25
+  },
+  "srs": {
+    "intervals_days": [1, 3, 7, 14],
+    "review_questions_daily": 10
+  },
+  "gates": {
+    "chapter_close_pct": 80,
+    "week6_families_at_nivel2": 4,
+    "listo_simulacro_pct": 85
+  },
+  "error_deck": {
+    "exit_consecutive_correct": 2,
+    "daily_miss_threshold": 2
+  },
+  "reanudacion": {
+    "missed_days_trigger": 3,
+    "srs_catchup_cap": 20
+  },
+  "distractor_explain_every": 5,
+  "requeue_min_days": 2
+}

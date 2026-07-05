@@ -1,0 +1,16 @@
+name = "rumbo"
+compatibility_date = "2026-06-01"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rumbo"
+database_id = "81d8f1d9-dfd5-4b02-a219-c6b566af5963"
+
+[[r2_buckets]]
+binding = "AUDIO"
+bucket_name = "rumbo-audio"
+
+[vars]
+MENTOR_EMAIL = "dspeer@outlook.com"
+STUDENT_EMAIL = "pieroalbertoberrospi165@gmail.com"

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progreso — Mentor Dashboard</title>
+  <link rel="stylesheet" href="../src/css/app.css">
+  <style>
+    #app { max-width: 860px; }
+    .kpi-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .kpi { flex: 1; min-width: 140px; background: var(--panel); border-radius: 12px; padding: 12px; text-align: center; }
+    .kpi b { display: block; font-size: 24px; }
+    .kpi.red { outline: 2px solid var(--bad); }
+    .stale { background: var(--bad); color: #fff; padding: 10px 14px; border-radius: 10px; font-weight: 700; }
+    .entry { background: var(--panel); border-radius: 12px; padding: 12px 14px; margin: 10px 0; }
+    .entry .meta { color: var(--muted); font-size: 12px; }
+    .entry pre { white-space: pre-wrap; font: inherit; margin: 8px 0 0; }
+    .flag { display: inline-block; background: var(--warn); color: #201500; border-radius: 6px; padding: 1px 8px; font-size: 12px; font-weight: 700; margin-left: 6px; }
+    .days { display: flex; gap: 6px; }
+    .day { flex: 1; text-align: center; border-radius: 8px; padding: 8px 2px; font-size: 12px; background: var(--panel-2); }
+    .day.completo { background: var(--ok); color: #04170b; }
+    .day.minimo { background: var(--warn); color: #201500; }
+    .day.parcial { background: var(--accent); color: #051222; }
+    .day.perdido { background: var(--bad); color: #fff; }
+    table.plain { width: 100%; border-collapse: collapse; font-size: 14px; }
+    table.plain td, table.plain th { padding: 6px 8px; border-bottom: 1px solid var(--panel-2); text-align: left; }
+    details { margin: 12px 0; }
+    summary { cursor: pointer; font-weight: 700; padding: 8px 0; }
+    .answer-hidden { filter: blur(6px); }
+    .checklist-box li { margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <main id="app"><div class="card center"><p>Loading…</p></div></main>
+  <script type="module" src="dash.js"></script>
+</body>
+</html>

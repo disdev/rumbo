@@ -1,0 +1,47 @@
+{
+  "_nota": "BORRADOR — redactados a partir de los temas semanales; el mentor los revisa/reemplaza con el contenido del plan v2 (SPEC §4.4).",
+  "scenarios": [
+    {
+      "week": 1,
+      "id": "esc-1",
+      "title": "Pérdida en viraje",
+      "prompt": "Estás en un viraje coordinado de 45° a 500 ft AGL en el circuito de tránsito. Sientes el pre-aviso de pérdida (buffet). Explica en ≤5 líneas: por qué el avión puede entrar en pérdida a una velocidad mayor que la velocidad de pérdida publicada, y qué haces inmediatamente."
+    },
+    {
+      "week": 2,
+      "id": "esc-2",
+      "title": "Instrumento sospechoso",
+      "prompt": "En vuelo recto y nivelado notas que el altímetro marca 300 ft más de lo esperado y el velocímetro se ve normal. La toma estática podría estar obstruida. Explica en ≤5 líneas qué instrumentos se ven afectados por el sistema estático y cómo lo confirmas/mitigas."
+    },
+    {
+      "week": 3,
+      "id": "esc-3",
+      "title": "¿Despegamos o no?",
+      "prompt": "Pista de 1,200 m, elevación 8,000 ft, temperatura 28 °C, altímetro 30.10. Llevas dos pasajeros y tanques llenos. Explica en ≤5 líneas qué números calculas antes de decidir despegar y qué esperas de la performance con esta altitud de densidad."
+    },
+    {
+      "week": 4,
+      "id": "esc-4",
+      "title": "Nubes en la ruta",
+      "prompt": "METAR de destino: viento 18 kt con ráfagas de 28, temperatura 24 °C, punto de rocío 22 °C, y se acerca un frente frío. Explica en ≤5 líneas qué fenómenos esperas en las próximas horas y cómo afecta tu decisión de volar."
+    },
+    {
+      "week": 5,
+      "id": "esc-5",
+      "title": "Aeropuerto no controlado",
+      "prompt": "Llegas a un aeropuerto no controlado con tránsito reportando en el circuito. Explica en ≤5 líneas cómo te incorporas al circuito de tránsito, qué comunicas y en qué momentos, y qué vigilas antes de cada viraje."
+    },
+    {
+      "week": 6,
+      "id": "esc-6",
+      "title": "Desviación en ruta",
+      "prompt": "A mitad de un vuelo de travesía el viento real difiere del pronóstico y tu punto de verificación aparece 4 minutos tarde. Explica en ≤5 líneas cómo recalculas GS y combustible restante, y qué decides sobre continuar o desviarte."
+    },
+    {
+      "week": 7,
+      "id": "esc-7",
+      "title": "Presión por llegar",
+      "prompt": "Es la tarde del domingo, debes trabajar mañana, y el clima en ruta se está deteriorando lentamente. Un pasajero te dice \"seguro que puedes\". Explica en ≤5 líneas qué actitudes peligrosas reconoces aquí y cómo aplicas el proceso de decisión aeronáutica."
+    }
+  ]
+}

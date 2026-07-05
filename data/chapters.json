@@ -1,0 +1,36 @@
+{
+  "_nota": "Rangos de páginas de la extracción PHAK en español: PROVISIONALES — el mentor los corrige (SPEC §10.2). key_points por sección: PENDIENTE de redacción asistida + revisión del mentor; alimentan la retroalimentación del recuerdo libre (§5.7).",
+  "chapters": [
+    { "id": "1",  "title": "Introducción al vuelo", "week": null, "pages": null, "categories": [], "sections": [] },
+    { "id": "2",  "title": "Toma de decisiones aeronáuticas", "week": 7, "pages": null, "categories": [], "sections": [] },
+    { "id": "3",  "title": "Estructura de la aeronave", "week": 1, "pages": null, "categories": ["AERODINÁMICA BÁSICA"], "sections": [] },
+    { "id": "4",  "title": "Principios de vuelo", "week": 1, "pages": null, "categories": ["AERODINÁMICA BÁSICA"], "sections": [] },
+    { "id": "5",  "title": "Aerodinámica del vuelo", "week": 1, "pages": null, "categories": ["AERODINÁMICA BÁSICA"], "sections": [] },
+    { "id": "6",  "title": "Controles de vuelo", "week": 1, "pages": null, "categories": ["AERODINÁMICA BÁSICA"], "sections": [] },
+    { "id": "7",  "title": "Sistemas de la aeronave", "week": 2, "pages": null, "categories": ["SISTEMAS DE AERONAVES"], "sections": [] },
+    { "id": "8",  "title": "Instrumentos de vuelo", "week": 2, "pages": null, "categories": ["INSTRUMENTOS DE VUELO"], "sections": [] },
+    { "id": "9",  "title": "Manuales de vuelo y otros documentos", "week": 3, "pages": null, "categories": ["PERFORMANCE"], "sections": [] },
+    { "id": "10", "title": "Peso y balance", "week": 3, "pages": null, "categories": ["PERFORMANCE"], "sections": [] },
+    { "id": "11", "title": "Performance de la aeronave", "week": 3, "pages": null, "categories": ["PERFORMANCE"], "sections": [] },
+    { "id": "12", "title": "Teoría meteorológica", "week": 4, "pages": null, "categories": ["METEOROLOGÍA"], "sections": [] },
+    { "id": "13", "title": "Servicios meteorológicos de aviación", "week": 4, "pages": null, "categories": ["SERVICIO METEOROLÓGICO"], "sections": [] },
+    { "id": "14", "title": "Operaciones en aeropuertos", "week": 5, "pages": null, "categories": ["PROCEDIMIENTOS Y OPERACIONES", "PROCEDIMIENTOS DE COMUNICACIÓN"], "sections": [] },
+    { "id": "15", "title": "Espacio aéreo", "week": 5, "pages": null, "categories": ["PROCEDIMIENTOS Y OPERACIONES"], "sections": [] },
+    { "id": "16", "title": "Navegación", "week": 6, "pages": null, "categories": ["NAVEGACIÓN", "VUELO EN RUTA"], "sections": [] },
+    { "id": "17", "title": "Factores aeromédicos", "week": 7, "pages": null, "categories": [], "sections": [] }
+  ],
+  "weeks": [
+    { "week": 1, "theme": "El avión y por qué vuela", "chapters": ["3", "4", "5", "6"] },
+    { "week": 2, "theme": "El panel y el motor", "chapters": ["7", "8"] },
+    { "week": 3, "theme": "Los números del avión", "chapters": ["9", "10", "11"] },
+    { "week": 4, "theme": "El clima", "chapters": ["12", "13"] },
+    { "week": 5, "theme": "El entorno", "chapters": ["14", "15"] },
+    { "week": 6, "theme": "Llegar a algún lado", "chapters": ["16"] },
+    { "week": 7, "theme": "El piloto", "chapters": ["17", "2"] },
+    { "week": 8, "theme": "Integración", "chapters": [] }
+  ],
+  "track_categories": {
+    "fraseologia": "FRASEOLOGIA AERONAUTICA",
+    "reglamentacion": "REGLAMENTACIÓN"
+  }
+}

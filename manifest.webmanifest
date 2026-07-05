@@ -1,0 +1,14 @@
+{
+  "name": "Rumbo — DGAC PPL",
+  "short_name": "Rumbo",
+  "lang": "es",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d1b2a",
+  "theme_color": "#0d1b2a",
+  "description": "Programa de estudio de 8 semanas para el examen escrito DGAC de piloto privado.",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
