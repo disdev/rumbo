@@ -134,17 +134,27 @@ export async function firstExposure(root, { family, tier }, ctx) {
   ctx.append({ kind: 'drill', family, tier, score: g.stepsCorrect, total: g.stepsTotal, detail: { mode: 'guiada', steps_correct: g.stepsCorrect, steps_total: g.stepsTotal } });
   await notebookPrompt(root, ctx, {
     id: `math-${family}-${tier}`,
-    prompt: `Copia en tu cuaderno la receta de ${familyName(ctx, family)} nivel ${tier}, paso por paso, con un ejemplo resuelto. Es tu tarjeta de receta — la vas a usar.`,
+    prompt: `Copia en tu cuaderno la receta de ${familyName(ctx, family)} nivel ${tier}, paso por paso, con el ejemplo resuelto (aquí abajo la tienes completa). Es tu tarjeta de receta — la vas a usar.`,
     context: 'math',
+    recipe: prob,
   });
   await practicaBurst(root, { family, tier }, ctx);
 }
 
-export function notebookPrompt(root, ctx, { id, prompt, context = null }) {
+export function notebookPrompt(root, ctx, { id, prompt, context = null, recipe = null }) {
   return new Promise(resolve => {
+    // Si el prompt pide copiar una receta, la receta COMPLETA está en pantalla
+    // mientras copia — nunca "cópiala" sin mostrarla.
+    const recipeBox = recipe
+      ? el('div', { class: 'recipe-box' },
+        el('p', { class: 'note' }, recipe.text),
+        ...recipe.steps.map((s, i) => el('p', { class: 'worked' },
+          `${i + 1}. ${s.label} — ${s.formula} → ${fmtNum(s.value)}${s.unit ? ' ' + s.unit : ''}`)))
+      : '';
     root.replaceChildren(el('div', { class: 'card notebook-card' },
       el('h3', {}, '📓 En tu cuaderno'),
       el('p', { class: 'question' }, prompt),
+      recipeBox,
       el('button', {
         class: 'primary', onclick: () => {
           ctx.append({ kind: 'notebook', detail: { prompt_id: id, ...(context ? { context } : {}) } });

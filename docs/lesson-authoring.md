@@ -22,6 +22,8 @@ One file per assigned chapter: `data/lessons/chNN.json` (two digits: ch02…ch17
 
 Section `id` = `<chapter>-<n>`, 1-based, sequential. 6–12 sections per chapter. `key_points` feed the AI recall feedback (SPEC §3.2) — write them as short claim sentences in Spanish.
 
+Optional chapter-level `"videos": [{"title": "...", "query": "..."}]` (max 5): curated YouTube **search queries** in Spanish (e.g. `"como funciona el altimetro aviacion explicado"`) — shown as supplement links in review mode. Use search queries, not video IDs (links can't go dead).
+
 ## Block types
 
 | type | shape | rules |
@@ -31,7 +33,7 @@ Section `id` = `<chapter>-<n>`, 1-based, sequential. 6–12 sections per chapter
 | `callout` | `{type, style, md}` | `style`: `clave` (key point) · `ojo` (trap/warning) · `memoria` (mnemonic) · `examen` ("esto cae en el examen" — say what the bank asks). |
 | `table` | `{type, headers, rows}` | ≤ 4 columns, ≤ 8 rows. |
 | `widget` | `{type, name, params?, caption}` | `name` ∈ registry (below). Caption describes what to try. |
-| `check` | `{type, id, q, options, answer, why}` | `id` = `<section>-c<n>`. Exactly 3 options, `answer` = correct index, `why` = one-line explanation. 1–2 per section, at the END of the section. |
+| `check` | `{type, id, q, options, answer, why}` | `id` = `<section>-c<n>`. Exactly 3 options, `answer` = correct index, `why` = one-line explanation. **3–4 per section** (min 2, max 5), at the END of the section, **exam difficulty** — plausible distractors that mirror the bank's traps; the player shows checks on a separate screen with the teaching hidden, so write them to be answered from memory. |
 | `notebook` | `{type, id, prompt}` | `id` = `<section>-n<n>`. Concrete instruction: WHAT to draw/write/copy — never "toma apuntes". |
 | `guided_math` | `{type, family, tier}` | family ∈ carga·altimetro·nubes·altitudes·peso_balance·tvd, tier 1–3. Only in the chapters mapped below. |
 

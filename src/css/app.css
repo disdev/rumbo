@@ -156,3 +156,14 @@ button { font: inherit; cursor: pointer; }
 @keyframes celebrate { 0% { transform: translateX(-50%) scale(.6); opacity: 0; } 15% { transform: translateX(-50%) scale(1.08); opacity: 1; } 75% { opacity: 1; } 100% { transform: translateX(-50%) scale(1); opacity: 0; } }
 
 .tracker-reps { display: block; color: var(--muted); font-size: 11px; }
+
+/* ---- plan de hoy + checks aparte + videos + receta (feedback 2026-07-05) ---- */
+.plan-hoy summary { cursor: pointer; font-weight: 700; padding: 4px 0; }
+.plan-session { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; margin: 12px 0 4px; }
+.plan-item { margin: 4px 0; font-size: 15px; }
+.plan-item.done { color: var(--muted); }
+.plan-item.now { color: var(--accent); font-weight: 700; }
+.check-intro { font-weight: 700; color: var(--accent); }
+.video-link { display: block; text-decoration: none; color: var(--text); }
+.recipe-box { background: var(--bg); border-radius: 10px; padding: 10px 12px; margin: 10px 0; }
+.recipe-box .worked { margin: 6px 0; }

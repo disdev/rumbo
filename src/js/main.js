@@ -5,7 +5,7 @@ import { derive, dayKey, weekday } from './derive.js';
 import { planDay } from './planner.js';
 import { initSync, flush, relogin, requestFeedback, restoreProgress } from './sync.js';
 import { runSession, loadCursor } from './session.js';
-import { el, fmtTime, flashCelebrate } from './players.js';
+import { el, fmtTime, flashCelebrate, rapidfirePlayer } from './players.js';
 import { FAMILY_IDS } from './mathgen.js';
 import { lessonList } from './lessons.js';
 import { earnedBadges } from './badges.js';
@@ -118,6 +118,36 @@ function badgeShelf() {
   return nodes;
 }
 
+// "Plan de hoy" (§5.1): vista de solo lectura — qué toca hoy y dónde va.
+// No es un selector: el botón de inicio sigue caminando el plan en orden.
+function todayPlanCard(plan) {
+  if (!plan.sessions.length) return '';
+  const cursor = loadCursor(todayKey());
+  const rows = [];
+  plan.sessions.forEach((s, si) => {
+    const t = data.config.schedule.sessions[si]?.start;
+    rows.push(el('p', { class: 'plan-session' }, `${s.name}${t ? ` · ${t}` : ''}`));
+    s.blocks.forEach((b, bi) => {
+      const done = si < cursor.s || (si === cursor.s && bi < cursor.b);
+      const now = !done && si === cursor.s && bi === cursor.b && state.activityToday.any;
+      rows.push(el('p', { class: `plan-item${done ? ' done' : ''}${now ? ' now' : ''}` },
+        `${done ? '✅' : now ? '▶️' : '⬜'} ${b.title}`));
+    });
+  });
+  const det = el('details', { class: 'plan-hoy' }, el('summary', {}, '📋 Plan de hoy — lo que toca, paso a paso'), ...rows);
+  if (state.activityToday.any) det.setAttribute('open', '');
+  return el('div', { class: 'card' }, det);
+}
+
+// Fraseología a demanda (§5.4): volumen extra visible desde el inicio, cuenta
+// para la racha igual que el bloque de la Sesión 3.
+async function quickFraseo() {
+  const wrap = el('div', {});
+  app.replaceChildren(wrap);
+  await rapidfirePlayer(wrap, { type: 'rapidfire', title: 'Fraseología' }, ctx);
+  renderHome();
+}
+
 function streakChips() {
   const s = state.streaks;
   const chip = (label, n) => el('span', { class: `chip ${n === 0 ? 'cold' : ''}` }, `${label} ${n}${n > 0 ? '🔥' : ''}`);
@@ -155,11 +185,13 @@ function renderHome() {
       : sessionsDone > 0 || state.activityToday.any ? 'Continuar sesión de hoy' : 'Comenzar sesión de hoy';
     if (plan.dayType === 'reanudacion') nodes.push(el('p', { class: 'note center' }, `Pasaron ${state.missedRun} días sin sesión — no pasa nada, la vida pasa. Hoy es un día ligero para retomar el ritmo.`));
     nodes.push(el('button', { class: 'start-btn', onclick: () => start(plan) }, label));
+    nodes.push(todayPlanCard(plan));
   }
 
   nodes.push(...badgeShelf());
   nodes.push(el('h4', { class: 'section-title' }, 'Escalera de matemática'), trackerGrid());
   nodes.push(el('button', { class: 'ghost', onclick: () => lessonList(app, ctx, renderHome) }, '📚 Repasar lecciones'));
+  nodes.push(el('button', { class: 'ghost', onclick: quickFraseo }, '🎧 Fraseología rápida — una ronda extra'));
 
   if (state.errorDeck.length) nodes.push(el('p', { class: 'note center' }, `Mazo de errores: ${state.errorDeck.length} pendiente(s)`));
   nodes.push(el('footer', { class: 'home-footer' },

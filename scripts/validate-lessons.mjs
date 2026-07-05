@@ -103,12 +103,20 @@ function validate(file) {
           break;
       }
     });
-    if (!checks) err(sid, 'sin check (mín 1)');
-    if (checks > 2) warn(sid, `${checks} checks (regla: 1–2)`);
+    if (checks < 2) err(sid, `${checks} check(s) — mínimo 2, objetivo 3–4 (dificultad de examen)`);
+    if (checks === 2) warn(sid, '2 checks (objetivo: 3–4)');
+    if (checks > 5) err(sid, `${checks} checks (máx 5)`);
     if (!notebooks) err(sid, 'sin notebook (mín 1)');
     if (notebooks > 3) warn(sid, `${notebooks} notebooks (máx 3)`);
-    if (firstCheckIdx < lastTeachIdx) warn(sid, 'hay contenido de enseñanza después del primer check (orden: enseñar → cuaderno → check)');
+    if (firstCheckIdx < lastTeachIdx) warn(sid, 'hay contenido de enseñanza después del primer check (orden: enseñar → cuaderno → checks)');
   });
+
+  if (doc.videos !== undefined) {
+    if (!Array.isArray(doc.videos) || doc.videos.length > 5) err(file, 'videos: lista de máx 5');
+    else for (const v of doc.videos) {
+      if (!v.title || !v.query) err(file, `video sin title/query: ${JSON.stringify(v)}`);
+    }
+  }
 }
 
 function validateSvg(file) {

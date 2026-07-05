@@ -182,45 +182,22 @@ function dots(lesson, idx) {
     ...lesson.sections.map((s, i) => el('span', { class: `dot ${i < idx ? 'done' : i === idx ? 'now' : ''}` })));
 }
 
-function runSection(root, lesson, idx, ctx, { mode, isLast, gateOpen = false }) {
-  return new Promise(async (resolve) => {
+function runSection(root, lesson, idx, ctx, { mode, isLast }) {
+  return new Promise((resolve) => {
     const sec = lesson.sections[idx];
     const chapter = String(lesson.chapter);
     const startTs = Date.now();
-    const checksState = { total: 0, answered: 0, onChange: updateGate };
+    // Dos pantallas por sección (§5.8): primero la enseñanza, después los
+    // checks con el material FUERA de la vista — recordar, no mirar arriba.
+    const teachBlocks = sec.blocks.filter(b => b.type !== 'check');
+    const checkBlocks = sec.blocks.filter(b => b.type === 'check');
+    const pages = sec.phak_pages || null;
 
-    const body = el('div', { class: 'lesson-body' });
-    for (const b of sec.blocks) body.append(await renderBlock(b, ctx, sec, chapter, checksState));
-
-    const contBtn = el('button', { class: 'primary', onclick: finish },
-      isLast && mode === 'primera' ? 'Terminé la lección ✅' : 'Continuar →');
-    const gateNote = el('p', { class: 'note center' }, '');
-    function updateGate() {
-      const ready = gateOpen || checksState.answered >= checksState.total;
-      contBtn.disabled = !ready;
-      gateNote.textContent = ready ? '' : `Responde ${checksState.total - checksState.answered} pregunta(s) rápida(s) de esta sección para seguir (equivocarse está perfecto).`;
-    }
-
-    const pages = lesson.sections[idx].phak_pages || null;
-    const card = el('div', { class: 'card lesson-card' },
+    const header = () => [
       dots(lesson, idx),
       el('p', { class: 'lesson-kicker' }, `Cap. ${lesson.chapter} · ${lesson.title}`),
       el('h2', { class: 'lesson-title' }, sec.title),
-      body,
-      pages ? el('p', { class: 'pageref' }, `Para profundizar: PHAK páginas ${pages}`) : '',
-      gateNote, contBtn);
-
-    // guided_math burbujea desde su bloque: corre a pantalla completa y vuelve
-    card.addEventListener('guidedmath', async (e) => {
-      const { family, tier } = e.detail;
-      const prob = generateProblem(ctx.data.templates, family, tier);
-      const g = await guidedExample(root, prob, ctx, { title: 'Ejemplo guiado' });
-      ctx.append({ kind: 'drill', family, tier, score: g.stepsCorrect, total: g.stepsTotal, detail: { mode: 'guiada', lesson: sec.id } });
-      await notebookPrompt(root, ctx, { id: `${sec.id}-receta`, prompt: 'Copia esta receta en tu cuaderno, paso por paso, con el ejemplo resuelto.', context: 'math' });
-      await practicaBurst(root, { family, tier }, ctx);
-      // re-monta la sección con la puerta abierta: el progreso ya ganado no se pierde
-      resolve(runSection(root, lesson, idx, ctx, { mode, isLast, gateOpen: true }));
-    }, { once: true });
+    ];
 
     function finish() {
       const seconds = Math.round((Date.now() - startTs) / 1000);
@@ -232,10 +209,52 @@ function runSection(root, lesson, idx, ctx, { mode, isLast, gateOpen = false }) 
       resolve();
     }
 
-    updateGate();
-    root.replaceChildren(card);
-    root.scrollTop = 0;
-    window.scrollTo(0, 0);
+    const doneLabel = isLast && mode === 'primera' ? 'Terminé la lección ✅' : 'Continuar →';
+
+    async function showTeach() {
+      const body = el('div', { class: 'lesson-body' });
+      const silent = { total: 0, answered: 0, onChange: () => {} };
+      for (const b of teachBlocks) body.append(await renderBlock(b, ctx, sec, chapter, silent));
+      const nextBtn = el('button', { class: 'primary', onclick: () => (checkBlocks.length ? showChecks() : finish()) },
+        checkBlocks.length ? 'Listo — pruébame 🧠' : doneLabel);
+      const card = el('div', { class: 'card lesson-card' }, ...header(), body,
+        pages ? el('p', { class: 'pageref' }, `Para profundizar: PHAK páginas ${pages}`) : '',
+        nextBtn);
+      // guided_math burbujea desde su bloque: corre a pantalla completa y vuelve
+      card.addEventListener('guidedmath', async (e) => {
+        const { family, tier } = e.detail;
+        const prob = generateProblem(ctx.data.templates, family, tier);
+        const g = await guidedExample(root, prob, ctx, { title: 'Ejemplo guiado' });
+        ctx.append({ kind: 'drill', family, tier, score: g.stepsCorrect, total: g.stepsTotal, detail: { mode: 'guiada', lesson: sec.id } });
+        await notebookPrompt(root, ctx, { id: `${sec.id}-receta`, prompt: 'Copia esta receta en tu cuaderno, paso por paso, con el ejemplo resuelto.', context: 'math', recipe: prob });
+        await practicaBurst(root, { family, tier }, ctx);
+        showTeach();
+      }, { once: true });
+      root.replaceChildren(card);
+      window.scrollTo(0, 0);
+    }
+
+    async function showChecks() {
+      const checksState = { total: 0, answered: 0, onChange: updateGate };
+      const body = el('div', { class: 'lesson-body' });
+      for (const b of checkBlocks) body.append(await renderBlock(b, ctx, sec, chapter, checksState));
+      const contBtn = el('button', { class: 'primary', onclick: finish }, doneLabel);
+      const gateNote = el('p', { class: 'note center' }, '');
+      function updateGate() {
+        const ready = checksState.answered >= checksState.total;
+        contBtn.disabled = !ready;
+        gateNote.textContent = ready ? '' : `Responde ${checksState.total - checksState.answered} pregunta(s) para seguir — equivocarse está perfecto, es parte de aprender.`;
+      }
+      const card = el('div', { class: 'card lesson-card' }, ...header(),
+        el('p', { class: 'check-intro' }, '🧠 Sin mirar atrás: ¿qué se te quedó?'),
+        body, gateNote, contBtn,
+        el('button', { class: 'ghost', onclick: showTeach }, '← Volver a la explicación'));
+      updateGate();
+      root.replaceChildren(card);
+      window.scrollTo(0, 0);
+    }
+
+    showTeach();
   });
 }
 
@@ -251,11 +270,19 @@ export async function lessonReview(root, chapterId, ctx, onExit, targetSection =
 
   function menu() {
     const seen = ctx.state.lessons.get(String(lesson.chapter))?.sectionsSeen || new Set();
+    // Videos sugeridos (§3.4): suplemento opcional, solo en repaso, enlaces de
+    // búsqueda (no se rompen); requieren internet y jamás bloquean nada.
+    const videos = (lesson.videos || []).map(v => el('a', {
+      class: 'option video-link', target: '_blank', rel: 'noopener',
+      href: `https://www.youtube.com/results?search_query=${encodeURIComponent(v.query)}`,
+    }, `🎬 ${v.title}`));
     root.replaceChildren(el('div', { class: 'card' },
       el('h3', {}, `Cap. ${lesson.chapter} — ${lesson.title}`),
       el('p', { class: 'note' }, lesson.resumen || ''),
       ...lesson.sections.map((s, i) => el('button', { class: 'option', onclick: () => showSection(i) },
         `${seen.has(s.id) ? '✅' : '⬜'} ${s.title}`)),
+      ...(videos.length ? [el('h4', { class: 'section-title' }, 'Videos sugeridos (el mismo tema, contado distinto)'), ...videos,
+        el('p', { class: 'note' }, 'Se abren en YouTube — necesitan internet. Son un extra, no una tarea.')] : []),
       el('button', { class: 'ghost', onclick: onExit }, 'Volver')));
   }
 

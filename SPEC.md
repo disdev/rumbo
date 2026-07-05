@@ -89,9 +89,11 @@ The teaching layer (§1 core philosophy): `data/lessons/chNN.json`, one per assi
 - `callout` — visually distinct box: `clave` (key point), `ojo` (common trap), `memoria` (mnemonic).
 - `table` — comparison tables.
 - `widget` — named interactive module from the registry (`src/js/widgets.js`, vanilla JS: `render(el, params, onEvent)`), used only where manipulation genuinely teaches (e.g., ángulo de ataque → sustentación slider, cuatro fuerzas, palanca → superficies de control, flaps, lectura de instrumentos). Widgets never carry scoring.
-- `check` — 1–2 quick tap-answer questions per section: instant right/wrong plus a one-line `why`. **Logged, never gating** (§6 gates stay deterministic; a wrong check never blocks advance).
+- `check` — **3–4 exam-difficulty questions per section** (mentor directive 2026-07-05: enough to truly test, with plausible distractors mirroring bank traps). Rendered on a **separate screen after the section's teaching** (§5.8) — never visible alongside the content that answers them, so answering requires remembering, not looking up. Instant right/wrong plus a one-line `why`. **Logged, never gating on correctness** (§6 gates stay deterministic; a wrong check never blocks advance — answering them all does advance).
 - `notebook` — a cuaderno prompt card ("📓 En tu cuaderno: dibuja el fuselaje y etiqueta sus 4 partes") with a "Hecho ✓" button. The app decides *what* to write — the student's executive function never has to self-generate note-taking. Self-reported, logged, non-gating; the physical notebook is Sunday check-in audit material (§7). Guided math examples always end with one ("copia estos pasos en tu cuaderno como receta").
 - `guided_math` — embeds a resolución-guiada worked example for a template family/tier (§5.2), followed by its práctica inmediata burst.
+
+Each lesson may also carry a chapter-level `videos` list (`[{title, query}]`) — **optional YouTube supplements** (mentor directive 2026-07-05: the same material taught a slightly different way). Rendered as links in lesson **review mode only** (§5.8), never in the primary session flow (rabbit-hole containment, §2), built as YouTube search URLs from curated Spanish queries (search links can't go dead the way pinned video IDs can; the mentor may pin exact videos by editing the JSON). Online-only by nature; never gates anything.
 
 **Authoring rules:** Spanish; AI-drafted at build time, grounded in the PHAK chapter structure, with every claim traceable to its chapter/pages (errors must be findable); **ships without pre-review** (mentor decision 2026-07-05) — fixes are prospective under `content_version` (§8). Authoring lessons also produces the per-section lists and key points `chapters.json` needs (§3.2, §10.2). Lessons are original teaching content, not reproduction of the book's text (§9). All 16 assigned chapters are authored up front, chapter 3 first as the template-setter, then spine order.
 
@@ -154,6 +156,7 @@ A mínimo handles a bad day; illness needs a different shape. After **3+ consecu
 
 ### 5.1 Session mode (primary surface)
 - "Comenzar sesión de hoy" → sequential block runner. Current block full-screen, timer visible, next-up hidden until reached.
+- **Plan de hoy (mentor directive 2026-07-05):** the home screen shows a collapsible read-only card listing today's sessions and blocks with live progress (✅ done · ▶️ current · ⬜ pending) and session start times — "here's what to do today," not "here's a long list." It is a *view*, not a chooser: the start button still walks the plan in order (zero-decision start, §2).
 - Skipping a block requires a reason (logged, shown to the mentor). No silent skips.
 - Session/streak state survives refresh and offline periods (localStorage-first, §9).
 
@@ -172,6 +175,7 @@ A mínimo handles a bad day; illness needs a different shape. After **3+ consecu
 
 ### 5.4 Fraseología rapid-fire mode
 - Card: Spanish ATC phrase → 3 English options, shuffled. Big touch targets, instant right/wrong flash, auto-advance. Streak counter and daily card count. Leitner-style boxes (wrong → box 1, right → promote) drive selection.
+- **Always available from the home screen** (mentor directive 2026-07-05): a "Fraseología rápida" button runs a rapid-fire round on demand, any time, logged like the session block (it counts toward the fraseo streak). The evening session block remains scheduled; this is extra volume, never a substitute shown as such.
 
 ### 5.5 Simulacros (weeks 6–8, and on demand for the mentor)
 - Full-length timed exam matching the **official exam blueprint: 50 questions, 90 minutes** (confirmed; in `config.json`) — a ~1.8 min/question pace, which the timer makes visible. Taken **without a calculator**, mirroring exam conditions. Per-category weighting is still unconfirmed (§10); until then, draw at the bank's category proportions. Options shuffled, no feedback until the end.
@@ -196,8 +200,9 @@ Side effect — an honesty check: gibberish, padding, or apparent transcription 
 ### 5.8 Lesson player (lecciones)
 The teaching surface (§1, content model in §3.4). A full-screen player inside the session runner replaces the old reading block:
 
-- **One section at a time**, progress dots across the top, "Continuar" to advance — small visible units, no wall-of-text, zero navigation decisions. Scrolling within a section is fine; jumping ahead is not offered during the first sequential pass.
-- **Completion is deterministic:** viewing every section completes the lesson and opens the free-recall gate (§4.3) exactly as before. Checks and notebook prompts never gate (§3.4).
+- **One section at a time**, progress dots across the top — small visible units, no wall-of-text, zero navigation decisions. Scrolling within a section is fine; jumping ahead is not offered during the first sequential pass.
+- **Each section is two screens (mentor directive 2026-07-05):** first the teaching (text, diagrams, widgets, notebook prompts), then — content hidden — its checks ("sin mirar atrás"). A "volver a la explicación" escape is always available; returning re-asks the checks. This makes every check an act of recall, not of looking one paragraph up.
+- **Completion is deterministic:** viewing every section (teaching + checks answered) completes the lesson and opens the free-recall gate (§4.3) exactly as before. Check correctness and notebook prompts never gate (§3.4).
 - **Per-section telemetry:** section completion and time-on-section are logged (`kind: 'lesson_progress'`), check answers as `kind: 'lesson_check'`, notebook confirmations as `kind: 'notebook'` — all through the standard result log (§8), offline-queued like everything else.
 - **Review mode:** any previously seen lesson/section is re-openable from the chapter list at any time (re-reading is never restricted); miss-routing "volver a la sección" links (§4.3) and teach-back prompts (§4.4) open the player directly to the target section.
 - **Widgets** render inline from the registry; a widget failing to load degrades to its captioned static fallback image — a lesson must never be blocked by a widget bug.
