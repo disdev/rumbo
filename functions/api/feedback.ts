@@ -58,8 +58,8 @@ const SYSTEM_PROMPT = `Eres el evaluador de un piloto estudiante peruano que se 
 
 Reglas estrictas:
 - Evalúa únicamente cobertura y exactitud respecto al material de referencia proporcionado. NUNCA introduzcas hechos, cifras, procedimientos ni afirmaciones técnicas que no estén en el material de referencia.
-- "covered": los puntos clave del material de referencia que el estudiante sí cubrió correctamente (cita el punto tal como aparece en el material, o una paráfrasis fiel muy breve).
-- "missing": los puntos clave del material de referencia que el estudiante omitió o expresó de forma incorrecta.
+- "covered": los puntos clave del material de referencia que el estudiante sí cubrió correctamente — MÁXIMO 6, los más importantes, cada uno como paráfrasis fiel muy breve (≤10 palabras). Si cubrió más de 6, elige los 6 más centrales.
+- "missing": los puntos clave que omitió o expresó de forma incorrecta — MÁXIMO 5, elige los MÁS importantes del capítulo (los que más probablemente caen en el examen), cada uno ≤10 palabras. Nunca listes todo lo que falta: cinco prioridades valen más que cuarenta reproches.
 - "comment": 2-3 frases en español, tono directo y alentador. Señala lo más importante que faltó o lo que estuvo bien logrado. No repitas las listas.
 - "flags": marca "gibberish" si el texto es incoherente o sin sentido; "padding" si el texto rellena con palabrería para aparentar volumen sin contenido real; "transcription" si el texto parece copiado o transcrito literalmente de una fuente en vez de recordado o razonado con sus propias palabras. Usa false cuando no aplique.
 - Si el material de referencia NO incluye puntos clave (key_points vacío o ausente), evalúa solamente la coherencia y la especificidad del texto del estudiante, deja "covered" y "missing" como listas vacías, y dilo explícitamente en el comentario.
@@ -187,7 +187,7 @@ export const onRequestPost: PagesFunction<Env> = async (ctx) => {
       },
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
-        max_tokens: 700,
+        max_tokens: 1024,
         system: SYSTEM_PROMPT,
         messages: [{ role: "user", content: parts.join("\n\n") }],
       }),

@@ -317,7 +317,7 @@ export async function recallPlayer(root, block, ctx) {
   return new Promise(resolve => {
     let seconds = config.recall.timer_minutes * 60;
     const timerEl = el('div', { class: 'timer' }, fmtTime(seconds));
-    const ta = el('textarea', { class: 'recall-ta', rows: '10', placeholder: 'Libro cerrado. Escribe todo lo que recuerdes, con tus propias palabras…' });
+    const ta = el('textarea', { class: 'recall-ta', rows: '10', placeholder: 'Ejemplo: "El avión tiene 5 componentes mayores: fuselaje, alas… El fuselaje semimonocasco reparte la carga entre…" — así, todo lo que te salga.' });
     const counter = el('p', { class: 'note' }, `0 / ${config.recall.min_chars} caracteres`);
     const btn = el('button', { class: 'primary', disabled: 'true', onclick: submit }, 'Entregar');
     ta.addEventListener('input', () => {
@@ -352,8 +352,19 @@ export async function recallPlayer(root, block, ctx) {
       root.replaceChildren(el('div', { class: 'card' }, ...nodes));
     }
 
+    // Instrucciones claras + pistas de secciones (títulos como gatillos de
+    // memoria, no respuestas): el estudiante debe saber exactamente qué se
+    // espera antes de escribir.
+    const sectionCues = (ch?.sections || []).map(s => s.title).filter(Boolean);
     root.replaceChildren(el('div', { class: 'card' },
       el('h3', {}, `Recuerdo libre — cap. ${block.chapter}: ${ch?.title || ''}`),
+      el('div', { class: 'callout callout-clave' },
+        el('div', { class: 'callout-title' }, '🧠 Qué hacer aquí'),
+        el('p', {}, 'Sin mirar la lección ni el libro: escribe TODO lo que recuerdes del capítulo, con tus propias palabras — ideas, números, reglas, términos. No importa el orden ni la ortografía; importa lo que salga de tu memoria.'),
+        el('p', { class: 'note' }, `Mínimo ${config.recall.min_chars} caracteres para desbloquear las preguntas. Al entregar, la IA te dirá qué cubriste y qué te faltó.`)),
+      sectionCues.length ? el('details', { class: 'plan-hoy' },
+        el('summary', {}, '🗂️ ¿Bloqueado? Mira los temas del capítulo (solo títulos)'),
+        ...sectionCues.map(t => el('p', { class: 'plan-item' }, `• ${t}`))) : '',
       timerEl, ta, counter, btn));
     ta.focus();
   });
