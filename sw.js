@@ -7,7 +7,7 @@ const CORE = [
   'src/css/app.css',
   'src/js/main.js', 'src/js/store.js', 'src/js/derive.js', 'src/js/planner.js',
   'src/js/mathgen.js', 'src/js/players.js', 'src/js/session.js', 'src/js/sync.js', 'src/js/audio.js',
-  'src/js/lessons.js', 'src/js/widgets.js', 'src/js/guided.js', 'src/js/badges.js',
+  'src/js/lessons.js', 'src/js/widgets.js', 'src/js/guided.js', 'src/js/badges.js', 'src/js/plan-view.js',
   'data/config.json', 'data/chapters.json', 'data/bank.json', 'data/math-templates.json', 'data/scenarios.json',
   'data/lessons/index.json',
   'icons/icon-192.png', 'icons/icon-512.png',

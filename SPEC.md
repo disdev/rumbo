@@ -157,6 +157,7 @@ A mínimo handles a bad day; illness needs a different shape. After **3+ consecu
 ### 5.1 Session mode (primary surface)
 - "Comenzar sesión de hoy" → sequential block runner. Current block full-screen, timer visible, next-up hidden until reached.
 - **Plan de hoy (mentor directive 2026-07-05):** the home screen shows a collapsible read-only card listing today's sessions and blocks with live progress (✅ done · ▶️ current · ⬜ pending) and session start times — "here's what to do today," not "here's a long list." It is a *view*, not a chooser: the start button still walks the plan in order (zero-decision start, §2).
+- **Mostrar plan (mentor directive 2026-07-05):** a "📅 Mostrar plan" home button opens the full 8-week hierarchy — weeks (theme, chapters with live ✅/📖/⬜ state, verification categories) → days of a week (high-level + special events: simulacros, vuelo de escritorio) → single-day detail (the session/block template). Future days show the day *template* with an explicit honesty note: fine details (weakest math family, due reviews, redos) are decided that morning from real progress; mastery gates outrank the calendar (§4.4). Read-only, same zero-decision rule.
 - Skipping a block requires a reason (logged, shown to the mentor). No silent skips.
 - Session/streak state survives refresh and offline periods (localStorage-first, §9).
 

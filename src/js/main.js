@@ -8,6 +8,7 @@ import { runSession, loadCursor } from './session.js';
 import { el, fmtTime, flashCelebrate, rapidfirePlayer } from './players.js';
 import { FAMILY_IDS } from './mathgen.js';
 import { lessonList } from './lessons.js';
+import { planView } from './plan-view.js';
 import { earnedBadges } from './badges.js';
 
 const app = document.getElementById('app');
@@ -190,6 +191,7 @@ function renderHome() {
 
   nodes.push(...badgeShelf());
   nodes.push(el('h4', { class: 'section-title' }, 'Escalera de matemática'), trackerGrid());
+  nodes.push(el('button', { class: 'ghost', onclick: () => planView(app, ctx, renderHome) }, '📅 Mostrar plan — las 8 semanas'));
   nodes.push(el('button', { class: 'ghost', onclick: () => lessonList(app, ctx, renderHome) }, '📚 Repasar lecciones'));
   nodes.push(el('button', { class: 'ghost', onclick: quickFraseo }, '🎧 Fraseología rápida — una ronda extra'));
 

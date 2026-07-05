@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- SOLO PARA PRUEBAS LOCALES: simula que hoy es lunes 08:05 Lima.
+     No desplegar; no está en el precache del SW. Abrir vía servidor local:
+     python3 -m http.server 8792  →  http://localhost:8792/test-monday.html -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Rumbo — SIMULACIÓN LUNES</title>
+  <link rel="stylesheet" href="src/css/app.css">
+</head>
+<body>
+  <script>
+    // Congela el reloj en lunes 2026-07-06 08:05 Lima (13:05 UTC) y avanza en
+    // tiempo real desde ahí. Corre ANTES del módulo de la app — ese es el truco:
+    // la app deriva "hoy" en el arranque. También aísla el estado local para no
+    // mezclar con datos reales, y desactiva el service worker en esta página.
+    (() => {
+      const FAKE_START = new Date('2026-07-06T13:05:00Z').getTime();
+      const REAL_START = Date.now();
+      const realNow = Date.now.bind(Date);
+      Date.now = () => FAKE_START + (realNow() - REAL_START);
+      localStorage.clear();
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister()));
+      }
+      document.title = 'Rumbo — SIMULACIÓN LUNES';
+    })();
+  </script>
+  <div style="background:#ffb84d;color:#201500;text-align:center;padding:6px;font:13px sans-serif;font-weight:700">
+    ⚠️ SIMULACIÓN: hoy es "lunes 6 de julio, 8:05 am Lima" · página de prueba, datos locales borrados al cargar
+  </div>
+  <div id="sync-banner" class="banner hidden"></div>
+  <main id="app">
+    <div class="card center"><p>Cargando…</p></div>
+  </main>
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
