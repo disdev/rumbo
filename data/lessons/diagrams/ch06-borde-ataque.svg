@@ -1,36 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="Slat y ranura en el borde de ataque">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="Slat abierto y ranura en el borde de ataque con gran ángulo de ataque">
   <defs>
-    <marker id="ba-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="ch06-ba-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="var(--ok)"/>
     </marker>
-    <marker id="ba-mu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="ch06-ba-mu" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="var(--muted)"/>
     </marker>
   </defs>
-  <text x="210" y="24" text-anchor="middle" font-family="inherit" font-size="15" fill="var(--text)" font-weight="bold">Slat abierto con gran ángulo de ataque</text>
+  <text x="210" y="22" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">Slat abierto con gran ángulo de ataque</text>
 
   <!-- viento relativo -->
-  <line x1="20" y1="150" x2="80" y2="150" stroke="var(--muted)" stroke-width="2" marker-end="url(#ba-mu)"/>
-  <line x1="20" y1="180" x2="80" y2="180" stroke="var(--muted)" stroke-width="2" marker-end="url(#ba-mu)"/>
-  <text x="20" y="140" font-family="inherit" font-size="12" fill="var(--muted)">viento relativo</text>
+  <text x="16" y="156" font-family="inherit" font-size="12" fill="var(--muted)">viento relativo</text>
+  <g stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round">
+    <line x1="16" y1="170" x2="64" y2="170" marker-end="url(#ch06-ba-mu)"/>
+    <line x1="16" y1="198" x2="64" y2="198" marker-end="url(#ch06-ba-mu)"/>
+  </g>
 
-  <!-- ala inclinada (ángulo de ataque alto): nariz arriba-izquierda -->
-  <path d="M140,120 C165,100 215,96 275,130 L330,172 C270,178 190,160 140,132 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="222" y="158" font-family="inherit" font-size="12" fill="var(--text)">ala</text>
+  <!-- flujo que sigue por debajo del ala -->
+  <path d="M72,212 C150,212 230,216 300,226" fill="none" stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch06-ba-mu)"/>
 
-  <!-- slat separado del borde de ataque -->
-  <path d="M104,142 C108,120 122,108 136,104 C130,118 128,128 130,140 C122,146 112,146 104,142 Z" fill="var(--accent)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="62" y="106" font-family="inherit" font-size="13" fill="var(--accent)" font-weight="bold">slat</text>
-  <text x="62" y="122" font-family="inherit" font-size="12" fill="var(--muted)">se desliza adelante</text>
+  <!-- ala con nariz arriba (perfil cambrado, inclinado) -->
+  <path d="M150,110 C196,88 256,94 306,126 C330,142 348,166 354,182 C310,188 224,166 168,138 C155,130 148,119 150,110 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
 
-  <!-- ranura (slot) -->
-  <text x="116" y="170" font-family="inherit" font-size="12" fill="var(--text)">ranura (slot)</text>
+  <!-- slat deslizado hacia adelante, deja la ranura abierta -->
+  <path d="M112,132 C108,116 116,100 132,92 C128,104 127,116 131,126 C124,132 117,134 112,132 Z"
+        fill="var(--accent)" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
 
-  <!-- aire con energía por la ranura, pegado al extradós -->
-  <path d="M96,152 Q128,140 142,116 Q180,92 240,104" fill="none" stroke="var(--ok)" stroke-width="2.5" marker-end="url(#ba-ok)"/>
-  <text x="196" y="82" font-family="inherit" font-size="13" fill="var(--ok)" font-weight="bold">aire con energía,</text>
-  <text x="196" y="98" font-family="inherit" font-size="13" fill="var(--ok)">pegado al ala</text>
+  <!-- aire con energía: entra por la ranura y se pega al extradós -->
+  <path d="M40,184 C76,176 102,156 120,132 C130,118 142,106 158,98 C200,82 254,86 300,116"
+        fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch06-ba-ok)"/>
 
-  <text x="210" y="222" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)" font-weight="bold">Resultado: la pérdida llega a un ángulo de ataque MAYOR</text>
-  <text x="210" y="242" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">Slot fijo = siempre abierto · Slat = se abre cuando hace falta · Flap de borde de ataque = más curvatura</text>
+  <!-- etiquetas -->
+  <g font-family="inherit">
+    <text x="36" y="78" font-size="13" font-weight="bold" fill="var(--accent)">slat</text>
+    <text x="36" y="94" font-size="12" fill="var(--muted)">se desliza hacia adelante</text>
+    <text x="146" y="200" font-size="12" fill="var(--text)">ranura (slot)</text>
+    <text x="228" y="52" font-size="13" font-weight="bold" fill="var(--ok)">aire con energía,</text>
+    <text x="228" y="68" font-size="13" fill="var(--ok)">pegado al extradós</text>
+  </g>
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="66" y1="86" x2="106" y2="100"/>
+    <line x1="146" y1="190" x2="139" y2="128"/>
+    <line x1="290" y1="74" x2="284" y2="94"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="107" cy="100.5" r="2.5"/>
+    <circle cx="139" cy="126.5" r="2.5"/>
+    <circle cx="284.5" cy="95.5" r="2.5"/>
+  </g>
+
+  <text x="210" y="250" text-anchor="middle" font-family="inherit" font-size="13" font-weight="bold" fill="var(--text)">Resultado: la pérdida llega a un ángulo de ataque MAYOR</text>
+  <text x="210" y="268" text-anchor="middle" font-family="inherit" font-size="11" fill="var(--muted)">Slot fijo = siempre abierto · Slat = se abre cuando hace falta · Flap de b. de ataque = + curvatura</text>
 </svg>

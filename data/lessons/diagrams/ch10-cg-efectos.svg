@@ -1,39 +1,51 @@
-<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación de efectos: CG adelantado (estable pero nariz pesada) contra CG atrasado (inestable, recuperación de pérdida difícil o imposible)">
-  <!-- Panel izquierdo: CG adelantado -->
-  <rect x="12" y="12" width="222" height="246" rx="8" fill="none" stroke="var(--muted)" stroke-width="1"/>
-  <text x="123" y="36" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle">CG ADELANTADO</text>
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación: con CG adelantado el avión vuela nariz abajo, estable pero pesado; con CG atrasado vuela nariz arriba, inestable y difícil de recuperar de una barrena">
+  <defs>
+    <path id="ch10-cg-plane" d="M -80 -1 C -78 -7 -70 -10 -58 -12 L -46 -13 C -38 -25 -26 -29 -10 -29 L 6 -29 C 24 -27 40 -20 54 -14 C 58 -12 62 -11 66 -10 L 76 -37 C 78 -42 85 -42 84 -36 L 78 -8 C 80 -5 80 -1 76 1 C 56 6 28 10 -4 10 C -36 10 -62 8 -74 4 C -78 3 -80 1 -80 -1 Z"/>
+    <marker id="ch10-cg-arrow-muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0.5 0.8 L9.5 5 L0.5 9.2 Z" fill="var(--muted)"/>
+    </marker>
+    <marker id="ch10-cg-arrow-bad" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0.5 0.8 L9.5 5 L0.5 9.2 Z" fill="var(--bad)"/>
+    </marker>
+  </defs>
 
-  <!-- avioncito nariz abajo -->
-  <g transform="rotate(8 123 95)">
-    <ellipse cx="123" cy="95" rx="72" ry="16" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-    <polygon points="180,88 208,62 218,62 196,92" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-    <rect x="96" y="92" width="52" height="6" rx="3" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-    <circle cx="92" cy="95" r="6" fill="var(--accent)"/>
+  <!-- panel izquierdo: CG adelantado -->
+  <rect x="14" y="30" width="212" height="222" rx="10" fill="var(--panel-2)" fill-opacity="0.3" stroke="var(--muted)" stroke-width="1"/>
+  <text x="120" y="58" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle" font-weight="600">CG adelantado</text>
+
+  <g transform="translate(120,132) rotate(7) scale(0.92)" stroke-linejoin="round" stroke-linecap="round">
+    <line x1="-83" y1="-16" x2="-80" y2="14" stroke="var(--text)" stroke-width="2.5"/>
+    <rect x="-38" y="-33" width="76" height="7" rx="3.5" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <use href="#ch10-cg-plane" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <line x1="-46" y1="5" x2="-16" y2="-26" stroke="var(--muted)" stroke-width="1.25"/>
+    <path d="M 62 -3 L 88 -7" stroke="var(--text)" stroke-width="3"/>
+    <circle cx="-28" cy="-8" r="4.5" fill="var(--accent)"/>
   </g>
-  <text x="60" y="132" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">CG adelante</text>
+  <line x1="76" y1="94" x2="93" y2="116" stroke="var(--muted)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="94.5" cy="118" r="2.5" fill="var(--muted)"/>
+  <text x="72" y="90" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle" font-weight="600">CG</text>
+  <path d="M 51 118 A 30 30 0 0 0 60 150" fill="none" stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch10-cg-arrow-muted)"/>
 
-  <text x="123" y="164" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">más estable</text>
-  <text x="123" y="184" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">nariz pesada</text>
-  <text x="123" y="204" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">pérdida a MÁS velocidad</text>
-  <text x="123" y="224" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">flare difícil al aterrizar</text>
-  <text x="123" y="244" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">crucero más lento</text>
+  <text x="120" y="214" fill="var(--ok)" font-family="inherit" font-size="12.5" text-anchor="middle" font-weight="600">estable — nariz pesada</text>
+  <text x="120" y="234" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">pérdida a más velocidad</text>
 
-  <!-- Panel derecho: CG atrasado -->
-  <rect x="246" y="12" width="222" height="246" rx="8" fill="none" stroke="var(--bad)" stroke-width="2"/>
-  <text x="357" y="36" fill="var(--bad)" font-family="inherit" font-size="15" text-anchor="middle">CG ATRASADO</text>
+  <!-- panel derecho: CG atrasado -->
+  <rect x="234" y="30" width="212" height="222" rx="10" fill="var(--panel-2)" fill-opacity="0.3" stroke="var(--bad)" stroke-width="1.5"/>
+  <text x="346" y="58" fill="var(--bad)" font-family="inherit" font-size="14" text-anchor="middle" font-weight="600">CG atrasado</text>
 
-  <!-- avioncito nariz arriba -->
-  <g transform="rotate(-12 357 95)">
-    <ellipse cx="357" cy="95" rx="72" ry="16" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-    <polygon points="414,88 442,62 452,62 430,92" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-    <rect x="330" y="92" width="52" height="6" rx="3" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-    <circle cx="400" cy="93" r="6" fill="var(--bad)"/>
+  <g transform="translate(346,132) rotate(-11) scale(0.92)" stroke-linejoin="round" stroke-linecap="round">
+    <line x1="-83" y1="-16" x2="-80" y2="14" stroke="var(--text)" stroke-width="2.5"/>
+    <rect x="-38" y="-33" width="76" height="7" rx="3.5" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <use href="#ch10-cg-plane" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <line x1="-46" y1="5" x2="-16" y2="-26" stroke="var(--muted)" stroke-width="1.25"/>
+    <path d="M 62 -3 L 88 -7" stroke="var(--text)" stroke-width="3"/>
+    <circle cx="18" cy="-8" r="4.5" fill="var(--bad)"/>
   </g>
-  <text x="422" y="132" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">CG atrás</text>
+  <line x1="398" y1="94" x2="363" y2="116" stroke="var(--muted)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="361.5" cy="118" r="2.5" fill="var(--muted)"/>
+  <text x="404" y="90" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle" font-weight="600">CG</text>
+  <path d="M 279 148 A 30 30 0 0 1 270 114" fill="none" stroke="var(--bad)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch10-cg-arrow-bad)"/>
 
-  <text x="357" y="164" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">INESTABLE</text>
-  <text x="357" y="184" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">pérdida a menos velocidad</text>
-  <text x="357" y="204" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">recuperar pérdida/barrena:</text>
-  <text x="357" y="224" fill="var(--bad)" font-family="inherit" font-size="13" text-anchor="middle">difícil o IMPOSIBLE</text>
-  <text x="357" y="244" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">crucero un poco más rápido</text>
+  <text x="346" y="214" fill="var(--bad)" font-family="inherit" font-size="12.5" text-anchor="middle" font-weight="600">inestable — cola pesada</text>
+  <text x="346" y="234" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">de una barrena quizá no sales</text>
 </svg>

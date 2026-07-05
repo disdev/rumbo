@@ -1,42 +1,52 @@
-<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Burbuja de aire que sube en aire estable regresa y en aire inestable sigue subiendo">
-  <line x1="240" y1="20" x2="240" y2="250" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 4"/>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="La burbuja que sube: en aire estable regresa y forma estratos, en aire inestable sigue subiendo y fabrica cúmulos">
+  <defs>
+    <marker id="ch12-est-ok" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="ch12-est-bad" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
 
-  <!-- Panel izquierdo: ESTABLE -->
-  <text x="120" y="30" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">Aire ESTABLE</text>
-  <line x1="30" y1="230" x2="210" y2="230" stroke="var(--text)" stroke-width="2"/>
-  <!-- burbuja sube y regresa -->
-  <circle cx="100" cy="200" r="14" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
-  <circle cx="100" cy="130" r="12" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2" stroke-dasharray="3 3"/>
-  <path d="M 100 184 L 100 148" fill="none" stroke="var(--ok)" stroke-width="2"/>
-  <polygon points="100,142 94,154 106,154" fill="var(--ok)"/>
-  <path d="M 118 140 Q 132 165 118 192" fill="none" stroke="var(--ok)" stroke-width="2"/>
-  <polygon points="116,198 112,185 124,187" fill="var(--ok)"/>
-  <text x="146" y="128" fill="var(--muted)" font-family="inherit" font-size="12">sube, queda</text>
-  <text x="146" y="142" fill="var(--muted)" font-family="inherit" font-size="12">más fría…</text>
-  <text x="146" y="172" fill="var(--muted)" font-family="inherit" font-size="12">…y regresa</text>
-  <!-- estrato plano -->
-  <rect x="45" y="70" width="150" height="16" rx="8" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="120" y="60" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">estratos en capa</text>
-  <text x="120" y="252" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">vuelo suave · mala visibilidad</text>
+  <line x1="240" y1="24" x2="240" y2="264" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 5" stroke-linecap="round"/>
 
-  <!-- Panel derecho: INESTABLE -->
-  <text x="360" y="30" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">Aire INESTABLE</text>
-  <line x1="270" y1="230" x2="450" y2="230" stroke="var(--text)" stroke-width="2"/>
-  <!-- burbuja sigue subiendo -->
-  <circle cx="330" cy="200" r="14" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
-  <circle cx="330" cy="150" r="16" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2" stroke-dasharray="3 3"/>
-  <path d="M 330 182 L 330 100" fill="none" stroke="var(--bad)" stroke-width="2.5"/>
-  <polygon points="330,92 322,108 338,108" fill="var(--bad)"/>
-  <text x="348" y="150" fill="var(--muted)" font-family="inherit" font-size="12">queda más</text>
-  <text x="348" y="164" fill="var(--muted)" font-family="inherit" font-size="12">caliente y</text>
-  <text x="348" y="178" fill="var(--muted)" font-family="inherit" font-size="12">sigue subiendo</text>
-  <!-- cúmulo en torre -->
-  <circle cx="400" cy="80" r="18" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <circle cx="382" cy="94" r="14" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <circle cx="418" cy="96" r="14" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <circle cx="400" cy="106" r="16" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="400" y="48" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">cúmulos en torre</text>
-  <text x="360" y="252" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">turbulencia · buena visibilidad</text>
+  <!-- ══ PANEL IZQUIERDO: ESTABLE ══ -->
+  <text x="126" y="30" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold" text-anchor="middle">Aire ESTABLE</text>
+  <path d="M26 240 H226 V250 Q226 253 223 253 H29 Q26 253 26 250 Z" fill="var(--panel-2)" fill-opacity="0.6"/>
+  <line x1="26" y1="240" x2="226" y2="240" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
 
-  <text x="240" y="272" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">La burbuja que sube decide: ¿más fría que el entorno (baja) o más caliente (sigue)?</text>
+  <!-- estratos: capas lisas apiladas -->
+  <path d="M46 84 Q44 74 58 72 Q66 64 88 66 Q114 60 138 66 Q164 62 180 70 Q198 72 196 82 Q196 90 182 91 L60 91 Q46 91 46 84 Z" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25" stroke-linejoin="round"/>
+  <path d="M62 106 Q60 99 70 98 Q80 92 104 95 Q132 90 152 96 Q172 94 178 101 Q182 108 172 110 L72 110 Q62 110 62 106 Z" fill="var(--panel-2)" fill-opacity="0.55" stroke="var(--muted)" stroke-width="1" stroke-linejoin="round"/>
+  <text x="122" y="56" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">estratos: capa lisa y plana</text>
+
+  <!-- burbuja: sube, se enfría y regresa -->
+  <circle cx="94" cy="208" r="14" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+  <path d="M86 202 A 10 10 0 0 1 94 197" fill="none" stroke="var(--ok)" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="95" cy="146" r="11" fill="none" stroke="var(--ok)" stroke-width="1.25" stroke-dasharray="3 3"/>
+  <path d="M94 190 C 93 174 94 166 95 160 C 98 138 118 136 120 156 C 122 176 116 190 110 201" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-est-ok)"/>
+  <text x="134" y="150" fill="var(--muted)" font-family="inherit" font-size="12">sube, queda más</text>
+  <text x="134" y="165" fill="var(--muted)" font-family="inherit" font-size="12">fría que el entorno…</text>
+  <text x="134" y="188" fill="var(--muted)" font-family="inherit" font-size="12">…y regresa</text>
+  <text x="126" y="273" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">vuelo suave · visibilidad pobre</text>
+
+  <!-- ══ PANEL DERECHO: INESTABLE ══ -->
+  <text x="354" y="30" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold" text-anchor="middle">Aire INESTABLE</text>
+  <path d="M254 240 H454 V250 Q454 253 451 253 H257 Q254 253 254 250 Z" fill="var(--panel-2)" fill-opacity="0.6"/>
+  <line x1="254" y1="240" x2="454" y2="240" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- cúmulo en torre (béziers suaves) -->
+  <g transform="translate(0 14)">
+    <path d="M372 128 Q360 128 358 118 Q348 116 350 105 Q344 94 356 88 Q352 74 366 70 Q366 56 382 55 Q390 44 404 49 Q418 44 424 56 Q438 56 438 70 Q450 76 446 88 Q456 96 450 106 Q452 118 440 121 Q438 130 426 129 Z" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25" stroke-linejoin="round"/>
+    <path d="M366 128 Q360 116 370 110 Q368 98 380 96 Q384 86 396 89 Q408 84 414 94 Q426 94 426 106 Q434 114 426 122 Q424 129 414 128 Z" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--muted)" stroke-width="1" stroke-linejoin="round"/>
+  </g>
+  <text x="402" y="52" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">cúmulos en torre</text>
+
+  <!-- burbuja: sigue subiendo y acelera -->
+  <circle cx="310" cy="208" r="14" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
+  <path d="M302 202 A 10 10 0 0 1 310 197" fill="none" stroke="var(--bad)" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="310" cy="152" r="16" fill="none" stroke="var(--bad)" stroke-width="1.25" stroke-dasharray="3 3"/>
+  <path d="M310 190 C 306 164 314 130 310 96" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-est-bad)"/>
+  <text x="332" y="158" fill="var(--muted)" font-family="inherit" font-size="12">queda más caliente:</text>
+  <text x="332" y="173" fill="var(--muted)" font-family="inherit" font-size="12">sigue subiendo</text>
+  <text x="332" y="188" fill="var(--muted)" font-family="inherit" font-size="12">y acelera</text>
+  <text x="354" y="273" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">turbulencia · buena visibilidad</text>
+
+  <text x="240" y="294" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">La burbuja compara su temperatura con el entorno: ¿regresa o sigue de largo?</text>
 </svg>

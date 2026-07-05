@@ -1,47 +1,57 @@
-<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avión de perfil con el datum en la nariz y los brazos hasta asientos, combustible y equipaje">
-  <!-- datum -->
-  <line x1="82" y1="42" x2="82" y2="212" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 4"/>
-  <text x="82" y="32" fill="var(--accent)" font-family="inherit" font-size="14" text-anchor="middle">DATUM</text>
-  <text x="82" y="228" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">el "km 0" del avión</text>
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avión de perfil con la línea de datum en la nariz; cotas desde el datum hasta asientos (37 in), combustible (48 in) y equipaje (95 in), con el CG marcado">
+  <defs>
+    <marker id="ch10-datum-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0.5 0.8 L9.5 5 L0.5 9.2 Z" fill="var(--accent)"/>
+    </marker>
+  </defs>
 
-  <!-- fuselaje (perfil simple) -->
-  <ellipse cx="215" cy="115" rx="128" ry="27" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <!-- cola -->
-  <polygon points="322,104 372,62 388,62 352,110" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <line x1="340" y1="104" x2="405" y2="98" stroke="var(--text)" stroke-width="3"/>
-  <!-- ala (vista de costado) -->
-  <rect x="168" y="112" width="92" height="9" rx="4" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <!-- hélice -->
-  <line x1="87" y1="96" x2="87" y2="134" stroke="var(--text)" stroke-width="3"/>
-  <!-- tren -->
-  <line x1="160" y1="140" x2="160" y2="158" stroke="var(--text)" stroke-width="2"/>
-  <circle cx="160" cy="163" r="6" fill="none" stroke="var(--text)" stroke-width="2"/>
-  <line x1="255" y1="140" x2="255" y2="158" stroke="var(--text)" stroke-width="2"/>
-  <circle cx="255" cy="163" r="6" fill="none" stroke="var(--text)" stroke-width="2"/>
+  <!-- suelo sutil -->
+  <line x1="96" y1="172" x2="420" y2="172" stroke="var(--muted)" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- avión de perfil -->
+  <g transform="translate(248,118) scale(1.5)" stroke-linejoin="round" stroke-linecap="round">
+    <line x1="-83" y1="-16" x2="-80" y2="14" stroke="var(--text)" stroke-width="1.7"/>
+    <rect x="-38" y="-33" width="76" height="7" rx="3.5" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.35"/>
+    <path d="M -80 -1 C -78 -7 -70 -10 -58 -12 L -46 -13 C -38 -25 -26 -29 -10 -29 L 6 -29 C 24 -27 40 -20 54 -14 C 58 -12 62 -11 66 -10 L 76 -37 C 78 -42 85 -42 84 -36 L 78 -8 C 80 -5 80 -1 76 1 C 56 6 28 10 -4 10 C -36 10 -62 8 -74 4 C -78 3 -80 1 -80 -1 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.35"/>
+    <line x1="-46" y1="5" x2="-16" y2="-26" stroke="var(--muted)" stroke-width="0.9"/>
+    <path d="M 62 -3 L 88 -7" stroke="var(--text)" stroke-width="2"/>
+    <line x1="-56" y1="10" x2="-55" y2="26" stroke="var(--text)" stroke-width="1.35"/>
+    <circle cx="-55" cy="30" r="5" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.35"/>
+    <line x1="-14" y1="10" x2="-13" y2="26" stroke="var(--text)" stroke-width="1.35"/>
+    <circle cx="-13" cy="30" r="5.5" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.35"/>
+  </g>
+
+  <!-- datum -->
+  <line x1="128" y1="38" x2="128" y2="256" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5" stroke-linecap="round"/>
+  <text x="128" y="28" fill="var(--accent)" font-family="inherit" font-size="14" text-anchor="middle" font-weight="600">DATUM (km 0)</text>
 
   <!-- estaciones -->
-  <circle cx="200" cy="115" r="4" fill="var(--text)"/>
-  <circle cx="240" cy="113" r="4" fill="var(--text)"/>
-  <circle cx="325" cy="106" r="4" fill="var(--text)"/>
-  <!-- CG -->
-  <circle cx="216" cy="115" r="6" fill="var(--ok)"/>
-  <text x="216" y="98" fill="var(--ok)" font-family="inherit" font-size="13" text-anchor="middle">CG</text>
+  <circle cx="202" cy="116" r="3.5" fill="var(--text)"/>
+  <circle cx="224" cy="76" r="3.5" fill="var(--text)"/>
+  <circle cx="318" cy="114" r="3.5" fill="var(--text)"/>
 
-  <!-- brazos (líneas de cota) -->
-  <line x1="82" y1="196" x2="200" y2="196" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="200" y1="190" x2="200" y2="202" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="200" y1="123" x2="200" y2="190" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
-  <text x="230" y="200" fill="var(--text)" font-family="inherit" font-size="12">brazo 37 in — asientos</text>
+  <!-- símbolo CG -->
+  <circle cx="214" cy="140" r="7" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <path d="M 214 133 A 7 7 0 0 1 221 140 L 214 140 Z M 214 147 A 7 7 0 0 1 207 140 L 214 140 Z" fill="var(--ok)"/>
+  <text x="238" y="145" fill="var(--ok)" font-family="inherit" font-size="12.5" text-anchor="middle" font-weight="600">CG</text>
 
-  <line x1="82" y1="222" x2="240" y2="222" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="240" y1="216" x2="240" y2="228" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="240" y1="121" x2="240" y2="216" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
-  <text x="270" y="226" fill="var(--text)" font-family="inherit" font-size="12">brazo 48 in — combustible</text>
+  <!-- líneas de caída -->
+  <line x1="202" y1="121" x2="202" y2="196" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="224" y1="81" x2="224" y2="220" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="318" y1="119" x2="318" y2="244" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
 
-  <line x1="82" y1="248" x2="325" y2="248" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="325" y1="242" x2="325" y2="254" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="325" y1="114" x2="325" y2="242" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
-  <text x="355" y="252" fill="var(--text)" font-family="inherit" font-size="12">brazo 95 in — equipaje</text>
+  <!-- cotas desde el datum -->
+  <line x1="128" y1="194" x2="128" y2="204" stroke="var(--accent)" stroke-width="1.25"/>
+  <line x1="128" y1="199" x2="197" y2="199" stroke="var(--accent)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch10-datum-arrow)"/>
+  <text x="212" y="203" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="start">37 in — asientos</text>
 
-  <text x="240" y="272" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Todo brazo se mide desde el datum, en pulgadas, hacia atrás (+)</text>
+  <line x1="128" y1="218" x2="128" y2="228" stroke="var(--accent)" stroke-width="1.25"/>
+  <line x1="128" y1="223" x2="219" y2="223" stroke="var(--accent)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch10-datum-arrow)"/>
+  <text x="234" y="227" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="start">48 in — combustible</text>
+
+  <line x1="128" y1="242" x2="128" y2="252" stroke="var(--accent)" stroke-width="1.25"/>
+  <line x1="128" y1="247" x2="313" y2="247" stroke="var(--accent)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch10-datum-arrow)"/>
+  <text x="328" y="251" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="start">95 in — equipaje</text>
+
+  <text x="230" y="288" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Todo brazo se mide desde el datum, en pulgadas, hacia atrás (+)</text>
 </svg>

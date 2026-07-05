@@ -1,22 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" font-family="inherit">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 270" font-family="inherit" role="img" aria-label="Las cuatro fuerzas en vuelo recto y nivelado: cada una se cancela con su opuesta">
   <defs>
-    <marker id="k5a-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--ok)"/></marker>
-    <marker id="k5a-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--bad)"/></marker>
-    <marker id="k5a-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker>
-    <marker id="k5a-txt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--text)"/></marker>
+    <marker id="ch05-fuerzas-arrow-ok" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--ok)"/></marker>
+    <marker id="ch05-fuerzas-arrow-t" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--text)"/></marker>
+    <marker id="ch05-fuerzas-arrow-a" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--accent)"/></marker>
+    <marker id="ch05-fuerzas-arrow-b" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--bad)"/></marker>
   </defs>
-  <g stroke="var(--text)" stroke-width="2" fill="var(--panel-2)">
-    <ellipse cx="200" cy="125" rx="58" ry="13"/>
-    <path d="M152 121 L128 99 L142 99 L164 117 Z"/>
-    <path d="M190 118 L216 118 L208 141 L184 141 Z"/>
+
+  <!-- nubes de contexto -->
+  <g fill="var(--panel-2)" fill-opacity="0.6">
+    <ellipse cx="352" cy="58" rx="24" ry="9"/><ellipse cx="334" cy="51" rx="14" ry="7"/>
+    <ellipse cx="70" cy="212" rx="26" ry="10"/><ellipse cx="90" cy="205" rx="16" ry="8"/>
   </g>
-  <line x1="200" y1="100" x2="200" y2="44" stroke="var(--ok)" stroke-width="3" marker-end="url(#k5a-ok)"/>
-  <text x="200" y="32" fill="var(--ok)" font-size="14" text-anchor="middle">Sustentación</text>
-  <line x1="200" y1="150" x2="200" y2="206" stroke="var(--text)" stroke-width="3" marker-end="url(#k5a-txt)"/>
-  <text x="200" y="224" fill="var(--text)" font-size="14" text-anchor="middle">Peso</text>
-  <line x1="262" y1="125" x2="332" y2="125" stroke="var(--accent)" stroke-width="3" marker-end="url(#k5a-acc)"/>
-  <text x="297" y="112" fill="var(--accent)" font-size="14" text-anchor="middle">Empuje</text>
-  <line x1="138" y1="125" x2="68" y2="125" stroke="var(--bad)" stroke-width="3" marker-end="url(#k5a-bad)"/>
-  <text x="103" y="112" fill="var(--bad)" font-size="14" text-anchor="middle">Resistencia</text>
-  <text x="200" y="245" fill="var(--muted)" font-size="12" text-anchor="middle">Vuelo recto y nivelado: sustentación = peso · empuje = resistencia</text>
+
+  <!-- avión, vista lateral, nariz a la derecha -->
+  <g transform="translate(208 140) scale(0.85)" stroke="var(--text)" stroke-width="2.35" stroke-linejoin="round" stroke-linecap="round" fill="var(--panel-2)">
+    <ellipse cx="99" cy="-3" rx="2" ry="13" fill="var(--muted)" fill-opacity="0.5" stroke="none"/>
+    <path d="M -74 -6 C -86 -6 -96 -5 -101 -4 C -103.5 -3.5 -103.5 -1 -101 -0.5 C -94 0.5 -82 0.5 -72 0 Z"/>
+    <path d="M -50 -12 C -61 -28 -68 -41 -70 -50 C -70.5 -53 -68 -54.5 -65 -53 C -54 -46 -43 -30 -35 -15 C -40 -14 -45 -13 -50 -12 Z"/>
+    <path d="M 98 -2 C 98 -7 93 -10 85 -11 L 62 -13 C 56 -22 47 -27 36 -27 L 4 -27 C -24 -24 -60 -15 -88 -10 C -93 -9 -96 -7 -96 -4 C -96 -1 -93 0 -88 0 C -58 4 -20 9 12 9 C 42 9 70 7 85 4 C 93 2 98 1 98 -2 Z"/>
+    <path d="M 40 -29 L -12 -29 C -17 -29 -18 -31 -17 -33 C -16 -35 -13 -36 -8 -36 L 34 -36 C 40 -36 43 -34 43 -32 C 43 -30.5 42 -29 40 -29 Z"/>
+    <path d="M 36 -25 C 44 -25 51 -21 56 -14 L 38 -14 Z" fill="var(--muted)" fill-opacity="0.45" stroke="none"/>
+    <path d="M 10 -24 L 30 -24 L 30 -14 L 12 -14 Z" fill="var(--muted)" fill-opacity="0.45" stroke="none"/>
+  </g>
+
+  <!-- sustentación -->
+  <line x1="208" y1="88" x2="208" y2="34" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch05-fuerzas-arrow-ok)"/>
+  <text x="220" y="46" font-size="14" fill="var(--ok)" font-weight="bold">sustentación</text>
+  <!-- peso -->
+  <line x1="208" y1="154" x2="208" y2="208" stroke="var(--text)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch05-fuerzas-arrow-t)"/>
+  <text x="220" y="204" font-size="14" fill="var(--text)" font-weight="bold">peso</text>
+  <!-- empuje -->
+  <line x1="300" y1="140" x2="364" y2="140" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch05-fuerzas-arrow-a)"/>
+  <text x="334" y="122" font-size="14" fill="var(--accent)" font-weight="bold" text-anchor="middle">empuje</text>
+  <!-- resistencia -->
+  <line x1="112" y1="140" x2="48" y2="140" stroke="var(--bad)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch05-fuerzas-arrow-b)"/>
+  <text x="80" y="122" font-size="14" fill="var(--bad)" font-weight="bold" text-anchor="middle">resistencia</text>
+
+  <text x="210" y="252" font-size="13" fill="var(--muted)" text-anchor="middle">vuelo recto y nivelado: sustentación = peso · empuje = resistencia</text>
 </svg>

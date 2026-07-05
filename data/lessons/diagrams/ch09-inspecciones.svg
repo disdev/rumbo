@@ -1,37 +1,45 @@
-<svg viewBox="0 0 480 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Línea de tiempo de las inspecciones requeridas: anual, cien horas, transpondedor y ELT">
-  <text x="240" y="24" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">¿Cada cuánto se inspecciona?</text>
+<svg viewBox="0 0 480 326" xmlns="http://www.w3.org/2000/svg" font-family="inherit" role="img" aria-label="Línea de tiempo de las inspecciones requeridas: anual, cien horas, transpondedor y ELT">
+  <text x="240" y="24" text-anchor="middle" fill="var(--text)" font-size="15" font-weight="bold">¿Cada cuánto se inspecciona?</text>
 
-  <!-- eje de meses -->
-  <line x1="150" y1="46" x2="460" y2="46" stroke="var(--muted)" stroke-width="1"/>
-  <line x1="150" y1="42" x2="150" y2="50" stroke="var(--muted)" stroke-width="1"/>
-  <line x1="305" y1="42" x2="305" y2="50" stroke="var(--muted)" stroke-width="1"/>
-  <line x1="460" y1="42" x2="460" y2="50" stroke="var(--muted)" stroke-width="1"/>
-  <text x="150" y="38" text-anchor="middle" fill="var(--muted)" font-family="inherit" font-size="12">0</text>
-  <text x="305" y="38" text-anchor="middle" fill="var(--muted)" font-family="inherit" font-size="12">12 meses</text>
-  <text x="460" y="38" text-anchor="middle" fill="var(--muted)" font-family="inherit" font-size="12">24 meses</text>
+  <!-- eje y rejilla -->
+  <g stroke="var(--muted)" stroke-opacity="0.35" stroke-width="1">
+    <line x1="150" y1="50" x2="150" y2="246"/>
+    <line x1="227" y1="50" x2="227" y2="246"/>
+    <line x1="305" y1="50" x2="305" y2="246"/>
+    <line x1="382" y1="50" x2="382" y2="246"/>
+    <line x1="460" y1="50" x2="460" y2="246"/>
+  </g>
+  <line x1="150" y1="48" x2="460" y2="48" stroke="var(--muted)" stroke-width="1.25"/>
+  <g fill="var(--muted)" font-size="12">
+    <text x="150" y="40" text-anchor="middle">0</text>
+    <text x="305" y="40" text-anchor="middle">12 meses</text>
+    <text x="460" y="40" text-anchor="end">24 meses</text>
+  </g>
 
   <!-- ANUAL -->
-  <text x="16" y="76" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">ANUAL</text>
-  <rect x="150" y="62" width="155" height="20" rx="10" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="160" y="97" fill="var(--muted)" font-family="inherit" font-size="12">12 meses calendario · todos los aviones</text>
+  <text x="16" y="76" fill="var(--text)" font-size="13" font-weight="bold">ANUAL</text>
+  <rect x="150" y="62" width="155" height="18" rx="9" fill="var(--accent)" fill-opacity="0.18" stroke="var(--accent)" stroke-width="2"/>
+  <text x="150" y="98" fill="var(--muted)" font-size="12">12 meses calendario · todos los aviones</text>
 
   <!-- TRANSPONDEDOR -->
-  <text x="16" y="128" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">TRANSPONDEDOR</text>
-  <rect x="150" y="114" width="310" height="20" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="160" y="149" fill="var(--muted)" font-family="inherit" font-size="12">24 meses calendario para poder usarlo</text>
+  <text x="16" y="128" fill="var(--text)" font-size="13" font-weight="bold">TRANSPONDEDOR</text>
+  <rect x="150" y="114" width="310" height="18" rx="9" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <text x="150" y="150" fill="var(--muted)" font-size="12">24 meses calendario para poder usarlo</text>
 
   <!-- ELT -->
-  <text x="16" y="180" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">ELT</text>
-  <rect x="150" y="166" width="155" height="20" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="160" y="201" fill="var(--muted)" font-family="inherit" font-size="12">12 meses calendario · batería con reglas propias</text>
+  <text x="16" y="180" fill="var(--text)" font-size="13" font-weight="bold">ELT</text>
+  <rect x="150" y="166" width="155" height="18" rx="9" fill="var(--ok)" fill-opacity="0.12" stroke="var(--ok)" stroke-width="2"/>
+  <text x="150" y="202" fill="var(--muted)" font-size="12">12 meses calendario · batería con reglas propias</text>
 
   <!-- 100 HORAS -->
-  <text x="16" y="232" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">100 HORAS</text>
-  <rect x="150" y="218" width="200" height="20" rx="10" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2" stroke-dasharray="6 4"/>
-  <text x="360" y="232" fill="var(--bad)" font-family="inherit" font-size="12">se mide en horas, no meses</text>
-  <text x="160" y="253" fill="var(--muted)" font-family="inherit" font-size="12">solo si lleva personas o da instrucción por remuneración</text>
+  <text x="16" y="232" fill="var(--text)" font-size="13" font-weight="bold">100 HORAS</text>
+  <rect x="150" y="218" width="200" height="18" rx="9" fill="var(--warn)" fill-opacity="0.12" stroke="var(--warn)" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="362" y="226" fill="var(--warn)" font-size="12">se mide en horas,</text>
+  <text x="362" y="242" fill="var(--warn)" font-size="12">no en meses</text>
+  <text x="150" y="258" fill="var(--muted)" font-size="12">solo si lleva pasajeros o da instrucción por remuneración</text>
 
-  <!-- nota meses calendario -->
-  <rect x="16" y="268" width="448" height="34" rx="8" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="240" y="289" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12">«Meses calendario» = vence el ÚLTIMO día del mes: anual del 12 jul → 31 jul del año siguiente</text>
+  <!-- nota: meses calendario -->
+  <rect x="16" y="270" width="448" height="46" rx="8" fill="var(--accent)" fill-opacity="0.07" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="240" y="289" text-anchor="middle" fill="var(--text)" font-size="12">«Meses calendario» = vence el ÚLTIMO día del mes:</text>
+  <text x="240" y="307" text-anchor="middle" fill="var(--text)" font-size="12">anual firmada el 12 jul → vence el 31 jul del año siguiente</text>
 </svg>

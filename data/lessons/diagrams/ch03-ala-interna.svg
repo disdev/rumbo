@@ -1,38 +1,53 @@
-<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ala vista desde arriba con el revestimiento levantado mostrando largueros, costillas y larguerillos">
-  <!-- contorno del ala (vista superior) -->
-  <path d="M60 60 L420 80 L420 200 L60 230 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ala vista desde arriba sin revestimiento: dos largueros a lo largo, costillas perpendiculares, larguerillos punteados y una esquina de piel levantada en la punta">
+  <!-- contorno del ala (vista en planta, punta redondeada) -->
+  <path d="M64 62 L398 84 C416 86 428 96 428 108 L428 172 C428 186 416 196 398 198 L64 228 Z"
+        fill="var(--panel-2)" fill-opacity="0.45" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
 
-  <!-- largueros (spars): dos vigas a lo largo -->
-  <line x1="60" y1="95" x2="420" y2="108" stroke="var(--accent)" stroke-width="5"/>
-  <line x1="60" y1="190" x2="420" y2="172" stroke="var(--accent)" stroke-width="5"/>
+  <!-- costillas -->
+  <g stroke="var(--text)" stroke-width="2" stroke-linecap="round">
+    <line x1="100" y1="68" x2="100" y2="221"/>
+    <line x1="155" y1="72" x2="155" y2="216"/>
+    <line x1="210" y1="75" x2="210" y2="211"/>
+    <line x1="265" y1="79" x2="265" y2="206"/>
+    <line x1="320" y1="83" x2="320" y2="201"/>
+    <line x1="375" y1="86" x2="375" y2="196"/>
+  </g>
 
-  <!-- costillas (ribs): perpendiculares -->
-  <line x1="110" y1="66" x2="110" y2="226" stroke="var(--text)" stroke-width="2"/>
-  <line x1="170" y1="69" x2="170" y2="221" stroke="var(--text)" stroke-width="2"/>
-  <line x1="230" y1="72" x2="230" y2="216" stroke="var(--text)" stroke-width="2"/>
-  <line x1="290" y1="74" x2="290" y2="211" stroke="var(--text)" stroke-width="2"/>
-  <line x1="350" y1="77" x2="350" y2="206" stroke="var(--text)" stroke-width="2"/>
+  <!-- larguerillos (finos, punteados) -->
+  <g stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round">
+    <line x1="64" y1="132" x2="428" y2="136"/>
+    <line x1="64" y1="164" x2="428" y2="150"/>
+  </g>
 
-  <!-- larguerillos (stringers): líneas finas a lo largo -->
-  <line x1="60" y1="130" x2="420" y2="133" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="6 4"/>
-  <line x1="60" y1="160" x2="420" y2="152" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <!-- largueros (las vigas maestras) -->
+  <line x1="64" y1="98" x2="428" y2="114" stroke="var(--accent)" stroke-width="6" stroke-linecap="round"/>
+  <line x1="64" y1="192" x2="428" y2="164" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
 
-  <!-- revestimiento (esquina de piel levantada) -->
-  <path d="M420 80 L470 55 L470 120 L420 130 Z" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+  <!-- esquina de revestimiento levantada (enrollándose) -->
+  <path d="M428 108 C446 96 462 88 470 92 C476 96 470 104 458 110 C448 116 436 120 430 122 Z"
+        fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--ok)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M448 102 C456 98 463 96 467 96" fill="none" stroke="var(--ok)" stroke-width="1.25" stroke-linecap="round"/>
 
-  <!-- etiquetas -->
-  <line x1="240" y1="105" x2="255" y2="38" stroke="var(--muted)" stroke-width="1"/>
-  <text x="200" y="28" fill="var(--accent)" font-family="inherit" font-size="13">Largueros (spars): las vigas maestras</text>
+  <!-- líneas guía con punto en el objetivo -->
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="172" y1="40" x2="208" y2="100"/>
+    <line x1="118" y1="258" x2="153" y2="221"/>
+    <line x1="330" y1="266" x2="338" y2="158"/>
+    <line x1="442" y1="56" x2="456" y2="88"/>
+  </g>
+  <circle cx="210" cy="103" r="2.5" fill="var(--accent)"/>
+  <circle cx="155" cy="218" r="2.5" fill="var(--text)"/>
+  <circle cx="338" cy="154" r="2.5" fill="var(--muted)"/>
+  <circle cx="457" cy="91" r="2.5" fill="var(--ok)"/>
 
-  <line x1="170" y1="221" x2="150" y2="255" stroke="var(--muted)" stroke-width="1"/>
-  <text x="60" y="270" fill="var(--text)" font-family="inherit" font-size="13">Costillas (ribs): dan la forma curva</text>
-
-  <line x1="330" y1="153" x2="345" y2="250" stroke="var(--muted)" stroke-width="1"/>
-  <text x="290" y="265" fill="var(--muted)" font-family="inherit" font-size="13">Larguerillos (stringers)</text>
-
-  <line x1="452" y1="88" x2="452" y2="150" stroke="var(--muted)" stroke-width="1"/>
-  <text x="358" y="168" fill="var(--ok)" font-family="inherit" font-size="13">Revestimiento (skin)</text>
-
-  <text x="62" y="52" fill="var(--muted)" font-family="inherit" font-size="12">raíz (junto al fuselaje)</text>
-  <text x="360" y="222" fill="var(--muted)" font-family="inherit" font-size="12">punta del ala</text>
+  <g font-family="inherit">
+    <text x="60" y="30" fill="var(--accent)" font-size="13" font-weight="bold">Largueros (spars)</text>
+    <text x="185" y="30" fill="var(--muted)" font-size="12">— las vigas maestras</text>
+    <text x="300" y="48" fill="var(--ok)" font-size="13" font-weight="bold">Revestimiento (skin)</text>
+    <text x="24" y="276" fill="var(--text)" font-size="13" font-weight="bold">Costillas (ribs)</text>
+    <text x="24" y="292" fill="var(--muted)" font-size="12">dan la forma del perfil</text>
+    <text x="290" y="284" fill="var(--muted)" font-size="13">Larguerillos (stringers)</text>
+    <text x="70" y="246" fill="var(--muted)" font-size="12">raíz (junto al fuselaje)</text>
+    <text x="386" y="216" fill="var(--muted)" font-size="12">punta</text>
+  </g>
 </svg>

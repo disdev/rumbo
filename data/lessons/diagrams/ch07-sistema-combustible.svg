@@ -1,49 +1,69 @@
-<svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-  <!-- Sistema de combustible con selector y drenajes -->
-  <g stroke="var(--text)" stroke-width="2" fill="none">
-    <!-- tanques en las alas -->
-    <rect x="30" y="30" width="130" height="55" rx="8" fill="var(--panel-2)"/>
-    <rect x="300" y="30" width="130" height="55" rx="8" fill="var(--panel-2)"/>
-    <!-- venteos -->
-    <line x1="45" y1="30" x2="45" y2="16"/>
-    <line x1="415" y1="30" x2="415" y2="16"/>
-    <!-- líneas hacia el selector -->
-    <path d="M95 85 L95 140 L200 160" stroke="var(--accent)" stroke-width="2.5"/>
-    <path d="M365 85 L365 140 L260 160" stroke="var(--accent)" stroke-width="2.5"/>
-    <!-- selector -->
-    <circle cx="230" cy="170" r="26" fill="var(--panel-2)"/>
-    <line x1="230" y1="170" x2="214" y2="152" stroke="var(--accent)" stroke-width="3"/>
-    <!-- colador (gascolator) -->
-    <path d="M230 196 L230 220" stroke="var(--accent)" stroke-width="2.5"/>
-    <rect x="212" y="220" width="36" height="26" fill="var(--panel-2)"/>
-    <!-- bombas y motor -->
-    <path d="M230 246 L230 268" stroke="var(--accent)" stroke-width="2.5"/>
-    <rect x="196" y="268" width="68" height="24" rx="4" fill="var(--panel-2)"/>
-    <path d="M264 280 L320 280" stroke="var(--accent)" stroke-width="2.5"/>
-    <rect x="320" y="262" width="80" height="36" rx="6" fill="var(--panel-2)"/>
-    <!-- cebador -->
-    <path d="M196 280 L150 280" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4"/>
-    <rect x="106" y="270" width="44" height="20" rx="4" fill="var(--panel-2)" stroke="var(--muted)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 330" role="img" aria-label="Sistema de combustible: tanques, selector, colador, bombas y motor">
+  <defs>
+    <marker id="ch07-sc-ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--accent)"/></marker>
+  </defs>
+  <text x="230" y="20" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">Del tanque al motor, por gravedad</text>
+
+  <!-- tanques en las alas, con nivel de combustible -->
+  <g stroke="var(--text)" stroke-width="2">
+    <rect x="28" y="36" width="130" height="52" rx="8" fill="var(--panel-2)" fill-opacity="0.4"/>
+    <rect x="302" y="36" width="130" height="52" rx="8" fill="var(--panel-2)" fill-opacity="0.4"/>
   </g>
-  <!-- drenajes (sumps) -->
-  <g fill="var(--bad)" stroke="none">
-    <circle cx="80" cy="88" r="5"/>
-    <circle cx="350" cy="88" r="5"/>
-    <circle cx="230" cy="250" r="5"/>
+  <path d="M30,60 L156,60 L156,78 C156,82.5 152.5,86 148,86 L38,86 C33.5,86 30,82.5 30,78 Z" fill="var(--accent)" fill-opacity="0.25"/>
+  <path d="M304,60 L430,60 L430,78 C430,82.5 426.5,86 422,86 L312,86 C307.5,86 304,82.5 304,78 Z" fill="var(--accent)" fill-opacity="0.25"/>
+  <!-- venteos -->
+  <path d="M44,36 L44,24 L36,24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M416,36 L416,24 L424,24" fill="none" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- líneas hacia el selector -->
+  <g fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round">
+    <path d="M93,88 L93,128 Q93,141 105,144 L203,163" marker-end="url(#ch07-sc-ac)"/>
+    <path d="M367,88 L367,128 Q367,141 355,144 L257,163" marker-end="url(#ch07-sc-ac)"/>
   </g>
-  <g fill="var(--text)" font-size="13">
-    <text x="45" y="60">tanque IZQ</text>
-    <text x="318" y="60">tanque DER</text>
-    <text x="52" y="14" fill="var(--muted)" font-size="12">venteo</text>
-    <text x="264" y="150">selector</text>
-    <text x="264" y="166" font-size="12" fill="var(--muted)">IZQ · DER · AMBOS · OFF</text>
-    <text x="256" y="238">colador (gascolator)</text>
-    <text x="200" y="284" font-size="12">bombas</text>
-    <text x="330" y="284">MOTOR</text>
-    <text x="102" y="264" font-size="12" fill="var(--muted)">cebador (primer)</text>
-    <text x="20" y="110" fill="var(--bad)" font-size="12">drenaje</text>
-    <text x="360" y="110" fill="var(--bad)" font-size="12">drenaje</text>
-    <text x="150" y="254" fill="var(--bad)" font-size="12">drenaje</text>
+
+  <!-- selector -->
+  <circle cx="230" cy="172" r="24" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <g stroke="var(--text)" stroke-width="1.5">
+    <line x1="206" y1="172" x2="212" y2="172"/>
+    <line x1="248" y1="172" x2="254" y2="172"/>
+    <line x1="230" y1="148" x2="230" y2="154"/>
   </g>
-  <text x="30" y="312" fill="var(--bad)" font-size="13">● = puntos de drenado: ¡revisa agua en TODOS antes de volar!</text>
+  <line x1="230" y1="172" x2="215" y2="155" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="230" cy="172" r="3" fill="var(--text)"/>
+
+  <!-- colador (gascolator) -->
+  <line x1="230" y1="196" x2="230" y2="212" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch07-sc-ac)"/>
+  <rect x="212" y="214" width="36" height="30" rx="4" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <path d="M216,224 h28 M216,231 h28" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 2"/>
+
+  <!-- bombas y motor -->
+  <line x1="230" y1="244" x2="230" y2="262" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="192" y="262" width="76" height="32" rx="5" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <line x1="268" y1="278" x2="312" y2="278" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch07-sc-ac)"/>
+  <rect x="318" y="258" width="96" height="40" rx="6" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <!-- cebador (primer): directo a los cilindros -->
+  <path d="M192,278 L148,278" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <rect x="100" y="266" width="48" height="24" rx="4" fill="var(--panel-2)" fill-opacity="0.5" stroke="var(--muted)" stroke-width="1.25"/>
+
+  <!-- drenajes -->
+  <g fill="var(--bad)">
+    <circle cx="120" cy="92" r="5"/>
+    <circle cx="340" cy="92" r="5"/>
+    <circle cx="220" cy="250" r="5"/>
+  </g>
+
+  <!-- etiquetas -->
+  <g font-family="inherit" font-size="12" fill="var(--text)">
+    <text x="60" y="56">tanque IZQ</text>
+    <text x="334" y="56">tanque DER</text>
+    <text x="8" y="20" font-size="11" fill="var(--muted)">venteo</text>
+    <text x="262" y="186" font-weight="bold">selector</text>
+    <text x="262" y="201" font-size="11" fill="var(--muted)">IZQ · DER · AMBOS · OFF</text>
+    <text x="256" y="234">colador (gascolator)</text>
+    <text x="230" y="282" text-anchor="middle" font-size="11.5">bombas</text>
+    <text x="330" y="276" font-weight="bold">MOTOR</text>
+    <text x="330" y="291" font-size="11" fill="var(--muted)">carburador</text>
+    <text x="104" y="281" font-size="11" fill="var(--muted)">cebador</text>
+  </g>
+  <text x="230" y="320" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--bad)">● = punto de drenado: revisa agua y sedimento en TODOS antes de volar</text>
 </svg>

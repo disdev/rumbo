@@ -1,49 +1,80 @@
-<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carpeta con los documentos que deben estar a bordo del avión y billetera con los documentos del piloto">
-  <text x="240" y="22" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">Los papeles a bordo: el truco ARROW</text>
+<svg viewBox="0 0 500 278" xmlns="http://www.w3.org/2000/svg" font-family="inherit" role="img" aria-label="Los cinco documentos ARROW que deben estar a bordo, lo que Perú añade y los documentos del piloto">
+  <text x="250" y="22" text-anchor="middle" fill="var(--text)" font-size="15" font-weight="bold">Los papeles a bordo: el truco ARROW</text>
 
-  <!-- carpeta -->
-  <path d="M14 52 L14 244 Q14 252 22 252 L458 252 Q466 252 466 244 L466 60 Q466 52 458 52 L150 52 L136 40 L22 40 Q14 40 14 48 Z"
-        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <!-- documento A -->
+  <g>
+    <path d="M20 50 Q20 44 26 44 H84 L104 64 V138 Q104 144 98 144 H26 Q20 144 20 138 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M84 44 V64 H104 Z" fill="var(--muted)" fill-opacity="0.35" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="38" cy="66" r="11" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-width="2"/>
+    <text x="38" y="71" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="bold">A</text>
+    <g stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round">
+      <line x1="32" y1="94" x2="88" y2="94"/><line x1="32" y1="106" x2="78" y2="106"/><line x1="32" y1="118" x2="84" y2="118"/>
+    </g>
+    <text x="62" y="164" text-anchor="middle" fill="var(--text)" font-size="12">Certificado de</text>
+    <text x="62" y="179" text-anchor="middle" fill="var(--text)" font-size="12">aeronavegabilidad</text>
+  </g>
 
-  <!-- fila 1 de tarjetas -->
-  <rect x="30" y="68" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <circle cx="48" cy="86" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="48" y="91" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">A</text>
-  <text x="40" y="118" fill="var(--text)" font-family="inherit" font-size="12">Certificado de</text>
-  <text x="40" y="133" fill="var(--text)" font-family="inherit" font-size="12">aeronavegabilidad</text>
+  <!-- documento R (matrícula) -->
+  <g>
+    <path d="M112 50 Q112 44 118 44 H176 L196 64 V138 Q196 144 190 144 H118 Q112 144 112 138 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M176 44 V64 H196 Z" fill="var(--muted)" fill-opacity="0.35" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="130" cy="66" r="11" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-width="2"/>
+    <text x="130" y="71" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="bold">R</text>
+    <g stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round">
+      <line x1="124" y1="94" x2="180" y2="94"/><line x1="124" y1="106" x2="170" y2="106"/><line x1="124" y1="118" x2="176" y2="118"/>
+    </g>
+    <text x="154" y="164" text-anchor="middle" fill="var(--text)" font-size="12">Certificado de</text>
+    <text x="154" y="179" text-anchor="middle" fill="var(--text)" font-size="12">matrícula</text>
+  </g>
 
-  <rect x="174" y="68" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <circle cx="192" cy="86" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="192" y="91" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">R</text>
-  <text x="184" y="118" fill="var(--text)" font-family="inherit" font-size="12">Certificado de</text>
-  <text x="184" y="133" fill="var(--text)" font-family="inherit" font-size="12">matrícula</text>
+  <!-- documento R (radio) -->
+  <g>
+    <path d="M204 50 Q204 44 210 44 H268 L288 64 V138 Q288 144 282 144 H210 Q204 144 204 138 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M268 44 V64 H288 Z" fill="var(--muted)" fill-opacity="0.35" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="222" cy="66" r="11" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-width="2"/>
+    <text x="222" y="71" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="bold">R</text>
+    <g stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round">
+      <line x1="216" y1="94" x2="272" y2="94"/><line x1="216" y1="106" x2="262" y2="106"/><line x1="216" y1="118" x2="268" y2="118"/>
+    </g>
+    <text x="246" y="164" text-anchor="middle" fill="var(--text)" font-size="12">Permiso de radio</text>
+    <text x="246" y="179" text-anchor="middle" fill="var(--muted)" font-size="12">(internacional)</text>
+  </g>
 
-  <rect x="318" y="68" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <circle cx="336" cy="86" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="336" y="91" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">R</text>
-  <text x="328" y="118" fill="var(--text)" font-family="inherit" font-size="12">Permiso de radio</text>
-  <text x="328" y="133" fill="var(--muted)" font-family="inherit" font-size="11">(vuelos internacionales)</text>
+  <!-- documento O -->
+  <g>
+    <path d="M296 50 Q296 44 302 44 H360 L380 64 V138 Q380 144 374 144 H302 Q296 144 296 138 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M360 44 V64 H380 Z" fill="var(--muted)" fill-opacity="0.35" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="314" cy="66" r="11" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-width="2"/>
+    <text x="314" y="71" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="bold">O</text>
+    <g stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round">
+      <line x1="308" y1="94" x2="364" y2="94"/><line x1="308" y1="106" x2="354" y2="106"/><line x1="308" y1="118" x2="360" y2="118"/>
+    </g>
+    <text x="338" y="164" text-anchor="middle" fill="var(--text)" font-size="12">Manual de vuelo</text>
+    <text x="338" y="179" text-anchor="middle" fill="var(--muted)" font-size="12">(limitaciones)</text>
+  </g>
 
-  <!-- fila 2 de tarjetas -->
-  <rect x="30" y="156" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <circle cx="48" cy="174" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="48" y="179" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">O</text>
-  <text x="40" y="206" fill="var(--text)" font-family="inherit" font-size="12">Manual de vuelo</text>
-  <text x="40" y="221" fill="var(--muted)" font-family="inherit" font-size="11">(limitaciones y placards)</text>
+  <!-- documento W -->
+  <g>
+    <path d="M388 50 Q388 44 394 44 H452 L472 64 V138 Q472 144 466 144 H394 Q388 144 388 138 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M452 44 V64 H472 Z" fill="var(--muted)" fill-opacity="0.35" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="406" cy="66" r="11" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-width="2"/>
+    <text x="406" y="71" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="bold">W</text>
+    <g stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round">
+      <line x1="400" y1="94" x2="456" y2="94"/><line x1="400" y1="106" x2="446" y2="106"/><line x1="400" y1="118" x2="452" y2="118"/>
+    </g>
+    <text x="430" y="164" text-anchor="middle" fill="var(--text)" font-size="12">Peso y</text>
+    <text x="430" y="179" text-anchor="middle" fill="var(--text)" font-size="12">balance</text>
+  </g>
 
-  <rect x="174" y="156" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <circle cx="192" cy="174" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="192" y="179" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">W</text>
-  <text x="184" y="206" fill="var(--text)" font-family="inherit" font-size="12">Datos de peso</text>
-  <text x="184" y="221" fill="var(--text)" font-family="inherit" font-size="12">y balance</text>
-
-  <rect x="318" y="156" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
-  <text x="328" y="180" fill="var(--ok)" font-family="inherit" font-size="12" font-weight="bold">Perú suma:</text>
-  <text x="328" y="200" fill="var(--text)" font-family="inherit" font-size="12">libro de a bordo,</text>
-  <text x="328" y="215" fill="var(--text)" font-family="inherit" font-size="12">póliza de seguros</text>
+  <!-- lo que Perú añade -->
+  <rect x="20" y="204" width="225" height="56" rx="8" fill="var(--ok)" fill-opacity="0.08" stroke="var(--ok)" stroke-width="1.5"/>
+  <text x="34" y="228" fill="var(--ok)" font-size="12" font-weight="bold">Perú suma: <tspan fill="var(--text)" font-weight="normal">libro de a bordo,</tspan></text>
+  <text x="34" y="246" fill="var(--text)" font-size="12">póliza de seguros</text>
 
   <!-- billetera del piloto -->
-  <rect x="120" y="266" width="240" height="42" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="240" y="284" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">Y en tu bolsillo:</text>
-  <text x="240" y="300" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12">licencia apropiada + certificado médico vigente</text>
+  <rect x="285" y="194" width="46" height="16" rx="3" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="1.5"/>
+  <rect x="265" y="204" width="215" height="56" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <rect x="271" y="210" width="203" height="44" rx="7" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="372" y="228" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="bold">Y en tu bolsillo:</text>
+  <text x="372" y="246" text-anchor="middle" fill="var(--text)" font-size="12">licencia + certificado médico vigente</text>
 </svg>

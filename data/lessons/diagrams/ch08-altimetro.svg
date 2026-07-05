@@ -1,55 +1,55 @@
-<svg viewBox="0 0 510 290" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-  <circle cx="140" cy="145" r="115" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit" role="img" aria-label="Carátula de altímetro de tres agujas marcando 4,500 pies, con ventanita de Kollsman en 29.92">
+  <!-- bisel e instrumento -->
+  <circle cx="150" cy="150" r="120" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <circle cx="150" cy="150" r="110" fill="var(--panel-2)" fill-opacity="0.45" stroke="var(--muted)" stroke-width="1"/>
 
-  <!-- marcas -->
-  <g stroke="var(--text)" stroke-width="2">
-    <line x1="140" y1="45" x2="140" y2="35"/>
-    <line x1="198.8" y1="64.1" x2="204.7" y2="56.0"/>
-    <line x1="235.1" y1="114.1" x2="244.6" y2="111.0"/>
-    <line x1="235.1" y1="175.9" x2="244.6" y2="179.0"/>
-    <line x1="198.8" y1="225.9" x2="204.7" y2="234.0"/>
-    <line x1="140" y1="245" x2="140" y2="255"/>
-    <line x1="81.2" y1="225.9" x2="75.3" y2="234.0"/>
-    <line x1="44.9" y1="175.9" x2="35.4" y2="179.0"/>
-    <line x1="44.9" y1="114.1" x2="35.4" y2="111.0"/>
-    <line x1="81.2" y1="64.1" x2="75.3" y2="56.0"/>
-  </g>
+  <!-- marcas menores (20 ft) -->
+  <path stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round" fill="none" d="M163.8 40.9L162.9 47.8M177.4 43.5L175.6 50.2M190.5 47.7L187.9 54.2M203.0 53.6L199.6 59.7M225.3 69.8L220.5 74.9M234.8 79.9L229.4 84.3M242.9 91.1L237.0 94.8M249.5 103.2L243.2 106.1M258.1 129.4L251.2 130.7M259.8 143.1L252.8 143.5M259.8 156.9L252.8 156.5M258.1 170.6L251.2 169.3M249.5 196.8L243.2 193.9M242.9 208.9L237.0 205.2M234.8 220.1L229.4 215.7M225.3 230.2L220.5 225.1M203.0 246.4L199.6 240.3M190.5 252.3L187.9 245.8M177.4 256.5L175.6 249.8M163.8 259.1L162.9 252.2M136.2 259.1L137.1 252.2M122.6 256.5L124.4 249.8M109.5 252.3L112.1 245.8M97.0 246.4L100.4 240.3M74.7 230.2L79.5 225.1M65.2 220.1L70.6 215.7M57.1 208.9L63.0 205.2M50.5 196.8L56.8 193.9M41.9 170.6L48.8 169.3M40.2 156.9L47.2 156.5M40.2 143.1L47.2 143.5M41.9 129.4L48.8 130.7M50.5 103.2L56.8 106.1M57.1 91.1L63.0 94.8M65.2 79.9L70.6 84.3M74.7 69.8L79.5 74.9M97.0 53.6L100.4 59.7M109.5 47.7L112.1 54.2M122.6 43.5L124.4 50.2M136.2 40.9L137.1 47.8"/>
 
-  <!-- números -->
-  <g fill="var(--text)" font-size="15" text-anchor="middle">
-    <text x="140" y="62">0</text>
-    <text x="191.7" y="78.8">1</text>
-    <text x="223.7" y="122.8">2</text>
-    <text x="223.7" y="177.2">3</text>
-    <text x="191.7" y="221.2">4</text>
-    <text x="140" y="238">5</text>
-    <text x="88.3" y="221.2">6</text>
-    <text x="56.3" y="177.2">7</text>
-    <text x="56.3" y="122.8">8</text>
-    <text x="88.3" y="78.8">9</text>
+  <!-- marcas mayores (números) -->
+  <path stroke="var(--text)" stroke-width="2" stroke-linecap="round" fill="none" d="M150 40L150 54M214.7 61.0L206.4 72.3M254.6 116.0L241.3 120.3M254.6 184.0L241.3 179.7M214.7 239.0L206.4 227.7M150 260L150 246M85.3 239.0L93.6 227.7M45.4 184.0L58.7 179.7M45.4 116.0L58.7 120.3M85.3 61.0L93.6 72.3"/>
+
+  <g fill="var(--text)" font-size="15" font-weight="bold" text-anchor="middle">
+    <text x="150" y="75">0</text>
+    <text x="197.0" y="90.3">1</text>
+    <text x="226.1" y="130.3">2</text>
+    <text x="226.1" y="179.7">3</text>
+    <text x="197.0" y="219.7">4</text>
+    <text x="150" y="235">5</text>
+    <text x="103.0" y="219.7">6</text>
+    <text x="73.9" y="179.7">7</text>
+    <text x="73.9" y="130.3">8</text>
+    <text x="103.0" y="90.3">9</text>
   </g>
+  <text x="150" y="108" font-size="12" fill="var(--muted)" text-anchor="middle">ALT</text>
 
   <!-- ventanita de Kollsman -->
-  <rect x="152" y="134" width="46" height="22" rx="3" fill="none" stroke="var(--muted)"/>
-  <text x="175" y="150" font-size="13" fill="var(--accent)" text-anchor="middle">29.92</text>
+  <rect x="196" y="139" width="46" height="22" rx="3" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25"/>
+  <text x="219" y="155" font-size="13" fill="var(--accent)" text-anchor="middle">29.92</text>
 
-  <!-- aguja fina: decenas de miles (0.45) -->
-  <line x1="140" y1="145" x2="165.7" y2="56.7" stroke="var(--muted)" stroke-width="2"/>
-  <polygon points="165.7,56.7 158.7,64.5 170.3,67.9" fill="var(--muted)"/>
-  <!-- aguja corta y gruesa: miles (4.5) -->
-  <line x1="140" y1="145" x2="156.1" y2="194.4" stroke="var(--text)" stroke-width="8" stroke-linecap="round"/>
+  <!-- aguja fina con triángulo: decenas de miles (0.45) -->
+  <line x1="150" y1="150" x2="176.8" y2="57.8" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="180.1,46.3 181.1,59.1 172.5,56.6" fill="var(--text)"/>
+  <!-- aguja gruesa y corta: miles (4.5) -->
+  <polygon points="168.5,207.1 158.8,193.4 145.2,151.5 154.8,148.5 168.4,190.3" fill="var(--text)" stroke="var(--text)" stroke-width="1" stroke-linejoin="round"/>
   <!-- aguja larga: centenas (5) -->
-  <line x1="140" y1="145" x2="140" y2="230" stroke="var(--text)" stroke-width="3.5"/>
-  <circle cx="140" cy="145" r="6" fill="var(--text)"/>
+  <line x1="150" y1="130" x2="150" y2="236" stroke="var(--text)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="150,248 145,235 155,235" fill="var(--text)"/>
+  <circle cx="150" cy="150" r="7" fill="var(--text)"/>
+  <circle cx="150" cy="150" r="2.5" fill="var(--panel-2)"/>
+
+  <!-- línea guía a la ventanita -->
+  <path d="M284 191 L250 158" stroke="var(--muted)" stroke-width="1" fill="none"/>
+  <circle cx="248" cy="156" r="2.5" fill="var(--muted)"/>
 
   <!-- leyenda -->
-  <text x="272" y="58" font-size="15" font-weight="bold" fill="var(--text)">Lectura: 4,500 ft</text>
-  <text x="272" y="94" font-size="12" fill="var(--text)">aguja larga → centenas (500)</text>
-  <text x="272" y="120" font-size="12" fill="var(--text)">aguja corta y gruesa → miles (4,000)</text>
-  <text x="272" y="146" font-size="12" fill="var(--text)">aguja fina con triángulo →</text>
-  <text x="286" y="164" font-size="12" fill="var(--text)">decenas de miles (0)</text>
-  <text x="272" y="196" font-size="12" fill="var(--accent)">ventanita de Kollsman: aquí pones</text>
-  <text x="286" y="214" font-size="12" fill="var(--accent)">el ajuste de altímetro (29.92)</text>
-  <text x="272" y="248" font-size="12" fill="var(--muted)">Lee de la más lenta a la más rápida:</text>
-  <text x="286" y="266" font-size="12" fill="var(--muted)">decenas de miles → miles → centenas</text>
+  <text x="286" y="54" font-size="15" font-weight="bold" fill="var(--text)">Lectura: 4,500 ft</text>
+  <text x="286" y="86" font-size="12" fill="var(--text)">aguja larga → centenas (500)</text>
+  <text x="286" y="110" font-size="12" fill="var(--text)">aguja gruesa y corta → miles (4,000)</text>
+  <text x="286" y="134" font-size="12" fill="var(--text)">aguja fina con triángulo →</text>
+  <text x="300" y="150" font-size="12" fill="var(--text)">decenas de miles (0)</text>
+  <text x="290" y="204" font-size="12" fill="var(--accent)">ventanita de Kollsman: aquí</text>
+  <text x="290" y="220" font-size="12" fill="var(--accent)">pones el ajuste de altímetro</text>
+  <text x="286" y="252" font-size="12" fill="var(--muted)">Lee de la más lenta a la más rápida:</text>
+  <text x="300" y="268" font-size="12" fill="var(--muted)">decenas de miles → miles → centenas</text>
 </svg>

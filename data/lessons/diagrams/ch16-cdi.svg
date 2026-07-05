@@ -1,47 +1,103 @@
-<svg viewBox="0 0 480 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Indicador VOR con OBS, aguja CDI desviada a la derecha y bandera TO">
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Indicador CDI con OBS en 090, aguja desviada dos puntos a la derecha y bandera TO">
+  <text x="16" y="26" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">Leer el CDI</text>
+
   <!-- caja del instrumento -->
-  <circle cx="150" cy="160" r="115" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
-
-  <!-- curso seleccionado arriba -->
-  <path d="M150 55 L143 72 L157 72 Z" fill="var(--text)"/>
-  <text x="132" y="94" fill="var(--text)" font-family="inherit" font-size="16" font-weight="bold">090</text>
-  <line x1="150" y1="278" x2="150" y2="262" stroke="var(--muted)" stroke-width="2"/>
-
-  <!-- puntos de desviación -->
-  <g fill="none" stroke="var(--muted)" stroke-width="1.5">
-    <circle cx="110" cy="160" r="5"/>
-    <circle cx="130" cy="160" r="5"/>
-    <circle cx="170" cy="160" r="5"/>
-    <circle cx="190" cy="160" r="5"/>
+  <circle cx="150" cy="158" r="118" fill="var(--panel-2)" fill-opacity="0.35" stroke="var(--text)" stroke-width="1.5"/>
+  <circle cx="150" cy="158" r="110" fill="none" stroke="var(--muted)" stroke-width="0.75"/>
+  <g stroke-linecap="round">
+    <line x1="150" y1="48" x2="150" y2="60" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="169.1" y1="49.7" x2="168.1" y2="55.6" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="187.6" y1="54.6" x2="185.6" y2="60.3" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="205" y1="62.7" x2="199" y2="73.1" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="220.7" y1="73.7" x2="216.8" y2="78.3" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="234.3" y1="87.3" x2="229.7" y2="91.2" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="245.3" y1="103" x2="234.9" y2="109" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="253.4" y1="120.4" x2="247.7" y2="122.4" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="258.3" y1="138.9" x2="252.4" y2="139.9" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="260" y1="158" x2="248" y2="158" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="258.3" y1="177.1" x2="252.4" y2="176.1" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="253.4" y1="195.6" x2="247.7" y2="193.6" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="245.3" y1="213" x2="234.9" y2="207" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="234.3" y1="228.7" x2="229.7" y2="224.8" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="220.7" y1="242.3" x2="216.8" y2="237.7" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="205" y1="253.3" x2="199" y2="242.9" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="187.6" y1="261.4" x2="185.6" y2="255.7" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="169.1" y1="266.3" x2="168.1" y2="260.4" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="150" y1="268" x2="150" y2="256" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="130.9" y1="266.3" x2="131.9" y2="260.4" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="112.4" y1="261.4" x2="114.4" y2="255.7" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="95" y1="253.3" x2="101" y2="242.9" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="79.3" y1="242.3" x2="83.2" y2="237.7" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="65.7" y1="228.7" x2="70.3" y2="224.8" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="54.7" y1="213" x2="65.1" y2="207" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="46.6" y1="195.6" x2="52.3" y2="193.6" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="41.7" y1="177.1" x2="47.6" y2="176.1" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="40" y1="158" x2="52" y2="158" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="41.7" y1="138.9" x2="47.6" y2="139.9" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="46.6" y1="120.4" x2="52.3" y2="122.4" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="54.7" y1="103" x2="65.1" y2="109" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="65.7" y1="87.3" x2="70.3" y2="91.2" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="79.3" y1="73.7" x2="83.2" y2="78.3" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="95" y1="62.7" x2="101" y2="73.1" stroke="var(--text)" stroke-width="1.4"/>
+    <line x1="112.4" y1="54.6" x2="114.4" y2="60.3" stroke="var(--muted)" stroke-width="0.9"/>
+    <line x1="130.9" y1="49.7" x2="131.9" y2="55.6" stroke="var(--muted)" stroke-width="0.9"/>
+    
+    <text x="150" y="73.5" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">36</text>
+    <text x="194" y="85.3" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">3</text>
+    <text x="226.2" y="117.5" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">6</text>
+    <text x="238" y="161.5" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">9</text>
+    <text x="226.2" y="205.5" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">12</text>
+    <text x="194" y="237.7" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">15</text>
+    <text x="150" y="249.5" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">18</text>
+    <text x="106" y="237.7" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">21</text>
+    <text x="73.8" y="205.5" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">24</text>
+    <text x="62" y="161.5" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">27</text>
+    <text x="73.8" y="117.5" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">30</text>
+    <text x="106" y="85.3" fill="var(--muted)" font-family="inherit" font-size="9" text-anchor="middle">33</text>
+    
   </g>
-  <line x1="150" y1="150" x2="150" y2="170" stroke="var(--muted)" stroke-width="2"/>
 
-  <!-- aguja CDI desviada 2 puntos a la derecha -->
-  <line x1="190" y1="105" x2="190" y2="215" stroke="var(--accent)" stroke-width="4"/>
+  <!-- indice OBS arriba (triangulo) + lectura 090 -->
+  <path d="M150 38 l-7 -12 l14 0 Z" fill="var(--accent)"/>
+  <rect x="128" y="-4" width="44" height="22" rx="4" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1"/>
+  <text x="150" y="12" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold" text-anchor="middle">090</text>
 
-  <!-- bandera TO -->
-  <path d="M150 196 L142 210 L158 210 Z" fill="var(--ok)"/>
-  <text x="163" y="210" fill="var(--ok)" font-family="inherit" font-size="12" font-weight="bold">TO / HACIA</text>
+  <!-- puntos de desviacion (5 dots: -4 -2 0 +2 +4) -->
+  <g fill="none" stroke="var(--muted)" stroke-width="1.25">
+    <circle cx="90" cy="158" r="5"/>
+    <circle cx="120" cy="158" r="5"/>
+    <circle cx="180" cy="158" r="5"/>
+    <circle cx="210" cy="158" r="5"/>
+  </g>
+  <circle cx="150" cy="158" r="2.5" fill="var(--text)"/>
+
+  <!-- aguja CDI desviada 2 puntos a la derecha (barra vertical corrida +30 px) -->
+  <line x1="180" y1="96" x2="180" y2="220" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- bandera TO (triangulo apuntando arriba) -->
+  <path d="M150 200 l-8 14 l16 0 Z" fill="var(--ok)"/>
+  <text x="150" y="236" fill="var(--ok)" font-family="inherit" font-size="11" font-weight="bold" text-anchor="middle">TO</text>
 
   <!-- perilla OBS -->
-  <circle cx="70" cy="248" r="16" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <line x1="70" y1="236" x2="70" y2="248" stroke="var(--text)" stroke-width="2"/>
-  <text x="30" y="288" fill="var(--text)" font-family="inherit" font-size="12">OBS: gira para</text>
-  <text x="30" y="302" fill="var(--muted)" font-family="inherit" font-size="12">elegir el curso</text>
+  <circle cx="58" cy="254" r="15" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="58" y1="242" x2="58" y2="254" stroke="var(--text)" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="58" y="284" fill="var(--muted)" font-family="inherit" font-size="10" text-anchor="middle">OBS</text>
 
   <!-- anotaciones -->
-  <line x1="190" y1="110" x2="300" y2="80" stroke="var(--muted)" stroke-width="1"/>
-  <text x="300" y="62" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">Aguja a la derecha:</text>
-  <text x="300" y="78" fill="var(--text)" font-family="inherit" font-size="13">el curso está a tu</text>
-  <text x="300" y="94" fill="var(--text)" font-family="inherit" font-size="13">derecha — vuela</text>
-  <text x="300" y="110" fill="var(--text)" font-family="inherit" font-size="13">hacia la aguja</text>
+  <line x1="184" y1="100" x2="300" y2="70" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="184" cy="100" r="2.5" fill="var(--muted)"/>
+  <text x="306" y="62" fill="var(--accent)" font-family="inherit" font-size="12" font-weight="bold">Aguja a la derecha</text>
+  <text x="306" y="77" fill="var(--text)" font-family="inherit" font-size="12">el curso esta a tu derecha:</text>
+  <text x="306" y="92" fill="var(--text)" font-family="inherit" font-size="12">vuela HACIA la aguja.</text>
 
-  <text x="300" y="150" fill="var(--text)" font-family="inherit" font-size="13">Cada punto ≈ 2°</text>
-  <text x="300" y="166" fill="var(--muted)" font-family="inherit" font-size="12">aquí: ~4° fuera del curso</text>
+  <text x="306" y="122" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">Cada punto ≈ 2 grados</text>
+  <text x="306" y="137" fill="var(--muted)" font-family="inherit" font-size="11">dos puntos ≈ 4 grados fuera</text>
 
-  <text x="300" y="206" fill="var(--ok)" font-family="inherit" font-size="13">HACIA (TO): el curso 090</text>
-  <text x="300" y="222" fill="var(--muted)" font-family="inherit" font-size="12">te acerca a la estación</text>
-  <text x="300" y="246" fill="var(--muted)" font-family="inherit" font-size="12">La aguja NO depende de</text>
-  <text x="300" y="262" fill="var(--muted)" font-family="inherit" font-size="12">hacia dónde apunta tu nariz:</text>
-  <text x="300" y="278" fill="var(--muted)" font-family="inherit" font-size="12">solo de dónde ESTÁS.</text>
+  <text x="306" y="168" fill="var(--ok)" font-family="inherit" font-size="12" font-weight="bold">Bandera TO</text>
+  <text x="306" y="183" fill="var(--muted)" font-family="inherit" font-size="11">el curso 090 te lleva HACIA</text>
+  <text x="306" y="196" fill="var(--muted)" font-family="inherit" font-size="11">la estacion.</text>
+
+  <text x="306" y="226" fill="var(--muted)" font-family="inherit" font-size="11">La aguja no depende de hacia</text>
+  <text x="306" y="239" fill="var(--muted)" font-family="inherit" font-size="11">donde apunta tu nariz: solo</text>
+  <text x="306" y="252" fill="var(--muted)" font-family="inherit" font-size="11">de donde ESTAS.</text>
 </svg>

@@ -1,29 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 270" role="img" aria-label="Curva de sustentación contra ángulo de ataque con la pérdida marcada">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" font-family="inherit" role="img" aria-label="Curva de sustentación contra ángulo de ataque: crece hasta el ángulo crítico y luego cae en pérdida">
+  <defs>
+    <marker id="ch04-clcurve-arrow" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--text)"/>
+    </marker>
+  </defs>
+
+  <!-- zona de pérdida -->
+  <rect x="333" y="44" width="79" height="200" fill="var(--bad)" fill-opacity="0.08"/>
+
+  <!-- rejilla sutil -->
+  <g stroke="var(--muted)" stroke-width="0.75" stroke-opacity="0.4">
+    <line x1="64" y1="194" x2="412" y2="194"/>
+    <line x1="64" y1="144" x2="412" y2="144"/>
+    <line x1="64" y1="94" x2="412" y2="94"/>
+  </g>
+
   <!-- ejes -->
-  <line x1="60" y1="220" x2="415" y2="220" stroke="var(--text)" stroke-width="2"/>
-  <line x1="60" y1="220" x2="60" y2="30" stroke="var(--text)" stroke-width="2"/>
-  <polygon points="415,220 400,213 400,227" fill="var(--text)"/>
-  <polygon points="60,30 53,45 67,45" fill="var(--text)"/>
-  <!-- marcas eje X: 0,5,10,15,20 grados -->
-  <line x1="60" y1="220" x2="60" y2="226" stroke="var(--text)" stroke-width="1.5"/>
-  <line x1="140" y1="220" x2="140" y2="226" stroke="var(--text)" stroke-width="1.5"/>
-  <line x1="220" y1="220" x2="220" y2="226" stroke="var(--text)" stroke-width="1.5"/>
-  <line x1="300" y1="220" x2="300" y2="226" stroke="var(--text)" stroke-width="1.5"/>
-  <line x1="380" y1="220" x2="380" y2="226" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="60" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">0°</text>
-  <text x="140" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">5°</text>
-  <text x="220" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">10°</text>
-  <text x="300" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">15°</text>
-  <text x="380" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">20°</text>
-  <text x="240" y="262" font-family="inherit" font-size="13" fill="var(--text)" text-anchor="middle">ángulo de ataque</text>
-  <text x="28" y="128" font-family="inherit" font-size="13" fill="var(--text)" transform="rotate(-90 28 128)" text-anchor="middle">sustentación</text>
-  <!-- curva de sustentación -->
-  <path d="M60 210 C 160 185 250 140 332 62 C 340 55 348 66 358 92 C 366 112 374 132 384 150"
-        fill="none" stroke="var(--ok)" stroke-width="3"/>
-  <!-- ángulo crítico -->
-  <line x1="332" y1="62" x2="332" y2="220" stroke="var(--bad)" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <circle cx="332" cy="62" r="5" fill="var(--bad)"/>
-  <text x="326" y="42" font-family="inherit" font-size="13" fill="var(--bad)" text-anchor="end">ángulo crítico (~15°–20°)</text>
-  <text x="345" y="180" font-family="inherit" font-size="13" fill="var(--bad)">pérdida</text>
-  <text x="345" y="196" font-family="inherit" font-size="13" fill="var(--bad)">(stall)</text>
+  <g stroke="var(--text)" stroke-width="1.5" stroke-linecap="round">
+    <line x1="64" y1="244" x2="418" y2="244" marker-end="url(#ch04-clcurve-arrow)"/>
+    <line x1="64" y1="244" x2="64" y2="46" marker-end="url(#ch04-clcurve-arrow)"/>
+    <line x1="148" y1="244" x2="148" y2="249"/>
+    <line x1="232" y1="244" x2="232" y2="249"/>
+    <line x1="316" y1="244" x2="316" y2="249"/>
+    <line x1="400" y1="244" x2="400" y2="249"/>
+  </g>
+  <g font-size="12" fill="var(--muted)" text-anchor="middle">
+    <text x="64" y="264">0°</text><text x="148" y="264">5°</text><text x="232" y="264">10°</text>
+    <text x="316" y="264">15°</text><text x="400" y="264">20°</text>
+  </g>
+  <text x="242" y="286" font-size="13" fill="var(--text)" text-anchor="middle">ángulo de ataque</text>
+  <text x="26" y="145" font-size="13" fill="var(--text)" text-anchor="middle" transform="rotate(-90 26 145)">sustentación (CL)</text>
+
+  <!-- CL máximo -->
+  <line x1="64" y1="79" x2="333" y2="79" stroke="var(--ok)" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="70" y="68" font-size="12" fill="var(--ok)">CL máx</text>
+
+  <!-- la curva de sustentación -->
+  <path d="M64 236 C 150 208 240 152 316 88 C 324 81 330 78 336 80 C 346 84 354 102 362 124 C 370 146 380 164 392 178"
+        fill="none" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- perfiles en miniatura: el ángulo va subiendo -->
+  <g stroke="var(--text)" stroke-width="1.25" fill="var(--panel-2)" stroke-linejoin="round">
+    <g transform="translate(120 196) rotate(-3)">
+      <path d="M0 0 C 1 -4 8 -8 16 -8.5 C 24 -9 31 -6 34 -2 C 27 0.5 12 1.5 0 0 Z"/>
+    </g>
+    <g transform="translate(246 132) rotate(-12)">
+      <path d="M0 0 C 1 -4 8 -8 16 -8.5 C 24 -9 31 -6 34 -2 C 27 0.5 12 1.5 0 0 Z"/>
+    </g>
+    <g transform="translate(366 62) rotate(-24)">
+      <path d="M0 0 C 1 -4 8 -8 16 -8.5 C 24 -9 31 -6 34 -2 C 27 0.5 12 1.5 0 0 Z"/>
+      <path d="M12 -11 q 4 -5 9 -2 q 5 3 10 -2" fill="none" stroke="var(--bad)" stroke-width="1" stroke-linecap="round"/>
+      <path d="M18 -16 q 5 -5 10 -2 q 5 3 10 -3" fill="none" stroke="var(--bad)" stroke-width="1" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ángulo crítico y pérdida -->
+  <line x1="333" y1="82" x2="333" y2="244" stroke="var(--bad)" stroke-width="1.25" stroke-dasharray="5 4"/>
+  <circle cx="333" cy="79" r="4" fill="var(--bad)"/>
+  <text x="326" y="38" font-size="13" fill="var(--bad)" text-anchor="end" font-weight="bold">ángulo crítico (~15°–20°)</text>
+  <text x="374" y="208" font-size="13" fill="var(--bad)" text-anchor="middle" font-weight="bold">pérdida</text>
+  <text x="374" y="224" font-size="12" fill="var(--bad)" text-anchor="middle">(stall)</text>
 </svg>

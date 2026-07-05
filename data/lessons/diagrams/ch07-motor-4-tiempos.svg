@@ -1,63 +1,84 @@
-<svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-  <!-- Cuatro tiempos del motor recíproco -->
-  <g stroke="var(--text)" stroke-width="2" fill="none">
-    <!-- Tiempo 1: Admisión -->
-    <g transform="translate(20,30)">
-      <rect x="20" y="30" width="90" height="110" fill="var(--panel-2)"/>
-      <rect x="28" y="95" width="74" height="34" fill="var(--muted)" stroke="var(--text)"/>
-      <line x1="65" y1="129" x2="65" y2="170"/>
-      <circle cx="65" cy="178" r="10"/>
-      <!-- válvula admisión abierta -->
-      <line x1="38" y1="12" x2="38" y2="34" stroke="var(--ok)" stroke-width="3"/>
-      <path d="M10 8 L34 22" stroke="var(--ok)" stroke-width="2" marker-end="none"/>
-      <path d="M28 16 L34 22 L26 24" stroke="var(--ok)" fill="none"/>
-      <line x1="92" y1="12" x2="92" y2="26" stroke="var(--muted)" stroke-width="3"/>
-      <path d="M65 50 L65 78 M60 70 L65 78 L70 70" stroke="var(--accent)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 268" role="img" aria-label="Los cuatro tiempos del motor de pistón">
+  <defs>
+    <marker id="ch07-mt-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ok)"/></marker>
+    <marker id="ch07-mt-mu" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--muted)"/></marker>
+    <marker id="ch07-mt-ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--accent)"/></marker>
+    <marker id="ch07-mt-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--bad)"/></marker>
+
+    <!-- cilindro con aletas de refrigeración, culata y bujía -->
+    <g id="ch07-mt-cyl">
+      <rect x="70" y="-2" width="12" height="9" rx="2" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.25"/>
+      <line x1="76" y1="7" x2="76" y2="12" stroke="var(--text)" stroke-width="1.25"/>
+      <path d="M36,34 C36,16 50,8 76,8 C102,8 116,16 116,34" fill="var(--panel-2)" fill-opacity="0.35" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="36" y1="34" x2="36" y2="142" stroke="var(--text)" stroke-width="2"/>
+      <line x1="116" y1="34" x2="116" y2="142" stroke="var(--text)" stroke-width="2"/>
+      <path d="M26,50 h10 M26,64 h10 M26,78 h10 M26,92 h10 M116,50 h10 M116,64 h10 M116,78 h10 M116,92 h10" stroke="var(--text)" stroke-width="1.25" opacity="0.55"/>
+      <circle cx="76" cy="168" r="20" fill="none" stroke="var(--text)" stroke-width="2"/>
     </g>
-    <!-- Tiempo 2: Compresión -->
-    <g transform="translate(185,30)">
-      <rect x="20" y="30" width="90" height="110" fill="var(--panel-2)"/>
-      <rect x="28" y="42" width="74" height="34" fill="var(--muted)" stroke="var(--text)"/>
-      <line x1="65" y1="76" x2="65" y2="170"/>
-      <circle cx="65" cy="178" r="10"/>
-      <line x1="38" y1="12" x2="38" y2="26" stroke="var(--muted)" stroke-width="3"/>
-      <line x1="92" y1="12" x2="92" y2="26" stroke="var(--muted)" stroke-width="3"/>
-      <path d="M65 68 L65 50 M60 58 L65 50 L70 58" stroke="var(--accent)"/>
-    </g>
-    <!-- Tiempo 3: Potencia -->
-    <g transform="translate(350,30)">
-      <rect x="20" y="30" width="90" height="110" fill="var(--panel-2)"/>
-      <rect x="28" y="80" width="74" height="34" fill="var(--muted)" stroke="var(--text)"/>
-      <line x1="65" y1="114" x2="65" y2="170"/>
-      <circle cx="65" cy="178" r="10"/>
-      <line x1="38" y1="12" x2="38" y2="26" stroke="var(--muted)" stroke-width="3"/>
-      <line x1="92" y1="12" x2="92" y2="26" stroke="var(--muted)" stroke-width="3"/>
-      <!-- chispa -->
-      <path d="M65 30 L58 44 L68 42 L60 58" stroke="var(--bad)" stroke-width="2.5" fill="none"/>
-      <path d="M65 62 L65 76 M60 68 L65 76 L70 68" stroke="var(--bad)"/>
-    </g>
-    <!-- Tiempo 4: Escape -->
-    <g transform="translate(515,30)">
-      <rect x="20" y="30" width="90" height="110" fill="var(--panel-2)"/>
-      <rect x="28" y="46" width="74" height="34" fill="var(--muted)" stroke="var(--text)"/>
-      <line x1="65" y1="80" x2="65" y2="170"/>
-      <circle cx="65" cy="178" r="10"/>
-      <line x1="38" y1="12" x2="38" y2="26" stroke="var(--muted)" stroke-width="3"/>
-      <!-- válvula escape abierta -->
-      <line x1="92" y1="12" x2="92" y2="34" stroke="var(--bad)" stroke-width="3"/>
-      <path d="M96 20 L118 8 M112 8 L118 8 L116 14" stroke="var(--bad)" fill="none"/>
-    </g>
+  </defs>
+
+  <!-- 1 · ADMISIÓN -->
+  <g transform="translate(14,40)" stroke-linecap="round">
+    <use href="#ch07-mt-cyl"/>
+    <rect x="40" y="78" width="72" height="24" rx="3" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+    <path d="M42,84 h68 M42,89 h68" stroke="var(--text)" stroke-width="1" opacity="0.4"/>
+    <line x1="76" y1="102" x2="90" y2="160" stroke="var(--text)" stroke-width="2"/>
+    <circle cx="90" cy="160" r="4" fill="var(--text)"/>
+    <path d="M56,4 L56,22 M48,25 L64,25" stroke="var(--ok)" stroke-width="2.5"/>
+    <path d="M96,2 L96,11 M87,13 L105,13" stroke="var(--text)" stroke-width="2.5" opacity="0.75"/>
+    <path d="M28,-8 C40,-4 48,4 54,15" fill="none" stroke="var(--ok)" stroke-width="2" marker-end="url(#ch07-mt-ok)"/>
+    <line x1="48" y1="46" x2="48" y2="70" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ch07-mt-mu)"/>
   </g>
-  <g fill="var(--text)" font-size="14" text-anchor="middle">
-    <text x="85" y="238">1. Admisión</text>
-    <text x="250" y="238">2. Compresión</text>
-    <text x="415" y="238">3. Potencia</text>
-    <text x="580" y="238">4. Escape</text>
+
+  <!-- 2 · COMPRESIÓN -->
+  <g transform="translate(182,40)" stroke-linecap="round">
+    <use href="#ch07-mt-cyl"/>
+    <rect x="40" y="46" width="72" height="24" rx="3" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+    <path d="M42,52 h68 M42,57 h68" stroke="var(--text)" stroke-width="1" opacity="0.4"/>
+    <line x1="76" y1="70" x2="76" y2="148" stroke="var(--text)" stroke-width="2"/>
+    <circle cx="76" cy="148" r="4" fill="var(--text)"/>
+    <path d="M56,2 L56,11 M47,13 L65,13 M96,2 L96,11 M87,13 L105,13" stroke="var(--text)" stroke-width="2.5" opacity="0.75"/>
+    <path d="M58,32 L76,40 L94,32" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+    <line x1="48" y1="116" x2="48" y2="88" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ch07-mt-ac)"/>
   </g>
-  <g fill="var(--muted)" font-size="12" text-anchor="middle">
-    <text x="85" y="18">entra mezcla</text>
-    <text x="250" y="18">se aprieta</text>
-    <text x="415" y="18">¡chispa!</text>
-    <text x="580" y="18">salen gases</text>
+
+  <!-- 3 · POTENCIA -->
+  <g transform="translate(350,40)" stroke-linecap="round">
+    <use href="#ch07-mt-cyl"/>
+    <rect x="40" y="80" width="72" height="24" rx="3" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+    <path d="M42,86 h68 M42,91 h68" stroke="var(--text)" stroke-width="1" opacity="0.4"/>
+    <line x1="76" y1="104" x2="90" y2="160" stroke="var(--text)" stroke-width="2"/>
+    <circle cx="90" cy="160" r="4" fill="var(--text)"/>
+    <path d="M56,2 L56,11 M47,13 L65,13 M96,2 L96,11 M87,13 L105,13" stroke="var(--text)" stroke-width="2.5" opacity="0.75"/>
+    <path d="M76,14 L69,28 L79,26 L71,42" fill="none" stroke="var(--warn)" stroke-width="2.5" stroke-linejoin="round"/>
+    <line x1="88" y1="42" x2="88" y2="74" stroke="var(--accent)" stroke-width="3" marker-end="url(#ch07-mt-ac)"/>
   </g>
+
+  <!-- 4 · ESCAPE -->
+  <g transform="translate(518,40)" stroke-linecap="round">
+    <use href="#ch07-mt-cyl"/>
+    <rect x="40" y="64" width="72" height="24" rx="3" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+    <path d="M42,70 h68 M42,75 h68" stroke="var(--text)" stroke-width="1" opacity="0.4"/>
+    <line x1="76" y1="88" x2="62" y2="158" stroke="var(--text)" stroke-width="2"/>
+    <circle cx="62" cy="158" r="4" fill="var(--text)"/>
+    <path d="M56,2 L56,11 M47,13 L65,13" stroke="var(--text)" stroke-width="2.5" opacity="0.75"/>
+    <path d="M96,4 L96,22 M88,25 L104,25" stroke="var(--bad)" stroke-width="2.5"/>
+    <path d="M98,14 C106,4 114,-3 126,-8" fill="none" stroke="var(--bad)" stroke-width="2" marker-end="url(#ch07-mt-bad)"/>
+    <line x1="48" y1="58" x2="48" y2="38" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ch07-mt-mu)"/>
+  </g>
+
+  <!-- rótulos -->
+  <g font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">
+    <text x="90" y="22">entra mezcla fresca</text>
+    <text x="258" y="22">la mezcla se aprieta</text>
+    <text x="426" y="22">¡chispa! el gas empuja</text>
+    <text x="594" y="22">salen los gases</text>
+  </g>
+  <g font-family="inherit" font-size="14" font-weight="bold" fill="var(--text)" text-anchor="middle">
+    <text x="90" y="248">1 · Admisión</text>
+    <text x="258" y="248">2 · Compresión</text>
+    <text x="426" y="248" fill="var(--accent)">3 · Potencia</text>
+    <text x="594" y="248">4 · Escape</text>
+  </g>
+  <text x="340" y="264" text-anchor="middle" font-family="inherit" font-size="11.5" fill="var(--muted)">Solo el tercer tiempo produce trabajo · el cigüeñal da 2 vueltas por ciclo completo</text>
 </svg>

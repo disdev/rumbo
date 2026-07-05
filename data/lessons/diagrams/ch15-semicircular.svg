@@ -1,30 +1,48 @@
-<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Regla semicircular de altitudes VFR: rumbos 000 a 179 vuelan impares más 500 pies, rumbos 180 a 359 vuelan pares más 500 pies">
-  <!-- rosa de rumbos -->
-  <circle cx="220" cy="150" r="105" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <line x1="220" y1="45" x2="220" y2="255" stroke="var(--text)" stroke-width="2" stroke-dasharray="6 4"/>
+<svg viewBox="0 0 440 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Regla semicircular de altitudes VFR: rumbos 000 a 179 vuelan impares más 500 pies, rumbos 180 a 359 vuelan pares más 500 pies">
+  <defs>
+    <path id="ch15-semi-avion" d="M0 -11 C-2 -11 -3 -8 -3 -4.5 L-3 -1.5 L-12 2.5 L-12 5 L-3 3.5 L-3 8 L-6.5 10.5 L-6.5 12.5 L0 11 L6.5 12.5 L6.5 10.5 L3 8 L3 3.5 L12 5 L12 2.5 L3 -1.5 L3 -4.5 C3 -8 2 -11 0 -11 Z"/>
+  </defs>
+
+  <!-- mitades de la rosa -->
+  <path d="M220 50 A105 105 0 0 1 220 260 Z" fill="var(--ok)" fill-opacity="0.12"/>
+  <path d="M220 50 A105 105 0 0 0 220 260 Z" fill="var(--accent)" fill-opacity="0.12"/>
+  <circle cx="220" cy="155" r="105" fill="none" stroke="var(--text)" stroke-width="2"/>
+  <line x1="220" y1="50" x2="220" y2="260" stroke="var(--text)" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <circle cx="220" cy="155" r="3" fill="var(--text)"/>
+
+  <!-- marcas cada 30° -->
+  <g stroke="var(--text)" stroke-width="1.25" stroke-linecap="round">
+    <line x1="272.5" y1="64.1" x2="269" y2="70.1"/><line x1="310.9" y1="102.5" x2="304.9" y2="106"/>
+    <line x1="325" y1="155" x2="317" y2="155"/>
+    <line x1="310.9" y1="207.5" x2="304.9" y2="204"/><line x1="272.5" y1="245.9" x2="269" y2="239.9"/>
+    <line x1="167.5" y1="245.9" x2="171" y2="239.9"/><line x1="129.1" y1="207.5" x2="135.1" y2="204"/>
+    <line x1="115" y1="155" x2="123" y2="155"/>
+    <line x1="129.1" y1="102.5" x2="135.1" y2="106"/><line x1="167.5" y1="64.1" x2="171" y2="70.1"/>
+  </g>
 
   <!-- norte -->
-  <line x1="220" y1="45" x2="220" y2="20" stroke="var(--text)" stroke-width="2"/>
-  <path d="M220 12 L214 24 L226 24 Z" fill="var(--text)"/>
-  <text x="232" y="24" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">000°</text>
-  <text x="205" y="285" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">180°</text>
-  <text x="335" y="155" fill="var(--muted)" font-family="inherit" font-size="12">090°</text>
-  <text x="80" y="155" fill="var(--muted)" font-family="inherit" font-size="12">270°</text>
+  <line x1="220" y1="50" x2="220" y2="28" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="220,18 214,30 226,30" fill="var(--text)"/>
+  <text x="232" y="30" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">000°</text>
+  <text x="220" y="282" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold" text-anchor="middle">180°</text>
+  <text x="334" y="159" fill="var(--muted)" font-family="inherit" font-size="12">090°</text>
+  <text x="106" y="159" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">270°</text>
 
-  <!-- mitad este: impares -->
-  <text x="238" y="115" fill="var(--ok)" font-family="inherit" font-size="14" font-weight="bold">000°–179°</text>
-  <text x="238" y="135" fill="var(--ok)" font-family="inherit" font-size="13">IMPAR + 500</text>
-  <text x="238" y="158" fill="var(--muted)" font-family="inherit" font-size="12">3 500 ft</text>
-  <text x="238" y="174" fill="var(--muted)" font-family="inherit" font-size="12">5 500 ft</text>
-  <text x="238" y="190" fill="var(--muted)" font-family="inherit" font-size="12">7 500 ft…</text>
+  <!-- mitad este: impares + 500 -->
+  <text x="240" y="106" fill="var(--ok)" font-family="inherit" font-size="14" font-weight="bold">000°–179°</text>
+  <text x="240" y="126" fill="var(--ok)" font-family="inherit" font-size="13" font-weight="bold">IMPAR + 500</text>
+  <text x="240" y="148" fill="var(--muted)" font-family="inherit" font-size="12">3 500 ft</text>
+  <text x="240" y="164" fill="var(--muted)" font-family="inherit" font-size="12">5 500 ft</text>
+  <text x="240" y="180" fill="var(--muted)" font-family="inherit" font-size="12">7 500 ft…</text>
+  <use href="#ch15-semi-avion" transform="translate(268 212) rotate(90) scale(1.5)" fill="var(--ok)"/>
 
-  <!-- mitad oeste: pares -->
-  <text x="128" y="115" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold">180°–359°</text>
-  <text x="128" y="135" fill="var(--accent)" font-family="inherit" font-size="13">PAR + 500</text>
-  <text x="128" y="158" fill="var(--muted)" font-family="inherit" font-size="12">4 500 ft</text>
-  <text x="128" y="174" fill="var(--muted)" font-family="inherit" font-size="12">6 500 ft</text>
-  <text x="128" y="190" fill="var(--muted)" font-family="inherit" font-size="12">8 500 ft…</text>
+  <!-- mitad oeste: pares + 500 -->
+  <text x="200" y="106" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="end">180°–359°</text>
+  <text x="200" y="126" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold" text-anchor="end">PAR + 500</text>
+  <text x="200" y="148" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">4 500 ft</text>
+  <text x="200" y="164" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">6 500 ft</text>
+  <text x="200" y="180" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">8 500 ft…</text>
+  <use href="#ch15-semi-avion" transform="translate(172 212) rotate(-90) scale(1.5)" fill="var(--accent)"/>
 
-  <!-- nota -->
-  <text x="18" y="295" fill="var(--muted)" font-family="inherit" font-size="11">Rumbo MAGNÉTICO. Aplica en crucero, a más de 3 000 ft sobre el terreno.</text>
+  <text x="220" y="306" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">Rumbo MAGNÉTICO · aplica en crucero, a más de 3 000 ft sobre el terreno</text>
 </svg>

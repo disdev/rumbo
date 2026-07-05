@@ -1,40 +1,54 @@
-<svg viewBox="0 0 480 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Las tres etapas de la tormenta: cúmulo con ascendentes, madura con ascendentes y descendentes y lluvia, disipación con descendentes">
-  <line x1="20" y1="240" x2="460" y2="240" stroke="var(--text)" stroke-width="2"/>
+<svg viewBox="0 0 480 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Las tres etapas de la tormenta: cúmulo con solo ascendentes, madura con ascendentes, descendentes y lluvia, y disipación dominada por descendentes">
+  <defs>
+    <marker id="ch12-torm-up" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="ch12-torm-dn" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
 
-  <!-- 1: CÚMULO -->
-  <text x="90" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle" font-weight="bold">1. Cúmulo</text>
-  <circle cx="90" cy="120" r="22" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <circle cx="68" cy="140" r="17" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <circle cx="112" cy="140" r="17" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <circle cx="90" cy="152" r="19" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <line x1="76" y1="230" x2="76" y2="185" stroke="var(--ok)" stroke-width="2.5"/>
-  <polygon points="76,177 69,191 83,191" fill="var(--ok)"/>
-  <line x1="104" y1="230" x2="104" y2="185" stroke="var(--ok)" stroke-width="2.5"/>
-  <polygon points="104,177 97,191 111,191" fill="var(--ok)"/>
-  <text x="90" y="262" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">ascendente continua</text>
-  <text x="90" y="277" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la nube crece</text>
+  <!-- suelo -->
+  <path d="M20 250 H460 V261 Q460 264 457 264 H23 Q20 264 20 261 Z" fill="var(--panel-2)" fill-opacity="0.6"/>
+  <line x1="20" y1="250" x2="460" y2="250" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
 
-  <!-- 2: MADURA -->
-  <text x="240" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle" font-weight="bold">2. Madura</text>
-  <path d="M 214 200 Q 200 150 212 100 L 212 78 L 190 78 L 190 64 L 292 64 L 292 78 L 268 78 L 268 100 Q 280 150 268 200 Z" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
-  <text x="286" y="56" fill="var(--muted)" font-family="inherit" font-size="11">yunque</text>
-  <line x1="226" y1="195" x2="226" y2="120" stroke="var(--ok)" stroke-width="2.5"/>
-  <polygon points="226,112 219,126 233,126" fill="var(--ok)"/>
-  <line x1="254" y1="120" x2="254" y2="195" stroke="var(--bad)" stroke-width="2.5"/>
-  <polygon points="254,203 247,189 261,189" fill="var(--bad)"/>
-  <line x1="222" y1="210" x2="216" y2="232" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="240" y1="210" x2="234" y2="232" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="258" y1="210" x2="252" y2="232" stroke="var(--accent)" stroke-width="2"/>
-  <text x="240" y="262" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">empieza la lluvia · sube y baja</text>
-  <text x="240" y="277" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">MÁXIMA intensidad</text>
+  <!-- ── 1 · CÚMULO ── -->
+  <text x="90" y="30" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">1 · Cúmulo</text>
+  <path d="M56 178 Q44 178 42 167 Q32 163 36 151 Q32 138 46 134 Q44 120 58 117 Q60 104 76 105 Q82 94 96 98 Q110 93 116 104 Q130 104 132 117 Q144 122 140 134 Q150 142 142 152 Q146 165 134 169 Q132 178 120 178 Z" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M70 178 Q64 168 74 162 Q72 152 84 150 Q90 142 100 146 Q112 143 114 154 Q124 158 118 168 Q118 178 106 178 Z" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--muted)" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M74 244 C 71 226 74 210 73 194" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-torm-up)"/>
+  <path d="M104 244 C 107 226 104 210 105 194" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-torm-up)"/>
+  <text x="90" y="282" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">solo ascendentes</text>
+  <text x="90" y="297" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la nube crece y crece</text>
 
-  <!-- 3: DISIPACIÓN -->
-  <text x="390" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle" font-weight="bold">3. Disipación</text>
-  <path d="M 372 190 Q 364 150 372 110 L 372 88 L 340 88 L 340 72 L 448 72 L 448 88 L 410 88 L 410 110 Q 416 150 410 190 Z" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 3"/>
-  <line x1="380" y1="120" x2="380" y2="195" stroke="var(--bad)" stroke-width="2.5"/>
-  <polygon points="380,203 373,189 387,189" fill="var(--bad)"/>
-  <line x1="402" y1="120" x2="402" y2="195" stroke="var(--bad)" stroke-width="2.5"/>
-  <polygon points="402,203 395,189 409,189" fill="var(--bad)"/>
-  <text x="390" y="262" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">dominan las descendentes</text>
-  <text x="390" y="277" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la nube se deshace</text>
+  <!-- ── 2 · MADURA ── -->
+  <text x="240" y="30" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">2 · Madura</text>
+  <path d="M212 204 C 202 188 206 172 214 166 C 204 158 206 142 218 138 C 210 126 216 112 228 110 L 228 102 C 214 102 202 94 202 82 C 202 68 216 60 232 63 C 238 48 258 42 272 51 C 280 44 294 47 298 56 C 314 54 326 64 325 77 C 324 90 312 97 298 96 L 284 96 C 287 108 281 118 271 119 C 281 130 277 146 267 150 C 277 162 273 182 264 192 C 268 198 267 202 264 204 Z" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="318" y1="72" x2="336" y2="52" stroke="var(--muted)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="318" cy="72" r="2.5" fill="var(--muted)"/>
+  <text x="340" y="46" fill="var(--muted)" font-family="inherit" font-size="11">yunque</text>
+  <path d="M226 196 C 222 172 226 148 224 128" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-torm-up)"/>
+  <path d="M254 130 C 258 152 254 174 257 194" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-torm-dn)"/>
+  <g stroke="var(--accent)" stroke-width="2" stroke-linecap="round">
+    <line x1="226" y1="214" x2="220" y2="240"/>
+    <line x1="242" y1="214" x2="236" y2="240"/>
+    <line x1="258" y1="214" x2="252" y2="240"/>
+  </g>
+  <path d="M282 206 l -9 15 h 7 l -8 16 l 15 -19 h -7 l 9 -12 Z" fill="var(--warn)" stroke="none"/>
+  <text x="240" y="282" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">sube Y baja · empieza la lluvia</text>
+  <text x="240" y="297" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="middle">MÁXIMA intensidad</text>
+
+  <!-- ── 3 · DISIPACIÓN ── -->
+  <text x="390" y="30" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">3 · Disipación</text>
+  <path d="M364 188 C 356 172 360 156 368 150 C 358 140 362 124 374 120 L 374 112 C 358 114 346 106 347 94 C 348 82 362 74 378 77 C 386 66 402 62 414 70 C 424 64 438 68 441 78 C 454 78 462 88 460 98 C 458 108 446 114 434 112 L 420 110 C 422 122 416 130 406 130 C 414 142 410 158 400 162 C 408 174 404 184 398 188 Z" fill="var(--panel-2)" fill-opacity="0.7" stroke="var(--muted)" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round"/>
+  <path d="M378 142 C 374 160 378 176 376 192" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-torm-dn)"/>
+  <path d="M404 142 C 408 160 404 176 406 192" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-torm-dn)"/>
+  <g stroke="var(--accent)" stroke-width="1.25" stroke-linecap="round" stroke-dasharray="4 4">
+    <line x1="380" y1="210" x2="376" y2="236"/>
+    <line x1="398" y1="210" x2="394" y2="236"/>
+  </g>
+  <text x="390" y="282" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">solo descendentes</text>
+  <text x="390" y="297" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la nube se deshace</text>
+
+  <!-- flechas de secuencia -->
+  <g fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M158 140 l 8 8 l -8 8"/>
+    <path d="M330 140 l 8 8 l -8 8"/>
+  </g>
 </svg>

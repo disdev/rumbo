@@ -1,35 +1,61 @@
-<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tres tipos de fuselaje: reticulado, monocasco y semimonocasco">
-  <!-- Panel 1: reticulado (truss) -->
-  <text x="75" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Reticulado</text>
-  <text x="75" y="42" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(truss)</text>
-  <rect x="20" y="60" width="110" height="80" fill="none" stroke="var(--text)" stroke-width="2"/>
-  <line x1="20" y1="60" x2="75" y2="140" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="75" y1="140" x2="130" y2="60" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="20" y1="140" x2="75" y2="60" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="75" y1="60" x2="130" y2="140" stroke="var(--accent)" stroke-width="2"/>
-  <text x="75" y="170" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">tubos soldados:</text>
-  <text x="75" y="185" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la jaula carga todo,</text>
-  <text x="75" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la tela solo cubre</text>
+<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tres cortes transversales de fuselaje: jaula reticulada de tubos, cáscara monocasco y semimonocasco con cuadernas y larguerillos">
+  <!-- Panel 1: reticulado -->
+  <text x="85" y="28" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">Reticulado</text>
+  <text x="85" y="44" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(truss)</text>
+  <rect x="45" y="78" width="80" height="80" rx="18" fill="var(--panel-2)" fill-opacity="0.3" stroke="var(--muted)" stroke-width="1.25" stroke-dasharray="5 4"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <line x1="58" y1="91" x2="112" y2="91" stroke="var(--text)" stroke-width="2"/>
+    <line x1="112" y1="91" x2="112" y2="145" stroke="var(--text)" stroke-width="2"/>
+    <line x1="112" y1="145" x2="58" y2="145" stroke="var(--text)" stroke-width="2"/>
+    <line x1="58" y1="145" x2="58" y2="91" stroke="var(--text)" stroke-width="2"/>
+    <line x1="58" y1="91" x2="112" y2="145" stroke="var(--accent)" stroke-width="1.5"/>
+    <line x1="112" y1="91" x2="58" y2="145" stroke="var(--accent)" stroke-width="1.5"/>
+  </g>
+  <circle cx="58" cy="91" r="4" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <circle cx="112" cy="91" r="4" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <circle cx="112" cy="145" r="4" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <circle cx="58" cy="145" r="4" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <g fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">
+    <text x="85" y="192">tubos soldados: la jaula</text>
+    <text x="85" y="207">carga todo, la tela</text>
+    <text x="85" y="222">de afuera solo cubre</text>
+  </g>
 
   <!-- Panel 2: monocasco -->
-  <text x="240" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Monocasco</text>
-  <text x="240" y="42" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(monocoque)</text>
-  <ellipse cx="240" cy="100" rx="55" ry="42" fill="var(--panel-2)" stroke="var(--text)" stroke-width="4"/>
-  <text x="240" y="170" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">cáscara sola:</text>
-  <text x="240" y="185" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la piel carga todo,</text>
-  <text x="240" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">como lata de gaseosa</text>
+  <text x="240" y="28" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">Monocasco</text>
+  <text x="240" y="44" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(monocoque)</text>
+  <circle cx="240" cy="118" r="38" fill="var(--panel-2)" fill-opacity="0.3"/>
+  <circle cx="240" cy="118" r="42" fill="none" stroke="var(--accent)" stroke-width="8"/>
+  <g fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">
+    <text x="240" y="192">cáscara sola: la piel</text>
+    <text x="240" y="207">carga todo, como una</text>
+    <text x="240" y="222">lata de gaseosa</text>
+  </g>
 
   <!-- Panel 3: semimonocasco -->
-  <text x="405" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Semimonocasco</text>
-  <text x="405" y="42" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(el que domina hoy)</text>
-  <ellipse cx="405" cy="100" rx="55" ry="42" fill="var(--panel-2)" stroke="var(--text)" stroke-width="3"/>
-  <ellipse cx="405" cy="100" rx="42" ry="31" fill="none" stroke="var(--accent)" stroke-width="2"/>
-  <ellipse cx="405" cy="100" rx="28" ry="20" fill="none" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="405" y1="58" x2="405" y2="142" stroke="var(--ok)" stroke-width="2"/>
-  <line x1="350" y1="100" x2="460" y2="100" stroke="var(--ok)" stroke-width="2"/>
-  <text x="405" y="170" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">piel + cuadernas +</text>
-  <text x="405" y="185" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">larguerillos: la carga</text>
-  <text x="405" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">se reparte en equipo</text>
+  <text x="395" y="28" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">Semimonocasco</text>
+  <text x="395" y="44" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(el que domina hoy)</text>
+  <circle cx="395" cy="118" r="42" fill="var(--panel-2)" fill-opacity="0.3" stroke="var(--accent)" stroke-width="3.5"/>
+  <circle cx="395" cy="118" r="34" fill="none" stroke="var(--text)" stroke-width="2"/>
+  <g fill="var(--accent)">
+    <circle cx="433" cy="118" r="2.2"/>
+    <circle cx="427.9" cy="137" r="2.2"/>
+    <circle cx="414" cy="151" r="2.2"/>
+    <circle cx="395" cy="156" r="2.2"/>
+    <circle cx="376" cy="151" r="2.2"/>
+    <circle cx="362.1" cy="137" r="2.2"/>
+    <circle cx="357" cy="118" r="2.2"/>
+    <circle cx="362.1" cy="99" r="2.2"/>
+    <circle cx="376" cy="85" r="2.2"/>
+    <circle cx="395" cy="80" r="2.2"/>
+    <circle cx="414" cy="85" r="2.2"/>
+    <circle cx="427.9" cy="99" r="2.2"/>
+  </g>
+  <g fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">
+    <text x="395" y="192">piel + cuadernas (aro) +</text>
+    <text x="395" y="207">larguerillos (puntos):</text>
+    <text x="395" y="222">la carga se reparte</text>
+  </g>
 
-  <text x="240" y="235" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Vistas en corte transversal (como si cortaras el fuselaje con un cuchillo)</text>
+  <text x="240" y="252" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Cortes transversales, como si rebanaras el fuselaje con un cuchillo.</text>
 </svg>

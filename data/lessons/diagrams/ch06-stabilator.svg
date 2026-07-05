@@ -1,33 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" role="img" aria-label="Stabilator con tab antiservo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 250" role="img" aria-label="Stabilator con tab antiservo, vista de perfil">
   <defs>
-    <marker id="st-ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="ch06-st-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="var(--accent)"/>
     </marker>
   </defs>
-  <text x="210" y="24" text-anchor="middle" font-family="inherit" font-size="15" fill="var(--text)" font-weight="bold">Stabilator: toda la cola pivota (vista de perfil)</text>
+  <text x="210" y="22" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">Stabilator: toda la cola pivota (vista de perfil)</text>
 
-  <!-- cono de cola -->
-  <path d="M20,110 C70,98 115,100 155,114 L155,142 C115,150 70,148 20,136 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="34" y="130" font-family="inherit" font-size="12" fill="var(--muted)">cola del avión</text>
+  <!-- deriva y cono de cola (la nariz queda fuera, a la izquierda) -->
+  <g stroke="var(--text)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="var(--panel-2)">
+    <path d="M100,112 C116,66 148,46 182,41 L200,40 C182,62 170,92 166,120 Z" fill-opacity="0.5"/>
+    <path d="M16,112 C70,100 120,102 160,116 L160,150 C120,158 70,156 16,144 Z"/>
+  </g>
+  <text x="30" y="134" font-family="inherit" font-size="12" fill="var(--muted)">cola del avión</text>
 
-  <!-- posición neutra (referencia) -->
-  <line x1="160" y1="126" x2="330" y2="126" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
-  <text x="336" y="130" font-family="inherit" font-size="12" fill="var(--muted)">neutro</text>
+  <!-- cuerda neutra de referencia -->
+  <line x1="176" y1="140" x2="362" y2="140" stroke="var(--muted)" stroke-width="1.25" stroke-dasharray="4 4"/>
+  <text x="368" y="144" font-family="inherit" font-size="12" fill="var(--muted)">neutro</text>
 
-  <!-- stabilator: una sola pieza, rotada (borde de salida arriba) -->
-  <path d="M170,146 L305,96 L312,106 L178,158 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="176" y="184" font-family="inherit" font-size="13" fill="var(--text)" font-weight="bold">stabilator: UNA sola pieza</text>
+  <!-- stabilator completo, rotado sobre su pivote (borde de salida ARRIBA) -->
+  <g transform="rotate(-14 240 140)">
+    <path d="M176,140 C180,132 202,128 238,128 C282,128 322,133 340,139 C320,145 270,147.5 226,147 C198,146.5 180,145 176,140 Z"
+          fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+    <!-- tab antiservo: gira aún más en la MISMA dirección -->
+    <g transform="rotate(-24 340 141)">
+      <path d="M340,137.5 L374,135.5 L376,141.5 L340,144.5 Z" fill="var(--accent)" stroke="var(--text)" stroke-width="1" stroke-linejoin="round"/>
+    </g>
+    <circle cx="340" cy="141" r="2" fill="var(--text)"/>
+  </g>
 
   <!-- pivote -->
-  <circle cx="236" cy="126" r="6" fill="var(--accent)" stroke="var(--text)" stroke-width="1.5"/>
-  <line x1="236" y1="118" x2="236" y2="72" stroke="var(--accent)" stroke-width="1.5"/>
-  <text x="200" y="62" font-family="inherit" font-size="13" fill="var(--accent)" font-weight="bold">pivote central</text>
+  <circle cx="240" cy="140" r="5.5" fill="var(--accent)" stroke="var(--text)" stroke-width="1.5"/>
 
-  <!-- tab antiservo: MISMA dirección que el borde de salida (sube aún más) -->
-  <path d="M308,98 L342,74 L348,83 L312,106 Z" fill="var(--bad)" stroke="var(--text)" stroke-width="1"/>
-  <line x1="352" y1="106" x2="352" y2="70" stroke="var(--accent)" stroke-width="2" marker-end="url(#st-ac)"/>
-  <text x="252" y="52" font-family="inherit" font-size="13" fill="var(--bad)" font-weight="bold">tab antiservo:</text>
-  <text x="252" y="68" font-family="inherit" font-size="12" fill="var(--bad)">MISMA dirección</text>
+  <!-- flecha: el borde de salida sube -->
+  <path d="M346,168 C353,154 354,138 350,126" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch06-st-arrow)"/>
 
-  <text x="210" y="216" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">El tab en el mismo sentido crea resistencia al mando: menos sensibilidad, más "peso" en la mano.</text>
+  <!-- etiquetas con líneas guía -->
+  <g font-family="inherit">
+    <text x="150" y="66" font-size="13" font-weight="bold" fill="var(--accent)">tab antiservo:</text>
+    <text x="150" y="82" font-size="12" fill="var(--accent)">se mueve en la MISMA dirección</text>
+    <text x="150" y="180" font-size="13" font-weight="bold" fill="var(--text)">pivote central</text>
+    <text x="210" y="205" font-size="12" fill="var(--text)">stabilator: UNA sola pieza</text>
+  </g>
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="280" y1="76" x2="342" y2="94"/>
+    <line x1="228" y1="170" x2="238" y2="148"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="343" cy="94.5" r="2.5"/>
+    <circle cx="238.5" cy="147" r="2.5"/>
+  </g>
+
+  <text x="210" y="234" text-anchor="middle" font-family="inherit" font-size="11" fill="var(--muted)">El tab resiste el movimiento: da «peso» al mando y evita sobre-controlar</text>
 </svg>

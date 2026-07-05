@@ -1,38 +1,59 @@
-<svg viewBox="0 0 560 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seis letreros de aeropuerto: mandatorio 16-34, ubicación B, dirección A, área ILS, no entrada y límite de pista">
-  <!-- fila 1 -->
-  <rect x="24" y="26" width="130" height="54" rx="6" fill="var(--bad)"/>
-  <text x="89" y="61" fill="var(--panel-2)" font-family="inherit" font-size="22" font-weight="bold" text-anchor="middle">16-34</text>
-  <text x="89" y="100" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Mandatorio (rojo)</text>
-  <text x="89" y="114" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">espera de pista: NO pases</text>
-  <text x="89" y="128" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">sin autorización</text>
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seis letreros de aeropuerto: mandatorio 16-34, ubicación B, dirección A, área ILS, no entrada y límite del área de seguridad de pista">
+  <!-- sombras -->
+  <g fill="var(--text)" fill-opacity="0.12">
+    <rect x="28" y="30" width="132" height="54" rx="6"/><rect x="218" y="30" width="132" height="54" rx="6"/><rect x="408" y="30" width="132" height="54" rx="6"/>
+    <rect x="28" y="164" width="132" height="54" rx="6"/><rect x="218" y="164" width="132" height="54" rx="6"/><rect x="408" y="164" width="132" height="54" rx="6"/>
+  </g>
+  <!-- patas -->
+  <g stroke="var(--muted)" stroke-width="2" stroke-linecap="round">
+    <path d="M60 80 v10 M120 80 v10 M250 80 v10 M310 80 v10 M440 80 v10 M500 80 v10"/>
+    <path d="M60 214 v10 M120 214 v10 M250 214 v10 M310 214 v10 M440 214 v10 M500 214 v10"/>
+  </g>
 
-  <rect x="216" y="26" width="130" height="54" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="4"/>
-  <text x="281" y="61" fill="var(--accent)" font-family="inherit" font-size="22" font-weight="bold" text-anchor="middle">B</text>
-  <text x="281" y="100" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Ubicación (negro/amarillo)</text>
-  <text x="281" y="114" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">ESTÁS en la calle B</text>
+  <!-- 1: mandatorio -->
+  <rect x="24" y="26" width="132" height="54" rx="6" fill="var(--bad)"/>
+  <text x="90" y="61" fill="var(--panel-2)" font-family="inherit" font-size="22" font-weight="bold" text-anchor="middle">16-34</text>
+  <text x="90" y="110" fill="var(--bad)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="middle">Mandatorio (rojo)</text>
+  <text x="90" y="125" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">espera de pista: NO pases</text>
+  <text x="90" y="140" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">sin autorización</text>
 
-  <rect x="408" y="26" width="130" height="54" rx="6" fill="var(--accent)"/>
-  <text x="473" y="61" fill="var(--panel-2)" font-family="inherit" font-size="22" font-weight="bold" text-anchor="middle">A →</text>
-  <text x="473" y="100" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Dirección (amarillo)</text>
-  <text x="473" y="114" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la calle A está por ahí</text>
+  <!-- 2: ubicación (negro con amarillo) -->
+  <rect x="214" y="26" width="132" height="54" rx="6" fill="var(--text)"/>
+  <rect x="220" y="32" width="120" height="42" rx="3" fill="none" stroke="var(--warn)" stroke-width="2"/>
+  <text x="280" y="61" fill="var(--warn)" font-family="inherit" font-size="22" font-weight="bold" text-anchor="middle">B</text>
+  <text x="280" y="110" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="middle">Ubicación (negro/amarillo)</text>
+  <text x="280" y="125" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">ESTÁS en la calle B</text>
 
-  <!-- fila 2 -->
-  <rect x="24" y="158" width="130" height="54" rx="6" fill="var(--bad)"/>
-  <text x="89" y="193" fill="var(--panel-2)" font-family="inherit" font-size="22" font-weight="bold" text-anchor="middle">ILS</text>
-  <text x="89" y="232" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Mandatorio: área crítica ILS</text>
-  <text x="89" y="246" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">espera si te lo indican</text>
+  <!-- 3: dirección (amarillo) -->
+  <rect x="404" y="26" width="132" height="54" rx="6" fill="var(--warn)"/>
+  <text x="456" y="61" fill="var(--text)" font-family="inherit" font-size="22" font-weight="bold" text-anchor="middle">A</text>
+  <path d="M476 53 h28 m0 0 l-9 -7 m9 7 l-9 7" fill="none" stroke="var(--text)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="470" y="110" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="middle">Dirección (amarillo)</text>
+  <text x="470" y="125" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la calle A está por ahí</text>
 
-  <rect x="216" y="158" width="130" height="54" rx="6" fill="var(--bad)"/>
-  <circle cx="281" cy="185" r="19" fill="none" stroke="var(--panel-2)" stroke-width="5"/>
-  <rect x="268" y="182" width="26" height="7" fill="var(--panel-2)"/>
-  <text x="281" y="232" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">No entrada</text>
-  <text x="281" y="246" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">área prohibida para aeronaves</text>
+  <!-- 4: área crítica ILS -->
+  <rect x="24" y="160" width="132" height="54" rx="6" fill="var(--bad)"/>
+  <text x="90" y="195" fill="var(--panel-2)" font-family="inherit" font-size="22" font-weight="bold" text-anchor="middle">ILS</text>
+  <text x="90" y="244" fill="var(--bad)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="middle">Mandatorio: área crítica ILS</text>
+  <text x="90" y="259" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">espera aquí si te lo indican</text>
 
-  <rect x="408" y="158" width="130" height="54" rx="6" fill="var(--accent)"/>
-  <line x1="420" y1="176" x2="526" y2="176" stroke="var(--panel-2)" stroke-width="4" stroke-dasharray="8 6"/>
-  <line x1="420" y1="185" x2="526" y2="185" stroke="var(--panel-2)" stroke-width="4" stroke-dasharray="8 6"/>
-  <line x1="420" y1="195" x2="526" y2="195" stroke="var(--panel-2)" stroke-width="4"/>
-  <line x1="420" y1="203" x2="526" y2="203" stroke="var(--panel-2)" stroke-width="4"/>
-  <text x="473" y="232" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Límite del área de seguridad</text>
-  <text x="473" y="246" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">crúzalo al salir = pista libre</text>
+  <!-- 5: no entrada -->
+  <rect x="214" y="160" width="132" height="54" rx="6" fill="var(--bad)"/>
+  <circle cx="280" cy="187" r="18" fill="none" stroke="var(--panel-2)" stroke-width="5"/>
+  <rect x="268" y="184" width="24" height="6.5" rx="2" fill="var(--panel-2)"/>
+  <text x="280" y="244" fill="var(--bad)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="middle">No entrada</text>
+  <text x="280" y="259" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">prohibido para aeronaves</text>
+
+  <!-- 6: límite del área de seguridad (dibuja la marca de espera vista al salir) -->
+  <rect x="404" y="160" width="132" height="54" rx="6" fill="var(--warn)"/>
+  <g stroke="var(--text)" stroke-linecap="butt">
+    <line x1="418" y1="172" x2="522" y2="172" stroke-width="4" stroke-dasharray="8 6"/>
+    <line x1="418" y1="181" x2="522" y2="181" stroke-width="4" stroke-dasharray="8 6"/>
+    <line x1="418" y1="192" x2="522" y2="192" stroke-width="4"/>
+    <line x1="418" y1="201" x2="522" y2="201" stroke-width="4"/>
+  </g>
+  <text x="470" y="244" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="middle">Límite del área de seguridad</text>
+  <text x="470" y="259" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">crúzalo al salir = pista libre</text>
+
+  <text x="280" y="288" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Regla de oro: rojo = orden (detente) · negro = dónde estás · amarillo = hacia dónde ir</text>
 </svg>

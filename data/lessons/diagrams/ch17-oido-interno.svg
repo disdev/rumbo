@@ -1,27 +1,51 @@
-<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="El oído interno y los canales semicirculares que causan desorientación">
-  <!-- cabeza simplificada -->
-  <circle cx="150" cy="150" r="95" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="150" y="255" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">tu cabeza</text>
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="El oido interno: canales semicirculares, vestibulo y coclea">
+  <text x="16" y="26" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">El oido interno</text>
 
-  <!-- canales semicirculares (tres anillos) -->
-  <ellipse cx="150" cy="120" rx="42" ry="20" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
-  <ellipse cx="150" cy="150" rx="20" ry="42" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
-  <ellipse cx="150" cy="150" rx="42" ry="20" fill="none" stroke="var(--accent)" stroke-width="2.5" transform="rotate(45 150 150)"/>
-  <circle cx="150" cy="150" r="10" fill="var(--accent)" opacity="0.4"/>
+  <!-- vestibulo (cuerpo central) -->
+  <path d="M150 150 C150 132 168 122 186 128 C204 134 208 156 200 172 C193 186 172 190 160 178 C150 168 150 160 150 150 Z" fill="var(--panel-2)" fill-opacity="0.5" stroke="var(--text)" stroke-width="1.5" stroke-linejoin="round"/>
 
-  <!-- leader -->
-  <line x1="230" y1="120" x2="300" y2="90" stroke="var(--muted)" stroke-width="1"/>
-  <text x="300" y="70" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">Canales</text>
-  <text x="300" y="86" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">semicirculares</text>
-  <text x="300" y="104" fill="var(--muted)" font-family="inherit" font-size="11">sienten el giro con</text>
-  <text x="300" y="118" fill="var(--muted)" font-family="inherit" font-size="11">líquido que se mueve</text>
+  <!-- canal horizontal (lateral): sale a la derecha -->
+  <path d="M196 158 C232 150 262 158 268 178 C273 196 258 212 234 210 C214 208 200 194 198 178" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+  <!-- ampolla del horizontal -->
+  <circle cx="200" cy="176" r="6" fill="var(--accent)"/>
 
-  <!-- trap message -->
-  <rect x="290" y="150" width="160" height="118" rx="8" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="1.5"/>
-  <text x="300" y="172" fill="var(--bad)" font-family="inherit" font-size="12" font-weight="bold">El engaño:</text>
-  <text x="300" y="190" fill="var(--muted)" font-family="inherit" font-size="11">un giro lento y sostenido</text>
-  <text x="300" y="204" fill="var(--muted)" font-family="inherit" font-size="11">deja de sentirse.</text>
-  <text x="300" y="224" fill="var(--muted)" font-family="inherit" font-size="11">Al nivelar, sientes que</text>
-  <text x="300" y="238" fill="var(--muted)" font-family="inherit" font-size="11">giras al otro lado</text>
-  <text x="300" y="252" fill="var(--muted)" font-family="inherit" font-size="11">= "the leans".</text>
+  <!-- canal superior (anterior): arco hacia arriba -->
+  <path d="M166 132 C160 96 178 66 206 66 C234 66 250 92 240 120 C236 132 226 140 214 140" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="168" cy="134" r="6" fill="var(--accent)"/>
+
+  <!-- canal posterior: arco hacia arriba-izquierda -->
+  <path d="M156 148 C120 140 96 112 104 84 C112 58 142 54 160 74 C170 86 172 104 168 120" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.7"/>
+  <circle cx="158" cy="146" r="6" fill="var(--accent)" fill-opacity="0.7"/>
+
+  <!-- coclea (espiral) -->
+  <path d="M120 206 C120.3 205.8 120.9 205.1 121.5 204.8 C122.1 204.5 122.8 204.3 123.5 204.2 C124.3 204.1 125.2 204.2 126 204.4 C126.9 204.6 127.8 205 128.6 205.5 C129.4 206.1 130.2 206.8 130.8 207.7 C131.5 208.6 132.1 209.7 132.5 210.8 C132.9 212 133.1 213.3 133.1 214.6 C133.1 215.9 133 217.3 132.6 218.7 C132.2 220.1 131.6 221.6 130.7 222.9 C129.8 224.2 128.7 225.5 127.4 226.6 C126.1 227.7 124.6 228.7 122.9 229.4 C121.2 230.1 119.3 230.6 117.4 230.8 C115.5 231 113.3 231.1 111.3 230.7 C109.3 230.4 107.2 229.7 105.2 228.7 C103.3 227.7 101.3 226.4 99.6 224.8 C97.9 223.2 96.3 221.4 95 219.3 C93.7 217.2 92.7 214.8 92 212.3 C91.3 209.8 91 207.2 91 204.5 C91.1 201.8 91.5 199 92.3 196.3 C93.1 193.6 94.4 190.9 96 188.4 C97.6 185.9 99.6 183.5 101.9 181.5 C104.2 179.5 106.9 177.8 109.8 176.4 C112.7 175.1 115.9 173.9 119.2 173.4 C122.5 172.9 126 172.8 129.4 173.2 C132.8 173.6 136.4 174.5 139.7 175.9 C143 177.3 146.3 179.1 149.2 181.4 C152.1 183.7 154.8 186.6 157 189.7 C159.2 192.8 161.2 196.3 162.5 200 C163.8 203.7 164.7 207.8 165 211.9 C165.3 216 165 220.3 164.2 224.4 C163.4 228.5 161.9 232.7 159.9 236.5 C157.9 240.3 155.3 244.1 152.2 247.3 C149.1 250.5 145.5 253.6 141.6 255.9 C137.7 258.3 133.2 260.2 128.7 261.4 C124.2 262.6 119.2 263.4 114.4 263.3 C109.6 263.3 104.6 262.5 99.8 261.1 C95.1 259.7 90.2 257.6 85.9 254.9 C81.6 252.2 77.5 248.8 74 244.9 C70.5 241.1 67.3 236.6 64.9 231.8 C62.5 227 60.7 221.7 59.7 216.3 C58.7 211 58.3 205.3 58.8 199.7 C59.3 194.1 60.6 188.4 62.6 183 C64.6 177.7 67.5 172.3 70.9 167.6 C74.4 162.9 78.6 158.5 83.3 154.8 C88 151.1 93.5 147.9 99.1 145.6 C104.7 143.3 110.9 141.6 117.1 140.9 C123.3 140.2 129.8 140.3 136.1 141.3 C142.4 142.3 148.8 144.2 154.7 146.9 C160.6 149.6 166.3 153.3 171.3 157.6 C176.3 161.9 181.1 167 184.8 172.6 C188.6 178.2 191.7 184.5 193.8 191 C195.9 197.5 197.3 204.6 197.6 211.6 C197.9 218.6 197.3 225.9 195.7 232.8 C194.1 239.7 191.4 246.8 187.9 253.1 C184.4 259.4 180 265.6 174.8 270.8 C169.7 276.1 163.5 280.9 157 284.6 C150.5 288.3 143.3 291.3 135.9 293.2 C128.5 295.1 120.5 296 112.8 295.8 C105.1 295.6 97 294.3 89.5 292 C82 289.7 71.3 283.7 67.7 282" fill="none" stroke="var(--muted)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M150 172 C138 186 128 196 67.7 282" fill="none" stroke="var(--muted)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- leaders -->
+  <line x1="234" y1="76" x2="300" y2="60" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="234" cy="76" r="2.5" fill="var(--muted)"/>
+  <text x="306" y="56" fill="var(--accent)" font-family="inherit" font-size="12" font-weight="bold">Canales</text>
+  <text x="306" y="70" fill="var(--accent)" font-family="inherit" font-size="12" font-weight="bold">semicirculares</text>
+  <text x="306" y="86" fill="var(--muted)" font-family="inherit" font-size="10">tres planos: sienten</text>
+  <text x="306" y="98" fill="var(--muted)" font-family="inherit" font-size="10">el giro con liquido</text>
+  <text x="306" y="110" fill="var(--muted)" font-family="inherit" font-size="10">en movimiento</text>
+
+  <line x1="200" y1="176" x2="250" y2="132" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="200" cy="176" r="2.5" fill="var(--muted)"/>
+  <text x="252" y="132" fill="var(--text)" font-family="inherit" font-size="10">ampollas (sensores)</text>
+
+  <line x1="118" y1="212" x2="96" y2="252" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="118" cy="212" r="2.5" fill="var(--muted)"/>
+  <text x="60" y="266" fill="var(--muted)" font-family="inherit" font-size="10">coclea (oido)</text>
+
+  <!-- trap box -->
+  <rect x="296" y="130" width="152" height="150" rx="10" fill="var(--panel-2)" fill-opacity="0.5" stroke="var(--bad)" stroke-width="1.5"/>
+  <text x="310" y="152" fill="var(--bad)" font-family="inherit" font-size="12" font-weight="bold">El engano</text>
+  <text x="310" y="172" fill="var(--muted)" font-family="inherit" font-size="10.5">Un giro lento y sostenido</text>
+  <text x="310" y="186" fill="var(--muted)" font-family="inherit" font-size="10.5">deja de sentirse: el liquido</text>
+  <text x="310" y="200" fill="var(--muted)" font-family="inherit" font-size="10.5">se estabiliza.</text>
+  <text x="310" y="222" fill="var(--muted)" font-family="inherit" font-size="10.5">Al nivelar, sientes que</text>
+  <text x="310" y="236" fill="var(--muted)" font-family="inherit" font-size="10.5">giras al otro lado.</text>
+  <text x="310" y="258" fill="var(--text)" font-family="inherit" font-size="10.5" font-weight="bold">Sin horizonte visible,</text>
+  <text x="310" y="272" fill="var(--bad)" font-family="inherit" font-size="10.5" font-weight="bold">el oido te miente.</text>
 </svg>

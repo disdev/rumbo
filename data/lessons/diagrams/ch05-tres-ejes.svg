@@ -1,25 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" font-family="inherit">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" font-family="inherit" role="img" aria-label="Los tres ejes del avión se cruzan en el centro de gravedad: longitudinal, lateral y vertical">
   <defs>
-    <marker id="k5d-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker>
-    <marker id="k5d-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--ok)"/></marker>
-    <marker id="k5d-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--bad)"/></marker>
+    <marker id="ch05-ejes-arrow-a" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--accent)"/></marker>
+    <marker id="ch05-ejes-arrow-ok" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--ok)"/></marker>
+    <marker id="ch05-ejes-arrow-b" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--bad)"/></marker>
   </defs>
-  <text x="210" y="20" fill="var(--muted)" font-size="12" text-anchor="middle">Visto desde arriba — los tres ejes se cruzan en el CG</text>
-  <g stroke="var(--text)" stroke-width="2" fill="var(--panel-2)">
-    <ellipse cx="210" cy="160" rx="13" ry="88"/>
-    <rect x="100" y="149" width="220" height="17" rx="8"/>
-    <rect x="168" y="226" width="84" height="12" rx="6"/>
+
+  <text x="210" y="22" font-size="12" fill="var(--muted)" text-anchor="middle">visto desde arriba — los tres ejes se cruzan en el CG</text>
+
+  <!-- avión visto desde arriba, nariz hacia arriba -->
+  <g stroke="var(--text)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="var(--panel-2)">
+    <!-- alas -->
+    <path d="M197 114 C 150 117 110 121 92 124 C 86 125 84 128 84 130 C 84 133 86 135 92 136 C 110 138 150 141 197 144 Z"/>
+    <path d="M223 114 C 270 117 310 121 328 124 C 334 125 336 128 336 130 C 336 133 334 135 328 136 C 310 138 270 141 223 144 Z"/>
+    <!-- estabilizador -->
+    <path d="M199 226 C 176 228 163 231 159 233 C 157 234 157 236 159 237 C 163 239 176 241 199 243 Z"/>
+    <path d="M221 226 C 244 228 257 231 261 233 C 263 234 263 236 261 237 C 257 239 244 241 221 243 Z"/>
+    <!-- fuselaje -->
+    <path d="M210 58 C 218 58 223 74 224 98 C 225 138 225 188 222 224 C 220 246 216 258 210 258 C 204 258 200 246 198 224 C 195 188 195 138 196 98 C 197 74 202 58 210 58 Z"/>
+    <!-- hélice -->
+    <line x1="192" y1="52" x2="228" y2="52" stroke="var(--muted)" stroke-width="1.5"/>
   </g>
-  <line x1="210" y1="42" x2="210" y2="282" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
-  <path d="M188 62 A 24 14 0 1 0 232 62" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#k5d-acc)"/>
-  <text x="300" y="284" fill="var(--accent)" font-size="13" text-anchor="middle">Eje longitudinal → alabeo (roll)</text>
-  <line x1="46" y1="157" x2="374" y2="157" stroke="var(--ok)" stroke-width="2" stroke-dasharray="7 5"/>
-  <path d="M356 137 A 14 22 0 1 1 356 179" fill="none" stroke="var(--ok)" stroke-width="2" marker-end="url(#k5d-ok)"/>
-  <text x="325" y="122" fill="var(--ok)" font-size="13" text-anchor="middle">Eje lateral → cabeceo (pitch)</text>
-  <circle cx="210" cy="157" r="6" fill="var(--bad)"/>
-  <circle cx="210" cy="157" r="13" fill="none" stroke="var(--bad)" stroke-width="2"/>
-  <path d="M232 140 A 30 30 0 0 1 240 168" fill="none" stroke="var(--bad)" stroke-width="2" marker-end="url(#k5d-bad)"/>
-  <text x="112" y="196" fill="var(--bad)" font-size="13" text-anchor="middle">Eje vertical (sale hacia ti)</text>
-  <text x="112" y="212" fill="var(--bad)" font-size="13" text-anchor="middle">→ guiñada (yaw)</text>
-  <text x="192" y="152" fill="var(--text)" font-size="12" text-anchor="end">CG</text>
+
+  <!-- eje longitudinal (nariz–cola) → alabeo -->
+  <line x1="210" y1="36" x2="210" y2="292" stroke="var(--accent)" stroke-width="1.25" stroke-dasharray="7 5"/>
+  <path d="M 186 74 A 25 12 0 1 0 234 74" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" marker-end="url(#ch05-ejes-arrow-a)"/>
+  <text x="220" y="308" font-size="13" fill="var(--accent)">eje longitudinal → alabeo (roll)</text>
+
+  <!-- eje lateral (ala–ala) → cabeceo -->
+  <line x1="44" y1="130" x2="376" y2="130" stroke="var(--ok)" stroke-width="1.25" stroke-dasharray="7 5"/>
+  <path d="M 354 110 A 13 21 0 1 1 354 150" fill="none" stroke="var(--ok)" stroke-width="1.5" stroke-linecap="round" marker-end="url(#ch05-ejes-arrow-ok)"/>
+  <text x="322" y="96" font-size="13" fill="var(--ok)" text-anchor="middle">eje lateral → cabeceo (pitch)</text>
+
+  <!-- eje vertical (sale del papel) → guiñada -->
+  <circle cx="210" cy="130" r="12" fill="none" stroke="var(--bad)" stroke-width="1.5"/>
+  <circle cx="210" cy="130" r="4.5" fill="var(--bad)"/>
+  <path d="M 234 112 A 32 32 0 0 1 243 148" fill="none" stroke="var(--bad)" stroke-width="1.5" stroke-linecap="round" marker-end="url(#ch05-ejes-arrow-b)"/>
+  <text x="106" y="176" font-size="13" fill="var(--bad)" text-anchor="middle">eje vertical (sale hacia ti)</text>
+  <text x="106" y="192" font-size="13" fill="var(--bad)" text-anchor="middle">→ guiñada (yaw)</text>
+  <line x1="130" y1="164" x2="196" y2="134" stroke="var(--muted)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="198" cy="133" r="2.5" fill="var(--muted)"/>
+  <text x="234" y="160" font-size="12" fill="var(--text)">CG</text>
 </svg>

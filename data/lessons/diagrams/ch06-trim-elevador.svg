@@ -1,39 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" role="img" aria-label="Compensador (trim tab) en el elevador">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 276" role="img" aria-label="Compensador (trim tab) del elevador, vista de perfil">
   <defs>
-    <marker id="tr-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="ch06-tr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="var(--ok)"/>
     </marker>
-    <marker id="tr-ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="ch06-tr-ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="var(--accent)"/>
     </marker>
   </defs>
-  <text x="210" y="24" text-anchor="middle" font-family="inherit" font-size="15" fill="var(--text)" font-weight="bold">Trim para nariz arriba (vista de perfil)</text>
+  <text x="210" y="22" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">Trim compensado para nariz arriba (perfil)</text>
 
-  <!-- cono de cola -->
-  <path d="M20,120 C70,108 120,110 165,124 L165,152 C120,160 70,158 20,146 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="34" y="140" font-family="inherit" font-size="12" fill="var(--muted)">cola del avión</text>
-  <text x="26" y="98" font-family="inherit" font-size="12" fill="var(--ok)">← hacia la nariz</text>
+  <!-- deriva y cono de cola -->
+  <g stroke="var(--text)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="var(--panel-2)">
+    <path d="M104,116 C120,72 152,52 184,47 L202,46 C184,68 173,96 169,126 Z" fill-opacity="0.5"/>
+    <path d="M16,120 C70,108 122,110 164,124 L164,156 C122,164 70,162 16,150 Z"/>
+  </g>
+  <text x="16" y="94" font-family="inherit" font-size="12" fill="var(--muted)">← hacia la nariz</text>
 
-  <!-- estabilizador horizontal -->
-  <path d="M160,128 L268,124 L268,138 L160,148 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="180" y="168" font-family="inherit" font-size="12" fill="var(--text)">estabilizador horizontal</text>
+  <!-- estabilizador horizontal (fijo) -->
+  <path d="M162,130 C186,126 234,124.5 262,127 C269,128 273,131 272,135 C258,141 214,144.5 186,145 C174,145 165,141 162,136 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <text x="168" y="166" font-family="inherit" font-size="12" fill="var(--muted)">estabilizador (fijo)</text>
 
-  <!-- elevador deflectado arriba -->
-  <path d="M268,124 L330,86 L336,96 L268,138 Z" fill="var(--accent)" stroke="var(--text)" stroke-width="1"/>
-  <circle cx="269" cy="131" r="3" fill="var(--text)"/>
-  <text x="288" y="76" font-family="inherit" font-size="13" fill="var(--accent)" font-weight="bold">elevador ARRIBA</text>
+  <!-- elevador deflectado ARRIBA, con trim tab deflectado ABAJO -->
+  <g transform="rotate(-32 272 134)">
+    <path d="M272,128 C296,127 320,129.5 335,133 C321,138 297,140 272,140 Z"
+          fill="var(--accent)" stroke="var(--text)" stroke-width="1.25" stroke-linejoin="round"/>
+    <g transform="rotate(55 334 133.5)">
+      <path d="M334,130.5 L357,129.5 L358.5,134.5 L334,136.5 Z" fill="var(--warn)" stroke="var(--text)" stroke-width="1" stroke-linejoin="round"/>
+    </g>
+    <circle cx="334" cy="133.5" r="1.8" fill="var(--text)"/>
+  </g>
+  <circle cx="272" cy="134" r="3" fill="var(--text)"/>
 
-  <!-- trim tab deflectado abajo (opuesto) -->
-  <path d="M332,90 L368,110 L363,117 L328,98 Z" fill="var(--bad)" stroke="var(--text)" stroke-width="1"/>
-  <text x="322" y="140" font-family="inherit" font-size="13" fill="var(--bad)" font-weight="bold">trim tab ABAJO</text>
-  <text x="322" y="156" font-family="inherit" font-size="12" fill="var(--muted)">(dirección opuesta)</text>
+  <!-- el aire empuja la pestaña hacia arriba y sostiene el elevador -->
+  <line x1="330" y1="166" x2="336" y2="122" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch06-tr-ok)"/>
 
-  <!-- el aire empuja el tab hacia arriba -->
-  <line x1="352" y1="196" x2="352" y2="126" stroke="var(--ok)" stroke-width="2.5" marker-end="url(#tr-ok)"/>
-  <text x="300" y="214" font-family="inherit" font-size="12" fill="var(--ok)">el aire empuja la pestaña y</text>
-  <text x="300" y="229" font-family="inherit" font-size="12" fill="var(--ok)">sostiene el elevador arriba</text>
+  <!-- la cola baja, la nariz sube -->
+  <line x1="90" y1="170" x2="90" y2="200" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch06-tr-ac)"/>
 
-  <!-- cola baja / nariz sube -->
-  <line x1="215" y1="180" x2="215" y2="222" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#tr-ac)"/>
-  <text x="150" y="240" font-family="inherit" font-size="12" fill="var(--accent)">la cola baja → la nariz sube, sin fuerza en el bastón</text>
+  <!-- etiquetas -->
+  <g font-family="inherit">
+    <text x="252" y="62" font-size="13" font-weight="bold" fill="var(--accent)">elevador ARRIBA</text>
+    <text x="404" y="84" text-anchor="end" font-size="13" font-weight="bold" fill="var(--warn)">trim tab ABAJO</text>
+    <text x="404" y="100" text-anchor="end" font-size="12" fill="var(--muted)">(dirección opuesta)</text>
+    <text x="228" y="188" font-size="12" fill="var(--ok)">el aire empuja la pestaña y</text>
+    <text x="228" y="203" font-size="12" fill="var(--ok)">sostiene el elevador arriba</text>
+    <text x="24" y="222" font-size="12" fill="var(--accent)">la cola baja → la nariz sube,</text>
+    <text x="24" y="237" font-size="12" fill="var(--accent)">sin fuerza en el bastón</text>
+  </g>
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="300" y1="68" x2="297" y2="112"/>
+    <line x1="374" y1="94" x2="352" y2="104"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="297" cy="114" r="2.5"/>
+    <circle cx="351" cy="104.5" r="2.5"/>
+  </g>
+
+  <text x="210" y="260" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">Compensas una vez con la rueda de trim y el avión mantiene la actitud por ti.</text>
 </svg>

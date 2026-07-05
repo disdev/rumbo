@@ -1,45 +1,57 @@
-<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-  <!-- Rango de hielo de carburador: temperatura vs humedad -->
-  <g stroke="var(--text)" stroke-width="2" fill="none">
-    <line x1="60" y1="240" x2="410" y2="240"/>
-    <line x1="60" y1="240" x2="60" y2="30"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 310" role="img" aria-label="Zona de riesgo de hielo de carburador según temperatura y humedad">
+  <text x="239" y="24" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">Hielo de carburador: posible incluso en días cálidos</text>
+
+  <!-- rejilla -->
+  <g stroke="var(--muted)" stroke-width="1" opacity="0.45">
+    <line x1="64" y1="144" x2="414" y2="144" stroke-dasharray="3 4"/>
+    <line x1="64" y1="84" x2="414" y2="84" stroke-dasharray="3 4"/>
+    <line x1="126" y1="244" x2="126" y2="44" stroke-dasharray="3 4"/>
+    <line x1="344" y1="244" x2="344" y2="44" stroke-dasharray="3 4"/>
   </g>
-  <!-- zona de peligro: -7 a 21 °C, humedad alta -->
-  <!-- eje x: -15°C=60 ... 30°C=410  => 7.78 px/°C ; -7°C≈122, 21°C≈340 -->
-  <!-- eje y: 0%=240 ... 100%=40 => 2 px/% ; 50%=140, 80%=80 -->
-  <rect x="122" y="140" width="218" height="100" fill="var(--bad)" opacity="0.25"/>
-  <rect x="122" y="80" width="218" height="60" fill="var(--bad)" opacity="0.45"/>
-  <g fill="var(--text)" font-size="13" text-anchor="middle">
-    <text x="180" y="120">PELIGRO GRAVE</text>
-    <text x="180" y="136" font-size="12">humedad &gt; 80 %</text>
-    <text x="240" y="200">posible hielo (humedad &gt; 50 %)</text>
+
+  <!-- zonas de riesgo: −7 °C a 21 °C -->
+  <rect x="126" y="84" width="218" height="60" rx="3" fill="var(--warn)" fill-opacity="0.32"/>
+  <rect x="126" y="44" width="218" height="40" rx="3" fill="var(--bad)" fill-opacity="0.38"/>
+  <g font-family="inherit" text-anchor="middle" fill="var(--text)">
+    <text x="235" y="62" font-size="13" font-weight="bold">PELIGRO GRAVE</text>
+    <text x="235" y="77" font-size="11.5">humedad &gt; 80 %</text>
+    <text x="235" y="118" font-size="12.5">posible hielo · humedad &gt; 50 %</text>
   </g>
-  <!-- marcas eje x -->
-  <g stroke="var(--muted)" stroke-width="1">
-    <line x1="122" y1="240" x2="122" y2="246"/>
-    <line x1="177" y1="240" x2="177" y2="246"/>
-    <line x1="235" y1="240" x2="235" y2="246"/>
-    <line x1="340" y1="240" x2="340" y2="246"/>
+
+  <!-- ejes -->
+  <g stroke="var(--text)" stroke-width="1.5" stroke-linecap="round">
+    <line x1="64" y1="244" x2="414" y2="244"/>
+    <line x1="64" y1="244" x2="64" y2="44"/>
   </g>
-  <g fill="var(--text)" font-size="13" text-anchor="middle">
-    <text x="122" y="262" fill="var(--bad)">−7 °C</text>
-    <text x="177" y="262">0 °C</text>
-    <text x="235" y="262">10 °C</text>
-    <text x="340" y="262" fill="var(--bad)">21 °C</text>
-    <text x="235" y="288" fill="var(--muted)" font-size="12">temperatura del aire exterior (OAT)</text>
+  <g stroke="var(--text)" stroke-width="1">
+    <line x1="126" y1="244" x2="126" y2="250"/>
+    <line x1="181" y1="244" x2="181" y2="250"/>
+    <line x1="258" y1="244" x2="258" y2="250"/>
+    <line x1="344" y1="244" x2="344" y2="250"/>
+    <line x1="58" y1="144" x2="64" y2="144"/>
+    <line x1="58" y1="84" x2="64" y2="84"/>
+    <line x1="58" y1="44" x2="64" y2="44"/>
   </g>
-  <!-- marcas eje y -->
-  <g fill="var(--text)" font-size="12" text-anchor="end">
-    <text x="54" y="244">0 %</text>
-    <text x="54" y="144">50 %</text>
-    <text x="54" y="84">80 %</text>
-    <text x="54" y="44">100 %</text>
+
+  <!-- rótulos de ejes -->
+  <g font-family="inherit" font-size="12" fill="var(--text)" text-anchor="middle">
+    <text x="126" y="264" font-weight="bold" fill="var(--bad)">−7 °C</text>
+    <text x="181" y="264">0 °C</text>
+    <text x="258" y="264">10 °C</text>
+    <text x="344" y="264" font-weight="bold" fill="var(--bad)">21 °C</text>
   </g>
-  <g stroke="var(--muted)" stroke-width="1">
-    <line x1="56" y1="140" x2="60" y2="140"/>
-    <line x1="56" y1="80" x2="60" y2="80"/>
-    <line x1="56" y1="40" x2="60" y2="40"/>
+  <g font-family="inherit" font-size="11.5" fill="var(--muted)" text-anchor="end">
+    <text x="54" y="248">0 %</text>
+    <text x="54" y="148">50 %</text>
+    <text x="54" y="88">80 %</text>
+    <text x="54" y="48">100 %</text>
   </g>
-  <text x="20" y="150" fill="var(--muted)" font-size="12" transform="rotate(-90 20 150)" text-anchor="middle">humedad relativa</text>
-  <text x="235" y="20" fill="var(--text)" font-size="14" text-anchor="middle">Hielo de carburador: ¡incluso en días cálidos!</text>
+  <text x="239" y="290" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">temperatura del aire exterior (OAT)</text>
+  <text x="20" y="144" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)" transform="rotate(-90 20 144)">humedad relativa</text>
+
+  <!-- anotación -->
+  <text x="410" y="158" text-anchor="end" font-family="inherit" font-size="11.5" fill="var(--bad)">incluso con 21 °C</text>
+  <text x="410" y="172" text-anchor="end" font-family="inherit" font-size="11.5" fill="var(--bad)">y sol afuera</text>
+  <line x1="372" y1="152" x2="348" y2="118" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="347" cy="116" r="2.5" fill="var(--muted)"/>
 </svg>

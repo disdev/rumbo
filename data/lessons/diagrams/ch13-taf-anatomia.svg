@@ -1,20 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 270" role="img" aria-label="Anatomía de un TAF con sus grupos de cambio">
-  <text x="230" y="22" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">Anatomía de un TAF</text>
+<svg viewBox="0 0 480 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un TAF desarmado: encabezado con validez, pronóstico base y los grupos de cambio TEMPO, BECMG y FM, con su línea de tiempo">
+  <text x="240" y="22" fill="var(--muted)" font-family="inherit" font-size="12" letter-spacing="3" text-anchor="middle">ANATOMÍA DE UN TAF</text>
 
-  <text x="20" y="52" font-family="inherit" font-size="13" fill="var(--text)">TAF SPZO 121100Z <tspan fill="var(--accent)" font-weight="bold">1212/1318</tspan></text>
-  <text x="36" y="68" font-family="inherit" font-size="12" fill="var(--muted)">emitido día 12 a las 11:00Z · válido del 12/12:00Z al 13/18:00Z</text>
+  <!-- espécimen: el TAF crudo -->
+  <rect x="22" y="36" width="284" height="172" rx="10" fill="var(--panel-2)" fill-opacity="0.45" stroke="var(--muted)" stroke-opacity="0.4" stroke-width="1"/>
+  <g font-family="inherit" font-size="13.5" font-weight="bold" letter-spacing="0.3" fill="var(--text)">
+    <text x="38" y="66">TAF SPZO 121100Z <tspan fill="var(--accent)">1212/1318</tspan></text>
+    <text x="38" y="96">20008KT 9999 SCT040</text>
+    <text x="52" y="126"><tspan fill="var(--accent)">TEMPO</tspan> 1218/1222 4000 SHRA</text>
+    <text x="52" y="156"><tspan fill="var(--accent)">BECMG</tspan> 1300/1302 VRB03KT</text>
+    <text x="52" y="186"><tspan fill="var(--bad)">FM131500</tspan> 18012KT BKN030</text>
+  </g>
 
-  <text x="20" y="96" font-family="inherit" font-size="13" fill="var(--text)">20008KT 9999 SCT040</text>
-  <text x="36" y="112" font-family="inherit" font-size="12" fill="var(--muted)">pronóstico base — mismos códigos que el METAR</text>
+  <!-- líneas guía hacia las notas -->
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="301" y1="62" x2="312" y2="62"/>
+    <line x1="301" y1="92" x2="312" y2="92"/>
+    <line x1="301" y1="122" x2="312" y2="122"/>
+    <line x1="301" y1="152" x2="312" y2="152"/>
+    <line x1="301" y1="182" x2="312" y2="182"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="298" cy="62" r="2.5"/><circle cx="298" cy="92" r="2.5"/><circle cx="298" cy="122" r="2.5"/><circle cx="298" cy="152" r="2.5"/><circle cx="298" cy="182" r="2.5"/>
+  </g>
+  <g font-family="inherit">
+    <text x="318" y="58" fill="var(--accent)" font-size="12" font-weight="bold">VALIDEZ</text>
+    <text x="318" y="72" fill="var(--muted)" font-size="11.5">del 12/12Z al 13/18Z</text>
+    <text x="318" y="88" fill="var(--text)" font-size="12" font-weight="bold">PRONÓSTICO BASE</text>
+    <text x="318" y="102" fill="var(--muted)" font-size="11.5">códigos iguales al METAR</text>
+    <text x="318" y="118" fill="var(--accent)" font-size="12" font-weight="bold">TEMPO</text>
+    <text x="318" y="132" fill="var(--muted)" font-size="11.5">fluctuaciones de &lt; 1 h</text>
+    <text x="318" y="148" fill="var(--accent)" font-size="12" font-weight="bold">BECMG</text>
+    <text x="318" y="162" fill="var(--muted)" font-size="11.5">cambio gradual en la ventana</text>
+    <text x="318" y="178" fill="var(--bad)" font-size="12" font-weight="bold">FM</text>
+    <text x="318" y="192" fill="var(--muted)" font-size="11.5">desde esa hora, borra todo</text>
+  </g>
 
-  <text x="20" y="140" font-family="inherit" font-size="13" fill="var(--text)"><tspan fill="var(--accent)" font-weight="bold">TEMPO</tspan> 1218/1222 4000 SHRA BKN025</text>
-  <text x="36" y="156" font-family="inherit" font-size="12" fill="var(--muted)">fluctuaciones temporales: menos de 1 hora cada vez</text>
+  <!-- línea de tiempo de la validez -->
+  <text x="40" y="226" fill="var(--muted)" font-family="inherit" font-size="11.5">la misma validez, en línea de tiempo:</text>
+  <rect x="40" y="246" width="400" height="16" rx="4" fill="var(--panel-2)" fill-opacity="0.5" stroke="var(--muted)" stroke-width="1"/>
+  <rect x="120" y="246" width="53" height="16" fill="var(--accent)" fill-opacity="0.38"/>
+  <rect x="200" y="246" width="27" height="16" fill="var(--warn)" fill-opacity="0.45"/>
+  <rect x="400" y="246" width="40" height="16" fill="var(--bad)" fill-opacity="0.18"/>
+  <line x1="400" y1="240" x2="400" y2="268" stroke="var(--bad)" stroke-width="2" stroke-linecap="round"/>
+  <g font-family="inherit" font-size="10.5" text-anchor="middle" font-weight="bold">
+    <text x="146" y="241" fill="var(--accent)">TEMPO</text>
+    <text x="213" y="241" fill="var(--warn)">BECMG</text>
+    <text x="400" y="236" fill="var(--bad)">FM</text>
+  </g>
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="40" y1="262" x2="40" y2="270"/><line x1="200" y1="262" x2="200" y2="270"/><line x1="440" y1="262" x2="440" y2="270"/>
+  </g>
+  <g fill="var(--muted)" font-family="inherit" font-size="10.5">
+    <text x="40" y="284">día 12 · 12:00Z</text>
+    <text x="200" y="284" text-anchor="middle">día 13 · 00:00Z</text>
+    <text x="440" y="284" text-anchor="end">día 13 · 18:00Z</text>
+  </g>
 
-  <text x="20" y="184" font-family="inherit" font-size="13" fill="var(--text)"><tspan fill="var(--accent)" font-weight="bold">BECMG</tspan> 1300/1302 VRB03KT</text>
-  <text x="36" y="200" font-family="inherit" font-size="12" fill="var(--muted)">cambio gradual dentro de esa ventana</text>
-
-  <text x="20" y="228" font-family="inherit" font-size="13" fill="var(--text)"><tspan fill="var(--bad)" font-weight="bold">FM131500</tspan> 18012KT 9999 BKN030</text>
-  <text x="36" y="244" font-family="inherit" font-size="12" fill="var(--muted)">cambio rápido: desde el día 13 a las 15:00Z reemplaza todo lo anterior</text>
-
-  <text x="230" y="264" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">Único tipo de nube pronosticado en un TAF: CB (cumulonimbus).</text>
+  <text x="240" y="318" fill="var(--accent)" font-family="inherit" font-size="12.5" text-anchor="middle">La única nube que un TAF pronostica: CB (cumulonimbus)</text>
 </svg>

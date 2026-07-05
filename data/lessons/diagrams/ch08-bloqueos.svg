@@ -1,26 +1,71 @@
-<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-  <rect x="10" y="16" width="480" height="36" fill="var(--panel-2)" stroke="var(--muted)"/>
-  <text x="20" y="39" font-size="13" font-weight="bold" fill="var(--text)">Bloqueo</text>
-  <text x="240" y="39" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">Velocímetro</text>
-  <text x="340" y="39" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">Altímetro</text>
-  <text x="440" y="39" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">Variómetro</text>
+<svg viewBox="0 0 500 312" xmlns="http://www.w3.org/2000/svg" font-family="inherit" role="img" aria-label="Tabla de bloqueos: qué instrumentos fallan cuando se tapa el pitot o la toma estática">
+  <rect x="14" y="14" width="472" height="182" rx="12" fill="var(--panel-2)" fill-opacity="0.5" stroke="var(--muted)" stroke-width="1.25"/>
 
-  <line x1="10" y1="96" x2="490" y2="96" stroke="var(--muted)"/>
-  <line x1="10" y1="140" x2="490" y2="140" stroke="var(--muted)"/>
-  <rect x="10" y="16" width="480" height="124" fill="none" stroke="var(--muted)"/>
+  <!-- encabezados: mini instrumentos -->
+  <g fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5">
+    <circle cx="250" cy="48" r="17"/>
+    <circle cx="345" cy="48" r="17"/>
+    <circle cx="440" cy="48" r="17"/>
+  </g>
+  <g stroke="var(--text)" stroke-width="2" stroke-linecap="round">
+    <line x1="250" y1="48" x2="258" y2="56"/>
+    <line x1="345" y1="48" x2="345" y2="36"/>
+    <line x1="345" y1="48" x2="353" y2="52"/>
+    <line x1="440" y1="48" x2="429" y2="48"/>
+  </g>
+  <g fill="var(--text)">
+    <circle cx="250" cy="48" r="2"/><circle cx="345" cy="48" r="2"/><circle cx="440" cy="48" r="2"/>
+  </g>
+  <g font-size="12" fill="var(--text)" text-anchor="middle">
+    <text x="250" y="84">Velocímetro</text>
+    <text x="345" y="84">Altímetro</text>
+    <text x="440" y="84">Variómetro</text>
+  </g>
 
-  <text x="20" y="80" font-size="13" fill="var(--text)">Pitot tapado</text>
-  <text x="240" y="82" font-size="16" font-weight="bold" fill="var(--bad)" text-anchor="middle">✗</text>
-  <text x="340" y="82" font-size="16" font-weight="bold" fill="var(--ok)" text-anchor="middle">✓</text>
-  <text x="440" y="82" font-size="16" font-weight="bold" fill="var(--ok)" text-anchor="middle">✓</text>
+  <line x1="24" y1="94" x2="476" y2="94" stroke="var(--muted)" stroke-width="1"/>
+  <line x1="24" y1="140" x2="476" y2="140" stroke="var(--muted)" stroke-width="1"/>
 
-  <text x="20" y="124" font-size="13" fill="var(--text)">Estática tapada</text>
-  <text x="240" y="126" font-size="16" font-weight="bold" fill="var(--bad)" text-anchor="middle">✗</text>
-  <text x="340" y="126" font-size="16" font-weight="bold" fill="var(--bad)" text-anchor="middle">✗</text>
-  <text x="440" y="126" font-size="16" font-weight="bold" fill="var(--bad)" text-anchor="middle">✗</text>
+  <!-- fila 1: pitot tapado -->
+  <text x="28" y="121" font-size="13" fill="var(--text)">Pitot tapado</text>
+  <g transform="translate(250 117)">
+    <circle r="13" fill="var(--bad)" fill-opacity="0.15" stroke="var(--bad)" stroke-width="1.5"/>
+    <path d="M-4.5 -4.5 L4.5 4.5 M4.5 -4.5 L-4.5 4.5" stroke="var(--bad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+  <g transform="translate(345 117)">
+    <circle r="13" fill="var(--ok)" fill-opacity="0.15" stroke="var(--ok)" stroke-width="1.5"/>
+    <path d="M-5 0.5 L-1.5 4.5 L5.5 -4.5" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g transform="translate(440 117)">
+    <circle r="13" fill="var(--ok)" fill-opacity="0.15" stroke="var(--ok)" stroke-width="1.5"/>
+    <path d="M-5 0.5 L-1.5 4.5 L5.5 -4.5" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
 
-  <text x="20" y="170" font-size="12" fill="var(--muted)">✓ = sigue bien · ✗ = falla o miente</text>
-  <text x="20" y="192" font-size="12" fill="var(--text)">Estática tapada: altímetro congelado, variómetro en cero, velocímetro miente.</text>
-  <text x="20" y="212" font-size="12" fill="var(--text)">Solución: abrir la fuente estática alterna (recupera los tres).</text>
-  <text x="20" y="236" font-size="12" fill="var(--accent)">El coordinador de virajes nunca aparece aquí: es giroscópico.</text>
+  <!-- fila 2: estática tapada -->
+  <text x="28" y="167" font-size="13" fill="var(--text)">Estática tapada</text>
+  <g transform="translate(250 163)">
+    <circle r="13" fill="var(--bad)" fill-opacity="0.15" stroke="var(--bad)" stroke-width="1.5"/>
+    <path d="M-4.5 -4.5 L4.5 4.5 M4.5 -4.5 L-4.5 4.5" stroke="var(--bad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+  <g transform="translate(345 163)">
+    <circle r="13" fill="var(--bad)" fill-opacity="0.15" stroke="var(--bad)" stroke-width="1.5"/>
+    <path d="M-4.5 -4.5 L4.5 4.5 M4.5 -4.5 L-4.5 4.5" stroke="var(--bad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+  <g transform="translate(440 163)">
+    <circle r="13" fill="var(--bad)" fill-opacity="0.15" stroke="var(--bad)" stroke-width="1.5"/>
+    <path d="M-4.5 -4.5 L4.5 4.5 M4.5 -4.5 L-4.5 4.5" stroke="var(--bad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- clave de lectura -->
+  <g transform="translate(36 218)">
+    <path d="M-5 0.5 L-1.5 4.5 L5.5 -4.5" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <text x="52" y="223" font-size="12" fill="var(--muted)">sigue bien</text>
+  <g transform="translate(148 218)">
+    <path d="M-4.5 -4.5 L4.5 4.5 M4.5 -4.5 L-4.5 4.5" stroke="var(--bad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+  <text x="164" y="223" font-size="12" fill="var(--muted)">falla o miente</text>
+
+  <text x="28" y="252" font-size="12" fill="var(--text)">Estática tapada: altímetro congelado, variómetro en cero, velocímetro miente.</text>
+  <text x="28" y="272" font-size="12" fill="var(--text)">Solución: abrir la fuente estática alterna (recupera los tres).</text>
+  <text x="28" y="298" font-size="12" fill="var(--accent)">El coordinador de virajes nunca aparece aquí: es giroscópico.</text>
 </svg>

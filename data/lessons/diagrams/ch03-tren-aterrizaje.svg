@@ -1,37 +1,58 @@
-<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación entre tren triciclo con rueda de nariz y tren convencional con patín de cola">
-  <!-- Panel izquierdo: triciclo -->
-  <text x="120" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Triciclo</text>
+<svg viewBox="0 0 480 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dos aviones de lado sobre la pista: tren triciclo con rueda de nariz y actitud horizontal, y tren convencional con rueda de cola y nariz levantada">
+  <!-- suelo -->
+  <rect x="0" y="210" width="480" height="80" fill="var(--panel-2)" fill-opacity="0.35"/>
+  <line x1="0" y1="210" x2="480" y2="210" stroke="var(--muted)" stroke-width="1.25"/>
+  <line x1="240" y1="56" x2="240" y2="200" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 5"/>
+
+  <text x="120" y="26" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">Triciclo</text>
   <text x="120" y="42" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(rueda bajo la nariz)</text>
-  <path d="M40 110 Q45 95 70 92 L160 90 Q190 89 205 96 L205 112 Q185 122 160 120 L65 118 Q45 118 40 110 Z"
-        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <path d="M160 91 L178 62 L192 62 L186 90 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <!-- rueda de nariz -->
-  <line x1="58" y1="116" x2="58" y2="138" stroke="var(--text)" stroke-width="2.5"/>
-  <circle cx="58" cy="146" r="8" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2.5"/>
-  <!-- ruedas principales -->
-  <line x1="120" y1="120" x2="120" y2="140" stroke="var(--text)" stroke-width="2.5"/>
-  <circle cx="120" cy="148" r="9" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
-  <line x1="58" y1="160" x2="58" y2="175" stroke="var(--muted)" stroke-width="1"/>
-  <text x="20" y="190" fill="var(--ok)" font-family="inherit" font-size="12">rueda de nariz</text>
-  <text x="20" y="205" fill="var(--muted)" font-family="inherit" font-size="12">nariz horizontal: ves</text>
-  <text x="20" y="220" fill="var(--muted)" font-family="inherit" font-size="12">la pista al rodar</text>
+  <text x="360" y="26" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">Convencional</text>
+  <text x="360" y="42" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(rueda de cola)</text>
 
-  <!-- Panel derecho: convencional -->
-  <text x="360" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Convencional</text>
-  <text x="360" y="42" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(patín o rueda de cola)</text>
-  <path d="M280 118 Q285 100 310 96 L400 82 Q430 78 445 84 L445 96 Q425 108 400 106 L305 124 Q285 126 280 118 Z"
-        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <path d="M400 83 L416 56 L430 56 L425 80 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <!-- ruedas principales adelante -->
-  <line x1="310" y1="124" x2="310" y2="144" stroke="var(--text)" stroke-width="2.5"/>
-  <circle cx="310" cy="152" r="9" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
-  <!-- rueda de cola -->
-  <line x1="432" y1="98" x2="436" y2="112" stroke="var(--text)" stroke-width="2"/>
-  <circle cx="437" cy="117" r="5" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2.5"/>
-  <line x1="437" y1="124" x2="437" y2="172" stroke="var(--muted)" stroke-width="1"/>
-  <text x="392" y="188" fill="var(--bad)" font-family="inherit" font-size="12">rueda de cola</text>
-  <text x="330" y="205" fill="var(--muted)" font-family="inherit" font-size="12">nariz levantada: menos</text>
-  <text x="330" y="220" fill="var(--muted)" font-family="inherit" font-size="12">visibilidad al rodar</text>
+  <!-- avión triciclo: actitud horizontal -->
+  <path d="M31 132 C28 143 28 158 31 168" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 150 C50 146 60 144 72 143 L82 142 C87 132 94 126 103 124 L140 123 C163 125 184 132 202 140 C206 142 209 144 210 146 L210 152 C192 158 172 162 150 163 L88 165 C74 165 56 164 46 161 C41 159 39 155 40 150 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M34 150 C35 146 38 144 42 143 L42 158 C38 157 35 154 34 150 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M84 121 C87 117 92 115 99 115 L156 116 C160 116 162 118 161 121 C160 123 158 124 155 124 L90 125 C86 125 83 124 84 121 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M188 139 C193 123 200 110 209 102 L221 101 C219 116 216 130 213 144 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M198 149 L234 147 C237 147 237 151 234 151 L199 153 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="66" y1="163" x2="68" y2="196" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="68" cy="202" r="8" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2.5"/>
+  <circle cx="68" cy="202" r="2" fill="var(--text)"/>
+  <path d="M132 164 C138 172 143 181 146 192" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="147" cy="201" r="9" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="147" cy="201" r="2.5" fill="var(--text)"/>
 
-  <line x1="240" y1="55" x2="240" y2="225" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 5"/>
+  <!-- avión convencional: nariz arriba, cola abajo -->
+  <path d="M259 112 C256 122 257 136 261 146" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M270 128 C280 122 292 118 305 117 L315 116 C320 106 328 100 337 99 L370 100 C392 106 412 118 428 132 C436 139 441 147 443 154 L443 164 C436 170 424 172 412 169 L330 143 C306 137 288 134 278 132 C272 131 269 130 270 128 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M263 129 C264 125 268 123 273 123 L274 137 C269 137 265 134 263 129 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M316 114 C319 110 324 108 331 108 L388 111 C392 111 394 114 393 116 C392 118 390 119 387 119 L322 118 C318 118 315 117 316 114 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M420 134 C426 118 434 105 444 97 L456 97 C454 112 451 128 448 146 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M428 149 L466 152 L466 157 L428 155 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="302" y1="136" x2="296" y2="194" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="296" cy="201" r="9" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="296" cy="201" r="2.5" fill="var(--text)"/>
+  <line x1="445" y1="166" x2="450" y2="198" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="451" cy="204" r="6" fill="var(--panel-2)" stroke="var(--warn)" stroke-width="2.5"/>
+  <circle cx="451" cy="204" r="1.5" fill="var(--text)"/>
+
+  <!-- líneas guía con punto en el objetivo -->
+  <line x1="94" y1="234" x2="74" y2="212" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="72" cy="210" r="2.5" fill="var(--ok)"/>
+  <line x1="414" y1="234" x2="446" y2="213" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="448" cy="211" r="2.5" fill="var(--warn)"/>
+
+  <g font-family="inherit" font-size="12">
+    <text x="16" y="240" fill="var(--ok)" font-weight="bold">rueda de nariz</text>
+    <text x="16" y="258" fill="var(--muted)">nariz horizontal: ves</text>
+    <text x="16" y="274" fill="var(--muted)">la pista al rodar</text>
+    <text x="316" y="240" fill="var(--warn)" font-weight="bold">rueda de cola</text>
+    <text x="316" y="258" fill="var(--muted)">nariz arriba: casi no ves</text>
+    <text x="316" y="274" fill="var(--muted)">la pista al rodar</text>
+  </g>
 </svg>

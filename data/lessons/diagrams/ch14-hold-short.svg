@@ -1,43 +1,75 @@
-<svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marca de posición de espera: dos líneas sólidas del lado de la calle de rodaje donde se detiene el avión y dos discontinuas del lado de la pista">
+<svg viewBox="0 0 452 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marca de posición de espera: dos líneas sólidas del lado de la calle de rodaje donde se detiene el avión y dos discontinuas del lado de la pista">
+  <defs>
+    <marker id="ch14-hold-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--muted)"/>
+    </marker>
+  </defs>
+
   <!-- pista -->
-  <rect x="20" y="30" width="400" height="66" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <line x1="30" y1="63" x2="410" y2="63" stroke="var(--text)" stroke-width="3" stroke-dasharray="16 12"/>
-  <text x="32" y="50" fill="var(--muted)" font-family="inherit" font-size="12">PISTA 16-34</text>
+  <rect x="20" y="28" width="400" height="64" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <line x1="32" y1="60" x2="408" y2="60" stroke="var(--text)" stroke-width="3" stroke-dasharray="18 13" stroke-linecap="round"/>
+  <text x="32" y="46" fill="var(--muted)" font-family="inherit" font-size="12">PISTA 16-34</text>
 
   <!-- calle de rodaje -->
-  <rect x="165" y="96" width="110" height="210" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <!-- eje amarillo: sólido abajo, guía discontinua hacia la pista -->
-  <line x1="220" y1="306" x2="220" y2="198" stroke="var(--accent)" stroke-width="4"/>
-  <line x1="220" y1="198" x2="220" y2="96" stroke="var(--accent)" stroke-width="4" stroke-dasharray="10 8"/>
+  <rect x="160" y="92" width="120" height="222" fill="var(--panel-2)" fill-opacity="0.7" stroke="var(--text)" stroke-width="1.25"/>
+
+  <!-- eje amarillo de la calle: sólido hasta la marca, guía hacia la pista -->
+  <line x1="220" y1="314" x2="220" y2="204" stroke="var(--warn)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="220" y1="190" x2="220" y2="92" stroke="var(--warn)" stroke-width="4" stroke-dasharray="10 8"/>
 
   <!-- marca de posición de espera: 2 discontinuas (lado pista) + 2 sólidas (lado calle) -->
-  <line x1="167" y1="166" x2="273" y2="166" stroke="var(--accent)" stroke-width="5" stroke-dasharray="10 7"/>
-  <line x1="167" y1="176" x2="273" y2="176" stroke="var(--accent)" stroke-width="5" stroke-dasharray="10 7"/>
-  <line x1="167" y1="188" x2="273" y2="188" stroke="var(--accent)" stroke-width="5"/>
-  <line x1="167" y1="198" x2="273" y2="198" stroke="var(--accent)" stroke-width="5"/>
+  <g stroke="var(--warn)" stroke-linecap="butt">
+    <line x1="162" y1="170" x2="278" y2="170" stroke-width="4.5" stroke-dasharray="9 7"/>
+    <line x1="162" y1="180" x2="278" y2="180" stroke-width="4.5" stroke-dasharray="9 7"/>
+    <line x1="162" y1="192" x2="278" y2="192" stroke-width="4.5"/>
+    <line x1="162" y1="202" x2="278" y2="202" stroke-width="4.5"/>
+  </g>
 
-  <!-- avión que espera (triángulo) -->
-  <path d="M220 232 L207 262 L220 254 L233 262 Z" fill="var(--ok)"/>
+  <!-- letrero mandatorio junto al punto de espera -->
+  <rect x="102" y="186" width="50" height="22" rx="3" fill="var(--bad)"/>
+  <text x="127" y="201" fill="var(--panel-2)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="middle">16-34</text>
+  <line x1="127" y1="208" x2="127" y2="216" stroke="var(--text)" stroke-width="1.25"/>
+  <text x="127" y="230" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">letrero mandatorio</text>
 
-  <!-- flecha: saliendo de la pista -->
-  <path d="M252 110 v110 m0 0 l-6 -10 m6 10 l6 -10" stroke="var(--muted)" stroke-width="2" fill="none"/>
+  <!-- avión que espera (vista superior, nariz hacia la marca) -->
+  <path d="M220 216
+           C216.5 216 214.8 220.5 214.8 227 L214.8 233
+           L192 241 Q189 242.2 189 245 L189 249 L214.8 244.5
+           L214.8 260 L204 266.5 L204 271 L214.8 268.8
+           C214.8 271.5 216.8 273 220 273
+           C223.2 273 225.2 271.5 225.2 268.8
+           L236 271 L236 266.5 L225.2 260
+           L225.2 244.5 L251 249 L251 245 Q251 242.2 248 241 L225.2 233
+           L225.2 227 C225.2 220.5 223.5 216 220 216 Z"
+        fill="var(--ok)" stroke="var(--ok)" stroke-width="1" stroke-linejoin="round"/>
 
-  <!-- etiquetas -->
-  <line x1="273" y1="171" x2="330" y2="150" stroke="var(--muted)" stroke-width="1"/>
-  <text x="292" y="136" fill="var(--text)" font-family="inherit" font-size="12">Dos discontinuas:</text>
-  <text x="292" y="150" fill="var(--muted)" font-family="inherit" font-size="12">lado de la pista</text>
+  <!-- saliendo de la pista: cruza las 4 líneas -->
+  <path d="M254 102 V226" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ch14-hold-arrow)"/>
 
-  <line x1="273" y1="193" x2="330" y2="206" stroke="var(--muted)" stroke-width="1"/>
-  <text x="296" y="212" fill="var(--text)" font-family="inherit" font-size="12">Dos sólidas:</text>
-  <text x="296" y="226" fill="var(--muted)" font-family="inherit" font-size="12">lado de la calle de rodaje</text>
+  <!-- líneas guía -->
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="298" y1="148" x2="273" y2="172"/>
+    <line x1="298" y1="212" x2="273" y2="199"/>
+    <line x1="118" y1="252" x2="192" y2="244"/>
+    <line x1="298" y1="116" x2="258" y2="122"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="271" cy="174" r="2.5"/><circle cx="271" cy="198" r="2.5"/>
+    <circle cx="194" cy="244" r="2.5"/><circle cx="256" cy="122" r="2.5"/>
+  </g>
 
-  <line x1="212" y1="250" x2="140" y2="262" stroke="var(--muted)" stroke-width="1"/>
-  <text x="14" y="256" fill="var(--ok)" font-family="inherit" font-size="12">Sólidas de TU lado:</text>
-  <text x="14" y="270" fill="var(--ok)" font-family="inherit" font-size="12">DETENTE antes de las líneas</text>
-  <text x="14" y="284" fill="var(--muted)" font-family="inherit" font-size="12">(no cruces sin autorización)</text>
+  <text x="302" y="140" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">Dos discontinuas:</text>
+  <text x="302" y="155" fill="var(--muted)" font-family="inherit" font-size="12">lado de la PISTA</text>
 
-  <line x1="252" y1="120" x2="330" y2="108" stroke="var(--muted)" stroke-width="1"/>
-  <text x="300" y="116" fill="var(--text)" font-family="inherit" font-size="12">Saliendo de la pista:</text>
-  <text x="300" y="130" fill="var(--muted)" font-family="inherit" font-size="12">cruza las 4 líneas</text>
-  <text x="300" y="144" fill="var(--muted)" font-family="inherit" font-size="12">por completo</text>
+  <text x="302" y="212" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">Dos sólidas:</text>
+  <text x="302" y="227" fill="var(--muted)" font-family="inherit" font-size="12">lado de la calle</text>
+  <text x="302" y="242" fill="var(--muted)" font-family="inherit" font-size="12">de rodaje</text>
+
+  <text x="20" y="268" fill="var(--ok)" font-family="inherit" font-size="12" font-weight="bold">Sólidas de TU lado:</text>
+  <text x="20" y="283" fill="var(--ok)" font-family="inherit" font-size="12">DETENTE antes de las líneas</text>
+  <text x="20" y="298" fill="var(--muted)" font-family="inherit" font-size="12">(no cruces sin autorización)</text>
+
+  <text x="302" y="96" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">Saliendo de la pista:</text>
+  <text x="302" y="111" fill="var(--muted)" font-family="inherit" font-size="12">cruza las 4 líneas por</text>
+  <text x="302" y="126" fill="var(--muted)" font-family="inherit" font-size="12">completo = pista libre</text>
 </svg>

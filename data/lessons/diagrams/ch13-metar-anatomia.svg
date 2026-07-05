@@ -1,55 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 250" role="img" aria-label="Anatomía de un METAR bloque por bloque">
-  <text x="230" y="22" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">Anatomía de un METAR</text>
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un METAR de SPJC desarmado en sus bloques: tipo, estación, fecha y hora, viento, visibilidad, nubes, temperatura y rocío, y QNH">
+  <text x="240" y="24" fill="var(--muted)" font-family="inherit" font-size="12" letter-spacing="3" text-anchor="middle">ANATOMÍA DE UN METAR</text>
 
-  <!-- fila 1 -->
-  <rect x="10" y="44" width="88" height="28" rx="5" fill="var(--panel-2)" stroke="var(--accent)"/>
-  <text x="54" y="63" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)">METAR</text>
-  <line x1="54" y1="72" x2="54" y2="82" stroke="var(--muted)"/>
-  <text x="54" y="94" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">tipo</text>
-  <text x="54" y="108" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">rutina</text>
+  <!-- espécimen: el METAR crudo -->
+  <rect x="26" y="112" width="428" height="88" rx="10" fill="var(--panel-2)" fill-opacity="0.45" stroke="var(--muted)" stroke-opacity="0.4" stroke-width="1"/>
 
-  <rect x="106" y="44" width="76" height="28" rx="5" fill="var(--panel-2)" stroke="var(--accent)"/>
-  <text x="144" y="63" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)">SPJC</text>
-  <line x1="144" y1="72" x2="144" y2="82" stroke="var(--muted)"/>
-  <text x="144" y="94" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">estación</text>
-  <text x="144" y="108" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">OACI: Lima</text>
+  <g fill="var(--text)" font-family="inherit" font-size="16" font-weight="bold" letter-spacing="0.5" text-anchor="middle">
+    <text x="102" y="146">METAR</text>
+    <text x="169" y="146">SPJC</text>
+    <text x="246" y="146">121400Z</text>
+    <text x="353" y="146">18010G20KT</text>
+    <text x="127" y="182">9999</text>
+    <text x="199" y="182">FEW020</text>
+    <text x="276" y="182">19/16</text>
+    <text x="348" y="182">Q1015</text>
+  </g>
+  <!-- subrayados de cada bloque -->
+  <g stroke="var(--accent)" stroke-width="2" stroke-linecap="round">
+    <line x1="81" y1="154" x2="123" y2="154"/>
+    <line x1="153" y1="154" x2="185" y2="154"/>
+    <line x1="215" y1="154" x2="277" y2="154"/>
+    <line x1="307" y1="154" x2="399" y2="154"/>
+    <line x1="107" y1="190" x2="147" y2="190"/>
+    <line x1="169" y1="190" x2="229" y2="190"/>
+    <line x1="251" y1="190" x2="301" y2="190"/>
+    <line x1="323" y1="190" x2="373" y2="190"/>
+  </g>
 
-  <rect x="190" y="44" width="104" height="28" rx="5" fill="var(--panel-2)" stroke="var(--accent)"/>
-  <text x="242" y="63" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)">121400Z</text>
-  <line x1="242" y1="72" x2="242" y2="82" stroke="var(--muted)"/>
-  <text x="242" y="94" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">fecha y hora</text>
-  <text x="242" y="108" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">día 12 · 14:00 UTC</text>
+  <!-- líneas guía fila 1 (etiquetas arriba) -->
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="102" y1="92" x2="102" y2="126"/>
+    <line x1="169" y1="64" x2="169" y2="126"/>
+    <line x1="246" y1="92" x2="246" y2="126"/>
+    <line x1="353" y1="64" x2="353" y2="126"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="102" cy="129" r="2.5"/><circle cx="169" cy="129" r="2.5"/><circle cx="246" cy="129" r="2.5"/><circle cx="353" cy="129" r="2.5"/>
+  </g>
+  <g text-anchor="middle" font-family="inherit">
+    <text x="102" y="72" fill="var(--accent)" font-size="12" font-weight="bold">TIPO</text>
+    <text x="102" y="86" fill="var(--muted)" font-size="11.5">informe de rutina</text>
+    <text x="169" y="44" fill="var(--accent)" font-size="12" font-weight="bold">ESTACIÓN</text>
+    <text x="169" y="58" fill="var(--muted)" font-size="11.5">OACI: Lima</text>
+    <text x="246" y="72" fill="var(--accent)" font-size="12" font-weight="bold">DÍA + HORA</text>
+    <text x="246" y="86" fill="var(--muted)" font-size="11.5">día 12 · 14:00 UTC</text>
+    <text x="353" y="44" fill="var(--accent)" font-size="12" font-weight="bold">VIENTO</text>
+    <text x="353" y="58" fill="var(--muted)" font-size="11.5">180° verd. · 10 kt · ráfagas 20</text>
+  </g>
 
-  <rect x="302" y="44" width="148" height="28" rx="5" fill="var(--panel-2)" stroke="var(--accent)"/>
-  <text x="376" y="63" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)">18010G20KT</text>
-  <line x1="376" y1="72" x2="376" y2="82" stroke="var(--muted)"/>
-  <text x="376" y="94" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">viento</text>
-  <text x="376" y="108" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">180° verd. · 10 kt · ráf. 20</text>
+  <!-- líneas guía fila 2 (etiquetas abajo) -->
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="127" y1="197" x2="127" y2="220"/>
+    <line x1="199" y1="197" x2="199" y2="252"/>
+    <line x1="276" y1="197" x2="276" y2="220"/>
+    <line x1="348" y1="197" x2="348" y2="252"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="127" cy="194" r="2.5"/><circle cx="199" cy="194" r="2.5"/><circle cx="276" cy="194" r="2.5"/><circle cx="348" cy="194" r="2.5"/>
+  </g>
+  <g text-anchor="middle" font-family="inherit">
+    <text x="127" y="234" fill="var(--accent)" font-size="12" font-weight="bold">VISIBILIDAD</text>
+    <text x="127" y="248" fill="var(--muted)" font-size="11.5">10 km o más</text>
+    <text x="199" y="266" fill="var(--accent)" font-size="12" font-weight="bold">NUBES</text>
+    <text x="199" y="280" fill="var(--muted)" font-size="11.5">pocas · 2 000 ft AGL</text>
+    <text x="276" y="234" fill="var(--accent)" font-size="12" font-weight="bold">T° / ROCÍO</text>
+    <text x="276" y="248" fill="var(--muted)" font-size="11.5">19 °C / 16 °C</text>
+    <text x="348" y="266" fill="var(--accent)" font-size="12" font-weight="bold">QNH</text>
+    <text x="348" y="280" fill="var(--muted)" font-size="11.5">1015 hPa (Q = hPa)</text>
+  </g>
 
-  <!-- fila 2 -->
-  <rect x="10" y="134" width="76" height="28" rx="5" fill="var(--panel-2)" stroke="var(--accent)"/>
-  <text x="48" y="153" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)">9999</text>
-  <line x1="48" y1="162" x2="48" y2="172" stroke="var(--muted)"/>
-  <text x="48" y="184" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">visibilidad</text>
-  <text x="48" y="198" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">10 km o más</text>
-
-  <rect x="100" y="134" width="102" height="28" rx="5" fill="var(--panel-2)" stroke="var(--accent)"/>
-  <text x="151" y="153" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)">FEW020</text>
-  <line x1="151" y1="162" x2="151" y2="172" stroke="var(--muted)"/>
-  <text x="151" y="184" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">nubes</text>
-  <text x="151" y="198" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">pocas · 2,000 ft AGL</text>
-
-  <rect x="220" y="134" width="84" height="28" rx="5" fill="var(--panel-2)" stroke="var(--accent)"/>
-  <text x="262" y="153" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)">19/16</text>
-  <line x1="262" y1="162" x2="262" y2="172" stroke="var(--muted)"/>
-  <text x="262" y="184" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">temp / rocío</text>
-  <text x="262" y="198" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">19 °C / 16 °C</text>
-
-  <rect x="322" y="134" width="90" height="28" rx="5" fill="var(--panel-2)" stroke="var(--accent)"/>
-  <text x="367" y="153" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)">Q1015</text>
-  <line x1="367" y1="162" x2="367" y2="172" stroke="var(--muted)"/>
-  <text x="367" y="184" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">QNH</text>
-  <text x="367" y="198" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">1015 hPa (Q)</text>
-
-  <text x="230" y="234" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">Léelo siempre en este orden, bloque por bloque.</text>
+  <text x="240" y="310" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Siempre el mismo orden: léelo bloque por bloque y ningún METAR te asusta</text>
 </svg>

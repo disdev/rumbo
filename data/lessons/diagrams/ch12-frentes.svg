@@ -1,51 +1,77 @@
-<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cortes transversales de un frente frío empinado con cumulonimbus y un frente cálido en rampa suave con estratos">
-  <line x1="240" y1="20" x2="240" y2="270" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 4"/>
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cortes transversales: el frente frío empuja como pala y levanta cumulonimbus; el frente cálido trepa como rampa y forma estratos con lluvia continua">
+  <defs>
+    <marker id="ch12-fr-cool" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="ch12-fr-warm" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
 
-  <!-- FRENTE FRÍO -->
-  <text x="120" y="28" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">Frente FRÍO</text>
-  <line x1="20" y1="240" x2="220" y2="240" stroke="var(--text)" stroke-width="2"/>
-  <!-- cuña empinada de aire frío -->
-  <path d="M 20 240 L 130 240 Q 90 200 80 120 L 20 120 Z" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="58" y="190" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">aire frío</text>
-  <text x="58" y="204" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">(pala)</text>
-  <polygon points="118,232 100,224 100,240" fill="var(--accent)"/>
-  <text x="82" y="228" fill="var(--accent)" font-family="inherit" font-size="11" text-anchor="end">rápido</text>
+  <line x1="240" y1="24" x2="240" y2="284" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 5" stroke-linecap="round"/>
+
+  <!-- ══ FRENTE FRÍO ══ -->
+  <text x="122" y="30" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold" text-anchor="middle">Frente FRÍO</text>
+
+  <!-- masa de aire cálido (sombreado suave, delante del frente) -->
+  <path d="M100 122 C 112 146 122 196 132 252 L 224 252 L 224 122 Z" fill="var(--bad)" fill-opacity="0.10"/>
+  <text x="196" y="244" fill="var(--bad)" font-family="inherit" font-size="11" text-anchor="middle">aire cálido</text>
+
+  <!-- cuña de aire frío: pala empinada con nariz abultada -->
+  <path d="M20 252 L 128 252 C 134 244 130 236 121 231 C 133 222 131 206 119 201 C 131 191 129 175 117 171 C 127 161 123 148 111 145 C 108 135 96 129 84 131 C 62 125 38 128 20 132 Z" fill="var(--accent)" fill-opacity="0.28" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+  <text x="60" y="200" fill="var(--accent)" font-family="inherit" font-size="12.5" font-weight="bold" text-anchor="middle">AIRE FRÍO</text>
+  <path d="M40 226 H 96" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-fr-cool)"/>
+  <text x="68" y="219" fill="var(--accent)" font-family="inherit" font-size="11" text-anchor="middle">avanza rápido</text>
+
   <!-- aire cálido levantado de golpe -->
-  <path d="M 150 238 Q 148 200 140 160" fill="none" stroke="var(--bad)" stroke-width="2"/>
-  <polygon points="138,152 132,166 146,164" fill="var(--bad)"/>
-  <!-- Cb -->
-  <path d="M 155 150 Q 140 120 152 90 L 152 74 L 128 74 L 128 62 L 208 62 L 208 74 L 186 74 L 186 90 Q 198 120 188 150 Z" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
-  <text x="170" y="120" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">Cb</text>
-  <!-- chubasco -->
-  <line x1="160" y1="158" x2="155" y2="176" stroke="var(--bad)" stroke-width="2"/>
-  <line x1="172" y1="158" x2="167" y2="176" stroke="var(--bad)" stroke-width="2"/>
-  <line x1="184" y1="158" x2="179" y2="176" stroke="var(--bad)" stroke-width="2"/>
-  <text x="120" y="262" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">levanta el aire cálido de golpe:</text>
-  <text x="120" y="276" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">chubascos violentos y rápidos</text>
+  <path d="M162 244 C 156 216 150 194 143 172" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-fr-warm)"/>
 
-  <!-- FRENTE CÁLIDO -->
-  <text x="360" y="28" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">Frente CÁLIDO</text>
-  <line x1="260" y1="240" x2="460" y2="240" stroke="var(--text)" stroke-width="2"/>
-  <!-- rampa suave: aire cálido trepa sobre el frío -->
-  <path d="M 460 240 L 270 240 L 270 226 Q 360 214 460 130 Z" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="330" y="236" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">aire frío que se retira</text>
-  <!-- flecha del aire cálido subiendo la rampa -->
-  <path d="M 285 210 Q 340 195 400 155" fill="none" stroke="var(--bad)" stroke-width="2"/>
-  <polygon points="407,150 393,152 400,164" fill="var(--bad)"/>
-  <text x="318" y="188" fill="var(--bad)" font-family="inherit" font-size="12">aire cálido trepa la rampa</text>
-  <!-- capas de estratos -->
-  <rect x="270" y="150" width="90" height="12" rx="6" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <rect x="310" y="120" width="100" height="12" rx="6" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <path d="M 380 92 q 14 -9 28 0 q 14 8 28 -2" fill="none" stroke="var(--muted)" stroke-width="2"/>
-  <text x="300" y="144" fill="var(--muted)" font-family="inherit" font-size="11">nimbostratus</text>
-  <text x="352" y="114" fill="var(--muted)" font-family="inherit" font-size="11">altostratus</text>
-  <text x="414" y="82" fill="var(--muted)" font-family="inherit" font-size="11">cirrus</text>
+  <!-- Cb sobre la nariz del frente -->
+  <path d="M138 158 C 130 146 134 132 144 128 L 144 120 C 132 120 122 114 121 104 C 120 92 132 84 145 86 C 149 72 165 66 177 73 C 184 68 195 70 198 78 C 210 77 219 85 218 95 C 217 105 207 111 196 110 L 184 110 C 187 120 183 128 174 130 C 182 140 178 152 170 158 Z" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2" stroke-linejoin="round"/>
+  <text x="160" y="102" fill="var(--bad)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="middle">Cb</text>
+  <!-- chubasco fuerte -->
+  <g stroke="var(--accent)" stroke-width="2" stroke-linecap="round">
+    <line x1="176" y1="168" x2="170" y2="190"/>
+    <line x1="190" y1="168" x2="184" y2="190"/>
+    <line x1="204" y1="164" x2="198" y2="186"/>
+  </g>
+
+  <path d="M20 252 H224 V262 Q224 265 221 265 H23 Q20 265 20 262 Z" fill="var(--panel-2)" fill-opacity="0.6"/>
+  <line x1="20" y1="252" x2="224" y2="252" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <text x="122" y="282" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">levanta el cálido DE GOLPE:</text>
+  <text x="122" y="296" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">chubascos violentos y breves</text>
+
+  <!-- ══ FRENTE CÁLIDO ══ -->
+  <text x="358" y="30" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold" text-anchor="middle">Frente CÁLIDO</text>
+
+  <!-- aire cálido que trepa (sombreado sobre la rampa) -->
+  <path d="M258 214 C 320 196 380 166 456 108 L 456 60 L 258 60 Z" fill="var(--bad)" fill-opacity="0.10"/>
+
+  <!-- cuña de aire frío en retirada: rampa suave -->
+  <path d="M258 252 L 456 252 L 456 140 C 400 186 330 226 258 244 Z" fill="var(--accent)" fill-opacity="0.24" stroke="var(--accent)" stroke-width="1.25" stroke-linejoin="round"/>
+  <text x="394" y="242" fill="var(--accent)" font-family="inherit" font-size="11" text-anchor="middle">aire frío en retirada</text>
+
+  <!-- flecha del cálido trepando la rampa -->
+  <path d="M266 234 C 316 218 372 192 428 154" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-fr-warm)"/>
+  <text x="322" y="182" fill="var(--bad)" font-family="inherit" font-size="11" text-anchor="middle">el cálido trepa la rampa</text>
+
+  <!-- secuencia estratiforme: Ns → As → Ci -->
+  <path d="M262 158 Q260 146 276 144 Q284 136 306 139 Q330 133 348 141 Q362 142 361 152 Q361 162 346 163 L276 163 Q262 163 262 158 Z" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25" stroke-linejoin="round"/>
+  <path d="M336 116 Q335 108 346 107 Q356 101 376 104 Q396 100 408 106 Q418 107 417 114 Q417 120 406 121 L346 121 Q336 121 336 116 Z" fill="var(--panel-2)" fill-opacity="0.7" stroke="var(--muted)" stroke-width="1" stroke-linejoin="round"/>
+  <g fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round">
+    <path d="M406 76 C 414 68 426 68 434 73 C 443 78 453 77 460 72"/>
+    <path d="M424 92 C 431 86 441 86 448 90"/>
+  </g>
+  <text x="300" y="134" fill="var(--muted)" font-family="inherit" font-size="11">nimbostratus</text>
+  <text x="372" y="96" fill="var(--muted)" font-family="inherit" font-size="11">altostratus</text>
+  <text x="432" y="62" fill="var(--muted)" font-family="inherit" font-size="11">cirrus</text>
   <!-- llovizna continua -->
-  <line x1="285" y1="168" x2="282" y2="182" stroke="var(--muted)" stroke-width="1.5"/>
-  <line x1="300" y1="168" x2="297" y2="182" stroke="var(--muted)" stroke-width="1.5"/>
-  <line x1="315" y1="168" x2="312" y2="182" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="360" y="262" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">sube lento y suave: estratos,</text>
-  <text x="360" y="276" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">lluvia constante, techos bajos</text>
+  <g stroke="var(--accent)" stroke-width="1.25" stroke-linecap="round" stroke-dasharray="5 4">
+    <line x1="278" y1="172" x2="274" y2="196"/>
+    <line x1="296" y1="172" x2="292" y2="196"/>
+    <line x1="314" y1="172" x2="310" y2="196"/>
+  </g>
 
-  <text x="240" y="294" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Al cruzar CUALQUIER frente: siempre cambia la dirección del viento</text>
+  <path d="M258 252 H456 V262 Q456 265 453 265 H261 Q258 265 258 262 Z" fill="var(--panel-2)" fill-opacity="0.6"/>
+  <line x1="258" y1="252" x2="456" y2="252" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <text x="358" y="282" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">sube LENTO y suave: estratos,</text>
+  <text x="358" y="296" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">lluvia continua, techos bajos</text>
+
+  <text x="240" y="315" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Al cruzar CUALQUIER frente, siempre cambia la dirección del viento</text>
 </svg>

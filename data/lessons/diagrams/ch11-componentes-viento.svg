@@ -1,43 +1,51 @@
-<svg viewBox="0 0 440 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="El viento se descompone en componente de frente a lo largo de la pista y componente cruzado de costado">
-  <text x="220" y="24" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">Un viento, dos componentes</text>
+<svg viewBox="0 0 420 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vista aérea de la pista 18: el viento de 220 grados y 30 nudos se descompone en 23 nudos de frente y 19 nudos cruzados">
+  <defs>
+    <marker id="ch11-viento-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0.5 0.8 L9.5 5 L0.5 9.2 Z" fill="var(--text)"/>
+    </marker>
+    <marker id="ch11-viento-arrow-ok" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0.5 0.8 L9.5 5 L0.5 9.2 Z" fill="var(--ok)"/>
+    </marker>
+    <marker id="ch11-viento-arrow-bad" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0.5 0.8 L9.5 5 L0.5 9.2 Z" fill="var(--bad)"/>
+    </marker>
+  </defs>
 
-  <!-- runway (vertical) -->
-  <rect x="185" y="60" width="70" height="210" rx="4" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <line x1="220" y1="80" x2="220" y2="105" stroke="var(--muted)" stroke-width="3"/>
-  <line x1="220" y1="125" x2="220" y2="150" stroke="var(--muted)" stroke-width="3"/>
-  <line x1="220" y1="170" x2="220" y2="195" stroke="var(--muted)" stroke-width="3"/>
-  <line x1="220" y1="215" x2="220" y2="240" stroke="var(--muted)" stroke-width="3"/>
-  <text x="220" y="262" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">18</text>
+  <!-- pista (vista aérea) -->
+  <rect x="178" y="40" width="64" height="256" rx="3" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1"/>
+  <line x1="210" y1="72" x2="210" y2="200" stroke="var(--muted)" stroke-width="3" stroke-dasharray="18 16"/>
+  <g fill="var(--muted)" opacity="0.9">
+    <rect x="184" y="264" width="5" height="24"/>
+    <rect x="193" y="264" width="5" height="24"/>
+    <rect x="202" y="264" width="5" height="24"/>
+    <rect x="213" y="264" width="5" height="24"/>
+    <rect x="222" y="264" width="5" height="24"/>
+    <rect x="231" y="264" width="5" height="24"/>
+  </g>
+  <text x="210" y="256" fill="var(--text)" font-family="inherit" font-size="17" text-anchor="middle" font-weight="700">18</text>
 
-  <!-- plane triangle at threshold -->
-  <polygon points="220,238 212,252 228,252" fill="var(--accent)"/>
+  <!-- avión (vista aérea) en carrera -->
+  <g transform="translate(210,214)" fill="var(--accent)">
+    <path d="M 0 -6 C 8 -6 18 -3 23 0 L 23 4 C 16 3 6 2 0 2 C -6 2 -16 3 -23 4 L -23 0 C -18 -3 -8 -6 0 -6 Z"/>
+    <path d="M 0 8 C 4 9 9 11 12 13 L 12 16 L -12 16 L -12 13 C -9 11 -4 9 0 8 Z"/>
+    <path d="M 0 -16 C 3.5 -10 3.5 6 2 11 C 1 14 -1 14 -2 11 C -3.5 6 -3.5 -10 0 -16 Z"/>
+  </g>
 
-  <!-- wind vector: from 40 degrees right of nose, pointing to the plane -->
-  <line x1="340" y1="82" x2="242" y2="200" stroke="var(--text)" stroke-width="3"/>
-  <polygon points="236,207 246,203 238,196" fill="var(--text)"/>
-  <text x="356" y="76" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">viento</text>
-  <text x="356" y="94" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">220°/30 kt</text>
-  <text x="356" y="110" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(40° de la pista)</text>
+  <!-- vector del viento -->
+  <line x1="294" y1="98" x2="218" y2="188" stroke="var(--text)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch11-viento-arrow)"/>
+  <text x="322" y="72" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="600">viento 220°/30 kt</text>
+  <text x="322" y="88" fill="var(--muted)" font-family="inherit" font-size="11.5" text-anchor="middle">(40° respecto a la pista)</text>
 
-  <!-- headwind component (along runway, toward plane) -->
-  <line x1="242" y1="110" x2="242" y2="192" stroke="var(--ok)" stroke-width="3"/>
-  <polygon points="242,200 237,190 247,190" fill="var(--ok)"/>
-  <text x="150" y="120" fill="var(--ok)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">de FRENTE</text>
-  <text x="150" y="138" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">30 × cos 40° ≈ 23 kt</text>
-  <text x="150" y="154" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">te ayuda a frenar</text>
+  <!-- componente de frente -->
+  <line x1="294" y1="98" x2="294" y2="188" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch11-viento-arrow-ok)"/>
+  <path d="M 294 188 L 286 188 L 286 196" fill="none" stroke="var(--muted)" stroke-width="1"/>
+  <text x="304" y="140" fill="var(--ok)" font-family="inherit" font-size="13" text-anchor="start" font-weight="600">de frente: 23 kt</text>
+  <text x="304" y="156" fill="var(--muted)" font-family="inherit" font-size="11.5" text-anchor="start">30 × cos 40°</text>
 
-  <!-- crosswind component (across runway) -->
-  <line x1="340" y1="200" x2="252" y2="200" stroke="var(--bad)" stroke-width="3"/>
-  <polygon points="244,200 254,195 254,205" fill="var(--bad)"/>
-  <text x="352" y="188" fill="var(--bad)" font-family="inherit" font-size="13" text-anchor="start" font-weight="bold">CRUZADO</text>
-  <text x="352" y="206" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="start">30 × sen 40°</text>
-  <text x="352" y="222" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="start">≈ 19 kt</text>
-  <text x="352" y="238" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="start">te empuja</text>
-  <text x="352" y="254" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="start">de costado</text>
+  <!-- componente cruzado -->
+  <line x1="294" y1="198" x2="224" y2="198" stroke="var(--bad)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch11-viento-arrow-bad)"/>
+  <text x="302" y="212" fill="var(--bad)" font-family="inherit" font-size="13" text-anchor="start" font-weight="600">cruzado: 19 kt</text>
+  <text x="302" y="228" fill="var(--muted)" font-family="inherit" font-size="11.5" text-anchor="start">30 × sen 40°</text>
 
-  <!-- dashed component rectangle -->
-  <line x1="340" y1="82" x2="340" y2="200" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
-  <line x1="242" y1="110" x2="340" y2="82" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
-
-  <text x="220" y="296" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Regla: 30° → cruzado = ½ del viento · 45° → 70 % · 60° → 90 %</text>
+  <text x="210" y="320" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Regla rápida: 30° → ½ del viento · 45° → 70 % · 60° → 90 %</text>
 </svg>

@@ -1,38 +1,50 @@
-<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Log de navegación simplificado con checkpoints, distancias, tiempos y combustible">
-  <text x="14" y="24" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">Log de navegación (simplificado)</text>
+<svg viewBox="0 0 480 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Log de navegacion simplificado con checkpoints, distancia, velocidad terrestre, tiempo y combustible">
+  <text x="16" y="26" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">Log de navegacion (simplificado)</text>
+
+  <!-- zebra de filas -->
+  <rect x="14" y="72" width="452" height="30" fill="var(--panel-2)" fill-opacity="0.3"/>
+  <rect x="14" y="132" width="452" height="30" fill="var(--panel-2)" fill-opacity="0.3"/>
 
   <!-- encabezado -->
-  <rect x="14" y="40" width="452" height="30" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <text x="24" y="60" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Checkpoint</text>
-  <text x="190" y="60" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Dist</text>
-  <text x="255" y="60" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">GS</text>
-  <text x="315" y="60" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Tiempo</text>
-  <text x="395" y="60" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Comb.</text>
+  <rect x="14" y="40" width="452" height="32" rx="4" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--text)" stroke-width="1.25"/>
+  <g fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">
+    <text x="24" y="60">Checkpoint</text>
+    <text x="214" y="60" text-anchor="end">Dist</text>
+    <text x="284" y="60" text-anchor="end">GS</text>
+    <text x="366" y="60" text-anchor="end">Tiempo</text>
+    <text x="456" y="60" text-anchor="end">Comb.</text>
+  </g>
 
   <!-- filas -->
-  <g stroke="var(--muted)" stroke-width="1" fill="none">
-    <rect x="14" y="70" width="452" height="30"/>
-    <rect x="14" y="100" width="452" height="30"/>
-    <rect x="14" y="130" width="452" height="30"/>
-    <rect x="14" y="160" width="452" height="30"/>
-  </g>
-  <g fill="var(--text)" font-family="inherit" font-size="13">
-    <text x="24" y="90">Salida (aeródromo)</text>
-    <text x="24" y="120">Puente sobre el río</text>
-    <text x="190" y="120">20 NM</text><text x="250" y="120">100 kt</text><text x="320" y="120">12 min</text><text x="398" y="120">1.6 gal</text>
-    <text x="24" y="150">Cruce de carreteras</text>
-    <text x="190" y="150">25 NM</text><text x="250" y="150">100 kt</text><text x="320" y="150">15 min</text><text x="398" y="150">2.0 gal</text>
-    <text x="24" y="180">Destino</text>
-    <text x="190" y="180">15 NM</text><text x="250" y="180">100 kt</text><text x="320" y="180">9 min</text><text x="398" y="180">1.2 gal</text>
+  <g fill="var(--text)" font-family="inherit" font-size="12">
+    <text x="24" y="92">Salida (aerodromo)</text>
+
+    <text x="24" y="122">Puente sobre el rio</text>
+    <text x="214" y="122" text-anchor="end">20 NM</text><text x="284" y="122" text-anchor="end">100 kt</text><text x="366" y="122" text-anchor="end">12 min</text><text x="456" y="122" text-anchor="end">1.6 gal</text>
+
+    <text x="24" y="152">Cruce de carreteras</text>
+    <text x="214" y="152" text-anchor="end">25 NM</text><text x="284" y="152" text-anchor="end">100 kt</text><text x="366" y="152" text-anchor="end">15 min</text><text x="456" y="152" text-anchor="end">2.0 gal</text>
+
+    <text x="24" y="182">Destino</text>
+    <text x="214" y="182" text-anchor="end">15 NM</text><text x="284" y="182" text-anchor="end">100 kt</text><text x="366" y="182" text-anchor="end">9 min</text><text x="456" y="182" text-anchor="end">1.2 gal</text>
   </g>
 
-  <!-- totales -->
-  <rect x="14" y="190" width="452" height="30" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="24" y="210" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">TOTAL</text>
-  <text x="190" y="210" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">60 NM</text>
-  <text x="320" y="210" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">36 min</text>
-  <text x="398" y="210" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">4.8 gal</text>
+  <!-- lineas divisorias -->
+  <g stroke="var(--muted)" stroke-width="0.75">
+    <line x1="14" y1="102" x2="466" y2="102"/>
+    <line x1="14" y1="132" x2="466" y2="132"/>
+    <line x1="14" y1="162" x2="466" y2="162"/>
+  </g>
 
-  <text x="14" y="245" fill="var(--ok)" font-family="inherit" font-size="13" font-weight="bold">+ Reserva VFR de día: 30 min más de combustible (8 gal/h → +4 gal)</text>
-  <text x="14" y="266" fill="var(--muted)" font-family="inherit" font-size="12">En vuelo: anota la hora real en cada checkpoint y compárala con la planeada.</text>
+  <!-- total -->
+  <rect x="14" y="192" width="452" height="32" rx="4" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--accent)" stroke-width="1.5"/>
+  <g fill="var(--accent)" font-family="inherit" font-size="12" font-weight="bold">
+    <text x="24" y="212">TOTAL</text>
+    <text x="214" y="212" text-anchor="end">60 NM</text>
+    <text x="366" y="212" text-anchor="end">36 min</text>
+    <text x="456" y="212" text-anchor="end">4.8 gal</text>
+  </g>
+
+  <text x="16" y="248" fill="var(--ok)" font-family="inherit" font-size="12" font-weight="bold">+ Reserva VFR de dia: 30 min (8 gal/h → +4 gal)</text>
+  <text x="16" y="272" fill="var(--muted)" font-family="inherit" font-size="11">En vuelo anota la hora real en cada checkpoint; si difiere de la planeada, recalcula GS, tiempo y combustible al destino.</text>
 </svg>

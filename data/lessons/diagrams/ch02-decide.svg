@@ -1,53 +1,61 @@
-<svg viewBox="0 0 460 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ciclo DECIDE de seis pasos: detectar, estimar, elegir, identificar, hacer y evaluar, en círculo continuo">
+<svg viewBox="0 0 588 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ciclo DECIDE dibujado como anillo de seis nodos: Detectar, Estimar, Elegir, Identificar, Hacer y Evaluar, con flechas en sentido horario">
   <defs>
-    <marker id="fl" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-      <path d="M0 0 L7 4 L0 8 Z" fill="var(--accent)"/>
+    <marker id="ch02-decide-arrow" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto">
+      <path d="M0 0.5 L8 4.5 L0 8.5 Z" fill="var(--accent)"/>
     </marker>
   </defs>
 
-  <!-- flechas del ciclo (sentido horario) -->
-  <g fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#fl)">
-    <path d="M292 78 Q330 92 352 126"/>
-    <path d="M382 182 Q388 220 380 254"/>
-    <path d="M348 316 Q322 348 288 364"/>
-    <path d="M168 364 Q134 348 108 316"/>
-    <path d="M76 254 Q68 220 74 182"/>
-    <path d="M104 126 Q126 92 164 78"/>
+  <!-- anillo de flechas (sentido horario) -->
+  <g fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch02-decide-arrow)">
+    <path d="M313.9 99.2 A140 140 0 0 1 380.7 137.7"/>
+    <path d="M414.6 196.4 A140 140 0 0 1 414.6 273.6"/>
+    <path d="M380.7 332.3 A140 140 0 0 1 313.9 370.8"/>
+    <path d="M246.1 370.8 A140 140 0 0 1 179.3 332.3"/>
+    <path d="M145.4 273.6 A140 140 0 0 1 145.4 196.4"/>
+    <path d="M179.3 137.7 A140 140 0 0 1 246.1 99.2"/>
   </g>
 
   <!-- centro -->
-  <text x="228" y="212" fill="var(--accent)" font-family="inherit" font-size="16" font-weight="bold" text-anchor="middle">DECIDE</text>
-  <text x="228" y="232" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">ciclo continuo:</text>
-  <text x="228" y="247" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">si no funciona,</text>
-  <text x="228" y="262" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">vuelve a empezar</text>
+  <text x="280" y="228" fill="var(--accent)" font-family="inherit" font-size="18" font-weight="bold" text-anchor="middle">DECIDE</text>
+  <text x="280" y="248" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">ciclo continuo: si no</text>
+  <text x="280" y="263" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">funciona, da otra vuelta</text>
 
-  <!-- 1 Detectar (arriba) -->
-  <rect x="164" y="28" width="128" height="52" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="228" y="50" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">D · Detectar</text>
-  <text x="228" y="68" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">algo cambió</text>
+  <!-- nodos -->
+  <g stroke-linejoin="round">
+    <circle cx="280" cy="95" r="26" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="401" cy="165" r="26" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="401" cy="305" r="26" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="280" cy="375" r="26" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="159" cy="305" r="26" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="159" cy="165" r="26" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  </g>
+  <g fill="var(--accent)" font-family="inherit" font-size="20" font-weight="bold" text-anchor="middle">
+    <text x="280" y="102">D</text>
+    <text x="401" y="172">E</text>
+    <text x="401" y="312">C</text>
+    <text x="280" y="382">I</text>
+    <text x="159" y="312">D</text>
+    <text x="159" y="172">E</text>
+  </g>
 
-  <!-- 2 Estimar (derecha arriba) -->
-  <rect x="316" y="128" width="128" height="52" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="380" y="150" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">E · Estimar</text>
-  <text x="380" y="168" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">¿debo reaccionar?</text>
+  <!-- rótulos de cada paso -->
+  <g font-family="inherit">
+    <text x="280" y="40" fill="var(--text)" font-size="14" font-weight="bold" text-anchor="middle">1 · Detectar</text>
+    <text x="280" y="57" fill="var(--muted)" font-size="12" text-anchor="middle">algo cambió</text>
 
-  <!-- 3 Elegir (derecha abajo) -->
-  <rect x="316" y="258" width="128" height="52" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="380" y="280" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">C · Elegir (Choose)</text>
-  <text x="380" y="298" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">el resultado deseado</text>
+    <text x="437" y="158" fill="var(--text)" font-size="14" font-weight="bold">2 · Estimar</text>
+    <text x="437" y="175" fill="var(--muted)" font-size="12">¿hay que reaccionar?</text>
 
-  <!-- 4 Identificar (abajo) -->
-  <rect x="164" y="358" width="128" height="52" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="228" y="380" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">I · Identificar</text>
-  <text x="228" y="398" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">acciones posibles</text>
+    <text x="437" y="300" fill="var(--text)" font-size="14" font-weight="bold">3 · Elegir (Choose)</text>
+    <text x="437" y="317" fill="var(--muted)" font-size="12">el resultado deseado</text>
 
-  <!-- 5 Hacer (izquierda abajo) -->
-  <rect x="12" y="258" width="128" height="52" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="76" y="280" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">D · Hacer (Do)</text>
-  <text x="76" y="298" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">la mejor acción</text>
+    <text x="280" y="426" fill="var(--text)" font-size="14" font-weight="bold" text-anchor="middle">4 · Identificar</text>
+    <text x="280" y="443" fill="var(--muted)" font-size="12" text-anchor="middle">acciones posibles</text>
 
-  <!-- 6 Evaluar (izquierda arriba) -->
-  <rect x="12" y="128" width="128" height="52" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="76" y="150" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">E · Evaluar</text>
-  <text x="76" y="168" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">¿funcionó el efecto?</text>
+    <text x="123" y="300" fill="var(--text)" font-size="14" font-weight="bold" text-anchor="end">5 · Hacer (Do)</text>
+    <text x="123" y="317" fill="var(--muted)" font-size="12" text-anchor="end">la mejor acción</text>
+
+    <text x="123" y="158" fill="var(--text)" font-size="14" font-weight="bold" text-anchor="end">6 · Evaluar</text>
+    <text x="123" y="175" fill="var(--muted)" font-size="12" text-anchor="end">¿funcionó el efecto?</text>
+  </g>
 </svg>

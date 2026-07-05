@@ -1,40 +1,44 @@
-<svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lista de verificación IMSAFE con el significado de cada letra">
-  <text x="220" y="28" fill="var(--accent)" font-family="inherit" font-size="17" text-anchor="middle" font-weight="bold">IMSAFE</text>
-  <text x="220" y="46" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">¿estoy en condiciones de volar?</text>
+<svg viewBox="0 0 440 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lista IMSAFE: seis preguntas para decidir si estas en condiciones de volar">
+  <text x="220" y="30" fill="var(--accent)" font-family="inherit" font-size="18" text-anchor="middle" font-weight="bold">IMSAFE</text>
+  <text x="220" y="48" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">¿estoy en condiciones de volar?</text>
 
+  <!-- spine -->
+  <line x1="40" y1="78" x2="40" y2="300" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <!-- filas: cada una un grupo -->
   <!-- I -->
-  <circle cx="40" cy="80" r="16" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="40" y="85" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">I</text>
-  <text x="70" y="78" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Illness — Enfermedad</text>
-  <text x="70" y="93" fill="var(--muted)" font-family="inherit" font-size="11">¿estoy enfermo, resfriado?</text>
+  <circle cx="40" cy="82" r="16" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--accent)" stroke-width="1.75"/>
+  <text x="40" y="87" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">I</text>
+  <text x="70" y="79" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Illness · Enfermedad</text>
+  <text x="70" y="95" fill="var(--muted)" font-family="inherit" font-size="11">¿estoy enfermo o resfriado?</text>
 
   <!-- M -->
-  <circle cx="40" cy="122" r="16" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="40" y="127" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">M</text>
-  <text x="70" y="120" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Medication — Medicación</text>
-  <text x="70" y="135" fill="var(--muted)" font-family="inherit" font-size="11">¿tomé algo que da sueño?</text>
+  <circle cx="40" cy="126" r="16" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--accent)" stroke-width="1.75"/>
+  <text x="40" y="131" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">M</text>
+  <text x="70" y="123" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Medication · Medicacion</text>
+  <text x="70" y="139" fill="var(--muted)" font-family="inherit" font-size="11">¿tome algo que da sueno?</text>
 
   <!-- S -->
-  <circle cx="40" cy="164" r="16" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="40" y="169" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">S</text>
-  <text x="70" y="162" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Stress — Estrés</text>
-  <text x="70" y="177" fill="var(--muted)" font-family="inherit" font-size="11">¿estoy presionado, tenso?</text>
+  <circle cx="40" cy="170" r="16" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--accent)" stroke-width="1.75"/>
+  <text x="40" y="175" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">S</text>
+  <text x="70" y="167" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Stress · Estres</text>
+  <text x="70" y="183" fill="var(--muted)" font-family="inherit" font-size="11">¿estoy presionado o tenso?</text>
 
   <!-- A -->
-  <circle cx="40" cy="206" r="16" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
-  <text x="40" y="211" fill="var(--bad)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">A</text>
-  <text x="70" y="204" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Alcohol</text>
-  <text x="70" y="219" fill="var(--muted)" font-family="inherit" font-size="11">8 h "de la botella al mando"</text>
+  <circle cx="40" cy="214" r="16" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--bad)" stroke-width="1.75"/>
+  <text x="40" y="219" fill="var(--bad)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">A</text>
+  <text x="70" y="211" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Alcohol</text>
+  <text x="70" y="227" fill="var(--muted)" font-family="inherit" font-size="11">8 h de la botella al mando</text>
 
   <!-- F -->
-  <circle cx="40" cy="248" r="16" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="40" y="253" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">F</text>
-  <text x="70" y="246" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Fatigue — Fatiga</text>
-  <text x="70" y="261" fill="var(--muted)" font-family="inherit" font-size="11">¿dormí bien anoche?</text>
+  <circle cx="40" cy="258" r="16" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--accent)" stroke-width="1.75"/>
+  <text x="40" y="263" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">F</text>
+  <text x="70" y="255" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Fatigue · Fatiga</text>
+  <text x="70" y="271" fill="var(--muted)" font-family="inherit" font-size="11">¿dormi bien anoche?</text>
 
   <!-- E -->
-  <circle cx="40" cy="290" r="16" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="40" y="295" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">E</text>
-  <text x="70" y="288" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Emotion — Emoción</text>
-  <text x="70" y="303" fill="var(--muted)" font-family="inherit" font-size="11">¿algo me tiene alterado?</text>
+  <circle cx="40" cy="302" r="16" fill="var(--panel-2)" fill-opacity="0.6" stroke="var(--accent)" stroke-width="1.75"/>
+  <text x="40" y="307" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">E</text>
+  <text x="70" y="299" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Emotion · Emocion</text>
+  <text x="70" y="315" fill="var(--muted)" font-family="inherit" font-size="11">¿algo me tiene alterado?</text>
 </svg>

@@ -1,39 +1,58 @@
-<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-  <circle cx="140" cy="125" r="92" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-
-  <!-- marcas de nivel -->
-  <line x1="50" y1="125" x2="68" y2="125" stroke="var(--text)" stroke-width="3"/>
-  <line x1="212" y1="125" x2="230" y2="125" stroke="var(--text)" stroke-width="3"/>
-  <!-- marcas de viraje estándar -->
-  <line x1="70.5" y1="150.3" x2="55.4" y2="155.8" stroke="var(--text)" stroke-width="3"/>
-  <line x1="209.5" y1="150.3" x2="224.6" y2="155.8" stroke="var(--text)" stroke-width="3"/>
-  <text x="46" y="174" font-size="14" fill="var(--text)">L</text>
-  <text x="226" y="174" font-size="14" fill="var(--text)">R</text>
-
-  <!-- avioncito banqueado a la derecha -->
-  <g transform="rotate(15 140 125)">
-    <line x1="72" y1="125" x2="208" y2="125" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
-    <line x1="140" y1="106" x2="140" y2="122" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="140" cy="125" r="7" fill="var(--accent)"/>
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit" role="img" aria-label="Coordinador de virajes en viraje estándar a la derecha con la bolita del inclinómetro centrada">
+  <!-- caja del instrumento -->
+  <rect x="22" y="12" width="236" height="236" rx="18" fill="var(--panel-2)" fill-opacity="0.35" stroke="var(--muted)" stroke-width="1"/>
+  <g fill="none" stroke="var(--muted)" stroke-width="1">
+    <circle cx="40" cy="30" r="3"/><circle cx="240" cy="30" r="3"/>
+    <circle cx="40" cy="230" r="3"/><circle cx="240" cy="230" r="3"/>
   </g>
 
+  <!-- bisel y carátula -->
+  <circle cx="140" cy="130" r="106" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <circle cx="140" cy="130" r="98" fill="var(--panel-2)" fill-opacity="0.45" stroke="var(--muted)" stroke-width="1"/>
+
+  <!-- marcas: nivel y viraje estándar -->
+  <g stroke="var(--text)" stroke-width="3" stroke-linecap="round">
+    <line x1="42" y1="130" x2="60" y2="130"/>
+    <line x1="238" y1="130" x2="220" y2="130"/>
+    <line x1="46.8" y1="160.3" x2="63.9" y2="154.7"/>
+    <line x1="233.2" y1="160.3" x2="216.1" y2="154.7"/>
+  </g>
+  <text x="66" y="180" font-size="14" fill="var(--text)" text-anchor="middle">L</text>
+  <text x="214" y="180" font-size="14" fill="var(--text)" text-anchor="middle">R</text>
+
+  <!-- avioncito banqueado a la derecha (régimen estándar) -->
+  <g transform="rotate(18 140 130)" stroke="var(--accent)" stroke-linecap="round">
+    <line x1="66" y1="130" x2="214" y2="130" stroke-width="6"/>
+    <line x1="66" y1="123" x2="66" y2="137" stroke-width="3"/>
+    <line x1="214" y1="123" x2="214" y2="137" stroke-width="3"/>
+    <line x1="140" y1="104" x2="140" y2="122" stroke-width="5"/>
+  </g>
+  <circle cx="140" cy="130" r="8" fill="var(--accent)"/>
+  <text x="140" y="162" font-size="12" fill="var(--muted)" text-anchor="middle">2 MIN</text>
+
   <!-- inclinómetro -->
-  <rect x="70" y="232" width="140" height="22" rx="11" fill="var(--panel-2)" stroke="var(--text)"/>
-  <line x1="131" y1="232" x2="131" y2="254" stroke="var(--text)" stroke-width="2"/>
-  <line x1="149" y1="232" x2="149" y2="254" stroke="var(--text)" stroke-width="2"/>
-  <circle cx="140" cy="243" r="8" fill="var(--ok)"/>
-  <text x="140" y="278" font-size="12" fill="var(--muted)" text-anchor="middle">inclinómetro: la bolita</text>
+  <rect x="84" y="192" width="112" height="22" rx="11" fill="var(--panel-2)" fill-opacity="0.7" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="129" y1="192" x2="129" y2="214" stroke="var(--text)" stroke-width="2"/>
+  <line x1="151" y1="192" x2="151" y2="214" stroke="var(--text)" stroke-width="2"/>
+  <circle cx="140" cy="203" r="8.5" fill="var(--ok)"/>
+  <line x1="140" y1="258" x2="140" y2="221" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="140" cy="219" r="2.5" fill="var(--muted)"/>
+  <text x="140" y="274" font-size="12" fill="var(--muted)" text-anchor="middle">inclinómetro: la bolita</text>
+
+  <!-- línea guía a la marca estándar -->
+  <path d="M272 116 L230 154" stroke="var(--muted)" stroke-width="1" fill="none"/>
+  <circle cx="227" cy="156" r="2.5" fill="var(--muted)"/>
 
   <!-- leyenda -->
-  <text x="252" y="46" font-size="14" font-weight="bold" fill="var(--text)">Coordinador de virajes</text>
-  <text x="252" y="72" font-size="12" fill="var(--text)">Muestra el régimen de alabeo</text>
-  <text x="252" y="88" font-size="12" fill="var(--text)">y de viraje (no el banqueo).</text>
-  <text x="252" y="118" font-size="12" fill="var(--accent)">Ala sobre la marca L o R =</text>
-  <text x="252" y="134" font-size="12" fill="var(--accent)">viraje estándar: 3°/s</text>
-  <text x="252" y="150" font-size="12" fill="var(--accent)">→ 360° en 2 minutos</text>
-  <text x="252" y="180" font-size="12" fill="var(--text)">Bolita centrada = coordinado.</text>
-  <text x="252" y="196" font-size="12" fill="var(--text)">Si se sale: «pisa la bolita»</text>
-  <text x="252" y="212" font-size="12" fill="var(--text)">con el pedal de ese lado.</text>
-  <text x="252" y="242" font-size="12" fill="var(--muted)">Adentro del viraje = slip;</text>
-  <text x="252" y="258" font-size="12" fill="var(--muted)">afuera = skid (derrape).</text>
+  <text x="276" y="40" font-size="14" font-weight="bold" fill="var(--text)">Coordinador de virajes</text>
+  <text x="276" y="64" font-size="12" fill="var(--text)">Muestra el régimen de viraje,</text>
+  <text x="276" y="80" font-size="12" fill="var(--text)">no el ángulo de banqueo.</text>
+  <text x="276" y="110" font-size="12" fill="var(--accent)">Ala sobre la marca L o R =</text>
+  <text x="276" y="126" font-size="12" fill="var(--accent)">viraje estándar: 3°/s</text>
+  <text x="276" y="142" font-size="12" fill="var(--accent)">→ 360° en 2 minutos</text>
+  <text x="276" y="172" font-size="12" fill="var(--text)">Bolita centrada = coordinado.</text>
+  <text x="276" y="188" font-size="12" fill="var(--text)">Si se sale: «pisa la bolita»</text>
+  <text x="276" y="204" font-size="12" fill="var(--text)">con el pedal de ese lado.</text>
+  <text x="276" y="234" font-size="12" fill="var(--muted)">Adentro del viraje = slip;</text>
+  <text x="276" y="250" font-size="12" fill="var(--muted)">afuera = skid (derrape).</text>
 </svg>

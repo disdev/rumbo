@@ -164,6 +164,7 @@ function instrumento(container, params = {}) {
   const tipo = params.tipo || 'altimetro';
   const root = svg('svg', { viewBox: '0 0 240 240' });
   const face = svg('g', { transform: 'translate(120,120)' });
+  root.append(face);
   face.append(svg('circle', { r: 100, fill: 'var(--panel-2)', stroke: 'var(--text)', 'stroke-width': 2 }));
 
   if (tipo === 'altimetro') {

@@ -1,24 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 250" font-family="inherit">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 290" font-family="inherit" role="img" aria-label="Vórtices de punta de ala vistos desde atrás: giran hacia afuera y arriba, y se hunden detrás del avión">
   <defs>
-    <marker id="k5c-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--bad)"/></marker>
-    <marker id="k5c-mut" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker>
+    <marker id="ch05-vort-arrow-b" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--bad)"/></marker>
+    <marker id="ch05-vort-arrow-m" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--muted)"/></marker>
   </defs>
-  <text x="210" y="22" fill="var(--muted)" font-size="12" text-anchor="middle">Avión grande visto desde atrás</text>
-  <g stroke="var(--text)" stroke-width="2.5" fill="var(--panel-2)">
-    <line x1="120" y1="72" x2="300" y2="72"/>
-    <path d="M210 62 L210 36 L224 62 Z"/>
-    <circle cx="210" cy="72" r="11"/>
+
+  <text x="210" y="24" font-size="12" fill="var(--muted)" text-anchor="middle">avión grande visto desde atrás</text>
+
+  <!-- avión: silueta trasera -->
+  <g stroke="var(--text)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="var(--panel-2)">
+    <path d="M172 92 C 186 90 234 90 248 92 L 244 96 C 232 94.5 188 94.5 176 96 Z"/>
+    <path d="M205 90 C 205 74 207 62 210 53 C 213 62 215 74 215 90 Z"/>
+    <path d="M96 88 C 160 93 260 93 324 88 C 324 91 324 92 324 92 C 260 97.5 160 97.5 96 92 Z"/>
+    <circle cx="210" cy="99" r="13"/>
   </g>
-  <path d="M138 92 A 24 24 0 1 1 92 82" fill="none" stroke="var(--bad)" stroke-width="2.5" marker-end="url(#k5c-bad)"/>
-  <path d="M282 92 A 24 24 0 1 0 328 82" fill="none" stroke="var(--bad)" stroke-width="2.5" marker-end="url(#k5c-bad)"/>
-  <text x="70" y="130" fill="var(--bad)" font-size="12" text-anchor="middle">giran hacia afuera,</text>
-  <text x="70" y="144" fill="var(--bad)" font-size="12" text-anchor="middle">arriba y alrededor</text>
-  <text x="350" y="130" fill="var(--bad)" font-size="12" text-anchor="middle">un remolino</text>
-  <text x="350" y="144" fill="var(--bad)" font-size="12" text-anchor="middle">por cada punta</text>
-  <line x1="175" y1="105" x2="168" y2="155" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#k5c-mut)"/>
-  <line x1="210" y1="105" x2="210" y2="158" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#k5c-mut)"/>
-  <line x1="245" y1="105" x2="252" y2="155" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#k5c-mut)"/>
-  <text x="210" y="180" fill="var(--muted)" font-size="12" text-anchor="middle">se hunden 400–500 ft/min por debajo y detrás</text>
-  <text x="210" y="215" fill="var(--bad)" font-size="14" text-anchor="middle" font-weight="bold">Peor estela: PESADO · LIMPIO · LENTO</text>
-  <text x="210" y="235" fill="var(--muted)" font-size="11" text-anchor="middle">(mucho peso + sin flaps ni tren + gran ángulo de ataque)</text>
+
+  <!-- vórtice izquierdo: gira en sentido horario (hacia afuera y arriba) -->
+  <g fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round">
+    <path d="M 88 110 A 21 21 0 1 1 88 70" marker-end="url(#ch05-vort-arrow-b)"/>
+    <path d="M 80 102 A 13 13 0 1 1 80 78"/>
+  </g>
+  <!-- vórtice derecho: gira en sentido antihorario -->
+  <g fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round">
+    <path d="M 332 110 A 21 21 0 1 0 332 70" marker-end="url(#ch05-vort-arrow-b)"/>
+    <path d="M 340 102 A 13 13 0 1 0 340 78"/>
+  </g>
+  <text x="66" y="140" font-size="12" fill="var(--bad)" text-anchor="middle">giran hacia afuera,</text>
+  <text x="66" y="155" font-size="12" fill="var(--bad)" text-anchor="middle">arriba y alrededor</text>
+  <text x="356" y="140" font-size="12" fill="var(--bad)" text-anchor="middle">un remolino por</text>
+  <text x="356" y="155" font-size="12" fill="var(--bad)" text-anchor="middle">cada punta de ala</text>
+
+  <!-- la estela se hunde -->
+  <g stroke="var(--muted)" stroke-width="1.25" stroke-dasharray="5 4" stroke-linecap="round" fill="none">
+    <path d="M158 122 C 154 138 150 154 148 172" marker-end="url(#ch05-vort-arrow-m)"/>
+    <path d="M210 126 C 210 142 210 158 210 176" marker-end="url(#ch05-vort-arrow-m)"/>
+    <path d="M262 122 C 266 138 270 154 272 172" marker-end="url(#ch05-vort-arrow-m)"/>
+  </g>
+  <text x="210" y="200" font-size="12" fill="var(--muted)" text-anchor="middle">se hunden 400–500 ft/min por debajo y detrás</text>
+
+  <text x="210" y="240" font-size="14" fill="var(--bad)" text-anchor="middle" font-weight="bold">peor estela: PESADO · LIMPIO · LENTO</text>
+  <text x="210" y="260" font-size="11" fill="var(--muted)" text-anchor="middle">(mucho peso + sin flaps ni tren + gran ángulo de ataque)</text>
 </svg>

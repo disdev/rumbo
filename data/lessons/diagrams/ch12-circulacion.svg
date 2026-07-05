@@ -1,42 +1,55 @@
-<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Circulación global simplificada del ecuador al polo con tres celdas">
-  <!-- suelo -->
-  <line x1="30" y1="220" x2="450" y2="220" stroke="var(--text)" stroke-width="2"/>
-  <text x="60" y="242" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Ecuador 0°</text>
-  <text x="200" y="242" fill="var(--muted)" font-family="inherit" font-size="13" text-anchor="middle">30°</text>
-  <text x="330" y="242" fill="var(--muted)" font-family="inherit" font-size="13" text-anchor="middle">60°</text>
-  <text x="430" y="242" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Polo 90°</text>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Circulación global simplificada: el aire sube en el ecuador, baja a los 30 grados y forma tres celdas hasta el polo">
+  <defs>
+    <marker id="ch12-circ-warm" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="ch12-circ-cool" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="ch12-circ-wind" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="ch12-circ-mut" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+
+  <!-- cielo y suelo -->
+  <rect x="24" y="46" width="432" height="186" fill="var(--panel-2)" fill-opacity="0.22" rx="8"/>
+  <path d="M24 232 H456 V246 Q456 250 452 250 H28 Q24 250 24 246 Z" fill="var(--panel-2)" fill-opacity="0.6"/>
+  <line x1="24" y1="232" x2="456" y2="232" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- tropopausa: más alta en el ecuador -->
+  <path d="M40 58 C 180 70 330 100 452 126" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="5 5" stroke-linecap="round"/>
+  <text x="450" y="116" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="end">tropopausa</text>
 
   <!-- sol -->
-  <circle cx="60" cy="40" r="16" fill="none" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="60" y1="60" x2="60" y2="76" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="44" y1="44" x2="28" y2="48" stroke="var(--accent)" stroke-width="2"/>
-  <line x1="76" y1="44" x2="92" y2="48" stroke="var(--accent)" stroke-width="2"/>
-  <text x="104" y="36" fill="var(--muted)" font-family="inherit" font-size="12">el sol pega más</text>
-  <text x="104" y="52" fill="var(--muted)" font-family="inherit" font-size="12">fuerte en el ecuador</text>
+  <g stroke="var(--warn)" stroke-width="2" stroke-linecap="round">
+    <circle cx="62" cy="30" r="11" fill="var(--warn)" fill-opacity="0.3"/>
+    <line x1="62" y1="45" x2="62" y2="52"/><line x1="47" y1="34" x2="40" y2="36"/><line x1="77" y1="34" x2="84" y2="36"/><line x1="51" y1="42" x2="46" y2="47"/><line x1="73" y1="42" x2="78" y2="47"/>
+  </g>
+  <text x="94" y="28" fill="var(--muted)" font-family="inherit" font-size="12">el sol pega más fuerte en el ecuador</text>
 
-  <!-- celda 1 (Hadley): sube en ecuador, baja en 30 -->
-  <path d="M 60 210 L 60 110 Q 60 95 80 95 L 180 95 Q 200 95 200 110 L 200 205" fill="none" stroke="var(--bad)" stroke-width="2.5"/>
-  <polygon points="60,105 54,120 66,120" fill="var(--bad)"/>
-  <polygon points="200,210 194,196 206,196" fill="var(--accent)"/>
-  <text x="70" y="150" fill="var(--bad)" font-family="inherit" font-size="12">sube</text>
-  <text x="72" y="164" fill="var(--bad)" font-family="inherit" font-size="12">caliente</text>
-  <text x="208" y="150" fill="var(--accent)" font-family="inherit" font-size="12">baja</text>
-  <text x="208" y="164" fill="var(--accent)" font-family="inherit" font-size="12">seco (H)</text>
+  <!-- CELDA DE HADLEY (0°–30°) -->
+  <path d="M78 220 C 68 186 70 126 80 92" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-circ-warm)"/>
+  <path d="M92 82 C 122 72 158 74 186 88" fill="none" stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch12-circ-mut)"/>
+  <path d="M196 100 C 206 134 206 184 199 214" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-circ-cool)"/>
+  <path d="M186 226 H 98" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-circ-wind)"/>
+  <text x="88" y="144" fill="var(--bad)" font-family="inherit" font-size="12">sube</text>
+  <text x="88" y="158" fill="var(--bad)" font-family="inherit" font-size="12">caliente</text>
+  <text x="190" y="144" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="end">baja</text>
+  <text x="190" y="158" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="end">seco</text>
+  <text x="142" y="214" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">viento en superficie</text>
 
-  <!-- celda 2 (Ferrel): sube en 60, baja en 30 -->
-  <path d="M 330 205 L 330 125 Q 330 112 315 112 L 225 112 Q 212 112 212 125 L 212 200" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4"/>
-  <polygon points="330,120 324,134 336,134" fill="var(--muted)"/>
-  <text x="338" y="160" fill="var(--muted)" font-family="inherit" font-size="12">sube (L)</text>
+  <!-- CELDA DE FERREL (30°–60°), indirecta -->
+  <path d="M322 214 C 314 182 314 148 322 122" fill="none" stroke="var(--muted)" stroke-width="1.25" stroke-dasharray="5 4" stroke-linecap="round" marker-end="url(#ch12-circ-mut)"/>
+  <path d="M312 110 C 286 100 246 102 222 112" fill="none" stroke="var(--muted)" stroke-width="1.25" stroke-dasharray="5 4" stroke-linecap="round" marker-end="url(#ch12-circ-mut)"/>
+  <path d="M226 226 H 306" fill="none" stroke="var(--ok)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch12-circ-wind)"/>
 
-  <!-- celda 3 (Polar): baja en polo -->
-  <path d="M 342 130 L 415 130 Q 430 130 430 145 L 430 205" fill="none" stroke="var(--accent)" stroke-width="2"/>
-  <polygon points="430,210 424,196 436,196" fill="var(--accent)"/>
-  <text x="392" y="122" fill="var(--accent)" font-family="inherit" font-size="12">baja frío</text>
+  <!-- CELDA POLAR (60°–90°) -->
+  <path d="M338 114 C 366 106 404 110 422 122" fill="none" stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch12-circ-mut)"/>
+  <path d="M432 132 C 440 158 440 190 434 214" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-circ-cool)"/>
+  <path d="M424 226 H 348" fill="none" stroke="var(--ok)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch12-circ-wind)"/>
+  <text x="426" y="150" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="end">baja frío</text>
 
-  <!-- retorno superficial -->
-  <path d="M 190 214 L 80 214" fill="none" stroke="var(--ok)" stroke-width="2"/>
-  <polygon points="72,214 86,208 86,220" fill="var(--ok)"/>
-  <text x="135" y="208" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">viento en superficie</text>
+  <!-- presiones y latitudes -->
+  <text x="199" y="247" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold" text-anchor="middle">H</text>
+  <text x="330" y="247" fill="var(--bad)" font-family="inherit" font-size="13" font-weight="bold" text-anchor="middle">L</text>
+  <g fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">
+    <text x="70" y="266">Ecuador 0°</text><text x="199" y="266">30°</text><text x="330" y="266">60°</text><text x="436" y="266">Polo 90°</text>
+  </g>
 
-  <text x="240" y="270" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Calentamiento desigual → el aire circula en celdas → nacen los vientos</text>
+  <text x="240" y="291" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Calentamiento desigual → el aire circula en celdas → nacen los vientos</text>
 </svg>

@@ -1,20 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" font-family="inherit">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" font-family="inherit" role="img" aria-label="Resistencia contra velocidad: la parásita sube, la inducida baja y la total es mínima en L/D máximo">
   <defs>
-    <marker id="k5b-txt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--text)"/></marker>
+    <marker id="ch05-drag-arrow" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--text)"/>
+    </marker>
   </defs>
-  <line x1="60" y1="240" x2="400" y2="240" stroke="var(--text)" stroke-width="2" marker-end="url(#k5b-txt)"/>
-  <line x1="60" y1="240" x2="60" y2="30" stroke="var(--text)" stroke-width="2" marker-end="url(#k5b-txt)"/>
-  <text x="395" y="258" fill="var(--text)" font-size="13" text-anchor="end">Velocidad →</text>
-  <text x="18" y="24" fill="var(--text)" font-size="13">Resistencia</text>
-  <path d="M65 234 C 160 228, 280 180, 385 70" fill="none" stroke="var(--bad)" stroke-width="2.5"/>
-  <path d="M65 60 C 130 170, 230 220, 385 234" fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-dasharray="6 4"/>
-  <path d="M65 55 C 135 145, 185 176, 232 178 C 285 180, 330 140, 385 65" fill="none" stroke="var(--accent)" stroke-width="3.5"/>
-  <line x1="232" y1="178" x2="232" y2="240" stroke="var(--ok)" stroke-width="2" stroke-dasharray="4 4"/>
-  <circle cx="232" cy="178" r="5" fill="var(--ok)"/>
-  <text x="232" y="270" fill="var(--ok)" font-size="13" text-anchor="middle">L/D máx = mejor planeo</text>
-  <text x="330" y="200" fill="var(--bad)" font-size="13" text-anchor="middle">Parásita</text>
-  <text x="120" y="110" fill="var(--muted)" font-size="13" text-anchor="middle">Inducida</text>
-  <text x="120" y="60" fill="var(--accent)" font-size="14" text-anchor="middle">Total</text>
-  <text x="150" y="230" fill="var(--muted)" font-size="11" text-anchor="middle">lento: manda la inducida</text>
-  <text x="340" y="110" fill="var(--muted)" font-size="11" text-anchor="middle">rápido: manda la parásita</text>
+
+  <!-- rejilla sutil -->
+  <g stroke="var(--muted)" stroke-width="0.75" stroke-opacity="0.4">
+    <line x1="64" y1="194" x2="414" y2="194"/>
+    <line x1="64" y1="144" x2="414" y2="144"/>
+    <line x1="64" y1="94" x2="414" y2="94"/>
+  </g>
+
+  <!-- ejes -->
+  <g stroke="var(--text)" stroke-width="1.5" stroke-linecap="round">
+    <line x1="64" y1="244" x2="420" y2="244" marker-end="url(#ch05-drag-arrow)"/>
+    <line x1="64" y1="244" x2="64" y2="46" marker-end="url(#ch05-drag-arrow)"/>
+  </g>
+  <text x="242" y="290" font-size="13" fill="var(--text)" text-anchor="middle">velocidad</text>
+  <text x="26" y="145" font-size="13" fill="var(--text)" text-anchor="middle" transform="rotate(-90 26 145)">resistencia</text>
+
+  <!-- parásita: sube con la velocidad -->
+  <path d="M68 238 C 160 232 280 188 402 76" fill="none" stroke="var(--bad)" stroke-width="1.75" stroke-linecap="round"/>
+  <!-- inducida: baja con la velocidad -->
+  <path d="M68 64 C 128 166 226 220 402 236" fill="none" stroke="var(--warn)" stroke-width="1.75" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <!-- total: forma de U -->
+  <path d="M68 70 C 130 156 180 188 238 190 C 300 192 344 150 402 80" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- etiquetas de curvas -->
+  <text x="238" y="172" font-size="14" fill="var(--accent)" text-anchor="middle" font-weight="bold">total</text>
+  <line x1="352" y1="158" x2="347" y2="140" stroke="var(--muted)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="346" cy="137" r="2.5" fill="var(--muted)"/>
+  <text x="354" y="174" font-size="13" fill="var(--bad)" text-anchor="middle">parásita</text>
+  <line x1="176" y1="214" x2="182" y2="196" stroke="var(--muted)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="183" cy="193" r="2.5" fill="var(--muted)"/>
+  <text x="172" y="230" font-size="13" fill="var(--warn)" text-anchor="middle">inducida</text>
+
+  <!-- punto de resistencia mínima -->
+  <line x1="240" y1="196" x2="240" y2="244" stroke="var(--ok)" stroke-width="1.25" stroke-dasharray="5 4"/>
+  <circle cx="240" cy="190" r="4" fill="var(--ok)"/>
+  <text x="252" y="222" font-size="13" fill="var(--ok)" font-weight="bold">L/D máx</text>
+  <text x="252" y="237" font-size="12" fill="var(--ok)">mejor planeo</text>
+
+  <!-- regiones -->
+  <text x="70" y="264" font-size="11" fill="var(--muted)">lento: manda la inducida</text>
+  <text x="414" y="264" font-size="11" fill="var(--muted)" text-anchor="end">rápido: manda la parásita</text>
 </svg>

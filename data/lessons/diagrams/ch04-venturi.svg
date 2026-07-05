@@ -1,24 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 230" role="img" aria-label="Tubo Venturi: en la garganta angosta el aire acelera y la presión baja">
-  <!-- tubo -->
-  <path d="M20 65 L150 65 L190 92 L250 92 L290 65 L420 65 L420 165 L290 165 L250 138 L190 138 L150 165 L20 165 Z"
-        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <!-- flechas de flujo: lento (cortas) -->
-  <line x1="45" y1="115" x2="105" y2="115" stroke="var(--text)" stroke-width="3"/>
-  <polygon points="122,115 102,107 102,123" fill="var(--text)"/>
-  <line x1="310" y1="115" x2="370" y2="115" stroke="var(--text)" stroke-width="3"/>
-  <polygon points="387,115 367,107 367,123" fill="var(--text)"/>
-  <!-- flechas de flujo: rápido (largas, garganta) -->
-  <line x1="185" y1="107" x2="240" y2="107" stroke="var(--accent)" stroke-width="3"/>
-  <polygon points="256,107 238,100 238,114" fill="var(--accent)"/>
-  <line x1="185" y1="125" x2="240" y2="125" stroke="var(--accent)" stroke-width="3"/>
-  <polygon points="256,125 238,118 238,132" fill="var(--accent)"/>
-  <!-- etiquetas -->
-  <text x="75" y="48" font-family="inherit" font-size="13" fill="var(--text)" text-anchor="middle">presión ALTA</text>
-  <text x="75" y="152" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">lento</text>
-  <text x="220" y="48" font-family="inherit" font-size="13" fill="var(--accent)" text-anchor="middle">presión BAJA</text>
-  <line x1="220" y1="55" x2="220" y2="86" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 3"/>
-  <text x="220" y="155" font-family="inherit" font-size="12" fill="var(--accent)" text-anchor="middle">rápido</text>
-  <text x="355" y="48" font-family="inherit" font-size="13" fill="var(--text)" text-anchor="middle">presión ALTA</text>
-  <text x="355" y="152" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">lento</text>
-  <text x="220" y="205" font-family="inherit" font-size="14" fill="var(--text)" text-anchor="middle">garganta angosta → aire más rápido → presión más baja</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 250" font-family="inherit" role="img" aria-label="Tubo Venturi: en la garganta angosta el aire acelera y la presión baja">
+  <defs>
+    <marker id="ch04-venturi-arrow-t" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--text)"/>
+    </marker>
+    <marker id="ch04-venturi-arrow-a" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <!-- interior del tubo -->
+  <path d="M24 64 C 108 64 158 90 206 95 C 215 96 225 96 234 95 C 282 90 332 64 416 64
+           L 416 180 C 332 180 282 154 234 149 C 225 148 215 148 206 149 C 158 154 108 180 24 180 Z"
+        fill="var(--panel-2)" fill-opacity="0.4"/>
+
+  <!-- paredes del tubo -->
+  <g fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 64 C 108 64 158 90 206 95 C 215 96 225 96 234 95 C 282 90 332 64 416 64"/>
+    <path d="M24 180 C 108 180 158 154 206 149 C 215 148 225 148 234 149 C 282 154 332 180 416 180"/>
+  </g>
+
+  <!-- líneas de corriente: se juntan en la garganta -->
+  <g fill="none" stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round">
+    <path d="M36 92 C 116 92 164 110 210 113 C 226 114 240 113 254 111 C 296 106 342 92 404 92"/>
+    <path d="M36 152 C 116 152 164 134 210 131 C 226 130 240 131 254 133 C 296 138 342 152 404 152"/>
+  </g>
+  <line x1="36" y1="122" x2="404" y2="122" stroke="var(--muted)" stroke-width="1.25" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+  <!-- flechas de flujo: cortas = lento, largas = rápido -->
+  <g stroke="var(--text)" stroke-width="2" stroke-linecap="round">
+    <line x1="52" y1="122" x2="88" y2="122" marker-end="url(#ch04-venturi-arrow-t)"/>
+    <line x1="342" y1="122" x2="378" y2="122" marker-end="url(#ch04-venturi-arrow-t)"/>
+  </g>
+  <g stroke="var(--accent)" stroke-width="2" stroke-linecap="round">
+    <line x1="180" y1="112" x2="252" y2="112" marker-end="url(#ch04-venturi-arrow-a)"/>
+    <line x1="180" y1="132" x2="252" y2="132" marker-end="url(#ch04-venturi-arrow-a)"/>
+  </g>
+
+  <!-- etiquetas de presión -->
+  <text x="78" y="46" font-size="13" fill="var(--text)" text-anchor="middle">presión ALTA</text>
+  <text x="78" y="170" font-size="12" fill="var(--muted)" text-anchor="middle">lento</text>
+  <text x="220" y="42" font-size="13" fill="var(--accent)" text-anchor="middle" font-weight="bold">presión BAJA</text>
+  <line x1="220" y1="50" x2="220" y2="88" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="220" cy="91" r="2.5" fill="var(--muted)"/>
+  <text x="220" y="166" font-size="12" fill="var(--accent)" text-anchor="middle">rápido</text>
+  <text x="362" y="46" font-size="13" fill="var(--text)" text-anchor="middle">presión ALTA</text>
+
+  <text x="220" y="216" font-size="14" fill="var(--text)" text-anchor="middle">garganta angosta → aire más rápido → presión más baja</text>
+  <text x="220" y="236" font-size="12" fill="var(--muted)" text-anchor="middle">el extradós del ala funciona como media garganta</text>
 </svg>

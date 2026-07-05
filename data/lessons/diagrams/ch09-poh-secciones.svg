@@ -1,62 +1,64 @@
-<svg viewBox="0 0 480 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de las nueve secciones estándar GAMA del manual de vuelo POH">
-  <text x="240" y="24" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">El POH: 9 secciones (formato GAMA)</text>
+<svg viewBox="0 0 480 330" xmlns="http://www.w3.org/2000/svg" font-family="inherit" role="img" aria-label="Manual de vuelo POH con sus nueve pestañas de secciones en formato GAMA; destacan la 2, limitaciones, y la 3, emergencias">
+  <text x="240" y="24" text-anchor="middle" fill="var(--text)" font-size="15" font-weight="bold">El POH: 9 secciones (formato GAMA)</text>
 
-  <!-- fila 1 -->
-  <rect x="12" y="42" width="146" height="76" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <circle cx="34" cy="64" r="12" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="34" y="69" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">1</text>
-  <text x="52" y="69" fill="var(--text)" font-family="inherit" font-size="13">General</text>
-  <text x="24" y="100" fill="var(--muted)" font-family="inherit" font-size="12">datos básicos</text>
+  <!-- libro -->
+  <rect x="34" y="54" width="164" height="250" rx="10" fill="var(--muted)" fill-opacity="0.25"/>
+  <rect x="28" y="46" width="164" height="250" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <line x1="46" y1="50" x2="46" y2="292" stroke="var(--muted)" stroke-width="1.25"/>
 
-  <rect x="167" y="42" width="146" height="76" rx="8" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="3"/>
-  <circle cx="189" cy="64" r="12" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
-  <text x="189" y="69" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">2</text>
-  <text x="207" y="69" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Limitaciones</text>
-  <text x="179" y="100" fill="var(--muted)" font-family="inherit" font-size="12">las líneas rojas</text>
+  <!-- avioncito y título de portada -->
+  <g stroke="var(--accent)" stroke-linecap="round" fill="none">
+    <line x1="119" y1="94" x2="119" y2="126" stroke-width="3"/>
+    <line x1="97" y1="108" x2="141" y2="108" stroke-width="3"/>
+    <line x1="110" y1="122" x2="128" y2="122" stroke-width="2"/>
+  </g>
+  <text x="119" y="160" text-anchor="middle" fill="var(--text)" font-size="15" font-weight="bold">POH</text>
+  <text x="119" y="180" text-anchor="middle" fill="var(--muted)" font-size="12">Manual de vuelo</text>
 
-  <rect x="322" y="42" width="146" height="76" rx="8" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="3"/>
-  <circle cx="344" cy="64" r="12" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
-  <text x="344" y="69" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">3</text>
-  <text x="362" y="69" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Emergencias</text>
-  <text x="334" y="100" fill="var(--muted)" font-family="inherit" font-size="12">bordes rojos</text>
+  <!-- pestañas -->
+  <g>
+    <rect x="188" y="58" width="28" height="20" rx="4" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25"/>
+    <rect x="188" y="84" width="28" height="20" rx="4" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-width="2"/>
+    <rect x="188" y="110" width="28" height="20" rx="4" fill="var(--bad)" fill-opacity="0.15" stroke="var(--bad)" stroke-width="2"/>
+    <rect x="188" y="136" width="28" height="20" rx="4" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25"/>
+    <rect x="188" y="162" width="28" height="20" rx="4" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25"/>
+    <rect x="188" y="188" width="28" height="20" rx="4" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25"/>
+    <rect x="188" y="214" width="28" height="20" rx="4" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25"/>
+    <rect x="188" y="240" width="28" height="20" rx="4" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25"/>
+    <rect x="188" y="266" width="28" height="20" rx="4" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.25"/>
+  </g>
+  <g fill="var(--text)" font-size="12" font-weight="bold" text-anchor="middle">
+    <text x="202" y="72">1</text><text x="202" y="98">2</text><text x="202" y="124">3</text>
+    <text x="202" y="150">4</text><text x="202" y="176">5</text><text x="202" y="202">6</text>
+    <text x="202" y="228">7</text><text x="202" y="254">8</text><text x="202" y="280">9</text>
+  </g>
 
-  <!-- fila 2 -->
-  <rect x="12" y="132" width="146" height="76" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <circle cx="34" cy="154" r="12" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="34" y="159" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">4</text>
-  <text x="52" y="159" fill="var(--text)" font-family="inherit" font-size="13">Proc. normales</text>
-  <text x="24" y="190" fill="var(--muted)" font-family="inherit" font-size="12">checklists diarias</text>
+  <!-- líneas guía -->
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="242" y1="68" x2="222" y2="68"/><line x1="242" y1="94" x2="222" y2="94"/>
+    <line x1="242" y1="120" x2="222" y2="120"/><line x1="242" y1="146" x2="222" y2="146"/>
+    <line x1="242" y1="172" x2="222" y2="172"/><line x1="242" y1="198" x2="222" y2="198"/>
+    <line x1="242" y1="224" x2="222" y2="224"/><line x1="242" y1="250" x2="222" y2="250"/>
+    <line x1="242" y1="276" x2="222" y2="276"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="220" cy="68" r="2.5"/><circle cx="220" cy="94" r="2.5"/><circle cx="220" cy="120" r="2.5"/>
+    <circle cx="220" cy="146" r="2.5"/><circle cx="220" cy="172" r="2.5"/><circle cx="220" cy="198" r="2.5"/>
+    <circle cx="220" cy="224" r="2.5"/><circle cx="220" cy="250" r="2.5"/><circle cx="220" cy="276" r="2.5"/>
+  </g>
 
-  <rect x="167" y="132" width="146" height="76" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <circle cx="189" cy="154" r="12" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="189" y="159" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">5</text>
-  <text x="207" y="159" fill="var(--text)" font-family="inherit" font-size="13">Performance</text>
-  <text x="179" y="190" fill="var(--muted)" font-family="inherit" font-size="12">tablas y gráficos</text>
+  <!-- nombres de sección -->
+  <g font-size="13" fill="var(--text)">
+    <text x="250" y="72">General <tspan fill="var(--muted)">· datos básicos</tspan></text>
+    <text x="250" y="98" font-weight="bold">Limitaciones <tspan fill="var(--accent)">· las líneas rojas</tspan></text>
+    <text x="250" y="124" font-weight="bold">Emergencias <tspan fill="var(--bad)">· bordes rojos</tspan></text>
+    <text x="250" y="150">Proc. normales <tspan fill="var(--muted)">· checklists diarias</tspan></text>
+    <text x="250" y="176">Performance <tspan fill="var(--muted)">· tablas y gráficos</tspan></text>
+    <text x="250" y="202">Peso y balance <tspan fill="var(--muted)">· + lista de equipo</tspan></text>
+    <text x="250" y="228">Sistemas <tspan fill="var(--muted)">· cómo funciona</tspan></text>
+    <text x="250" y="254">Servicio y mant. <tspan fill="var(--muted)">· cuidados</tspan></text>
+    <text x="250" y="280">Suplementos <tspan fill="var(--muted)">· equipos añadidos</tspan></text>
+  </g>
 
-  <rect x="322" y="132" width="146" height="76" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <circle cx="344" cy="154" r="12" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="344" y="159" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">6</text>
-  <text x="362" y="159" fill="var(--text)" font-family="inherit" font-size="13">Peso y balance</text>
-  <text x="334" y="190" fill="var(--muted)" font-family="inherit" font-size="12">+ lista de equipo</text>
-
-  <!-- fila 3 -->
-  <rect x="12" y="222" width="146" height="76" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <circle cx="34" cy="244" r="12" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="34" y="249" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">7</text>
-  <text x="52" y="249" fill="var(--text)" font-family="inherit" font-size="13">Sistemas</text>
-  <text x="24" y="280" fill="var(--muted)" font-family="inherit" font-size="12">cómo funciona</text>
-
-  <rect x="167" y="222" width="146" height="76" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <circle cx="189" cy="244" r="12" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="189" y="249" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">8</text>
-  <text x="207" y="249" fill="var(--text)" font-family="inherit" font-size="13">Servicio y mant.</text>
-  <text x="179" y="280" fill="var(--muted)" font-family="inherit" font-size="12">cuidados del avión</text>
-
-  <rect x="322" y="222" width="146" height="76" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
-  <circle cx="344" cy="244" r="12" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
-  <text x="344" y="249" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">9</text>
-  <text x="362" y="249" fill="var(--text)" font-family="inherit" font-size="13">Suplementos</text>
-  <text x="334" y="280" fill="var(--muted)" font-family="inherit" font-size="12">equipos añadidos</text>
-
-  <text x="240" y="320" text-anchor="middle" fill="var(--muted)" font-family="inherit" font-size="12">Mismo orden en casi todos los aviones desde los años 70</text>
+  <text x="240" y="322" text-anchor="middle" fill="var(--muted)" font-size="12">Mismo orden en casi todos los aviones desde los años 70</text>
 </svg>

@@ -1,43 +1,68 @@
-<svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
-  <circle cx="180" cy="160" r="130" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="180" y="120" font-size="13" fill="var(--muted)" text-anchor="middle">nudos</text>
+<svg viewBox="0 0 480 424" xmlns="http://www.w3.org/2000/svg" font-family="inherit" role="img" aria-label="Velocímetro con sus arcos de colores y las V-speeds que marcan cada frontera">
+  <!-- bisel e instrumento -->
+  <circle cx="240" cy="168" r="128" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <circle cx="240" cy="168" r="119" fill="var(--panel-2)" fill-opacity="0.45" stroke="var(--muted)" stroke-width="1"/>
 
-  <!-- arco blanco: Vso→Vfe (40→85) -->
-  <path d="M273.6 143.5 A95 95 0 0 1 196.5 253.6" fill="none" stroke="var(--text)" stroke-width="8"/>
-  <!-- arco verde: Vs1→Vno (50→130) -->
-  <path d="M285.4 178.6 A107 107 0 0 1 74.6 178.6" fill="none" stroke="var(--ok)" stroke-width="8"/>
-  <!-- arco amarillo: Vno→Vne (130→160) -->
-  <path d="M74.6 178.6 A107 107 0 0 1 111.2 78.0" fill="none" stroke="var(--accent)" stroke-width="8"/>
-  <!-- línea roja: Vne -->
-  <line x1="118.9" y1="87.2" x2="103.5" y2="68.8" stroke="var(--bad)" stroke-width="6"/>
+  <!-- arcos -->
+  <path d="M336.1 136.8 A101 101 0 0 1 285.9 258.0" fill="none" stroke="var(--text)" stroke-width="8"/>
+  <path d="M336.1 136.8 A101 101 0 0 1 285.9 258.0" fill="none" stroke="var(--panel-2)" stroke-width="4.5"/>
+  <path d="M354.0 168.0 A114 114 0 0 1 147.8 235.0" fill="none" stroke="var(--ok)" stroke-width="7"/>
+  <path d="M147.8 235.0 A114 114 0 0 1 131.6 132.8" fill="none" stroke="var(--warn)" stroke-width="7"/>
+  <line x1="124.9" y1="130.6" x2="140.1" y2="135.6" stroke="var(--bad)" stroke-width="5" stroke-linecap="round"/>
 
-  <!-- aguja -->
-  <line x1="180" y1="160" x2="256" y2="230" stroke="var(--text)" stroke-width="4"/>
-  <circle cx="180" cy="160" r="7" fill="var(--text)"/>
+  <!-- marcas -->
+  <path stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round" fill="none" d="M358.0 168.0L350.0 168.0M335.5 237.4L329.0 232.7M276.5 280.2L274.0 272.6M203.5 280.2L206.0 272.6M144.5 237.4L151.0 232.7M122.0 168.0L130.0 168.0M144.5 98.6L151.0 103.3M203.5 55.8L206.0 63.4"/>
+  <path stroke="var(--text)" stroke-width="2" stroke-linecap="round" fill="none" d="M352.2 131.5L338.9 135.9M352.2 204.5L338.9 200.1M309.4 263.5L301.1 252.1M240.0 286.0L240.0 272.0M170.6 263.5L178.9 252.1M127.8 204.5L141.1 200.1M127.8 131.5L141.1 135.9M170.6 72.5L178.9 83.9M240.0 50.0L240.0 64.0"/>
 
-  <!-- etiquetas V -->
+  <g fill="var(--text)" font-size="14" font-weight="bold" text-anchor="middle">
+    <text x="323.7" y="145.8">40</text>
+    <text x="291.7" y="244.2">80</text>
+    <text x="188.3" y="244.2">120</text>
+    <text x="156.3" y="145.8">160</text>
+    <text x="240" y="85">200</text>
+  </g>
+  <text x="240" y="128" font-size="12" fill="var(--muted)" text-anchor="middle">NUDOS</text>
+
+  <!-- aguja (≈105 kt) -->
+  <polygon points="224.7,264.8 233.9,181.2 240.3,145.8 246.6,146.8 241.8,182.5" fill="var(--text)" stroke="var(--text)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="240" cy="168" r="8" fill="var(--text)"/>
+  <circle cx="240" cy="168" r="2.5" fill="var(--panel-2)"/>
+
+  <!-- V-speeds con líneas guía -->
+  <g stroke="var(--muted)" stroke-width="1" fill="none">
+    <path d="M382 120 L342 133"/>
+    <path d="M394 168 L360 168"/>
+    <path d="M308 302 L290 264"/>
+    <path d="M112 268 L142 239"/>
+    <path d="M96 108 L126 128"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="340" cy="133.7" r="2.5"/>
+    <circle cx="358" cy="168" r="2.5"/>
+    <circle cx="289.2" cy="262.1" r="2.5"/>
+    <circle cx="143.7" cy="237.4" r="2.5"/>
+    <circle cx="127.7" cy="129.1" r="2.5"/>
+  </g>
   <g font-size="13" fill="var(--text)">
-    <text x="306" y="140">Vso 40</text>
-    <text x="308" y="188">Vs1 50</text>
-    <text x="202" y="300" text-anchor="middle">Vfe 85</text>
-    <text x="58" y="186" text-anchor="end">Vno 130</text>
-    <text x="96" y="52" text-anchor="middle">Vne 160</text>
+    <text x="386" y="116">Vso 40</text>
+    <text x="398" y="172">Vs1 50</text>
+    <text x="304" y="318" text-anchor="middle">Vfe 85</text>
+    <text x="108" y="280" text-anchor="end">Vno 130</text>
+    <text x="92" y="104" text-anchor="end">Vne 160</text>
   </g>
 
   <!-- leyenda -->
-  <rect x="330" y="216" width="12" height="12" fill="var(--text)"/>
-  <text x="350" y="226" font-size="12" fill="var(--text)">Blanco: rango de flaps</text>
-  <text x="350" y="242" font-size="12" fill="var(--muted)">(Vso → Vfe)</text>
-  <rect x="330" y="254" width="12" height="12" fill="var(--ok)"/>
-  <text x="350" y="264" font-size="12" fill="var(--text)">Verde: operación normal</text>
-  <text x="350" y="280" font-size="12" fill="var(--muted)">(Vs1 → Vno)</text>
-  <rect x="330" y="292" width="12" height="12" fill="var(--accent)"/>
-  <text x="350" y="302" font-size="12" fill="var(--text)">Amarillo: precaución —</text>
-  <text x="350" y="318" font-size="12" fill="var(--muted)">solo aire calmado (hasta Vne)</text>
-  <rect x="330" y="30" width="12" height="12" fill="var(--bad)"/>
-  <text x="350" y="40" font-size="12" fill="var(--text)">Línea roja: Vne,</text>
-  <text x="350" y="56" font-size="12" fill="var(--muted)">nunca exceder</text>
-  <text x="330" y="92" font-size="12" font-weight="bold" fill="var(--bad)">Va NO está marcada:</text>
-  <text x="330" y="110" font-size="12" fill="var(--text)">cambia con el peso.</text>
-  <text x="330" y="128" font-size="12" fill="var(--text)">Búscala en el manual (POH).</text>
+  <g font-size="12">
+    <rect x="36" y="340" width="12" height="12" rx="2" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <text x="56" y="350" fill="var(--text)">Blanco: rango de flaps (Vso → Vfe)</text>
+    <rect x="36" y="362" width="12" height="12" rx="2" fill="var(--ok)"/>
+    <text x="56" y="372" fill="var(--text)">Verde: operación normal (Vs1 → Vno)</text>
+    <rect x="36" y="384" width="12" height="12" rx="2" fill="var(--warn)"/>
+    <text x="56" y="394" fill="var(--text)">Amarillo: precaución, solo aire calmado</text>
+    <rect x="36" y="406" width="12" height="12" rx="2" fill="var(--bad)"/>
+    <text x="56" y="416" fill="var(--text)">Línea roja: Vne, nunca exceder</text>
+  </g>
+  <text x="300" y="350" font-size="12" font-weight="bold" fill="var(--bad)">Va NO está marcada:</text>
+  <text x="300" y="368" font-size="12" fill="var(--text)">cambia con el peso.</text>
+  <text x="300" y="386" font-size="12" fill="var(--text)">Búscala en el manual (POH).</text>
 </svg>

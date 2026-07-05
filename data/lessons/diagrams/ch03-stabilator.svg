@@ -1,34 +1,64 @@
-<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación entre estabilizador con elevador y stabilator de una pieza con tab antiservo">
-  <!-- Panel izquierdo: estabilizador + elevador -->
-  <text x="120" y="28" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Estabilizador + elevador</text>
-  <text x="120" y="44" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(dos piezas)</text>
-  <path d="M30 100 L150 96 L150 112 L34 114 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <path d="M150 96 L210 90 L210 106 L150 112 Z" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2.5"/>
-  <circle cx="150" cy="104" r="4" fill="var(--accent)"/>
-  <text x="60" y="140" fill="var(--muted)" font-family="inherit" font-size="12">fijo</text>
-  <text x="165" y="135" fill="var(--accent)" font-family="inherit" font-size="12">solo esto se mueve</text>
-
-  <!-- Panel derecho: stabilator -->
-  <text x="360" y="28" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Stabilator</text>
-  <text x="360" y="44" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(una sola pieza que pivota)</text>
-  <path d="M270 108 L420 92 L420 106 L272 122 Z" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2.5"/>
-  <circle cx="330" cy="110" r="5" fill="var(--text)"/>
-  <text x="318" y="145" fill="var(--muted)" font-family="inherit" font-size="12">punto de pivote</text>
-  <line x1="330" y1="128" x2="330" y2="115" stroke="var(--muted)" stroke-width="1"/>
-  <!-- tab antiservo -->
-  <path d="M420 94 L448 90 L448 102 L420 105 Z" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2.5"/>
-  <line x1="434" y1="88" x2="440" y2="60" stroke="var(--muted)" stroke-width="1"/>
-  <text x="345" y="70" fill="var(--bad)" font-family="inherit" font-size="13">tab antiservo</text>
-
-  <!-- flechas de movimiento -->
-  <path d="M415 80 Q425 70 435 78" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#fl)"/>
+<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación en corte: estabilizador fijo con elevador articulado a la izquierda, y stabilator de una sola pieza que pivota completo con su tab antiservo a la derecha">
   <defs>
-    <marker id="fl" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-      <path d="M0 0 L8 4 L0 8 Z" fill="var(--accent)"/>
+    <marker id="ch03-stabilator-arrow" markerWidth="8" markerHeight="8" refX="5.5" refY="4" orient="auto-start-reverse">
+      <path d="M0 0.5 L7 4 L0 7.5 Z" fill="var(--accent)"/>
     </marker>
   </defs>
 
-  <text x="240" y="185" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">El tab antiservo se mueve en la MISMA dirección que el borde de salida:</text>
-  <text x="240" y="203" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">pone resistencia al mando para que el stabilator no sea tan sensible</text>
-  <text x="240" y="226" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(además funciona como compensador ajustable desde la cabina)</text>
+  <!-- Panel izquierdo: estabilizador + elevador -->
+  <text x="122" y="28" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">Estabilizador + elevador</text>
+  <text x="122" y="44" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(dos piezas)</text>
+
+  <!-- elevador deflectado (fantasma) -->
+  <g transform="rotate(-16 149 110)" opacity="0.4">
+    <path d="M150 107 L204 101 C208 101 209 105 206 107 L152 115 Z" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 3" stroke-linejoin="round"/>
+  </g>
+  <!-- perfil fijo -->
+  <path d="M36 116 C52 106 88 100 124 103 L148 108 C136 116 100 121 62 121 C50 121 40 119 36 116 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- elevador -->
+  <path d="M150 107 L204 101 C208 101 209 105 206 107 L152 115 Z"
+        fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="148" cy="110" r="3.5" fill="var(--accent)"/>
+  <path d="M209 92 C213 98 213 108 209 114" fill="none" stroke="var(--accent)" stroke-width="1.5"
+        marker-start="url(#ch03-stabilator-arrow)" marker-end="url(#ch03-stabilator-arrow)"/>
+  <text x="52" y="146" fill="var(--muted)" font-family="inherit" font-size="12">fijo</text>
+  <line x1="62" y1="140" x2="76" y2="124" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="78" cy="121" r="2.5" fill="var(--text)"/>
+  <text x="140" y="146" fill="var(--accent)" font-family="inherit" font-size="12">solo esto se mueve</text>
+
+  <!-- Panel derecho: stabilator -->
+  <text x="358" y="28" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold" text-anchor="middle">Stabilator</text>
+  <text x="358" y="44" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(una sola pieza que pivota completa)</text>
+
+  <!-- stabilator deflectado (fantasma, con su tab) -->
+  <g transform="rotate(-10 330 114)" opacity="0.4">
+    <path d="M266 122 C284 110 330 102 380 102 L418 104 C422 105 422 109 418 110 L300 126 C284 128 270 127 266 122 Z" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 3" stroke-linejoin="round"/>
+    <path d="M420 103 L446 101 C449 101 449 105 446 106 L420 108 Z" fill="none" stroke="var(--warn)" stroke-width="1.5" stroke-dasharray="4 3" stroke-linejoin="round"/>
+  </g>
+  <!-- pieza completa -->
+  <path d="M266 122 C284 110 330 102 380 102 L418 104 C422 105 422 109 418 110 L300 126 C284 128 270 127 266 122 Z"
+        fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- tab antiservo -->
+  <path d="M420 103 L446 101 C449 101 449 105 446 106 L420 108 Z"
+        fill="var(--panel-2)" stroke="var(--warn)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pivote -->
+  <circle cx="330" cy="114" r="4.5" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <circle cx="330" cy="114" r="1.5" fill="var(--text)"/>
+  <!-- flechas: el borde de ataque sube, el de salida baja -->
+  <path d="M258 128 C254 120 254 110 258 102" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ch03-stabilator-arrow)"/>
+  <path d="M453 96 C457 102 457 112 453 118" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#ch03-stabilator-arrow)"/>
+
+  <line x1="330" y1="146" x2="330" y2="122" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="330" cy="120" r="2.5" fill="var(--text)"/>
+  <text x="330" y="162" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">punto de pivote</text>
+  <line x1="430" y1="74" x2="433" y2="94" stroke="var(--muted)" stroke-width="1"/>
+  <circle cx="434" cy="97" r="2.5" fill="var(--warn)"/>
+  <text x="428" y="68" fill="var(--warn)" font-family="inherit" font-size="13" font-weight="bold" text-anchor="middle">tab antiservo</text>
+
+  <g font-family="inherit" text-anchor="middle">
+    <text x="240" y="206" fill="var(--text)" font-size="13">El tab antiservo se mueve en la MISMA dirección que el borde de salida:</text>
+    <text x="240" y="224" fill="var(--text)" font-size="13">agrega resistencia al mando para que el stabilator no sea tan sensible.</text>
+    <text x="240" y="246" fill="var(--muted)" font-size="12">(además sirve como compensador ajustable desde la cabina)</text>
+  </g>
 </svg>

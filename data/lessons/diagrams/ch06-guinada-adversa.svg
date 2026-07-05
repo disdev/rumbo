@@ -1,49 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 310" role="img" aria-label="Guiñada adversa vista desde arriba">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 332" role="img" aria-label="Guiñada adversa vista desde arriba">
   <defs>
-    <marker id="ga-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="ch06-ga-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="var(--ok)"/>
     </marker>
-    <marker id="ga-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="ch06-ga-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="var(--bad)"/>
     </marker>
   </defs>
-  <text x="200" y="22" text-anchor="middle" font-family="inherit" font-size="15" fill="var(--text)" font-weight="bold">Quieres girar a la izquierda…</text>
+  <text x="210" y="22" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">Quieres girar a la izquierda…</text>
 
   <!-- avión visto desde arriba, nariz hacia arriba -->
-  <g stroke="var(--text)" fill="var(--panel-2)" stroke-width="1.5">
-    <!-- fuselaje -->
-    <path d="M200,70 C207,80 208,95 208,120 L208,230 C208,242 204,252 200,256 C196,252 192,242 192,230 L192,120 C192,95 193,80 200,70 Z"/>
-    <!-- alas -->
-    <path d="M192,138 L70,158 L70,174 L192,166 Z"/>
-    <path d="M208,138 L330,158 L330,174 L208,166 Z"/>
-    <!-- cola -->
-    <path d="M192,236 L150,250 L150,260 L192,250 Z"/>
-    <path d="M208,236 L250,250 L250,260 L208,250 Z"/>
+  <g stroke="var(--text)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="var(--panel-2)">
+    <ellipse cx="210" cy="70" rx="26" ry="3.5" fill="var(--muted)" fill-opacity="0.3" stroke="none"/>
+    <path d="M210,66 C217,72 221,88 222,108 C223,128 223,150 222,180 C221,210 218,232 210,244 C202,232 199,210 198,180 C197,150 197,128 198,108 C199,88 203,72 210,66 Z"/>
+    <path d="M198,142 L94,150 C88,150.5 84,154.5 84,160 L84,166 C84,171 88,174 94,173.5 L198,169 Z"/>
+    <path d="M222,142 L326,150 C332,150.5 336,154.5 336,160 L336,166 C336,171 332,174 326,173.5 L222,169 Z"/>
+    <path d="M199,222 L166,226.5 C162.5,227 160,229.5 160,232.5 L160,235 C160,238 162.5,240 166,239.5 L199,237 Z"/>
+    <path d="M221,222 L254,226.5 C257.5,227 260,229.5 260,232.5 L260,235 C260,238 257.5,240 254,239.5 L221,237 Z"/>
   </g>
 
-  <!-- alerón izquierdo arriba -->
-  <rect x="74" y="168" width="52" height="7" fill="var(--muted)"/>
-  <text x="66" y="196" font-family="inherit" font-size="12" fill="var(--muted)">alerón ARRIBA</text>
-  <text x="66" y="211" font-family="inherit" font-size="12" fill="var(--muted)">esta ala baja</text>
+  <!-- alerón izquierdo ARRIBA (deflectado: se ve el intradós) -->
+  <path d="M96,167 L144,165.2 L144,171.5 L96,172.8 Z" fill="var(--muted)" stroke="var(--text)" stroke-width="1"/>
+  <!-- alerón derecho ABAJO -->
+  <path d="M276,165.2 L324,167 L324,172.8 L276,171.5 Z" fill="var(--accent)" stroke="var(--text)" stroke-width="1"/>
 
-  <!-- alerón derecho abajo -->
-  <rect x="274" y="168" width="52" height="7" fill="var(--accent)"/>
-  <text x="252" y="196" font-family="inherit" font-size="12" fill="var(--text)">alerón ABAJO:</text>
-  <text x="252" y="211" font-family="inherit" font-size="12" fill="var(--ok)">+ sustentación (el ala sube)</text>
-  <text x="252" y="226" font-family="inherit" font-size="12" fill="var(--bad)">+ resistencia inducida</text>
+  <!-- resistencia extra: frena el ala derecha -->
+  <line x1="300" y1="178" x2="300" y2="214" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch06-ga-bad)"/>
 
-  <!-- flecha de resistencia extra en ala derecha (hacia atrás) -->
-  <line x1="300" y1="176" x2="300" y2="250" stroke="var(--bad)" stroke-width="2.5" marker-end="url(#ga-bad)"/>
-  <text x="306" y="246" font-family="inherit" font-size="12" fill="var(--bad)">frena este lado</text>
+  <!-- viraje deseado (izquierda) -->
+  <path d="M194,60 C166,46 136,46 112,62" fill="none" stroke="var(--ok)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch06-ga-ok)"/>
+  <!-- guiñada adversa (la nariz se va a la derecha) -->
+  <path d="M226,60 C254,46 284,46 308,62" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch06-ga-bad)"/>
 
-  <!-- viraje deseado (verde, a la izquierda) -->
-  <path d="M185,62 Q150,52 122,66" fill="none" stroke="var(--ok)" stroke-width="2.5" marker-end="url(#ga-ok)"/>
-  <text x="30" y="52" font-family="inherit" font-size="13" fill="var(--ok)">viraje deseado</text>
+  <!-- etiquetas -->
+  <g font-family="inherit" font-size="12">
+    <text x="24" y="48" font-size="13" font-weight="bold" fill="var(--ok)">viraje deseado</text>
+    <text x="286" y="34" font-size="13" font-weight="bold" fill="var(--bad)" text-anchor="middle">guiñada adversa</text>
+    <text x="286" y="49" fill="var(--bad)" text-anchor="middle">la nariz se va aquí</text>
+    <text x="26" y="198" fill="var(--muted)">alerón ARRIBA</text>
+    <text x="26" y="213" fill="var(--muted)">esta ala baja</text>
+    <text x="242" y="252" font-weight="bold" fill="var(--text)">alerón ABAJO</text>
+    <text x="242" y="267" fill="var(--ok)">+ sustentación: el ala sube</text>
+    <text x="242" y="282" fill="var(--bad)">+ resistencia: frena este lado</text>
+  </g>
+  <!-- líneas guía -->
+  <g stroke="var(--muted)" stroke-width="1">
+    <line x1="82" y1="194" x2="112" y2="172"/>
+    <line x1="286" y1="246" x2="298" y2="177"/>
+  </g>
+  <g fill="var(--muted)">
+    <circle cx="113" cy="171" r="2.5"/>
+    <circle cx="298.5" cy="175.5" r="2.5"/>
+  </g>
 
-  <!-- guiñada adversa (roja, a la derecha) -->
-  <path d="M215,62 Q250,52 278,66" fill="none" stroke="var(--bad)" stroke-width="2.5" marker-end="url(#ga-bad)"/>
-  <text x="262" y="52" font-family="inherit" font-size="13" fill="var(--bad)" font-weight="bold">guiñada adversa</text>
-  <text x="262" y="36" font-family="inherit" font-size="12" fill="var(--bad)">la nariz se va aquí</text>
-
-  <text x="200" y="292" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">Soluciones: alerones diferenciales · tipo Frise · acoplamiento alerón–timón · tu pie en el pedal</text>
+  <text x="130" y="300" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">La nariz apunta AFUERA del viraje.</text>
+  <text x="210" y="322" text-anchor="middle" font-family="inherit" font-size="11" fill="var(--muted)">Soluciones: alerón diferencial · tipo Frise · tu pie en el pedal</text>
 </svg>

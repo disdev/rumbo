@@ -1,35 +1,42 @@
-<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triángulo de viento: vector aire con rumbo y TAS, vector viento y vector tierra con derrota y GS">
-  <text x="14" y="26" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">El triángulo de viento</text>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triangulo de viento cerrado: vector aire, vector viento y vector tierra">
+  <defs>
+    <marker id="ch16-wt-air" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 L3 5 Z" fill="var(--accent)"/></marker>
+    <marker id="ch16-wt-wind" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 L3 5 Z" fill="var(--bad)"/></marker>
+    <marker id="ch16-wt-gnd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 L3 5 Z" fill="var(--ok)"/></marker>
+  </defs>
+  <text x="16" y="26" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">El triangulo de viento</text>
 
-  <!-- vector aire: rumbo + TAS (apunta contra el viento) -->
-  <line x1="70" y1="240" x2="398" y2="152" stroke="var(--accent)" stroke-width="3"/>
-  <path d="M410 149 L392 146 L396 162 Z" fill="var(--accent)"/>
-  <text x="150" y="168" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">Vector AIRE: rumbo + TAS</text>
-  <text x="150" y="184" fill="var(--muted)" font-family="inherit" font-size="12">a dónde apunta la nariz</text>
+  <!-- vector AIRE: rumbo + TAS -->
+  <line x1="70" y1="232" x2="372" y2="150" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch16-wt-air)"/>
+  <!-- vector VIENTO: cierra del extremo del aire al extremo tierra -->
+  <line x1="372" y1="150" x2="410" y2="232" stroke="var(--bad)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="7 5" marker-end="url(#ch16-wt-wind)"/>
+  <!-- vector TIERRA: derrota + GS -->
+  <line x1="70" y1="232" x2="410" y2="232" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ch16-wt-gnd)"/>
 
-  <!-- vector viento: del extremo del vector aire al destino -->
-  <line x1="410" y1="152" x2="430" y2="228" stroke="var(--bad)" stroke-width="3" stroke-dasharray="7 5"/>
-  <path d="M433 240 L422 226 L437 222 Z" fill="var(--bad)"/>
-  <text x="330" y="120" fill="var(--bad)" font-family="inherit" font-size="13" font-weight="bold">Vector VIENTO</text>
-  <text x="330" y="136" fill="var(--muted)" font-family="inherit" font-size="12">dirección + velocidad</text>
-  <line x1="392" y1="128" x2="418" y2="180" stroke="var(--muted)" stroke-width="1"/>
+  <!-- avioncito en el vector aire, orientado al rumbo -->
+  <g transform="translate(221 191) rotate(76)">
+    <path d="M0 -9 C1.3 -9 2 -6.5 2 -3.5 L9 1 L9 3 L2 1 L1.7 6.5 L4 8.5 L4 10 L0 9 L-4 10 L-4 8.5 L-1.7 6.5 L-2 1 L-9 3 L-9 1 L-2 -3.5 C-2 -6.5 -1.3 -9 0 -9 Z" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="1" stroke-linejoin="round"/>
+  </g>
 
-  <!-- vector tierra: derrota + GS -->
-  <line x1="70" y1="240" x2="418" y2="240" stroke="var(--ok)" stroke-width="3"/>
-  <path d="M433 240 L415 233 L415 247 Z" fill="var(--ok)"/>
-  <text x="140" y="266" fill="var(--ok)" font-family="inherit" font-size="13" font-weight="bold">Vector TIERRA: derrota (curso) + GS</text>
-  <text x="140" y="282" fill="var(--muted)" font-family="inherit" font-size="12">tu camino real sobre el suelo</text>
+  <!-- WCA angulo en A entre tierra y aire -->
+  <path d="M136 232 A 66 66 0 0 0 132 210" fill="none" stroke="var(--text)" stroke-width="1.25"/>
+  <text x="144" y="224" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">WCA</text>
 
   <!-- puntos -->
-  <circle cx="70" cy="240" r="5" fill="var(--text)"/>
-  <text x="42" y="262" fill="var(--text)" font-family="inherit" font-size="12">Salida</text>
-  <circle cx="433" cy="240" r="5" fill="var(--text)"/>
-  <text x="416" y="262" fill="var(--text)" font-family="inherit" font-size="12">Destino</text>
+  <circle cx="70" cy="232" r="4" fill="var(--text)"/>
+  <text x="66" y="252" fill="var(--text)" font-family="inherit" font-size="11" text-anchor="middle">Salida</text>
+  <circle cx="410" cy="232" r="4" fill="var(--text)"/>
+  <text x="410" y="252" fill="var(--text)" font-family="inherit" font-size="11" text-anchor="middle">Destino</text>
 
-  <!-- WCA -->
-  <path d="M150 240 A 80 80 0 0 0 147 219" fill="none" stroke="var(--text)" stroke-width="2"/>
-  <text x="160" y="222" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">WCA</text>
-  <text x="160" y="237" fill="var(--muted)" font-family="inherit" font-size="11">corrección al viento</text>
+  <!-- etiquetas de vectores -->
+  <text x="150" y="150" fill="var(--accent)" font-family="inherit" font-size="12" font-weight="bold">Vector AIRE</text>
+  <text x="150" y="164" fill="var(--muted)" font-family="inherit" font-size="11">rumbo + TAS (la nariz)</text>
 
-  <text x="14" y="52" fill="var(--muted)" font-family="inherit" font-size="12">La nariz apunta hacia el viento; el viento te empuja; el resultado es tu derrota.</text>
+  <text x="388" y="176" fill="var(--bad)" font-family="inherit" font-size="12" font-weight="bold" text-anchor="end">Viento</text>
+  <text x="392" y="190" fill="var(--muted)" font-family="inherit" font-size="10">te empuja</text>
+
+  <text x="150" y="252" fill="var(--ok)" font-family="inherit" font-size="12" font-weight="bold">Vector TIERRA</text>
+  <text x="150" y="266" fill="var(--muted)" font-family="inherit" font-size="11">derrota + GS (camino real)</text>
+
+  <text x="16" y="290" fill="var(--muted)" font-family="inherit" font-size="11">La nariz apunta contra el viento; el viento te empuja; la suma cierra en tu derrota.</text>
 </svg>

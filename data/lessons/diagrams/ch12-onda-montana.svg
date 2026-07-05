@@ -1,33 +1,47 @@
-<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Onda de montaña: viento fuerte cruza la cresta, ondula a sotavento con nubes lenticulares en las crestas y un rotor turbulento abajo">
-  <!-- suelo y montaña -->
-  <line x1="10" y1="220" x2="470" y2="220" stroke="var(--text)" stroke-width="2"/>
-  <path d="M 60 220 L 150 90 L 240 220 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
-  <text x="150" y="205" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">cordillera</text>
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Onda de montaña: viento fuerte y estable cruza la cresta, forma ondas a sotavento con nubes lenticulares arriba y un rotor turbulento abajo">
+  <defs>
+    <marker id="ch12-onda-acc" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="ch12-onda-mut" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="ch12-onda-bad" viewBox="0 0 10 10" refX="6.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M1.5 1.5 7 5 1.5 8.5" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+
+  <!-- suelo y cordillera -->
+  <path d="M16 228 H464 V240 Q464 243 461 243 H19 Q16 243 16 240 Z" fill="var(--panel-2)" fill-opacity="0.6"/>
+  <line x1="16" y1="228" x2="464" y2="228" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M56 228 C 92 220 116 176 136 132 C 146 110 154 102 163 112 C 186 140 210 200 242 228 Z" fill="var(--panel-2)" fill-opacity="0.85" stroke="var(--text)" stroke-width="2" stroke-linejoin="round"/>
 
   <!-- viento entrante -->
-  <line x1="15" y1="110" x2="75" y2="110" stroke="var(--accent)" stroke-width="2.5"/>
-  <polygon points="84,110 70,103 70,117" fill="var(--accent)"/>
-  <text x="18" y="98" fill="var(--accent)" font-family="inherit" font-size="12">viento ≥ 40 kt</text>
-  <text x="18" y="132" fill="var(--muted)" font-family="inherit" font-size="12">aire estable</text>
-  <text x="60" y="240" fill="var(--muted)" font-family="inherit" font-size="12">barlovento</text>
+  <path d="M20 120 H 64" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-onda-acc)"/>
+  <text x="20" y="96" fill="var(--accent)" font-family="inherit" font-size="12">viento ≥ 40 kt</text>
+  <text x="20" y="110" fill="var(--muted)" font-family="inherit" font-size="12">aire estable</text>
 
-  <!-- onda a sotavento -->
-  <path d="M 90 120 Q 150 55 210 110 Q 250 150 290 105 Q 330 65 370 110 Q 405 148 445 112" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
-  <polygon points="452,106 438,108 444,120" fill="var(--accent)"/>
-  <text x="330" y="160" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la onda sigue por cientos de km</text>
-  <text x="300" y="240" fill="var(--muted)" font-family="inherit" font-size="12">sotavento (¡descendentes!)</text>
+  <!-- línea de corriente principal: onda a sotavento -->
+  <path d="M20 132 C 66 128 104 108 148 92 C 164 86 176 90 188 108 C 204 132 220 148 240 132 C 258 116 264 96 284 94 C 302 93 310 118 326 132 C 342 145 356 134 368 118 C 378 105 390 101 404 108 C 420 116 432 132 452 128" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-onda-acc)"/>
+  <!-- línea de corriente secundaria, más arriba y más suave -->
+  <path d="M20 84 C 80 78 130 62 176 56 C 208 52 224 62 246 76 C 268 90 292 92 312 78 C 330 66 348 62 370 68 C 392 74 414 84 444 82" fill="none" stroke="var(--muted)" stroke-width="1.25" stroke-linecap="round" marker-end="url(#ch12-onda-mut)"/>
 
-  <!-- lenticulares en las crestas -->
-  <ellipse cx="308" cy="76" rx="34" ry="10" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
-  <ellipse cx="308" cy="62" rx="24" ry="7" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
-  <text x="308" y="44" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">lenticular (cresta de la onda)</text>
-  <ellipse cx="160" cy="52" rx="28" ry="8" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+  <!-- lenticulares apiladas en la primera cresta -->
+  <g fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2" stroke-linejoin="round">
+    <path d="M250 96 Q 284 78 318 96 Q 284 108 250 96 Z"/>
+    <path d="M258 80 Q 284 66 310 80 Q 284 90 258 80 Z"/>
+    <path d="M266 64 Q 284 55 302 64 Q 284 71 266 64 Z"/>
+  </g>
+  <line x1="308" y1="62" x2="330" y2="44" stroke="var(--muted)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="308" cy="62" r="2.5" fill="var(--muted)"/>
+  <text x="462" y="40" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="end">lenticulares: crestas de la onda</text>
+  <!-- lenticular menor en la segunda cresta -->
+  <path d="M348 108 Q 374 94 400 108 Q 374 118 348 108 Z" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="1.25" stroke-linejoin="round"/>
 
-  <!-- rotor -->
-  <path d="M 268 185 a 20 20 0 1 1 18 -28" fill="none" stroke="var(--bad)" stroke-width="2.5"/>
-  <polygon points="290,155 276,153 283,166" fill="var(--bad)"/>
-  <circle cx="252" cy="176" r="6" fill="none" stroke="var(--bad)" stroke-width="1.5"/>
-  <text x="268" y="212" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">ROTOR: turbulencia violenta</text>
+  <!-- rotor bajo la primera cresta -->
+  <path d="M268 204 a 19 19 0 1 1 18 -26" fill="none" stroke="var(--bad)" stroke-width="2" stroke-linecap="round" marker-end="url(#ch12-onda-bad)"/>
+  <path d="M252 196 a 8 8 0 1 0 8 -11" fill="none" stroke="var(--bad)" stroke-width="1.25" stroke-linecap="round"/>
+  <line x1="292" y1="196" x2="316" y2="190" stroke="var(--muted)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="292" cy="196" r="2.5" fill="var(--muted)"/>
+  <text x="462" y="194" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="end">ROTOR: turbulencia violenta</text>
 
-  <text x="240" y="256" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Cruza con MUCHA altitud de sobra: la lenticular parece quieta, pero esconde 50+ kt</text>
+  <!-- barlovento / sotavento -->
+  <text x="72" y="258" fill="var(--muted)" font-family="inherit" font-size="12">barlovento</text>
+  <text x="340" y="258" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">sotavento: descendentes por cientos de km</text>
+
+  <text x="240" y="276" fill="var(--text)" font-family="inherit" font-size="12.5" text-anchor="middle">La lenticular parece quieta, pero delata 50+ kt: crúzala con mucha altitud</text>
 </svg>
