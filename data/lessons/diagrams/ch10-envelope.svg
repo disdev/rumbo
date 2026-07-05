@@ -1,0 +1,40 @@
+<svg viewBox="0 0 440 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico de envelope: peso contra posición del CG, con un punto dentro (puede volar) y otro fuera (no puede volar)">
+  <text x="240" y="24" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle">El envelope: ¿tu punto cae adentro?</text>
+
+  <!-- envelope -->
+  <polygon points="84,260 84,150 169,40 383,40 383,260" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="235" y="160" fill="var(--accent)" font-family="inherit" font-size="13" text-anchor="middle">zona aprobada</text>
+  <text x="235" y="178" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">(envelope)</text>
+
+  <!-- ejes -->
+  <line x1="60" y1="40" x2="60" y2="260" stroke="var(--text)" stroke-width="2"/>
+  <line x1="60" y1="260" x2="410" y2="260" stroke="var(--text)" stroke-width="2"/>
+
+  <!-- marcas eje X: CG -->
+  <line x1="109" y1="260" x2="109" y2="266" stroke="var(--text)" stroke-width="2"/>
+  <text x="109" y="280" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">36</text>
+  <line x1="206" y1="260" x2="206" y2="266" stroke="var(--text)" stroke-width="2"/>
+  <text x="206" y="280" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">40</text>
+  <line x1="303" y1="260" x2="303" y2="266" stroke="var(--text)" stroke-width="2"/>
+  <text x="303" y="280" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">44</text>
+  <line x1="400" y1="260" x2="400" y2="266" stroke="var(--text)" stroke-width="2"/>
+  <text x="400" y="280" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">48</text>
+  <text x="240" y="300" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">CG (pulgadas detrás del datum)</text>
+
+  <!-- marcas eje Y: peso -->
+  <line x1="54" y1="236" x2="60" y2="236" stroke="var(--text)" stroke-width="2"/>
+  <text x="48" y="240" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">1,600</text>
+  <line x1="54" y1="138" x2="60" y2="138" stroke="var(--text)" stroke-width="2"/>
+  <text x="48" y="142" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">2,000</text>
+  <line x1="54" y1="40" x2="60" y2="40" stroke="var(--text)" stroke-width="2"/>
+  <text x="48" y="44" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">2,400</text>
+  <text x="30" y="34" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="start">Peso (lb)</text>
+
+  <!-- punto A: dentro -->
+  <circle cx="230" cy="115" r="7" fill="var(--ok)"/>
+  <text x="230" y="100" fill="var(--ok)" font-family="inherit" font-size="13" text-anchor="middle">A — puedes volar</text>
+
+  <!-- punto B: fuera -->
+  <circle cx="395" cy="90" r="7" fill="var(--bad)"/>
+  <text x="380" y="72" fill="var(--bad)" font-family="inherit" font-size="13" text-anchor="middle">B — fuera: NO</text>
+</svg>

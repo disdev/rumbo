@@ -1,0 +1,43 @@
+<svg viewBox="0 0 440 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="El viento se descompone en componente de frente a lo largo de la pista y componente cruzado de costado">
+  <text x="220" y="24" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">Un viento, dos componentes</text>
+
+  <!-- runway (vertical) -->
+  <rect x="185" y="60" width="70" height="210" rx="4" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <line x1="220" y1="80" x2="220" y2="105" stroke="var(--muted)" stroke-width="3"/>
+  <line x1="220" y1="125" x2="220" y2="150" stroke="var(--muted)" stroke-width="3"/>
+  <line x1="220" y1="170" x2="220" y2="195" stroke="var(--muted)" stroke-width="3"/>
+  <line x1="220" y1="215" x2="220" y2="240" stroke="var(--muted)" stroke-width="3"/>
+  <text x="220" y="262" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">18</text>
+
+  <!-- plane triangle at threshold -->
+  <polygon points="220,238 212,252 228,252" fill="var(--accent)"/>
+
+  <!-- wind vector: from 40 degrees right of nose, pointing to the plane -->
+  <line x1="340" y1="82" x2="242" y2="200" stroke="var(--text)" stroke-width="3"/>
+  <polygon points="236,207 246,203 238,196" fill="var(--text)"/>
+  <text x="356" y="76" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">viento</text>
+  <text x="356" y="94" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">220°/30 kt</text>
+  <text x="356" y="110" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(40° de la pista)</text>
+
+  <!-- headwind component (along runway, toward plane) -->
+  <line x1="242" y1="110" x2="242" y2="192" stroke="var(--ok)" stroke-width="3"/>
+  <polygon points="242,200 237,190 247,190" fill="var(--ok)"/>
+  <text x="150" y="120" fill="var(--ok)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">de FRENTE</text>
+  <text x="150" y="138" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">30 × cos 40° ≈ 23 kt</text>
+  <text x="150" y="154" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">te ayuda a frenar</text>
+
+  <!-- crosswind component (across runway) -->
+  <line x1="340" y1="200" x2="252" y2="200" stroke="var(--bad)" stroke-width="3"/>
+  <polygon points="244,200 254,195 254,205" fill="var(--bad)"/>
+  <text x="352" y="188" fill="var(--bad)" font-family="inherit" font-size="13" text-anchor="start" font-weight="bold">CRUZADO</text>
+  <text x="352" y="206" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="start">30 × sen 40°</text>
+  <text x="352" y="222" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="start">≈ 19 kt</text>
+  <text x="352" y="238" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="start">te empuja</text>
+  <text x="352" y="254" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="start">de costado</text>
+
+  <!-- dashed component rectangle -->
+  <line x1="340" y1="82" x2="340" y2="200" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="242" y1="110" x2="340" y2="82" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <text x="220" y="296" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Regla: 30° → cruzado = ½ del viento · 45° → 70 % · 60° → 90 %</text>
+</svg>

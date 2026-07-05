@@ -1,0 +1,489 @@
+{
+  "chapter": "6",
+  "title": "Controles de vuelo",
+  "resumen": "Qué mueve cada mando de cabina: alerones, elevador y timón sobre sus tres ejes, más flaps, slats, spoilers, compensadores y el piloto automático.",
+  "sections": [
+    {
+      "id": "6-1",
+      "title": "El mapa: tres mandos, tres superficies, tres ejes",
+      "key_points": [
+        "Los alerones producen alabeo alrededor del eje longitudinal.",
+        "El elevador produce cabeceo alrededor del eje lateral.",
+        "El timón produce guiñada alrededor del eje vertical.",
+        "Los tres ejes se cruzan en el centro de gravedad.",
+        "El bastón mueve alerones (a los lados) y elevador (adelante/atrás); los pedales mueven el timón.",
+        "Los controles primarios son alerones, elevador (o stabilator) y timón."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué pasa exactamente cuando mueves el bastón o pisas un pedal? Piensa en un videojuego: cada palanca del control hace un movimiento distinto del personaje. En el avión es igual: cada mando de cabina mueve una **superficie de control** (control surface), y esa superficie hace girar el avión alrededor de uno de sus **tres ejes** (axes). Los tres ejes se cruzan en un solo punto: el **centro de gravedad**. Alerones, elevador y timón son los **controles primarios** (primary flight controls)."
+        },
+        {
+          "type": "table",
+          "headers": ["Mando", "Superficie", "Eje", "Movimiento"],
+          "rows": [
+            ["Bastón a los lados", "Alerones (ailerons)", "Longitudinal (nariz–cola)", "Alabeo (roll)"],
+            ["Bastón adelante/atrás", "Elevador (elevator)", "Lateral (ala–ala)", "Cabeceo (pitch)"],
+            ["Pedales", "Timón (rudder)", "Vertical", "Guiñada (yaw)"]
+          ]
+        },
+        {
+          "type": "diagram",
+          "src": "ch06-mandos-ejes.svg",
+          "caption": "El mapa completo: cada mando de cabina mueve una superficie, y cada superficie gira el avión sobre un eje."
+        },
+        {
+          "type": "widget",
+          "name": "superficies-control",
+          "caption": "Mueve el bastón y los pedales: mira qué superficie se deflecta y sobre qué eje gira el avión. Prueba los tres movimientos, uno por uno."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**A con A:** **A**lerones → **A**labeo. El **elevador** *eleva* la nariz (cabeceo). Y el **timón**, como el timón de tu bici, apunta la nariz a los lados (guiñada)."
+        },
+        {
+          "type": "notebook",
+          "id": "6-1-n1",
+          "prompt": "Copia la tabla mando → superficie → eje → movimiento y dibuja un avioncito con sus tres ejes atravesándolo por el centro de gravedad. Rotula cada eje."
+        },
+        {
+          "type": "check",
+          "id": "6-1-c1",
+          "q": "El alabeo (roll) ocurre alrededor de…",
+          "options": ["El eje longitudinal, de la nariz a la cola.", "El eje lateral, de ala a ala.", "El eje vertical."],
+          "answer": 0,
+          "why": "Alabear es inclinar las alas: el avión rota sobre la línea imaginaria nariz–cola."
+        },
+        {
+          "type": "check",
+          "id": "6-1-c2",
+          "q": "¿En qué punto se cruzan los tres ejes del avión?",
+          "options": ["En el centro de gravedad.", "En la raíz del ala.", "En la cabina del piloto."],
+          "answer": 0,
+          "why": "Los tres ejes pasan por el centro de gravedad: es el punto de pivote de todos los giros."
+        }
+      ]
+    },
+    {
+      "id": "6-2",
+      "title": "Alerones: inclinarse como una moto en la curva",
+      "key_points": [
+        "Los alerones están en el borde de salida, hacia las puntas de las alas.",
+        "Los alerones siempre se mueven en direcciones opuestas.",
+        "El ala del alerón que baja gana curvatura, genera más sustentación y sube.",
+        "El resultado es alabeo sobre el eje longitudinal.",
+        "Bastón a la derecha: alerón derecho arriba, alerón izquierdo abajo, el avión alabea a la derecha."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo inclinas el avión para girar, como una moto que se acuesta en la curva? Con los **alerones (ailerons)**: dos paletas en el borde de salida, cerca de las puntas de las alas. Siempre se mueven **en direcciones opuestas**: bastón a la derecha → el alerón derecho sube y el izquierdo baja. El ala con el alerón abajo gana curvatura, genera más sustentación y sube; la otra baja. Resultado: **alabeo (roll)** sobre el eje longitudinal."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "El ala que quieres que **suba** es la del alerón que **baja**. Más curvatura = más sustentación, como un remo que empuja más agua."
+        },
+        {
+          "type": "notebook",
+          "id": "6-2-n1",
+          "prompt": "Dibuja el avión visto desde atrás: alerón derecho arriba, izquierdo abajo. Flecha hacia arriba en el ala izquierda, hacia abajo en la derecha, y una flecha curva mostrando el alabeo a la derecha."
+        },
+        {
+          "type": "check",
+          "id": "6-2-c1",
+          "q": "Mueves el bastón a la izquierda. ¿Qué hacen los alerones?",
+          "options": ["El izquierdo sube y el derecho baja.", "Los dos suben a la vez.", "El izquierdo baja y el derecho sube."],
+          "answer": 0,
+          "why": "Se mueven opuestos: sube el del lado hacia el que giras; el otro baja y levanta su ala."
+        }
+      ]
+    },
+    {
+      "id": "6-3",
+      "title": "Guiñada adversa: la nariz que se va al lado equivocado",
+      "key_points": [
+        "El alerón que baja genera más sustentación y, con ella, más resistencia inducida.",
+        "Esa resistencia extra jala la nariz hacia el lado contrario del viraje: guiñada adversa.",
+        "Alerones diferenciales: el alerón que sube se deflecta más que el que baja.",
+        "Alerones tipo Frise: bisagra desplazada; el borde del alerón que sube asoma bajo el ala y crea resistencia.",
+        "Acoplamiento alerón–timón: resortes mueven el timón automáticamente con los alerones.",
+        "El piloto la corrige usando el timón en cada viraje."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué, al girar, la nariz se va primero al lado contrario? Es como remar: si remas fuerte solo con el remo derecho, la canoa vira… pero ese remo también frena su lado. En el avión, el alerón que baja genera más sustentación, y más sustentación trae más **resistencia inducida (induced drag)**. Esa resistencia extra jala la nariz hacia el ala que sube: **guiñada adversa (adverse yaw)**, opuesta al viraje que quieres."
+        },
+        {
+          "type": "diagram",
+          "src": "ch06-guinada-adversa.svg",
+          "caption": "Viraje a la izquierda: el alerón derecho baja, su ala genera más sustentación y más resistencia, y la nariz se va a la derecha."
+        },
+        {
+          "type": "text",
+          "md": "¿Cómo se corrige? Tres trucos de diseño: **alerones diferenciales** (differential ailerons): el que sube se deflecta más que lo que baja el otro, para emparejar la resistencia. **Tipo Frise** (Frise-type): bisagra desplazada; el borde del alerón que sube asoma debajo del ala y crea resistencia en ese lado. **Acoplamiento alerón–timón** (coupled ailerons and rudder): resortes que mueven el timón automáticamente. Y el truco del piloto: usar el timón en cada viraje."
+        },
+        {
+          "type": "notebook",
+          "id": "6-3-n1",
+          "prompt": "Dibuja el avión desde arriba iniciando viraje a la izquierda: pinta la flecha de resistencia extra en el ala derecha y una flecha curva de la nariz yéndose a la derecha. Debajo, anota las tres soluciones de diseño."
+        },
+        {
+          "type": "check",
+          "id": "6-3-c1",
+          "q": "¿Qué causa la guiñada adversa?",
+          "options": ["La mayor resistencia inducida del ala cuyo alerón está abajo.", "El timón deflectado en contra del viraje.", "La menor sustentación del ala que baja."],
+          "answer": 0,
+          "why": "El alerón abajo da más sustentación y más resistencia inducida: esa resistencia frena su lado y desvía la nariz."
+        },
+        {
+          "type": "check",
+          "id": "6-3-c2",
+          "q": "En los alerones diferenciales…",
+          "options": ["El alerón que sube se deflecta más que el que baja.", "Los dos alerones bajan a la vez.", "El alerón que baja se deflecta más que el que sube."],
+          "answer": 0,
+          "why": "Más deflexión hacia arriba = más resistencia en el ala que baja, y así se compensa la guiñada adversa."
+        }
+      ]
+    },
+    {
+      "id": "6-4",
+      "title": "Elevador: la nariz sube y baja",
+      "key_points": [
+        "El elevador está articulado al borde de salida del estabilizador horizontal.",
+        "Bastón atrás: elevador arriba, fuerza aerodinámica hacia abajo en la cola, la nariz sube.",
+        "El elevador controla el cabeceo sobre el eje lateral, pivotando en el centro de gravedad.",
+        "Al reducir potencia, el chorro de la hélice deja de soplar sobre la cola y el elevador pierde eficacia: la nariz baja.",
+        "En una cola en T el elevador queda fuera del chorro de la hélice."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo subes la nariz? Piensa en un sube y baja: empujas un extremo hacia abajo y el otro sube. El avión pivota igual sobre su centro de gravedad. Bastón atrás → el **elevador (elevator)** sube → el aire empuja la cola **hacia abajo** → la nariz sube: **cabeceo (pitch)** sobre el eje lateral. El elevador está articulado al **estabilizador horizontal** y cambia su curvatura, como un mini flap de la cola."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta: si **reduces potencia** y no compensas, ¿por qué baja la nariz? Porque el chorro de la hélice ya no sopla con fuerza sobre la cola: el elevador **pierde eficacia**. (En una **cola en T** casi no pasa: el elevador va arriba, fuera del chorro.)"
+        },
+        {
+          "type": "notebook",
+          "id": "6-4-n1",
+          "prompt": "Dibuja la cola de perfil con el elevador deflectado arriba: flecha hacia abajo en la cola, flecha de la nariz subiendo, y marca el centro de gravedad como punto de pivote del sube y baja."
+        },
+        {
+          "type": "check",
+          "id": "6-4-c1",
+          "q": "Jalas el bastón hacia atrás. ¿Qué pasa?",
+          "options": ["El elevador sube, la cola baja y la nariz sube.", "El elevador baja, la cola sube y la nariz sube.", "El elevador sube, la cola sube y la nariz baja."],
+          "answer": 0,
+          "why": "Elevador arriba = fuerza hacia abajo en la cola; el avión pivota en el CG y la nariz sube."
+        }
+      ]
+    },
+    {
+      "id": "6-5",
+      "title": "Stabilator y canard: otras formas de cola",
+      "key_points": [
+        "El stabilator es el estabilizador horizontal completo, de una sola pieza, que pivota en una bisagra central.",
+        "El stabilator es muy sensible: responde mucho con poco movimiento.",
+        "Su tab antiservo se mueve en la misma dirección que el borde de salida para dar firmeza y evitar sobrecontrol.",
+        "El tab antiservo también funciona como compensador.",
+        "El canard va delante del ala y sustenta hacia arriba, al revés de la cola convencional que empuja hacia abajo."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y si en vez de una paleta se mueve toda la cola? Eso es el **stabilator**: el estabilizador horizontal completo pivota en una bisagra central, de una sola pieza. Es muy sensible: con poco movimiento responde muchísimo. Para calmarlo lleva un **tab antiservo (antiservo tab)** que se mueve en la **misma dirección** que el borde de salida: le pone resistencia al mando, te da \"peso\" en la mano y evita que sobrecontroles. Además funciona como compensador."
+        },
+        {
+          "type": "text",
+          "md": "¿Y el **canard**? Es una mini ala **delante** del ala principal que hace el trabajo de la cola: controla el cabeceo. La diferencia: la cola convencional normalmente empuja **hacia abajo**, pero el canard **sustenta hacia arriba**, como si el avión tuviera dos alas que ayudan."
+        },
+        {
+          "type": "diagram",
+          "src": "ch06-stabilator.svg",
+          "caption": "El stabilator pivota entero sobre su bisagra; su tab antiservo se mueve en la misma dirección para darle firmeza al mando."
+        },
+        {
+          "type": "notebook",
+          "id": "6-5-n1",
+          "prompt": "Dibuja el stabilator de perfil pivotando sobre su bisagra, con el tab antiservo deflectado en la MISMA dirección que el borde de salida. Al lado escribe: \"antiservo = mismo sentido = más firmeza\"."
+        },
+        {
+          "type": "check",
+          "id": "6-5-c1",
+          "q": "El tab antiservo de un stabilator se mueve…",
+          "options": ["En la misma dirección que el borde de salida del stabilator.", "En dirección opuesta al stabilator.", "Solo cuando el piloto ajusta el compensador."],
+          "answer": 0,
+          "why": "Mismo sentido: crea resistencia al movimiento, reduce la sensibilidad y da sensación al mando."
+        },
+        {
+          "type": "check",
+          "id": "6-5-c2",
+          "q": "A diferencia de la cola convencional, el canard…",
+          "options": ["Genera sustentación hacia arriba.", "Empuja la cola hacia abajo.", "No controla el cabeceo."],
+          "answer": 0,
+          "why": "El canard va adelante y sustenta hacia arriba; la cola convencional suele cargar hacia abajo."
+        }
+      ]
+    },
+    {
+      "id": "6-6",
+      "title": "Timón: la guiñada",
+      "key_points": [
+        "El timón está articulado al estabilizador vertical y controla la guiñada sobre el eje vertical.",
+        "Pedal izquierdo: timón a la izquierda, el aire empuja la cola a la derecha, la nariz apunta a la izquierda.",
+        "El timón no gira el avión por sí solo: coordina los virajes hechos con alerones.",
+        "Su trabajo clave es cancelar la guiñada adversa y mantener el viraje coordinado."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Para qué pisas los pedales? El **timón (rudder)** es la paleta articulada al **estabilizador vertical**. Funciona como el timón de un bote: pisas el pedal izquierdo → el timón se deflecta a la izquierda → el aire empuja la cola a la derecha → la nariz apunta a la izquierda. Eso es **guiñada (yaw)**, sobre el eje vertical. Su chamba principal: cancelar la guiñada adversa y mantener el viraje **coordinado**."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Pregunta directa del banco: *\"¿Cuál es el propósito del timón de un avión?\"* Respuesta: **controlar la guiñada**. Ni alabeo ni sobreinclinación: guiñada."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "El timón **no** hace girar el avión por sí solo en un viraje normal. Los virajes se hacen inclinando con los alerones; el timón solo coordina."
+        },
+        {
+          "type": "notebook",
+          "id": "6-6-n1",
+          "prompt": "Dibuja el avión desde arriba con el timón deflectado a la izquierda: flecha del aire empujando la cola a la derecha y flecha de la nariz apuntando a la izquierda."
+        },
+        {
+          "type": "check",
+          "id": "6-6-c1",
+          "q": "¿Cuál es el propósito del timón de un avión?",
+          "options": ["Controlar la guiñada.", "Controlar el alabeo.", "Controlar la tendencia a la sobreinclinación."],
+          "answer": 0,
+          "why": "Cae tal cual en el examen: timón = guiñada, sobre el eje vertical."
+        }
+      ]
+    },
+    {
+      "id": "6-7",
+      "title": "Flaps: descender empinado sin acelerar",
+      "key_points": [
+        "Los flaps van en el borde de salida, cerca del fuselaje, y aumentan sustentación y resistencia a la vez.",
+        "Permiten un ángulo de descenso mayor sin incrementar la velocidad, y bajan la velocidad de pérdida.",
+        "Flap sencillo (plain): la paleta gira hacia abajo; es el más simple.",
+        "Flap partido (split): solo baja la parte inferior; mucha resistencia, poca sustentación extra.",
+        "Flap ranurado (slotted): una ranura sopla aire con energía sobre el flap; es el más común.",
+        "Flap Fowler: se desliza hacia atrás y abajo, aumenta el área del ala y da el mayor aumento de sustentación."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo bajas a una pista corta, empinado y lento, sin acelerar? Con los **flaps**: paletas en el borde de salida, pegadas al fuselaje. Al bajarlos aumentan la curvatura del ala: **más sustentación y más resistencia** a la vez. Eso te deja volar más lento (baja la velocidad de pérdida) y descender más empinado **sin ganar velocidad**. Es como bajar una cuesta en bici frenando: bajas fuerte pero controlado."
+        },
+        {
+          "type": "widget",
+          "name": "flaps",
+          "caption": "Baja los flaps de 0° a 30° y observa cómo crecen las flechas de sustentación y de resistencia, y cómo cambia el perfil del ala."
+        },
+        {
+          "type": "text",
+          "md": "Los cuatro tipos: **sencillo (plain)**: la paleta simplemente gira hacia abajo. **Partido (split)**: solo baja la parte inferior del ala; mucha resistencia, poca sustentación extra. **Ranurado (slotted)**: deja una ranura que sopla aire con energía sobre el flap; gran aumento de sustentación y es el más popular. **Fowler**: se desliza hacia atrás y abajo sobre rieles: aumenta el **área** del ala además de la curvatura → el mayor aumento de sustentación."
+        },
+        {
+          "type": "diagram",
+          "src": "ch06-flaps-tipos.svg",
+          "caption": "Los cuatro tipos de flap: sencillo, partido, ranurado (el más común) y Fowler (gana área: el mayor aumento de sustentación)."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco lo pregunta dos veces: la función de los flaps es **\"incrementar el ángulo de descenso sin incrementar la velocidad\"** y permitir **\"aproximaciones más pronunciadas sin aumentar la velocidad\"**. Grábate esa frase."
+        },
+        {
+          "type": "notebook",
+          "id": "6-7-n1",
+          "prompt": "Dibuja los cuatro perfiles de flap (sencillo, partido, ranurado, Fowler) y subraya el Fowler con la nota: \"gana área = el que más sustentación da\"."
+        },
+        {
+          "type": "check",
+          "id": "6-7-c1",
+          "q": "Una función principal de los flaps durante la aproximación y el aterrizaje es:",
+          "options": ["Incrementar el ángulo de descenso sin incrementar la velocidad.", "Disminuir el ángulo de descenso sin aumentar la velocidad.", "Permitir aterrizar a una mayor velocidad indicada."],
+          "answer": 0,
+          "why": "Los flaps suman resistencia y sustentación: bajas más empinado y más lento, no más rápido."
+        },
+        {
+          "type": "check",
+          "id": "6-7-c2",
+          "q": "¿Qué tipo de flap da el mayor aumento de sustentación?",
+          "options": ["El Fowler, porque aumenta el área del ala además de la curvatura.", "El partido, porque genera mucha resistencia.", "El sencillo, porque es el más simple."],
+          "answer": 0,
+          "why": "El Fowler se desliza hacia atrás: ala más grande y más curva = máxima sustentación."
+        }
+      ]
+    },
+    {
+      "id": "6-8",
+      "title": "Borde de ataque y spoilers",
+      "key_points": [
+        "Los dispositivos de borde de ataque mantienen el aire pegado al ala en ángulos de ataque altos.",
+        "Las ranuras fijas (slots) guían aire con energía sobre el ala y retrasan la pérdida a un ángulo de ataque mayor.",
+        "Los slats móviles se deslizan hacia adelante y abren la ranura cuando hace falta.",
+        "Los flaps de borde de ataque aumentan la curvatura por delante; se usan con los flaps traseros en aviones grandes.",
+        "Los spoilers se levantan sobre el ala: reducen la sustentación y aumentan la resistencia.",
+        "Los planeadores usan spoilers para controlar el descenso; en tierra ayudan a frenar."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Se puede ayudar al ala también por delante? Sí. Los **dispositivos de borde de ataque** (leading edge devices) mantienen el aire pegado al ala en ángulos de ataque altos. **Ranuras fijas (slots)**: un canal que guía aire con energía sobre la parte superior y **retrasa la pérdida a un ángulo de ataque mayor**. **Slats móviles**: se deslizan hacia adelante y abren la ranura cuando la necesitas. **Flaps de borde de ataque**: suman curvatura por delante; típicos de aviones grandes, junto con los flaps traseros."
+        },
+        {
+          "type": "diagram",
+          "src": "ch06-borde-ataque.svg",
+          "caption": "Slat abierto a gran ángulo de ataque: el aire con energía pasa por la ranura, se mantiene pegado al ala y retrasa la pérdida."
+        },
+        {
+          "type": "text",
+          "md": "Los **spoilers** son lo contrario de todo lo anterior: placas que se levantan sobre el ala para *arruinar* (spoil) el flujo: **menos sustentación y más resistencia**. Los planeadores los usan para controlar el descenso; en algunos aviones ayudan al alabeo y, al aterrizar, pegan el avión a la pista para frenar mejor."
+        },
+        {
+          "type": "notebook",
+          "id": "6-8-n1",
+          "prompt": "Dibuja un perfil de ala con mucho ángulo de ataque y su slat abierto: flecha de aire pasando por la ranura sobre el ala. Anota al lado: \"retrasa la pérdida\"."
+        },
+        {
+          "type": "check",
+          "id": "6-8-c1",
+          "q": "¿Qué logran las ranuras (slots) del borde de ataque?",
+          "options": ["Retrasar la pérdida hasta un ángulo de ataque mayor.", "Aumentar la resistencia para descender más rápido.", "Reducir la sustentación en crucero."],
+          "answer": 0,
+          "why": "El slot sopla aire con energía sobre el ala: el flujo sigue pegado y la pérdida llega más tarde."
+        },
+        {
+          "type": "check",
+          "id": "6-8-c2",
+          "q": "¿Qué hace un spoiler al desplegarse?",
+          "options": ["Reduce la sustentación y aumenta la resistencia.", "Aumenta la sustentación y reduce la resistencia.", "Solo cambia la guiñada."],
+          "answer": 0,
+          "why": "Arruina (spoil) el flujo sobre el ala: menos sustentación, más resistencia; útil para descender y frenar."
+        }
+      ]
+    },
+    {
+      "id": "6-9",
+      "title": "Compensadores: vuela sin forzar el brazo",
+      "key_points": [
+        "El compensador (trim) quita la presión sostenida sobre los mandos.",
+        "El trim tab se mueve en dirección opuesta a la superficie de control.",
+        "La rutina: primero establece la actitud con el mando, luego ajusta el trim hasta que la presión desaparezca.",
+        "El balance tab se mueve opuesto de forma automática para reducir el esfuerzo del piloto.",
+        "En el servo tab el piloto mueve el tab y el tab mueve la superficie (aviones grandes).",
+        "El antiservo va en el mismo sentido que la superficie para dar firmeza al stabilator.",
+        "El tab ajustable en tierra es fijo: se dobla en tierra, típico en el timón."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Te imaginas sujetar el bastón con fuerza durante una hora entera? Para eso existe el **compensador (trim)**: quita la presión del mando para que el avión mantenga la actitud solito. El más común es el **trim tab**: una pestañita en el borde de salida del elevador que se mueve en dirección **opuesta** a la superficie. ¿La rutina correcta? Primero pon la actitud deseada con el bastón, y luego gira el trim hasta que la presión desaparezca."
+        },
+        {
+          "type": "diagram",
+          "src": "ch06-trim-elevador.svg",
+          "caption": "Compensado para nariz arriba: la pestaña baja, el aire la empuja y sostiene el elevador arriba sin que tú hagas fuerza."
+        },
+        {
+          "type": "table",
+          "headers": ["Tab", "Dirección", "¿Para qué?"],
+          "rows": [
+            ["Trim tab", "Opuesta a la superficie", "Quitar la presión del mando (lo ajustas tú)"],
+            ["Balance tab", "Opuesta, automática", "Ayudarte a mover superficies pesadas"],
+            ["Servo tab", "Tú mueves el tab; el tab mueve la superficie", "Superficies grandes de aviones grandes"],
+            ["Antiservo", "La MISMA que la superficie", "Dar firmeza al stabilator"],
+            ["Ajustable en tierra", "Fija; se dobla en tierra", "Corregir tendencias (típico en el timón)"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Trampa del banco: en la pregunta de los flaps, \"aliviar al piloto de mantener presión continua sobre los controles\" aparece como distractor. Esa es la chamba del **compensador**, no de los flaps."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**Anti-servo = anti-ayuda**: va en el MISMO sentido y te pone el mando más firme. Todos los demás tabs van al revés de la superficie."
+        },
+        {
+          "type": "notebook",
+          "id": "6-9-n1",
+          "prompt": "Copia la tabla de los cinco tabs (trim, balance, servo, antiservo, ajustable en tierra) con su dirección y su función, y enciérrale un círculo al antiservo: es el único que va en el mismo sentido."
+        },
+        {
+          "type": "check",
+          "id": "6-9-c1",
+          "q": "Para compensar con nariz arriba, el trim tab del elevador…",
+          "options": ["Baja, en dirección opuesta al elevador que queda arriba.", "Sube, junto con el elevador.", "No se mueve; solo gira la rueda de trim."],
+          "answer": 0,
+          "why": "El tab baja, el aire lo empuja hacia arriba y ese empuje sostiene el elevador arriba sin esfuerzo tuyo."
+        },
+        {
+          "type": "check",
+          "id": "6-9-c2",
+          "q": "¿Cuál es el uso correcto del compensador en vuelo?",
+          "options": ["Establecer la actitud con el mando y luego ajustar el trim hasta quitar la presión.", "Poner el trim primero y dejar que él cambie la actitud.", "Usarlo solo durante el despegue."],
+          "answer": 0,
+          "why": "El trim no es para maniobrar: primero la actitud con el bastón, después el trim para aliviar la presión."
+        }
+      ]
+    },
+    {
+      "id": "6-10",
+      "title": "Cables, fly-by-wire y el piloto automático",
+      "key_points": [
+        "En aviones ligeros los mandos se conectan con cables, poleas y varillas mecánicas.",
+        "En fly-by-wire el mando genera señales eléctricas que una computadora envía a actuadores.",
+        "La computadora del fly-by-wire puede suavizar o limitar las entradas del piloto.",
+        "El piloto automático reduce la carga de trabajo manteniendo actitud, rumbo o altitud.",
+        "Un autopilot de un solo eje controla los alerones: es un nivelador de alas.",
+        "El piloto siempre supervisa al piloto automático."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué conecta tu mano con el alerón? En los aviones ligeros, un sistema mecánico: **cables, poleas y varillas** (push-pull rods), como una marioneta con hilos de acero. En aviones modernos existe el **fly-by-wire**: tu mando genera señales eléctricas, una computadora las interpreta y unos actuadores mueven las superficies. Es pasar de la marioneta al control inalámbrico de tu consola: la computadora hasta puede suavizar o limitar tus movimientos para protegerte."
+        },
+        {
+          "type": "text",
+          "md": "El **piloto automático (autopilot)** mueve los mandos por ti para bajarte la carga de trabajo. El más simple es de **un solo eje**: controla solo los alerones, un \"nivelador de alas\" (wing leveler). Los de dos o tres ejes agregan cabeceo y guiñada, y pueden seguir un rumbo o mantener una altitud. Pero tú sigues siendo el piloto: lo supervisas siempre."
+        },
+        {
+          "type": "notebook",
+          "id": "6-10-n1",
+          "prompt": "Escribe dos columnas: \"Cables y poleas\" vs \"Fly-by-wire\". Anota en cada una qué transmite el movimiento (acero vs señales eléctricas) y quién puede limitar la entrada del piloto."
+        },
+        {
+          "type": "check",
+          "id": "6-10-c1",
+          "q": "En un sistema fly-by-wire…",
+          "options": ["El mando envía señales eléctricas a una computadora que mueve actuadores.", "Cables de acero conectan el bastón directamente con las superficies.", "El piloto ya no puede controlar el avión."],
+          "answer": 0,
+          "why": "Fly-by-wire = volar por cable eléctrico: señales, computadora y actuadores en vez de cables mecánicos."
+        },
+        {
+          "type": "check",
+          "id": "6-10-c2",
+          "q": "Un piloto automático de un solo eje normalmente controla…",
+          "options": ["Los alerones: es un nivelador de alas.", "El elevador y el timón a la vez.", "Los flaps y el compensador."],
+          "answer": 0,
+          "why": "Un eje = alabeo: mantiene las alas niveladas con los alerones (wing leveler)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Regla semicircular de altitudes VFR: rumbos 000 a 179 vuelan impares más 500 pies, rumbos 180 a 359 vuelan pares más 500 pies">
+  <!-- rosa de rumbos -->
+  <circle cx="220" cy="150" r="105" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <line x1="220" y1="45" x2="220" y2="255" stroke="var(--text)" stroke-width="2" stroke-dasharray="6 4"/>
+
+  <!-- norte -->
+  <line x1="220" y1="45" x2="220" y2="20" stroke="var(--text)" stroke-width="2"/>
+  <path d="M220 12 L214 24 L226 24 Z" fill="var(--text)"/>
+  <text x="232" y="24" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">000°</text>
+  <text x="205" y="285" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">180°</text>
+  <text x="335" y="155" fill="var(--muted)" font-family="inherit" font-size="12">090°</text>
+  <text x="80" y="155" fill="var(--muted)" font-family="inherit" font-size="12">270°</text>
+
+  <!-- mitad este: impares -->
+  <text x="238" y="115" fill="var(--ok)" font-family="inherit" font-size="14" font-weight="bold">000°–179°</text>
+  <text x="238" y="135" fill="var(--ok)" font-family="inherit" font-size="13">IMPAR + 500</text>
+  <text x="238" y="158" fill="var(--muted)" font-family="inherit" font-size="12">3 500 ft</text>
+  <text x="238" y="174" fill="var(--muted)" font-family="inherit" font-size="12">5 500 ft</text>
+  <text x="238" y="190" fill="var(--muted)" font-family="inherit" font-size="12">7 500 ft…</text>
+
+  <!-- mitad oeste: pares -->
+  <text x="128" y="115" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold">180°–359°</text>
+  <text x="128" y="135" fill="var(--accent)" font-family="inherit" font-size="13">PAR + 500</text>
+  <text x="128" y="158" fill="var(--muted)" font-family="inherit" font-size="12">4 500 ft</text>
+  <text x="128" y="174" fill="var(--muted)" font-family="inherit" font-size="12">6 500 ft</text>
+  <text x="128" y="190" fill="var(--muted)" font-family="inherit" font-size="12">8 500 ft…</text>
+
+  <!-- nota -->
+  <text x="18" y="295" fill="var(--muted)" font-family="inherit" font-size="11">Rumbo MAGNÉTICO. Aplica en crucero, a más de 3 000 ft sobre el terreno.</text>
+</svg>

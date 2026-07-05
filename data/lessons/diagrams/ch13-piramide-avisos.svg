@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" role="img" aria-label="Pirámide de avisos meteorológicos: AIRMET, SIGMET y SIGMET convectivo">
+  <text x="220" y="22" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">La pirámide de avisos: más arriba, más severo</text>
+
+  <!-- flecha de severidad -->
+  <line x1="40" y1="240" x2="40" y2="70" stroke="var(--muted)"/>
+  <polygon points="40,58 35,72 45,72" fill="var(--muted)"/>
+  <text x="30" y="160" font-family="inherit" font-size="12" fill="var(--muted)" transform="rotate(-90 30 160)" text-anchor="middle">severidad</text>
+
+  <!-- nivel superior: SIGMET convectivo -->
+  <polygon points="220,40 273,110 167,110" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
+  <text x="220" y="92" text-anchor="middle" font-family="inherit" font-size="12" font-weight="bold" fill="var(--bad)">SIGMET</text>
+  <text x="220" y="106" text-anchor="middle" font-family="inherit" font-size="12" font-weight="bold" fill="var(--bad)">CONVECTIVO</text>
+  <line x1="250" y1="78" x2="286" y2="60" stroke="var(--muted)"/>
+  <text x="290" y="52" font-family="inherit" font-size="12" fill="var(--muted)">solo tormentas graves:</text>
+  <text x="290" y="66" font-family="inherit" font-size="12" fill="var(--muted)">tornados · embebidas</text>
+  <text x="290" y="80" font-family="inherit" font-size="12" fill="var(--muted)">granizo ≥ 3/4 pulg</text>
+
+  <!-- nivel medio: SIGMET -->
+  <polygon points="167,110 273,110 327,180 113,180" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="220" y="138" text-anchor="middle" font-family="inherit" font-size="14" font-weight="bold" fill="var(--accent)">SIGMET</text>
+  <text x="220" y="155" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">severo · TODAS las aeronaves</text>
+  <text x="220" y="171" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">engelam. y turb. severos · ceniza</text>
+
+  <!-- nivel inferior: AIRMET -->
+  <polygon points="113,180 327,180 380,250 60,250" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+  <text x="220" y="205" text-anchor="middle" font-family="inherit" font-size="14" font-weight="bold" fill="var(--ok)">AIRMET</text>
+  <text x="220" y="222" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">menor intensidad · todos los pilotos</text>
+  <text x="220" y="238" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">Sierra: IFR · Tango: turbulencia · Zulu: hielo</text>
+
+  <text x="220" y="284" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">Todo SIGMET convectivo implica turb. severa, hielo severo y cizalladura.</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg viewBox="0 0 440 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Escalera de la atmósfera estándar: temperatura y presión bajan con la altura">
+  <text x="220" y="24" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">La escalera ISA</text>
+
+  <!-- column headers -->
+  <text x="70" y="52" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Altitud</text>
+  <text x="205" y="52" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">Temperatura</text>
+  <text x="330" y="52" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">Presión</text>
+
+  <!-- ladder rails -->
+  <line x1="130" y1="60" x2="130" y2="280" stroke="var(--text)" stroke-width="2"/>
+  <line x1="280" y1="60" x2="280" y2="280" stroke="var(--text)" stroke-width="2"/>
+
+  <!-- rungs: 5000 ft arriba, 0 ft abajo (40 px por 1000 ft) -->
+  <line x1="130" y1="70" x2="280" y2="70" stroke="var(--text)" stroke-width="2"/>
+  <line x1="130" y1="112" x2="280" y2="112" stroke="var(--text)" stroke-width="2"/>
+  <line x1="130" y1="154" x2="280" y2="154" stroke="var(--text)" stroke-width="2"/>
+  <line x1="130" y1="196" x2="280" y2="196" stroke="var(--text)" stroke-width="2"/>
+  <line x1="130" y1="238" x2="280" y2="238" stroke="var(--text)" stroke-width="2"/>
+  <line x1="130" y1="280" x2="280" y2="280" stroke="var(--text)" stroke-width="3"/>
+
+  <!-- altitude labels -->
+  <text x="120" y="74" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="end">5,000 ft</text>
+  <text x="120" y="116" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">4,000 ft</text>
+  <text x="120" y="158" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">3,000 ft</text>
+  <text x="120" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">2,000 ft</text>
+  <text x="120" y="242" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="end">1,000 ft</text>
+  <text x="120" y="284" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="end">0 (mar)</text>
+
+  <!-- temp values on rungs -->
+  <text x="205" y="66" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">5 °C</text>
+  <text x="205" y="108" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">7 °C</text>
+  <text x="205" y="150" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">9 °C</text>
+  <text x="205" y="192" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">11 °C</text>
+  <text x="205" y="234" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">13 °C</text>
+  <text x="205" y="276" fill="var(--accent)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">15 °C</text>
+
+  <!-- pressure values -->
+  <text x="330" y="74" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="start">24.92 inHg</text>
+  <text x="330" y="116" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="start">25.92</text>
+  <text x="330" y="158" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="start">26.92</text>
+  <text x="330" y="200" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="start">27.92</text>
+  <text x="330" y="242" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="start">28.92</text>
+  <text x="330" y="284" fill="var(--ok)" font-family="inherit" font-size="13" text-anchor="start" font-weight="bold">29.92 inHg</text>
+
+  <!-- rule arrows -->
+  <line x1="30" y1="238" x2="30" y2="196" stroke="var(--bad)" stroke-width="2"/>
+  <polygon points="30,192 26,200 34,200" fill="var(--bad)"/>
+  <text x="30" y="180" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">subes</text>
+  <text x="30" y="164" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">1,000 ft:</text>
+  <text x="30" y="148" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">−2 °C</text>
+  <text x="30" y="132" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">−1 inHg</text>
+
+  <text x="220" y="304" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Día estándar (ISA): cada escalón de 1,000 ft resta 2 °C y ~1 inHg</text>
+</svg>

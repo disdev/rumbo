@@ -1,0 +1,645 @@
+{
+  "chapter": "15",
+  "title": "Espacio aéreo",
+  "resumen": "El cielo está dividido en zonas con reglas distintas: quién entra, qué equipo necesitas y cuánta visibilidad te exigen. Aquí aprendes el mapa completo, de la clase A a la G.",
+  "sections": [
+    {
+      "id": "15-1",
+      "title": "¿Qué significa espacio aéreo \"controlado\"?",
+      "key_points": [
+        "Espacio aéreo controlado es donde el ATC presta servicio de control de tránsito aéreo.",
+        "En espacio controlado, volando VFR, el ATC NO te separa de todo el tránsito: sigues obligado a ver y evitar.",
+        "Una autorización ATC es permiso para proceder bajo condiciones de tránsito especificadas en espacio controlado.",
+        "En espacio no controlado nadie organiza el tránsito: solo recibes información de vuelo.",
+        "Controlado no significa prohibido: significa que hay reglas y servicios adicionales."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Alguna vez entraste a un estadio? No es un solo espacio: está la cancha, los palcos, la tribuna popular. Cada zona tiene su entrada, su ticket y su nivel de vigilancia. El cielo funciona igual: está dividido en **clases de espacio aéreo**, cada una con requisitos distintos para entrar y volar."
+        },
+        {
+          "type": "text",
+          "md": "¿Y qué significa \"controlado\"? Que ahí el **ATC** (control de tránsito aéreo) presta servicio: da autorizaciones y separa aeronaves. Pero ojo: volando **VFR** (reglas de vuelo visual), el ATC no te separa de todo el mundo. En la mayoría de clases solo te da *información de tránsito* — la responsabilidad de **ver y evitar** sigue siendo tuya."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Una **autorización ATC** te autoriza a proceder **bajo condiciones de tránsito especificadas** dentro del espacio aéreo controlado. No es una garantía de que el cielo esté vacío."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Trampa mental: \"controlado\" ≠ \"me cuidan de todo\". En VFR, incluso dentro de espacio controlado, tus ojos son tu principal anticolisión."
+        },
+        {
+          "type": "notebook",
+          "id": "15-1-n1",
+          "prompt": "Escribe con tus palabras dos columnas: \"Lo que el ATC SÍ me da volando VFR en espacio controlado\" y \"Lo que NO me da\". Mínimo dos puntos por columna."
+        },
+        {
+          "type": "check",
+          "id": "15-1-c1",
+          "q": "Una autorización ATC proporciona:",
+          "options": [
+            "Garantía de separación de todo el tránsito en cualquier espacio aéreo",
+            "Autorización para proceder en condiciones de tráfico específicas en espacio aéreo controlado",
+            "Permiso para ignorar los mínimos meteorológicos VFR"
+          ],
+          "answer": 1,
+          "why": "La autorización te deja proceder bajo condiciones de tránsito especificadas; en VFR sigues obligado a ver y evitar."
+        }
+      ]
+    },
+    {
+      "id": "15-2",
+      "title": "El corte vertical: siete clases, de la A a la G",
+      "key_points": [
+        "OACI divide el espacio aéreo en clases A, B, C, D, E, F y G; Perú usa este sistema.",
+        "A es la más restrictiva (solo IFR) y G la más libre (no controlada).",
+        "Las clases A a E son espacio controlado; F y G no controlado.",
+        "Cerca del suelo suele haber clase G; alrededor de aeropuertos con torre hay CTR y TMA (C o D).",
+        "Cada clase define quién entra, qué equipo exige y qué servicio te da el ATC."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo se organiza todo el cielo? Con siete letras. La **OACI** (organización internacional de aviación civil) define las clases **A, B, C, D, E, F y G**, y Perú adopta ese sistema en su reglamento (RAP). Piensa en el estadio: **A** es la cancha (solo jugadores con permiso total), **B, C y D** son palcos con ticket y control en la puerta, **E** es tribuna con acomodador, y **G** es la explanada libre de afuera."
+        },
+        {
+          "type": "diagram",
+          "src": "ch15-corte-vertical.svg",
+          "caption": "Corte vertical típico: clase G pegada al suelo, E encima, CTR y TMA alrededor del aeropuerto, y clase A en los niveles altos. La línea FL100 marca el cambio de visibilidad exigida."
+        },
+        {
+          "type": "text",
+          "md": "La regla general: mientras más tránsito y más rápido, más restrictiva la clase. Por eso la **A** vive arriba, donde cruzan los jets en rutas, y la **G** vive abajo, en el campo, donde vuela la avioneta de instrucción. Las clases **A–E son controladas**; **F y G, no controladas**."
+        },
+        {
+          "type": "notebook",
+          "id": "15-2-n1",
+          "prompt": "Dibuja el corte vertical del espacio aéreo con sus clases: suelo, G abajo, E encima, la columna CTR y los escalones del TMA sobre el aeropuerto, y A arriba. Marca la línea FL100."
+        },
+        {
+          "type": "check",
+          "id": "15-2-c1",
+          "q": "¿Cuáles clases de espacio aéreo son controladas?",
+          "options": [
+            "Solo A y B",
+            "De la A a la E",
+            "Todas, de la A a la G"
+          ],
+          "answer": 1,
+          "why": "A–E son espacio controlado; F y G son no controlado (en G solo recibes información de vuelo)."
+        },
+        {
+          "type": "check",
+          "id": "15-2-c2",
+          "q": "¿Qué clase es la MÁS restrictiva?",
+          "options": [
+            "Clase A: solo vuelos IFR, con autorización",
+            "Clase G: nadie puede entrar",
+            "Clase E: requiere transponder y torre"
+          ],
+          "answer": 0,
+          "why": "En clase A solo se permite IFR; la G es la más libre, no la más cerrada."
+        }
+      ]
+    },
+    {
+      "id": "15-3",
+      "title": "Clases A, B, C y D: los palcos con ticket",
+      "key_points": [
+        "En clase A el VFR está prohibido: solo IFR con autorización ATC.",
+        "En B, C y D el VFR entra, pero siempre con autorización ATC y radio bidireccional.",
+        "En clase B el ATC separa a todos de todos, incluso VFR de VFR.",
+        "En clase C el VFR es separado del IFR y recibe información sobre otros VFR.",
+        "En clase D el VFR solo recibe información de tránsito: la separación visual es tuya."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué necesitas para entrar a los palcos? En las clases **A, B, C y D** siempre necesitas dos cosas: **radio bidireccional** (hablar y escuchar al ATC) y **autorización** antes de entrar. La diferencia entre ellas es cuánta protección te dan una vez adentro."
+        },
+        {
+          "type": "table",
+          "headers": ["Clase", "¿VFR entra?", "Separación que recibe el VFR"],
+          "rows": [
+            ["A", "NO — solo IFR", "no aplica: VFR prohibido"],
+            ["B", "Sí, con autorización", "de TODOS (IFR y VFR)"],
+            ["C", "Sí, con autorización", "del IFR; solo información de otros VFR"],
+            ["D", "Sí, con autorización", "ninguna: solo información de tránsito"]
+          ]
+        },
+        {
+          "type": "text",
+          "md": "Fíjate en la escalera: **B** es el palco presidencial (te escoltan y te separan de todos), **C** te separa de los grandes (IFR) pero entre visuales se avisan, y **D** — la típica **CTR** de un aeropuerto con torre — solo te dice quién anda cerca. Ahí, ver y evitar es 100 % tu chamba."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta por operaciones en **clase D**: la baliza del aeropuerto encendida **de día** significa que el clima está **por debajo de los mínimos VFR básicos**; y aterrizando en pista con VASI debes mantenerte **en o sobre la senda de planeo**."
+        },
+        {
+          "type": "notebook",
+          "id": "15-3-n1",
+          "prompt": "Copia la tabla de clases A–D en tu cuaderno y márcala con colores: verde donde el ATC te separa volando VFR, rojo donde solo recibes información."
+        },
+        {
+          "type": "check",
+          "id": "15-3-c1",
+          "q": "Vuelas VFR dentro de una CTR clase D. ¿Qué separación te da el ATC?",
+          "options": [
+            "Te separa de todo el tránsito IFR y VFR",
+            "Ninguna: te da información de tránsito y tú ves y evitas",
+            "Te separa solo de otros VFR"
+          ],
+          "answer": 1,
+          "why": "En clase D el VFR solo recibe información de tránsito; la separación visual es responsabilidad del piloto."
+        },
+        {
+          "type": "check",
+          "id": "15-3-c2",
+          "q": "¿En qué clase de espacio aéreo está prohibido el vuelo VFR?",
+          "options": ["Clase A", "Clase C", "Clase E"],
+          "answer": 0,
+          "why": "La clase A es exclusiva para IFR; el VFR no puede entrar."
+        }
+      ]
+    },
+    {
+      "id": "15-4",
+      "title": "Clases E, F y G: la tribuna popular",
+      "key_points": [
+        "La clase E es controlada, pero el VFR entra sin autorización ATC.",
+        "La clase F da servicio de asesoramiento al IFR; es una clase de transición.",
+        "La clase G es no controlada: solo recibes servicio de información de vuelo.",
+        "En G nadie te separa de nadie: ver y evitar es todo lo que hay.",
+        "Gran parte del vuelo de instrucción a baja altura ocurre en clase G o E."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y si no hay puerta con ticket? En clase **E** el espacio sigue siendo controlado (el IFR recibe servicio), pero tú en VFR **entras sin pedir autorización** — como una tribuna con acomodador que ordena a otros, no a ti. Eso sí: los mínimos de visibilidad y nubes siguen aplicando con toda su fuerza."
+        },
+        {
+          "type": "table",
+          "headers": ["Clase", "¿Controlada?", "VFR necesita autorización", "Servicio al VFR"],
+          "rows": [
+            ["E", "Sí", "No", "información de tránsito, si es posible"],
+            ["F", "No (asesoramiento)", "No", "asesoramiento al IFR; información"],
+            ["G", "No", "No", "solo información de vuelo (FIS)"]
+          ]
+        },
+        {
+          "type": "text",
+          "md": "La clase **F** es rara: un punto medio donde el IFR recibe *asesoramiento* (consejos, no órdenes). La **G** es la explanada libre: nadie organiza el tránsito, la radio no es obligatoria, y toda tu seguridad depende de mirar afuera. Es donde más vuela un alumno piloto — por eso sus mínimos meteorológicos caen tanto en el examen."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta directo: en clase **G** o **F** a baja altura, de día, los mínimos son **5 km, libre de nubes y con la superficie a la vista**. Lo cuantificamos en la siguiente sección."
+        },
+        {
+          "type": "notebook",
+          "id": "15-4-n1",
+          "prompt": "Completa tu tabla del cuaderno agregando E, F y G bajo la de A–D. Al lado escribe una frase: \"En G, ¿quién me separa del tránsito?\" y respóndela."
+        },
+        {
+          "type": "check",
+          "id": "15-4-c1",
+          "q": "Vuelas VFR en clase E. ¿Necesitas autorización ATC para entrar?",
+          "options": [
+            "Sí, siempre: es espacio controlado",
+            "No: es controlado, pero el VFR entra sin autorización",
+            "Solo de noche"
+          ],
+          "answer": 1,
+          "why": "La clase E es controlada para el IFR, pero el VFR no requiere autorización para entrar."
+        }
+      ]
+    },
+    {
+      "id": "15-5",
+      "title": "Mínimos VFR: la regla 152",
+      "key_points": [
+        "El patrón OACI por debajo de FL100: visibilidad 5 km, y de las nubes 1500 m horizontal y 300 m vertical.",
+        "Por encima de FL100 la visibilidad sube a 8 km; la distancia de nubes se mantiene (1500 m / 300 m).",
+        "En clase G a 3000 ft AMSL o menos (o 1000 ft sobre el terreno): 5 km, libre de nubes y superficie a la vista.",
+        "Los valores exactos por clase según la RAP los refina el banco de reglamentación; aquí dominas el sistema.",
+        "Estos mínimos existen para que siempre puedas ver y evitar a tiempo."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cuánta visibilidad necesitas para volar visual? Piénsalo como manejar moto en neblina: necesitas ver lo suficiente para esquivar. La OACI fijó un patrón que se repite casi en todas partes. Memorízalo como la **regla 152**: **1**500 m horizontal de las nubes, **5** km de visibilidad, y 300 m (que es el **2**.º número) vertical de las nubes."
+        },
+        {
+          "type": "table",
+          "headers": ["Dónde vuelas", "Visibilidad", "Distancia de nubes"],
+          "rows": [
+            ["Debajo de FL100 (10 000 ft)", "5 km", "1500 m horizontal / 300 m vertical"],
+            ["Encima de FL100", "8 km", "1500 m horizontal / 300 m vertical"],
+            ["Clase G bajita: ≤3000 ft AMSL o ≤1000 ft sobre el terreno (día)", "5 km", "libre de nubes y superficie a la vista"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**152**: **1**500 m al costado, **5** km al frente, 300 m (**2** = segundo número) arriba/abajo. Y sobre FL100: la visibilidad **sube a 8 km** porque a esa altura todo vuela más rápido."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco lo pregunta de mil formas: controlado sobre 3000 ft AMSL y bajo 10 000 ft → **5 km + 1500 m/300 m**. Sobre 10 000 ft → **8 km**. Clase G bajita de día → **5 km, libre de nubes, superficie a la vista**. Los detalles finos por clase según la RAP los pule el banco de reglamentación."
+        },
+        {
+          "type": "notebook",
+          "id": "15-5-n1",
+          "prompt": "Dibuja un avión entre nubes y acota las tres distancias de la regla 152: 1500 m horizontal, 300 m vertical, 5 km de visibilidad. Debajo, escribe la excepción de clase G bajita."
+        },
+        {
+          "type": "check",
+          "id": "15-5-c1",
+          "q": "Vuelas VFR en espacio controlado a 6000 ft AMSL. ¿Qué mínimos aplican?",
+          "options": [
+            "8 km y libre de nubes",
+            "5 km, 1500 m horizontal y 300 m vertical de las nubes",
+            "3 km y superficie a la vista"
+          ],
+          "answer": 1,
+          "why": "Debajo de 10 000 ft (FL100) rige el patrón 5 km + 1500 m/300 m de las nubes."
+        },
+        {
+          "type": "check",
+          "id": "15-5-c2",
+          "q": "¿Qué visibilidad mínima exige el vuelo VFR por encima de 10 000 ft AMSL?",
+          "options": ["5 km", "8 km", "10 km"],
+          "answer": 1,
+          "why": "Sobre FL100 la visibilidad mínima sube a 8 km; la distancia de nubes sigue siendo 1500 m/300 m."
+        }
+      ]
+    },
+    {
+      "id": "15-6",
+      "title": "CTR, TMA y ATZ: el espacio del aeropuerto",
+      "key_points": [
+        "La CTR (zona de control) empieza en la superficie y protege despegues y aterrizajes; requiere autorización.",
+        "El TMA (área de control terminal) organiza llegadas y salidas; su piso está elevado, no toca el suelo.",
+        "La ATZ (zona de tránsito de aeródromo) protege el circuito de tránsito.",
+        "Para despegar o aterrizar VFR en una zona de control, la visibilidad en tierra mínima es 5 km.",
+        "En la ATZ los mínimos básicos son techo de nubes 1500 ft y visibilidad 5 km."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué pasa cerca de un aeropuerto con torre? Se arma una \"torta de bodas\" invertida. Abajo, pegada al suelo, la **CTR** (zona de control): protege a los que despegan y aterrizan, y no entras sin autorización de la torre. Encima y alrededor, el **TMA** (área de control terminal): organiza el flujo de llegadas y salidas, con **piso elevado** — por debajo de él puedes pasar sin entrar."
+        },
+        {
+          "type": "diagram",
+          "src": "ch15-ctr-tma.svg",
+          "caption": "CTR desde la superficie, TMA con escalones y piso elevado, y la pequeña ATZ que protege el circuito de tránsito del aeródromo."
+        },
+        {
+          "type": "text",
+          "md": "La **ATZ** (zona de tránsito de aeródromo) es el círculo chiquito que protege el circuito. Sus números de memoria: para operar en ella con VFR básico necesitas **techo de nubes de 1500 ft y visibilidad de 5 km**. Y para despegar o aterrizar dentro de una **zona de control**, la **visibilidad en tierra** no puede ser menor de **5 km**."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Dos preguntas directas del banco: visibilidad en tierra mínima para despegar/aterrizar VFR en una zona de control → **5 km**. Mínimos en la ATZ o su circuito → **techo 1500 ft y visibilidad 5 km**."
+        },
+        {
+          "type": "notebook",
+          "id": "15-6-n1",
+          "prompt": "Dibuja la \"torta invertida\": pista, CTR desde la superficie, dos escalones de TMA con piso elevado y la ATZ punteada. Anota junto a la CTR: \"despegue/aterrizaje VFR: vis. tierra ≥ 5 km\"."
+        },
+        {
+          "type": "check",
+          "id": "15-6-c1",
+          "q": "¿Cuál es la visibilidad en tierra mínima para despegar VFR básico de un aeropuerto dentro de una zona de control?",
+          "options": ["1500 m", "3 km", "5 km"],
+          "answer": 2,
+          "why": "En una zona de control no se despega ni aterriza con VFR básico si la visibilidad en tierra es menor de 5 km."
+        },
+        {
+          "type": "check",
+          "id": "15-6-c2",
+          "q": "¿Qué diferencia clave hay entre la CTR y el TMA?",
+          "options": [
+            "La CTR empieza en la superficie; el TMA tiene piso elevado",
+            "El TMA empieza en la superficie; la CTR está arriba",
+            "Son lo mismo con nombres distintos"
+          ],
+          "answer": 0,
+          "why": "La CTR protege despegues/aterrizajes desde el suelo; el TMA organiza llegadas y salidas más arriba, sin tocar el suelo."
+        }
+      ]
+    },
+    {
+      "id": "15-7",
+      "title": "Aerovías y cómo leer techos y pisos en la carta",
+      "key_points": [
+        "Una aerovía es un corredor controlado entre radioayudas: una carretera del cielo.",
+        "En la carta, cada espacio muestra dos números: arriba el techo, abajo el piso; SFC significa superficie.",
+        "En una aerovía por debajo de 10 000 ft, la visibilidad VFR mínima es 5 km.",
+        "Al subir o bajar VFR en una aerovía, haz virajes suaves a ambos lados para escanear el espacio.",
+        "Antes de volar, revisa en la carta qué espacios cruzará tu ruta y a qué altitudes."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo viajan los aviones entre ciudades? Por **aerovías**: corredores controlados que conectan radioayudas, como carreteras del cielo con nombre propio (UW5, por ejemplo). Cruzarlas o volarlas en VFR exige los mínimos de siempre: por debajo de 10 000 ft, **visibilidad de 5 km**."
+        },
+        {
+          "type": "diagram",
+          "src": "ch15-carta-techos.svg",
+          "caption": "Lectura de límites verticales en la carta: el número de arriba es el techo, el de abajo es el piso. SFC = desde la superficie."
+        },
+        {
+          "type": "text",
+          "md": "En la carta, cada espacio trae su \"etiqueta de precio\": dos números apilados. El de **arriba es el techo** (hasta dónde llega) y el de **abajo es el piso** (dónde empieza). **SFC** significa *superficie*: típico de una CTR. Así decides si pasas por debajo, por encima o pides autorización."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta: al **subir o bajar en VFR dentro de una aerovía**, ejecuta **virajes suaves a izquierda y derecha** para escanear visualmente el espacio aéreo de forma continua."
+        },
+        {
+          "type": "notebook",
+          "id": "15-7-n1",
+          "prompt": "Inventa y dibuja tres etiquetas de carta: un TMA con techo FL245 y piso 4500 ft, una CTR de SFC a 3500 ft, y una aerovía. Debajo de cada una escribe si un vuelo a 2000 ft la cruza o no."
+        },
+        {
+          "type": "check",
+          "id": "15-7-c1",
+          "q": "En la etiqueta de la carta ves \"FL245\" sobre una línea y \"4500 ft\" debajo. ¿Qué significa?",
+          "options": [
+            "El espacio va desde 4500 ft (piso) hasta FL245 (techo)",
+            "El espacio va desde la superficie hasta 4500 ft",
+            "Son dos frecuencias de radio"
+          ],
+          "answer": 0,
+          "why": "Arriba se escribe el techo y abajo el piso: ese espacio existe entre 4500 ft y FL245."
+        },
+        {
+          "type": "check",
+          "id": "15-7-c2",
+          "q": "¿Qué procedimiento se recomienda al subir o bajar en VFR dentro de una aerovía?",
+          "options": [
+            "Mantener las alas niveladas y la vista en los instrumentos",
+            "Virajes suaves a izquierda y derecha para escanear el espacio aéreo",
+            "Descender en espiral cerrada para salir rápido"
+          ],
+          "answer": 1,
+          "why": "Los virajes suaves a ambos lados despejan los puntos ciegos y permiten un escaneo visual continuo."
+        }
+      ]
+    },
+    {
+      "id": "15-8",
+      "title": "Uso especial: zonas P, R, D y compañía",
+      "key_points": [
+        "Zona prohibida (P): nunca se entra, sin excepciones para el vuelo civil.",
+        "Zona restringida (R): se entra solo con permiso de la autoridad; hay peligros como tiro o misiles.",
+        "Zona peligrosa (D): se puede volar, pero existe actividad riesgosa; lo prudente es evitarla.",
+        "En la carta se identifican con código: letra del país, tipo y número (ej. SP-P115, SP-R32).",
+        "Las áreas militares o de alerta concentran entrenamiento: extrema la vigilancia.",
+        "Las restricciones temporales (tipo TFR) aparecen por NOTAM: revísalos antes de cada vuelo."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y las zonas donde mejor ni te metes? Son el **espacio aéreo de uso especial**. Como en un estadio: hay zonas VIP cerradas (prohibidas), zonas con permiso especial (restringidas) y pasillos donde pasan cosas raras (peligrosas). En la carta se marcan con franjas y un código: **P** de prohibida, **R** de restringida, **D** de peligrosa (*danger*)."
+        },
+        {
+          "type": "diagram",
+          "src": "ch15-uso-especial.svg",
+          "caption": "Así se ven en la carta: P (nunca entres), R (solo con permiso), D (puedes pasar, pero hay riesgo). El código combina país, tipo y número."
+        },
+        {
+          "type": "text",
+          "md": "También existen áreas de **operaciones militares** y de **alerta**: no están prohibidas, pero concentran entrenamiento intenso — pasa con mil ojos. Y hay restricciones **temporales** (el concepto de **TFR**): se activan por un evento — una visita presidencial, un desastre, ceniza volcánica — y se publican por **NOTAM**. Por eso los NOTAM se leen *antes de cada vuelo*."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**P** = **P**ara nada entres. **R** = con **R**espaldo (permiso) sí. **D** = **D**espierta: puedes pasar, pero hay peligro activo."
+        },
+        {
+          "type": "notebook",
+          "id": "15-8-n1",
+          "prompt": "Dibuja los tres recuadros rayados de la carta (P, R, D) con un código inventado tipo SP-P100 y, debajo de cada uno, una regla de una línea: ¿puedo entrar y con qué condición?"
+        },
+        {
+          "type": "check",
+          "id": "15-8-c1",
+          "q": "Tu ruta cruza una zona marcada SP-R32 en la carta. ¿Qué haces?",
+          "options": [
+            "Nada: la R significa \"ruta recomendada\"",
+            "La evito o consigo permiso de la autoridad antes de entrar",
+            "Puedo cruzarla libremente si vuelo VFR"
+          ],
+          "answer": 1,
+          "why": "R = zona restringida: solo se entra con permiso; lo normal en un vuelo de instrucción es rodearla."
+        },
+        {
+          "type": "check",
+          "id": "15-8-c2",
+          "q": "¿Cuál es la diferencia entre una zona prohibida (P) y una peligrosa (D)?",
+          "options": [
+            "En la P nunca entras; en la D puedes volar, pero hay actividad riesgosa",
+            "Son iguales, cambia solo el nombre",
+            "La D es más estricta que la P"
+          ],
+          "answer": 0,
+          "why": "La P es un no rotundo; la D es una advertencia de actividad peligrosa donde volar es legal pero imprudente sin precaución."
+        }
+      ]
+    },
+    {
+      "id": "15-9",
+      "title": "VFR especial: el permiso de excepción",
+      "key_points": [
+        "El VFR especial (SVFR) permite entrar o salir de una zona de control cuando el clima está por debajo del VFR básico.",
+        "Lo pide el piloto y lo autoriza el ATC: en clase D, la torre de control.",
+        "Requiere visibilidad de al menos 1500 m y mantenerse libre de nubes.",
+        "Es una herramienta de excepción, no un plan: úsala para salir de un apuro, no para meterte en uno.",
+        "De noche el SVFR tiene restricciones adicionales según la reglamentación."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y si el clima en el aeropuerto cae justo por debajo del mínimo VFR? Existe una puerta de emergencia: el **VFR especial (SVFR)**. Es como pedirle al de seguridad que te deje salir del estadio por la puerta lateral cuando la principal está cerrada: **tú lo pides**, y el **ATC decide** si el tránsito lo permite."
+        },
+        {
+          "type": "text",
+          "md": "¿Qué exige? Dentro de una zona de control clase D: **visibilidad de al menos 1500 m** y volar **libre de nubes**. La autorización de salida SVFR la da la **torre de control**. Y de noche hay restricciones adicionales según la RAP — no cuentes con el SVFR nocturno como alumno."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Dos hechos que el banco pregunta tal cual: SVFR en clase D exige visibilidad **de al menos 1500 metros**, y la autorización de salida SVFR se pide a la **torre de control de tránsito aéreo**."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "El SVFR te saca de un apuro; no es licencia para volar en mal clima. Si el clima está tan mal que necesitas SVFR para entrar... pregúntate si deberías estar volando hacia ahí."
+        },
+        {
+          "type": "notebook",
+          "id": "15-9-n1",
+          "prompt": "Escribe el mini-diálogo: qué le pides a la torre para salir SVFR de una CTR clase D, y las dos condiciones que debes cumplir (visibilidad y nubes)."
+        },
+        {
+          "type": "check",
+          "id": "15-9-c1",
+          "q": "¿Qué visibilidad mínima exige una autorización VFR especial en espacio aéreo clase D?",
+          "options": ["800 m", "1500 m", "5 km"],
+          "answer": 1,
+          "why": "El SVFR permite operar con visibilidad reducida, pero nunca menor de 1500 m, y siempre libre de nubes."
+        },
+        {
+          "type": "check",
+          "id": "15-9-c2",
+          "q": "¿A quién le pides la autorización de salida VFR especial en una zona de control clase D?",
+          "options": [
+            "A la torre de control de tránsito aéreo",
+            "A la oficina meteorológica",
+            "A nadie: el SVFR no requiere autorización"
+          ],
+          "answer": 0,
+          "why": "El SVFR siempre es una autorización ATC; en clase D la emite la torre."
+        }
+      ]
+    },
+    {
+      "id": "15-10",
+      "title": "Altitudes de crucero VFR: la regla semicircular",
+      "key_points": [
+        "La regla aplica en crucero, con rumbo magnético, por encima de 3000 ft sobre el terreno.",
+        "Rumbo magnético 000°–179°: miles IMPARES + 500 ft (3500, 5500, 7500...).",
+        "Rumbo magnético 180°–359°: miles PARES + 500 ft (4500, 6500, 8500...).",
+        "El +500 separa a los VFR de los IFR, que vuelan los miles exactos.",
+        "Ejemplo del banco: rumbo 135° → impar + 500; rumbo 175° a FL115 → 11 500 ft."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo evitamos chocarnos de frente en el cielo? Igual que en una carretera de doble sentido: cada dirección tiene su carril. La **regla semicircular** parte la rosa de rumbos en dos: si tu **rumbo magnético** está entre **000° y 179°** (mitad este), vuelas miles **IMPARES + 500 ft**; si está entre **180° y 359°** (mitad oeste), miles **PARES + 500 ft**."
+        },
+        {
+          "type": "diagram",
+          "src": "ch15-semicircular.svg",
+          "caption": "La rosa partida en dos: hacia el este (000°–179°) impares + 500; hacia el oeste (180°–359°) pares + 500. Aplica en crucero sobre 3000 ft del terreno."
+        },
+        {
+          "type": "text",
+          "md": "¿Y por qué el **+500**? Porque los miles \"redondos\" (4000, 5000...) son de los IFR. El +500 te pone medio piso entre tú y ellos. Ejemplos: rumbo 135° → 3500, 5500 o 7500 ft; rumbo 270° → 4500, 6500 u 8500 ft."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**\"Al Este, Impar\"**: Este e Impar — las dos con la vocal fuerte al inicio. Oeste → Par. Y todo VFR lleva su **+500** de propina."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Del banco: rumbo magnético **135°** → cualquier altitud **impar de miles + 500 ft**. Rumbo **175°** cerca de FL115 → **11 500 ft**. Los impares + 500 corresponden a rumbos **000° a 179°**."
+        },
+        {
+          "type": "notebook",
+          "id": "15-10-n1",
+          "prompt": "Dibuja la rosa semicircular y resuelve: ¿qué altitudes VFR sirven para rumbo 090°? ¿Y para 200°? ¿Y para 359°? Escribe dos opciones válidas por rumbo."
+        },
+        {
+          "type": "check",
+          "id": "15-10-c1",
+          "q": "¿Qué altitud de crucero VFR es apropiada para un rumbo magnético de 135°?",
+          "options": [
+            "Miles pares + 500 ft (ej. 4500 ft)",
+            "Miles impares + 500 ft (ej. 5500 ft)",
+            "Cualquier múltiplo exacto de 1000 ft"
+          ],
+          "answer": 1,
+          "why": "135° cae en 000°–179°: mitad este, miles impares + 500 ft."
+        },
+        {
+          "type": "check",
+          "id": "15-10-c2",
+          "q": "Vuelas con rumbo magnético 250° en crucero, sobre 3000 ft del terreno. ¿Cuál altitud es correcta?",
+          "options": ["5500 ft", "6000 ft", "6500 ft"],
+          "answer": 2,
+          "why": "250° está en 180°–359°: pares + 500 → 4500, 6500, 8500 ft…"
+        }
+      ]
+    },
+    {
+      "id": "15-11",
+      "title": "Transponder, códigos y ADS-B",
+      "key_points": [
+        "El transponder responde al radar del ATC con un código de 4 dígitos; el código VFR estándar es 1200.",
+        "Códigos de emergencia: 7500 interferencia ilícita, 7600 falla de radio, 7700 emergencia general.",
+        "Al cambiar de código, evita pasar por 7500, 7600 y 7700 sin querer.",
+        "Modo A transmite solo el código; Modo C agrega la altitud de presión.",
+        "El espacio clase B (y sus alrededores) exige transponder con Modo C.",
+        "El ADS-B Out transmite posición tridimensional y velocidad, basadas en GPS."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo te ve el ATC en su pantalla? Gracias al **transponder** (transpondedor): una cajita que responde al radar con un código de 4 dígitos, como tu gamertag en una partida online. Volando VFR sin instrucción contraria, seleccionas **1200**. En **Modo A** transmite solo el código; en **Modo C** agrega tu **altitud** — y en clase B (y cerca de ella) el Modo C es obligatorio."
+        },
+        {
+          "type": "table",
+          "headers": ["Código", "Significado"],
+          "rows": [
+            ["1200", "vuelo VFR estándar (sin asignación del ATC)"],
+            ["7500", "interferencia ilícita (secuestro)"],
+            ["7600", "falla de comunicaciones (radio)"],
+            ["7700", "emergencia"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**75**: me han reteni**do** · **76**: no hay soni**do** · **77**: en apuros estoy **yo**. Y al girar las perillas, **nunca pases por 75/76/77 de casualidad** — el ATC activa alarmas."
+        },
+        {
+          "type": "text",
+          "md": "El paso siguiente al radar es el **ADS-B**: tu avión transmite solito, vía GPS, su **posición tridimensional y su velocidad** (eso hace el **ADS-B Out**), y todos — ATC y otros aviones — te ven con precisión. Piénsalo como compartir tu ubicación en vivo, pero aeronáutico."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Del banco: código VFR por debajo de 18 000 ft → **1200**. Al salir de clase C con \"servicio de radar terminado\" → vuelve a **1200**. Evita seleccionar **7500/7600/7700** al cambiar códigos. El **ADS-B Out** transmite **posición y velocidad tridimensionales**."
+        },
+        {
+          "type": "notebook",
+          "id": "15-11-n1",
+          "prompt": "Haz una tarjeta de memoria con los 4 códigos (1200, 7500, 7600, 7700) y su significado, y una línea final: \"Modo C = código + altitud\"."
+        },
+        {
+          "type": "check",
+          "id": "15-11-c1",
+          "q": "Vuelas VFR sin instrucción del ATC. ¿Qué código de transponder seleccionas?",
+          "options": ["7700", "1200", "7600"],
+          "answer": 1,
+          "why": "1200 es el código VFR estándar; 7600 y 7700 son códigos de falla de radio y emergencia."
+        },
+        {
+          "type": "check",
+          "id": "15-11-c2",
+          "q": "¿Qué transmite el equipo ADS-B Out?",
+          "options": [
+            "La posición y velocidad tridimensionales de la aeronave",
+            "Solo el código 1200",
+            "Mensajes de voz al ATC"
+          ],
+          "answer": 0,
+          "why": "El ADS-B Out difunde posición 3D y velocidad derivadas del GPS, sin depender del radar."
+        }
+      ]
+    }
+  ]
+}

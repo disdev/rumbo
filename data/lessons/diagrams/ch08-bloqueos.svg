@@ -1,0 +1,26 @@
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  <rect x="10" y="16" width="480" height="36" fill="var(--panel-2)" stroke="var(--muted)"/>
+  <text x="20" y="39" font-size="13" font-weight="bold" fill="var(--text)">Bloqueo</text>
+  <text x="240" y="39" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">Velocímetro</text>
+  <text x="340" y="39" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">Altímetro</text>
+  <text x="440" y="39" font-size="13" font-weight="bold" fill="var(--text)" text-anchor="middle">Variómetro</text>
+
+  <line x1="10" y1="96" x2="490" y2="96" stroke="var(--muted)"/>
+  <line x1="10" y1="140" x2="490" y2="140" stroke="var(--muted)"/>
+  <rect x="10" y="16" width="480" height="124" fill="none" stroke="var(--muted)"/>
+
+  <text x="20" y="80" font-size="13" fill="var(--text)">Pitot tapado</text>
+  <text x="240" y="82" font-size="16" font-weight="bold" fill="var(--bad)" text-anchor="middle">✗</text>
+  <text x="340" y="82" font-size="16" font-weight="bold" fill="var(--ok)" text-anchor="middle">✓</text>
+  <text x="440" y="82" font-size="16" font-weight="bold" fill="var(--ok)" text-anchor="middle">✓</text>
+
+  <text x="20" y="124" font-size="13" fill="var(--text)">Estática tapada</text>
+  <text x="240" y="126" font-size="16" font-weight="bold" fill="var(--bad)" text-anchor="middle">✗</text>
+  <text x="340" y="126" font-size="16" font-weight="bold" fill="var(--bad)" text-anchor="middle">✗</text>
+  <text x="440" y="126" font-size="16" font-weight="bold" fill="var(--bad)" text-anchor="middle">✗</text>
+
+  <text x="20" y="170" font-size="12" fill="var(--muted)">✓ = sigue bien · ✗ = falla o miente</text>
+  <text x="20" y="192" font-size="12" fill="var(--text)">Estática tapada: altímetro congelado, variómetro en cero, velocímetro miente.</text>
+  <text x="20" y="212" font-size="12" fill="var(--text)">Solución: abrir la fuente estática alterna (recupera los tres).</text>
+  <text x="20" y="236" font-size="12" fill="var(--accent)">El coordinador de virajes nunca aparece aquí: es giroscópico.</text>
+</svg>

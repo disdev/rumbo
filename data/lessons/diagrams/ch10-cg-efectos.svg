@@ -1,0 +1,39 @@
+<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación de efectos: CG adelantado (estable pero nariz pesada) contra CG atrasado (inestable, recuperación de pérdida difícil o imposible)">
+  <!-- Panel izquierdo: CG adelantado -->
+  <rect x="12" y="12" width="222" height="246" rx="8" fill="none" stroke="var(--muted)" stroke-width="1"/>
+  <text x="123" y="36" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle">CG ADELANTADO</text>
+
+  <!-- avioncito nariz abajo -->
+  <g transform="rotate(8 123 95)">
+    <ellipse cx="123" cy="95" rx="72" ry="16" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <polygon points="180,88 208,62 218,62 196,92" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <rect x="96" y="92" width="52" height="6" rx="3" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <circle cx="92" cy="95" r="6" fill="var(--accent)"/>
+  </g>
+  <text x="60" y="132" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">CG adelante</text>
+
+  <text x="123" y="164" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">más estable</text>
+  <text x="123" y="184" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">nariz pesada</text>
+  <text x="123" y="204" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">pérdida a MÁS velocidad</text>
+  <text x="123" y="224" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">flare difícil al aterrizar</text>
+  <text x="123" y="244" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">crucero más lento</text>
+
+  <!-- Panel derecho: CG atrasado -->
+  <rect x="246" y="12" width="222" height="246" rx="8" fill="none" stroke="var(--bad)" stroke-width="2"/>
+  <text x="357" y="36" fill="var(--bad)" font-family="inherit" font-size="15" text-anchor="middle">CG ATRASADO</text>
+
+  <!-- avioncito nariz arriba -->
+  <g transform="rotate(-12 357 95)">
+    <ellipse cx="357" cy="95" rx="72" ry="16" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <polygon points="414,88 442,62 452,62 430,92" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <rect x="330" y="92" width="52" height="6" rx="3" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+    <circle cx="400" cy="93" r="6" fill="var(--bad)"/>
+  </g>
+  <text x="422" y="132" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">CG atrás</text>
+
+  <text x="357" y="164" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">INESTABLE</text>
+  <text x="357" y="184" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">pérdida a menos velocidad</text>
+  <text x="357" y="204" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">recuperar pérdida/barrena:</text>
+  <text x="357" y="224" fill="var(--bad)" font-family="inherit" font-size="13" text-anchor="middle">difícil o IMPOSIBLE</text>
+  <text x="357" y="244" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">crucero un poco más rápido</text>
+</svg>

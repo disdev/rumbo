@@ -7,6 +7,8 @@ import { initSync, flush, relogin, requestFeedback, restoreProgress } from './sy
 import { runSession, loadCursor } from './session.js';
 import { el, fmtTime } from './players.js';
 import { FAMILY_IDS } from './mathgen.js';
+import { lessonList } from './lessons.js';
+import { earnedBadges } from './badges.js';
 
 const app = document.getElementById('app');
 const banner = document.getElementById('sync-banner');
@@ -77,11 +79,36 @@ function trackerGrid() {
   const grid = el('div', { class: 'tracker' });
   for (const f of FAMILY_IDS) {
     const passed = state.ladder[f]?.passedTier ?? 0;
+    const reps = state.mathReps[f];
     grid.append(el('div', { class: 'tracker-row' },
-      el('span', { class: 'tracker-label' }, FAMILY_LABELS[f]),
+      el('span', { class: 'tracker-label' }, FAMILY_LABELS[f],
+        // reps visibles (§5.2): la evidencia del músculo acumulado
+        reps ? el('span', { class: 'tracker-reps' }, `${reps.lifetime} problema${reps.lifetime === 1 ? '' : 's'}${reps.streak >= 3 ? ` · racha ${reps.streak}🔥` : ''}`) : ''),
       ...[1, 2, 3].map(t => el('span', { class: `cell ${t <= passed ? 'done' : t === passed + 1 ? 'next' : ''}` }, String(t)))));
   }
   return grid;
+}
+
+const BADGES_SEEN_KEY = 'rumbo_badges_seen_v1';
+
+function badgeShelf() {
+  // Logros (§5.9): derivados del log; "nuevo" = no estaba en lo último visto
+  const earned = earnedBadges(state);
+  let seen = [];
+  try { seen = JSON.parse(localStorage.getItem(BADGES_SEEN_KEY)) || []; } catch {}
+  const fresh = earned.filter(b => !seen.includes(b.id));
+  localStorage.setItem(BADGES_SEEN_KEY, JSON.stringify(earned.map(b => b.id)));
+
+  const nodes = [];
+  for (const b of fresh) {
+    nodes.push(el('div', { class: 'badge-new' }, `🎉 ¡Nuevo logro! ${b.emoji} ${b.title} — ${b.desc}`));
+  }
+  if (earned.length) {
+    nodes.push(el('h4', { class: 'section-title' }, `Logros · ${earned.length}`));
+    nodes.push(el('div', { class: 'badge-shelf' },
+      ...earned.map(b => el('span', { class: 'badge-chip', title: `${b.title}: ${b.desc}` }, `${b.emoji} ${b.title}`))));
+  }
+  return nodes;
 }
 
 function streakChips() {
@@ -123,7 +150,9 @@ function renderHome() {
     nodes.push(el('button', { class: 'start-btn', onclick: () => start(plan) }, label));
   }
 
+  nodes.push(...badgeShelf());
   nodes.push(el('h4', { class: 'section-title' }, 'Escalera de matemática'), trackerGrid());
+  nodes.push(el('button', { class: 'ghost', onclick: () => lessonList(app, ctx, renderHome) }, '📚 Repasar lecciones'));
 
   if (state.errorDeck.length) nodes.push(el('p', { class: 'note center' }, `Mazo de errores: ${state.errorDeck.length} pendiente(s)`));
   nodes.push(el('footer', { class: 'home-footer' },

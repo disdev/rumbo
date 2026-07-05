@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 230" role="img" aria-label="Tubo Venturi: en la garganta angosta el aire acelera y la presión baja">
+  <!-- tubo -->
+  <path d="M20 65 L150 65 L190 92 L250 92 L290 65 L420 65 L420 165 L290 165 L250 138 L190 138 L150 165 L20 165 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <!-- flechas de flujo: lento (cortas) -->
+  <line x1="45" y1="115" x2="105" y2="115" stroke="var(--text)" stroke-width="3"/>
+  <polygon points="122,115 102,107 102,123" fill="var(--text)"/>
+  <line x1="310" y1="115" x2="370" y2="115" stroke="var(--text)" stroke-width="3"/>
+  <polygon points="387,115 367,107 367,123" fill="var(--text)"/>
+  <!-- flechas de flujo: rápido (largas, garganta) -->
+  <line x1="185" y1="107" x2="240" y2="107" stroke="var(--accent)" stroke-width="3"/>
+  <polygon points="256,107 238,100 238,114" fill="var(--accent)"/>
+  <line x1="185" y1="125" x2="240" y2="125" stroke="var(--accent)" stroke-width="3"/>
+  <polygon points="256,125 238,118 238,132" fill="var(--accent)"/>
+  <!-- etiquetas -->
+  <text x="75" y="48" font-family="inherit" font-size="13" fill="var(--text)" text-anchor="middle">presión ALTA</text>
+  <text x="75" y="152" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">lento</text>
+  <text x="220" y="48" font-family="inherit" font-size="13" fill="var(--accent)" text-anchor="middle">presión BAJA</text>
+  <line x1="220" y1="55" x2="220" y2="86" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="220" y="155" font-family="inherit" font-size="12" fill="var(--accent)" text-anchor="middle">rápido</text>
+  <text x="355" y="48" font-family="inherit" font-size="13" fill="var(--text)" text-anchor="middle">presión ALTA</text>
+  <text x="355" y="152" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">lento</text>
+  <text x="220" y="205" font-family="inherit" font-size="14" fill="var(--text)" text-anchor="middle">garganta angosta → aire más rápido → presión más baja</text>
+</svg>

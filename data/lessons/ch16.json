@@ -1,0 +1,684 @@
+{
+  "chapter": "16",
+  "title": "Navegación",
+  "resumen": "Cómo llegar de un aeródromo a otro sin GPS de carro: leer la carta, calcular rumbos con viento y variación, usar el VOR y el GPS, y saber qué hacer si te pierdes.",
+  "sections": [
+    {
+      "id": "16-1",
+      "title": "La carta seccional: tu mapa del cielo",
+      "key_points": [
+        "La carta seccional usa escala 1:500 000 — 1 cm en el papel son unos 5 km reales.",
+        "Los colores del terreno indican elevación: verde es bajo, marrón/tostado es alto.",
+        "El MEF (cifra de elevación máxima) es lo más alto de cada cuadrante: terreno más obstáculos, redondeado hacia arriba, en cientos de pies MSL.",
+        "Volar por encima del MEF del cuadrante te libra de todo lo que hay abajo.",
+        "Las cartas caducan: siempre se usa la edición vigente porque frecuencias y obstáculos cambian."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué los pilotos usan un mapa de papel si existe Google Maps? Porque Google Maps te muestra calles; a ti te importan **antenas, cerros, espacios aéreos y frecuencias**. Ese mapa es la **carta seccional** (*sectional chart*), con escala **1:500 000**: 1 cm en la carta ≈ 5 km en el mundo real. Suficiente detalle para volar despacio y bajo, sin que el mapa sea gigante."
+        },
+        {
+          "type": "text",
+          "md": "Los colores te hablan: **verde** = terreno bajo, **tostado/marrón** = terreno alto. En cada cuadrante de la carta hay un número grande: el **MEF** (*Maximum Elevation Figure*), la altura de lo MÁS alto del cuadrante — terreno **y** obstáculos — redondeada hacia arriba, en cientos de pies MSL. Un MEF de 3⁶ significa 3 600 ft MSL: vuela por encima y nada te toca."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Las cartas **caducan**. Frecuencias, torres y obstáculos cambian; volar con carta vencida es volar con información falsa. Revisa siempre la fecha de edición."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "En el banco, la categoría VUELO EN RUTA está dominada por preguntas con figuras de cartas seccionales: elevaciones de aeropuertos, alturas de obstáculos, coordenadas. Lo que aprendas aquí es la base para la pista de lectura de cartas de la app."
+        },
+        {
+          "type": "notebook",
+          "id": "16-1-n1",
+          "prompt": "Escribe la escala 1:500 000 y debajo la conversión: 1 cm ≈ 5 km. Luego dibuja un cuadrante con un MEF grande '3⁶' y anota al lado: '3 600 ft MSL = lo más alto aquí (terreno + obstáculos)'."
+        },
+        {
+          "type": "check",
+          "id": "16-1-c1",
+          "q": "Ves un MEF de 2⁵ en un cuadrante de la seccional. ¿Qué significa?",
+          "options": [
+            "La elevación del aeropuerto principal es 2 500 ft.",
+            "Lo más alto del cuadrante (terreno + obstáculos) llega a unos 2 500 ft MSL.",
+            "Debes volar a 2 500 ft AGL en ese cuadrante."
+          ],
+          "answer": 1,
+          "why": "El MEF es la elevación máxima del cuadrante en cientos de pies MSL, incluyendo obstáculos."
+        },
+        {
+          "type": "check",
+          "id": "16-1-c2",
+          "q": "En la carta seccional, 4 cm medidos con regla equivalen aproximadamente a:",
+          "options": ["20 km reales.", "2 km reales.", "50 km reales."],
+          "answer": 0,
+          "why": "Escala 1:500 000 → 1 cm ≈ 5 km, así que 4 cm ≈ 20 km."
+        }
+      ]
+    },
+    {
+      "id": "16-2",
+      "title": "Símbolos: aeropuertos, obstáculos y banderas",
+      "key_points": [
+        "Aeropuertos AZULES tienen torre de control (Clases B, C, D, E con torre); MAGENTA no tienen torre.",
+        "Las marcas alrededor del círculo del aeropuerto indican que hay combustible disponible.",
+        "En un obstáculo, el número en negrita es la cima en pies MSL y el número entre paréntesis es la altura AGL.",
+        "Una bandera magenta marca un checkpoint visual VFR que sirve para reportar posición al ATC.",
+        "El símbolo del VOR viene con una rosa de rumbos magnéticos alrededor."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo distingues de un vistazo un aeropuerto con torre de uno sin torre? Por el color, como los equipos de un videojuego: **azul = con torre de control** (los de Clase B, C, D y E con torre), **magenta = sin torre**. Si el círculo tiene **marcas** alrededor, hay **combustible** disponible. Una **bandera magenta** marca un *checkpoint* visual VFR: un punto fácil de reconocer para reportar tu posición por radio."
+        },
+        {
+          "type": "text",
+          "md": "Los obstáculos (antenas, torres) llevan dos números: el de **negrita** es la cima en pies **MSL** (sobre el nivel del mar) — el que comparas con tu altímetro — y el de **(paréntesis)** es la altura **AGL** (sobre el terreno). Ejemplo: **2049 (549)** = cima a 2 049 ft MSL, torre de 549 ft de alto."
+        },
+        {
+          "type": "diagram",
+          "src": "ch16-simbolos-carta.svg",
+          "caption": "Los cinco símbolos que más pregunta el banco: aeropuertos azul/magenta, combustible, obstáculos con MSL/(AGL), MEF, checkpoint de bandera y VOR."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Cae tal cual: «los aeropuertos con torre subyacentes a Clase B, C, D y E se muestran en **azul**», la altura MSL de un obstáculo (usa el número en **negrita**), qué significa la **bandera** (checkpoint visual) y qué aeropuertos tienen **combustible**."
+        },
+        {
+          "type": "notebook",
+          "id": "16-2-n1",
+          "prompt": "Dibuja tu propia leyenda: un círculo azul (escribe 'CON torre'), un círculo magenta ('SIN torre'), un obstáculo con '2049 (549)' señalando cuál es MSL y cuál AGL, y una bandera ('checkpoint VFR')."
+        },
+        {
+          "type": "check",
+          "id": "16-2-c1",
+          "q": "Un obstáculo en la carta muestra 1549 (400). Tu altímetro marca 1 500 ft. ¿Pasas por encima?",
+          "options": [
+            "Sí, porque el obstáculo mide solo 400 ft.",
+            "No: la cima está a 1 549 ft MSL, más alto que tú.",
+            "Sí, porque 1549 es la altura del terreno, no del obstáculo."
+          ],
+          "answer": 1,
+          "why": "El número en negrita (1549) es la cima en MSL — se compara directo con tu altímetro."
+        },
+        {
+          "type": "check",
+          "id": "16-2-c2",
+          "q": "En la seccional, un aeropuerto dibujado en magenta te dice que:",
+          "options": [
+            "no tiene torre de control.",
+            "no tiene combustible.",
+            "es solo para uso militar."
+          ],
+          "answer": 0,
+          "why": "Azul = con torre; magenta = sin torre. El combustible se indica con las marcas alrededor del círculo."
+        }
+      ]
+    },
+    {
+      "id": "16-3",
+      "title": "Latitud y longitud: la dirección de tu casa en el planeta",
+      "key_points": [
+        "La latitud son los paralelos: miden 0° a 90° hacia el Norte o el Sur desde el Ecuador.",
+        "La longitud son los meridianos: miden 0° a 180° al Este u Oeste desde Greenwich, y cruzan el Ecuador en ángulo recto.",
+        "Cada grado tiene 60 minutos; 1 minuto de latitud = 1 milla náutica.",
+        "Perú está en latitud SUR y longitud OESTE (Lima ≈ 12°S 77°W).",
+        "Para ubicar un punto en la carta: primero latitud (arriba/abajo), luego longitud (izquierda/derecha)."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo le das tu 'dirección' a alguien que no conoce ninguna calle? Con una cuadrícula mundial, como las coordenadas en un tablero de ajedrez. La **latitud** (paralelos) mide de 0° a 90° hacia el **Norte o Sur** desde el Ecuador. La **longitud** (meridianos) mide de 0° a 180° al **Este u Oeste** desde Greenwich — y sus líneas **cruzan el Ecuador en ángulo recto**."
+        },
+        {
+          "type": "text",
+          "md": "Cada grado se divide en **60 minutos** ('). Dato de oro: **1 minuto de latitud = 1 milla náutica (NM)** — por eso los pilotos miden distancias en NM. Perú vive en latitud **Sur** y longitud **Oeste**: Lima está cerca de **12°S 77°W**. En la carta, los números de la cuadrícula te dejan ubicar cualquier aeropuerto en segundos."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Pregunta literal del banco: «¿qué afirmación sobre longitud y latitud es verdadera?» → **las líneas de longitud cruzan el Ecuador en ángulo recto**. También te dan coordenadas (p. ej. 47°21'N 101°01'W) y debes encontrar el aeropuerto en la figura."
+        },
+        {
+          "type": "notebook",
+          "id": "16-3-n1",
+          "prompt": "Dibuja un globo con el Ecuador y Greenwich marcados. Pon un punto en 12°S 77°W (Lima) y escribe: '1° = 60 minutos' y '1 minuto de latitud = 1 NM'."
+        },
+        {
+          "type": "check",
+          "id": "16-3-c1",
+          "q": "¿Cuál afirmación es verdadera?",
+          "options": [
+            "Las líneas de longitud son paralelas al Ecuador.",
+            "Las líneas de longitud cruzan el Ecuador en ángulo recto.",
+            "La latitud 0° pasa por Greenwich, Inglaterra."
+          ],
+          "answer": 1,
+          "why": "Los meridianos van de polo a polo, así que cortan el Ecuador a 90°. Greenwich define la longitud 0°, no la latitud."
+        },
+        {
+          "type": "check",
+          "id": "16-3-c2",
+          "q": "Dos puntos separados 30 minutos de latitud sobre el mismo meridiano distan:",
+          "options": ["30 NM.", "30 km.", "60 NM."],
+          "answer": 0,
+          "why": "1 minuto de latitud = 1 NM, entonces 30' = 30 NM."
+        }
+      ]
+    },
+    {
+      "id": "16-4",
+      "title": "Dos nortes: la variación magnética",
+      "key_points": [
+        "El norte verdadero es el de los meridianos del mapa; el norte magnético es el que señala la brújula — no coinciden.",
+        "La variación (declinación) es el ángulo entre ambos y se lee en las isogonas de la carta (líneas magenta punteadas).",
+        "De verdadero a magnético: variación Este se RESTA, variación Oeste se SUMA.",
+        "En Perú la variación actual es pequeña, alrededor de 1–3°O según la zona — y cambia con los años: revisa tu carta.",
+        "Los radiales VOR y las pistas ya vienen en referencia magnética."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué tu brújula y tu mapa no se ponen de acuerdo? Porque hay **dos nortes**: el **verdadero** (el eje del planeta, el de los meridianos) y el **magnético** (adonde apunta la brújula, un punto que además se mueve con los años). El ángulo entre ambos es la **variación** o declinación magnética, y la carta te lo dice con las **isogonas**: líneas magenta punteadas con el valor, p. ej. '2°W'."
+        },
+        {
+          "type": "diagram",
+          "src": "ch16-variacion.svg",
+          "caption": "Rosa de vientos con los dos nortes: para pasar de rumbo verdadero a magnético, la variación Oeste se suma y la Este se resta."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**«Este se rEsta, Oeste se sUma»** (de verdadero → magnético). Es la versión en español del clásico *East is least, West is best*. Ejemplo: curso verdadero 100°, variación 2°O → curso magnético **102°**."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "En Perú la variación hoy es pequeña (~1–3°O según la zona), pero **cambia con el tiempo** — el polo magnético se mueve. Nunca la des por memorizada: léela en la isogona de la carta vigente."
+        },
+        {
+          "type": "notebook",
+          "id": "16-4-n1",
+          "prompt": "Dibuja dos flechas desde un mismo punto: NV recto arriba y NM inclinado a la izquierda con el ángulo marcado 'variación O'. Debajo resuelve: RV 090° + var 3°O = RM ___ (respuesta: 093°)."
+        },
+        {
+          "type": "check",
+          "id": "16-4-c1",
+          "q": "Tu curso verdadero es 135° y la isogona dice 2°W. ¿Curso magnético?",
+          "options": ["133°.", "137°.", "135° — la variación no afecta el curso."],
+          "answer": 1,
+          "why": "Variación Oeste se SUMA: 135 + 2 = 137°."
+        },
+        {
+          "type": "check",
+          "id": "16-4-c2",
+          "q": "Al convertir rumbo verdadero a rumbo magnético, el piloto debe:",
+          "options": [
+            "sumar la variación del oeste.",
+            "sumar la variación del este.",
+            "ignorar la variación si es menor de 5°."
+          ],
+          "answer": 0,
+          "why": "Oeste se suma, Este se resta — tal cual lo pregunta el banco."
+        }
+      ]
+    },
+    {
+      "id": "16-5",
+      "title": "La desviación: tu brújula también miente un poquito",
+      "key_points": [
+        "La desviación es el error de la brújula causado por los metales y la electrónica del propio avión.",
+        "Se corrige con la tarjeta de desviación (compass card) instalada junto a la brújula: 'PARA volar X, DIRIGE Y'.",
+        "La desviación es distinta en cada avión y en cada rumbo.",
+        "La cadena completa es: rumbo Verdadero → (variación) → Magnético → (desviación) → Compás.",
+        "Variación depende del lugar; desviación depende del avión."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Ya corregiste la variación y listo? Casi. Igual que un parlante pegado a un televisor viejo distorsiona la imagen, los **metales, motores y equipos eléctricos de TU avión** desvían la brújula. Ese error propio del avión es la **desviación** (*deviation*), y es diferente en cada rumbo. Por eso junto a la brújula hay una **tarjeta de desviación** (*compass card*): «PARA volar 090, DIRIGE 092»."
+        },
+        {
+          "type": "table",
+          "headers": ["Paso", "Se corrige con", "Depende de"],
+          "rows": [
+            ["Rumbo Verdadero (RV)", "—", "el mapa"],
+            ["→ Rumbo Magnético (RM)", "variación (isogona)", "el lugar"],
+            ["→ Rumbo Compás (RC)", "desviación (tarjeta)", "tu avión"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**V → M → C**: **V**erdadero, **M**agnético, **C**ompás. Primero la **variación** (del mundo), después la **desviación** (de tu avión). El número que finalmente vuelas es el rumbo compás."
+        },
+        {
+          "type": "notebook",
+          "id": "16-5-n1",
+          "prompt": "Copia la cadena RV --(variación)--> RM --(desviación)--> RC y resuelve: RV 180°, var 2°O, y la tarjeta dice 'PARA 182 DIRIGE 184'. ¿Qué número vuelas en la brújula? (RC = 184°)."
+        },
+        {
+          "type": "check",
+          "id": "16-5-c1",
+          "q": "La desviación de la brújula la causa principalmente:",
+          "options": [
+            "el movimiento del polo magnético.",
+            "los campos magnéticos del propio avión (metales y electrónica).",
+            "el viento cruzado en vuelo."
+          ],
+          "answer": 1,
+          "why": "Eso es desviación (del avión). El polo que se mueve es la variación (del lugar)."
+        },
+        {
+          "type": "check",
+          "id": "16-5-c2",
+          "q": "RM 095° y la tarjeta de desviación dice 'PARA 095 DIRIGE 093'. ¿Qué rumbo compás vuelas?",
+          "options": ["093°.", "097°.", "095°."],
+          "answer": 0,
+          "why": "La tarjeta ya hizo la cuenta por ti: para lograr 095 magnético, apunta la brújula a 093."
+        }
+      ]
+    },
+    {
+      "id": "16-6",
+      "title": "Curso, rumbo y derrota: el viento te empuja",
+      "key_points": [
+        "Curso (course) = el camino que TRAZAS en la carta; rumbo (heading) = adonde APUNTA la nariz; derrota (track) = el camino REAL sobre el suelo.",
+        "El viento desplaza al avión como la corriente a un nadador que cruza un río.",
+        "El WCA (ángulo de corrección por viento) es apuntar la nariz hacia el viento para que la derrota coincida con el curso.",
+        "En el triángulo de viento: vector aire = rumbo + TAS, vector tierra = curso/derrota + GS, vector viento los conecta.",
+        "Rumbo = curso ± WCA: la corrección a la derecha se suma, a la izquierda se resta."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué apuntar la nariz al destino no basta? Imagina cruzar un río nadando derecho hacia la otra orilla: la corriente te saca más abajo. El viento hace lo mismo. Por eso separamos tres ideas: **curso** (*course*): la línea que dibujaste en la carta; **rumbo** (*heading*): adonde apunta la nariz; **derrota** (*track*): por dónde pasaste de verdad sobre el suelo. El objetivo es que derrota = curso."
+        },
+        {
+          "type": "text",
+          "md": "La solución es 'nadar en diagonal': apuntar la nariz **hacia el viento** un ángulo llamado **WCA** (*wind correction angle*, ángulo de corrección por viento). El **triángulo de viento** lo dibuja: un vector es tu avión en el aire (rumbo + TAS), otro es el viento, y el resultado es tu movimiento sobre la tierra (derrota + GS)."
+        },
+        {
+          "type": "diagram",
+          "src": "ch16-triangulo-viento.svg",
+          "caption": "Triángulo de viento: nariz al viento (rumbo + TAS), el viento te empuja, y la suma es tu derrota con velocidad terrestre (GS)."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco muestra un triángulo de viento (Figura 68) y pregunta qué representa cada línea: el vector **aire** = rumbo verdadero + velocidad aérea; el vector **tierra** = curso verdadero + velocidad terrestre; el tercero = **dirección y velocidad del viento**. También: WCA a la derecha se **suma**, a la izquierda se **resta**."
+        },
+        {
+          "type": "notebook",
+          "id": "16-6-n1",
+          "prompt": "Dibuja tu propio triángulo de viento: curso horizontal hacia la derecha, viento bajando desde arriba, y la nariz inclinada hacia el viento. Etiqueta CURSO, RUMBO, DERROTA y el ángulo WCA."
+        },
+        {
+          "type": "check",
+          "id": "16-6-c1",
+          "q": "La derrota (track) es:",
+          "options": [
+            "el camino real del avión sobre el suelo.",
+            "adonde apunta la nariz del avión.",
+            "la línea dibujada en la carta antes del vuelo."
+          ],
+          "answer": 0,
+          "why": "Derrota = camino real. La nariz es el rumbo; la línea planeada es el curso."
+        },
+        {
+          "type": "check",
+          "id": "16-6-c2",
+          "q": "El viento viene desde tu derecha. Para mantener el curso debes:",
+          "options": [
+            "apuntar la nariz a la izquierda del curso.",
+            "apuntar la nariz a la derecha del curso (hacia el viento).",
+            "aumentar la velocidad sin cambiar el rumbo."
+          ],
+          "answer": 1,
+          "why": "El WCA siempre apunta la nariz HACIA el viento para compensar el empuje."
+        }
+      ]
+    },
+    {
+      "id": "16-7",
+      "title": "Pilotaje y navegación a estima: tiempo, velocidad, distancia",
+      "key_points": [
+        "Pilotaje es navegar comparando referencias visuales (ríos, carreteras, pueblos) con la carta.",
+        "Navegación a estima (dead reckoning) es calcular por adelantado rumbos, tiempos y combustible.",
+        "GS = TAS + viento de cola, o TAS − viento de frente.",
+        "Tiempo (min) = distancia ÷ GS × 60; distancia = GS × tiempo ÷ 60.",
+        "Combustible = tiempo de vuelo × consumo + reserva legal (30 min de día VFR, 45 de noche).",
+        "Pilotaje y estima se usan juntos: calculas y luego confirmas con lo que ves."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo navegaban antes del GPS? Con dos herramientas que aún hoy te salvan. **Pilotaje**: mirar por la ventana y comparar con la carta — 'ese río con ese puente es ESTE río con ESTE puente'. **Navegación a estima** (*dead reckoning*): calcular por adelantado, como cuando estimas a qué hora llegas al colegio sabiendo la distancia y tu velocidad. Se usan juntas: la estima predice, el pilotaje confirma."
+        },
+        {
+          "type": "table",
+          "headers": ["Quiero", "Fórmula", "Ejemplo"],
+          "rows": [
+            ["GS", "TAS ± componente de viento", "110 kt − 10 de frente = 100 kt"],
+            ["Tiempo", "dist ÷ GS × 60", "40 NM ÷ 100 × 60 = 24 min"],
+            ["Distancia", "GS × tiempo ÷ 60", "98 kt × 2.5 ÷ 60 = 4.08 NM"],
+            ["Combustible", "tiempo × consumo + reserva", "0.4 h × 8 gal/h + reserva"]
+          ]
+        },
+        {
+          "type": "guided_math",
+          "family": "tvd",
+          "tier": 1
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Preguntas literales del banco: «¿qué distancia recorre un avión en 2½ min a 98 kt de GS?» → **4.08 NM**; «¿y en 7.5 min a 114 kt?» → **14.25 NM**. Es siempre la misma fórmula: distancia = GS × minutos ÷ 60."
+        },
+        {
+          "type": "notebook",
+          "id": "16-7-n1",
+          "prompt": "Copia las tres fórmulas TVD en un triángulo (D arriba, GS y T abajo). Resuelve a mano: ¿cuánto tardas en volar 45 NM con GS de 90 kt? (45 ÷ 90 × 60 = 30 min)."
+        },
+        {
+          "type": "check",
+          "id": "16-7-c1",
+          "q": "¿Qué distancia recorre un avión en 7.5 minutos con GS de 114 nudos?",
+          "options": ["14.25 NM.", "15.00 NM.", "8.55 NM."],
+          "answer": 0,
+          "why": "114 × 7.5 ÷ 60 = 14.25 NM — pregunta literal del banco."
+        },
+        {
+          "type": "check",
+          "id": "16-7-c2",
+          "q": "TAS 105 kt con 15 kt de viento de cola. ¿Tu GS?",
+          "options": ["90 kt.", "105 kt — el viento no cambia la GS.", "120 kt."],
+          "answer": 2,
+          "why": "Viento de cola se suma a la TAS: 105 + 15 = 120 kt de velocidad terrestre."
+        }
+      ]
+    },
+    {
+      "id": "16-8",
+      "title": "El plan de navegación: tu log de vuelo",
+      "key_points": [
+        "El log de navegación divide la ruta en tramos entre checkpoints fáciles de reconocer.",
+        "Para cada tramo se anota distancia, rumbo, GS estimada, tiempo y combustible.",
+        "En vuelo se anota la hora real en cada checkpoint y se compara con la planeada.",
+        "Si llegas tarde a los checkpoints, tu GS real es menor: recalcula tiempo y combustible al destino.",
+        "La reserva legal VFR es 30 minutos de día (45 de noche) ADEMÁS del combustible del viaje."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo evitas 'perderte de a pocos'? Con un **log de navegación**: la ruta partida en tramos entre **checkpoints** — puntos imposibles de confundir (un puente, una mina, un cruce de carreteras) — como los puntos de guardado de un videojuego. Para cada tramo calculas en tierra: distancia, rumbo, GS, tiempo y combustible. En vuelo solo comparas: ¿llegué al puente a la hora planeada?"
+        },
+        {
+          "type": "diagram",
+          "src": "ch16-log-navegacion.svg",
+          "caption": "Log simplificado: cada fila es un tramo. Si la hora real difiere de la planeada, recalculas GS, tiempo y combustible al destino."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "El log convierte 'creo que voy bien' en **datos**: si al segundo checkpoint llevas 3 minutos de retraso, tu GS real es menor — recalcula ya si el combustible sigue alcanzando **con reserva** (30 min de día, 45 de noche)."
+        },
+        {
+          "type": "notebook",
+          "id": "16-8-n1",
+          "prompt": "Arma un mini-log de 2 tramos con checkpoints de tu zona (ej. 'puente del río', 'peaje'): 20 NM y 25 NM, GS 100 kt. Calcula el tiempo de cada tramo (12 y 15 min) y el total con consumo de 8 gal/h."
+        },
+        {
+          "type": "check",
+          "id": "16-8-c1",
+          "q": "Planeaste llegar al checkpoint 2 en 15 min y llegaste en 18. ¿Qué te dice el log?",
+          "options": [
+            "Tu GS real es menor: recalcula tiempo y combustible al destino.",
+            "Nada — 3 minutos es un error normal de reloj.",
+            "Tu TAS aumentó y debes reducir potencia."
+          ],
+          "answer": 0,
+          "why": "Llegar tarde = GS menor que la planeada (más viento en contra). Tiempo y combustible al destino crecen."
+        }
+      ]
+    },
+    {
+      "id": "16-9",
+      "title": "El VOR: un faro con 360 rayos numerados",
+      "key_points": [
+        "El VOR emite 360 radiales, uno por cada grado, numerados por su rumbo magnético DESDE la estación.",
+        "Estar en el radial 090 significa estar al ESTE de la estación, sin importar hacia dónde apunte tu nariz.",
+        "El VOR opera en VHF (108.0–117.95 MHz): señal de línea de vista, más alcance cuanto más alto vuelas.",
+        "Se sintoniza la frecuencia y se identifica la estación por su código Morse antes de usarla.",
+        "VOR/DME y VORTAC son VOR que además dan distancia (DME)."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo sabes dónde estás cuando abajo todo se ve igual? Imagina un **faro** que en vez de un haz giratorio emite **360 rayos fijos, cada uno con su número**. Eso es el **VOR**: cada rayo es un **radial**, nombrado por su rumbo magnético **DESDE** la estación. Si estás parado en el radial 090, estás al **este** del faro — no importa hacia dónde mire tu nariz."
+        },
+        {
+          "type": "diagram",
+          "src": "ch16-vor-radiales.svg",
+          "caption": "La estación emite 360 radiales. El avión sobre el rayo 090 está al este del VOR, apunte donde apunte."
+        },
+        {
+          "type": "text",
+          "md": "El VOR transmite en **VHF (108.0–117.95 MHz)**: señal de **línea de vista**, así que cuanto más alto vuelas, más lejos lo recibes; detrás de un cerro, nada. Antes de usarlo: sintoniza la frecuencia de la carta e **identifica el código Morse** — sin identificación, no confíes en la aguja. Si la estación también da distancia, se llama **VOR/DME** o **VORTAC**."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta el tipo de instalación según el símbolo de la carta (VOR, VOR/DME, VORTAC) y tu posición dada por dos radiales: estás donde los dos radiales se **cruzan** — cada radial es una línea de posición."
+        },
+        {
+          "type": "notebook",
+          "id": "16-9-n1",
+          "prompt": "Dibuja un punto central (VOR) con 4 rayos: R-360 arriba, R-090 derecha, R-180 abajo, R-270 izquierda. Coloca un avión al suroeste de la estación y escribe en qué radial está (R-225)."
+        },
+        {
+          "type": "check",
+          "id": "16-9-c1",
+          "q": "Tu receptor indica que estás en el radial 180 del VOR. ¿Dónde estás?",
+          "options": [
+            "Al sur de la estación.",
+            "Al norte de la estación.",
+            "Volando rumbo 180, en cualquier posición."
+          ],
+          "answer": 0,
+          "why": "El radial se cuenta DESDE la estación: radial 180 = al sur, sin importar tu rumbo."
+        },
+        {
+          "type": "check",
+          "id": "16-9-c2",
+          "q": "Vuelas bajo, detrás de una cadena de cerros, y la señal VOR desaparece. ¿Por qué?",
+          "options": [
+            "El VOR es señal VHF de línea de vista: el terreno la bloquea.",
+            "El VOR solo funciona de día.",
+            "Tu receptor perdió la sintonía por la altitud."
+          ],
+          "answer": 0,
+          "why": "VHF viaja en línea recta: sin línea de vista con la antena, no hay señal. Sube y la recuperas."
+        }
+      ]
+    },
+    {
+      "id": "16-10",
+      "title": "OBS, CDI y TO/FROM: leer y seguir un radial",
+      "key_points": [
+        "Con el OBS seleccionas un curso; el CDI muestra si el curso está a tu izquierda o derecha.",
+        "La aguja del CDI indica POSICIÓN, no rumbo: no depende de hacia dónde apunta la nariz.",
+        "Con el curso puesto adelante, 'vuela hacia la aguja' para reinterceptar; cada punto son ~2°.",
+        "TO/HACIA: el curso seleccionado te acerca a la estación; FROM/DESDE: te aleja.",
+        "Chequeo con VOT: CDI centrado con 0° FROM o 180° TO, sin importar tu posición; error máx ±4°.",
+        "Tolerancias: VOT y punto en tierra ±4°, chequeo en vuelo ±6°, entre dos VOR del avión 4°."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo 'agarras' uno de esos 360 rayos y lo sigues? Con dos perillas de tu panel. El **OBS** (*omnibearing selector*) elige el curso que quieres volar. El **CDI** (*course deviation indicator*) es la aguja vertical: si se va a la derecha, el curso está a tu **derecha** — corrige hacia la aguja y ella vuelve al centro. Cada punto de la escala ≈ **2°** de error."
+        },
+        {
+          "type": "diagram",
+          "src": "ch16-cdi.svg",
+          "caption": "OBS en 090, aguja dos puntos a la derecha y bandera TO: el curso 090 está ~4° a tu derecha y te lleva HACIA la estación."
+        },
+        {
+          "type": "text",
+          "md": "La bandera **TO/FROM** responde una sola pregunta: ¿el curso del OBS te **acerca** (TO/HACIA) o te **aleja** (FROM/DESDE) de la estación? Y ojo con esto: el CDI marca tu **posición**, no tu rumbo — la aguja ni se entera de hacia dónde apunta tu nariz. Para que 'volar hacia la aguja' funcione, pon en el OBS un curso parecido a tu rumbo (si no, la aguja parece invertida)."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Pregunta literal: con señal **VOT**, CDI centrado debe leer **0° FROM (DESDE) o 180° TO (HACIA), sin importar tu posición** respecto al VOT. Tolerancias que caen: VOT ±4°, punto de chequeo en tierra ±4°, en vuelo ±6°, y máx 4° entre los dos receptores del avión."
+        },
+        {
+          "type": "notebook",
+          "id": "16-10-n1",
+          "prompt": "Dibuja dos carátulas de VOR con OBS 360: una con aguja a la izquierda (escribe 'curso a mi izquierda → corrijo a la izquierda') y otra centrada con FROM (escribe 'estoy sobre el radial 360, alejándome')."
+        },
+        {
+          "type": "check",
+          "id": "16-10-c1",
+          "q": "Verificas tu VOR con un VOT y el CDI está centrado. La lectura correcta es:",
+          "options": [
+            "0° DESDE o 180° HACIA, sin importar tu posición respecto al VOT.",
+            "180° DESDE, solo si estás al norte del VOT.",
+            "0° HACIA o 180° DESDE, según de qué lado estés."
+          ],
+          "answer": 0,
+          "why": "El VOT emite solo el radial 360: OBS 0° da FROM y OBS 180° da TO, estés donde estés."
+        },
+        {
+          "type": "check",
+          "id": "16-10-c2",
+          "q": "OBS en 090 (igual a tu rumbo) y la aguja se desvía a la izquierda. ¿Qué haces?",
+          "options": [
+            "Giro un poco a la izquierda: el curso está a mi izquierda.",
+            "Giro a la derecha: la aguja siempre indica el lado del viento.",
+            "Nada: la aguja solo indica la distancia a la estación."
+          ],
+          "answer": 0,
+          "why": "Con curso adelante, se vuela HACIA la aguja: aguja a la izquierda = curso a la izquierda."
+        }
+      ]
+    },
+    {
+      "id": "16-11",
+      "title": "ADF/NDB, DME y GPS: las otras radioayudas",
+      "key_points": [
+        "La aguja del ADF apunta directo a la estación NDB, como un dedo que siempre la señala.",
+        "QDM es el rumbo magnético HACIA la estación; QDR es el radial magnético DESDE ella (QDM y QDR difieren 180°).",
+        "El DME mide distancia oblicua (slant range): sobre la estación marca tu altura, no cero.",
+        "El GPS calcula posición 3D con señales de satélites; el RAIM vigila la integridad de esa posición.",
+        "Si se pierde el RAIM, no hay ninguna garantía de la precisión de la posición GPS.",
+        "El GPS no reemplaza tu carta ni tu log: la regla es navegar tú y verificar con el GPS."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y las demás ayudas del panel? El **ADF** es la más simple: su aguja **apunta a la estación NDB** como un perro que señala la comida, esté donde esté. De ahí salen dos términos: **QDM** = rumbo magnético **hacia** la estación; **QDR** = radial **desde** ella (se diferencian en 180°). El **DME** te da la distancia, pero **oblicua** (*slant range*): justo sobre la estación no marca 0, marca tu altura."
+        },
+        {
+          "type": "text",
+          "md": "El **GPS** calcula tu posición midiendo señales de satélites: con **4 satélites** el receptor resuelve posición 3D (latitud, longitud, altitud) y tiempo, y la constelación está diseñada para que veas **al menos 5**. El **RAIM** (*Receiver Autonomous Integrity Monitoring*) usa satélites extra para **vigilar que la posición sea confiable**. ¿Se pierde el RAIM? Entonces **no tienes ninguna garantía** de la precisión del GPS."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Del banco: si se pierde el RAIM en vuelo → «el piloto **no tiene ninguna garantía** de la precisión de la posición GPS». Y la pregunta «¿cuántos satélites se requieren para posición 3D y tiempo?» tiene como respuesta oficial **5** en el banco DGAC — respóndela así en el examen."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "No dependas ciegamente del GPS: baterías, señal e integridad pueden fallar. La disciplina correcta es navegar con carta y log, y usar el GPS para **confirmar** — no al revés."
+        },
+        {
+          "type": "notebook",
+          "id": "16-11-n1",
+          "prompt": "Haz una tabla de 3 filas: ADF ('la aguja apunta a la estación; QDM hacia / QDR desde'), DME ('distancia oblicua: sobre la estación marca mi altura') y GPS ('RAIM vigila la integridad; sin RAIM, sin garantía')."
+        },
+        {
+          "type": "check",
+          "id": "16-11-c1",
+          "q": "Si la capacidad RAIM se pierde en vuelo:",
+          "options": [
+            "puedes seguir confiando en la altitud del GPS.",
+            "no tienes ninguna garantía de la precisión de la posición GPS.",
+            "la posición sigue siendo confiable con 3 satélites a la vista."
+          ],
+          "answer": 1,
+          "why": "RAIM es el vigilante de integridad: sin él, nada asegura que la posición GPS sea precisa."
+        },
+        {
+          "type": "check",
+          "id": "16-11-c2",
+          "q": "Pasas exactamente sobre la estación DME a 6 000 ft AGL. El DME marca aproximadamente:",
+          "options": ["0 NM.", "1 NM (tu altura, porque mide distancia oblicua).", "6 NM."],
+          "answer": 1,
+          "why": "El DME mide en línea recta hasta la antena (slant range): sobre la estación, esa línea es tu altura (~6 000 ft ≈ 1 NM)."
+        }
+      ]
+    },
+    {
+      "id": "16-12",
+      "title": "¿Perdido? Las 4 C y la diversión al alternativo",
+      "key_points": [
+        "Si te desorientas: no entres en pánico, mantén el avión volando y aplica las 4 C.",
+        "Las 4 C: Climb (sube), Communicate (comunica), Confess (confiesa que estás perdido), Comply (cumple las instrucciones).",
+        "Subir mejora la recepción de radio y VOR y te deja ver más referencias.",
+        "Emergencia: frecuencia 121.5 MHz y transponder 7700 si hace falta.",
+        "Para divertir a un alternativo: elige el aeródromo, estima rumbo con la rosa de un VOR cercano y recalcula tiempo y combustible.",
+        "Divertir temprano, con combustible de sobra, es decisión de buen piloto — no una derrota."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y si nada de lo que ves coincide con la carta? Primero: **vuela el avión** — nadie se pierde para siempre, pero sí se queda sin combustible dando vueltas en pánico. Luego, las **4 C**: **Climb** (sube: más alcance de radio y VOR, más referencias a la vista), **Communicate** (comunica: llama al ATC o a 121.5), **Confess** (confiesa sin vergüenza que estás perdido) y **Comply** (cumple lo que te indiquen)."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "Las **4 C** en tu idioma: **Sube, Comunica, Confiesa, Cumple**. Y los números mágicos de emergencia: frecuencia **121.5** y transponder **7700**."
+        },
+        {
+          "type": "text",
+          "md": "La **diversión** (*diversion*) es cambiar de plan en el aire: clima feo adelante, motor raro, poca gasolina → te vas a un **alternativo**. El truco rápido: elige el aeródromo en la carta, estima el rumbo con la **rosa magnética de un VOR cercano** (ya viene en magnético), mide la distancia con los dedos calibrados y recalcula **tiempo y combustible** con tu GS. Divertir temprano es de pilotos inteligentes."
+        },
+        {
+          "type": "notebook",
+          "id": "16-12-n1",
+          "prompt": "Escribe las 4 C en grande con su traducción: SUBE / COMUNICA / CONFIESA / CUMPLE, y al costado: 121.5 MHz y 7700. Debajo, los 3 pasos de una diversión: elegir alternativo → estimar rumbo y distancia → recalcular tiempo y combustible."
+        },
+        {
+          "type": "check",
+          "id": "16-12-c1",
+          "q": "Estás desorientado. Según las 4 C, una de tus primeras acciones es:",
+          "options": [
+            "Descender para leer los letreros de las carreteras.",
+            "Subir para mejorar la recepción de radioayudas y ver más referencias.",
+            "Apagar la radio para concentrarte en la carta."
+          ],
+          "answer": 1,
+          "why": "Climb: la altura te da alcance de radio/VOR y más terreno a la vista. Descender bajo empeora todo."
+        },
+        {
+          "type": "check",
+          "id": "16-12-c2",
+          "q": "En una diversión, ¿por qué la rosa del VOR cercano es tan útil para estimar el rumbo?",
+          "options": [
+            "Porque ya está orientada al norte magnético: el rumbo sale sin corregir variación.",
+            "Porque indica la dirección del viento en la zona.",
+            "Porque muestra la elevación máxima del cuadrante."
+          ],
+          "answer": 0,
+          "why": "La rosa del VOR está alineada con el norte magnético — te da directo un curso magnético aproximado."
+        }
+      ]
+    }
+  ]
+}

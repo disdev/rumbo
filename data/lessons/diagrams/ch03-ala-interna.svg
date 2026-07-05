@@ -1,0 +1,38 @@
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ala vista desde arriba con el revestimiento levantado mostrando largueros, costillas y larguerillos">
+  <!-- contorno del ala (vista superior) -->
+  <path d="M60 60 L420 80 L420 200 L60 230 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+
+  <!-- largueros (spars): dos vigas a lo largo -->
+  <line x1="60" y1="95" x2="420" y2="108" stroke="var(--accent)" stroke-width="5"/>
+  <line x1="60" y1="190" x2="420" y2="172" stroke="var(--accent)" stroke-width="5"/>
+
+  <!-- costillas (ribs): perpendiculares -->
+  <line x1="110" y1="66" x2="110" y2="226" stroke="var(--text)" stroke-width="2"/>
+  <line x1="170" y1="69" x2="170" y2="221" stroke="var(--text)" stroke-width="2"/>
+  <line x1="230" y1="72" x2="230" y2="216" stroke="var(--text)" stroke-width="2"/>
+  <line x1="290" y1="74" x2="290" y2="211" stroke="var(--text)" stroke-width="2"/>
+  <line x1="350" y1="77" x2="350" y2="206" stroke="var(--text)" stroke-width="2"/>
+
+  <!-- larguerillos (stringers): líneas finas a lo largo -->
+  <line x1="60" y1="130" x2="420" y2="133" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="60" y1="160" x2="420" y2="152" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- revestimiento (esquina de piel levantada) -->
+  <path d="M420 80 L470 55 L470 120 L420 130 Z" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+
+  <!-- etiquetas -->
+  <line x1="240" y1="105" x2="255" y2="38" stroke="var(--muted)" stroke-width="1"/>
+  <text x="200" y="28" fill="var(--accent)" font-family="inherit" font-size="13">Largueros (spars): las vigas maestras</text>
+
+  <line x1="170" y1="221" x2="150" y2="255" stroke="var(--muted)" stroke-width="1"/>
+  <text x="60" y="270" fill="var(--text)" font-family="inherit" font-size="13">Costillas (ribs): dan la forma curva</text>
+
+  <line x1="330" y1="153" x2="345" y2="250" stroke="var(--muted)" stroke-width="1"/>
+  <text x="290" y="265" fill="var(--muted)" font-family="inherit" font-size="13">Larguerillos (stringers)</text>
+
+  <line x1="452" y1="88" x2="452" y2="150" stroke="var(--muted)" stroke-width="1"/>
+  <text x="358" y="168" fill="var(--ok)" font-family="inherit" font-size="13">Revestimiento (skin)</text>
+
+  <text x="62" y="52" fill="var(--muted)" font-family="inherit" font-size="12">raíz (junto al fuselaje)</text>
+  <text x="360" y="222" fill="var(--muted)" font-family="inherit" font-size="12">punta del ala</text>
+</svg>

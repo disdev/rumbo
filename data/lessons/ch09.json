@@ -1,0 +1,569 @@
+{
+  "chapter": "9",
+  "title": "Manuales de vuelo y otros documentos",
+  "resumen": "Los papeles del avión: el manual que manda (POH/AFM), los documentos que viajan a bordo, las inspecciones que lo mantienen legal y qué hacer cuando algo no funciona.",
+  "sections": [
+    {
+      "id": "9-1",
+      "title": "El manual de TU avión: POH y AFM",
+      "key_points": [
+        "El POH/AFM es el manual de vuelo del avión, aprobado por la autoridad y de cumplimiento obligatorio.",
+        "El AFM corresponde al avión específico, identificado por su número de serie, no al modelo en general.",
+        "El POH es el manual publicado por el fabricante; cuando está aprobado por la autoridad funciona como AFM.",
+        "Volar fuera de lo que dice el manual es ilegal además de peligroso.",
+        "Desde los años 70 casi todos los POH usan el mismo formato estándar (GAMA)."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Dónde están escritas las reglas de tu avión? Piensa en el manual que vive en la guantera de un carro: qué gasolina usa, cuánto aire llevan las llantas, qué significa cada luz del tablero. Tu avión tiene el suyo, pero con fuerza de ley: el **manual de vuelo**, conocido como *POH* o *AFM* por sus siglas en inglés. No es una sugerencia del fabricante: está aprobado por la autoridad aeronáutica, y operar fuera de sus límites es ilegal además de peligroso."
+        },
+        {
+          "type": "text",
+          "md": "¿POH o AFM? El *POH* (Pilot's Operating Handbook) lo publica el fabricante. El *AFM* (Airplane Flight Manual) es el manual aprobado por la autoridad. En los aviones pequeños modernos suelen ser el mismo libro: la portada dice algo como «manual de vuelo aprobado». El detalle que cae en el examen: el AFM pertenece a TU avión exacto, con su número de serie. Dos Cessna 152 «iguales» pueden tener equipos y suplementos distintos."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Desde mediados de los años 70, casi todos los fabricantes ordenan el manual igual (formato **GAMA**, 9 secciones). Apréndete el orden una sola vez y encontrarás cualquier dato en cualquier avión, incluso bajo presión."
+        },
+        {
+          "type": "notebook",
+          "id": "9-1-n1",
+          "prompt": "Escribe en tu cuaderno: «POH = manual del fabricante · AFM = versión aprobada por la autoridad · pertenece a MI avión exacto (número de serie), no al modelo». Debajo dibuja una guantera de carro con un libro que diga LEY."
+        },
+        {
+          "type": "check",
+          "id": "9-1-c1",
+          "q": "El manual de vuelo (AFM) de un avión corresponde a…",
+          "options": [
+            "Al modelo en general: sirve para cualquier avión igual",
+            "A ese avión específico, identificado por su número de serie",
+            "Al fabricante: es el mismo para todos sus modelos"
+          ],
+          "answer": 1,
+          "why": "El AFM se aprueba para un avión concreto; equipos y suplementos varían entre aviones del mismo modelo."
+        }
+      ]
+    },
+    {
+      "id": "9-2",
+      "title": "El mapa del POH: las 9 secciones GAMA",
+      "key_points": [
+        "El formato GAMA ordena el POH en 9 secciones estándar, iguales en casi todos los aviones.",
+        "La sección 2 contiene las limitaciones y la sección 3 los procedimientos de emergencia.",
+        "La sección 5 es performance y la 6 es peso y balance con la lista de equipo.",
+        "La sección 9 (suplementos) guarda los manuales de equipos instalados después, como un GPS.",
+        "El orden estándar permite encontrar cualquier dato rápido, incluso bajo presión."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo encuentras un dato en segundos cuando lo necesitas? Igual que en un videojuego el menú siempre tiene el mismo orden, el POH siempre trae estas 9 secciones: **1 General**, **2 Limitaciones**, **3 Procedimientos de emergencia**, **4 Procedimientos normales**, **5 Performance**, **6 Peso y balance / lista de equipo**, **7 El avión y sus sistemas**, **8 Manejo, servicio y mantenimiento**, **9 Suplementos** — los manuales de equipos instalados después, como un GPS nuevo."
+        },
+        {
+          "type": "diagram",
+          "src": "ch09-poh-secciones.svg",
+          "caption": "El mapa de las 9 secciones GAMA del POH. Las que más usarás en el examen: 2 (limitaciones) y 3 (emergencias)."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "«**G**atos **L**ocos **E**scapan **N**adando; **P**erros **P**esados **S**alen **M**ojados y **S**ucios» → General, Limitaciones, Emergencia, Normales, Performance, Peso y balance, Sistemas, Mantenimiento, Suplementos."
+        },
+        {
+          "type": "notebook",
+          "id": "9-2-n1",
+          "prompt": "Dibuja el mapa de las 9 secciones como una repisa de 9 libros numerados. Pinta de rojo el libro 3 (emergencias, así lo marcan los POH reales) y subraya el 2 (limitaciones)."
+        },
+        {
+          "type": "check",
+          "id": "9-2-c1",
+          "q": "Falla el motor en vuelo y necesitas la lista de pasos. ¿En qué sección del POH está?",
+          "options": [
+            "Sección 2: limitaciones",
+            "Sección 3: procedimientos de emergencia",
+            "Sección 5: performance"
+          ],
+          "answer": 1,
+          "why": "Los procedimientos de emergencia son la sección 3, con bordes rojos para hallarlos rápido."
+        },
+        {
+          "type": "check",
+          "id": "9-2-c2",
+          "q": "Le instalaron un GPS nuevo a tu avión y vino con su propio manualito aprobado. ¿Dónde se guarda?",
+          "options": [
+            "En la sección 9: suplementos",
+            "En la sección 7: sistemas",
+            "No forma parte del POH"
+          ],
+          "answer": 0,
+          "why": "Los suplementos (sección 9) documentan el equipo instalado después de fabricar el avión."
+        }
+      ]
+    },
+    {
+      "id": "9-3",
+      "title": "Limitaciones: las líneas rojas del avión",
+      "key_points": [
+        "Las limitaciones operativas están en la sección 2 del manual de vuelo aprobado y en los placards.",
+        "Incluyen velocidades límite (V-speeds), límites del motor, pesos máximos y envolvente de CG.",
+        "Vne es la línea roja del velocímetro: nunca exceder; Vno es el fin del arco verde.",
+        "Va (velocidad de maniobra) no está marcada en el velocímetro y cambia con el peso.",
+        "Los placards son placas obligatorias en cabina que recuerdan limitaciones.",
+        "En aeronaves experimentales, las limitaciones van adjuntas al certificado de aeronavegabilidad."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué pasa si pasas la línea roja del tacómetro de una moto? El motor sufre y puede romperse. La sección 2 reúne todas las «líneas rojas» de tu avión: **velocidades límite** (las V-speeds), **límites del motor** (RPM, temperatura y presión de aceite), **pesos máximos** (rampa, despegue, aterrizaje), la **envolvente de CG** (dónde puede ir el centro de gravedad) y los **placards**: placas pegadas en cabina que recuerdan límites, como «giros intencionales prohibidos»."
+        },
+        {
+          "type": "table",
+          "headers": ["Velocidad", "Qué significa", "Dónde se ve"],
+          "rows": [
+            ["Vne", "Nunca exceder", "Línea roja del velocímetro"],
+            ["Vno", "Máx. en aire turbulento", "Fin del arco verde"],
+            ["Vfe", "Máx. con flaps extendidos", "Fin del arco blanco"],
+            ["Va", "Máx. de maniobra", "Solo en el POH o placard"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "**Va no está marcada en el velocímetro** y además baja cuando el avión pesa menos. Si te la preguntan: se busca en el POH o en un placard."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta directo: ¿dónde están las limitaciones operativas? → **En el manual de vuelo aprobado por la AAC**. Excepción con trampa: en una aeronave **experimental** o deportiva ligera, van **adjuntas al certificado de aeronavegabilidad**."
+        },
+        {
+          "type": "notebook",
+          "id": "9-3-n1",
+          "prompt": "Copia la tabla de velocidades en tu cuaderno y dibuja un velocímetro con sus arcos: verde (normal), amarillo (precaución), blanco (flaps) y la línea roja (Vne). Escribe al lado: «Va no aparece aquí»."
+        },
+        {
+          "type": "check",
+          "id": "9-3-c1",
+          "q": "¿Dónde se encuentran las limitaciones operativas de una aeronave?",
+          "options": [
+            "En el certificado de aeronavegabilidad",
+            "En el manual de vuelo aprobado por la AAC",
+            "En las bitácoras del motor y la estructura"
+          ],
+          "answer": 1,
+          "why": "Las limitaciones operativas viven en el manual de vuelo aprobado por la autoridad aeronáutica."
+        },
+        {
+          "type": "check",
+          "id": "9-3-c2",
+          "q": "¿Y si la aeronave tiene certificado de aeronavegabilidad experimental?",
+          "options": [
+            "Sus limitaciones van adjuntas al certificado de aeronavegabilidad",
+            "No tiene limitaciones operativas",
+            "Sus limitaciones están en el manual del motor"
+          ],
+          "answer": 0,
+          "why": "En experimentales y deportivas ligeras, las limitaciones se adjuntan al certificado de aeronavegabilidad."
+        }
+      ]
+    },
+    {
+      "id": "9-4",
+      "title": "Checklists: lo normal y lo urgente",
+      "key_points": [
+        "La sección 4 trae los procedimientos normales; la 3, los de emergencia con páginas marcadas en rojo.",
+        "Procedimiento normal: hacer con calma y verificar ítem por ítem, sin improvisar.",
+        "En una emergencia, los primeros pasos críticos se hacen de memoria y luego se confirman con la lista.",
+        "La checklist existe porque la memoria falla bajo estrés; no es opcional.",
+        "Primero volar el avión, luego navegar, al final comunicar."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué pilotos con miles de horas siguen leyendo listas? Porque la memoria falla, sobre todo con estrés — como cuando conoces de memoria el camino a casa pero igual te pierdes si vas apurado y discutiendo. Los **procedimientos normales** (sección 4) se hacen con calma, verificando ítem por ítem: arranque, rodaje, despegue, crucero, aterrizaje. Nada de improvisar «porque ya me lo sé»."
+        },
+        {
+          "type": "text",
+          "md": "¿Y cuando algo sale mal? Los **procedimientos de emergencia** (sección 3, con bordes rojos para hallarlos rápido) funcionan distinto: los primeros pasos críticos — los *memory items* o pasos de memoria — los ejecutas de inmediato, sin leer. Apenas la situación está controlada, sacas la lista y **confirmas** que no te saltaste nada. Primero volar el avión, luego leer."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "La regla de oro en cualquier problema: ***aviate, navigate, communicate*** — primero vuela el avión, luego navega, al final comunica. La checklist te ordena; no reemplaza tu criterio."
+        },
+        {
+          "type": "notebook",
+          "id": "9-4-n1",
+          "prompt": "Escribe dos columnas: NORMAL → «leo y hago, con calma, ítem por ítem» y EMERGENCIA → «pasos críticos de memoria, luego confirmo con la lista». Debajo anota: aviate → navigate → communicate."
+        },
+        {
+          "type": "check",
+          "id": "9-4-c1",
+          "q": "Se apaga el motor en crucero. ¿Cuál es el uso correcto de la checklist de emergencia?",
+          "options": [
+            "Leerla completa antes de tocar cualquier control",
+            "Ejecutar los pasos críticos de memoria y luego confirmar con la lista",
+            "No se usa: en una emergencia todo se hace de memoria"
+          ],
+          "answer": 1,
+          "why": "Primero los pasos de memoria para controlar la situación; después la lista confirma que no faltó nada."
+        }
+      ]
+    },
+    {
+      "id": "9-5",
+      "title": "Los papeles del avión: a bordo siempre",
+      "key_points": [
+        "El avión debe volar con sus documentos a bordo: certificado de matrícula, certificado de aeronavegabilidad, manual de vuelo y libro de a bordo, entre otros.",
+        "El truco americano ARROW resume: aeronavegabilidad, matrícula (registration), radio, limitaciones operativas (manual) y peso y balance.",
+        "En Perú la lista exacta la fija el RAP e incluye además el libro de a bordo y la póliza de seguros.",
+        "El piloto lleva sus propios documentos: licencia apropiada y certificado médico vigente.",
+        "Los documentos se presentan a los inspectores designados por la AAC cuando los soliciten."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué papeles lleva un carro en Perú? Tarjeta de propiedad, SOAT, revisión técnica — y tú, tu brevete. El avión es igual: tiene documentos que DEBEN estar a bordo en cada vuelo, y tú llevas los tuyos (licencia apropiada y certificado médico vigente). Si un inspector de la DGAC te los pide en la plataforma, todo eso se presenta."
+        },
+        {
+          "type": "text",
+          "md": "Los gringos lo memorizan con **ARROW**: **A**irworthiness (certificado de aeronavegabilidad), **R**egistration (certificado de matrícula), **R**adio (permiso de estación, para vuelos internacionales), **O**perating limitations (manual de vuelo y placards) y **W**eight and balance (datos de peso y balance). En Perú la lista exacta la fija el RAP y suma el **libro de a bordo** — la bitácora del avión — y la **póliza de seguros**. ARROW casi calza, pero la respuesta peruana incluye el libro de a bordo."
+        },
+        {
+          "type": "diagram",
+          "src": "ch09-documentos-abordo.svg",
+          "caption": "Los papeles que viajan contigo: como la tarjeta de propiedad y el SOAT del carro, pero del avión."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Pregunta real del banco: además del certificado de aeronavegabilidad, ¿qué debe estar a bordo? → **«Certificado de matrícula, libro de a bordo, entre otros»**. Y el piloto debe portar **licencia apropiada + certificado médico vigente**, presentables ante los **inspectores designados por la AAC**."
+        },
+        {
+          "type": "notebook",
+          "id": "9-5-n1",
+          "prompt": "Dibuja una carpeta con los documentos del avión: matrícula, aeronavegabilidad, manual de vuelo, libro de a bordo, seguro, permiso de radio. Al costado dibuja tu billetera con: licencia + certificado médico."
+        },
+        {
+          "type": "check",
+          "id": "9-5-c1",
+          "q": "Además de un certificado de aeronavegabilidad válido, ¿qué documentos deben estar a bordo durante el vuelo?",
+          "options": [
+            "Las bitácoras de motor y fuselaje y el manual del propietario",
+            "El certificado de matrícula y el libro de a bordo, entre otros",
+            "Solo la licencia del piloto al mando"
+          ],
+          "answer": 1,
+          "why": "A bordo van el certificado de matrícula, el libro de a bordo y los demás documentos que exige el reglamento."
+        },
+        {
+          "type": "check",
+          "id": "9-5-c2",
+          "q": "Como piloto al mando, ¿qué debes tener en tu posesión personal o de fácil acceso en la aeronave?",
+          "options": [
+            "Tu licencia de piloto apropiada y tu certificado médico vigente",
+            "Tu diario de vuelo con toda tu experiencia reciente",
+            "Un certificado de la última inspección anual del avión"
+          ],
+          "answer": 0,
+          "why": "El piloto porta licencia apropiada y certificado médico vigente; las inspecciones se anotan en los registros del avión."
+        }
+      ]
+    },
+    {
+      "id": "9-6",
+      "title": "El certificado de aeronavegabilidad",
+      "key_points": [
+        "El certificado de aeronavegabilidad certifica que el avión es apto para el vuelo; puede ser estándar o especial.",
+        "Estándar: categorías como normal, utilitaria, acrobática o transporte.",
+        "Especial: experimental, restringida, deportiva ligera y permisos especiales de vuelo.",
+        "No vence por fecha: sigue vigente mientras la aeronave se mantenga y opere conforme a los reglamentos.",
+        "Las aeronaves experimentales no vuelan sobre áreas densamente pobladas ni rutas congestionadas sin autorización.",
+        "Debe estar exhibido a bordo, visible para tripulación y pasajeros."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Este avión está «sano» para volar? Eso declara el **certificado de aeronavegabilidad**. Viene en dos sabores: **estándar** (aviones de producción en serie: categorías normal, utilitaria, acrobática, transporte…) y **especial** (experimental, restringida, deportiva ligera, permisos especiales de vuelo, por ejemplo para trasladar un avión al taller). Debe estar exhibido a bordo, visible."
+        },
+        {
+          "type": "text",
+          "md": "¿Y cuándo vence? Aquí está la trampa favorita del examen: **no tiene fecha de vencimiento**. No es como el SOAT que se renueva cada año. Sigue válido **mientras la aeronave se mantenga y opere conforme a los reglamentos**: inspecciones al día, directivas cumplidas, mantenimiento registrado. Descuida el mantenimiento y ese papel, aunque siga pegado en la cabina, ya no vale nada."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Aeronave **experimental**: no puede volar sobre **áreas densamente pobladas** ni por **rutas aéreas congestionadas**, salvo autorización específica. Y recuerda: sus limitaciones van adjuntas al certificado."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco lo pregunta tal cual: ¿cuánto tiempo permanece válido el certificado de aeronavegabilidad? → **mientras la aeronave se mantenga y opere como lo exigen los reglamentos**. Las otras opciones («indefinidamente salvo daños», «mientras esté matriculada») son distractores."
+        },
+        {
+          "type": "notebook",
+          "id": "9-6-n1",
+          "prompt": "Escribe grande: «El certificado de aeronavegabilidad NO vence por fecha: vive mientras el mantenimiento esté al día». Debajo haz dos ramas: ESTÁNDAR (normal, utilitaria, acrobática, transporte) y ESPECIAL (experimental, restringida, deportiva ligera, permiso especial)."
+        },
+        {
+          "type": "check",
+          "id": "9-6-c1",
+          "q": "¿Cuánto tiempo permanece válido el certificado de aeronavegabilidad de una aeronave?",
+          "options": [
+            "Un año, y se renueva con la inspección anual",
+            "Mientras la aeronave se mantenga y opere conforme a los reglamentos",
+            "Indefinidamente, a menos que sufra daños importantes"
+          ],
+          "answer": 1,
+          "why": "No vence por fecha: su vigencia depende de que el mantenimiento y la operación cumplan los reglamentos."
+        },
+        {
+          "type": "check",
+          "id": "9-6-c2",
+          "q": "Sin autorización específica, una aeronave con certificado experimental NO puede operar…",
+          "options": [
+            "De noche en ningún caso",
+            "Sobre áreas densamente pobladas ni rutas aéreas congestionadas",
+            "Fuera de un radio de 25 millas de su base"
+          ],
+          "answer": 1,
+          "why": "La restricción clásica de las experimentales: nada de zonas densamente pobladas ni rutas congestionadas."
+        }
+      ]
+    },
+    {
+      "id": "9-7",
+      "title": "Inspecciones: la anual y la de 100 horas",
+      "key_points": [
+        "La inspección anual se hace cada 12 meses calendario: vence el último día del mes.",
+        "La de 100 horas solo aplica si el avión lleva personas o da instrucción de vuelo por remuneración.",
+        "La de 100 horas puede excederse hasta 10 horas para llegar al taller, pero el exceso se descuenta de las próximas 100.",
+        "Una inspección anual reemplaza a la de 100 horas; una de 100 horas NO reemplaza a la anual.",
+        "La anual la hace un mecánico con habilitación de inspector o un taller aprobado.",
+        "La fecha de la última inspección se busca en los registros de mantenimiento.",
+        "El transpondedor se inspecciona cada 24 meses calendario y el ELT cada 12."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Tu carro pasa revisión técnica cada año, no? Tu avión también: la **inspección anual**, cada **12 meses calendario**. «Meses calendario» significa que vence el **último día del mes**: si la hicieron el 12 de julio, la próxima vence el 31 de julio del año siguiente. La hace un mecánico con habilitación de inspector o un taller aprobado, y la fecha la encuentras en los **registros de mantenimiento**, no en un sticker."
+        },
+        {
+          "type": "text",
+          "md": "¿Y la de **100 horas**? Solo aplica cuando el avión trabaja: lleva personas por remuneración o da instrucción de vuelo pagada (el típico avión de escuela). Se permite excederla hasta **10 horas** para volar hasta el taller — pero el exceso **se descuenta**: si tocaba a las 3302.5 y la hiciste a las 3309.5, la próxima vence a las 3402.5 (3302.5 + 100), no a las 3409.5. Y una **anual reemplaza** a la de 100 horas; al revés, jamás."
+        },
+        {
+          "type": "diagram",
+          "src": "ch09-inspecciones.svg",
+          "caption": "Línea de tiempo de las inspecciones: anual (12 meses calendario), 100 horas (si el avión trabaja por remuneración), transpondedor (24 meses) y ELT (12 meses)."
+        },
+        {
+          "type": "table",
+          "headers": ["Inspección", "Cada cuánto", "¿A quién aplica?"],
+          "rows": [
+            ["Anual", "12 meses calendario", "Todos los aviones"],
+            ["100 horas", "100 h de vuelo", "Si opera por remuneración o instrucción pagada"],
+            ["Transpondedor", "24 meses calendario", "Para poder usarlo en vuelo"],
+            ["ELT", "12 meses calendario", "Todos (su batería tiene reglas propias)"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco adora esta aritmética: anual del 12 de julio → vence el **31 de julio** del año siguiente. Transpondedor probado el 1/9/2020 → vence el **30/9/2022**. 100 h debida a las 3302.5 y hecha a las 3309.5 → la próxima a las **3402.5**. Y la fecha de la última anual se consulta en los **registros de mantenimiento**."
+        },
+        {
+          "type": "notebook",
+          "id": "9-7-n1",
+          "prompt": "Resuelve y anota en tu cuaderno: (1) anual hecha el 12 de julio → ¿cuándo vence? (31 de julio del próximo año). (2) 100 h debida a las 3302.5, hecha a las 3309.5 → ¿la próxima? (3402.5). Escribe las reglas: «meses calendario = hasta fin de mes» y «el exceso se descuenta»."
+        },
+        {
+          "type": "check",
+          "id": "9-7-c1",
+          "q": "Un avión pasó su inspección de 100 horas con el tacómetro en 1259.6. ¿Cuándo vence la próxima?",
+          "options": [
+            "1349.6 horas",
+            "1359.6 horas",
+            "1369.6 horas"
+          ],
+          "answer": 1,
+          "why": "1259.6 + 100 = 1359.6 horas: la siguiente inspección de 100 horas."
+        },
+        {
+          "type": "check",
+          "id": "9-7-c2",
+          "q": "La inspección anual se hizo el 12 de julio de este año. ¿La próxima vence a más tardar…?",
+          "options": [
+            "El 12 de julio del próximo año",
+            "El 1 de julio del próximo año",
+            "El 31 de julio del próximo año"
+          ],
+          "answer": 2,
+          "why": "12 meses calendario: vence el último día del mes, o sea el 31 de julio del año siguiente."
+        }
+      ]
+    },
+    {
+      "id": "9-8",
+      "title": "Mantenimiento: quién puede hacer qué",
+      "key_points": [
+        "El propietario u operador es el responsable principal de mantener la aeronavegabilidad de la aeronave.",
+        "El propietario u operador también responde por que se hagan las anotaciones correctas en los registros de mantenimiento.",
+        "El piloto al mando determina antes de cada vuelo si la aeronave está en condiciones de volar seguro.",
+        "La aeronavegabilidad se verifica con la inspección prevuelo más la revisión de los registros de mantenimiento.",
+        "Un piloto privado puede hacer mantenimiento preventivo simple en un avión que posea u opere, y debe anotarlo en los registros.",
+        "Reparaciones y alteraciones mayores requieren mecánico, datos aprobados y registro formal; las menores, una anotación del mecánico."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Quién responde por el avión? Dos respuestas distintas, y el examen las cruza a propósito. El **propietario u operador** es responsable de **mantener** la aeronavegabilidad: que las inspecciones se hagan, las directivas se cumplan y todo quede anotado en los registros. Pero el **piloto al mando** — tú — decide antes de **cada vuelo** si el avión está en condiciones de volar seguro: inspección prevuelo + revisión de los registros de mantenimiento."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Trampa clásica del banco: «¿quién es responsable de MANTENER la aeronavegabilidad?» → **propietario u operador**. «¿Quién determina si está en condiciones para ESTE vuelo?» → **el piloto al mando**. Lee el verbo con lupa."
+        },
+        {
+          "type": "text",
+          "md": "¿Puedes tú tocar el avión con herramientas? Un poco, sí: el **mantenimiento preventivo** — tareas simples como cambiar el aceite, las bujías, focos quemados o inflar las llantas — lo puede hacer un piloto (privado o superior) en un avión que posea u opere, anotándolo en los registros: qué hizo, fecha, firma y número de licencia. Las **reparaciones o alteraciones mayores** exigen mecánico, datos aprobados y registro formal ante la autoridad; las **menores**, una anotación del mecánico."
+        },
+        {
+          "type": "notebook",
+          "id": "9-8-n1",
+          "prompt": "Haz tres tarjetas en tu cuaderno: PROPIETARIO/OPERADOR → mantiene la aeronavegabilidad y los registros · PILOTO AL MANDO → decide antes de cada vuelo · PILOTO-PROPIETARIO → mantenimiento preventivo simple (aceite, bujías, llantas) + anotarlo en los registros."
+        },
+        {
+          "type": "check",
+          "id": "9-8-c1",
+          "q": "¿Quién es el responsable principal de asegurar que la aeronave SE MANTENGA en condiciones de aeronavegabilidad?",
+          "options": [
+            "El piloto al mando",
+            "El propietario u operador",
+            "El mecánico que realiza el trabajo"
+          ],
+          "answer": 1,
+          "why": "Mantener la aeronavegabilidad (inspecciones, directivas, registros) es responsabilidad del propietario u operador."
+        },
+        {
+          "type": "check",
+          "id": "9-8-c2",
+          "q": "La aeronavegabilidad antes de un vuelo se determina con la inspección prevuelo y…",
+          "options": [
+            "Una declaración escrita del propietario",
+            "La revisión de los registros de mantenimiento",
+            "El visto bueno de un instructor de vuelo"
+          ],
+          "answer": 1,
+          "why": "Prevuelo + registros de mantenimiento: así confirma el piloto al mando que el avión puede volar."
+        }
+      ]
+    },
+    {
+      "id": "9-9",
+      "title": "AD vs boletín de servicio: orden vs consejo",
+      "key_points": [
+        "Una directiva de aeronavegabilidad (AD) la emite la autoridad para corregir una condición insegura y es obligatoria: es ley.",
+        "No se puede operar una aeronave que no cumpla una AD aplicable.",
+        "Las AD pueden ser de emergencia (cumplimiento inmediato) o con plazo, y de una sola vez o recurrentes.",
+        "El cumplimiento de las AD se demuestra en los registros de mantenimiento.",
+        "El responsable de cumplir las AD es el propietario u operador.",
+        "Un boletín de servicio (SB) es una recomendación del fabricante: voluntario, salvo que una AD lo vuelva obligatorio."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cuál es la diferencia entre una orden del profesor y un consejo de tu pata? Esa es exactamente la diferencia entre una **directiva de aeronavegabilidad (AD)** y un **boletín de servicio (SB)**. La AD la emite la **autoridad** (DGAC, FAA) cuando descubre una condición insegura en un modelo: es **ley**. No puedes volar un avión que no cumpla sus AD aplicables. El SB lo publica el **fabricante**: es una recomendación — buena idea, pero voluntaria… salvo que una AD lo haga obligatorio."
+        },
+        {
+          "type": "diagram",
+          "src": "ch09-ad-vs-sb.svg",
+          "caption": "AD: orden de la autoridad, obligatoria. Boletín de servicio: consejo del fabricante, recomendado."
+        },
+        {
+          "type": "text",
+          "md": "Las AD vienen en dos urgencias: de **emergencia** (cumplimiento inmediato, a veces antes del siguiente vuelo) y con **plazo definido** (tantas horas o días para cumplir). Algunas son de **una sola vez**; otras, **recurrentes** — por ejemplo, inspeccionar cada 50 horas. ¿Cómo demuestras que están cumplidas? Con los **registros de mantenimiento**. ¿Y de quién es la responsabilidad? Del **propietario u operador**."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta las cuatro caras: ¿las AD son…? → **obligatorias**. ¿Puedes volar sin cumplirlas? → **no**. ¿Dónde se demuestra su cumplimiento? → **registros de mantenimiento**. ¿Responsable? → **propietario u operador**."
+        },
+        {
+          "type": "notebook",
+          "id": "9-9-n1",
+          "prompt": "Dibuja dos sellos: uno rojo «AD = ORDEN de la autoridad, obligatoria, se registra» y uno gris «SB = CONSEJO del fabricante, voluntario». Traza una flecha del gris al rojo con la nota: «una AD puede volver obligatorio un SB»."
+        },
+        {
+          "type": "check",
+          "id": "9-9-c1",
+          "q": "¿Qué debe saber un propietario u operador sobre las directivas de aeronavegabilidad (AD)?",
+          "options": [
+            "Son solo con fines informativos",
+            "Son obligatorias",
+            "Son voluntarias"
+          ],
+          "answer": 1,
+          "why": "Las AD son de cumplimiento obligatorio: corrigen condiciones inseguras detectadas por la autoridad."
+        },
+        {
+          "type": "check",
+          "id": "9-9-c2",
+          "q": "¿Qué registros demuestran el cumplimiento de una AD aplicable?",
+          "options": [
+            "Los registros de mantenimiento de la aeronave",
+            "El certificado de aeronavegabilidad",
+            "El certificado de matrícula"
+          ],
+          "answer": 0,
+          "why": "El cumplimiento de las AD se anota y se demuestra en los registros de mantenimiento."
+        }
+      ]
+    },
+    {
+      "id": "9-10",
+      "title": "¿Y si algo no funciona? MEL y equipo inoperativo",
+      "key_points": [
+        "No todo equipo inoperativo deja al avión en tierra: depende de si el equipo es requerido.",
+        "La MEL es una lista aprobada por la autoridad, específica del avión, que dice con qué equipo inoperativo se puede volar y en qué condiciones.",
+        "Sin MEL, el equipo malogrado no debe ser requerido por la certificación de tipo, el reglamento para ese vuelo, una AD ni el POH.",
+        "El equipo inoperativo se desactiva o remueve y se rotula «INOPERATIVO».",
+        "La decisión final sobre la seguridad del vuelo es del piloto al mando."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Puede rodar un carro con la luz de la maletera quemada? Sí. ¿Sin frenos? Ni hablar. Con el avión pasa igual: no todo lo inoperativo te deja en tierra — depende de si el equipo es **requerido**. La herramienta formal es la **MEL** (*Minimum Equipment List*, lista de equipo mínimo): una lista **aprobada por la autoridad y específica de tu avión** que dice exactamente con qué cosas malogradas puedes volar y en qué condiciones."
+        },
+        {
+          "type": "text",
+          "md": "¿Y si tu avioncito de escuela no tiene MEL? Aplicas el filtro: el equipo malogrado **no** debe ser requerido por (1) la **certificación de tipo** para vuelo VFR de día, (2) el **reglamento** para el tipo de vuelo que harás, (3) una **AD**, ni (4) la lista de equipo del POH como «requerido». Si pasa el filtro: se **desactiva o remueve** y se coloca el letrero **«INOPERATIVO»**. El último filtro eres tú: el piloto decide si así el vuelo es seguro."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Nada de «ya, igual volamos»: equipo malogrado → filtro (¿es requerido?) → desactivar o remover → letrero **INOPERATIVO** → decisión final del piloto. Ese orden, siempre."
+        },
+        {
+          "type": "notebook",
+          "id": "9-10-n1",
+          "prompt": "Dibuja el flujo de decisión: ALGO NO FUNCIONA → ¿hay MEL? SÍ: sigue la MEL · NO: ¿lo exige la certificación de tipo, el reglamento, una AD o el POH? SÍ: no vuelas · NO: desactiva + letrero INOPERATIVO + tu decisión final como piloto."
+        },
+        {
+          "type": "check",
+          "id": "9-10-c1",
+          "q": "Un instrumento no requerido para tu vuelo VFR de día está malogrado y tu avión no tiene MEL. ¿Qué corresponde?",
+          "options": [
+            "Volar sin hacer nada: total, no es requerido",
+            "Desactivarlo o removerlo, rotularlo «INOPERATIVO» y decidir si el vuelo es seguro",
+            "El avión queda en tierra hasta repararlo, siempre"
+          ],
+          "answer": 1,
+          "why": "Si no es requerido, se desactiva o remueve, se coloca el letrero INOPERATIVO y el piloto toma la decisión final."
+        }
+      ]
+    }
+  ]
+}

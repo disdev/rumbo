@@ -1,0 +1,35 @@
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  <!-- Encendido dual: dos magnetos, dos bujías por cilindro -->
+  <g stroke="var(--text)" stroke-width="2" fill="none">
+    <!-- magnetos -->
+    <rect x="30" y="60" width="90" height="46" rx="6" fill="var(--panel-2)"/>
+    <rect x="30" y="190" width="90" height="46" rx="6" fill="var(--panel-2)"/>
+    <!-- cilindro -->
+    <rect x="300" y="90" width="120" height="120" rx="8" fill="var(--panel-2)"/>
+    <!-- bujías -->
+    <circle cx="330" cy="90" r="8" fill="var(--ok)" stroke="var(--text)"/>
+    <circle cx="390" cy="210" r="8" fill="var(--accent)" stroke="var(--text)"/>
+    <!-- cables de alta tensión -->
+    <path d="M120 83 L330 83 L330 82" stroke="var(--ok)" stroke-width="2.5"/>
+    <path d="M120 213 L390 213" stroke="var(--accent)" stroke-width="2.5"/>
+    <!-- chispas -->
+    <path d="M330 100 L325 112 L333 110 L328 122" stroke="var(--ok)" stroke-width="2"/>
+    <path d="M390 200 L385 188 L393 190 L388 178" stroke="var(--accent)" stroke-width="2"/>
+    <!-- interruptor de encendido -->
+    <circle cx="180" cy="150" r="30" fill="var(--panel-2)"/>
+    <line x1="180" y1="150" x2="198" y2="128" stroke="var(--text)" stroke-width="3"/>
+  </g>
+  <g fill="var(--text)" font-size="13">
+    <text x="36" y="52">magneto IZQ</text>
+    <text x="36" y="256">magneto DER</text>
+    <text x="308" y="76">bujía superior</text>
+    <text x="330" y="240">bujía inferior</text>
+    <text x="310" y="156" font-size="14">cilindro</text>
+    <text x="146" y="200">llave: OFF·R·L</text>
+    <text x="150" y="216">BOTH·START</text>
+  </g>
+  <g fill="var(--bad)" font-size="13">
+    <text x="30" y="24">Independientes de la batería:</text>
+    <text x="30" y="40" font-size="12">cada magneto genera su propia chispa al girar el motor.</text>
+  </g>
+</svg>

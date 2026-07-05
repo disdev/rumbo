@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" font-family="inherit">
+  <defs>
+    <marker id="k5d-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker>
+    <marker id="k5d-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--ok)"/></marker>
+    <marker id="k5d-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--bad)"/></marker>
+  </defs>
+  <text x="210" y="20" fill="var(--muted)" font-size="12" text-anchor="middle">Visto desde arriba — los tres ejes se cruzan en el CG</text>
+  <g stroke="var(--text)" stroke-width="2" fill="var(--panel-2)">
+    <ellipse cx="210" cy="160" rx="13" ry="88"/>
+    <rect x="100" y="149" width="220" height="17" rx="8"/>
+    <rect x="168" y="226" width="84" height="12" rx="6"/>
+  </g>
+  <line x1="210" y1="42" x2="210" y2="282" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+  <path d="M188 62 A 24 14 0 1 0 232 62" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#k5d-acc)"/>
+  <text x="300" y="284" fill="var(--accent)" font-size="13" text-anchor="middle">Eje longitudinal → alabeo (roll)</text>
+  <line x1="46" y1="157" x2="374" y2="157" stroke="var(--ok)" stroke-width="2" stroke-dasharray="7 5"/>
+  <path d="M356 137 A 14 22 0 1 1 356 179" fill="none" stroke="var(--ok)" stroke-width="2" marker-end="url(#k5d-ok)"/>
+  <text x="325" y="122" fill="var(--ok)" font-size="13" text-anchor="middle">Eje lateral → cabeceo (pitch)</text>
+  <circle cx="210" cy="157" r="6" fill="var(--bad)"/>
+  <circle cx="210" cy="157" r="13" fill="none" stroke="var(--bad)" stroke-width="2"/>
+  <path d="M232 140 A 30 30 0 0 1 240 168" fill="none" stroke="var(--bad)" stroke-width="2" marker-end="url(#k5d-bad)"/>
+  <text x="112" y="196" fill="var(--bad)" font-size="13" text-anchor="middle">Eje vertical (sale hacia ti)</text>
+  <text x="112" y="212" fill="var(--bad)" font-size="13" text-anchor="middle">→ guiñada (yaw)</text>
+  <text x="192" y="152" fill="var(--text)" font-size="12" text-anchor="end">CG</text>
+</svg>

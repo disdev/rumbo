@@ -1,0 +1,31 @@
+<svg viewBox="0 0 440 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cómo leer techo y piso de un espacio aéreo en la carta: el número de arriba es el techo y el de abajo es el piso; SFC significa superficie">
+  <!-- etiqueta TMA -->
+  <rect x="40" y="40" width="150" height="90" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="58" y="65" fill="var(--accent)" font-family="inherit" font-size="14" font-weight="bold">TMA (C)</text>
+  <text x="58" y="90" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">FL245</text>
+  <line x1="58" y1="98" x2="140" y2="98" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="58" y="118" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">4500 ft</text>
+
+  <!-- flechas techo/piso -->
+  <line x1="200" y1="86" x2="255" y2="66" stroke="var(--muted)" stroke-width="1"/>
+  <text x="260" y="62" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">arriba = TECHO</text>
+  <text x="260" y="78" fill="var(--muted)" font-family="inherit" font-size="12">hasta dónde llega</text>
+
+  <line x1="200" y1="112" x2="255" y2="126" stroke="var(--muted)" stroke-width="1"/>
+  <text x="260" y="124" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">abajo = PISO</text>
+  <text x="260" y="140" fill="var(--muted)" font-family="inherit" font-size="12">dónde empieza</text>
+
+  <!-- etiqueta CTR con SFC -->
+  <rect x="40" y="155" width="150" height="75" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+  <text x="58" y="178" fill="var(--ok)" font-family="inherit" font-size="14" font-weight="bold">CTR (D)</text>
+  <text x="58" y="200" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">3500 ft</text>
+  <line x1="58" y1="208" x2="140" y2="208" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="58" y="226" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">SFC</text>
+
+  <line x1="200" y1="215" x2="255" y2="205" stroke="var(--muted)" stroke-width="1"/>
+  <text x="260" y="200" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">SFC = superficie</text>
+  <text x="260" y="216" fill="var(--muted)" font-family="inherit" font-size="12">la CTR empieza</text>
+  <text x="260" y="231" fill="var(--muted)" font-family="inherit" font-size="12">en el suelo</text>
+
+  <text x="40" y="25" fill="var(--muted)" font-family="inherit" font-size="12">Así aparece en la carta aeronáutica:</text>
+</svg>

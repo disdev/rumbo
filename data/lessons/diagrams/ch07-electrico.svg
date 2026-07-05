@@ -1,0 +1,44 @@
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  <!-- Sistema eléctrico: batería - alternador - bus -->
+  <g stroke="var(--text)" stroke-width="2" fill="none">
+    <!-- batería -->
+    <rect x="30" y="120" width="80" height="50" rx="6" fill="var(--panel-2)"/>
+    <!-- alternador -->
+    <circle cx="70" cy="240" r="30" fill="var(--panel-2)"/>
+    <!-- master switch -->
+    <rect x="150" y="128" width="24" height="34" rx="4" fill="var(--panel-2)"/>
+    <line x1="162" y1="152" x2="170" y2="136" stroke="var(--accent)" stroke-width="2.5"/>
+    <!-- amperímetro -->
+    <circle cx="230" cy="90" r="22" fill="var(--panel-2)"/>
+    <line x1="230" y1="90" x2="240" y2="76" stroke="var(--accent)" stroke-width="2"/>
+    <!-- bus -->
+    <rect x="280" y="60" width="18" height="180" fill="var(--accent)" stroke="none"/>
+    <!-- cables -->
+    <path d="M110 145 L150 145 M174 145 L230 145 L230 112" stroke="var(--text)"/>
+    <path d="M230 145 L280 145" stroke="var(--text)"/>
+    <path d="M100 240 L280 240" stroke="var(--text)"/>
+    <path d="M70 170 L70 210" stroke="var(--muted)" stroke-dasharray="4 4"/>
+    <!-- cargas con breakers -->
+    <g stroke="var(--text)">
+      <line x1="298" y1="80" x2="340" y2="80"/><circle cx="348" cy="80" r="7" fill="var(--panel-2)"/>
+      <line x1="298" y1="130" x2="340" y2="130"/><circle cx="348" cy="130" r="7" fill="var(--panel-2)"/>
+      <line x1="298" y1="180" x2="340" y2="180"/><circle cx="348" cy="180" r="7" fill="var(--panel-2)"/>
+    </g>
+  </g>
+  <g fill="var(--text)" font-size="13">
+    <text x="38" y="112">batería 12/24 V</text>
+    <text x="38" y="286">alternador</text>
+    <text x="140" y="118">master</text>
+    <text x="196" y="56">amperímetro</text>
+    <text x="262" y="52">bus</text>
+    <text x="362" y="84">luces</text>
+    <text x="362" y="134">radios</text>
+    <text x="362" y="184">flaps eléctricos</text>
+    <text x="304" y="215" font-size="12" fill="var(--muted)">○ = fusible / breaker</text>
+    <text x="120" y="258" font-size="12" fill="var(--muted)">carga la batería y alimenta el bus</text>
+  </g>
+  <g fill="var(--bad)" font-size="13">
+    <text x="30" y="30">¡Los magnetos NO están aquí!</text>
+    <text x="30" y="46" font-size="12">El motor sigue andando aunque todo esto falle.</text>
+  </g>
+</svg>

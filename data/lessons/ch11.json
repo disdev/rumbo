@@ -1,0 +1,519 @@
+{
+  "chapter": "11",
+  "title": "Performance de la aeronave",
+  "resumen": "Cuánta pista necesitas, qué tan rápido subes y por qué el mismo avión rinde distinto en la costa que en la sierra: los números que te dicen si el vuelo de hoy es seguro.",
+  "sections": [
+    {
+      "id": "11-1",
+      "title": "La atmósfera estándar: la regla para medir el aire",
+      "key_points": [
+        "La atmósfera estándar (ISA) es la referencia contra la que se calculan todas las tablas de performance.",
+        "Los valores estándar al nivel del mar son 15 °C (59 °F) y 29.92 inHg (1013.2 hPa).",
+        "En un día estándar la temperatura baja unos 2 °C por cada 1,000 ft de altura.",
+        "La presión baja aproximadamente 1 inHg por cada 1,000 ft de altura.",
+        "El día real casi nunca es estándar: por eso existen las correcciones de altitud de presión y densidad."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo comparas el rendimiento de un avión en Lima, en Cusco y en Iquitos, si el aire es distinto en cada sitio? Los ingenieros inventaron un aire de referencia: la **atmósfera estándar internacional (ISA)**. Es como las medidas oficiales de una cancha de fútbol: casi ninguna cancha de barrio las cumple, pero todas se comparan contra ellas. Todas las tablas de performance de tu avión están calculadas contra la ISA."
+        },
+        {
+          "type": "table",
+          "headers": ["Dato", "Valor estándar"],
+          "rows": [
+            ["Temperatura al nivel del mar", "15 °C (59 °F)"],
+            ["Presión al nivel del mar", "29.92 inHg (1013.2 hPa)"],
+            ["Temperatura al subir", "baja ~2 °C por 1,000 ft"],
+            ["Presión al subir", "baja ~1 inHg por 1,000 ft"]
+          ]
+        },
+        {
+          "type": "diagram",
+          "src": "ch11-escalera-isa.svg",
+          "caption": "La escalera ISA: cada 1,000 ft que subes, el día estándar resta 2 °C y ~1 inHg."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco lo pregunta tal cual: *¿valores estándar de temperatura y presión al nivel del mar?* → **15 °C y 29.92\" Hg**. Ojo con los distractores que mezclan 59 con °C o milibares con inHg."
+        },
+        {
+          "type": "notebook",
+          "id": "11-1-n1",
+          "prompt": "Dibuja tu propia escalera ISA de 0 a 5,000 ft: en cada escalón de 1,000 ft escribe la temperatura y la presión estándar (empieza con 15 °C y 29.92 inHg abajo). Enciérrala en un recuadro: la vas a usar todo el capítulo."
+        },
+        {
+          "type": "check",
+          "id": "11-1-c1",
+          "q": "En un día estándar, ¿qué temperatura esperas a 4,000 ft?",
+          "options": ["7 °C", "11 °C", "−8 °C"],
+          "answer": 0,
+          "why": "15 − 2 × 4 = 7 °C: la ISA resta 2 °C por cada 1,000 ft."
+        },
+        {
+          "type": "check",
+          "id": "11-1-c2",
+          "q": "¿Cuáles son los valores estándar de temperatura y presión al nivel del mar?",
+          "options": ["15 °C y 29.92\" Hg", "59 °C y 1,013.2 milibares", "59 °F y 29.92 milibares"],
+          "answer": 0,
+          "why": "15 °C (que son 59 °F) y 29.92 inHg (1,013.2 hPa); las otras opciones mezclan las unidades."
+        }
+      ]
+    },
+    {
+      "id": "11-2",
+      "title": "Altitud de presión: la altura sobre el plano estándar",
+      "key_points": [
+        "La altitud de presión (PA) es lo que marca el altímetro con 29.92 en la ventanilla.",
+        "Es la altura sobre el plano de presión estándar, no sobre el terreno ni sobre el mar real.",
+        "Se puede calcular: PA = elevación + (29.92 − ajuste del altímetro) × 1,000.",
+        "Presión más alta que 29.92 da una PA menor que la elevación; presión más baja, una PA mayor.",
+        "La PA es el dato de entrada de casi todas las tablas de performance."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "Si cada aeropuerto ajusta su altímetro con una presión distinta, ¿cómo hacemos tablas que sirvan para todos? Fácil: usamos una referencia común. La **altitud de presión (pressure altitude, PA)** es la altura que marca tu altímetro cuando pones **29.92** en la ventanilla — tu altura sobre el plano de presión estándar. No es tu altura sobre el suelo: es tu \"dirección\" en el mundo ISA, y es lo primero que piden las tablas de performance."
+        },
+        {
+          "type": "text",
+          "md": "También la puedes calcular sin tocar el altímetro: **PA = elevación + (29.92 − ajuste) × 1,000**. Ejemplo del banco: aeropuerto a 3,563 ft, ajuste 29.96. PA = 3,563 + (29.92 − 29.96) × 1,000 = 3,563 − 40 = **3,523 ft**. Fíjate en el signo: presión real más alta que 29.92 → PA *menor* que la elevación; presión más baja → PA *mayor*."
+        },
+        {
+          "type": "guided_math",
+          "family": "altitudes",
+          "tier": 1
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Las preguntas de la Figura 8 del banco dan **elevación + ajuste del altímetro** y piden la PA. Con la fórmula llegas a ±10 ft de la respuesta: elige la opción más cercana."
+        },
+        {
+          "type": "notebook",
+          "id": "11-2-n1",
+          "prompt": "Copia en grande la fórmula PA = elevación + (29.92 − ajuste) × 1,000 y resuelve este caso del banco: elevación 1,386 ft, ajuste 29.97. Escribe cada paso. (Debes llegar cerca de 1,336 ft; el banco redondea a 1,341.)"
+        },
+        {
+          "type": "check",
+          "id": "11-2-c1",
+          "q": "Estás en un aeropuerto al nivel del mar (elevación 0) y el ajuste del altímetro es 28.92. ¿Cuál es la altitud de presión?",
+          "options": ["1,000 ft", "−1,000 ft", "0 ft"],
+          "answer": 0,
+          "why": "PA = 0 + (29.92 − 28.92) × 1,000 = +1,000 ft: presión baja → PA mayor que la elevación."
+        }
+      ]
+    },
+    {
+      "id": "11-3",
+      "title": "Altitud de densidad: la altura que tu avión SIENTE",
+      "key_points": [
+        "La altitud de densidad (DA) es la altitud de presión corregida por temperatura no estándar.",
+        "Regla rápida: DA = PA + 120 × (OAT − temperatura ISA), con la desviación en °C.",
+        "La temperatura ISA a tu PA es 15 − 2 × (PA ÷ 1,000).",
+        "Si la OAT es más cálida que la estándar, la DA es MAYOR que la PA.",
+        "El calor y la presión baja aumentan la DA; el frío y la presión alta la reducen.",
+        "El avión rinde según su DA, no según la altura del terreno."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Has visto a un equipo de la costa jugar en Cusco? Se cansan al toque: en cada respiro entra menos aire. A tu avión le pasa exactamente igual. La **altitud de densidad (density altitude, DA)** es la altura a la que el aire \"se siente\" según su densidad: la altitud de presión corregida por temperatura. Aire caliente = aire menos denso = tu avión se comporta como si estuviera **más alto** de lo que realmente está."
+        },
+        {
+          "type": "text",
+          "md": "Regla rápida: **DA = PA + 120 × (OAT − temp ISA)**. Primero saca la temp ISA a tu PA: 15 − 2 × (PA ÷ 1,000). Ejemplo: PA 5,000 ft y OAT 25 °C. Temp ISA = 15 − 10 = 5 °C. Sobran 20 °C. DA = 5,000 + 120 × 20 = **7,400 ft**. Estás parado a 5,000 ft, pero tu avión despega como si estuviera a 7,400."
+        },
+        {
+          "type": "diagram",
+          "src": "ch11-pa-da-flujo.svg",
+          "caption": "El flujo completo: elevación + ajuste → altitud de presión → + corrección por temperatura → altitud de densidad."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Pregunta directa del banco: *si la OAT es más cálida que la estándar, la DA es…* → **mayor que la PA**. Y: *¿qué factor incrementa la DA?* → **el aumento de la temperatura** (no la presión alta ni la humedad baja — esas la reducen)."
+        },
+        {
+          "type": "notebook",
+          "id": "11-3-n1",
+          "prompt": "Escribe la cadena completa con flechas: día caliente → aire menos denso → DA sube → el avión 'cree' que vuela más alto → menos performance. Luego calcula la DA para PA 3,000 ft y OAT 21 °C (respuesta: temp ISA 9 °C, sobran 12 °C, DA = 4,440 ft)."
+        },
+        {
+          "type": "check",
+          "id": "11-3-c1",
+          "q": "Si la temperatura del aire a una altitud dada es más cálida que la estándar, la altitud de densidad es…",
+          "options": ["igual a la altitud de presión", "menor que la altitud de presión", "mayor que la altitud de presión"],
+          "answer": 2,
+          "why": "Aire más caliente que ISA = menos denso = el avión 'siente' una altitud mayor."
+        },
+        {
+          "type": "check",
+          "id": "11-3-c2",
+          "q": "¿Qué factor tiende a incrementar la altitud de densidad en un aeropuerto?",
+          "options": ["Un aumento de la presión barométrica", "Un aumento de la temperatura ambiente", "Una disminución de la humedad relativa"],
+          "answer": 1,
+          "why": "Más calor = aire menos denso = DA más alta; presión alta y humedad baja hacen lo contrario."
+        }
+      ]
+    },
+    {
+      "id": "11-4",
+      "title": "Alta, caliente y húmeda: el avión flojo",
+      "key_points": [
+        "La DA alta golpea tres veces: el ala sustenta menos, la hélice empuja menos y el motor produce menos potencia.",
+        "La hélice pierde eficiencia porque sus palas muerden aire menos denso y ejercen menos fuerza.",
+        "El motor aspirado pierde potencia porque aspira menos masa de aire (menos oxígeno).",
+        "La humedad alta también reduce la performance: el vapor de agua es más ligero que el aire seco.",
+        "Alta temperatura + alta humedad + alta DA es la peor combinación para despegue y ascenso."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué los pilotos le tienen respeto a un día \"alto, caliente y húmedo\"? Porque el aire delgado golpea **tres veces a la vez**: el **ala** genera menos sustentación (menos moléculas que desviar), la **hélice** agarra menos aire y ejerce menos fuerza (menos empuje), y el **motor** aspirado respira menos oxígeno (menos potencia). Resultado: carrera de despegue más larga, ascenso más pobre y una pista que de pronto queda corta."
+        },
+        {
+          "type": "text",
+          "md": "¿Y la humedad? Suena raro, pero el vapor de agua **pesa menos** que el aire seco: aire húmedo = aire menos denso. Las cartas de performance normalmente no la incluyen, así que en un día húmedo espera *un poquito menos de todo* y date margen extra. La combinación completa — alta, caliente y húmeda — es la peor."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**Alta, caliente y húmeda = avión flojo.** Si el día se siente pesado para ti, el aire está \"aguado\" para tu avión."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Tres preguntas típicas del banco: *¿qué combinación reduce despegue y ascenso?* → **alta temperatura, alta humedad, alta DA**. *¿Efecto de la DA alta?* → **reduce el rendimiento de ascenso**. *¿La hélice?* → **pierde eficiencia porque ejerce menos fuerza en aire menos denso**."
+        },
+        {
+          "type": "notebook",
+          "id": "11-4-n1",
+          "prompt": "Dibuja un avión y márcale los tres golpes de la DA alta con una flecha hacia abajo en cada uno: ALA (menos sustentación), HÉLICE (menos empuje), MOTOR (menos potencia). Abajo escribe la frase completa: 'alta, caliente y húmeda = avión flojo'."
+        },
+        {
+          "type": "check",
+          "id": "11-4-c1",
+          "q": "¿Qué combinación de condiciones atmosféricas reduce más el despegue y el ascenso?",
+          "options": ["Baja temperatura, baja humedad y DA baja", "Alta temperatura, baja humedad y DA baja", "Alta temperatura, alta humedad y DA alta"],
+          "answer": 2,
+          "why": "Las tres condiciones reducen la densidad del aire a la vez: menos sustentación, menos empuje y menos potencia."
+        },
+        {
+          "type": "check",
+          "id": "11-4-c2",
+          "q": "¿Por qué la hélice pierde eficiencia con altitud de densidad alta?",
+          "options": ["Por la mayor fricción en las palas", "Porque ejerce menos fuerza al morder aire menos denso", "Porque gira más lento a mayor altitud"],
+          "answer": 1,
+          "why": "Las palas son perfiles aerodinámicos: con aire menos denso producen menos fuerza, igual que el ala."
+        }
+      ]
+    },
+    {
+      "id": "11-5",
+      "title": "Despegue: los cinco factores que alargan la pista",
+      "key_points": [
+        "Más peso alarga la carrera: el avión acelera más lento y necesita más velocidad para despegar.",
+        "El viento de frente acorta la carrera; el viento de cola la alarga muchísimo más.",
+        "La pendiente cuesta arriba y las superficies blandas (pasto, arena, barro) alargan la carrera.",
+        "La altitud de densidad alta alarga la carrera y empobrece el ascenso inicial.",
+        "Si puedes elegir, despega contra el viento y cuesta abajo… y calcula antes de confiar."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "Imagina tu moto con dos pasajeros, subiendo una cuesta, sobre arena. ¿Acelera igual que tú solo, en bajada y sobre asfalto? Jamás. El despegue funciona igual. Cinco factores deciden cuánta pista comes: **peso** (aceleras más lento y necesitas más velocidad para volar), **viento** (de frente acorta, de cola alarga), **pendiente** (cuesta arriba alarga), **superficie** (pasto, arena o barro frenan las ruedas) y **altitud de densidad** (aire delgado = todo peor)."
+        },
+        {
+          "type": "diagram",
+          "src": "ch11-factores-despegue.svg",
+          "caption": "Los cinco factores del despegue. Fíjate cuáles alargan la carrera (rojo) y cuál es el único que la acorta."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "El **viento de cola es traicionero**: unos pocos nudos de cola alargan la carrera MUCHO más de lo que los mismos nudos de frente la acortan. Si puedes elegir pista, despega **contra el viento**, aunque implique rodar más lejos."
+        },
+        {
+          "type": "notebook",
+          "id": "11-5-n1",
+          "prompt": "Haz una tabla de dos columnas: 'ALARGA la carrera' y 'ACORTA la carrera'. Reparte: peso alto, viento de frente, viento de cola, cuesta arriba, cuesta abajo, pasto alto, DA alta, día frío. Revisa con el diagrama."
+        },
+        {
+          "type": "check",
+          "id": "11-5-c1",
+          "q": "¿Cuál de estas condiciones ACORTA la carrera de despegue?",
+          "options": ["Viento de frente", "Pista de pasto alto", "Pendiente cuesta arriba"],
+          "answer": 0,
+          "why": "El viento de frente te regala velocidad de aire antes de moverte; las otras dos frenan o retrasan la aceleración."
+        }
+      ]
+    },
+    {
+      "id": "11-6",
+      "title": "Leer la tabla de despegue del POH",
+      "key_points": [
+        "Las tablas de despegue del POH entran con altitud de presión, temperatura, peso y viento.",
+        "Devuelven dos números: carrera en tierra y distancia total para librar un obstáculo de 50 ft.",
+        "Las notas de la tabla son obligatorias: dicen cuánto corregir por viento o por superficie.",
+        "Si tus condiciones caen entre dos filas, se interpola (se toma el valor proporcional intermedio).",
+        "La trampa clásica del examen es ignorar las notas o leer la columna equivocada."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cuántos metros de pista necesitas HOY? No se adivina: se **lee** en el POH (el manual de tu avión). Las tablas de despegue entran con **altitud de presión, temperatura, peso y viento**, y devuelven dos números: la **carrera en tierra** (ground roll) y la **distancia total para librar un obstáculo de 50 ft**. Esa segunda es la que manda cuando hay árboles o cables al final."
+        },
+        {
+          "type": "text",
+          "md": "Las **notas** al pie de la tabla son ley: dicen cuánto restar por cada tanto de viento de frente, cuánto sumar por viento de cola o por pista de pasto. Y si tu condición cae entre dos filas (por ejemplo, entre 2,000 y 4,000 ft), **interpolas**: tomas el valor proporcional intermedio. La trampa clásica del examen: ignorar las notas o leer \"carrera en tierra\" cuando pedían \"total sobre el obstáculo\"."
+        },
+        {
+          "type": "table",
+          "headers": ["PA", "OAT", "Carrera (ft)", "Sobre 50 ft (ft)"],
+          "rows": [
+            ["Nivel del mar", "15 °C", "800", "1,400"],
+            ["2,500 ft", "10 °C", "1,000", "1,700"],
+            ["5,000 ft", "5 °C", "1,300", "2,200"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Las preguntas de la **Figura 40** dan OAT, altitud de presión, peso y viento, y piden la carrera o la distancia total. Método: fila de PA correcta → columna de temperatura → corrige por peso → aplica la nota de viento. Marca la opción más cercana a tu resultado."
+        },
+        {
+          "type": "notebook",
+          "id": "11-6-n1",
+          "prompt": "Copia la mini-tabla de ejemplo y practica: ¿qué distancia total sobre 50 ft necesitas a 2,500 ft de PA? ¿Y si estás entre nivel del mar y 2,500 ft, a mitad de camino? Escribe la interpolación: (1,400 + 1,700) ÷ 2 = 1,550 ft."
+        },
+        {
+          "type": "check",
+          "id": "11-6-c1",
+          "q": "En la tabla de despegue, ¿qué distancia manda si hay árboles al final de la pista?",
+          "options": ["La carrera en tierra (ground roll)", "La distancia total para librar el obstáculo de 50 ft", "La longitud de pista publicada"],
+          "answer": 1,
+          "why": "Con obstáculo, necesitas despegar Y librar 50 ft: esa distancia total es siempre mayor que la carrera en tierra."
+        },
+        {
+          "type": "check",
+          "id": "11-6-c2",
+          "q": "Tu altitud de presión cae justo entre dos filas de la tabla. ¿Qué haces?",
+          "options": ["Uso la fila más baja, es más práctica", "Interpolo: tomo el valor proporcional entre ambas filas", "Uso cualquiera, la diferencia no importa"],
+          "answer": 1,
+          "why": "Interpolar da el valor real intermedio; usar la fila más baja te dejaría corto de pista (peligro), y la más alta solo es aceptable como margen conservador."
+        }
+      ]
+    },
+    {
+      "id": "11-7",
+      "title": "Ascenso: Vx para el obstáculo, Vy para el reloj",
+      "key_points": [
+        "Vx es la velocidad de mejor ÁNGULO de ascenso: máxima altura por distancia recorrida.",
+        "Vy es la velocidad de mejor RÉGIMEN de ascenso: máxima altura por unidad de tiempo.",
+        "Con obstáculo al final de la pista se usa Vx; libre de obstáculos se usa Vy.",
+        "Vx es más lenta que Vy, y ambas se acercan al subir hasta juntarse en el techo absoluto.",
+        "La DA alta reduce el régimen de ascenso: en día caliente subes más pobre."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "Sales de una pista corta y al final hay árboles: ¿subes con el mayor **ángulo** o con la mayor **rapidez**? Son dos velocidades distintas. **Vx (mejor ángulo de ascenso)** te da la máxima altura por *distancia recorrida*: es la que libra obstáculos. **Vy (mejor régimen de ascenso)** te da la máxima altura por *tiempo*: es la que usas apenas el obstáculo queda atrás, para ganar altura rápido."
+        },
+        {
+          "type": "diagram",
+          "src": "ch11-vx-vy.svg",
+          "caption": "Vx sube más parado y libra el árbol en menos distancia; Vy gana más pies por minuto cuando ya no hay obstáculo."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "La **X está hecha de ángulos** → **Vx = mejor ÁNGULO** (obstáculo cerca). La **Y es un árbol que crece rápido** → **Vy = mejor RÉGIMEN** (altura por minuto)."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Vx es **más lenta** que Vy. Al subir, las dos se van acercando hasta **juntarse en el techo absoluto** del avión, donde ya no puede ascender más. Y en día de DA alta, tu régimen de ascenso se desploma: planéalo antes de despegar."
+        },
+        {
+          "type": "notebook",
+          "id": "11-7-n1",
+          "prompt": "Dibuja dos despegues desde la misma pista: uno con árboles al final (traza la trayectoria empinada y escríbele Vx) y otro sin obstáculos (trayectoria más tendida, escríbele Vy). Debajo de cada uno: 'altura por DISTANCIA' y 'altura por TIEMPO'."
+        },
+        {
+          "type": "check",
+          "id": "11-7-c1",
+          "q": "Hay cables al final de una pista corta. ¿Qué velocidad usas en el ascenso inicial?",
+          "options": ["Vy, para subir más rápido", "Vx, para ganar más altura por distancia", "Velocidad de crucero, para tener margen"],
+          "answer": 1,
+          "why": "Vx maximiza la altura ganada por cada metro recorrido: es la velocidad para librar obstáculos."
+        },
+        {
+          "type": "check",
+          "id": "11-7-c2",
+          "q": "¿Qué te da Vy?",
+          "options": ["La máxima altura por unidad de tiempo", "La máxima altura por distancia recorrida", "El máximo alcance con el combustible"],
+          "answer": 0,
+          "why": "Vy = mejor régimen (rate) de ascenso: más pies por minuto; la altura por distancia es Vx."
+        }
+      ]
+    },
+    {
+      "id": "11-8",
+      "title": "Crucero: alcance vs autonomía",
+      "key_points": [
+        "Alcance (range) es la máxima distancia por combustible; autonomía (endurance) es el máximo tiempo en el aire.",
+        "La máxima autonomía se vuela a la potencia mínima que mantiene el vuelo nivelado.",
+        "En crucero normal se usa 65–75 % de potencia y se empobrece la mezcla según el POH.",
+        "A mayor altitud, con el mismo porcentaje de potencia, la velocidad verdadera (TAS) es mayor.",
+        "Las tablas de crucero del POH dan TAS, flujo de combustible y ajuste de potencia por altitud y temperatura."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "Con tu moto puedes buscar dos cosas distintas: llegar **lejos** con un galón, o estar **mucho rato** dando vueltas. En avión igual. **Alcance (range)** = máxima *distancia* por combustible — kilómetros por galón. **Autonomía (endurance)** = máximo *tiempo* en el aire — se logra volando a la **potencia mínima** que mantiene el vuelo nivelado. No son lo mismo, y el examen adora esa diferencia."
+        },
+        {
+          "type": "text",
+          "md": "En crucero normal usas **65–75 % de potencia** y **empobreces la mezcla (lean)** según la tabla del POH para no botar gasolina. Dato bonito: a mayor altitud, el aire delgado frena menos al avión, así que con el **mismo porcentaje de potencia** vuelas con mayor **velocidad verdadera (TAS)**. La tabla de crucero te da, para cada altitud y temperatura: RPM/presión de admisión, flujo de combustible (GPH) y TAS."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Las preguntas de la **Figura 35** piden leer la tabla de crucero: *¿qué TAS a 10,500 ft?*, *¿qué flujo (GPH) al 65 % de potencia?*, *¿cuántos galones para 500 NM?* Método: fila de altitud → columna de temperatura → GPH × horas de vuelo = galones."
+        },
+        {
+          "type": "notebook",
+          "id": "11-8-n1",
+          "prompt": "Escribe las dos definiciones con tu moto: 'ALCANCE = km por galón (llegar lejos)' y 'AUTONOMÍA = horas prendida (durar más)'. Luego resuelve: si la tabla dice 11.2 GPH y tu vuelo dura 2.5 horas, ¿cuántos galones quemas? (11.2 × 2.5 = 28 gal)."
+        },
+        {
+          "type": "check",
+          "id": "11-8-c1",
+          "q": "¿Qué buscas cuando vuelas para máxima AUTONOMÍA?",
+          "options": ["La máxima distancia por galón", "El máximo tiempo en el aire con potencia mínima", "La máxima velocidad verdadera"],
+          "answer": 1,
+          "why": "Autonomía = durar: potencia mínima para vuelo nivelado. Distancia por combustible es alcance."
+        },
+        {
+          "type": "check",
+          "id": "11-8-c2",
+          "q": "Con el mismo porcentaje de potencia, ¿qué pasa con la velocidad verdadera (TAS) al subir de altitud?",
+          "options": ["Disminuye, porque el motor pierde potencia", "Se mantiene igual", "Aumenta, porque el aire delgado ofrece menos resistencia"],
+          "answer": 2,
+          "why": "Manteniendo el mismo % de potencia, menos densidad = menos resistencia = mayor TAS."
+        }
+      ]
+    },
+    {
+      "id": "11-9",
+      "title": "Aterrizaje: la distancia sobre el obstáculo de 50 ft",
+      "key_points": [
+        "La cifra clave de aterrizaje es la distancia total desde 50 ft sobre el obstáculo hasta detenerse.",
+        "Peso alto, DA alta, viento de cola y pendiente hacia abajo alargan la distancia de aterrizaje.",
+        "El viento de frente acorta la distancia de aterrizaje.",
+        "En pista mojada o contaminada los frenos agarran menos y puede haber hidroplaneo.",
+        "En pista mojada date un margen extra generoso y toca firme en el primer tercio de la pista."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y para bajar? Aterrizar también tiene su tabla. La cifra clave es la **distancia total sobre un obstáculo de 50 ft**: desde que cruzas el obstáculo a 50 ft de altura hasta que el avión se detiene. Los mismos enemigos del despegue vuelven: **peso alto, DA alta, viento de cola y pendiente hacia abajo** alargan la distancia; el **viento de frente** la acorta. Con DA alta, además, tu velocidad sobre el suelo al tocar es mayor: más pista para frenar."
+        },
+        {
+          "type": "text",
+          "md": "¿Pista **mojada o contaminada** (agua encharcada, barro, pasto largo)? Los frenos agarran menos, y con agua puedes **hidroplanear**: la llanta flota sobre una película de agua y deja de frenar y de dirigir. Regla sana: en pista mojada date un **margen extra generoso** sobre lo que dice la tabla — una mitad más es prudente — y toca firme, en el primer tercio de la pista. Si no alcanza: motor y al aire, sin dudar."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Las **Figuras 37 y 38** del banco son cartas de aterrizaje: te dan OAT, altitud de presión, peso, viento y el obstáculo de 50 ft. Mismo método que el despegue: fila de PA → temperatura → peso → nota de viento. Lee bien si piden la distancia de aterrizaje sola o la **total sobre el obstáculo**."
+        },
+        {
+          "type": "notebook",
+          "id": "11-9-n1",
+          "prompt": "Dibuja el perfil de un aterrizaje: obstáculo con el avión pasando a 50 ft, punto de toque y punto donde se detiene. Marca con una llave la 'distancia total sobre 50 ft'. Al costado, lista lo que la ALARGA: peso, DA alta, viento de cola, pista abajo, pista mojada."
+        },
+        {
+          "type": "check",
+          "id": "11-9-c1",
+          "q": "¿Qué mide la 'distancia total de aterrizaje sobre un obstáculo de 50 ft'?",
+          "options": ["Desde el toque hasta detenerse", "Desde que cruzas el obstáculo a 50 ft hasta detenerte", "La longitud mínima legal de la pista"],
+          "answer": 1,
+          "why": "Incluye el tramo aéreo desde los 50 ft más toda la carrera de frenado: siempre es mayor que el ground roll."
+        },
+        {
+          "type": "check",
+          "id": "11-9-c2",
+          "q": "¿Qué riesgo aparece al aterrizar en pista con agua encharcada?",
+          "options": ["Hidroplaneo: la llanta flota y no frena ni dirige", "Mayor eficiencia de frenado por el agua fría", "Nada cambia si tocas suave"],
+          "answer": 0,
+          "why": "La llanta puede flotar sobre la película de agua: pierdes frenado y control direccional; se toca firme y con margen."
+        }
+      ]
+    },
+    {
+      "id": "11-10",
+      "title": "El viento: componente de frente y componente cruzado",
+      "key_points": [
+        "El viento se descompone en componente de frente (a lo largo de la pista) y cruzado (de costado).",
+        "Componente de frente = viento × cos(ángulo); componente cruzado = viento × sen(ángulo).",
+        "Regla del pulgar: a 30° el cruzado es la mitad del viento; a 45°, el 70 %; a 60°, el 90 %.",
+        "Cada avión tiene un componente de viento cruzado máximo demostrado que no debes exceder.",
+        "Viento máximo permitido = componente cruzado máximo ÷ sen(ángulo)."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "El viento casi nunca sopla exactamente por el eje de la pista, ¿verdad? Por eso se parte en dos: el **componente de frente (headwind)**, que corre a lo largo de la pista y te ayuda a despegar y frenar, y el **componente cruzado (crosswind)**, que te empuja de costado. Tu avión tiene un **cruzado máximo demostrado** en el POH: si el cruzado de hoy lo supera, buscas otra pista."
+        },
+        {
+          "type": "text",
+          "md": "El ángulo entre pista y viento decide el reparto. Con matemática: frente = viento × cos(ángulo), cruzado = viento × sen(ángulo). Con regla del pulgar: **30° → el cruzado es la mitad** del viento; **45° → 70 %**; **60° → 90 %**; a 90°, todo es cruzado. Ejemplo del banco: pista 18, viento 220°/30 kt → ángulo 40° → cruzado ≈ 19 kt y frente ≈ 23 kt."
+        },
+        {
+          "type": "table",
+          "headers": ["Ángulo pista-viento", "Cruzado (% del viento)", "Frente (% del viento)"],
+          "rows": [
+            ["30°", "50 %", "87 %"],
+            ["45°", "70 %", "70 %"],
+            ["60°", "87 %", "50 %"],
+            ["90°", "100 %", "0 %"]
+          ]
+        },
+        {
+          "type": "diagram",
+          "src": "ch11-componentes-viento.svg",
+          "caption": "Viento 220°/30 kt sobre la pista 18: se parte en 23 kt de frente y 19 kt cruzados."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "La **Figura 36** cae seguro: componente cruzado y de frente para una pista dada, y al revés: *si tu límite de cruzado es 12 kt y el viento viene a 30°, ¿viento máximo?* → 12 ÷ sen(30°) = **24 kt**. También: elegir la pista aceptable dado un límite de cruzado."
+        },
+        {
+          "type": "notebook",
+          "id": "11-10-n1",
+          "prompt": "Copia la tabla de porcentajes (30°→50 %, 45°→70 %, 60°→90 % — usa la versión redondeada para el vuelo). Resuelve: pista 36, viento 030°/20 kt. ¿Ángulo? (30°). ¿Cruzado? (≈10 kt). ¿Frente? (≈17 kt). Dibuja las dos flechas sobre una pista."
+        },
+        {
+          "type": "check",
+          "id": "11-10-c1",
+          "q": "Aterrizas en la pista 18 y la torre reporta viento 220°/30 kt. ¿Cuál es el componente cruzado aproximado?",
+          "options": ["19 kt", "23 kt", "30 kt"],
+          "answer": 0,
+          "why": "Ángulo = 40°; cruzado = 30 × sen(40°) ≈ 19 kt. Los 23 kt son el componente de frente."
+        },
+        {
+          "type": "check",
+          "id": "11-10-c2",
+          "q": "Tu componente cruzado máximo es 12 kt y el viento forma 30° con la pista. ¿Cuál es el viento máximo aceptable?",
+          "options": ["16 kt", "20 kt", "24 kt"],
+          "answer": 2,
+          "why": "A 30° el cruzado es la mitad del viento: 12 ÷ sen(30°) = 12 ÷ 0.5 = 24 kt."
+        }
+      ]
+    }
+  ]
+}

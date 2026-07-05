@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 250" role="img" aria-label="Ángulo de ataque: ángulo entre la cuerda del ala y el viento relativo">
+  <!-- perfil inclinado (nariz arriba, 14 grados) -->
+  <g transform="rotate(14 230 130)">
+    <path d="M120 135 C 145 100 265 92 350 128 C 275 150 155 152 120 135 Z"
+          fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+    <!-- cuerda -->
+    <line x1="120" y1="135" x2="350" y2="128" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+  </g>
+  <!-- referencia horizontal: dirección del viento relativo -->
+  <line x1="122" y1="108" x2="420" y2="108" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <!-- arco del ángulo -->
+  <path d="M 212 108 A 90 90 0 0 1 209 128" fill="none" stroke="var(--bad)" stroke-width="2"/>
+  <text x="222" y="100" font-family="inherit" font-size="14" fill="var(--bad)">ángulo de ataque (AOA)</text>
+  <!-- flechas de viento relativo -->
+  <line x1="20" y1="120" x2="80" y2="120" stroke="var(--text)" stroke-width="3"/>
+  <polygon points="97,120 78,112 78,128" fill="var(--text)"/>
+  <line x1="20" y1="150" x2="80" y2="150" stroke="var(--text)" stroke-width="3"/>
+  <polygon points="97,150 78,142 78,158" fill="var(--text)"/>
+  <text x="20" y="180" font-family="inherit" font-size="14" fill="var(--text)">viento relativo</text>
+  <text x="20" y="197" font-family="inherit" font-size="12" fill="var(--muted)">(opuesto a la trayectoria de vuelo)</text>
+  <!-- etiqueta cuerda -->
+  <line x1="330" y1="190" x2="318" y2="172" stroke="var(--accent)" stroke-width="1"/>
+  <text x="300" y="208" font-family="inherit" font-size="13" fill="var(--accent)">cuerda del ala</text>
+</svg>

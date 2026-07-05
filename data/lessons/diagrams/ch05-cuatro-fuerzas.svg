@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" font-family="inherit">
+  <defs>
+    <marker id="k5a-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--ok)"/></marker>
+    <marker id="k5a-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--bad)"/></marker>
+    <marker id="k5a-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker>
+    <marker id="k5a-txt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--text)"/></marker>
+  </defs>
+  <g stroke="var(--text)" stroke-width="2" fill="var(--panel-2)">
+    <ellipse cx="200" cy="125" rx="58" ry="13"/>
+    <path d="M152 121 L128 99 L142 99 L164 117 Z"/>
+    <path d="M190 118 L216 118 L208 141 L184 141 Z"/>
+  </g>
+  <line x1="200" y1="100" x2="200" y2="44" stroke="var(--ok)" stroke-width="3" marker-end="url(#k5a-ok)"/>
+  <text x="200" y="32" fill="var(--ok)" font-size="14" text-anchor="middle">Sustentación</text>
+  <line x1="200" y1="150" x2="200" y2="206" stroke="var(--text)" stroke-width="3" marker-end="url(#k5a-txt)"/>
+  <text x="200" y="224" fill="var(--text)" font-size="14" text-anchor="middle">Peso</text>
+  <line x1="262" y1="125" x2="332" y2="125" stroke="var(--accent)" stroke-width="3" marker-end="url(#k5a-acc)"/>
+  <text x="297" y="112" fill="var(--accent)" font-size="14" text-anchor="middle">Empuje</text>
+  <line x1="138" y1="125" x2="68" y2="125" stroke="var(--bad)" stroke-width="3" marker-end="url(#k5a-bad)"/>
+  <text x="103" y="112" fill="var(--bad)" font-size="14" text-anchor="middle">Resistencia</text>
+  <text x="200" y="245" fill="var(--muted)" font-size="12" text-anchor="middle">Vuelo recto y nivelado: sustentación = peso · empuje = resistencia</text>
+</svg>

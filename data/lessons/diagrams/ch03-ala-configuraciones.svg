@@ -1,0 +1,30 @@
+<svg viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vistas frontales de ala alta con montantes, ala media y ala baja cantilever">
+  <!-- Panel 1: ala alta con montantes -->
+  <text x="90" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Ala alta</text>
+  <ellipse cx="90" cy="110" rx="20" ry="34" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <rect x="10" y="74" width="160" height="10" rx="5" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <!-- montantes -->
+  <line x1="40" y1="84" x2="78" y2="126" stroke="var(--ok)" stroke-width="2.5"/>
+  <line x1="140" y1="84" x2="102" y2="126" stroke="var(--ok)" stroke-width="2.5"/>
+  <line x1="52" y1="102" x2="30" y2="150" stroke="var(--muted)" stroke-width="1"/>
+  <text x="12" y="165" fill="var(--ok)" font-family="inherit" font-size="12">montante (strut):</text>
+  <text x="12" y="180" fill="var(--muted)" font-family="inherit" font-size="12">apoyo externo que</text>
+  <text x="12" y="195" fill="var(--muted)" font-family="inherit" font-size="12">ayuda a cargar el ala</text>
+
+  <!-- Panel 2: ala media -->
+  <text x="255" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Ala media</text>
+  <ellipse cx="255" cy="110" rx="20" ry="34" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <rect x="180" y="105" width="150" height="10" rx="5" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="255" y="170" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">el ala cruza por</text>
+  <text x="255" y="185" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la mitad del fuselaje</text>
+
+  <!-- Panel 3: ala baja cantilever -->
+  <text x="410" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Ala baja</text>
+  <ellipse cx="410" cy="110" rx="20" ry="34" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <path d="M335 142 L410 132 L475 142 L475 150 L410 142 L335 150 Z" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="410" y="170" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">cantilever: sin apoyos</text>
+  <text x="410" y="185" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">externos, toda la fuerza</text>
+  <text x="410" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la aguanta la estructura interna</text>
+
+  <text x="240" y="228" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Vistas de frente. Un ala en cada posición = monoplano; dos alas apiladas = biplano.</text>
+</svg>

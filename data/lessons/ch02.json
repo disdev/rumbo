@@ -1,0 +1,550 @@
+{
+  "chapter": "2",
+  "title": "Toma de decisiones aeronáuticas",
+  "resumen": "El capítulo del juicio: cómo piensan los pilotos que llegan a viejos — reconocer actitudes peligrosas, medir el riesgo y decidir a tiempo.",
+  "sections": [
+    {
+      "id": "2-1",
+      "title": "¿Por qué se caen los aviones? La cadena del error",
+      "key_points": [
+        "Cerca del 80% de los accidentes de aviación se deben a error humano, no a fallas mecánicas.",
+        "El ADM (toma de decisiones aeronáuticas) es un enfoque sistemático para elegir el mejor curso de acción.",
+        "Un accidente casi nunca es un solo error: es una cadena de eventos y decisiones.",
+        "Romper un solo eslabón de la cadena del error evita el accidente.",
+        "El modelo del queso suizo: los huecos de varias capas de defensa deben alinearse para que ocurra un accidente."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué crees que falla más en los accidentes de aviación: el motor o el piloto? Sorpresa: el motor casi nunca. Cerca del **80%** de los accidentes se deben a **error humano** — decisiones, no fierros. Por eso existe el **ADM** (*Aeronautical Decision-Making*, toma de decisiones aeronáuticas): un enfoque **sistemático** para elegir el mejor curso de acción en cada situación. No es talento ni suerte: es un método que se aprende, como aprendiste a mirar a los dos lados antes de cruzar."
+        },
+        {
+          "type": "text",
+          "md": "Y un accidente casi nunca es *una* cosa que salió mal. Es una **cadena de errores**: salir apurado + clima dudoso + no tener plan B + seguir avanzando. Cada mala decisión es un eslabón. La buena noticia: si **rompes un solo eslabón** — cancelas, das la vuelta, pides ayuda — la cadena se corta y el accidente no ocurre. Al modelo formal se le llama **queso suizo**: para que algo pase, los huecos de varias capas de defensa tienen que alinearse."
+        },
+        {
+          "type": "diagram",
+          "src": "ch02-cadena-error.svg",
+          "caption": "La cadena del error: cada eslabón es una decisión. Basta romper uno — esperar, cancelar, dar la vuelta — para que el accidente nunca ocurra."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "El avión rara vez te mata solo. Casi siempre hay una cadena de decisiones antes — y en cada eslabón tuviste la oportunidad de cortarla."
+        },
+        {
+          "type": "notebook",
+          "id": "2-1-n1",
+          "prompt": "Inventa un «accidente» cotidiano (ej. chocar la moto por llegar tarde al colegio) y dibuja su cadena de 5 eslabones como cajas conectadas. Marca con una X el eslabón que habrías roto y escribe la decisión exacta que lo rompe."
+        },
+        {
+          "type": "check",
+          "id": "2-1-c1",
+          "q": "¿Qué causa la mayoría de los accidentes de aviación?",
+          "options": [
+            "Fallas mecánicas del motor.",
+            "El error humano: malas decisiones del piloto.",
+            "Condiciones meteorológicas imposibles de prever."
+          ],
+          "answer": 1,
+          "why": "Cerca del 80% de los accidentes se atribuyen a factores humanos, no al avión ni al clima en sí."
+        },
+        {
+          "type": "check",
+          "id": "2-1-c2",
+          "q": "Según la idea de la cadena del error, ¿qué se necesita para evitar un accidente?",
+          "options": [
+            "Romper un solo eslabón de la cadena.",
+            "Eliminar absolutamente todos los errores.",
+            "Volar solo con clima perfecto."
+          ],
+          "answer": 0,
+          "why": "El accidente requiere la cadena completa: cortar cualquier eslabón (cancelar, dar la vuelta, pedir ayuda) lo evita."
+        }
+      ]
+    },
+    {
+      "id": "2-2",
+      "title": "Las cinco actitudes peligrosas y sus antídotos",
+      "key_points": [
+        "Las cinco actitudes peligrosas son: antiautoridad, impulsividad, invulnerabilidad, machismo y resignación.",
+        "El primer paso para neutralizar una actitud peligrosa es reconocer el pensamiento peligroso.",
+        "Antiautoridad («las reglas no son para mí») se combate con «sigue las reglas».",
+        "Impulsividad («hazlo ya») se combate con «no tan rápido, piensa primero».",
+        "Invulnerabilidad («a mí no me pasa») se combate con «me podría pasar a mí».",
+        "Machismo («yo sí puedo, mírame») se combate con «arriesgarse es una tontería».",
+        "Resignación («¿para qué? ya fue») se combate con «no estoy indefenso»."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Te ha pasado que un amigo te reta — «¿o te da miedo?» — y sientes esas ganas de demostrar? Esa vocecita tiene nombre en aviación. Hay **cinco actitudes peligrosas** que empujan a malas decisiones, y nos atacan a todos en algún momento. El truco no es ser perfecto: es **reconocer el pensamiento** cuando aparece — ese es siempre el **primer paso** — y responderle con su **antídoto**: una frase fija que te dices a ti mismo."
+        },
+        {
+          "type": "table",
+          "headers": ["Actitud", "El pensamiento", "Antídoto"],
+          "rows": [
+            ["Antiautoridad", "«Las reglas no son para mí»", "«Sigue las reglas»"],
+            ["Impulsividad", "«¡Hazlo ya, rápido!»", "«No tan rápido, piensa primero»"],
+            ["Invulnerabilidad", "«A mí no me va a pasar»", "«Me podría pasar a mí»"],
+            ["Machismo", "«Yo sí puedo, mírame»", "«Arriesgarse es una tontería»"],
+            ["Resignación", "«¿Para qué? Ya fue»", "«No estoy indefenso»"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "Para las cinco: **A-I-I-M-R** — «**A**migos **I**mprudentes **I**nvitan **M**alas **R**utas»: **A**ntiautoridad, **I**mpulsividad, **I**nvulnerabilidad, **M**achismo, **R**esignación."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco DGAC pregunta **cada antídoto textual** («¿qué frase revierte la impulsividad?»), pide **nombrar las cinco actitudes** juntas, y pregunta el **primer paso** para neutralizarlas: *reconocer el pensamiento peligroso*. Esta tabla se memoriza completa."
+        },
+        {
+          "type": "notebook",
+          "id": "2-2-n1",
+          "prompt": "Copia la tabla de las cinco actitudes peligrosas con su antídoto en dos columnas (actitud → antídoto textual). Luego tápala y escríbela de memoria; repite hasta lograr 5 de 5 sin mirar."
+        },
+        {
+          "type": "check",
+          "id": "2-2-c1",
+          "q": "¿Qué frase antídoto revierte la actitud peligrosa de invulnerabilidad?",
+          "options": [
+            "«No me pasará a mí.»",
+            "«Me podría pasar a mí.»",
+            "«No estoy indefenso.»"
+          ],
+          "answer": 1,
+          "why": "La invulnerabilidad («a mí no me pasa») se corrige recordando que sí te puede pasar; «no estoy indefenso» es el antídoto de la resignación."
+        },
+        {
+          "type": "check",
+          "id": "2-2-c2",
+          "q": "¿Cuál es el primer paso para neutralizar una actitud peligrosa?",
+          "options": [
+            "Hacer un juicio racional de la situación.",
+            "Reconocer el pensamiento peligroso.",
+            "Aplicar el antídoto de inmediato."
+          ],
+          "answer": 1,
+          "why": "No puedes corregir lo que no ves: primero reconoces el pensamiento, recién después aplicas el antídoto."
+        }
+      ]
+    },
+    {
+      "id": "2-3",
+      "title": "DECIDE: seis pasos para no congelarte",
+      "key_points": [
+        "DECIDE es un proceso continuo de seis pasos para tomar decisiones en vuelo.",
+        "Los pasos son: Detectar el cambio, Estimar si hay que reaccionar, Choose (elegir el resultado deseado), Identificar acciones, Do (hacer la mejor acción) y Evaluar el efecto.",
+        "DECIDE es un ciclo: si al evaluar el resultado no es el deseado, el proceso vuelve a empezar.",
+        "El proceso evita las dos reacciones malas: congelarse o actuar por impulso."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué haces cuando algo cambia en pleno vuelo — un olor raro, una luz de alarma, nubes donde no debían estar? Para no congelarte ni reaccionar a lo loco existe **DECIDE**, seis pasos (la sigla viene del inglés): **D**etectar el cambio, **E**stimar si necesitas reaccionar, **C**hoose — elegir el resultado que quieres, **I**dentificar las acciones posibles, **D**o — ejecutar la mejor, y **E**valuar el efecto. Si el resultado no te gusta, el ciclo vuelve a empezar: por eso se dibuja en círculo."
+        },
+        {
+          "type": "diagram",
+          "src": "ch02-decide.svg",
+          "caption": "El ciclo DECIDE: seis pasos que se repiten hasta que el problema queda resuelto. Memoriza la letra, la palabra y qué hace cada paso."
+        },
+        {
+          "type": "text",
+          "md": "Ejemplo en moto: **detectas** que la llanta trasera se siente floja. **Estimas**: sí, esto es serio. **Eliges** el resultado: llegar sano, no llegar rápido. **Identificas** opciones: parar ya, seguir despacio, llamar a alguien. **Haces**: paras en el grifo. **Evalúas**: ¿aguanta parchada o no? En el aire es exactamente igual — solo que no puedes estacionarte en una nube, así que el ciclo corre más rápido."
+        },
+        {
+          "type": "notebook",
+          "id": "2-3-n1",
+          "prompt": "Escribe las seis letras de DECIDE en vertical y, al costado de cada una, su significado en español más una frase aplicándola a este escenario: «el clima adelante se está cerrando»."
+        },
+        {
+          "type": "check",
+          "id": "2-3-c1",
+          "q": "En el proceso DECIDE, ¿qué representa la primera D?",
+          "options": [
+            "Decidir el nuevo rumbo.",
+            "Detectar que algo cambió.",
+            "Demostrar control de la aeronave."
+          ],
+          "answer": 1,
+          "why": "Todo empieza por detectar el cambio; sin eso, ninguno de los otros cinco pasos ocurre."
+        },
+        {
+          "type": "check",
+          "id": "2-3-c2",
+          "q": "Aplicaste una acción y el problema sigue igual. Según DECIDE, ¿qué corresponde?",
+          "options": [
+            "Insistir con la misma acción más fuerte.",
+            "Evaluar el efecto y reiniciar el ciclo con lo aprendido.",
+            "Pasar el control al pasajero."
+          ],
+          "answer": 1,
+          "why": "DECIDE es un ciclo continuo: la E final (evaluar) alimenta una nueva vuelta si el resultado no es el deseado."
+        }
+      ]
+    },
+    {
+      "id": "2-4",
+      "title": "Medir el riesgo: la matriz y PAVE",
+      "key_points": [
+        "El riesgo se evalúa cruzando probabilidad (¿qué tan posible?) con severidad (¿qué tan grave?).",
+        "Un riesgo probable y grave es inaceptable: se cambia el plan, no se acepta.",
+        "La gestión de riesgos se basa en conciencia situacional, reconocimiento de problemas y buen juicio.",
+        "PAVE organiza los peligros antes del vuelo: Piloto, Aeronave, entorno (enVironment) y presiones Externas.",
+        "Las 5 P (Plan, Plane, Pilot, Passengers, Programming) son el repaso continuo en vuelo, en cada punto de decisión."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo decides si un riesgo vale la pena? No con el estómago: con dos preguntas. ¿Qué tan **probable** es que salga mal? Y si sale mal, ¿qué tan **grave** sería (**severidad**)? Cruzas las dos en una **matriz de riesgo**: probable y grave = inaceptable, cambias el plan; improbable y leve = aceptable. Y ojo: la gestión de riesgos se apoya en tres pilares — **conciencia situacional**, **reconocimiento del problema** y **buen juicio**."
+        },
+        {
+          "type": "diagram",
+          "src": "ch02-matriz-riesgo.svg",
+          "caption": "Matriz de riesgo: mientras más arriba (probable) y más a la derecha (grave), menos aceptable. La esquina roja no se negocia: se cambia el plan."
+        },
+        {
+          "type": "text",
+          "md": "Antes de cada vuelo, barre los peligros con **PAVE**: **P**iloto (¿estoy en condiciones? — ahí entra IMSAFE), **A**eronave (¿combustible, mantenimiento, performance?), en**V**ironment — el entorno (¿clima, terreno, pista, luz del día?), y presiones **E**xternas (¿qué me está empujando a volar?). Ya en vuelo, el repaso continuo son las **5 P**: *Plan, Plane, Pilot, Passengers, Programming* — plan, avión, piloto, pasajeros y programación de los equipos — revisadas en cada punto de decisión."
+        },
+        {
+          "type": "diagram",
+          "src": "ch02-pave.svg",
+          "caption": "PAVE: cuatro cajas de peligros a revisar antes de volar. La E (presiones externas) es la más traicionera porque vive en tu cabeza."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta en qué se basa la gestión de riesgos dentro del ADM: **conciencia situacional, reconocimiento de problemas y buen juicio**. No confundas con «gestión del estrés» — ese es el distractor típico."
+        },
+        {
+          "type": "notebook",
+          "id": "2-4-n1",
+          "prompt": "Dibuja la matriz de riesgo (probabilidad vertical, severidad horizontal) y ubica en ella: (1) ir a la tienda con la llanta algo baja, (2) cruzar la Panamericana corriendo, (3) despegar con pronóstico de niebla en destino. Escribe cuál de las tres es inaceptable y por qué."
+        },
+        {
+          "type": "check",
+          "id": "2-4-c1",
+          "q": "En la lista PAVE, ¿qué representa la V?",
+          "options": [
+            "La velocidad del viento en la pista.",
+            "El entorno (enVironment): clima, terreno, pista, noche.",
+            "La verificación prevuelo de la aeronave."
+          ],
+          "answer": 1,
+          "why": "PAVE = Piloto, Aeronave, enVironment (entorno) y presiones Externas; la V es todo lo que rodea al vuelo."
+        },
+        {
+          "type": "check",
+          "id": "2-4-c2",
+          "q": "Un peligro con alta probabilidad y consecuencias graves representa un riesgo:",
+          "options": [
+            "Aceptable si el piloto tiene experiencia.",
+            "Inaceptable: hay que modificar el plan.",
+            "Aceptable solo en vuelos diurnos."
+          ],
+          "answer": 1,
+          "why": "La esquina probable + grave de la matriz no se mitiga con experiencia: se elimina cambiando el plan."
+        }
+      ]
+    },
+    {
+      "id": "2-5",
+      "title": "IMSAFE: ¿estoy en condiciones de volar hoy?",
+      "key_points": [
+        "IMSAFE es la lista para evaluar al piloto (la P de PAVE) antes de cada vuelo.",
+        "Las letras: Illness (enfermedad), Medication (medicación), Stress (estrés), Alcohol, Fatigue (fatiga), Emotion (emoción).",
+        "Basta una sola respuesta desfavorable en IMSAFE para no volar.",
+        "IMSAFE evalúa al piloto, no al avión; la parte médica se profundiza en el capítulo 17."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Volarías con gripe y media noche de sueño? ¿Manejarías moto así? La P de PAVE — tú — se revisa con **IMSAFE**, seis preguntas antes de cada vuelo: **I**llness (¿estoy enfermo?), **M**edication (¿tomé medicinas que dan sueño o marean?), **S**tress (¿estrés por exámenes, plata, familia?), **A**lcohol (¿tomé? — cero tolerancia), **F**atigue (¿dormí bien?), **E**motion (¿estoy molesto, triste, alterado?). **Una sola respuesta mala basta para no volar.**"
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "IMSAFE evalúa **al piloto**, no al avión. En el capítulo 17 verás el porqué médico de cada letra; aquí es tu herramienta de decisión: es la primera revisión del día, antes incluso de mirar el avión."
+        },
+        {
+          "type": "notebook",
+          "id": "2-5-n1",
+          "prompt": "Escribe IMSAFE en vertical: cada letra con su palabra en inglés, su traducción y la pregunta que te haces. Subraya las dos letras que más te aplicarían un lunes en semana de exámenes."
+        },
+        {
+          "type": "check",
+          "id": "2-5-c1",
+          "q": "En IMSAFE, ¿qué evalúa la letra F?",
+          "options": [
+            "Fuel: el combustible a bordo.",
+            "Fatigue: si el piloto está descansado.",
+            "Flaps: la configuración de despegue."
+          ],
+          "answer": 1,
+          "why": "IMSAFE es una lista sobre el piloto, no sobre el avión: la F es fatiga."
+        },
+        {
+          "type": "check",
+          "id": "2-5-c2",
+          "q": "Tomaste un antigripal que da sueño. Según IMSAFE:",
+          "options": [
+            "Puedes volar si el vuelo es corto.",
+            "No vuelas: la M (medicación) te descalifica hoy.",
+            "Vuelas más bajo para compensar el sueño."
+          ],
+          "answer": 1,
+          "why": "Una sola letra desfavorable basta: medicación que afecta el estado de alerta cancela el vuelo."
+        }
+      ]
+    },
+    {
+      "id": "2-6",
+      "title": "«Tengo que llegar»: la presión externa",
+      "key_points": [
+        "Get-there-itis es la presión autoimpuesta de completar el vuelo como se planeó, y distorsiona el juicio.",
+        "Las presiones externas son el factor PAVE más peligroso porque nacen en la cabeza del piloto.",
+        "El antídoto es preparar un plan B concreto antes de despegar (alterno, hotel, transporte terrestre).",
+        "Hay que avisar a quienes esperan que la hora de llegada nunca está garantizada.",
+        "Con plan B, dar la vuelta deja de sentirse como un fracaso."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "«Ya fue, sigo nomás.» ¿Cuántas veces lo has dicho en la bici con lluvia? En aviación esa frase mata, y tiene nombre: **get-there-itis**, la «enfermedad de tengo que llegar». Prometiste estar en el cumpleaños, tus amigos ya están en la playa, pagaste el combustible... y esa presión te hace ver el clima *mejor de lo que está*. Es la presión **externa** más peligrosa del PAVE: no viene del avión ni del cielo — viene de tu cabeza, y crece justo cuando las opciones se acortan."
+        },
+        {
+          "type": "text",
+          "md": "El antídoto se prepara **antes de despegar**: ten un **plan B** concreto — aeropuerto alterno, plata para hotel o bus, y avisar a quienes te esperan que *la hora de llegada nunca está garantizada en avión chico*. Cuando el plan B existe, dar la vuelta deja de sentirse como un fracaso y se convierte en... simplemente el plan B."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "La presión externa se disfraza de argumentos razonables: «ya gasté en esto», «me van a fastidiar», «seguro más adelante mejora». Si te descubres *negociando* con el clima, ya perdiste la objetividad: activa el plan B."
+        },
+        {
+          "type": "notebook",
+          "id": "2-6-n1",
+          "prompt": "Escribe tres presiones externas reales de tu vida (ej. «mis amigos ya están en la playa esperándome») y, al lado de cada una, un plan B concreto que te quitaría la presión de llegar sí o sí."
+        },
+        {
+          "type": "check",
+          "id": "2-6-c1",
+          "q": "¿Cuál es la mejor defensa contra el «tengo que llegar» (get-there-itis)?",
+          "options": [
+            "Volar más rápido para ganar margen de tiempo.",
+            "Tener un plan alternativo concreto antes de despegar.",
+            "No decirle a nadie tu hora de llegada."
+          ],
+          "answer": 1,
+          "why": "El plan B (alterno, hotel, avisar posibles demoras) quita el poder a la presión: dar la vuelta deja de ser un fracaso."
+        }
+      ]
+    },
+    {
+      "id": "2-7",
+      "title": "Conciencia situacional: tu minimapa mental",
+      "key_points": [
+        "La conciencia situacional es la percepción precisa de todos los factores que afectan al vuelo: piloto, aeronave, entorno y su evolución próxima.",
+        "No es solo saber dónde estás: es anticipar qué viene en los próximos minutos.",
+        "La distracción, la fijación y la complacencia degradan la conciencia situacional.",
+        "La fatiga, el estrés y la sobrecarga de trabajo abren la puerta a esos tres ladrones."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Has jugado un shooter sin mirar el minimapa? Te eliminan por la espalda. La **conciencia situacional** (*situational awareness*) es tu minimapa mental: la percepción **precisa** de todo lo que afecta al vuelo — tú, tu avión, el entorno — y de cómo va a cambiar en los próximos minutos. No es solo saber dónde estás: es saber **qué viene**."
+        },
+        {
+          "type": "text",
+          "md": "Tres ladrones te la roban. La **distracción**: un pasajero hablando, el celular, un papel que se cae. La **fijación**: clavarte en *un* instrumento o problema y dejar de escanear todo lo demás. La **complacencia**: todo va tan bien que bajas la guardia y dejas de verificar. La fatiga, el estrés y la sobrecarga de tareas les abren la puerta a los tres."
+        },
+        {
+          "type": "notebook",
+          "id": "2-7-n1",
+          "prompt": "Dibuja tres círculos etiquetados «distracción», «fijación» y «complacencia». Dentro de cada uno escribe un ejemplo real tuyo (del colegio, la bici o los videojuegos) donde ese ladrón te costó algo."
+        },
+        {
+          "type": "check",
+          "id": "2-7-c1",
+          "q": "Un piloto se concentra tanto en una luz de alarma que no nota que el avión desciende. Eso es:",
+          "options": [
+            "Fijación: dejó de escanear el resto.",
+            "Complacencia: exceso de confianza.",
+            "Resignación: se dio por vencido."
+          ],
+          "answer": 0,
+          "why": "Fijarse en un solo problema o instrumento y abandonar el escaneo general es la definición de fijación."
+        },
+        {
+          "type": "check",
+          "id": "2-7-c2",
+          "q": "¿Qué es la conciencia situacional?",
+          "options": [
+            "Saber la posición exacta del avión en el GPS.",
+            "La percepción precisa de todos los factores del vuelo y de cómo evolucionarán.",
+            "Mantener contacto por radio permanente con el ATC."
+          ],
+          "answer": 1,
+          "why": "Incluye posición, pero es mucho más: piloto, avión, entorno y lo que viene en los próximos minutos."
+        }
+      ]
+    },
+    {
+      "id": "2-8",
+      "title": "Carga de trabajo: aviate, navigate, communicate",
+      "key_points": [
+        "La prioridad en cabina es fija: primero volar el avión (aviate), luego navegar (navigate), al final comunicar (communicate).",
+        "Muchos accidentes ocurrieron por soltar el control del avión para atender la radio o un problema menor.",
+        "La carga de trabajo se administra adelantando tareas en las fases tranquilas del vuelo.",
+        "Señales de saturación: saltarse ítems del checklist, responder tarde, quedarse atrás del avión.",
+        "Ante la saturación: ganar altura y tiempo, y pedir ayuda."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "Cuando todo pasa a la vez — la radio sonando, viento cruzado, el pasajero preguntando — ¿qué atiendes primero? La regla de oro tiene tres palabras: **aviate, navigate, communicate**. Primero **vuela el avión** (siempre, sin excepción), segundo **navega** (¿a dónde voy?), tercero **comunica** (la radio puede esperar). Ha habido accidentes de tripulaciones enteras concentradas en un foco quemado... mientras el avión descendía solito."
+        },
+        {
+          "type": "text",
+          "md": "La otra clave es **repartir la carga en el tiempo**: adelanta en las fases tranquilas (crucero) lo que puedas — frecuencias, repasar la llegada — para que el aterrizaje te encuentre libre. Señales de **saturación**: te saltas ítems del checklist, respondes tarde, sientes que «vas detrás del avión». Si las notas: gana altura, gana tiempo y pide ayuda."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**Aviate → Navigate → Communicate**: volar, navegar, comunicar — en ese orden y sin excepciones. Si solo recuerdas una cosa del manejo de carga de trabajo, que sea esta."
+        },
+        {
+          "type": "notebook",
+          "id": "2-8-n1",
+          "prompt": "Escribe «AVIATE – NAVIGATE – COMMUNICATE» en grande con su traducción debajo de cada palabra. Luego anota qué harías si el ATC te llama justo cuando luchas por nivelar el avión tras despegar con viento cruzado."
+        },
+        {
+          "type": "check",
+          "id": "2-8-c1",
+          "q": "Suena la radio mientras el avión se desvía y pierde altura. ¿Qué haces primero?",
+          "options": [
+            "Contestar: comunicar es obligatorio.",
+            "Controlar el avión: aviate es la prioridad número uno.",
+            "Revisar la carta para confirmar la posición."
+          ],
+          "answer": 1,
+          "why": "El orden es fijo: aviate (volar), navigate (navegar), communicate (comunicar). La radio siempre puede esperar."
+        }
+      ]
+    },
+    {
+      "id": "2-9",
+      "title": "SRM y automatización: usa todo, no confíes ciegamente",
+      "key_points": [
+        "El CRM (gestión de recursos de tripulación) aplicado al piloto solo se llama SRM (single-pilot resource management).",
+        "SRM significa usar todos los recursos: checklists, pasajeros, ATC, GPS y piloto automático.",
+        "Pedir ayuda al ATC no es vergüenza: es una técnica de gestión de recursos.",
+        "El riesgo de la automatización es la confianza excesiva: complacencia y pérdida de habilidad manual.",
+        "Regla doble con la automatización: verificar lo que indica y practicar volar sin ella."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Volar solo significa arreglártelas solo? No. El **CRM** (*Crew Resource Management*) nació para tripulaciones; su versión para piloto solo es el **SRM** (*Single-pilot Resource Management*): usar **todos** los recursos disponibles. Tu pasajero puede buscar tráfico o sostener la carta. El **ATC** puede darte rumbos, clima y calma — pedir ayuda no es vergüenza, es técnica. Y el **checklist** es un copiloto de papel que nunca se olvida de nada."
+        },
+        {
+          "type": "text",
+          "md": "El GPS y el piloto automático también son recursos — pero con trampa: la **confianza excesiva**. Si dejas que «la caja» vuele siempre, tu habilidad manual se oxida y dejas de cuestionar lo que muestra la pantalla: complacencia pura. Regla doble: **verifica** lo que la automatización te dice contra otras fuentes, y **practica** volar sin ella, para que nunca sea tu única opción."
+        },
+        {
+          "type": "notebook",
+          "id": "2-9-n1",
+          "prompt": "Haz una lista titulada «Mis recursos como piloto solo» con al menos cinco recursos: personas, equipos y documentos. Marca con un signo de alerta el que podría fallarte si confías en él ciegamente, y escribe cómo lo verificarías."
+        },
+        {
+          "type": "check",
+          "id": "2-9-c1",
+          "q": "¿Qué es el SRM (single-pilot resource management)?",
+          "options": [
+            "Volar sin ayuda de nadie para evitar distracciones.",
+            "Aprovechar todos los recursos disponibles: ATC, pasajeros, checklists y equipos.",
+            "Delegar la navegación al piloto automático."
+          ],
+          "answer": 1,
+          "why": "SRM es el CRM del piloto solo: gestionar y usar cada recurso dentro y fuera de la cabina."
+        },
+        {
+          "type": "check",
+          "id": "2-9-c2",
+          "q": "El mayor riesgo de la automatización en cabina es:",
+          "options": [
+            "El consumo extra de energía eléctrica.",
+            "Confiar demasiado en ella: complacencia y pérdida de habilidad manual.",
+            "Que el ATC prohíbe usarla en vuelo VFR."
+          ],
+          "answer": 1,
+          "why": "La automatización falla o se programa mal; el piloto que dejó de verificar y de practicar a mano queda indefenso."
+        }
+      ]
+    },
+    {
+      "id": "2-10",
+      "title": "Carrera scud y VFR en nubes: 178 segundos",
+      "key_points": [
+        "La carrera scud (scud running) es forzar los límites volando cada vez más bajo para mantener contacto visual con el terreno con poca visibilidad y techo bajo.",
+        "El final típico de la carrera scud es el CFIT: vuelo controlado contra el terreno.",
+        "Un piloto VFR sin entrenamiento en instrumentos que entra en nubes pierde el control en un promedio de 178 segundos.",
+        "La decisión correcta es el viraje de 180 grados hecho temprano, cuando aún hay opciones.",
+        "Este escenario combina get-there-itis, impulsividad e invulnerabilidad: es el más mortal de la aviación general."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "El escenario que más pilotos VFR ha matado empieza inocente: el techo de nubes baja, y tú bajas con él «para no perder de vista el terreno». Eso se llama **carrera scud** (*scud running*): volar cada vez más bajo, con menos visibilidad, esquivando cerros que aparecen de la nada. El final típico tiene sigla: **CFIT** — vuelo controlado contra el terreno. El avión funcionaba perfecto; la decisión, no."
+        },
+        {
+          "type": "text",
+          "md": "Y si sigues hasta entrar a la nube — **VFR into IMC** — pierdes toda referencia visual. Un estudio clásico midió cuánto tardaba un piloto sin entrenamiento en instrumentos en perder el control dentro de nubes: **178 segundos** en promedio. Tres minutos. Por eso la decisión correcta es el viraje de **180°** — dar la vuelta — hecho **temprano**, cuando todavía es fácil, no cuando ya estás atrapado entre nubes y cerros."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta el nombre de «empujar tus capacidades y los límites de la aeronave para mantener contacto visual con el terreno en condiciones de poca visibilidad y techo»: **carrera scud** (scud running)."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "«Un poquito más y seguro mejora» es la impulsividad + la invulnerabilidad + el «tengo que llegar» actuando juntas. Si el clima adelante te hace dudar, ya tienes la respuesta: **da la vuelta**."
+        },
+        {
+          "type": "notebook",
+          "id": "2-10-n1",
+          "prompt": "Dibuja la historia de un vuelo scud en cuatro viñetas (el techo baja → desciendes → la visibilidad cae → aparece el cerro) y marca en qué viñeta harías el viraje de 180°. Escribe al lado, en grande: «178 segundos»."
+        },
+        {
+          "type": "check",
+          "id": "2-10-c1",
+          "q": "Forzar tus límites volando cada vez más bajo para mantener contacto visual con el terreno, con mala visibilidad y techo bajo, se llama:",
+          "options": [
+            "Carrera scud (scud running).",
+            "Vuelo de precisión.",
+            "Presión de grupo."
+          ],
+          "answer": 0,
+          "why": "Es la definición de carrera scud, y su final típico es el CFIT: vuelo controlado contra el terreno."
+        },
+        {
+          "type": "check",
+          "id": "2-10-c2",
+          "q": "Un piloto VFR sin entrenamiento en instrumentos ve que va a entrar en nubes. ¿Cuál es la acción correcta?",
+          "options": [
+            "Descender hasta recuperar la vista del terreno.",
+            "Virar 180° temprano y volver a condiciones visuales.",
+            "Acelerar para atravesar la nube lo antes posible."
+          ],
+          "answer": 1,
+          "why": "Sin instrumentos, dentro de la nube el control se pierde en un promedio de 178 segundos: la salida es dar la vuelta a tiempo."
+        }
+      ]
+    }
+  ]
+}

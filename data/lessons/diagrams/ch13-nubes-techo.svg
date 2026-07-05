@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="Capas de nubes y definición de techo">
+  <text x="210" y="20" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">¿Cuál capa es el techo?</text>
+
+  <!-- eje de altitud -->
+  <line x1="50" y1="40" x2="50" y2="240" stroke="var(--muted)"/>
+  <line x1="46" y1="50" x2="54" y2="50" stroke="var(--muted)"/>
+  <text x="42" y="54" text-anchor="end" font-family="inherit" font-size="12" fill="var(--muted)">12,000</text>
+  <line x1="46" y1="129" x2="54" y2="129" stroke="var(--muted)"/>
+  <text x="42" y="133" text-anchor="end" font-family="inherit" font-size="12" fill="var(--muted)">7,000</text>
+  <line x1="46" y1="177" x2="54" y2="177" stroke="var(--muted)"/>
+  <text x="42" y="181" text-anchor="end" font-family="inherit" font-size="12" fill="var(--muted)">4,000</text>
+  <line x1="46" y1="216" x2="54" y2="216" stroke="var(--muted)"/>
+  <text x="42" y="220" text-anchor="end" font-family="inherit" font-size="12" fill="var(--muted)">1,500</text>
+  <text x="42" y="244" text-anchor="end" font-family="inherit" font-size="12" fill="var(--muted)">ft AGL</text>
+
+  <!-- OVC120: 8/8 -->
+  <g fill="var(--panel-2)" stroke="var(--muted)">
+    <ellipse cx="80" cy="50" rx="20" ry="9"/><ellipse cx="115" cy="50" rx="20" ry="9"/><ellipse cx="150" cy="50" rx="20" ry="9"/><ellipse cx="185" cy="50" rx="20" ry="9"/><ellipse cx="220" cy="50" rx="20" ry="9"/><ellipse cx="255" cy="50" rx="20" ry="9"/>
+  </g>
+  <text x="286" y="54" font-family="inherit" font-size="12" fill="var(--text)">OVC120 · 8/8</text>
+
+  <!-- BKN070: 5-7/8 -->
+  <g fill="var(--panel-2)" stroke="var(--muted)">
+    <ellipse cx="82" cy="129" rx="20" ry="9"/><ellipse cx="120" cy="129" rx="20" ry="9"/><ellipse cx="158" cy="129" rx="20" ry="9"/><ellipse cx="222" cy="129" rx="20" ry="9"/><ellipse cx="258" cy="129" rx="20" ry="9"/>
+  </g>
+  <text x="286" y="124" font-family="inherit" font-size="12" fill="var(--text)">BKN070 · 5–7/8</text>
+  <text x="286" y="140" font-family="inherit" font-size="13" font-weight="bold" fill="var(--bad)">← TECHO</text>
+
+  <!-- SCT040: 3-4/8 -->
+  <g fill="var(--panel-2)" stroke="var(--muted)">
+    <ellipse cx="95" cy="177" rx="20" ry="9"/><ellipse cx="170" cy="177" rx="20" ry="9"/><ellipse cx="240" cy="177" rx="20" ry="9"/>
+  </g>
+  <text x="286" y="181" font-family="inherit" font-size="12" fill="var(--text)">SCT040 · 3–4/8</text>
+
+  <!-- FEW015: 1-2/8 -->
+  <g fill="var(--panel-2)" stroke="var(--muted)">
+    <ellipse cx="120" cy="216" rx="20" ry="9"/><ellipse cx="225" cy="216" rx="20" ry="9"/>
+  </g>
+  <text x="286" y="220" font-family="inherit" font-size="12" fill="var(--text)">FEW015 · 1–2/8</text>
+
+  <!-- terreno -->
+  <rect x="50" y="240" width="320" height="12" fill="var(--panel-2)" stroke="var(--muted)"/>
+  <text x="210" y="270" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">Techo = la capa BKN u OVC más baja. FEW y SCT no cuentan.</text>
+</svg>

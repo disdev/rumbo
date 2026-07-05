@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 210" font-family="inherit">
+  <defs>
+    <marker id="k5g-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--ok)"/></marker>
+    <marker id="k5g-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker>
+  </defs>
+  <text x="115" y="24" fill="var(--text)" font-size="13" text-anchor="middle">1. Diedro: alas en “V” abierta</text>
+  <g stroke="var(--text)" stroke-width="2.5" fill="var(--panel-2)">
+    <line x1="113" y1="116" x2="30" y2="97"/>
+    <line x1="117" y1="116" x2="200" y2="97"/>
+    <circle cx="115" cy="120" r="11"/>
+  </g>
+  <line x1="30" y1="118" x2="200" y2="118" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <path d="M62 111 A 55 55 0 0 1 64 104" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <text x="115" y="152" fill="var(--accent)" font-size="12" text-anchor="middle">ángulo diedro</text>
+  <text x="330" y="24" fill="var(--text)" font-size="13" text-anchor="middle">2. Al ladearse, se endereza solo</text>
+  <g stroke="var(--text)" stroke-width="2.5" fill="var(--panel-2)">
+    <line x1="328" y1="112" x2="248" y2="82"/>
+    <line x1="332" y1="114" x2="412" y2="130"/>
+    <circle cx="330" cy="115" r="11"/>
+  </g>
+  <line x1="392" y1="126" x2="392" y2="76" stroke="var(--ok)" stroke-width="3.5" marker-end="url(#k5g-ok)"/>
+  <text x="392" y="62" fill="var(--ok)" font-size="12" text-anchor="middle">ala baja: más</text>
+  <line x1="268" y1="86" x2="268" y2="56" stroke="var(--ok)" stroke-width="2" marker-end="url(#k5g-ok)"/>
+  <text x="262" y="44" fill="var(--muted)" font-size="12" text-anchor="middle">ala alta: menos</text>
+  <path d="M356 148 A 30 30 0 0 1 306 150" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#k5g-acc)"/>
+  <text x="330" y="178" fill="var(--accent)" font-size="12" text-anchor="middle">más sustentación abajo</text>
+  <text x="330" y="193" fill="var(--accent)" font-size="12" text-anchor="middle">→ el avión rueda de vuelta</text>
+</svg>

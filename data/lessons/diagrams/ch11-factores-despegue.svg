@@ -1,0 +1,49 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cinco factores que cambian la distancia de despegue: peso, viento, pendiente, superficie y altitud de densidad">
+  <text x="240" y="24" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">¿Qué alarga tu carrera de despegue?</text>
+
+  <!-- Panel 1: peso -->
+  <rect x="15" y="42" width="140" height="110" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="85" y="64" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">Peso</text>
+  <rect x="55" y="76" width="28" height="22" fill="none" stroke="var(--bad)" stroke-width="2"/>
+  <rect x="87" y="76" width="28" height="22" fill="none" stroke="var(--bad)" stroke-width="2"/>
+  <text x="85" y="92" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle"> </text>
+  <text x="85" y="120" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">más peso =</text>
+  <text x="85" y="136" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">ALARGA</text>
+
+  <!-- Panel 2: viento -->
+  <rect x="170" y="42" width="140" height="110" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="240" y="64" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">Viento</text>
+  <line x1="200" y1="84" x2="250" y2="84" stroke="var(--ok)" stroke-width="2.5"/>
+  <polygon points="256,84 246,79 246,89" fill="var(--ok)"/>
+  <text x="240" y="104" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">de frente: ACORTA</text>
+  <line x1="280" y1="118" x2="230" y2="118" stroke="var(--bad)" stroke-width="2.5"/>
+  <polygon points="224,118 234,113 234,123" fill="var(--bad)"/>
+  <text x="240" y="140" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">de cola: ALARGA ×2</text>
+
+  <!-- Panel 3: pendiente -->
+  <rect x="325" y="42" width="140" height="110" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="395" y="64" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">Pendiente</text>
+  <line x1="345" y1="106" x2="445" y2="82" stroke="var(--bad)" stroke-width="2.5"/>
+  <text x="395" y="126" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">cuesta arriba =</text>
+  <text x="395" y="142" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">ALARGA</text>
+
+  <!-- Panel 4: superficie -->
+  <rect x="90" y="166" width="140" height="110" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="160" y="188" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">Superficie</text>
+  <path d="M 120 212 l 5 -9 l 5 9 M 135 212 l 5 -9 l 5 9 M 150 212 l 5 -9 l 5 9 M 165 212 l 5 -9 l 5 9 M 180 212 l 5 -9 l 5 9" fill="none" stroke="var(--ok)" stroke-width="2"/>
+  <text x="160" y="238" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">pasto, arena, barro:</text>
+  <text x="160" y="254" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">frenan las ruedas = ALARGA</text>
+
+  <!-- Panel 5: DA -->
+  <rect x="250" y="166" width="140" height="110" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="320" y="188" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">Altitud de densidad</text>
+  <circle cx="300" cy="212" r="10" fill="none" stroke="var(--bad)" stroke-width="2"/>
+  <line x1="300" y1="196" x2="300" y2="190" stroke="var(--bad)" stroke-width="2"/>
+  <line x1="300" y1="228" x2="300" y2="234" stroke="var(--bad)" stroke-width="2"/>
+  <line x1="284" y1="212" x2="278" y2="212" stroke="var(--bad)" stroke-width="2"/>
+  <line x1="316" y1="212" x2="322" y2="212" stroke="var(--bad)" stroke-width="2"/>
+  <polygon points="330,224 344,198 358,224" fill="none" stroke="var(--muted)" stroke-width="2"/>
+  <text x="320" y="254" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">alta y caliente = ALARGA</text>
+
+  <text x="240" y="294" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Como tu moto: dos pasajeros, cuesta arriba y sobre arena… no acelera igual</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 460 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lista PAVE en cuatro cajas: Piloto, Aeronave, entorno y presiones Externas">
+  <text x="12" y="24" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">PAVE — ¿qué puede complicar este vuelo?</text>
+
+  <!-- P Piloto -->
+  <rect x="12" y="44" width="212" height="126" rx="12" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="30" y="90" fill="var(--accent)" font-family="inherit" font-size="16" font-weight="bold">P</text>
+  <text x="52" y="74" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold">Piloto</text>
+  <text x="52" y="96" fill="var(--muted)" font-family="inherit" font-size="12">¿Estoy en condiciones</text>
+  <text x="52" y="112" fill="var(--muted)" font-family="inherit" font-size="12">de volar hoy?</text>
+  <text x="52" y="134" fill="var(--ok)" font-family="inherit" font-size="12">→ revísalo con IMSAFE</text>
+
+  <!-- A Aeronave -->
+  <rect x="236" y="44" width="212" height="126" rx="12" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="254" y="90" fill="var(--accent)" font-family="inherit" font-size="16" font-weight="bold">A</text>
+  <text x="276" y="74" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold">Aeronave (Aircraft)</text>
+  <text x="276" y="96" fill="var(--muted)" font-family="inherit" font-size="12">¿Combustible suficiente?</text>
+  <text x="276" y="112" fill="var(--muted)" font-family="inherit" font-size="12">¿Mantenimiento al día?</text>
+  <text x="276" y="128" fill="var(--muted)" font-family="inherit" font-size="12">¿Performance para esta pista?</text>
+
+  <!-- V entorno -->
+  <rect x="12" y="182" width="212" height="126" rx="12" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="30" y="228" fill="var(--accent)" font-family="inherit" font-size="16" font-weight="bold">V</text>
+  <text x="52" y="212" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold">Entorno (enVironment)</text>
+  <text x="52" y="234" fill="var(--muted)" font-family="inherit" font-size="12">¿Clima en ruta y destino?</text>
+  <text x="52" y="250" fill="var(--muted)" font-family="inherit" font-size="12">¿Terreno, pista, obstáculos?</text>
+  <text x="52" y="266" fill="var(--muted)" font-family="inherit" font-size="12">¿Día o noche?</text>
+
+  <!-- E presiones externas -->
+  <rect x="236" y="182" width="212" height="126" rx="12" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
+  <text x="254" y="228" fill="var(--bad)" font-family="inherit" font-size="16" font-weight="bold">E</text>
+  <text x="276" y="212" fill="var(--text)" font-family="inherit" font-size="14" font-weight="bold">Presiones Externas</text>
+  <text x="276" y="234" fill="var(--muted)" font-family="inherit" font-size="12">¿Qué me empuja a volar?</text>
+  <text x="276" y="250" fill="var(--muted)" font-family="inherit" font-size="12">¿Prometí llegar? ¿Me esperan?</text>
+  <text x="276" y="266" fill="var(--bad)" font-family="inherit" font-size="12">La más traicionera de las 4</text>
+</svg>

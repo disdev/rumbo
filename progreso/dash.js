@@ -4,6 +4,7 @@
 
 import { derive, dayKey, weekday, addDays } from '../src/js/derive.js';
 import { generateProblem, FAMILY_IDS } from '../src/js/mathgen.js';
+import { earnedBadges } from '../src/js/badges.js';
 
 const app = document.getElementById('app');
 
@@ -88,14 +89,25 @@ function render(ctx) {
   }
 
   // ---- last 7 study days ----
+  const lastRowByDay = new Map();
+  for (const r of rows) {
+    const d = dayKey(r.ts);
+    if (!lastRowByDay.has(d) || r.ts > lastRowByDay.get(d)) lastRowByDay.set(d, r.ts);
+  }
+  const limaHHMM = (ts) => new Date(ts - 5 * 3600e3).toISOString().slice(11, 16);
+  const plannedEnd = config.schedule.sessions[config.schedule.sessions.length - 1]?.end || '18:00';
   const days = [];
   for (let k = today, n = 0; n < 7; k = addDays(k, -1)) {
     if (!config.schedule.study_days.includes(weekday(k))) continue;
     n++;
     const cls = state.dayLog.get(k) || 'perdido';
-    days.unshift(el('div', { class: `day ${cls}` }, `${k.slice(5)}`, el('br'), cls));
+    // sin límite duro (§4.4): pasarse de la hora se ve, no se corta
+    const last = lastRowByDay.get(k);
+    const ranLate = last && limaHHMM(last) > plannedEnd;
+    days.unshift(el('div', { class: `day ${cls}` }, `${k.slice(5)}`, el('br'), cls, ranLate ? el('span', { class: 'meta' }, el('br'), `→${limaHHMM(last)}`) : ''));
   }
-  nodes.push(section('Last 7 study days', el('div', { class: 'days' }, ...days)));
+  nodes.push(section('Last 7 study days', el('div', { class: 'days' }, ...days),
+    el('p', { class: 'note' }, `Times are anchors, not limits — a "→HH:MM" marks a day he kept going past ${plannedEnd} (pacing signal for the check-in, never a problem).`)));
 
   // ---- skipped blocks ----
   if (state.skips.length) {
@@ -110,10 +122,14 @@ function render(ctx) {
     ...FAMILY_IDS.map(f => {
       const L = state.ladder[f];
       const last = L?.attempts[L.attempts.length - 1];
+      const reps = state.mathReps[f];
       return el('div', { class: 'tracker-row' },
-        el('span', { class: 'tracker-label' }, FAMILY_LABELS[f], last ? el('span', { class: 'meta' }, ` — last: ${last.score}/10 (${last.day})`) : ''),
+        el('span', { class: 'tracker-label' }, FAMILY_LABELS[f],
+          last ? el('span', { class: 'meta' }, ` — last: ${last.score}/10 (${last.day})`) : '',
+          reps ? el('span', { class: 'meta' }, ` · ${reps.lifetime} reps, streak ${reps.streak}`) : ''),
         ...[1, 2, 3].map(t => el('span', { class: `cell ${t <= (L?.passedTier ?? 0) ? 'done' : ''}` }, String(t))));
-    }))));
+    })),
+    state.mathMaintenanceDue.length ? el('p', { class: 'note' }, `Maintenance due: ${state.mathMaintenanceDue.map(m => `${FAMILY_LABELS[m.family]} t${m.tier}`).join(' · ')}`) : ''));
 
   // ---- chapter progress ----
   nodes.push(section('Chapters', el('table', { class: 'plain' },
@@ -131,6 +147,28 @@ function render(ctx) {
     }))));
   const zeroCov = chapters.chapters.filter(c => c.week && !c.categories.length);
   if (zeroCov.length) nodes.push(el('p', { class: 'note' }, `No bank coverage (probe these in teach-back): ${zeroCov.map(c => `ch. ${c.id} ${c.title}`).join(' · ')}`));
+
+  // ---- lessons (§5.8): where understanding breaks DURING teaching ----
+  nodes.push(section('Lessons', el('table', { class: 'plain' },
+    el('tr', {}, el('th', {}, 'Ch.'), el('th', {}, 'Sections'), el('th', {}, 'Time'), el('th', {}, 'Checks'), el('th', {}, 'Notebook')),
+    ...chapters.chapters.filter(c => c.week).map(c => {
+      const L = state.lessons.get(c.id);
+      const total = c.sections?.length || 0;
+      const secs = L ? [...L.secondsBySection.values()].reduce((a, b) => a + b, 0) : 0;
+      const checkPct = L?.checks.n ? Math.round(100 * L.checks.ok / L.checks.n) : null;
+      return el('tr', {},
+        el('td', {}, `${c.id} — ${c.title}`),
+        el('td', {}, L ? `${L.sectionsSeen.size}/${total || '?'}${L.completed ? ' ✅' : ''}` : '—'),
+        el('td', {}, secs ? `${Math.round(secs / 60)} min` : '—'),
+        el('td', {}, checkPct === null ? '—' : `${L.checks.ok}/${L.checks.n} (${checkPct}%)${checkPct < 70 ? ' ⚠️' : ''}`),
+        el('td', {}, L?.notebooks.size ? `${L.notebooks.size} ✍️` : '—'));
+    })),
+    el('p', { class: 'note' }, 'Low check % = understanding breaking during teaching, before recall/questions confirm it. Notebook column = prompts he marked done — audit the physical cuaderno against it on Sunday.')));
+
+  // ---- badges (§5.9) ----
+  const badges = earnedBadges(state);
+  if (badges.length) nodes.push(section(`Badges (${badges.length})`,
+    el('div', { class: 'entry' }, badges.map(b => `${b.emoji} ${b.title}`).join(' · '))));
 
   // ---- free recall entries (Sunday audit material) ----
   nodes.push(section(`Free-recall entries (${state.recalls.length})`, ...state.recalls.slice(-10).reverse().map(r => {

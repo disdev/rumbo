@@ -7,7 +7,9 @@ const CORE = [
   'src/css/app.css',
   'src/js/main.js', 'src/js/store.js', 'src/js/derive.js', 'src/js/planner.js',
   'src/js/mathgen.js', 'src/js/players.js', 'src/js/session.js', 'src/js/sync.js', 'src/js/audio.js',
+  'src/js/lessons.js', 'src/js/widgets.js', 'src/js/guided.js', 'src/js/badges.js',
   'data/config.json', 'data/chapters.json', 'data/bank.json', 'data/math-templates.json', 'data/scenarios.json',
+  'data/lessons/index.json',
   'icons/icon-192.png', 'icons/icon-512.png',
 ];
 
@@ -26,9 +28,16 @@ self.addEventListener('install', (e) => {
     const bank = await (await cache.match('data/bank.json')).json();
     const figs = [...new Set(bank.flatMap(q => q.figures || []))]
       .map(f => `data/figures/${encodeURIComponent(f)}`);
+    // Lecciones y diagramas (§3.4, §5.8): la app enseña también sin red
+    const lessonIndex = await (await cache.match('data/lessons/index.json')).json();
+    const lessonAssets = [
+      ...lessonIndex.lessons.map(f => `data/lessons/${f}`),
+      ...lessonIndex.diagrams.map(f => `data/lessons/diagrams/${encodeURIComponent(f)}`),
+    ];
     // en tandas para no saturar conexiones lentas
-    for (let i = 0; i < figs.length; i += 5) {
-      await Promise.all(figs.slice(i, i + 5).map(u => cache.add(u).catch(() => null)));
+    const assets = [...figs, ...lessonAssets];
+    for (let i = 0; i < assets.length; i += 5) {
+      await Promise.all(assets.slice(i, i + 5).map(u => cache.add(u).catch(() => null)));
     }
     const clients = await self.clients.matchAll({ includeUncontrolled: true });
     clients.forEach(c => c.postMessage('precache-done'));

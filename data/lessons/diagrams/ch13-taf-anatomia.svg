@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 270" role="img" aria-label="Anatomía de un TAF con sus grupos de cambio">
+  <text x="230" y="22" text-anchor="middle" font-family="inherit" font-size="15" font-weight="bold" fill="var(--text)">Anatomía de un TAF</text>
+
+  <text x="20" y="52" font-family="inherit" font-size="13" fill="var(--text)">TAF SPZO 121100Z <tspan fill="var(--accent)" font-weight="bold">1212/1318</tspan></text>
+  <text x="36" y="68" font-family="inherit" font-size="12" fill="var(--muted)">emitido día 12 a las 11:00Z · válido del 12/12:00Z al 13/18:00Z</text>
+
+  <text x="20" y="96" font-family="inherit" font-size="13" fill="var(--text)">20008KT 9999 SCT040</text>
+  <text x="36" y="112" font-family="inherit" font-size="12" fill="var(--muted)">pronóstico base — mismos códigos que el METAR</text>
+
+  <text x="20" y="140" font-family="inherit" font-size="13" fill="var(--text)"><tspan fill="var(--accent)" font-weight="bold">TEMPO</tspan> 1218/1222 4000 SHRA BKN025</text>
+  <text x="36" y="156" font-family="inherit" font-size="12" fill="var(--muted)">fluctuaciones temporales: menos de 1 hora cada vez</text>
+
+  <text x="20" y="184" font-family="inherit" font-size="13" fill="var(--text)"><tspan fill="var(--accent)" font-weight="bold">BECMG</tspan> 1300/1302 VRB03KT</text>
+  <text x="36" y="200" font-family="inherit" font-size="12" fill="var(--muted)">cambio gradual dentro de esa ventana</text>
+
+  <text x="20" y="228" font-family="inherit" font-size="13" fill="var(--text)"><tspan fill="var(--bad)" font-weight="bold">FM131500</tspan> 18012KT 9999 BKN030</text>
+  <text x="36" y="244" font-family="inherit" font-size="12" fill="var(--muted)">cambio rápido: desde el día 13 a las 15:00Z reemplaza todo lo anterior</text>
+
+  <text x="230" y="264" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--accent)">Único tipo de nube pronosticado en un TAF: CB (cumulonimbus).</text>
+</svg>

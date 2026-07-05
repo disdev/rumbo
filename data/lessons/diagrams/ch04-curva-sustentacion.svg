@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 270" role="img" aria-label="Curva de sustentación contra ángulo de ataque con la pérdida marcada">
+  <!-- ejes -->
+  <line x1="60" y1="220" x2="415" y2="220" stroke="var(--text)" stroke-width="2"/>
+  <line x1="60" y1="220" x2="60" y2="30" stroke="var(--text)" stroke-width="2"/>
+  <polygon points="415,220 400,213 400,227" fill="var(--text)"/>
+  <polygon points="60,30 53,45 67,45" fill="var(--text)"/>
+  <!-- marcas eje X: 0,5,10,15,20 grados -->
+  <line x1="60" y1="220" x2="60" y2="226" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="140" y1="220" x2="140" y2="226" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="220" y1="220" x2="220" y2="226" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="300" y1="220" x2="300" y2="226" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="380" y1="220" x2="380" y2="226" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="60" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">0°</text>
+  <text x="140" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">5°</text>
+  <text x="220" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">10°</text>
+  <text x="300" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">15°</text>
+  <text x="380" y="240" font-family="inherit" font-size="12" fill="var(--muted)" text-anchor="middle">20°</text>
+  <text x="240" y="262" font-family="inherit" font-size="13" fill="var(--text)" text-anchor="middle">ángulo de ataque</text>
+  <text x="28" y="128" font-family="inherit" font-size="13" fill="var(--text)" transform="rotate(-90 28 128)" text-anchor="middle">sustentación</text>
+  <!-- curva de sustentación -->
+  <path d="M60 210 C 160 185 250 140 332 62 C 340 55 348 66 358 92 C 366 112 374 132 384 150"
+        fill="none" stroke="var(--ok)" stroke-width="3"/>
+  <!-- ángulo crítico -->
+  <line x1="332" y1="62" x2="332" y2="220" stroke="var(--bad)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="332" cy="62" r="5" fill="var(--bad)"/>
+  <text x="326" y="42" font-family="inherit" font-size="13" fill="var(--bad)" text-anchor="end">ángulo crítico (~15°–20°)</text>
+  <text x="345" y="180" font-family="inherit" font-size="13" fill="var(--bad)">pérdida</text>
+  <text x="345" y="196" font-family="inherit" font-size="13" fill="var(--bad)">(stall)</text>
+</svg>

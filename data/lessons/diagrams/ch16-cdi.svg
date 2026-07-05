@@ -1,0 +1,47 @@
+<svg viewBox="0 0 480 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Indicador VOR con OBS, aguja CDI desviada a la derecha y bandera TO">
+  <!-- caja del instrumento -->
+  <circle cx="150" cy="160" r="115" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+
+  <!-- curso seleccionado arriba -->
+  <path d="M150 55 L143 72 L157 72 Z" fill="var(--text)"/>
+  <text x="132" y="94" fill="var(--text)" font-family="inherit" font-size="16" font-weight="bold">090</text>
+  <line x1="150" y1="278" x2="150" y2="262" stroke="var(--muted)" stroke-width="2"/>
+
+  <!-- puntos de desviación -->
+  <g fill="none" stroke="var(--muted)" stroke-width="1.5">
+    <circle cx="110" cy="160" r="5"/>
+    <circle cx="130" cy="160" r="5"/>
+    <circle cx="170" cy="160" r="5"/>
+    <circle cx="190" cy="160" r="5"/>
+  </g>
+  <line x1="150" y1="150" x2="150" y2="170" stroke="var(--muted)" stroke-width="2"/>
+
+  <!-- aguja CDI desviada 2 puntos a la derecha -->
+  <line x1="190" y1="105" x2="190" y2="215" stroke="var(--accent)" stroke-width="4"/>
+
+  <!-- bandera TO -->
+  <path d="M150 196 L142 210 L158 210 Z" fill="var(--ok)"/>
+  <text x="163" y="210" fill="var(--ok)" font-family="inherit" font-size="12" font-weight="bold">TO / HACIA</text>
+
+  <!-- perilla OBS -->
+  <circle cx="70" cy="248" r="16" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <line x1="70" y1="236" x2="70" y2="248" stroke="var(--text)" stroke-width="2"/>
+  <text x="30" y="288" fill="var(--text)" font-family="inherit" font-size="12">OBS: gira para</text>
+  <text x="30" y="302" fill="var(--muted)" font-family="inherit" font-size="12">elegir el curso</text>
+
+  <!-- anotaciones -->
+  <line x1="190" y1="110" x2="300" y2="80" stroke="var(--muted)" stroke-width="1"/>
+  <text x="300" y="62" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">Aguja a la derecha:</text>
+  <text x="300" y="78" fill="var(--text)" font-family="inherit" font-size="13">el curso está a tu</text>
+  <text x="300" y="94" fill="var(--text)" font-family="inherit" font-size="13">derecha — vuela</text>
+  <text x="300" y="110" fill="var(--text)" font-family="inherit" font-size="13">hacia la aguja</text>
+
+  <text x="300" y="150" fill="var(--text)" font-family="inherit" font-size="13">Cada punto ≈ 2°</text>
+  <text x="300" y="166" fill="var(--muted)" font-family="inherit" font-size="12">aquí: ~4° fuera del curso</text>
+
+  <text x="300" y="206" fill="var(--ok)" font-family="inherit" font-size="13">HACIA (TO): el curso 090</text>
+  <text x="300" y="222" fill="var(--muted)" font-family="inherit" font-size="12">te acerca a la estación</text>
+  <text x="300" y="246" fill="var(--muted)" font-family="inherit" font-size="12">La aguja NO depende de</text>
+  <text x="300" y="262" fill="var(--muted)" font-family="inherit" font-size="12">hacia dónde apunta tu nariz:</text>
+  <text x="300" y="278" fill="var(--muted)" font-family="inherit" font-size="12">solo de dónde ESTÁS.</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" font-family="inherit">
+  <defs>
+    <marker id="k5b-txt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--text)"/></marker>
+  </defs>
+  <line x1="60" y1="240" x2="400" y2="240" stroke="var(--text)" stroke-width="2" marker-end="url(#k5b-txt)"/>
+  <line x1="60" y1="240" x2="60" y2="30" stroke="var(--text)" stroke-width="2" marker-end="url(#k5b-txt)"/>
+  <text x="395" y="258" fill="var(--text)" font-size="13" text-anchor="end">Velocidad →</text>
+  <text x="18" y="24" fill="var(--text)" font-size="13">Resistencia</text>
+  <path d="M65 234 C 160 228, 280 180, 385 70" fill="none" stroke="var(--bad)" stroke-width="2.5"/>
+  <path d="M65 60 C 130 170, 230 220, 385 234" fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <path d="M65 55 C 135 145, 185 176, 232 178 C 285 180, 330 140, 385 65" fill="none" stroke="var(--accent)" stroke-width="3.5"/>
+  <line x1="232" y1="178" x2="232" y2="240" stroke="var(--ok)" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="232" cy="178" r="5" fill="var(--ok)"/>
+  <text x="232" y="270" fill="var(--ok)" font-size="13" text-anchor="middle">L/D máx = mejor planeo</text>
+  <text x="330" y="200" fill="var(--bad)" font-size="13" text-anchor="middle">Parásita</text>
+  <text x="120" y="110" fill="var(--muted)" font-size="13" text-anchor="middle">Inducida</text>
+  <text x="120" y="60" fill="var(--accent)" font-size="14" text-anchor="middle">Total</text>
+  <text x="150" y="230" fill="var(--muted)" font-size="11" text-anchor="middle">lento: manda la inducida</text>
+  <text x="340" y="110" fill="var(--muted)" font-size="11" text-anchor="middle">rápido: manda la parásita</text>
+</svg>

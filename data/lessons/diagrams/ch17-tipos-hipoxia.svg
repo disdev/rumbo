@@ -1,0 +1,36 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de los cuatro tipos de hipoxia">
+  <!-- centro -->
+  <ellipse cx="240" cy="150" rx="70" ry="34" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2.5"/>
+  <text x="240" y="146" fill="var(--accent)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">HIPOXIA</text>
+  <text x="240" y="164" fill="var(--muted)" font-family="inherit" font-size="11" text-anchor="middle">falta de oxígeno</text>
+
+  <!-- ramas -->
+  <line x1="180" y1="130" x2="90" y2="55" stroke="var(--muted)" stroke-width="1.5"/>
+  <line x1="300" y1="130" x2="390" y2="55" stroke="var(--muted)" stroke-width="1.5"/>
+  <line x1="180" y1="170" x2="90" y2="245" stroke="var(--muted)" stroke-width="1.5"/>
+  <line x1="300" y1="170" x2="390" y2="245" stroke="var(--muted)" stroke-width="1.5"/>
+
+  <!-- hipóxica -->
+  <rect x="10" y="25" width="150" height="55" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="20" y="45" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Hipóxica</text>
+  <text x="20" y="62" fill="var(--muted)" font-family="inherit" font-size="11">poco O2 en el aire</text>
+  <text x="20" y="75" fill="var(--muted)" font-family="inherit" font-size="11">(altura) — la más común</text>
+
+  <!-- hipémica -->
+  <rect x="320" y="25" width="152" height="55" rx="8" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="1.5"/>
+  <text x="330" y="45" fill="var(--bad)" font-family="inherit" font-size="13" font-weight="bold">Hipémica</text>
+  <text x="330" y="62" fill="var(--muted)" font-family="inherit" font-size="11">la sangre no lo lleva</text>
+  <text x="330" y="75" fill="var(--muted)" font-family="inherit" font-size="11">(CO, anemia)</text>
+
+  <!-- estancada -->
+  <rect x="10" y="220" width="150" height="55" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="20" y="240" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Estancada</text>
+  <text x="20" y="257" fill="var(--muted)" font-family="inherit" font-size="11">la sangre no fluye</text>
+  <text x="20" y="270" fill="var(--muted)" font-family="inherit" font-size="11">(G, frío)</text>
+
+  <!-- histotóxica -->
+  <rect x="320" y="220" width="152" height="55" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="330" y="240" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Histotóxica</text>
+  <text x="330" y="257" fill="var(--muted)" font-family="inherit" font-size="11">la célula no lo usa</text>
+  <text x="330" y="270" fill="var(--muted)" font-family="inherit" font-size="11">(alcohol, tóxicos)</text>
+</svg>

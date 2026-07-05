@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" role="img" aria-label="Perfil alar con sus partes: borde de ataque, borde de salida, cuerda y combadura">
+  <!-- perfil -->
+  <path d="M70 158 C 100 110 230 95 388 152 C 280 178 120 178 70 158 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <!-- cuerda: recta de borde de ataque a borde de salida -->
+  <line x1="70" y1="158" x2="388" y2="152" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 5"/>
+  <!-- línea de combadura media -->
+  <path d="M70 158 Q 225 122 388 152" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="3 4"/>
+  <!-- borde de ataque -->
+  <line x1="62" y1="200" x2="70" y2="162" stroke="var(--text)" stroke-width="1"/>
+  <text x="14" y="218" font-family="inherit" font-size="13" fill="var(--text)">borde de ataque</text>
+  <text x="14" y="234" font-family="inherit" font-size="12" fill="var(--muted)">(leading edge)</text>
+  <!-- borde de salida -->
+  <line x1="400" y1="196" x2="390" y2="156" stroke="var(--text)" stroke-width="1"/>
+  <text x="330" y="214" font-family="inherit" font-size="13" fill="var(--text)">borde de salida</text>
+  <text x="330" y="230" font-family="inherit" font-size="12" fill="var(--muted)">(trailing edge)</text>
+  <!-- cuerda -->
+  <line x1="200" y1="235" x2="230" y2="157" stroke="var(--accent)" stroke-width="1"/>
+  <text x="150" y="252" font-family="inherit" font-size="13" fill="var(--accent)">cuerda (chord line): recta</text>
+  <!-- combadura -->
+  <line x1="150" y1="70" x2="180" y2="132" stroke="var(--muted)" stroke-width="1"/>
+  <text x="60" y="60" font-family="inherit" font-size="13" fill="var(--muted)">combadura media (camber): curva</text>
+  <!-- extradós -->
+  <line x1="330" y1="82" x2="300" y2="116" stroke="var(--text)" stroke-width="1"/>
+  <text x="300" y="70" font-family="inherit" font-size="13" fill="var(--text)">extradós (arriba)</text>
+  <!-- intradós -->
+  <line x1="290" y1="200" x2="270" y2="172" stroke="var(--text)" stroke-width="1"/>
+  <text x="252" y="218" font-family="inherit" font-size="13" fill="var(--text)">intradós (abajo)</text>
+</svg>

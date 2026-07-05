@@ -1,0 +1,33 @@
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  <text x="14" y="22" font-size="12" fill="var(--muted)">Indicada: lo que lees en el altímetro · De presión: desde el plano estándar 29.92</text>
+  <text x="14" y="40" font-size="12" fill="var(--muted)">De densidad: la de presión corregida por temperatura (manda en performance)</text>
+
+  <!-- nivel del mar -->
+  <line x1="10" y1="262" x2="480" y2="262" stroke="var(--muted)" stroke-dasharray="6 5"/>
+  <path d="M10 262 q10 -7 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <text x="18" y="284" font-size="12" fill="var(--accent)">mar (nivel medio, MSL)</text>
+  <text x="478" y="282" font-size="12" fill="var(--muted)" text-anchor="end">nivel medio del mar</text>
+
+  <!-- terreno -->
+  <polygon points="180,262 240,215 300,238 360,175 430,208 480,192 480,262" fill="var(--panel-2)" stroke="var(--text)"/>
+  <text x="440" y="248" font-size="12" fill="var(--muted)" text-anchor="end">terreno</text>
+
+  <!-- avión -->
+  <line x1="305" y1="72" x2="355" y2="72" stroke="var(--text)" stroke-width="5" stroke-linecap="round"/>
+  <line x1="322" y1="58" x2="318" y2="86" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="350" y1="62" x2="350" y2="82" stroke="var(--text)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- altitud verdadera (MSL) -->
+  <line x1="300" y1="96" x2="300" y2="250" stroke="var(--ok)" stroke-width="2"/>
+  <polygon points="300,84 295,96 305,96" fill="var(--ok)"/>
+  <polygon points="300,262 295,250 305,250" fill="var(--ok)"/>
+  <text x="292" y="180" font-size="12" fill="var(--ok)" text-anchor="end">VERDADERA (true)</text>
+  <text x="292" y="196" font-size="12" fill="var(--ok)" text-anchor="end">sobre el mar (MSL)</text>
+
+  <!-- altitud absoluta (AGL) -->
+  <line x1="360" y1="96" x2="360" y2="163" stroke="var(--bad)" stroke-width="2"/>
+  <polygon points="360,84 355,96 365,96" fill="var(--bad)"/>
+  <polygon points="360,175 355,163 365,163" fill="var(--bad)"/>
+  <text x="370" y="122" font-size="12" fill="var(--bad)">ABSOLUTA</text>
+  <text x="370" y="138" font-size="12" fill="var(--bad)">sobre el terreno (AGL)</text>
+</svg>

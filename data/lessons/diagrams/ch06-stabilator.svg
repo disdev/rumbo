@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" role="img" aria-label="Stabilator con tab antiservo">
+  <defs>
+    <marker id="st-ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+  <text x="210" y="24" text-anchor="middle" font-family="inherit" font-size="15" fill="var(--text)" font-weight="bold">Stabilator: toda la cola pivota (vista de perfil)</text>
+
+  <!-- cono de cola -->
+  <path d="M20,110 C70,98 115,100 155,114 L155,142 C115,150 70,148 20,136 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="34" y="130" font-family="inherit" font-size="12" fill="var(--muted)">cola del avión</text>
+
+  <!-- posición neutra (referencia) -->
+  <line x1="160" y1="126" x2="330" y2="126" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="336" y="130" font-family="inherit" font-size="12" fill="var(--muted)">neutro</text>
+
+  <!-- stabilator: una sola pieza, rotada (borde de salida arriba) -->
+  <path d="M170,146 L305,96 L312,106 L178,158 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="176" y="184" font-family="inherit" font-size="13" fill="var(--text)" font-weight="bold">stabilator: UNA sola pieza</text>
+
+  <!-- pivote -->
+  <circle cx="236" cy="126" r="6" fill="var(--accent)" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="236" y1="118" x2="236" y2="72" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="200" y="62" font-family="inherit" font-size="13" fill="var(--accent)" font-weight="bold">pivote central</text>
+
+  <!-- tab antiservo: MISMA dirección que el borde de salida (sube aún más) -->
+  <path d="M308,98 L342,74 L348,83 L312,106 Z" fill="var(--bad)" stroke="var(--text)" stroke-width="1"/>
+  <line x1="352" y1="106" x2="352" y2="70" stroke="var(--accent)" stroke-width="2" marker-end="url(#st-ac)"/>
+  <text x="252" y="52" font-family="inherit" font-size="13" fill="var(--bad)" font-weight="bold">tab antiservo:</text>
+  <text x="252" y="68" font-family="inherit" font-size="12" fill="var(--bad)">MISMA dirección</text>
+
+  <text x="210" y="216" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">El tab en el mismo sentido crea resistencia al mando: menos sensibilidad, más "peso" en la mano.</text>
+</svg>

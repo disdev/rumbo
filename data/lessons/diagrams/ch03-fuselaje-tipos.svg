@@ -1,0 +1,35 @@
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tres tipos de fuselaje: reticulado, monocasco y semimonocasco">
+  <!-- Panel 1: reticulado (truss) -->
+  <text x="75" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Reticulado</text>
+  <text x="75" y="42" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(truss)</text>
+  <rect x="20" y="60" width="110" height="80" fill="none" stroke="var(--text)" stroke-width="2"/>
+  <line x1="20" y1="60" x2="75" y2="140" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="75" y1="140" x2="130" y2="60" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="20" y1="140" x2="75" y2="60" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="75" y1="60" x2="130" y2="140" stroke="var(--accent)" stroke-width="2"/>
+  <text x="75" y="170" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">tubos soldados:</text>
+  <text x="75" y="185" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la jaula carga todo,</text>
+  <text x="75" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la tela solo cubre</text>
+
+  <!-- Panel 2: monocasco -->
+  <text x="240" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Monocasco</text>
+  <text x="240" y="42" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(monocoque)</text>
+  <ellipse cx="240" cy="100" rx="55" ry="42" fill="var(--panel-2)" stroke="var(--text)" stroke-width="4"/>
+  <text x="240" y="170" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">cáscara sola:</text>
+  <text x="240" y="185" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la piel carga todo,</text>
+  <text x="240" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">como lata de gaseosa</text>
+
+  <!-- Panel 3: semimonocasco -->
+  <text x="405" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">Semimonocasco</text>
+  <text x="405" y="42" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">(el que domina hoy)</text>
+  <ellipse cx="405" cy="100" rx="55" ry="42" fill="var(--panel-2)" stroke="var(--text)" stroke-width="3"/>
+  <ellipse cx="405" cy="100" rx="42" ry="31" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <ellipse cx="405" cy="100" rx="28" ry="20" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="405" y1="58" x2="405" y2="142" stroke="var(--ok)" stroke-width="2"/>
+  <line x1="350" y1="100" x2="460" y2="100" stroke="var(--ok)" stroke-width="2"/>
+  <text x="405" y="170" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">piel + cuadernas +</text>
+  <text x="405" y="185" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">larguerillos: la carga</text>
+  <text x="405" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">se reparte en equipo</text>
+
+  <text x="240" y="235" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Vistas en corte transversal (como si cortaras el fuselaje con un cuchillo)</text>
+</svg>

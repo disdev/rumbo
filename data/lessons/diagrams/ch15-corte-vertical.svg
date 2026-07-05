@@ -1,0 +1,39 @@
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Corte vertical del espacio aéreo con las clases apiladas: G cerca del suelo, E encima, A en niveles altos, y CTR y TMA alrededor del aeropuerto">
+  <!-- Clase A: nivel alto -->
+  <rect x="20" y="20" width="440" height="50" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+  <text x="35" y="42" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">A</text>
+  <text x="60" y="42" fill="var(--text)" font-family="inherit" font-size="13">niveles altos — solo IFR, VFR prohibido</text>
+  <text x="60" y="60" fill="var(--muted)" font-family="inherit" font-size="12">separación total del ATC</text>
+
+  <!-- línea FL100 -->
+  <line x1="20" y1="120" x2="460" y2="120" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="8 5"/>
+  <text x="250" y="112" fill="var(--accent)" font-family="inherit" font-size="12">FL100 — visibilidad: 8 km arriba / 5 km abajo</text>
+
+  <!-- Clase E: controlado intermedio -->
+  <rect x="20" y="80" width="440" height="160" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="35" y="150" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">E</text>
+  <text x="35" y="168" fill="var(--muted)" font-family="inherit" font-size="12">controlado, VFR entra</text>
+  <text x="35" y="182" fill="var(--muted)" font-family="inherit" font-size="12">sin autorización</text>
+
+  <!-- TMA (escalón invertido) -->
+  <path d="M170 140 L430 140 L430 205 L360 205 L360 175 L240 175 L240 205 L170 205 Z"
+        fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="300" y="162" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">TMA (C o D)</text>
+  <text x="248" y="198" fill="var(--muted)" font-family="inherit" font-size="11">piso elevado: no toca el suelo</text>
+
+  <!-- CTR (columna desde superficie) -->
+  <rect x="250" y="175" width="100" height="105" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="263" y="230" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">CTR (D)</text>
+  <text x="258" y="248" fill="var(--muted)" font-family="inherit" font-size="11">desde la superficie</text>
+
+  <!-- Clase G: pegado al suelo -->
+  <text x="35" y="262" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">G</text>
+  <text x="55" y="262" fill="var(--muted)" font-family="inherit" font-size="12">no controlado — tú te cuidas solo</text>
+
+  <!-- suelo -->
+  <path d="M20 280 L120 280 L150 268 L180 280 L460 280" fill="none" stroke="var(--text)" stroke-width="2"/>
+  <!-- pista -->
+  <rect x="275" y="276" width="50" height="5" fill="var(--text)"/>
+  <text x="262" y="300" fill="var(--muted)" font-family="inherit" font-size="12">aeropuerto</text>
+  <text x="30" y="300" fill="var(--muted)" font-family="inherit" font-size="12">terreno</text>
+</svg>

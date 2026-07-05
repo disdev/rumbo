@@ -7,6 +7,14 @@ import { selectQuestions } from './planner.js';
 import { uuid } from './store.js';
 import { startRecording, saveRecording } from './audio.js';
 import { guidedExample, firstExposure } from './guided.js';
+import { lessonReview } from './lessons.js';
+
+/** Micro-celebración (§5.9): flash breve, jamás un modal que interrumpa. */
+export function flashCelebrate(root, text) {
+  const f = el('div', { class: 'celebrate-flash' }, text);
+  root.append(f);
+  setTimeout(() => f.remove(), 1100);
+}
 
 export function el(tag, attrs = {}, ...children) {
   const n = document.createElement(tag);
@@ -47,7 +55,7 @@ export async function quizPlayer(root, block, ctx) {
   }
 
   const items = [];
-  let conceptCount = 0;
+  let conceptCount = 0, hotStreak = 0;
   for (let i = 0; i < questions.length; i++) {
     const q = questions[i];
     if (q.figures?.length) {
@@ -58,6 +66,8 @@ export async function quizPlayer(root, block, ctx) {
     const explainMode = block.source !== 'regla' && conceptCount % ctx.data.config.distractor_explain_every === 0;
     const r = await askQuestion(root, q, ctx, { index: items.length + 1, total: questions.length, explainMode });
     items.push({ qid: q.id, correct: r.correct, chosen: r.chosen });
+    hotStreak = r.correct ? hotStreak + 1 : 0;
+    if (hotStreak > 0 && hotStreak % 4 === 0) flashCelebrate(root, `¡${hotStreak} seguidas! 🔥`);
   }
 
   const score = items.filter(i => i.correct).length;
@@ -86,7 +96,8 @@ export async function quizPlayer(root, block, ctx) {
       detail: { items, ...(block.chapter ? { chapter: block.chapter } : {}) },
     });
   }
-  showScore(root, score, items.length);
+  const missed = items.some(i => !i.correct);
+  showScore(root, score, items.length, missed && block.chapter ? { reviewChapter: block.chapter, ctx } : {});
   return waitDone(root);
 }
 
@@ -158,11 +169,19 @@ function askQuestion(root, q, ctx, { index, total, explainMode, noFeedback = fal
   });
 }
 
-function showScore(root, score, total) {
-  root.replaceChildren(el('div', { class: 'card center' },
+function showScore(root, score, total, { reviewChapter = null, ctx = null } = {}) {
+  const nodes = [
     el('h2', {}, `${score} / ${total}`),
     el('p', {}, score / total >= 0.8 ? '¡Buen trabajo!' : 'Los errores vuelven en 2 días — y hoy los rehaces en la Sesión 2.'),
-    el('button', { class: 'primary', onclick: () => root.dispatchEvent(new Event('blockdone')) }, 'Continuar')));
+  ];
+  // Miss routing (§4.3): volver a la sección de la lección es un tap, no tarea
+  if (reviewChapter && ctx) {
+    nodes.push(el('button', {
+      class: 'ghost', onclick: () => lessonReview(root, reviewChapter, ctx, () => showScore(root, score, total, { reviewChapter, ctx })),
+    }, '📚 Volver a la lección de este capítulo'));
+  }
+  nodes.push(el('button', { class: 'primary', onclick: () => root.dispatchEvent(new Event('blockdone')) }, 'Continuar'));
+  root.replaceChildren(el('div', { class: 'card center' }, ...nodes));
 }
 
 function waitDone(root) {
@@ -220,6 +239,7 @@ export async function drillPlayer(root, block, ctx) {
   if (errordeck) { showScore(root, score, n); return waitDone(root); }
 
   const perfect = score === n;
+  if (perfect) flashCelebrate(root, '¡10 de 10! 💪🎉');
   const canRetry = !passed && attemptsToday === 0;
   const nodes = [el('h2', {}, `${score} / ${n}`)];
   if (passed && tier < 3) nodes.push(el('p', {}, `✅ Nivel ${tier} superado. Mañana: nivel ${tier + 1}.`));
@@ -355,6 +375,7 @@ export async function rapidfirePlayer(root, block, ctx) {
     const r = await rapidCard(root, q, { index: i + 1, total: cards.length, streak });
     streak = r.correct ? streak + 1 : 0;
     best = Math.max(best, streak);
+    if (streak === 15) flashCelebrate(root, '¡RACHA ×15! 🎧🔥');
     items.push({ qid: q.id, correct: r.correct });
   }
   ctx.append({ kind: 'rapidfire', category: chapters.track_categories.fraseologia, score: items.filter(i => i.correct).length, total: items.length, detail: { items, best_streak: best } });
@@ -424,11 +445,15 @@ export async function teachbackPlayer(root, block, ctx) {
           el('button', { class: 'primary', onclick: () => done('voz_sin_audio') }, 'Lo expliqué en voz alta')));
       }
     }
-    root.replaceChildren(el('div', { class: 'card' },
-      el('h3', {}, 'Explícalo en voz alta'),
-      el('p', { class: 'question' }, `Concepto de hoy: ${ch ? `cap. ${ch.id} — ${ch.title}` : 'el capítulo actual'}. Explícaselo a alguien como si fueras el instructor.`),
-      el('button', { class: 'primary', onclick: () => done('persona') }, 'Lo expliqué a una persona ✅'),
-      el('button', { class: 'ghost', onclick: record }, 'No hay nadie — grabar audio (máx. 90 s)')));
+    function render() {
+      root.replaceChildren(el('div', { class: 'card' },
+        el('h3', {}, 'Explícalo en voz alta'),
+        el('p', { class: 'question' }, `Concepto de hoy: ${ch ? `cap. ${ch.id} — ${ch.title}` : 'el capítulo actual'}. Explícaselo a alguien como si fueras el instructor.`),
+        ch ? el('button', { class: 'ghost', onclick: () => lessonReview(root, ch.id, ctx, render) }, '📚 Repasar la lección primero') : '',
+        el('button', { class: 'primary', onclick: () => done('persona') }, 'Lo expliqué a una persona ✅'),
+        el('button', { class: 'ghost', onclick: record }, 'No hay nadie — grabar audio (máx. 90 s)')));
+    }
+    render();
   });
 }
 

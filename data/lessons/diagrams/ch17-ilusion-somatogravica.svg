@@ -1,0 +1,29 @@
+<svg viewBox="0 0 470 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilusión somatográvica: la aceleración se siente como cabeceo hacia arriba">
+  <!-- realidad: avión nivelado acelerando -->
+  <text x="20" y="35" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Realidad</text>
+  <line x1="30" y1="70" x2="200" y2="70" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 3"/>
+  <path d="M40 78 L120 78 L150 70 L120 62 L40 62 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <line x1="150" y1="70" x2="210" y2="70" stroke="var(--ok)" stroke-width="2.5"/>
+  <path d="M210 70 L200 65 L200 75 Z" fill="var(--ok)"/>
+  <text x="70" y="100" fill="var(--muted)" font-family="inherit" font-size="11">nivelado, acelera fuerte</text>
+
+  <!-- sensacion: nariz arriba -->
+  <text x="20" y="150" fill="var(--bad)" font-family="inherit" font-size="13" font-weight="bold">Lo que sientes</text>
+  <line x1="30" y1="200" x2="200" y2="200" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 3"/>
+  <g transform="rotate(-20 120 195)">
+    <path d="M40 203 L120 203 L150 195 L120 187 L40 187 Z" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
+  </g>
+  <text x="55" y="245" fill="var(--muted)" font-family="inherit" font-size="11">"la nariz sube" (falso)</text>
+
+  <!-- danger box -->
+  <rect x="245" y="55" width="210" height="200" rx="10" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
+  <text x="260" y="85" fill="var(--bad)" font-family="inherit" font-size="14" font-weight="bold">El peligro</text>
+  <text x="260" y="112" fill="var(--muted)" font-family="inherit" font-size="12">Despegue de noche o</text>
+  <text x="260" y="128" fill="var(--muted)" font-family="inherit" font-size="12">sobre el mar: aceleras,</text>
+  <text x="260" y="144" fill="var(--muted)" font-family="inherit" font-size="12">"sientes" que subes</text>
+  <text x="260" y="160" fill="var(--muted)" font-family="inherit" font-size="12">demasiado...</text>
+  <text x="260" y="186" fill="var(--text)" font-family="inherit" font-size="12">empujas la nariz abajo</text>
+  <text x="260" y="202" fill="var(--bad)" font-family="inherit" font-size="12" font-weight="bold">y vuelas hacia el suelo.</text>
+  <text x="260" y="232" fill="var(--accent)" font-family="inherit" font-size="12" font-weight="bold">Confía en el horizonte</text>
+  <text x="260" y="248" fill="var(--accent)" font-family="inherit" font-size="12" font-weight="bold">artificial, no en el cuerpo.</text>
+</svg>

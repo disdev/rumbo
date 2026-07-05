@@ -1,0 +1,49 @@
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carpeta con los documentos que deben estar a bordo del avión y billetera con los documentos del piloto">
+  <text x="240" y="22" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">Los papeles a bordo: el truco ARROW</text>
+
+  <!-- carpeta -->
+  <path d="M14 52 L14 244 Q14 252 22 252 L458 252 Q466 252 466 244 L466 60 Q466 52 458 52 L150 52 L136 40 L22 40 Q14 40 14 48 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+
+  <!-- fila 1 de tarjetas -->
+  <rect x="30" y="68" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <circle cx="48" cy="86" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="48" y="91" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">A</text>
+  <text x="40" y="118" fill="var(--text)" font-family="inherit" font-size="12">Certificado de</text>
+  <text x="40" y="133" fill="var(--text)" font-family="inherit" font-size="12">aeronavegabilidad</text>
+
+  <rect x="174" y="68" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <circle cx="192" cy="86" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="192" y="91" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">R</text>
+  <text x="184" y="118" fill="var(--text)" font-family="inherit" font-size="12">Certificado de</text>
+  <text x="184" y="133" fill="var(--text)" font-family="inherit" font-size="12">matrícula</text>
+
+  <rect x="318" y="68" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <circle cx="336" cy="86" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="336" y="91" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">R</text>
+  <text x="328" y="118" fill="var(--text)" font-family="inherit" font-size="12">Permiso de radio</text>
+  <text x="328" y="133" fill="var(--muted)" font-family="inherit" font-size="11">(vuelos internacionales)</text>
+
+  <!-- fila 2 de tarjetas -->
+  <rect x="30" y="156" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <circle cx="48" cy="174" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="48" y="179" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">O</text>
+  <text x="40" y="206" fill="var(--text)" font-family="inherit" font-size="12">Manual de vuelo</text>
+  <text x="40" y="221" fill="var(--muted)" font-family="inherit" font-size="11">(limitaciones y placards)</text>
+
+  <rect x="174" y="156" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <circle cx="192" cy="174" r="11" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="192" y="179" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">W</text>
+  <text x="184" y="206" fill="var(--text)" font-family="inherit" font-size="12">Datos de peso</text>
+  <text x="184" y="221" fill="var(--text)" font-family="inherit" font-size="12">y balance</text>
+
+  <rect x="318" y="156" width="134" height="76" rx="6" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+  <text x="328" y="180" fill="var(--ok)" font-family="inherit" font-size="12" font-weight="bold">Perú suma:</text>
+  <text x="328" y="200" fill="var(--text)" font-family="inherit" font-size="12">libro de a bordo,</text>
+  <text x="328" y="215" fill="var(--text)" font-family="inherit" font-size="12">póliza de seguros</text>
+
+  <!-- billetera del piloto -->
+  <rect x="120" y="266" width="240" height="42" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <text x="240" y="284" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12" font-weight="bold">Y en tu bolsillo:</text>
+  <text x="240" y="300" text-anchor="middle" fill="var(--text)" font-family="inherit" font-size="12">licencia apropiada + certificado médico vigente</text>
+</svg>

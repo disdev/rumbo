@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 240" role="img" aria-label="Efecto suelo: a menos de una envergadura de altura baja la resistencia inducida">
+  <!-- pista -->
+  <line x1="20" y1="205" x2="420" y2="205" stroke="var(--text)" stroke-width="3"/>
+  <line x1="40" y1="216" x2="60" y2="205" stroke="var(--muted)" stroke-width="1.5"/>
+  <line x1="100" y1="216" x2="120" y2="205" stroke="var(--muted)" stroke-width="1.5"/>
+  <line x1="160" y1="216" x2="180" y2="205" stroke="var(--muted)" stroke-width="1.5"/>
+  <line x1="220" y1="216" x2="240" y2="205" stroke="var(--muted)" stroke-width="1.5"/>
+  <line x1="280" y1="216" x2="300" y2="205" stroke="var(--muted)" stroke-width="1.5"/>
+  <line x1="340" y1="216" x2="360" y2="205" stroke="var(--muted)" stroke-width="1.5"/>
+  <!-- avión bajito -->
+  <ellipse cx="180" cy="130" rx="52" ry="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <polygon points="216,126 238,106 238,128" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <path d="M168 128 L194 128 L202 138 L176 138 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <!-- flujo descendente bloqueado por el suelo -->
+  <path d="M225 142 C 255 168 285 190 330 197" fill="none" stroke="var(--muted)" stroke-width="2.5"/>
+  <polygon points="345,199 324,190 322,204" fill="var(--muted)"/>
+  <text x="258" y="176" font-family="inherit" font-size="12" fill="var(--muted)">el suelo &quot;aplasta&quot; el flujo descendente</text>
+  <!-- cota: menos de una envergadura -->
+  <line x1="70" y1="130" x2="70" y2="205" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="62" y1="130" x2="78" y2="130" stroke="var(--accent)" stroke-width="1.5"/>
+  <line x1="62" y1="205" x2="78" y2="205" stroke="var(--accent)" stroke-width="1.5"/>
+  <text x="20" y="120" font-family="inherit" font-size="13" fill="var(--accent)">menos de 1 envergadura</text>
+  <!-- efecto -->
+  <text x="220" y="40" font-family="inherit" font-size="14" fill="var(--ok)" text-anchor="middle">menos resistencia inducida → el avión &quot;flota&quot;</text>
+</svg>

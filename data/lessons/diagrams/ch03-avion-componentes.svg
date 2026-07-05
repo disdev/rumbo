@@ -1,0 +1,41 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avión de ala alta visto de lado con sus cinco componentes mayores señalados">
+  <!-- fuselaje -->
+  <path d="M95 170 Q100 150 130 145 L300 140 Q345 138 370 150 L370 175 Q340 190 300 188 L140 185 Q105 185 95 170 Z"
+        fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <!-- ala alta (vista lateral: cuerda) -->
+  <rect x="170" y="128" width="120" height="14" rx="7" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <!-- montante -->
+  <line x1="200" y1="142" x2="185" y2="180" stroke="var(--text)" stroke-width="2"/>
+  <!-- empenaje -->
+  <path d="M300 142 L330 92 L352 92 L342 140 Z" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <path d="M318 150 L368 148 L358 162 L320 160 Z" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <!-- hélice y motor -->
+  <rect x="82" y="152" width="14" height="26" rx="4" fill="var(--muted)" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="78" y1="132" x2="78" y2="198" stroke="var(--text)" stroke-width="3" stroke-linecap="round"/>
+  <!-- tren de aterrizaje triciclo -->
+  <line x1="120" y1="182" x2="120" y2="210" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="120" cy="218" r="9" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <line x1="230" y1="186" x2="230" y2="212" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="230" cy="220" r="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <!-- ventana -->
+  <path d="M150 148 L185 145 L185 160 L152 162 Z" fill="var(--muted)" opacity="0.5"/>
+
+  <!-- etiquetas con líneas guía -->
+  <line x1="78" y1="128" x2="60" y2="98" stroke="var(--muted)" stroke-width="1"/>
+  <text x="14" y="90" fill="var(--text)" font-family="inherit" font-size="13">Planta motriz</text>
+  <text x="14" y="105" fill="var(--muted)" font-family="inherit" font-size="12">(motor + hélice)</text>
+
+  <line x1="230" y1="128" x2="238" y2="70" stroke="var(--muted)" stroke-width="1"/>
+  <text x="228" y="60" fill="var(--text)" font-family="inherit" font-size="13">Alas</text>
+
+  <line x1="345" y1="100" x2="392" y2="80" stroke="var(--muted)" stroke-width="1"/>
+  <text x="380" y="68" fill="var(--text)" font-family="inherit" font-size="13">Empenaje</text>
+  <text x="386" y="83" fill="var(--muted)" font-family="inherit" font-size="12">(la cola)</text>
+
+  <line x1="270" y1="186" x2="300" y2="250" stroke="var(--muted)" stroke-width="1"/>
+  <text x="288" y="266" fill="var(--text)" font-family="inherit" font-size="13">Fuselaje</text>
+  <text x="270" y="281" fill="var(--muted)" font-family="inherit" font-size="12">(el cuerpo central)</text>
+
+  <line x1="170" y1="218" x2="130" y2="258" stroke="var(--muted)" stroke-width="1"/>
+  <text x="42" y="272" fill="var(--text)" font-family="inherit" font-size="13">Tren de aterrizaje</text>
+</svg>

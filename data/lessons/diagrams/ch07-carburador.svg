@@ -1,0 +1,42 @@
+<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  <!-- Carburador de flotador: venturi + cuba -->
+  <g stroke="var(--text)" stroke-width="2" fill="none">
+    <!-- conducto de aire con garganta venturi -->
+    <path d="M60 250 L60 190 Q60 150 95 130 L95 90 L95 40" fill="none"/>
+    <path d="M180 250 L180 190 Q180 150 145 130 L145 90 L145 40" fill="none"/>
+    <!-- mariposa del acelerador -->
+    <line x1="100" y1="75" x2="140" y2="55" stroke="var(--accent)" stroke-width="3"/>
+    <circle cx="120" cy="65" r="3" fill="var(--accent)" stroke="none"/>
+    <!-- cuba del flotador -->
+    <rect x="230" y="150" width="130" height="90" fill="var(--panel-2)"/>
+    <path d="M235 190 L355 190" stroke="var(--accent)"/>
+    <ellipse cx="285" cy="185" rx="28" ry="12" fill="var(--panel-2)" stroke="var(--text)"/>
+    <!-- tubo surtidor hacia el venturi -->
+    <path d="M230 200 L150 200 L120 140" stroke="var(--accent)" stroke-width="2.5"/>
+    <!-- entrada de combustible -->
+    <path d="M360 165 L400 165" stroke="var(--accent)" stroke-width="2.5"/>
+  </g>
+  <!-- flechas de aire -->
+  <g stroke="var(--ok)" stroke-width="2" fill="none">
+    <path d="M120 245 L120 215 M114 223 L120 215 L126 223"/>
+    <path d="M120 175 L120 150 M115 157 L120 150 L125 157"/>
+    <path d="M120 120 L120 95 M115 102 L120 95 L125 102"/>
+  </g>
+  <!-- gotitas de combustible en el venturi -->
+  <g fill="var(--accent)" stroke="none">
+    <circle cx="112" cy="128" r="2.5"/><circle cx="126" cy="120" r="2.5"/>
+    <circle cx="118" cy="108" r="2.5"/><circle cx="128" cy="98" r="2.5"/>
+  </g>
+  <g fill="var(--text)" font-size="13">
+    <text x="70" y="280">entrada de aire</text>
+    <text x="205" y="140">garganta venturi:</text>
+    <text x="205" y="156">aire rápido, presión baja</text>
+    <line x1="200" y1="148" x2="150" y2="135" stroke="var(--muted)" stroke-width="1"/>
+    <text x="240" y="260">cuba con flotador</text>
+    <text x="330" y="155" font-size="12" fill="var(--muted)">combustible</text>
+    <text x="30" y="20">hacia los cilindros</text>
+    <text x="155" y="70" fill="var(--accent)">mariposa</text>
+    <text x="155" y="86" fill="var(--accent)" font-size="12">(acelerador)</text>
+    <text x="152" y="222" font-size="12" fill="var(--muted)">surtidor</text>
+  </g>
+</svg>

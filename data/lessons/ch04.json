@@ -1,0 +1,616 @@
+{
+  "chapter": "4",
+  "title": "Principios de vuelo",
+  "resumen": "Por qué vuela un avión: el océano de aire, Bernoulli y Newton, el perfil alar, el ángulo de ataque, la pérdida, las cuatro fuerzas, la densidad y el efecto suelo.",
+  "sections": [
+    {
+      "id": "4-1",
+      "title": "La atmósfera: el océano de aire",
+      "key_points": [
+        "El aire es 78 % nitrógeno, 21 % oxígeno y 1 % otros gases; la mezcla casi no cambia con la altura.",
+        "La presión, la temperatura y la densidad del aire disminuyen al subir.",
+        "Atmósfera estándar al nivel del mar: 29.92 inHg (1013.2 hPa) y 15 °C.",
+        "La temperatura estándar baja unos 2 °C por cada 1,000 ft de altura.",
+        "La presión baja aproximadamente 1 inHg por cada 1,000 ft en altitudes bajas."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Sobre qué se apoya un avión? Sobre aire. Piensa en el mar: en el fondo el agua te aprieta con todo su peso; cerca de la superficie, casi nada. Tú vives en el fondo de un océano de aire que hace exactamente lo mismo: cuanto más subes, menos aire queda encima y menos presión sientes. El avión \"nada\" en ese océano, y todo lo que viene depende de cómo se comporta ese aire."
+        },
+        {
+          "type": "text",
+          "md": "¿De qué está hecho el aire? De una receta casi fija: **78 % nitrógeno**, **21 % oxígeno** y 1 % de otros gases (argón, CO₂, vapor de agua). Esa mezcla casi no cambia al subir. Lo que sí cambia, y mucho, es **cuánto** aire hay: la presión, la temperatura y la densidad bajan con la altura."
+        },
+        {
+          "type": "diagram",
+          "src": "ch04-atmosfera.svg",
+          "caption": "Al subir bajan la presión, la temperatura y la densidad. Fíjate cómo la temperatura estándar pierde ~2 °C por cada 1,000 ft."
+        },
+        {
+          "type": "table",
+          "headers": ["Valor estándar (ISA)", "Cifra"],
+          "rows": [
+            ["Presión al nivel del mar", "29.92 inHg = 1013.2 hPa"],
+            ["Temperatura al nivel del mar", "15 °C (59 °F)"],
+            ["La temperatura baja", "~2 °C por cada 1,000 ft"],
+            ["La presión baja", "~1 inHg por cada 1,000 ft"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "La **atmósfera estándar** (ISA) es el \"aire de referencia\" con el que se calibran instrumentos y tablas de performance. Grábate el trío: **29.92 inHg / 1013.2 hPa / 15 °C**. Lo vas a usar en altimetría (cap. 8) y performance (cap. 11)."
+        },
+        {
+          "type": "notebook",
+          "id": "4-1-n1",
+          "prompt": "Copia la tabla de la atmósfera estándar en tu cuaderno. Luego tápala y escribe de memoria los dos valores de presión (inHg y hPa) y la temperatura al nivel del mar."
+        },
+        {
+          "type": "check",
+          "id": "4-1-c1",
+          "q": "En la atmósfera estándar, la presión y la temperatura al nivel del mar son:",
+          "options": [
+            "29.92 inHg (1013.2 hPa) y 15 °C.",
+            "1013.2 inHg y 29.92 °C.",
+            "29.92 hPa y 59 °C."
+          ],
+          "answer": 0,
+          "why": "El trío estándar: 29.92 inHg = 1013.2 hPa y 15 °C (59 °F) al nivel del mar."
+        },
+        {
+          "type": "check",
+          "id": "4-1-c2",
+          "q": "A medida que el avión sube, la presión atmosférica:",
+          "options": [
+            "Disminuye.",
+            "Aumenta.",
+            "Se mantiene igual mientras la mezcla de gases no cambie."
+          ],
+          "answer": 0,
+          "why": "Al subir queda menos aire encima: la presión (y también la temperatura y la densidad) disminuye."
+        }
+      ]
+    },
+    {
+      "id": "4-2",
+      "title": "Bernoulli: aire rápido, presión baja",
+      "key_points": [
+        "Teorema de Bernoulli: donde un fluido acelera, su presión disminuye.",
+        "El tubo Venturi lo demuestra: en la garganta angosta el aire va más rápido y la presión cae.",
+        "El extradós curvo del ala actúa como medio Venturi: aire más rápido arriba, presión más baja arriba.",
+        "Esa presión más baja sobre el ala es una parte clave de la sustentación."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué pasa cuando aprietas la punta de la manguera con el dedo? El chorro sale disparado. No le metiste más agua: solo angostaste el camino, y el agua tuvo que **acelerar** para pasar. Con el aire ocurre lo mismo. Y aquí viene lo interesante: cuando un fluido acelera, algo tiene que ceder… y lo que cede es su presión."
+        },
+        {
+          "type": "text",
+          "md": "Eso es el **teorema de Bernoulli**: en un fluido en movimiento, donde la velocidad aumenta, la presión disminuye (y al revés). El **tubo Venturi** lo demuestra: en la parte angosta (la garganta) el aire corre más rápido y su presión cae. Ahora mira el ala: su superficie superior curva funciona como la mitad de un Venturi."
+        },
+        {
+          "type": "diagram",
+          "src": "ch04-venturi.svg",
+          "caption": "El tubo Venturi: en la garganta el aire acelera y la presión baja. El extradós del ala hace de \"media garganta\"."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco DGAC pregunta directo: *\"¿Qué enunciado se relaciona con el principio de Bernoulli?\"* Respuesta: **el aire viaja más rápido sobre la superficie superior curva del perfil, reduciendo la presión en esa superficie**. Las otras opciones describen a Newton — ciertas, pero no son Bernoulli."
+        },
+        {
+          "type": "notebook",
+          "id": "4-2-n1",
+          "prompt": "Dibuja un tubo Venturi (ancho–angosto–ancho). Escribe \"lento = presión alta\" en las partes anchas y \"rápido = presión baja\" en la garganta. Debajo, la frase: \"más velocidad, menos presión\"."
+        },
+        {
+          "type": "check",
+          "id": "4-2-c1",
+          "q": "Según Bernoulli, cuando el aire acelera al pasar por la garganta de un tubo Venturi, su presión:",
+          "options": [
+            "Disminuye.",
+            "Aumenta.",
+            "No cambia si el tubo está nivelado."
+          ],
+          "answer": 0,
+          "why": "Bernoulli: más velocidad = menos presión. En la garganta el aire va más rápido, así que su presión cae."
+        }
+      ]
+    },
+    {
+      "id": "4-3",
+      "title": "Newton: acción y reacción",
+      "key_points": [
+        "Tercera ley de Newton: a toda acción corresponde una reacción igual y opuesta.",
+        "El ala desvía aire hacia abajo (downwash) y el aire empuja el ala hacia arriba.",
+        "La mano inclinada fuera de la ventana del carro sube por la misma razón que un ala.",
+        "Bernoulli y Newton no compiten: describen juntos la misma sustentación."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Has sacado la mano por la ventana del carro en plena carretera? Ponla plana: nada. Inclínala un poquito hacia arriba: el aire choca por debajo, se desvía hacia abajo… y tu mano salta hacia arriba y hacia atrás. Acabas de sentir sustentación y resistencia en carne propia."
+        },
+        {
+          "type": "text",
+          "md": "Eso es la **tercera ley de Newton**: a toda acción corresponde una reacción igual y opuesta. El ala desvía una masa enorme de aire **hacia abajo** (acción); ese aire empuja el ala **hacia arriba** (reacción). El chorro desviado detrás del ala se llama **deflexión descendente** (downwash)."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Bernoulli y Newton **no compiten: son dos miradas del mismo fenómeno**. Al mismo tiempo hay presión baja arriba del ala (Bernoulli) y aire desviado hacia abajo (Newton). El examen puede preguntarte por cualquiera de las dos explicaciones."
+        },
+        {
+          "type": "notebook",
+          "id": "4-3-n1",
+          "prompt": "Dibuja una mano inclinada saliendo de una ventana, con dos flechas: el aire desviado hacia abajo (etiqueta \"acción\") y la mano empujada hacia arriba (etiqueta \"reacción\")."
+        },
+        {
+          "type": "check",
+          "id": "4-3-c1",
+          "q": "Según la tercera ley de Newton, el ala genera sustentación porque:",
+          "options": [
+            "Desvía aire hacia abajo y el aire la empuja hacia arriba como reacción.",
+            "Comprime el aire de abajo hasta calentarlo y expandirlo.",
+            "El motor dirige su empuje hacia abajo."
+          ],
+          "answer": 0,
+          "why": "Acción: el ala manda aire hacia abajo. Reacción igual y opuesta: el aire empuja el ala hacia arriba."
+        }
+      ]
+    },
+    {
+      "id": "4-4",
+      "title": "El perfil alar y sus partes",
+      "key_points": [
+        "El perfil alar (airfoil) es la forma del corte transversal del ala.",
+        "El borde de ataque corta el aire; el borde de salida lo despide atrás.",
+        "La cuerda es la línea recta imaginaria del borde de ataque al borde de salida.",
+        "La combadura (camber) es la curvatura del perfil respecto a la cuerda.",
+        "Extradós = superficie superior; intradós = superficie inferior."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué las alas tienen esa forma de gota estirada? Imagina cortar el ala como una rebanada de queque y mirarla de lado: esa silueta es el **perfil alar** (airfoil). No es casualidad: está diseñada para acelerar el aire por arriba (Bernoulli) y desviarlo hacia abajo (Newton) al mismo tiempo."
+        },
+        {
+          "type": "diagram",
+          "src": "ch04-perfil-alar.svg",
+          "caption": "Las partes del perfil alar. Ojo con las dos C: la Cuerda es recta como una regla; la Combadura es la \"barriga\" curva."
+        },
+        {
+          "type": "table",
+          "headers": ["Parte", "Qué es"],
+          "rows": [
+            ["Borde de ataque (leading edge)", "La parte delantera que corta el aire"],
+            ["Borde de salida (trailing edge)", "Donde el aire se reencuentra atrás"],
+            ["Cuerda (chord line)", "Línea recta imaginaria del borde de ataque al de salida"],
+            ["Combadura (camber)", "La curvatura del perfil respecto a la cuerda"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "Las dos C se confunden: **C**uerda = recta, \"como una regla\". **C**ombadura = curva, \"como una barriga\". La cuerda te va a importar muchísimo: contra ella se mide el ángulo de ataque."
+        },
+        {
+          "type": "notebook",
+          "id": "4-4-n1",
+          "prompt": "Dibuja el perfil alar y etiqueta: borde de ataque, borde de salida, cuerda (línea recta punteada) y combadura. Marca también el extradós (arriba) y el intradós (abajo)."
+        },
+        {
+          "type": "check",
+          "id": "4-4-c1",
+          "q": "La cuerda (chord line) de un perfil alar es:",
+          "options": [
+            "La línea recta imaginaria entre el borde de ataque y el borde de salida.",
+            "La curvatura de la superficie superior del ala.",
+            "La distancia entre las dos puntas del ala."
+          ],
+          "answer": 0,
+          "why": "Cuerda = recta del borde de ataque al de salida. La curvatura es la combadura; punta a punta es la envergadura."
+        }
+      ]
+    },
+    {
+      "id": "4-5",
+      "title": "Viento relativo y ángulo de ataque",
+      "key_points": [
+        "El viento relativo es paralelo y opuesto a la trayectoria de vuelo del avión.",
+        "El ángulo de ataque es el ángulo entre la cuerda del ala y el viento relativo.",
+        "El ángulo de incidencia es fijo (cuerda vs. eje longitudinal) y no es el ángulo de ataque.",
+        "La actitud de la nariz respecto al horizonte tampoco es el ángulo de ataque."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Notaste que en bici sientes viento en la cara aunque el día esté quieto? Ese viento lo fabricas tú al avanzar: viene siempre de frente, exactamente opuesto a tu movimiento. Eso es el **viento relativo**: el flujo de aire **paralelo y opuesto a la trayectoria de vuelo**. Depende de hacia dónde se *mueve* el avión, no de hacia dónde apunta la nariz."
+        },
+        {
+          "type": "text",
+          "md": "Y el ángulo estrella del curso: el **ángulo de ataque** (angle of attack, AOA) es el ángulo entre la **cuerda del ala** y el **viento relativo**. No lo confundas con el **ángulo de incidencia** (fijo de fábrica, entre la cuerda y el eje longitudinal del avión) ni con la actitud de la nariz respecto al horizonte."
+        },
+        {
+          "type": "diagram",
+          "src": "ch04-angulo-ataque.svg",
+          "caption": "El ángulo de ataque se mide entre la cuerda y el viento relativo — no contra el horizonte ni contra el fuselaje."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Cae calcado en el banco, varias veces: *\"El ángulo entre la línea de cuerda y el viento relativo se conoce como el ángulo de…\"* → **ataque**. Opciones trampa: *incidencia* y *sustentación*. También como definición: *\"entre la cuerda del ala y el viento relativo\"* — nunca \"eje longitudinal\" ni \"horizonte\"."
+        },
+        {
+          "type": "notebook",
+          "id": "4-5-n1",
+          "prompt": "Dibuja un perfil alar inclinado con su cuerda punteada, una flecha horizontal de viento relativo, y marca con un arco el ángulo de ataque entre ambos. Anota la definición al lado."
+        },
+        {
+          "type": "check",
+          "id": "4-5-c1",
+          "q": "El término \"ángulo de ataque\" se define como el ángulo entre:",
+          "options": [
+            "La cuerda del ala y el viento relativo.",
+            "La cuerda del ala y el eje longitudinal del avión.",
+            "El eje longitudinal del avión y el horizonte."
+          ],
+          "answer": 0,
+          "why": "Cuerda vs. viento relativo. Cuerda vs. eje longitudinal es el ángulo de incidencia; contra el horizonte es la actitud."
+        },
+        {
+          "type": "check",
+          "id": "4-5-c2",
+          "q": "El viento relativo es:",
+          "options": [
+            "Paralelo y opuesto a la trayectoria de vuelo del avión.",
+            "Siempre paralelo al horizonte.",
+            "El viento meteorológico que reporta la torre."
+          ],
+          "answer": 0,
+          "why": "El viento relativo lo crea el movimiento del avión: siempre sopla en dirección opuesta a la trayectoria de vuelo."
+        }
+      ]
+    },
+    {
+      "id": "4-6",
+      "title": "Cómo nace la sustentación",
+      "key_points": [
+        "La sustentación nace de presión baja arriba y presión alta abajo del ala.",
+        "Al mismo tiempo, el ala desvía aire hacia abajo y recibe la reacción hacia arriba.",
+        "La sustentación actúa perpendicular al viento relativo.",
+        "Más velocidad o más ángulo de ataque = más sustentación, hasta el ángulo crítico."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Viste un tiro libre con comba? El futbolista hace girar la pelota: de un lado el aire pasa más rápido (presión baja) y del otro más lento (presión alta), y la pelota se curva hacia el lado de presión baja. Tu ala hace el mismo truco sin girar: su forma y su inclinación aceleran el aire por arriba."
+        },
+        {
+          "type": "text",
+          "md": "La **sustentación** (lift) nace de dos efectos simultáneos: la **diferencia de presiones** (baja arriba, alta abajo — Bernoulli) y la **deflexión del aire hacia abajo** (reacción — Newton). Tienes dos palancas para producir más: **más velocidad** o **más ángulo de ataque**. Pero la segunda tiene un límite duro que verás ahora."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "La sustentación actúa **perpendicular al viento relativo** (no \"siempre hacia arriba del cielo\"). Y se genera sobre todo en el ala: por eso cuidar el flujo sobre el ala es cuidar tu vida."
+        },
+        {
+          "type": "notebook",
+          "id": "4-6-n1",
+          "prompt": "Dibuja un perfil alar con flechitas cortas saliendo del extradós (presión baja arriba), flechitas empujando el intradós (presión alta abajo) y una flecha grande de sustentación perpendicular al viento relativo."
+        },
+        {
+          "type": "check",
+          "id": "4-6-c1",
+          "q": "La sustentación se genera por:",
+          "options": [
+            "La diferencia de presiones sobre el ala y la deflexión del aire hacia abajo, actuando juntas.",
+            "Únicamente el empuje del motor inclinado hacia abajo.",
+            "El aire que se acumula y comprime debajo del ala cuando el avión está detenido."
+          ],
+          "answer": 0,
+          "why": "Bernoulli (presiones) y Newton (deflexión) actúan a la vez: son dos caras de la misma sustentación."
+        }
+      ]
+    },
+    {
+      "id": "4-7",
+      "title": "El ángulo crítico y la pérdida (stall)",
+      "key_points": [
+        "La pérdida (stall) ocurre al superar el ángulo de ataque crítico, aprox. 15°–20° según el diseño.",
+        "En la pérdida el flujo se separa del extradós y la sustentación cae de golpe.",
+        "El ángulo crítico de un ala no cambia con el peso, la altitud ni la actitud.",
+        "La pérdida puede ocurrir a cualquier velocidad y en cualquier actitud.",
+        "La velocidad indicada de pérdida no cambia al aumentar la altitud."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Puedes pedir sustentación sin límite subiendo el ángulo? No. Vuelve a la mano en la ventana del carro: inclínala poco y sube suave; inclínala demasiado y de pronto vibra, frena y cae. El aire ya no pudo seguir la curva de tu mano: se desprendió en remolinos."
+        },
+        {
+          "type": "text",
+          "md": "Eso es la **pérdida** (stall): al superar el **ángulo de ataque crítico** — aprox. **15° a 20°** según el diseño — el flujo se separa del extradós y la sustentación se desploma. Grábatelo: la pérdida es cuestión de **ángulo, no de velocidad**. Un ala puede entrar en pérdida a cualquier velocidad y en cualquier actitud si excedes su ángulo crítico."
+        },
+        {
+          "type": "diagram",
+          "src": "ch04-curva-sustentacion.svg",
+          "caption": "La sustentación crece con el ángulo de ataque… hasta el ángulo crítico. Pasado ese punto, se desploma: eso es la pérdida."
+        },
+        {
+          "type": "widget",
+          "name": "angulo-ataque",
+          "caption": "Mueve el deslizador de 0° a 20°: mira cómo la sustentación crece y luego se desploma. Encuentra el ángulo exacto donde tu ala entra en pérdida."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Dos preguntas del banco salen de aquí: (1) el ángulo de ataque al que el ala entra en pérdida **sigue siendo el mismo independientemente del peso bruto**; (2) al aumentar la altitud, la **velocidad indicada** de pérdida **sigue siendo la misma**. El ángulo crítico es fijo para tu ala; lo que cambia es qué tan rápido llegas a él."
+        },
+        {
+          "type": "notebook",
+          "id": "4-7-n1",
+          "prompt": "Copia la curva de sustentación vs. ángulo de ataque. Marca en rojo el ángulo crítico (~15°–20°) y la zona de pérdida. Escribe grande: \"la pérdida es de ÁNGULO, no de velocidad\"."
+        },
+        {
+          "type": "check",
+          "id": "4-7-c1",
+          "q": "El ángulo de ataque al que un ala entra en pérdida:",
+          "options": [
+            "Es siempre el mismo para esa ala, sin importar el peso bruto.",
+            "Aumenta cuando el avión pesa más.",
+            "Disminuye a mayor altitud."
+          ],
+          "answer": 0,
+          "why": "El ángulo crítico depende del diseño del ala, no del peso ni de la altitud. Respuesta literal del banco DGAC."
+        },
+        {
+          "type": "check",
+          "id": "4-7-c2",
+          "q": "Un avión puede entrar en pérdida:",
+          "options": [
+            "A cualquier velocidad y en cualquier actitud, si se excede el ángulo crítico.",
+            "Solo a baja velocidad y con la nariz arriba.",
+            "Solo en la aproximación final para aterrizar."
+          ],
+          "answer": 0,
+          "why": "La pérdida es cuestión de ángulo de ataque: puedes exceder el crítico incluso rápido y con la nariz abajo."
+        }
+      ]
+    },
+    {
+      "id": "4-8",
+      "title": "Las cuatro fuerzas del vuelo",
+      "key_points": [
+        "Las cuatro fuerzas: sustentación (arriba), peso (abajo), empuje (adelante) y resistencia (atrás).",
+        "En vuelo recto, nivelado y no acelerado: sustentación = peso y empuje = resistencia.",
+        "Las cuatro fuerzas están en equilibrio durante cualquier vuelo no acelerado.",
+        "Equilibrio significa que las fuerzas opuestas se cancelan, no que las cuatro valgan lo mismo."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué jala y qué empuja a tu avión en el aire? Cuatro fuerzas en un jalar de soga permanente: la **sustentación** (lift) hacia arriba, el **peso** (weight) hacia abajo, el **empuje** (thrust) hacia adelante y la **resistencia** (drag) hacia atrás, frenándote como el agua frena tu mano en la piscina."
+        },
+        {
+          "type": "diagram",
+          "src": "ch04-cuatro-fuerzas.svg",
+          "caption": "Las cuatro fuerzas sobre el avión. En vuelo recto y nivelado, las parejas opuestas se cancelan."
+        },
+        {
+          "type": "text",
+          "md": "En vuelo **recto, nivelado y no acelerado** las cuatro están en equilibrio: **sustentación = peso** y **empuje = resistencia**. Ojo: equilibrio no significa que las cuatro valgan lo mismo; significa que cada pareja de opuestas se cancela, así que el avión ni acelera ni cambia de trayectoria."
+        },
+        {
+          "type": "widget",
+          "name": "cuatro-fuerzas",
+          "caption": "Mueve el acelerador y la actitud: observa cómo se rompe y se recupera el equilibrio entre sustentación–peso y empuje–resistencia."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Tres preguntas del banco, tal cual: (1) las cuatro fuerzas son **sustentación, peso, empuje y resistencia** (trampa: \"gravedad, potencia y fricción\"); (2) están en equilibrio **durante un vuelo no acelerado**; (3) en vuelo recto y nivelado, **la sustentación es igual al peso y el empuje es igual a la resistencia**."
+        },
+        {
+          "type": "notebook",
+          "id": "4-8-n1",
+          "prompt": "Dibuja tu avión visto de lado con las cuatro flechas y sus nombres en español e inglés. Debajo escribe las dos igualdades del vuelo recto y nivelado: L = W y T = D."
+        },
+        {
+          "type": "check",
+          "id": "4-8-c1",
+          "q": "Las cuatro fuerzas que actúan sobre un avión en vuelo son:",
+          "options": [
+            "Sustentación, peso, empuje y resistencia.",
+            "Sustentación, gravedad, potencia y fricción.",
+            "Peso, empuje, viento relativo y presión."
+          ],
+          "answer": 0,
+          "why": "Lift, weight, thrust, drag. Las opciones con \"gravedad, potencia, fricción\" son las trampas clásicas del banco."
+        },
+        {
+          "type": "check",
+          "id": "4-8-c2",
+          "q": "¿Cuándo están en equilibrio las cuatro fuerzas que actúan sobre un avión?",
+          "options": [
+            "Durante un vuelo no acelerado.",
+            "Solo cuando el avión está en reposo en tierra.",
+            "Únicamente durante el ascenso con potencia máxima."
+          ],
+          "answer": 0,
+          "why": "Respuesta literal del banco: en vuelo no acelerado (recto y nivelado a velocidad constante) las fuerzas se equilibran."
+        }
+      ]
+    },
+    {
+      "id": "4-9",
+      "title": "Densidad del aire: por qué Cusco no es Lima",
+      "key_points": [
+        "La densidad del aire disminuye con más altitud, más temperatura y más humedad.",
+        "Menos densidad = menos sustentación, menos potencia del motor y menos empuje de la hélice.",
+        "El aire húmedo es menos denso que el aire seco, aunque se sienta \"pesado\".",
+        "Aeropuerto alto + día caluroso y húmedo = la peor combinación para la performance."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué un avión se siente \"flojo\" despegando en Cusco (3,400 m) comparado con Lima (nivel del mar)? Porque allá arriba el aire está enrarecido: hay menos moléculas por metro cúbico. Con menos densidad, el ala agarra menos aire para desviar y el motor respira menos oxígeno. Resultado: menos sustentación, menos potencia, más pista para despegar."
+        },
+        {
+          "type": "text",
+          "md": "Tres cosas bajan la densidad del aire: **más altitud** (menos presión), **más temperatura** (el aire caliente se expande) y **más humedad** (el vapor de agua pesa menos que el aire seco que reemplaza). Un mediodía caluroso y húmedo en un aeropuerto de altura es la peor combinación posible."
+        },
+        {
+          "type": "table",
+          "headers": ["Factor", "Efecto en la densidad"],
+          "rows": [
+            ["Subir de altitud", "Baja"],
+            ["Aire más caliente", "Baja"],
+            ["Aire más húmedo", "Baja"],
+            ["Día frío y seco al nivel del mar", "Alta (mejor performance)"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Trampa mental: la humedad \"se siente pesada\", pero el aire húmedo es **MENOS** denso que el seco. La molécula de vapor de agua pesa menos que las de nitrógeno y oxígeno que desplaza."
+        },
+        {
+          "type": "notebook",
+          "id": "4-9-n1",
+          "prompt": "Escribe los tres enemigos de la densidad (altitud, calor, humedad) y al lado de cada uno la cadena: densidad ↓ → sustentación ↓ y potencia ↓. Agrega el ejemplo Cusco vs. Lima con tus palabras."
+        },
+        {
+          "type": "check",
+          "id": "4-9-c1",
+          "q": "El aire húmedo, comparado con el aire seco a igual temperatura y presión, es:",
+          "options": [
+            "Menos denso.",
+            "Más denso.",
+            "Igual de denso."
+          ],
+          "answer": 0,
+          "why": "El vapor de agua es más liviano que el nitrógeno y el oxígeno que reemplaza: aire húmedo = menos denso."
+        },
+        {
+          "type": "check",
+          "id": "4-9-c2",
+          "q": "¿Qué combinación reduce más la performance del avión?",
+          "options": [
+            "Aeropuerto de altura en un día caluroso y húmedo.",
+            "Aeropuerto al nivel del mar en un día frío y seco.",
+            "Aeropuerto al nivel del mar en un día frío y húmedo."
+          ],
+          "answer": 0,
+          "why": "Altitud + calor + humedad: los tres bajan la densidad a la vez, y con ella la sustentación y la potencia."
+        }
+      ]
+    },
+    {
+      "id": "4-10",
+      "title": "El efecto suelo: cuando la pista te \"sostiene\"",
+      "key_points": [
+        "El efecto suelo es la interferencia de la superficie terrestre con los patrones de flujo de aire alrededor del avión.",
+        "Se nota a menos de una envergadura de altura sobre la superficie.",
+        "Reduce la resistencia inducida: con exceso de velocidad, el avión flota al aterrizar.",
+        "En el despegue, el avión puede elevarse antes de la velocidad recomendada y luego no poder seguir subiendo."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Has visto que los aviones parecen \"flotar\" justo antes de tocar pista? A menos de una **envergadura** de altura (la distancia de punta a punta de ala), el suelo interfiere con los patrones de flujo de aire alrededor del avión: aplasta la deflexión descendente y los vórtices, y la **resistencia inducida** disminuye. Eso es el **efecto suelo** (ground effect)."
+        },
+        {
+          "type": "diagram",
+          "src": "ch04-efecto-suelo.svg",
+          "caption": "Cerca del suelo, el flujo descendente no puede desarrollarse: baja la resistencia inducida y el avión flota."
+        },
+        {
+          "type": "text",
+          "md": "Consecuencias prácticas: al **aterrizar**, si llegas con exceso de velocidad, el avión flota y flota pista abajo comiéndose metros. Al **despegar**, el avión puede levantarse **antes** de alcanzar la velocidad recomendada… y al salir del efecto suelo, negarse a seguir subiendo. No te dejes engañar por ese primer \"salto\"."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco lo pregunta cuatro veces: (1) el efecto suelo es **la interferencia de la superficie de la tierra con los patrones de flujo de aire** alrededor del avión; (2) la flotación es más evidente a **menos de una envergadura** de altura; (3) el peligro es **elevarse antes de la velocidad de despegue recomendada**; (4) la resistencia inducida **disminuye** y el exceso de velocidad causa flotación."
+        },
+        {
+          "type": "notebook",
+          "id": "4-10-n1",
+          "prompt": "Dibuja un avión a poca altura sobre la pista con la cota \"menos de 1 envergadura\". Anota la cadena: suelo bloquea el flujo → menos resistencia inducida → flota. Y el riesgo en despegue: \"sube antes de tiempo\"."
+        },
+        {
+          "type": "check",
+          "id": "4-10-c1",
+          "q": "¿Qué es el efecto suelo?",
+          "options": [
+            "El resultado de la interferencia de la superficie terrestre con los patrones de flujo de aire alrededor del avión.",
+            "Un aumento de la resistencia inducida al volar cerca del suelo.",
+            "La turbulencia de estela que dejan los aviones grandes sobre la pista."
+          ],
+          "answer": 0,
+          "why": "Definición literal del banco. Cerca del suelo la resistencia inducida DISMINUYE, no aumenta."
+        },
+        {
+          "type": "check",
+          "id": "4-10-c2",
+          "q": "Por el efecto suelo, durante el despegue el avión podría:",
+          "options": [
+            "Elevarse antes de alcanzar la velocidad de despegue recomendada.",
+            "Necesitar mucha más pista por el aumento del arrastre.",
+            "Quedarse pegado a la pista aunque tenga velocidad suficiente."
+          ],
+          "answer": 0,
+          "why": "Con menos resistencia inducida el avión \"salta\" antes de tiempo — y puede no poder seguir subiendo al salir del efecto."
+        }
+      ]
+    },
+    {
+      "id": "4-11",
+      "title": "Estabilidad: un adelanto",
+      "key_points": [
+        "Estabilidad: la tendencia del avión a regresar a su condición de vuelo original tras una perturbación.",
+        "Un avión inherentemente estable requiere menos esfuerzo del piloto para controlarlo.",
+        "El centro de presión se mueve a lo largo de la cuerda cuando cambia el ángulo de ataque.",
+        "Los cambios del centro de presión afectan el equilibrio aerodinámico y la controlabilidad.",
+        "La estabilidad completa (ejes, CG, superficies) se estudia en el capítulo 5."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué pasa si una ráfaga te mueve el avión y tú no tocas nada? Un avión bien diseñado tiende a regresar solito a su condición de vuelo original, como un balancín que vuelve al centro. A eso se le llama ser **inherentemente estable**: no vuela solo, pero te exige **menos esfuerzo para controlarlo**."
+        },
+        {
+          "type": "text",
+          "md": "Un dato más que el examen ama: el **centro de presión** — el punto de la cuerda donde \"se concentra\" la sustentación — **se mueve** cuando cambia el ángulo de ataque. Esos desplazamientos afectan el **equilibrio aerodinámico y la controlabilidad** del avión. Los ejes, el CG y los tipos de estabilidad los verás a fondo en el capítulo 5."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Dos del banco: un avión **inherentemente estable** *\"requiere menos esfuerzo para controlarlo\"* (no \"es difícil que entre en pérdida\" ni \"no gira\"). Y: los cambios en el **centro de presión** de un ala afectan al **equilibrio aerodinámico y la controlabilidad**."
+        },
+        {
+          "type": "notebook",
+          "id": "4-11-n1",
+          "prompt": "Escribe con tus palabras qué hace un avión inherentemente estable cuando lo perturba una ráfaga, y dibuja un balancín volviendo al centro como comparación."
+        },
+        {
+          "type": "check",
+          "id": "4-11-c1",
+          "q": "Un avión que se dice que es inherentemente estable:",
+          "options": [
+            "Requiere menos esfuerzo para controlarlo.",
+            "Es muy difícil que entre en pérdida.",
+            "No puede girar por sí solo."
+          ],
+          "answer": 0,
+          "why": "Respuesta literal del banco: estable = tiende a volver a su condición original, así que exige menos esfuerzo al piloto."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,558 @@
+{
+  "chapter": "10",
+  "title": "Peso y balance",
+  "resumen": "Cuánto pesa tu avión y dónde está ese peso: momento, CG y envelope — la matemática que decide si el vuelo es seguro o no despega.",
+  "sections": [
+    {
+      "id": "10-1",
+      "title": "¿Por qué importa el peso y balance?",
+      "key_points": [
+        "Volar con sobrepeso alarga la carrera de despegue y empeora el ascenso.",
+        "Con sobrepeso el avión entra en pérdida a una velocidad mayor.",
+        "El sobrepeso puede forzar la estructura más allá de sus límites de diseño.",
+        "Con sobrepeso el crucero es más lento, el alcance menor y el consumo mayor.",
+        "El peso y balance responde dos preguntas: cuánto pesa el avión y dónde está el peso."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Has manejado una bici con una mochila pesadísima? Arrancas lento, subes las cuestas sufriendo y frenas peor. A un avión sobrecargado le pasa lo mismo, pero en el aire no puedes bajarte a empujar. El **peso y balance** (*weight and balance*) responde dos preguntas antes de cada vuelo: ¿cuánto pesa el avión? y ¿dónde está ese peso?"
+        },
+        {
+          "type": "text",
+          "md": "Un avión con sobrepeso necesita **más pista** para despegar, **asciende peor**, entra en **pérdida a mayor velocidad**, cruza más lento, alcanza menos distancia y puede sufrir **daño estructural**: las alas y el tren se diseñaron para un peso máximo, no para \"un poquito más\". Y la segunda pregunta — *dónde* está el peso — puede ser aún más grave, como verás con el CG."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco DGAC pregunta directo por estos efectos (\"¿qué pasa si cargas de más?\") y por cuánto combustible drenar si te pasas del peso máximo — eso lo calcularemos en la sección del combustible."
+        },
+        {
+          "type": "notebook",
+          "id": "10-1-n1",
+          "prompt": "Escribe el título \"Sobrepeso = peligro\" y lista de memoria 5 efectos de volar sobrecargado (despegue, ascenso, pérdida, crucero, estructura). Luego compara con la lección y completa los que te faltaron."
+        },
+        {
+          "type": "check",
+          "id": "10-1-c1",
+          "q": "Si cargas tu avión por encima del peso máximo, la velocidad de pérdida (stall)…",
+          "options": [
+            "disminuye, porque el avión vuela más \"asentado\"",
+            "aumenta: el ala necesita más velocidad para sostener el peso extra",
+            "no cambia, porque la pérdida solo depende del ángulo de ataque"
+          ],
+          "answer": 1,
+          "why": "Más peso exige más sustentación: el ala llega a su ángulo crítico a una velocidad mayor."
+        },
+        {
+          "type": "check",
+          "id": "10-1-c2",
+          "q": "¿Cuál de estos NO es un efecto del sobrepeso?",
+          "options": [
+            "Carrera de despegue más larga",
+            "Ascenso más pobre",
+            "Pérdida a menor velocidad"
+          ],
+          "answer": 2,
+          "why": "El sobrepeso AUMENTA la velocidad de pérdida; las otras dos sí son consecuencias reales."
+        }
+      ]
+    },
+    {
+      "id": "10-2",
+      "title": "El balancín del parque: brazo y momento",
+      "key_points": [
+        "El brazo es la distancia desde el punto de apoyo (o referencia) hasta el peso.",
+        "El momento es peso por brazo: momento = peso × brazo.",
+        "El momento se mide en libras-pulgada (lb-in).",
+        "Un peso chico con brazo largo puede equilibrar un peso grande con brazo corto.",
+        "El balancín queda equilibrado cuando los momentos de ambos lados son iguales."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Te acuerdas del sube-y-baja del parque? Un niño flaco sentado en la punta puede levantar a su amigo grandote sentado cerca del centro. ¿La magia? No importa solo cuánto pesas, sino **a qué distancia** estás del punto de apoyo (el *fulcro*). Esa distancia se llama **brazo** (*arm*)."
+        },
+        {
+          "type": "text",
+          "md": "La \"fuerza de giro\" que produce un peso se llama **momento** (*moment*): **momento = peso × brazo**, y se mide en libras-pulgada (lb-in). Ejemplo: 60 lb con brazo de 40 pulgadas → 60 × 40 = 2,400 lb-in. El balancín queda equilibrado cuando los momentos de un lado igualan a los del otro. Todo el capítulo es este juego, nada más."
+        },
+        {
+          "type": "diagram",
+          "src": "ch10-balancin.svg",
+          "caption": "El niño de 60 lb a 4 pies equilibra al de 120 lb a 2 pies: 240 = 240. Mismo momento, distinto peso."
+        },
+        {
+          "type": "guided_math",
+          "family": "peso_balance",
+          "tier": 1
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "En el examen aparecen las figuras 60 y 61: una tabla sobre un fulcro con pesos en varios puntos. La receta: iguala momentos — (peso × brazo) del lado izquierdo = (peso × brazo) del lado derecho — y despeja el peso o la distancia que te pidan."
+        },
+        {
+          "type": "notebook",
+          "id": "10-2-n1",
+          "prompt": "Dibuja un balancín con el fulcro al centro. Pon 120 lb a 2 pies a la izquierda. Calcula qué peso lo equilibra a 4 pies a la derecha y verifica multiplicando los dos momentos (deben dar 240 y 240)."
+        },
+        {
+          "type": "check",
+          "id": "10-2-c1",
+          "q": "¿Cuál es el momento de un equipaje de 50 lb con brazo de 90 pulgadas?",
+          "options": [
+            "140 lb-in",
+            "4,500 lb-in",
+            "450 lb-in"
+          ],
+          "answer": 1,
+          "why": "Momento = peso × brazo = 50 × 90 = 4,500 lb-in. Se multiplica, nunca se suma."
+        }
+      ]
+    },
+    {
+      "id": "10-3",
+      "title": "El mapa del avión: datum, estación y CG",
+      "key_points": [
+        "El datum es el plano de referencia que fija el fabricante; todo se mide desde ahí.",
+        "Una estación es una posición del fuselaje medida en pulgadas desde el datum.",
+        "El brazo de un peso es su distancia horizontal al datum; positivo hacia atrás.",
+        "El CG (centro de gravedad) es el punto donde el avión colgaría en equilibrio perfecto."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y desde dónde se miden esas distancias en un avión? El fabricante fija una línea imaginaria llamada **datum** (plano de referencia). Piensa en el kilómetro 0 de la Panamericana: todas las distancias se miden desde ahí. El datum puede estar en la nariz, en la pared de fuego del motor… o incluso flotando delante del avión."
+        },
+        {
+          "type": "text",
+          "md": "Cada posición del avión es una **estación** (*station*): su distancia al datum, en pulgadas. El **brazo** de un peso es esa misma distancia — positivo detrás del datum, negativo delante. Y el **CG** (*centro de gravedad*) es el punto donde el avión quedaría perfectamente equilibrado si lo colgaras de un hilo: el fulcro del balancín, pero volando."
+        },
+        {
+          "type": "diagram",
+          "src": "ch10-datum-estaciones.svg",
+          "caption": "El datum es el \"km 0\": los brazos de asientos, combustible y equipaje se miden desde ahí, en pulgadas."
+        },
+        {
+          "type": "notebook",
+          "id": "10-3-n1",
+          "prompt": "Dibuja tu avión de perfil. Marca el datum en la nariz y tres estaciones con flechas desde el datum: asientos delanteros (brazo 37 in), tanques (48 in) y equipaje (95 in). Marca dónde crees que cae el CG."
+        },
+        {
+          "type": "check",
+          "id": "10-3-c1",
+          "q": "El brazo de un asiento es…",
+          "options": [
+            "su peso multiplicado por su momento",
+            "la distancia horizontal desde el datum hasta el asiento",
+            "la distancia desde el CG hasta la cola"
+          ],
+          "answer": 1,
+          "why": "El brazo siempre se mide desde el datum. El momento es lo que CALCULAS: peso × brazo."
+        }
+      ]
+    },
+    {
+      "id": "10-4",
+      "title": "Los pesos con nombre: vacío, útil, bruto",
+      "key_points": [
+        "El peso vacío incluye estructura, motor, equipo fijo, combustible inutilizable y aceite no drenable.",
+        "La carga útil es el peso máximo menos el peso vacío: ocupantes, equipaje y combustible utilizable.",
+        "El peso bruto (gross) es el peso total del avión cargado.",
+        "El peso de rampa puede superar al de despegue porque el taxi quema combustible.",
+        "Existen máximos separados de rampa, despegue y aterrizaje."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cuántos \"pesos\" tiene un avión? Varios, y cada uno con apellido. El **peso vacío** (*empty weight*) es el avión solo: estructura, motor, equipo fijo instalado… **más el combustible inutilizable y el aceite no drenable** (lo que queda atrapado y no puedes usar). La **carga útil** (*useful load*) es todo lo que TÚ agregas: pilotos, pasajeros, equipaje y combustible utilizable."
+        },
+        {
+          "type": "table",
+          "headers": ["Término", "Qué es"],
+          "rows": [
+            ["Peso vacío", "avión + equipo fijo + combustible inutilizable + aceite no drenable"],
+            ["Carga útil", "ocupantes, equipaje y combustible utilizable (máximo − vacío)"],
+            ["Peso bruto (gross)", "peso total del avión ya cargado"],
+            ["Peso máx. de rampa", "límite para el taxi: un pelín más, porque rodando quemas combustible"],
+            ["Peso máx. de despegue", "límite al iniciar la carrera de despegue"],
+            ["Peso máx. de aterrizaje", "límite para tocar pista sin dañar la estructura"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Pregunta literal del banco: *¿qué elementos se incluyen en el peso vacío?* Respuesta: **combustible inutilizable y aceite no drenable**. La trampa ofrece \"tanques llenos y aceite al máximo\" — eso es carga útil, no peso vacío."
+        },
+        {
+          "type": "notebook",
+          "id": "10-4-n1",
+          "prompt": "Copia la tabla de los seis pesos en tu cuaderno. Con dos colores, subraya qué cosas pertenecen al peso vacío y cuáles a la carga útil, y agrega un ejemplo tuyo por fila (ej. \"mi mochila → carga útil\")."
+        },
+        {
+          "type": "check",
+          "id": "10-4-c1",
+          "q": "El peso vacío de un avión incluye…",
+          "options": [
+            "tanques de combustible llenos y aceite al tope",
+            "el combustible inutilizable y el aceite no drenable",
+            "solo el fuselaje y el motor, sin ningún líquido"
+          ],
+          "answer": 1,
+          "why": "Lo que no puedes usar ni drenar \"vive\" en el avión: cuenta como parte del peso vacío."
+        },
+        {
+          "type": "check",
+          "id": "10-4-c2",
+          "q": "La carga útil se calcula como…",
+          "options": [
+            "peso máximo permitido menos el peso vacío",
+            "peso vacío menos el combustible utilizable",
+            "peso de rampa más el equipaje"
+          ],
+          "answer": 0,
+          "why": "Carga útil = lo que te queda disponible entre el avión vacío y su límite máximo."
+        }
+      ]
+    },
+    {
+      "id": "10-5",
+      "title": "¿Cuánto pesa el combustible?",
+      "key_points": [
+        "El avgas pesa 6 libras por galón.",
+        "El aceite pesa 7.5 libras por galón.",
+        "Para saber cuántos galones drenar, divide las libras de exceso entre 6.",
+        "En la tabla de peso y balance el combustible se anota en libras, nunca en galones."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿El combustible pesa? ¡Muchísimo! En aviación no cargas \"galones\": cargas libras. Grábate dos números de por vida: **avgas = 6 lb por galón** y **aceite = 7.5 lb por galón**. Un tanque de 40 galones son 240 lb — como llevar un pasajero y medio invisible sentado en las alas."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**6** el combustible, **7.5** el aceite: \"el aceite es más espeso, pesa más\"."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Clásico del banco: *estás 110 lb sobre el peso máximo, ¿cuánto combustible drenas?* Divide: 110 ÷ 6 ≈ **18.4 galones**. Con 90 lb: 90 ÷ 6 = **15 galones**. La trampa es multiplicar en vez de dividir, o dividir entre 7.5."
+        },
+        {
+          "type": "notebook",
+          "id": "10-5-n1",
+          "prompt": "Resuelve en tu cuaderno con la operación completa, no solo el resultado: (a) ¿cuánto pesan 38 galones de avgas? (b) estás 90 lb pasado del peso máximo, ¿cuántos galones drenas? (c) ¿cuánto pesan 8 cuartos (2 galones) de aceite?"
+        },
+        {
+          "type": "check",
+          "id": "10-5-c1",
+          "q": "Estás 110 lb sobre el peso máximo certificado. ¿Cuánto combustible debes drenar?",
+          "options": [
+            "18.4 galones (110 ÷ 6)",
+            "15.7 galones (110 ÷ 7)",
+            "660 galones (110 × 6)"
+          ],
+          "answer": 0,
+          "why": "Cada galón de avgas pesa 6 lb: libras de exceso ÷ 6 = galones a drenar."
+        }
+      ]
+    },
+    {
+      "id": "10-6",
+      "title": "El cálculo completo: encuentra el CG",
+      "key_points": [
+        "El momento de cada estación es su peso por su brazo.",
+        "El CG es el momento total dividido entre el peso total.",
+        "Hay que convertir los galones a libras antes de llenar la tabla.",
+        "El brazo se mide desde el datum; el momento se calcula multiplicando.",
+        "Al final se verifica el peso máximo y que el CG caiga dentro de los límites."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo sabes dónde quedó el CG con todo cargado? Igual que el balancín, pero con una tabla. Tres pasos: **1)** por cada estación anota peso y brazo, y calcula su momento (peso × brazo); **2)** suma TODOS los pesos y TODOS los momentos; **3)** divide: **CG = momento total ÷ peso total**."
+        },
+        {
+          "type": "table",
+          "headers": ["Estación", "Peso (lb)", "Brazo (in)", "Momento (lb-in)"],
+          "rows": [
+            ["Avión vacío", "1,467", "38.6", "56,626"],
+            ["Piloto y pasajero", "340", "37.0", "12,580"],
+            ["Combustible (38 gal × 6)", "228", "48.0", "10,944"],
+            ["Equipaje", "60", "95.0", "5,700"],
+            ["TOTAL", "2,095", "—", "85,850"]
+          ]
+        },
+        {
+          "type": "text",
+          "md": "CG = 85,850 ÷ 2,095 = **41.0 pulgadas** detrás del datum. Y el último paso, el que salva vidas: verifica que el peso total no pase el máximo y que el CG caiga **dentro de los límites** del manual — el *envelope* de la siguiente sección."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Las tres trampas favoritas del examen: **olvidar convertir galones a libras** (38 gal no son 38 lb, son 228), **olvidarse del combustible por completo** al sumar, y **confundir brazo con momento** al llenar la tabla. Recuerda: el brazo se mide, el momento se calcula."
+        },
+        {
+          "type": "guided_math",
+          "family": "peso_balance",
+          "tier": 2
+        },
+        {
+          "type": "notebook",
+          "id": "10-6-n1",
+          "prompt": "Copia la tabla de estaciones (Peso | Brazo | Momento) y complétala con estos números: avión vacío 1,340 lb con brazo 39.0; piloto y pasajero 310 lb con brazo 37.0; combustible 30 gal con brazo 48.0. Convierte los galones, suma y calcula el CG."
+        },
+        {
+          "type": "check",
+          "id": "10-6-c1",
+          "q": "El CG se calcula como…",
+          "options": [
+            "peso total ÷ momento total",
+            "momento total ÷ peso total",
+            "peso × brazo de la estación más pesada"
+          ],
+          "answer": 1,
+          "why": "CG = momento total ÷ peso total. Si divides al revés te sale un número absurdo y chiquito."
+        },
+        {
+          "type": "check",
+          "id": "10-6-c2",
+          "q": "En la tabla, 38 galones de avgas se anotan como…",
+          "options": [
+            "38 lb, tal cual",
+            "228 lb (38 × 6)",
+            "285 lb (38 × 7.5)"
+          ],
+          "answer": 1,
+          "why": "La tabla trabaja en libras: galones × 6. El 7.5 es solo para el aceite."
+        }
+      ]
+    },
+    {
+      "id": "10-7",
+      "title": "El método gráfico: el envelope",
+      "key_points": [
+        "El envelope es la zona de combinaciones peso-CG aprobadas por el fabricante.",
+        "Se entra al gráfico con el CG en el eje horizontal y el peso en el vertical.",
+        "Si el punto cae fuera del envelope, no se vuela hasta reacomodar la carga.",
+        "Algunos gráficos usan momento ÷ 100 o ÷ 1,000 en el eje horizontal en vez del CG."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y si no quieres comparar números contra tablas de límites? El manual trae un gráfico: el **envelope** (envolvente de CG). Eje horizontal: posición del CG (o el momento); eje vertical: peso total. La figura cerrada del medio es la zona que el fabricante aprobó tras probar el avión."
+        },
+        {
+          "type": "text",
+          "md": "Cómo se lee: ubica tu CG en el eje horizontal y sube; ubica tu peso total en el vertical y cruza. ¿El punto cae **dentro** de la figura? Puedes volar. ¿Cae fuera — aunque sea un poquito? No despegas hasta reacomodar la carga. Fíjate que arriba el envelope se angosta: a mayor peso, menos margen de CG te permiten."
+        },
+        {
+          "type": "diagram",
+          "src": "ch10-envelope.svg",
+          "caption": "El punto A (2,095 lb, CG 41.0) cae dentro: legal. El punto B cae fuera: ese avión no despega así."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "En las figuras del examen, el eje horizontal a veces NO es el CG en pulgadas sino el **momento ÷ 100** (MOM/100) o ÷ 1,000. Lee el rótulo del eje antes de hacer cualquier cálculo: es la trampa más común de los gráficos de peso y balance."
+        },
+        {
+          "type": "notebook",
+          "id": "10-7-n1",
+          "prompt": "Dibuja un envelope simplificado (peso en el eje vertical, CG en el horizontal) y plotea estos dos aviones: A) 2,095 lb con CG 41.0 in; B) 2,400 lb con CG 47.5 in. Marca con colores cuál puede volar y cuál no, y por qué."
+        },
+        {
+          "type": "check",
+          "id": "10-7-c1",
+          "q": "Tu punto peso-CG cae justo fuera del envelope. ¿Qué haces?",
+          "options": [
+            "Despegas con cuidado extra: el gráfico es solo una guía",
+            "Reacomodas o quitas carga hasta que el punto entre",
+            "Le restas 100 lb al peso en el papel para compensar"
+          ],
+          "answer": 1,
+          "why": "Fuera del envelope el avión no está certificado para volar: se corrige la carga, no el papel."
+        }
+      ]
+    },
+    {
+      "id": "10-8",
+      "title": "CG adelantado vs atrasado: el punto crítico",
+      "key_points": [
+        "Con CG adelantado el avión es más estable pero con la nariz pesada.",
+        "El CG adelantado aumenta la velocidad de pérdida: la cola empuja hacia abajo como peso extra.",
+        "Con CG adelantado puede faltar elevador para el flare al aterrizar.",
+        "Con CG atrasado el avión es inestable.",
+        "Con CG atrasado la recuperación de una pérdida o barrena puede ser difícil o imposible.",
+        "El CG atrasado da pérdida a menor velocidad y crucero algo más rápido, pero es el caso más peligroso."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Dónde amarras la mochila en la bici? Colgada del timón, la bici se siente pesada pero firme y predecible. Amarrada atrás del asiento, cualquier movimiento la vuelve nerviosa y coleadora. Con el CG pasa igual: **adelante = estable pero pesado de nariz; atrás = ágil pero peligrosamente inestable**."
+        },
+        {
+          "type": "text",
+          "md": "¿Por qué el CG adelantado sube la velocidad de pérdida? Para mantener la nariz arriba, la cola debe empujar hacia **abajo** con más fuerza — y esa fuerza es como peso extra que el ala también debe sostener. Además, al aterrizar puede no alcanzarte el elevador para el *flare*. Con CG atrasado ocurre lo opuesto… y algo mucho peor."
+        },
+        {
+          "type": "table",
+          "headers": ["Efecto", "CG adelantado", "CG atrasado"],
+          "rows": [
+            ["Estabilidad", "más estable", "inestable"],
+            ["Velocidad de pérdida", "mayor", "menor"],
+            ["Velocidad de crucero", "menor", "algo mayor"],
+            ["Nariz", "pesada, flare difícil", "liviana, se va sola hacia arriba"],
+            ["Recuperar pérdida/barrena", "posible", "difícil o IMPOSIBLE"]
+          ]
+        },
+        {
+          "type": "diagram",
+          "src": "ch10-cg-efectos.svg",
+          "caption": "Adelantado: firme pero pesado de nariz. Atrasado: inestable — y de una barrena quizá no salgas."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "EL punto que el examen ama: con **CG atrasado (aft)** el avión es inestable y la recuperación de una **pérdida o barrena puede ser imposible** — la cola no tiene brazo suficiente para bajar la nariz. Si lees \"CG atrasado\" en una pregunta, piensa: *recuperación difícil o imposible*."
+        },
+        {
+          "type": "notebook",
+          "id": "10-8-n1",
+          "prompt": "Divide una página en dos columnas: \"CG adelantado\" y \"CG atrasado\". Dibuja un avioncito en cada una con el punto del CG bien marcado, y anota debajo 3 efectos de cada caso — primero de memoria, luego corrige con la tabla."
+        },
+        {
+          "type": "check",
+          "id": "10-8-c1",
+          "q": "Un CG demasiado atrasado hace que…",
+          "options": [
+            "el avión sea más estable pero más lento",
+            "la recuperación de una pérdida o barrena sea difícil o imposible",
+            "la velocidad de pérdida aumente muchísimo"
+          ],
+          "answer": 1,
+          "why": "CG atrasado = inestable, y sin brazo de cola para bajar la nariz quizá no salgas de la barrena."
+        },
+        {
+          "type": "check",
+          "id": "10-8-c2",
+          "q": "Con CG adelantado, la velocidad de pérdida…",
+          "options": [
+            "aumenta: la cola empuja hacia abajo y actúa como peso extra",
+            "disminuye, porque el avión es más estable",
+            "no cambia respecto al CG atrasado"
+          ],
+          "answer": 0,
+          "why": "La fuerza de cola hacia abajo se suma al peso que el ala debe sostener: pérdida a más velocidad."
+        }
+      ]
+    },
+    {
+      "id": "10-9",
+      "title": "¿Quemaste combustible? El CG se movió",
+      "key_points": [
+        "Quemar combustible quita peso en la estación de los tanques y mueve el CG.",
+        "Al agregar o quitar peso se recalcula: nuevo momento ÷ nuevo peso.",
+        "Quemar 30 galones de avgas equivale a perder 180 libras.",
+        "El peso y balance debe verificarse para el despegue Y para el aterrizaje."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿El cálculo del despegue te sirve para todo el vuelo? No: cada galón quemado son 6 lb que desaparecen de la estación de los tanques, y el CG se mueve. Agregar o quitar peso siempre se resuelve igual: **recalcula**. Nuevo peso = viejo ± lo que cambió; nuevo momento = viejo ± (peso cambiado × su brazo); nuevo CG = la división de siempre."
+        },
+        {
+          "type": "text",
+          "md": "Ejemplo tipo examen: despegas con 2,784 lb y momento 222,200 lb-in (en la figura sale como MOM/100 = 2,222). Quemas 30 galones = **180 lb** de tanques con brazo 75: momento nuevo = 222,200 − (180 × 75) = 208,700 → MOM/100 ≈ **2,087**; peso nuevo = 2,604 lb. Por eso siempre verificas el envelope para el despegue **y** el aterrizaje."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "La figura 67 del banco pregunta exactamente esto: tras quemar 30 galones, el momento **disminuye** a 2,087 (MOM/100). La opción trampa dice \"sin efecto sobre el CG\" — quemar combustible casi siempre cambia peso, momento y CG a la vez."
+        },
+        {
+          "type": "notebook",
+          "id": "10-9-n1",
+          "prompt": "Recalcula paso a paso: un avión de 2,300 lb con momento 105,800 lb-in quema 20 galones (brazo del tanque 48.0). Halla el peso nuevo, el momento nuevo y el CG nuevo. Pista: primero convierte los 20 galones a libras."
+        },
+        {
+          "type": "check",
+          "id": "10-9-c1",
+          "q": "Quitas 60 lb de equipaje (brazo 95). ¿Cuánto le restas al momento total?",
+          "options": [
+            "60 lb-in",
+            "5,700 lb-in (60 × 95)",
+            "95 lb-in"
+          ],
+          "answer": 1,
+          "why": "El peso que sale se lleva su momento completo: peso × brazo = 60 × 95 = 5,700 lb-in."
+        },
+        {
+          "type": "check",
+          "id": "10-9-c2",
+          "q": "¿Para qué momentos del vuelo debes verificar el peso y balance?",
+          "options": [
+            "Solo para el despegue",
+            "Para el despegue y el aterrizaje: el combustible quemado mueve el CG",
+            "Solo si llevas pasajeros atrás"
+          ],
+          "answer": 1,
+          "why": "El avión aterriza con otro peso y otro CG que al despegar: ambos deben caer en el envelope."
+        }
+      ]
+    },
+    {
+      "id": "10-10",
+      "title": "Mover peso y salir del apuro",
+      "key_points": [
+        "Fórmula del peso movido: peso movido × distancia = peso total × cambio de CG.",
+        "El CG siempre se mueve hacia el lado al que moviste el peso.",
+        "Si sales del envelope puedes mover carga, quitar equipaje o drenar combustible.",
+        "Despegar fuera del envelope no es una opción: es ilegal y peligroso."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y si el peso total no cambia y solo mueves una caja de adelante hacia atrás? Para eso hay una fórmula corta, la del **peso movido** (*weight shift*): **peso movido × distancia movida = peso total × cambio de CG**. Conoces tres de los cuatro números; despeja el que falta."
+        },
+        {
+          "type": "text",
+          "md": "Ejemplo: avión de 2,000 lb; mueves 50 lb del compartimiento delantero (brazo 30) al trasero (brazo 120). Distancia = 90 in. Cambio de CG = (50 × 90) ÷ 2,000 = **2.25 in hacia atrás** — siempre hacia donde moviste el peso."
+        },
+        {
+          "type": "diagram",
+          "src": "ch10-peso-movido.svg",
+          "caption": "La caja de 50 lb viaja 90 in hacia atrás: en un avión de 2,000 lb el CG se corre 2.25 in hacia atrás."
+        },
+        {
+          "type": "text",
+          "md": "¿Y si tu punto cayó fuera del envelope? Tienes tres salidas honestas: **mover carga** (equipaje adelante o atrás, cambiar de asiento a un pasajero), **quitar equipaje**, o **drenar combustible**. La cuarta \"salida\" — despegar así nomás — no existe: es ilegal y puede costar vidas."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "La fórmula es una proporción de balancín: peso chico × distancia grande = peso grande × distancia chica. Y el CG se mueve **hacia** donde moviste el peso — si tu resultado dice lo contrario, revisa el despeje."
+        },
+        {
+          "type": "notebook",
+          "id": "10-10-n1",
+          "prompt": "Resuelve con la fórmula del peso movido: avión de 2,250 lb; mueves 45 lb del asiento trasero (brazo 73) al equipaje (brazo 95). Escribe primero la fórmula despejada para el cambio de CG, luego reemplaza y di cuánto y hacia dónde se mueve."
+        },
+        {
+          "type": "check",
+          "id": "10-10-c1",
+          "q": "Mueves 40 lb una distancia de 100 in hacia atrás en un avión de 2,000 lb. ¿Qué pasa con el CG?",
+          "options": [
+            "Se mueve 2 in hacia atrás: (40 × 100) ÷ 2,000",
+            "Se mueve 0.5 in hacia adelante",
+            "No cambia, porque el peso total es el mismo"
+          ],
+          "answer": 0,
+          "why": "Peso movido × distancia ÷ peso total = 4,000 ÷ 2,000 = 2 in, hacia donde fue el peso."
+        }
+      ]
+    }
+  ]
+}

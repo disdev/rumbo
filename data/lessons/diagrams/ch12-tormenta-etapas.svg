@@ -1,0 +1,40 @@
+<svg viewBox="0 0 480 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Las tres etapas de la tormenta: cúmulo con ascendentes, madura con ascendentes y descendentes y lluvia, disipación con descendentes">
+  <line x1="20" y1="240" x2="460" y2="240" stroke="var(--text)" stroke-width="2"/>
+
+  <!-- 1: CÚMULO -->
+  <text x="90" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle" font-weight="bold">1. Cúmulo</text>
+  <circle cx="90" cy="120" r="22" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
+  <circle cx="68" cy="140" r="17" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
+  <circle cx="112" cy="140" r="17" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
+  <circle cx="90" cy="152" r="19" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1.5"/>
+  <line x1="76" y1="230" x2="76" y2="185" stroke="var(--ok)" stroke-width="2.5"/>
+  <polygon points="76,177 69,191 83,191" fill="var(--ok)"/>
+  <line x1="104" y1="230" x2="104" y2="185" stroke="var(--ok)" stroke-width="2.5"/>
+  <polygon points="104,177 97,191 111,191" fill="var(--ok)"/>
+  <text x="90" y="262" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">ascendente continua</text>
+  <text x="90" y="277" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la nube crece</text>
+
+  <!-- 2: MADURA -->
+  <text x="240" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle" font-weight="bold">2. Madura</text>
+  <path d="M 214 200 Q 200 150 212 100 L 212 78 L 190 78 L 190 64 L 292 64 L 292 78 L 268 78 L 268 100 Q 280 150 268 200 Z" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
+  <text x="286" y="56" fill="var(--muted)" font-family="inherit" font-size="11">yunque</text>
+  <line x1="226" y1="195" x2="226" y2="120" stroke="var(--ok)" stroke-width="2.5"/>
+  <polygon points="226,112 219,126 233,126" fill="var(--ok)"/>
+  <line x1="254" y1="120" x2="254" y2="195" stroke="var(--bad)" stroke-width="2.5"/>
+  <polygon points="254,203 247,189 261,189" fill="var(--bad)"/>
+  <line x1="222" y1="210" x2="216" y2="232" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="240" y1="210" x2="234" y2="232" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="258" y1="210" x2="252" y2="232" stroke="var(--accent)" stroke-width="2"/>
+  <text x="240" y="262" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">empieza la lluvia · sube y baja</text>
+  <text x="240" y="277" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">MÁXIMA intensidad</text>
+
+  <!-- 3: DISIPACIÓN -->
+  <text x="390" y="26" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle" font-weight="bold">3. Disipación</text>
+  <path d="M 372 190 Q 364 150 372 110 L 372 88 L 340 88 L 340 72 L 448 72 L 448 88 L 410 88 L 410 110 Q 416 150 410 190 Z" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="380" y1="120" x2="380" y2="195" stroke="var(--bad)" stroke-width="2.5"/>
+  <polygon points="380,203 373,189 387,189" fill="var(--bad)"/>
+  <line x1="402" y1="120" x2="402" y2="195" stroke="var(--bad)" stroke-width="2.5"/>
+  <polygon points="402,203 395,189 409,189" fill="var(--bad)"/>
+  <text x="390" y="262" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">dominan las descendentes</text>
+  <text x="390" y="277" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la nube se deshace</text>
+</svg>

@@ -4,12 +4,13 @@
 // verdad es el log).
 
 import { el, breakScreen, fmtTime, quizPlayer, drillPlayer, recallPlayer, rapidfirePlayer, scenarioPlayer, teachbackPlayer, simulacroPlayer, lecturaPlayer, oralPlayer } from './players.js';
+import { leccionPlayer } from './lessons.js';
 
 const CURSOR_KEY = 'rumbo_cursor_v1';
 
 const PLAYERS = {
   quiz: quizPlayer, redo: quizPlayer, chart: quizPlayer,
-  drill: drillPlayer, lectura: lecturaPlayer, recall: recallPlayer,
+  drill: drillPlayer, lectura: lecturaPlayer, leccion: leccionPlayer, recall: recallPlayer,
   rapidfire: rapidfirePlayer, scenario: scenarioPlayer,
   teachback: teachbackPlayer, oral: oralPlayer, simulacro: simulacroPlayer,
 };

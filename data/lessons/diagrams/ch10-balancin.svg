@@ -1,0 +1,36 @@
+<svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Balancín con dos pesos: 120 libras a 2 pies equilibra 60 libras a 4 pies">
+  <!-- tabla del balancín -->
+  <line x1="60" y1="140" x2="420" y2="140" stroke="var(--text)" stroke-width="4"/>
+  <!-- fulcro -->
+  <polygon points="240,142 218,186 262,186" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <line x1="40" y1="186" x2="440" y2="186" stroke="var(--muted)" stroke-width="1"/>
+  <text x="240" y="202" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">fulcro (punto de apoyo)</text>
+
+  <!-- peso izquierdo: 120 lb, brazo corto -->
+  <rect x="122" y="96" width="56" height="42" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <text x="150" y="122" fill="var(--text)" font-family="inherit" font-size="14" text-anchor="middle">120 lb</text>
+
+  <!-- peso derecho: 60 lb, brazo largo -->
+  <rect x="356" y="108" width="44" height="30" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <text x="378" y="129" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">60 lb</text>
+
+  <!-- brazo izquierdo -->
+  <line x1="150" y1="160" x2="240" y2="160" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="150" y1="153" x2="150" y2="167" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="240" y1="153" x2="240" y2="167" stroke="var(--accent)" stroke-width="2"/>
+  <text x="195" y="176" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">brazo = 2 pies</text>
+
+  <!-- brazo derecho -->
+  <line x1="240" y1="160" x2="378" y2="160" stroke="var(--accent)" stroke-width="2"/>
+  <line x1="378" y1="153" x2="378" y2="167" stroke="var(--accent)" stroke-width="2"/>
+  <text x="322" y="176" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="middle">brazo = 4 pies</text>
+
+  <!-- momentos -->
+  <text x="120" y="222" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">momento = 120 × 2 = 240</text>
+  <text x="360" y="222" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">momento = 60 × 4 = 240</text>
+  <text x="240" y="244" fill="var(--ok)" font-family="inherit" font-size="14" text-anchor="middle">momentos iguales → equilibrio</text>
+
+  <!-- título -->
+  <text x="240" y="30" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle">El sube-y-baja: peso × brazo = momento</text>
+  <text x="240" y="50" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">el flaco lejos equilibra al grandote cerca</text>
+</svg>

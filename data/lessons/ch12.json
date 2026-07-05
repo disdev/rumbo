@@ -1,0 +1,717 @@
+{
+  "chapter": "12",
+  "title": "Teoría meteorológica",
+  "resumen": "Cómo funciona el clima: del sol al viento, de la humedad a las nubes, y de los frentes a las tormentas — para que aprendas a leer el cielo antes de que el cielo te lea a ti.",
+  "sections": [
+    {
+      "id": "12-1",
+      "title": "La atmósfera: tu océano de aire",
+      "key_points": [
+        "El aire es 78% nitrógeno, 21% oxígeno y 1% otros gases, incluido el vapor de agua.",
+        "Casi todo el clima ocurre en la tropósfera, que llega en promedio a unos 36,000 pies.",
+        "La tropopausa separa la tropósfera de la estratósfera.",
+        "Todo proceso físico del clima va acompañado o es resultado de un intercambio de calor.",
+        "El vapor de agua, aunque escaso, es el ingrediente clave de todo el clima."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿En qué está flotando tu avión? Piensa en el océano: los peces viven en el fondo de una masa enorme de agua. Tú vives en el fondo de un océano de aire — la **atmósfera**. Su receta: **78% nitrógeno, 21% oxígeno y 1% otros gases**. En ese 1% viaja el **vapor de agua**: poquito en cantidad, gigante en consecuencias, porque es el actor principal de todo el clima."
+        },
+        {
+          "type": "text",
+          "md": "La atmósfera tiene capas, como un pastel. La de abajo es la **tropósfera**: ahí vives, ahí vuelas y ahí ocurre casi todo el clima. Llega en promedio a unos **36,000 pies** (más alta sobre el ecuador, más baja sobre los polos). Su techo es la **tropopausa**, y encima viene la **estratósfera**, mucho más tranquila. Dentro de la tropósfera, la temperatura normalmente baja mientras subes."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta: *todo proceso físico del clima va acompañado o es resultado de…* → **un intercambio de calor**. Grábatelo: el clima es, en el fondo, calor moviéndose de un lado a otro."
+        },
+        {
+          "type": "notebook",
+          "id": "12-1-n1",
+          "prompt": "Dibuja un corte vertical de la atmósfera: tropósfera abajo (escribe '78% N₂ / 21% O₂ / 1% otros' adentro), la línea de la tropopausa a ~36,000 ft y la estratósfera arriba. Marca con una flecha dónde vuela una avioneta."
+        },
+        {
+          "type": "check",
+          "id": "12-1-c1",
+          "q": "¿Cuál es la composición aproximada del aire seco?",
+          "options": [
+            "78% nitrógeno, 21% oxígeno y 1% otros gases.",
+            "78% oxígeno, 21% nitrógeno y 1% otros gases.",
+            "50% nitrógeno, 49% oxígeno y 1% vapor de agua."
+          ],
+          "answer": 0,
+          "why": "El nitrógeno domina (78%), el oxígeno sigue (21%) y el 1% restante incluye el vapor de agua."
+        },
+        {
+          "type": "check",
+          "id": "12-1-c2",
+          "q": "Todo proceso físico del clima va acompañado o es resultado de:",
+          "options": [
+            "Un intercambio de calor.",
+            "Un cambio de presión solamente.",
+            "El movimiento del aire solamente."
+          ],
+          "answer": 0,
+          "why": "El clima es energía solar redistribuyéndose: todo proceso meteorológico implica un intercambio de calor."
+        }
+      ]
+    },
+    {
+      "id": "12-2",
+      "title": "El sol calienta desigual: nace la circulación",
+      "key_points": [
+        "El sol calienta la Tierra de forma desigual: más en el ecuador, menos en los polos.",
+        "El aire caliente sube y el aire frío baja a reemplazarlo: eso es la convección.",
+        "El calentamiento desigual genera la circulación general de la atmósfera.",
+        "Las diferencias de calentamiento crean diferencias de presión entre lugares.",
+        "El calentamiento desigual de la superficie causa las variaciones del ajuste del altímetro entre estaciones."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿De dónde saca energía el clima? Del sol, pero con trampa: la Tierra **no se calienta pareja**. El ecuador recibe el sol de frente; los polos, de reojo. La tierra se calienta y se enfría más rápido que el mar. Es como una olla hirviendo: el agua sobre la hornilla sube y la de los bordes baja, armando una circulación. Con el aire pasa igual: **el aire caliente sube y el frío baja a reemplazarlo**. Eso es la **convección**."
+        },
+        {
+          "type": "text",
+          "md": "A escala planetaria esa convección crea la **circulación general**: el aire sube caliente en el ecuador, viaja en altura, se enfría, desciende y regresa por la superficie. La rotación de la Tierra la parte en **celdas** y así nacen los vientos del mundo. Consecuencia práctica: como cada zona se calienta distinto, la **presión cambia de un lugar a otro** — por eso el ajuste del altímetro varía entre aeropuertos."
+        },
+        {
+          "type": "diagram",
+          "src": "ch12-circulacion.svg",
+          "caption": "Circulación global simplificada: el aire sube caliente en el ecuador, desciende hacia los 30° y forma celdas hasta los polos."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Pregunta del banco: *¿qué causa las variaciones del ajuste del altímetro entre puntos de informe meteorológico?* → **el calentamiento desigual de la superficie terrestre**. No es Coriolis ni la elevación del terreno."
+        },
+        {
+          "type": "notebook",
+          "id": "12-2-n1",
+          "prompt": "Dibuja la 'olla hirviendo': una hornilla (el sol calentando el ecuador), flechas rojas subiendo en el centro y flechas azules bajando por los lados. Escribe debajo: 'calentamiento desigual → convección → viento'."
+        },
+        {
+          "type": "check",
+          "id": "12-2-c1",
+          "q": "¿Qué causa las variaciones en el ajuste del altímetro entre puntos de informe meteorológico?",
+          "options": [
+            "El calentamiento desigual de la superficie terrestre.",
+            "La variación de la elevación del terreno.",
+            "La fuerza de Coriolis."
+          ],
+          "answer": 0,
+          "why": "El calentamiento desigual crea diferencias de presión entre lugares, y eso cambia el ajuste del altímetro."
+        }
+      ]
+    },
+    {
+      "id": "12-3",
+      "title": "Presión: montañas y hoyos de aire",
+      "key_points": [
+        "Las isobaras unen puntos de igual presión; muy juntas significan viento fuerte.",
+        "En una alta el aire desciende, se seca y suele traer buen tiempo.",
+        "En una baja el aire converge y sube, formando nubes y mal tiempo.",
+        "En el hemisferio norte la alta gira horario y la baja antihorario.",
+        "En el Perú (hemisferio sur) el giro se invierte, pero el buen o mal tiempo asociado no cambia."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo se dibuja la presión en un mapa? Con **isobaras**: líneas que unen puntos con la misma presión, como las curvas de nivel de un cerro. Isobaras muy juntas = la presión cambia rápido = **viento fuerte**. Una **alta (H)** es como una montaña de aire; una **baja (L)**, como un hoyo."
+        },
+        {
+          "type": "text",
+          "md": "En una **alta**, el aire **desciende** y al bajar se seca y se estabiliza: normalmente **buen tiempo**. En una **baja**, el aire converge y **sube**; al subir se enfría y el vapor se condensa: **nubes y mal tiempo**. Eso vale en todo el planeta. El **giro** sí cambia de hemisferio: en el norte la alta gira horario y la baja antihorario; **en el sur — o sea, en el Perú — es al revés**: alta antihoraria, baja horaria."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "El banco DGAC viene de material FAA escrito para el **hemisferio norte**. Si una pregunta habla de giro horario/antihorario, respóndela en 'modo hemisferio norte'. Pero cuando mires el cielo peruano, recuerda que aquí el giro está invertido. Lo que NO se invierte nunca: alta = aire que baja = buen tiempo; baja = aire que sube = mal tiempo."
+        },
+        {
+          "type": "notebook",
+          "id": "12-3-n1",
+          "prompt": "Dibuja dos juegos de isobaras concéntricas: una H (anota 'aire baja → seco → buen tiempo') y una L ('aire sube → nubes → mal tiempo'). Debajo escribe: 'Giro en HN: H horario, L antihorario. En Perú (HS): al revés'."
+        },
+        {
+          "type": "check",
+          "id": "12-3-c1",
+          "q": "Vuelas hacia el centro de una zona de baja presión. En general debes esperar:",
+          "options": [
+            "Aire ascendente, nubosidad y mal tiempo.",
+            "Aire descendente y cielos despejados.",
+            "Ningún cambio en el clima."
+          ],
+          "answer": 0,
+          "why": "En una baja el aire converge y sube; al enfriarse forma nubes y mal tiempo."
+        },
+        {
+          "type": "check",
+          "id": "12-3-c2",
+          "q": "En un mapa meteorológico, las isobaras muy juntas indican:",
+          "options": [
+            "Viento fuerte por un gradiente de presión intenso.",
+            "Aire en calma y presión uniforme.",
+            "Una zona de niebla persistente."
+          ],
+          "answer": 0,
+          "why": "Isobaras juntas = la presión cambia mucho en poca distancia = gradiente fuerte = viento fuerte."
+        }
+      ]
+    },
+    {
+      "id": "12-4",
+      "title": "El viento: por qué sopla y por qué gira",
+      "key_points": [
+        "El viento nace del gradiente de presión: el aire va de la alta hacia la baja.",
+        "Coriolis desvía el viento: a la derecha en el hemisferio norte, a la izquierda en el sur.",
+        "La fricción superficial (primeros ~2,000 ft) frena el viento y cambia su dirección respecto al viento en altura.",
+        "De día la brisa de mar entra a tierra porque la tierra se calienta más rápido que el agua.",
+        "En la sierra: brisa de valle de día (el aire sube), brisa de montaña de noche (el aire frío baja)."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué sopla el viento? Porque la presión empuja, como el aire escapando de una llanta pinchada: siempre **de la alta hacia la baja**. Esa es la **fuerza de gradiente de presión**. Pero el aire no viaja recto: la rotación de la Tierra lo desvía — la **fuerza de Coriolis** — a la derecha en el hemisferio norte y **a la izquierda aquí en el sur**. Resultado en altura: el viento termina soplando casi paralelo a las isobaras."
+        },
+        {
+          "type": "text",
+          "md": "Cerca del suelo (los primeros **~2,000 pies**) entra un tercer jugador: la **fricción** con el terreno. Frena el viento y debilita el efecto de Coriolis, así que el viento en superficie cruza las isobaras y **cambia de dirección respecto al viento en altura**. Por eso a 5,000 pies el viento puede ser del suroeste mientras en la pista es del sur: **es la fricción**."
+        },
+        {
+          "type": "text",
+          "md": "Y las brisas que ya conoces: de día la tierra se calienta más rápido que el mar; el aire sobre la tierra sube y el **aire fresco y denso del mar entra a reemplazarlo** — la **brisa de mar** de la costa por la tarde. De noche se invierte (**brisa de tierra**). En la sierra: de día el aire sube por las laderas soleadas (**brisa de valle**) y de noche el aire frío se descuelga cerro abajo (**brisa de montaña**)."
+        },
+        {
+          "type": "notebook",
+          "id": "12-4-n1",
+          "prompt": "Dibuja la brisa de mar: sol arriba, playa a la izquierda, mar a la derecha; flecha roja subiendo sobre la tierra caliente y flecha azul entrando desde el mar. Al lado, la versión nocturna con las flechas invertidas."
+        },
+        {
+          "type": "check",
+          "id": "12-4-c1",
+          "q": "El viento a 5,000 pies AGL es del suroeste y en superficie es del sur. Esa diferencia se debe principalmente a:",
+          "options": [
+            "La fricción entre el viento y la superficie.",
+            "Un gradiente de presión más fuerte en altura.",
+            "Una fuerza de Coriolis más fuerte en superficie."
+          ],
+          "answer": 0,
+          "why": "La fricción frena el viento en superficie y reduce Coriolis, cambiando su dirección respecto al viento en altura."
+        },
+        {
+          "type": "check",
+          "id": "12-4-c2",
+          "q": "La circulación convectiva asociada a la brisa de mar se debe a que:",
+          "options": [
+            "El aire fresco y denso se mueve desde el mar hacia tierra.",
+            "El aire cálido y denso se mueve desde el mar hacia tierra.",
+            "El agua absorbe e irradia calor más rápido que la tierra."
+          ],
+          "answer": 0,
+          "why": "La tierra se calienta más rápido; el aire sobre ella sube y el aire fresco y denso del mar entra a reemplazarlo."
+        }
+      ]
+    },
+    {
+      "id": "12-5",
+      "title": "Ondas de montaña y rotores: el peligro andino",
+      "key_points": [
+        "La onda de montaña se forma a sotavento cuando un viento de 40 kt o más cruza la cresta con aire estable.",
+        "Las nubes lenticulares marcan las crestas de la onda y pueden esconder vientos de 50 kt o más.",
+        "Los rotores, debajo de las crestas de la onda, tienen la turbulencia más violenta.",
+        "A sotavento hay corrientes descendentes fuertes: cruza las cordilleras con altitud de sobra."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué le pasa al viento cuando choca con los Andes? Lo mismo que al agua de un río cuando pasa sobre una piedra grande: al otro lado se forman **ondas**. Si un viento de **40 nudos o más** cruza perpendicular a una cordillera y el aire es **estable**, a **sotavento** (el lado protegido del viento) se arma una **onda de montaña** que puede extenderse cientos de kilómetros y subir por encima de la cresta."
+        },
+        {
+          "type": "text",
+          "md": "Las ondas se delatan con nubes: las **lenticulares**, con forma de lente o almendra, marcan las **crestas** de la onda. Parecen quietas, pero adentro el viento puede pasar de **50 nudos**. Debajo de las crestas giran los **rotores**: remolinos horizontales con turbulencia violenta, a veces marcados por nubes rollo. Volando en el Perú esto es pan de cada día: cruza las cordilleras con **mucha altitud de sobra** y espera descendentes fuertes a sotavento."
+        },
+        {
+          "type": "diagram",
+          "src": "ch12-onda-montana.svg",
+          "caption": "Onda de montaña: viento fuerte y estable cruza la cresta, forma ondas a sotavento con lenticulares arriba y rotores abajo."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Tres preguntas del banco salen directo de aquí: la nube **lenticular** (forma de lente, parece estacionaria, vientos de 50 kt o más), las lenticulares marcan las **crestas de las ondas de montaña**, y la condición para anticipar la turbulencia: **viento de 40 kt o más a través de la cresta, con aire estable**."
+        },
+        {
+          "type": "notebook",
+          "id": "12-5-n1",
+          "prompt": "Dibuja una montaña con el viento entrando por la izquierda: la onda al otro lado como una serpiente, nubes lenticulares (lentejas) en las crestas y un remolino etiquetado 'rotor' debajo de la primera cresta. Anota: '≥40 kt a través de la cresta + aire estable'."
+        },
+        {
+          "type": "check",
+          "id": "12-5-c1",
+          "q": "Una nube en forma de lente que parece estacionaria pero puede contener vientos de 50 nudos o más es:",
+          "options": [
+            "Una nube lenticular.",
+            "Una nube de embudo.",
+            "Una nube frontal inactiva."
+          ],
+          "answer": 0,
+          "why": "La lenticular marca la cresta de una onda de montaña: parece quieta porque se forma y disipa en el mismo sitio, con viento fuerte adentro."
+        },
+        {
+          "type": "check",
+          "id": "12-5-c2",
+          "q": "Puedes anticipar turbulencia de onda de montaña cuando soplan vientos de 40 nudos o más:",
+          "options": [
+            "A través de la cresta de la montaña, con aire estable.",
+            "A lo largo de un valle, con aire inestable.",
+            "Paralelos a la cima de la montaña, con aire estable."
+          ],
+          "answer": 0,
+          "why": "La receta de la onda: viento fuerte (≥40 kt) perpendicular a la cresta + aire estable que ondula en vez de mezclarse."
+        }
+      ]
+    },
+    {
+      "id": "12-6",
+      "title": "Estabilidad: ¿el aire quiere subir?",
+      "key_points": [
+        "El aire que sube se enfría: 3°C/1,000 ft seco, ~1.5–2°C húmedo; la tasa estándar es 2°C/1,000 ft.",
+        "La estabilidad se determina con la tasa de caída real (lapse rate) de la atmósfera.",
+        "Aire estable: estratos, vuelo suave, mala visibilidad, precipitación continua.",
+        "Aire inestable: cúmulos, turbulencia, buena visibilidad, chubascos.",
+        "Calentar el aire desde abajo lo desestabiliza; enfriarlo desde abajo lo estabiliza.",
+        "Una inversión (temperatura que sube con la altura) es una capa muy estable.",
+        "La inversión de superficie más común la produce la radiación terrestre en noches claras y calmadas."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿El aire quiere subir o quedarse quieto? Imagina una burbuja de aire que algo empuja hacia arriba. Al subir se expande y se **enfría**: unos **3°C por cada 1,000 pies** si está seca (tasa adiabática seca) y **~1.5–2°C** si su vapor ya se condensa (tasa húmeda), porque condensar libera calor. El aire de alrededor se enfría con la altura a su propio ritmo: la **tasa real** (la estándar es 2°C/1,000 ft)."
+        },
+        {
+          "type": "text",
+          "md": "La comparación decide todo. Si la burbuja termina **más fría** que su entorno, es más densa y vuelve a bajar: aire **estable**. Si queda **más caliente**, sigue subiendo sola: aire **inestable**. Por eso la estabilidad se determina con la **tasa de caída real**, y **calentar el aire desde abajo lo desestabiliza** (como la olla en la hornilla), mientras enfriarlo desde abajo lo estabiliza."
+        },
+        {
+          "type": "diagram",
+          "src": "ch12-estabilidad.svg",
+          "caption": "La burbuja que sube: en aire estable regresa y forma estratos; en aire inestable sigue subiendo y fabrica cúmulos."
+        },
+        {
+          "type": "table",
+          "headers": ["", "Aire estable", "Aire inestable"],
+          "rows": [
+            ["Nubes", "Estratos (en capas)", "Cúmulos (en torres)"],
+            ["Vuelo", "Suave", "Turbulento"],
+            ["Visibilidad", "Mala (bruma atrapada)", "Buena"],
+            ["Precipitación", "Llovizna o lluvia continua", "Chubascos"]
+          ]
+        },
+        {
+          "type": "text",
+          "md": "El caso extremo de estabilidad: la **inversión de temperatura**, cuando la temperatura **sube** al subir. La más frecuente en superficie se produce por **radiación terrestre en noches claras y calmadas**. Debajo de una inversión con humedad alta espera **aire suave, mala visibilidad, niebla o nubes bajas**. Lima vive bajo una: el mar frío de la corriente de Humboldt enfría el aire de abajo y fabrica la inversión de la eterna panza de burro costera."
+        },
+        {
+          "type": "notebook",
+          "id": "12-6-n1",
+          "prompt": "Copia la tabla estable/inestable en tu cuaderno y enciérrala en un recuadro. Debajo escribe las tres tasas: seca 3°C, húmeda ~1.5–2°C, estándar 2°C por cada 1,000 ft."
+        },
+        {
+          "type": "check",
+          "id": "12-6-c1",
+          "q": "¿Qué medida se usa para determinar la estabilidad de la atmósfera?",
+          "options": [
+            "La tasa de caída real (lapse rate).",
+            "La presión atmosférica.",
+            "La temperatura de la superficie."
+          ],
+          "answer": 0,
+          "why": "Comparar la tasa de caída real con la de la burbuja que sube dice si el aire regresa (estable) o sigue subiendo (inestable)."
+        },
+        {
+          "type": "check",
+          "id": "12-6-c2",
+          "q": "Debajo de una inversión de baja altura con humedad relativa alta debes esperar:",
+          "options": [
+            "Aire suave, mala visibilidad, niebla o nubes bajas.",
+            "Aire turbulento y buena visibilidad.",
+            "Cizalladura fuerte con cielos despejados."
+          ],
+          "answer": 0,
+          "why": "La inversión es una tapa estable: atrapa humedad y contaminantes abajo — aire suave pero visibilidad pobre."
+        }
+      ]
+    },
+    {
+      "id": "12-7",
+      "title": "Punto de rocío: dónde nace la nube",
+      "key_points": [
+        "El punto de rocío es la temperatura a la que el aire debe enfriarse para saturarse.",
+        "El aire caliente puede contener más vapor de agua que el aire frío.",
+        "La humedad entra al aire por evaporación y sublimación.",
+        "Nube, niebla o rocío se forman cuando el vapor de agua se condensa (T = Td).",
+        "Base de los cúmulos ≈ (T − Td) ÷ 4.4 (°F) o ÷ 2.5 (°C), × 1,000 pies AGL.",
+        "Cuidado con AGL vs MSL al calcular la base de las nubes: es la trampa favorita del examen."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué 'suda' un vaso con hielo? El aire pegado al vidrio se enfría hasta una temperatura donde ya no puede cargar todo su vapor de agua, y el sobrante se condensa en gotitas. Esa temperatura es el **punto de rocío (Td)**: la temperatura a la que el aire debe **enfriarse para saturarse**. El aire caliente puede cargar más vapor que el frío — por eso enfriar el aire lo acerca a la saturación."
+        },
+        {
+          "type": "text",
+          "md": "El vapor entra al aire por **evaporación** (desde líquido) y **sublimación** (directo desde el hielo). Y ojo con esta idea fina del banco: la nube, la niebla o el rocío se forman cuando **el vapor se condensa** — no basta con que haya vapor presente. Cuando la temperatura y el punto de rocío se igualan (**T = Td**), el aire se satura y aparece la nube. Si la diferencia T−Td es pequeña y sigue bajando: espera **niebla o nubes bajas**."
+        },
+        {
+          "type": "text",
+          "md": "Esto te regala un truco de piloto: el aire que sube se enfría más rápido de lo que baja su punto de rocío, y **se acercan a razón de ~4.4°F (2.5°C) por cada 1,000 pies**. Divide la diferencia entre temperatura y punto de rocío en superficie entre 4.4 (si está en °F) o 2.5 (en °C), multiplica por 1,000, y tienes la **base de los cúmulos en pies AGL**."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco lo pregunta con números: superficie a 70°F y Td 48°F → (70−48) ÷ 4.4 = 5 → base ≈ **5,000 ft AGL**. Si la superficie está a 1,000 ft MSL, la base queda a **6,000 ft MSL**. Otra: 82°F y 38°F → **10,000 ft AGL**. Lee siempre si piden AGL o MSL."
+        },
+        {
+          "type": "guided_math",
+          "family": "nubes",
+          "tier": 1
+        },
+        {
+          "type": "notebook",
+          "id": "12-7-n1",
+          "prompt": "Escribe la fórmula en grande: base (ft AGL) = (T − Td) ÷ 4.4 × 1,000 en °F, o ÷ 2.5 en °C. Resuelve tú mismo: T = 82°F, Td = 38°F. (Debe darte 10,000 ft AGL.)"
+        },
+        {
+          "type": "check",
+          "id": "12-7-c1",
+          "q": "¿Qué se entiende por 'punto de rocío'?",
+          "options": [
+            "La temperatura a la que el aire debe enfriarse para saturarse.",
+            "La temperatura a la que siempre se formará rocío.",
+            "La temperatura a la que la condensación y la evaporación son máximas."
+          ],
+          "answer": 0,
+          "why": "Td es la temperatura de saturación: si el aire se enfría hasta ahí, el vapor empieza a condensarse."
+        },
+        {
+          "type": "check",
+          "id": "12-7-c2",
+          "q": "Siempre se formarán nubes, niebla o rocío cuando:",
+          "options": [
+            "El vapor de agua se condensa.",
+            "Hay vapor de agua presente.",
+            "La temperatura sube por encima del punto de rocío."
+          ],
+          "answer": 0,
+          "why": "La condición exacta es la condensación del vapor — tener vapor en el aire no basta."
+        }
+      ]
+    },
+    {
+      "id": "12-8",
+      "title": "Nubes: las cuatro familias del cielo",
+      "key_points": [
+        "Las nubes se dividen en cuatro familias según su rango de altura.",
+        "Altas: prefijo cirro- (cristales de hielo); medias: prefijo alto-; bajas: stratus y sus parientes.",
+        "Nimbus significa nube de lluvia.",
+        "Los estratos indican aire estable: vuelo suave pero mala visibilidad — como la garúa limeña.",
+        "Los cúmulos elevados avisan turbulencia convectiva; el cumulonimbus tiene la mayor turbulencia de todas."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué te cuenta una nube? Su forma y su altura son el diagnóstico gratis del cielo. Las nubes se dividen en **cuatro familias según su rango de altura**: **altas** (prefijo *cirro-*: cirrus, cirrostratus, cirrocumulus — cristales de hielo), **medias** (prefijo *alto-*: altostratus, altocumulus), **bajas** (stratus, stratocumulus, nimbostratus — del suelo hasta ~6,500 ft) y de **desarrollo vertical** (el cumulus que crece hasta volverse cumulonimbus)."
+        },
+        {
+          "type": "text",
+          "md": "Descifra los nombres: *stratus* = capa, *cumulus* = montón, *cirrus* = rizo, y **nimbus = nube de lluvia**. Para ti como piloto: estratos = aire estable, vuelo suave pero visibilidad pobre — la **garúa limeña** cae de esos estratos costeros. Cúmulos = convección: los **cúmulos elevados** (towering cumulus) avisan turbulencia convectiva fuerte, y el **cumulonimbus** es la nube con **mayor turbulencia** de todas: una tormenta completa. A los Cb, ni te acerques."
+        },
+        {
+          "type": "diagram",
+          "src": "ch12-familias-nubes.svg",
+          "caption": "Las cuatro familias por altura: bajas, medias, altas y de desarrollo vertical — el cumulonimbus las atraviesa todas."
+        },
+        {
+          "type": "notebook",
+          "id": "12-8-n1",
+          "prompt": "Dibuja una regla vertical de 0 a 40,000 ft y ubica las 4 familias con un ejemplo cada una: stratus abajo, altocumulus al medio, cirrus arriba y un cumulonimbus atravesando todo. Marca las líneas de 6,500 y 20,000 ft."
+        },
+        {
+          "type": "check",
+          "id": "12-8-c1",
+          "q": "Las nubes se dividen en cuatro familias según su:",
+          "options": [
+            "Rango de altura.",
+            "Forma exterior.",
+            "Composición."
+          ],
+          "answer": 0,
+          "why": "Las familias son: bajas, medias, altas y de desarrollo vertical — clasificadas por altura."
+        },
+        {
+          "type": "check",
+          "id": "12-8-c2",
+          "q": "¿Qué nubes tienen la mayor turbulencia?",
+          "options": [
+            "Cumulonimbus.",
+            "Cúmulos imponentes.",
+            "Nimbostratus."
+          ],
+          "answer": 0,
+          "why": "El Cb es una tormenta entera: sus corrientes ascendentes y descendentes extremas producen la peor turbulencia."
+        }
+      ]
+    },
+    {
+      "id": "12-9",
+      "title": "Niebla: la nube que se sienta en la pista",
+      "key_points": [
+        "La niebla de radiación se forma en noches despejadas y calmadas, sobre terreno bajo y plano con aire húmedo.",
+        "La niebla de advección necesita viento que mueva aire húmedo sobre una superficie más fría — típica de costas.",
+        "La niebla de ladera (upslope) necesita viento que empuje aire húmedo y estable cuesta arriba.",
+        "Advección y ladera dependen del viento para existir; la de radiación necesita calma.",
+        "La niebla de vapor (aire frío sobre agua tibia) trae turbulencia de bajo nivel y engelamiento.",
+        "Gránulos de hielo en superficie = lluvia congelante a mayor altitud (hay una inversión)."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y si la nube se sienta en la pista? Eso es la **niebla**: una nube a ras de suelo, que aparece cuando T y Td se juntan abajo. Cada tipo se forma distinto. **De radiación**: en noches **despejadas y calmadas** el suelo se enfría por radiación y enfría el aire húmedo sobre terreno bajo y plano; el sol de la mañana la quema. **De advección**: aire húmedo que el **viento** empuja sobre una superficie más fría — clásica de costas, como el aire del mar entrando a tierra en invierno."
+        },
+        {
+          "type": "text",
+          "md": "**De ladera (upslope)**: aire húmedo y estable que el **viento** obliga a subir un terreno inclinado hasta saturarse. Fíjate: **advección y ladera necesitan viento**; la de radiación necesita calma. Y la **niebla de vapor**: aire frío sobre agua tibia — el 'humo' del mar — que trae **turbulencia de bajo nivel y engelamiento**. La precipitación también informa: **gránulos de hielo en superficie = lluvia congelante más arriba**, señal de una inversión con aire cálido encima."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Del banco: ¿qué nieblas **dependen del viento** para existir? → **advección y ladera (upslope)**. ¿En cuál hay turbulencia baja y engelamiento peligroso? → **la de vapor**. ¿Gránulos de hielo en superficie? → **lluvia congelante a mayor altitud** (inversión)."
+        },
+        {
+          "type": "notebook",
+          "id": "12-9-n1",
+          "prompt": "Haz una tabla de 4 filas: radiación / advección / ladera / vapor. Columnas: '¿cómo se forma?' y '¿necesita viento?'. Complétala de memoria y luego revisa con la lección."
+        },
+        {
+          "type": "check",
+          "id": "12-9-c1",
+          "q": "¿Qué situación favorece más la formación de niebla de radiación?",
+          "options": [
+            "Aire cálido y húmedo sobre terreno bajo y plano en una noche despejada y calmada.",
+            "Aire tropical húmedo moviéndose sobre agua fría.",
+            "Aire frío moviéndose sobre agua mucho más caliente."
+          ],
+          "answer": 0,
+          "why": "Noche clara y calmada: el suelo irradia calor, se enfría, y enfría el aire húmedo hasta su punto de rocío."
+        },
+        {
+          "type": "check",
+          "id": "12-9-c2",
+          "q": "¿Qué tipos de niebla dependen del viento para existir?",
+          "options": [
+            "De advección y de ladera (upslope).",
+            "De radiación y niebla helada.",
+            "De vapor y niebla terrestre."
+          ],
+          "answer": 0,
+          "why": "Ambas necesitan viento que transporte el aire húmedo: sobre una superficie fría (advección) o cuesta arriba (ladera)."
+        }
+      ]
+    },
+    {
+      "id": "12-10",
+      "title": "Masas de aire y frentes: cuando dos aires chocan",
+      "key_points": [
+        "Un frente es la frontera entre dos masas de aire de distinta temperatura y humedad.",
+        "Al cruzar cualquier frente siempre cambia la dirección del viento.",
+        "El cambio de temperatura es la discontinuidad más fácil de reconocer en un frente.",
+        "Frente frío: rápido y empinado — cumulonimbus, chubascos, posible línea de turbonada delante.",
+        "Frente cálido: lento y suave — estratos, precipitación constante, techos bajos y niebla.",
+        "Ocluido: el frío alcanza al cálido y mezcla ambos climas; estacionario: el clima gris se estanca días."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Qué pasa cuando dos aires distintos se encuentran? Una **masa de aire** es una porción gigante de atmósfera con temperatura y humedad parecidas (toma el carácter de la superficie donde se estaciona). La frontera entre dos masas es un **frente**. Dos datos que el examen adora: al cruzar cualquier frente **siempre cambia la dirección del viento**, y la discontinuidad **más fácil de reconocer es el cambio de temperatura**."
+        },
+        {
+          "type": "text",
+          "md": "**Frente frío**: aire frío que avanza rápido y mete cuña por debajo, levantando el aire cálido de golpe — como una pala. Resultado: **cumulonimbus, chubascos violentos**, posible **línea de turbonada** por delante; pasa rápido y deja visibilidad buena con viento racheado. **Frente cálido**: aire cálido que avanza lento y **trepa como una rampa** suave sobre el frío. Resultado: nubes **estratiformes** en secuencia (cirrus → altostratus → nimbostratus), **precipitación constante** por delante, techos bajos y niebla."
+        },
+        {
+          "type": "text",
+          "md": "**Frente ocluido**: el frío alcanza al cálido y lo levanta del suelo — encuentras el clima de ambos mezclado. **Frente estacionario**: ninguno gana y el clima gris se queda días. Y una perla del banco: la **precipitación constante** que precede a un frente indica **nubes estratiformes con poca o ninguna turbulencia**."
+        },
+        {
+          "type": "diagram",
+          "src": "ch12-frentes.svg",
+          "caption": "Cortes transversales: el frente frío empuja como pala (Cb, violento y rápido); el cálido trepa como rampa (estratos, lento y gris)."
+        },
+        {
+          "type": "notebook",
+          "id": "12-10-n1",
+          "prompt": "Dibuja los dos cortes: frente frío (cuña empinada, Cb encima, rótulo 'rápido y violento') y frente cálido (rampa suave, capas de estratos, rótulo 'lento y gris'). Agrega flechas de viento antes y después de cada uno."
+        },
+        {
+          "type": "check",
+          "id": "12-10-c1",
+          "q": "Un fenómeno que SIEMPRE ocurre al volar a través de un frente es un cambio en:",
+          "options": [
+            "La dirección del viento.",
+            "El tipo de precipitación.",
+            "La estabilidad de la masa de aire."
+          ],
+          "answer": 0,
+          "why": "Las dos masas de aire tienen vientos distintos: cruzar la frontera siempre implica un cambio de dirección del viento."
+        },
+        {
+          "type": "check",
+          "id": "12-10-c2",
+          "q": "La precipitación constante que precede a un frente es indicación de:",
+          "options": [
+            "Nubes estratiformes con poca o ninguna turbulencia.",
+            "Nubes cumuliformes con poca turbulencia.",
+            "Nubes estratiformes con turbulencia moderada."
+          ],
+          "answer": 0,
+          "why": "Lluvia constante = ascenso suave y estable = estratos = vuelo suave (aunque con techos y visibilidad pobres)."
+        }
+      ]
+    },
+    {
+      "id": "12-11",
+      "title": "Tormentas: tres ingredientes, tres etapas",
+      "key_points": [
+        "Tres ingredientes de toda tormenta: humedad, aire inestable y una fuerza de elevación.",
+        "Para formar un cumulonimbus: acción de elevación + aire húmedo e inestable.",
+        "Etapa cúmulo: corriente ascendente continua.",
+        "La etapa madura empieza cuando la precipitación comienza a caer, y es la de máxima intensidad.",
+        "La etapa de disipación está dominada por corrientes descendentes.",
+        "La línea de turbonada (banda estrecha no frontal delante de un frente frío) trae las tormentas más peligrosas.",
+        "La cizalladura ocurre a cualquier altitud y en cualquier dirección; toda tormenta tiene relámpagos.",
+        "Esquiva las tormentas severas por al menos 20 NM."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Por qué en la sierra truena casi todas las tardes? Porque ahí se juntan los **tres ingredientes** de toda tormenta: **humedad**, **aire inestable** y una **fuerza de elevación** (el sol calentando las laderas, un frente, la propia montaña). Sin uno de los tres, no hay tormenta. Y la receta del banco para que nazca un cumulonimbus: **acción de elevación + aire húmedo e inestable**."
+        },
+        {
+          "type": "text",
+          "md": "Toda tormenta vive tres etapas. **Cúmulo**: la nube crece con una **corriente ascendente continua**. **Madura**: empieza cuando la **precipitación comienza a caer** — la lluvia arrastra aire hacia abajo y nacen las descendentes; ascendentes y descendentes conviven y la tormenta alcanza su **máxima intensidad** (lluvia fuerte, granizo, rayos, cizalladura). **Disipación**: dominan las **corrientes descendentes** y la nube se deshace dejando el yunque."
+        },
+        {
+          "type": "diagram",
+          "src": "ch12-tormenta-etapas.svg",
+          "caption": "Las tres etapas: cúmulo (solo ascendentes), madura (ascendentes + descendentes + lluvia, máxima intensidad) y disipación (solo descendentes)."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Ojo: el banco tiene DOS preguntas sobre el inicio de la etapa madura. Una acepta '**la precipitación empieza a caer**' y la otra '**corrientes descendentes continuas**'. Es la misma física — la precipitación al caer crea la descendente — así que lee las opciones de cada pregunta con calma y elige la que aparezca."
+        },
+        {
+          "type": "text",
+          "md": "Los peligros: **cizalladura del viento** (cambios bruscos de velocidad/dirección — ocurre **a cualquier altitud y en cualquier dirección**, y es lo que debes esperar en la aproximación si hay tormentas cerca del aeropuerto), **microburst** (chorro descendente violento que roba sustentación), **granizo** (puede salir disparado del yunque a cielo despejado), engelamiento, y **relámpagos — toda tormenta los tiene**, por definición. La más peligrosa de todas: la **línea de turbonada**, banda estrecha **no frontal** de tormentas que se desarrolla delante de un frente frío."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Regla de oro: esquiva las tormentas severas por **20 millas náuticas** como mínimo. Y nunca vueles por debajo de un Cb 'porque abajo se ve clarito': justo ahí viven la cizalladura y el microburst."
+        },
+        {
+          "type": "notebook",
+          "id": "12-11-n1",
+          "prompt": "Dibuja las tres etapas de la tormenta, una al lado de otra: cúmulo (solo flechas hacia arriba), madura (flechas arriba y abajo + lluvia + yunque naciendo), disipación (solo flechas hacia abajo). Debajo escribe los 3 ingredientes: humedad + inestabilidad + elevación."
+        },
+        {
+          "type": "check",
+          "id": "12-11-c1",
+          "q": "¿Qué condiciones son necesarias para la formación de tormentas?",
+          "options": [
+            "Alta humedad, fuerza de elevación y condiciones inestables.",
+            "Alta humedad, alta temperatura y nubes cúmulos.",
+            "Fuerza de elevación, aire húmedo y una capa extensa de nubes."
+          ],
+          "answer": 0,
+          "why": "Los tres ingredientes: humedad + inestabilidad + algo que levante el aire. Sin uno, no hay tormenta."
+        },
+        {
+          "type": "check",
+          "id": "12-11-c2",
+          "q": "¿Qué etapa de la tormenta se caracteriza predominantemente por corrientes descendentes?",
+          "options": [
+            "Disipación.",
+            "Madura.",
+            "Cúmulo."
+          ],
+          "answer": 0,
+          "why": "En la disipación la tormenta ya gastó su energía ascendente: solo quedan descendentes mientras la nube se deshace."
+        }
+      ]
+    },
+    {
+      "id": "12-12",
+      "title": "Hielo y turbulencia: los enemigos silenciosos",
+      "key_points": [
+        "Hielo estructural: se necesita humedad visible y superficie del avión a 0°C o menos.",
+        "Hielo claro: gotas grandes que se chorrean al congelarse; la lluvia congelante da la mayor acumulación.",
+        "Hielo escarchado (rime): gotas pequeñas en nubes estratiformes — blanco, lechoso, quebradizo.",
+        "La escarcha se forma por sublimación y arruina el flujo de aire: puede impedir el despegue a velocidad normal.",
+        "Quita toda la escarcha antes de volar.",
+        "En turbulencia severa: mantén una actitud de vuelo nivelada y vuela a Va o menos."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cuándo se congela tu avión en pleno vuelo? Para el **hielo estructural** necesitas dos cosas: **humedad visible** (nube, lluvia, llovizna) y la superficie del avión a **0°C o menos**. Tipos: **hielo claro** — gotas grandes (como en lluvia congelante) que se chorrean antes de congelarse: transparente, pesado, bien agarrado; la **lluvia congelante produce la mayor acumulación**. **Hielo escarchado (rime)** — gotas pequeñas de nubes estratiformes que congelan al toque: blanco, lechoso, quebradizo. Y **mixto**: la combinación de ambos."
+        },
+        {
+          "type": "text",
+          "md": "La **escarcha (frost)** se forma en tierra por **sublimación**: la superficie está a 0°C o menos, el punto de rocío está bajo el punto de congelación, y el vapor pasa directo a hielo. Parece polvito inofensivo, pero **arruina el flujo suave de aire sobre el ala**: reduce la sustentación y **puede impedir que el avión despegue a su velocidad normal**. Se quita TODA antes de volar — no 'se cae solita en el aire'."
+        },
+        {
+          "type": "text",
+          "md": "La **turbulencia** viene en sabores: **convectiva** (las térmicas de la tarde), **mecánica** (viento chocando con cerros y edificios), de **onda de montaña**, de **estela** (detrás de aviones grandes) y de **aire claro**. Si te agarra turbulencia **severa**: no pelees por mantener altitud ni velocidad exactas — **mantén una actitud de vuelo nivelada** y vuela a la **velocidad de maniobra (Va) o menos**, para que el avión entre en pérdida antes de romperse."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "Claro = gotas **grandes** = **lluvia** congelante = el peor. Rime rima con 'frío que se pega al instante': gotas **chicas**, nubes **estratiformes**, color **blanco**."
+        },
+        {
+          "type": "notebook",
+          "id": "12-12-n1",
+          "prompt": "Escribe las dos condiciones del hielo estructural (humedad visible + superficie ≤0°C) y una línea por tipo: claro = gotas grandes / lluvia congelante; rime = gotas chicas / estratiformes; mixto = ambos. Debajo, en grande: 'Turbulencia severa → actitud nivelada + Va'."
+        },
+        {
+          "type": "check",
+          "id": "12-12-c1",
+          "q": "Una condición necesaria en vuelo para que se forme hielo estructural es:",
+          "options": [
+            "Humedad visible.",
+            "Nubes estratiformes.",
+            "Poca diferencia entre temperatura y punto de rocío."
+          ],
+          "answer": 0,
+          "why": "Sin humedad visible (nube o precipitación) no hay qué congelar, por más frío que haga."
+        },
+        {
+          "type": "check",
+          "id": "12-12-c2",
+          "q": "Al encontrar turbulencia severa, ¿qué condición de vuelo debes intentar mantener?",
+          "options": [
+            "Una actitud de vuelo nivelada.",
+            "Altitud y velocidad constantes.",
+            "Un ángulo de ataque constante."
+          ],
+          "answer": 0,
+          "why": "Perseguir la altitud o la velocidad exactas sobrecarga la estructura: mantén la actitud nivelada y deja que la altitud varíe."
+        }
+      ]
+    }
+  ]
+}

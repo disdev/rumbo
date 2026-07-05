@@ -1,0 +1,40 @@
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flujo de cálculo: de la elevación a la altitud de presión y de ahí a la altitud de densidad">
+  <text x="240" y="24" fill="var(--text)" font-family="inherit" font-size="15" text-anchor="middle" font-weight="bold">De la elevación a lo que el avión SIENTE</text>
+
+  <!-- Box 1: inputs -->
+  <rect x="20" y="48" width="200" height="62" rx="8" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <text x="120" y="72" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Elevación del aeropuerto</text>
+  <text x="120" y="92" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">+ ajuste del altímetro</text>
+
+  <!-- arrow 1 with formula -->
+  <line x1="120" y1="110" x2="120" y2="150" stroke="var(--accent)" stroke-width="2"/>
+  <polygon points="120,156 115,146 125,146" fill="var(--accent)"/>
+  <text x="132" y="136" fill="var(--accent)" font-family="inherit" font-size="12" text-anchor="start">PA = elev + (29.92 − ajuste) × 1,000</text>
+
+  <!-- Box 2: PA -->
+  <rect x="20" y="158" width="200" height="56" rx="8" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="120" y="182" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">Altitud de PRESIÓN (PA)</text>
+  <text x="120" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">altímetro en 29.92</text>
+
+  <!-- arrow 2 to DA -->
+  <line x1="220" y1="186" x2="300" y2="186" stroke="var(--bad)" stroke-width="2"/>
+  <polygon points="306,186 296,181 296,191" fill="var(--bad)"/>
+  <text x="263" y="172" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">+ calor</text>
+
+  <!-- temp correction note -->
+  <rect x="250" y="48" width="210" height="80" rx="8" fill="none" stroke="var(--bad)" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="355" y="70" fill="var(--bad)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">Corrección por temperatura</text>
+  <text x="355" y="90" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">DA = PA + 120 × (OAT − ISA)</text>
+  <text x="355" y="110" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">temp ISA = 15 − 2 × (PA ÷ 1,000)</text>
+  <line x1="355" y1="128" x2="355" y2="152" stroke="var(--bad)" stroke-width="2" stroke-dasharray="5 4"/>
+  <polygon points="355,158 350,148 360,148" fill="var(--bad)"/>
+
+  <!-- Box 3: DA -->
+  <rect x="300" y="158" width="160" height="56" rx="8" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2"/>
+  <text x="380" y="182" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">Altitud de DENSIDAD (DA)</text>
+  <text x="380" y="200" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">lo que el avión SIENTE</text>
+
+  <!-- example strip -->
+  <text x="240" y="244" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Ejemplo: PA 5,000 ft y OAT 25 °C → ISA sería 5 °C → sobran 20 °C</text>
+  <text x="240" y="264" fill="var(--bad)" font-family="inherit" font-size="13" text-anchor="middle" font-weight="bold">DA = 5,000 + 120 × 20 = 7,400 ft (¡el avión vuela "más alto" de lo que está!)</text>
+</svg>

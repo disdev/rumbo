@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 290" role="img" aria-label="Mapa de mandos, superficies y ejes">
+  <defs>
+    <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="var(--muted)"/>
+    </marker>
+  </defs>
+  <text x="230" y="24" text-anchor="middle" font-family="inherit" font-size="15" fill="var(--text)" font-weight="bold">Mando → Superficie → Eje → Movimiento</text>
+
+  <!-- fila 1: alerones -->
+  <g>
+    <rect x="8" y="46" width="104" height="46" rx="8" fill="var(--panel-2)" stroke="var(--muted)"/>
+    <text x="60" y="65" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">Bastón</text>
+    <text x="60" y="81" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">a los lados</text>
+    <line x1="112" y1="69" x2="126" y2="69" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#fl)"/>
+    <rect x="128" y="46" width="104" height="46" rx="8" fill="var(--panel-2)" stroke="var(--muted)"/>
+    <text x="180" y="65" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">Alerones</text>
+    <text x="180" y="81" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">(ailerons)</text>
+    <line x1="232" y1="69" x2="246" y2="69" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#fl)"/>
+    <rect x="248" y="46" width="104" height="46" rx="8" fill="var(--panel-2)" stroke="var(--muted)"/>
+    <text x="300" y="65" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">Eje longitudinal</text>
+    <text x="300" y="81" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">nariz–cola</text>
+    <line x1="352" y1="69" x2="366" y2="69" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#fl)"/>
+    <rect x="368" y="46" width="84" height="46" rx="8" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="410" y="65" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--accent)" font-weight="bold">ALABEO</text>
+    <text x="410" y="81" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">(roll)</text>
+  </g>
+
+  <!-- fila 2: elevador -->
+  <g>
+    <rect x="8" y="122" width="104" height="46" rx="8" fill="var(--panel-2)" stroke="var(--muted)"/>
+    <text x="60" y="141" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">Bastón</text>
+    <text x="60" y="157" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">adelante / atrás</text>
+    <line x1="112" y1="145" x2="126" y2="145" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#fl)"/>
+    <rect x="128" y="122" width="104" height="46" rx="8" fill="var(--panel-2)" stroke="var(--muted)"/>
+    <text x="180" y="141" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">Elevador</text>
+    <text x="180" y="157" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">(elevator)</text>
+    <line x1="232" y1="145" x2="246" y2="145" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#fl)"/>
+    <rect x="248" y="122" width="104" height="46" rx="8" fill="var(--panel-2)" stroke="var(--muted)"/>
+    <text x="300" y="141" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">Eje lateral</text>
+    <text x="300" y="157" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">ala–ala</text>
+    <line x1="352" y1="145" x2="366" y2="145" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#fl)"/>
+    <rect x="368" y="122" width="84" height="46" rx="8" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="410" y="141" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--accent)" font-weight="bold">CABECEO</text>
+    <text x="410" y="157" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">(pitch)</text>
+  </g>
+
+  <!-- fila 3: timón -->
+  <g>
+    <rect x="8" y="198" width="104" height="46" rx="8" fill="var(--panel-2)" stroke="var(--muted)"/>
+    <text x="60" y="217" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">Pedales</text>
+    <text x="60" y="233" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">con los pies</text>
+    <line x1="112" y1="221" x2="126" y2="221" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#fl)"/>
+    <rect x="128" y="198" width="104" height="46" rx="8" fill="var(--panel-2)" stroke="var(--muted)"/>
+    <text x="180" y="217" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">Timón</text>
+    <text x="180" y="233" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">(rudder)</text>
+    <line x1="232" y1="221" x2="246" y2="221" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#fl)"/>
+    <rect x="248" y="198" width="104" height="46" rx="8" fill="var(--panel-2)" stroke="var(--muted)"/>
+    <text x="300" y="217" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--text)">Eje vertical</text>
+    <text x="300" y="233" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">arriba–abajo</text>
+    <line x1="352" y1="221" x2="366" y2="221" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#fl)"/>
+    <rect x="368" y="198" width="84" height="46" rx="8" fill="var(--panel-2)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="410" y="217" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--accent)" font-weight="bold">GUIÑADA</text>
+    <text x="410" y="233" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">(yaw)</text>
+  </g>
+
+  <text x="230" y="274" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">Los tres ejes se cruzan en el centro de gravedad</text>
+</svg>

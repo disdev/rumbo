@@ -1,0 +1,652 @@
+{
+  "chapter": "8",
+  "title": "Instrumentos de vuelo",
+  "resumen": "Cómo el avión te dice qué tan rápido, qué tan alto y hacia dónde vas — y cómo detectar cuándo un instrumento te está mintiendo.",
+  "sections": [
+    {
+      "id": "8-1",
+      "title": "Las dos narices del avión: el sistema pitot-estática",
+      "key_points": [
+        "El tubo pitot recibe la presión de impacto y alimenta únicamente al velocímetro.",
+        "El puerto estático mide la presión del aire quieto a tu altura.",
+        "El velocímetro usa presión de pitot y estática; el altímetro y el variómetro usan solo la estática.",
+        "La fuente estática alterna dentro de la cabina respalda al puerto estático.",
+        "El sistema pitot-estática alimenta tres instrumentos: velocímetro, altímetro y variómetro."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo sabe el avión qué tan rápido va y a qué altura está, si nada lo toca? Saca la mano por la ventana de un carro en la Panamericana: mientras más rápido van, más fuerte te empuja el viento. El **tubo pitot** es esa mano: una boquita que mira al frente y recibe la **presión de impacto** (ram air). Más velocidad, más presión."
+        },
+        {
+          "type": "text",
+          "md": "El **puerto estático** (static port) es lo contrario: un huequito tranquilo al costado del fuselaje donde el viento no golpea. Solo siente la **presión estática** — la presión del aire quieto a tu altura. Con esas dos presiones trabajan tres instrumentos: el velocímetro usa **ambas**; el altímetro y el variómetro usan **solo la estática**. Y por si el puerto se tapa, muchos aviones tienen una **fuente estática alterna** (alternate static source) dentro de la cabina."
+        },
+        {
+          "type": "diagram",
+          "src": "ch08-pitot-estatica.svg",
+          "caption": "El pitot alimenta solo al velocímetro; la estática alimenta a los tres. Sigue cada línea con el dedo."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta tal cual: «¿el sistema pitot proporciona presión de impacto para qué instrumento?» — **solo al velocímetro**. Y «¿qué instrumentos usan las tomas estáticas?» — velocímetro, altímetro y variómetro: **los tres**."
+        },
+        {
+          "type": "notebook",
+          "id": "8-1-n1",
+          "prompt": "Dibuja el sistema: un tubo pitot apuntando al frente y un puerto estático al costado. Traza una línea del pitot al velocímetro, y líneas del puerto estático al velocímetro, altímetro y variómetro. Rotula «presión de impacto» y «presión estática»."
+        },
+        {
+          "type": "check",
+          "id": "8-1-c1",
+          "q": "¿Qué instrumento recibe presión de impacto del tubo pitot?",
+          "options": ["El altímetro.", "El velocímetro (indicador de velocidad).", "El variómetro (velocidad vertical)."],
+          "answer": 1,
+          "why": "El pitot alimenta solo al velocímetro; los otros dos usan únicamente la presión estática."
+        },
+        {
+          "type": "check",
+          "id": "8-1-c2",
+          "q": "¿Qué instrumentos se alimentan del puerto estático?",
+          "options": ["Solo el altímetro.", "Solo el velocímetro.", "Velocímetro, altímetro y variómetro."],
+          "answer": 2,
+          "why": "La presión estática va a los tres instrumentos de presión del panel."
+        }
+      ]
+    },
+    {
+      "id": "8-2",
+      "title": "¿Y si se tapa? Bloqueos del pitot y la estática",
+      "key_points": [
+        "Pitot tapado: solo falla el velocímetro.",
+        "Estática tapada: fallan velocímetro, altímetro y variómetro.",
+        "Con estática tapada, el altímetro se congela y el variómetro se queda en cero.",
+        "La fuente estática alterna recupera los tres instrumentos.",
+        "El coordinador de virajes es giroscópico: no depende del sistema pitot-estática."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Y si una abeja hace su nido en el tubo pitot? Pasa más de lo que crees — por eso se cubre con una funda en tierra. La regla es simple: el pitot alimenta a **un solo** instrumento, así que **pitot tapado = solo el velocímetro falla**. El altímetro y el variómetro ni se enteran."
+        },
+        {
+          "type": "text",
+          "md": "En cambio, la **estática tapada** golpea a **los tres**: el altímetro se congela en la altitud del bloqueo, el variómetro se queda en cero, y el velocímetro miente (marca de menos cuando subes por encima del bloqueo y de más cuando bajas). ¿Solución? Abrir la **fuente estática alterna** de cabina; en emergencia, hasta se puede romper el vidrio del variómetro para dejar entrar aire."
+        },
+        {
+          "type": "diagram",
+          "src": "ch08-bloqueos.svg",
+          "caption": "La tabla de bloqueos: memorízala hasta poder reconstruirla con los ojos cerrados."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Trampa clásica del banco: el **coordinador de virajes** NO usa el sistema pitot-estática — es giroscópico. Si una opción lo mete en la lista de instrumentos afectados, esa opción está mal."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Tres preguntas del banco son casi idénticas: pitot tapado → falla la **velocidad**; estáticas tapadas → fallan **los tres**; pitot + estáticas tapadas → altímetro, velocímetro y variómetro (y nunca el coordinador de virajes)."
+        },
+        {
+          "type": "notebook",
+          "id": "8-2-n1",
+          "prompt": "Copia la tabla de bloqueos en tu cuaderno: filas «pitot tapado» y «estática tapada»; columnas velocímetro, altímetro y variómetro. Marca ✗ donde falla y ✓ donde sigue bien. Mañana intenta reconstruirla de memoria antes de mirar."
+        },
+        {
+          "type": "check",
+          "id": "8-2-c1",
+          "q": "Si las tomas estáticas se obstruyen, ¿qué instrumentos dejan de funcionar bien?",
+          "options": ["Solo el velocímetro.", "Velocímetro, altímetro y variómetro.", "Velocímetro y coordinador de virajes."],
+          "answer": 1,
+          "why": "La estática alimenta a los tres instrumentos de presión; taparla los afecta a todos."
+        },
+        {
+          "type": "check",
+          "id": "8-2-c2",
+          "q": "Se tapan el pitot y las estáticas a la vez. ¿Cuál de estos sigue funcionando?",
+          "options": ["El coordinador de virajes.", "El altímetro.", "El variómetro."],
+          "answer": 0,
+          "why": "El coordinador de virajes es giroscópico (usualmente eléctrico); no usa pitot ni estática."
+        }
+      ]
+    },
+    {
+      "id": "8-3",
+      "title": "El altímetro: una lata que respira",
+      "key_points": [
+        "El altímetro mide presión estática con cápsulas aneroides selladas.",
+        "Las cápsulas se expanden al subir porque la presión exterior disminuye.",
+        "Aguja larga = centenas de pies; corta y gruesa = miles; fina con triángulo = decenas de miles.",
+        "Se lee de la aguja más lenta a la más rápida: decenas de miles, miles, centenas."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Cómo puede una aguja saber tu altura? Piensa en una bolsa de papitas sellada cuando subes de Lima hacia Ticlio: se infla, porque afuera cada vez hay menos presión. Dentro del altímetro hay una pila de **cápsulas aneroides** (aneroid wafers): latitas selladas que se expanden al subir y se aplastan al bajar. Ese movimiento, a través de engranajes, mueve las agujas. El altímetro no mide altura: **mide presión** y la traduce."
+        },
+        {
+          "type": "text",
+          "md": "Se lee como un reloj de tres agujas: la **larga** marca centenas de pies, la **corta y gruesa** marca miles, y la **finita con triángulo** marca decenas de miles. Lee primero la finita, luego la corta, luego la larga — de la más lenta a la más rápida."
+        },
+        {
+          "type": "diagram",
+          "src": "ch08-altimetro.svg",
+          "caption": "Carátula del altímetro marcando 4,500 ft. Verifica tú mismo la lectura aguja por aguja."
+        },
+        {
+          "type": "widget",
+          "name": "instrumento",
+          "params": { "tipo": "altimetro" },
+          "caption": "Mueve el valor y practica leer las tres agujas hasta que te salga sin pensar. Ojo con las lecturas apenas por encima de 10,000 ft: la aguja finita casi ni se mueve."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "En el examen, la «Figura 3» muestra tres altímetros y te pide leerlos — incluso cuál marca **más de 10,000 pies**. Si dominas las tres agujas, son puntos gratis."
+        },
+        {
+          "type": "notebook",
+          "id": "8-3-n1",
+          "prompt": "Dibuja dos carátulas de altímetro: una marcando 7,500 ft y otra 10,500 ft (fíjate: la aguja finita apenas pasa el 1). Debajo de cada una escribe qué indica cada aguja."
+        },
+        {
+          "type": "check",
+          "id": "8-3-c1",
+          "q": "En el altímetro, la aguja corta y gruesa indica:",
+          "options": ["Centenas de pies.", "Miles de pies.", "Decenas de miles de pies."],
+          "answer": 1,
+          "why": "Larga = centenas, corta y gruesa = miles, finita con triángulo = decenas de miles."
+        },
+        {
+          "type": "check",
+          "id": "8-3-c2",
+          "q": "El altímetro funciona porque sus cápsulas aneroides…",
+          "options": ["se expanden cuando la presión estática disminuye al subir.", "reciben presión de impacto del tubo pitot.", "giran por rigidez giroscópica."],
+          "answer": 0,
+          "why": "Son cápsulas selladas que reaccionan a la presión estática; el altímetro no usa el pitot."
+        }
+      ]
+    },
+    {
+      "id": "8-4",
+      "title": "La ventanita de Kollsman: el ajuste del altímetro",
+      "key_points": [
+        "En la ventanita de Kollsman se coloca el ajuste de altímetro local.",
+        "0.01 inHg equivale a unos 10 pies; subir el ajuste sube la indicación.",
+        "Sin ajuste disponible, se pone la elevación del aeródromo; al cruzar 18,000 ft se pone 29.92.",
+        "De alta a baja presión o de calor a frío sin reajustar, el altímetro indica más de lo real.",
+        "Con aire más caliente que el estándar, el altímetro indica menos que la altitud verdadera."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "La presión del aire cambia con el clima, no solo con la altura. Si el altímetro creyera que toda baja de presión es una subida tuya, te mentiría feo. Por eso tiene la **ventanita de Kollsman**: ahí colocas el **ajuste de altímetro** (altimeter setting) que te da la torre, y el instrumento queda calibrado para indicar tu altitud sobre el nivel del mar."
+        },
+        {
+          "type": "text",
+          "md": "La matemática es fija: **0.01 inHg ≈ 10 pies**, y **si subes el ajuste, la indicación sube**. De 29.15 a 29.85 son 0.70 → la aguja sube ~700 ft. De 30.11 a 29.96 → baja ~150 ft. ¿No hay ajuste disponible antes de despegar? Pon el altímetro en la **elevación del aeródromo**. Y al cruzar **18,000 ft**, todos ponen **29.92** para volar niveles de vuelo."
+        },
+        {
+          "type": "guided_math",
+          "family": "altimetro",
+          "tier": 1
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "«**De alta a baja o de caliente a frío, cuidado abajo**». Si vuelas hacia presión más baja o aire más frío sin reajustar, el altímetro indica **más** de lo real: estás más bajo de lo que crees."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta las cuatro direcciones: de alta a baja presión → indica **más** que lo real; de baja a alta → indica **menos**; aire más frío que el estándar → la altitud verdadera es **menor** que la indicada; aire más caliente → el altímetro indica **menos** que la verdadera."
+        },
+        {
+          "type": "notebook",
+          "id": "8-4-n1",
+          "prompt": "Escribe y resuelve: el ajuste pasa de 29.80 a 30.05 — ¿cuánto cambia la indicación y hacia dónde? (pista: 0.25 → 250 ft hacia arriba). Luego copia la rima «de alta a baja o de caliente a frío, cuidado abajo» y hazle un dibujito que la explique."
+        },
+        {
+          "type": "check",
+          "id": "8-4-c1",
+          "q": "Vuelas de una zona de alta presión a una de baja presión sin reajustar el altímetro. El altímetro indicará:",
+          "options": ["Menos que tu altitud verdadera.", "Más que tu altitud verdadera.", "Exactamente tu altitud verdadera."],
+          "answer": 1,
+          "why": "De alta a baja, cuidado abajo: el altímetro marca de más y tú estás más bajo de lo que crees."
+        },
+        {
+          "type": "check",
+          "id": "8-4-c2",
+          "q": "Cambias el ajuste de 29.15 a 29.85. ¿Qué pasa con la indicación?",
+          "options": ["Sube unos 700 pies.", "Baja unos 700 pies.", "Sube unos 70 pies."],
+          "answer": 0,
+          "why": "0.70 inHg × 10 ft por cada 0.01 = 700 ft, y subir el ajuste sube la indicación."
+        }
+      ]
+    },
+    {
+      "id": "8-5",
+      "title": "¿Qué tan alto estás… según quién? Los cinco tipos de altitud",
+      "key_points": [
+        "Altitud indicada: lo que lees en el altímetro con el ajuste puesto.",
+        "Altitud verdadera: altura real sobre el nivel medio del mar (MSL).",
+        "Altitud absoluta: altura sobre el terreno que sobrevuelas (AGL).",
+        "Altitud de presión: la indicada con 29.92 en la ventanita.",
+        "Altitud de densidad: la de presión corregida por temperatura no estándar; manda en la performance.",
+        "En condiciones estándar, la altitud de presión y la verdadera coinciden."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "«Estoy a 10,000 pies» puede significar cinco cosas distintas — y el examen adora las cinco. Es como decir «estoy alto» en un edificio: ¿contando desde la vereda, desde el mar, o desde una marca imaginaria en la pared?"
+        },
+        {
+          "type": "table",
+          "headers": ["Altitud", "Qué es", "Referencia"],
+          "rows": [
+            ["Indicada", "Lo que lees en el altímetro con el ajuste puesto", "la aguja"],
+            ["Verdadera (true)", "Tu altura real sobre el nivel medio del mar", "MSL"],
+            ["Absoluta", "Tu altura sobre el terreno que sobrevuelas", "AGL"],
+            ["De presión", "Lo indicado con 29.92 en la ventanita", "plano estándar"],
+            ["De densidad", "La de presión corregida por temperatura no estándar", "performance"]
+          ]
+        },
+        {
+          "type": "diagram",
+          "src": "ch08-altitudes.svg",
+          "caption": "Verdadera se mide desde el mar; absoluta, desde el cerro que tienes debajo."
+        },
+        {
+          "type": "text",
+          "md": "¿Cuándo coinciden? En **condiciones estándar** (29.92 inHg y 15 °C al nivel del mar), la altitud de presión es igual a la verdadera. Si la temperatura es la estándar, la de densidad es igual a la de presión. Y la indicada es igual a la verdadera cuando tienes el ajuste correcto **y** la temperatura es estándar. La de densidad no se vuela: se usa para calcular **performance** — con calor y altura, tu avión rinde como si estuviera mucho más arriba."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pide las definiciones casi textuales: verdadera = **sobre el nivel del mar**; absoluta = **sobre el terreno**; de presión = **indicada con 29.92**; de densidad = **presión corregida por temperatura no estándar**. Apréndelas como pares palabra-referencia."
+        },
+        {
+          "type": "notebook",
+          "id": "8-5-n1",
+          "prompt": "Dibuja una montaña con un avión encima. Flecha desde el mar hasta el avión = altitud verdadera (MSL); flecha desde el cerro hasta el avión = absoluta (AGL). Al costado, define con tus palabras altitud de presión y de densidad."
+        },
+        {
+          "type": "check",
+          "id": "8-5-c1",
+          "q": "La altitud absoluta es:",
+          "options": ["La altura sobre el nivel medio del mar.", "La altura sobre el terreno que sobrevuelas.", "La indicada con 29.92 en la ventanita."],
+          "answer": 1,
+          "why": "Absoluta = AGL, sobre el terreno; la que se mide desde el mar es la verdadera."
+        },
+        {
+          "type": "check",
+          "id": "8-5-c2",
+          "q": "La altitud de densidad es:",
+          "options": ["La altitud de presión corregida por temperatura no estándar.", "La que lees en el altímetro.", "La altura sobre el terreno."],
+          "answer": 0,
+          "why": "Densidad = presión + corrección por temperatura; es la altitud que 'siente' el avión al rendir."
+        }
+      ]
+    },
+    {
+      "id": "8-6",
+      "title": "El velocímetro: IAS, CAS, TAS y GS",
+      "key_points": [
+        "El velocímetro compara la presión de impacto del pitot contra la presión estática.",
+        "IAS es lo que lees; CAS corrige errores de instalación y posición.",
+        "TAS corrige por altitud y temperatura; crece ~2% por cada 1,000 ft de altura.",
+        "GS es la TAS más o menos el efecto del viento."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿La aguja del velocímetro dice la verdad? Más o menos. El **velocímetro** (airspeed indicator, ASI) compara la presión de impacto del pitot contra la estática: la diferencia es tu velocidad respecto al aire. Lo que lees en la aguja es la **IAS** (velocidad indicada). Corrígela por los errores de instalación y posición del instrumento y tienes la **CAS** (calibrada)."
+        },
+        {
+          "type": "text",
+          "md": "A más altura el aire está más flaco, golpea menos al pitot, y la aguja marca de menos. Corrige por altitud y temperatura y obtienes la **TAS** (verdadera) — sube ~2% por cada 1,000 ft. Súmale o réstale el viento y llegas a la **GS** (respecto al suelo): como caminar sobre la faja eléctrica del aeropuerto — mismo esfuerzo tuyo, otro avance sobre el piso."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "La cadena: **IAS → CAS → TAS → GS**. De la aguja al mapa: primero corriges el instrumento, luego el aire (altitud y temperatura), y al final el viento."
+        },
+        {
+          "type": "notebook",
+          "id": "8-6-n1",
+          "prompt": "Escribe la cadena IAS → CAS → TAS → GS y debajo de cada flecha anota qué corrección se aplica: instalación/posición, altitud y temperatura, viento. Añade un ejemplo con viento en contra de 20 kt."
+        },
+        {
+          "type": "check",
+          "id": "8-6-c1",
+          "q": "¿Qué velocidad resulta de corregir la CAS por altitud y temperatura?",
+          "options": ["GS.", "TAS.", "IAS."],
+          "answer": 1,
+          "why": "CAS + corrección por altitud y temperatura = TAS (velocidad verdadera respecto al aire)."
+        },
+        {
+          "type": "check",
+          "id": "8-6-c2",
+          "q": "Con viento en contra, comparada con tu TAS, tu GS es:",
+          "options": ["Menor.", "Mayor.", "Igual."],
+          "answer": 0,
+          "why": "El viento en contra te frena respecto al suelo: GS = TAS menos el viento de frente."
+        }
+      ]
+    },
+    {
+      "id": "8-7",
+      "title": "Los colores del velocímetro y las velocidades V",
+      "key_points": [
+        "Arco blanco: rango de operación de flaps, de Vso a Vfe.",
+        "Arco verde: operación normal, de Vs1 a Vno.",
+        "Arco amarillo: precaución, solo en aire calmado; línea roja: Vne, nunca exceder.",
+        "Va (maniobra) no está marcada porque cambia con el peso: más liviano, Va menor.",
+        "Vx da más altura en menos distancia; Vy, más altura en menos tiempo."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "El velocímetro trae semáforo incorporado. **Arco blanco**: rango de flaps, de **Vso** (pérdida en configuración de aterrizaje: flaps y tren abajo) a **Vfe** (máxima con flaps extendidos). **Arco verde**: operación normal, de **Vs1** (pérdida en configuración limpia o específica) a **Vno** (máxima de crucero estructural). **Arco amarillo**: precaución — solo en aire calmado — hasta la **línea roja: Vne**, la velocidad que nunca se excede."
+        },
+        {
+          "type": "diagram",
+          "src": "ch08-asi-arcos.svg",
+          "caption": "Recorre cada arco y di en voz alta qué V-speed marca cada frontera."
+        },
+        {
+          "type": "text",
+          "md": "¿Y la **Va** (velocidad de maniobra)? No está pintada, y el examen ama preguntarlo. No puede ser una marca fija porque **cambia con el peso**: más liviano el avión, menor la Va. La encuentras en el manual (POH). Dos más que sí o sí caen: **Vx** = mejor ángulo de ascenso (más altura en menos **distancia**, para librar obstáculos); **Vy** = mejor régimen (más altura en menos **tiempo**)."
+        },
+        {
+          "type": "widget",
+          "name": "instrumento",
+          "params": { "tipo": "velocimetro" },
+          "caption": "Mueve la aguja del velocímetro y di en qué arco cae y qué significa operar ahí."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "La «Figura 4» del examen es un velocímetro: preguntan qué color marca qué rango y los límites de cada arco (Vso, Vfe, Vs1, Vno, Vne). Y la pregunta estrella: «¿qué limitación importante NO está codificada por colores?» — la **Va**."
+        },
+        {
+          "type": "notebook",
+          "id": "8-7-n1",
+          "prompt": "Dibuja el velocímetro con sus tres arcos y la línea roja, y rotula Vso, Vfe, Vs1, Vno y Vne en las fronteras. Con otro color escribe grande: «Va no aparece — cambia con el peso»."
+        },
+        {
+          "type": "check",
+          "id": "8-7-c1",
+          "q": "El arco amarillo del velocímetro se puede usar:",
+          "options": ["Nunca; es zona prohibida.", "Solo en aire calmado, sin turbulencia.", "Solo con los flaps extendidos."],
+          "answer": 1,
+          "why": "El amarillo es el rango de precaución: se opera ahí únicamente en aire calmado."
+        },
+        {
+          "type": "check",
+          "id": "8-7-c2",
+          "q": "¿Por qué la Va no está marcada en el velocímetro?",
+          "options": ["Porque es un secreto del fabricante.", "Porque cambia según el peso de la aeronave.", "Porque siempre coincide con Vno."],
+          "answer": 1,
+          "why": "Va varía con el peso (más liviano → menor Va), así que no puede pintarse como marca fija."
+        }
+      ]
+    },
+    {
+      "id": "8-8",
+      "title": "El variómetro: ¿subes o bajas, y qué tan rápido?",
+      "key_points": [
+        "El variómetro mide el ritmo de cambio de la presión estática usando una fuga calibrada.",
+        "La cifra estable tarda de 6 a 9 segundos en aparecer.",
+        "La tendencia (si subes o bajas) se muestra de inmediato.",
+        "El variómetro usa únicamente la fuente estática."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Subes o bajas, y a cuántos pies por minuto? Eso responde el **variómetro** (vertical speed indicator, VSI). Adentro hay una cápsula conectada a la estática y una **fuga calibrada** (calibrated leak): si la presión cambia rápido, la cápsula se deforma antes de que la fuga la iguale, y la aguja se mueve. Es como sentir en los oídos que el micro bajó la cuesta de golpe."
+        },
+        {
+          "type": "text",
+          "md": "Su defecto: el **retraso**. La cifra exacta tarda unos **6 a 9 segundos** en estabilizarse. Pero la **tendencia** — si la aguja arranca hacia arriba o hacia abajo — es inmediata. Úsalo así: tendencia al instante, número con paciencia."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "VSI = **tendencia inmediata, cifra con retraso** (6–9 s). Y recuerda: vive solo de la **estática** — si la estática se tapa, se queda clavado en cero."
+        },
+        {
+          "type": "notebook",
+          "id": "8-8-n1",
+          "prompt": "Dibuja la carátula del variómetro: cero a la izquierda, ASCENSO arriba, DESCENSO abajo, escala en cientos de pies por minuto. Escribe al lado: «tendencia inmediata, cifra con 6–9 s de retraso»."
+        },
+        {
+          "type": "check",
+          "id": "8-8-c1",
+          "q": "La indicación estable (cifra exacta) del variómetro tarda en aparecer:",
+          "options": ["6 a 9 segundos.", "Alrededor de 1 minuto.", "Nada: es instantánea."],
+          "answer": 0,
+          "why": "La fuga calibrada necesita 6–9 s para estabilizar la cifra; solo la tendencia es inmediata."
+        }
+      ]
+    },
+    {
+      "id": "8-9",
+      "title": "Los trompos del panel: giroscopios, rigidez y precesión",
+      "key_points": [
+        "Rigidez giroscópica: el eje de un giroscopio girando mantiene su dirección en el espacio.",
+        "Precesión: una fuerza aplicada al giroscopio actúa 90° después, en el sentido de giro.",
+        "El indicador de actitud muestra cabeceo y alabeo a la vez; el avioncito se alinea con el horizonte.",
+        "La bomba de vacío mueve el indicador de actitud y el direccional; el coordinador suele ser eléctrico.",
+        "Si falla el vacío, actitud y direccional se degradan lentamente y mienten sin avisar."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Has hecho bailar un trompo? Mientras gira rápido, su eje se aferra a su dirección: eso es la **rigidez giroscópica** (rigidity in space). Y si lo empujas, no se cae hacia donde empujaste: la fuerza actúa **90° después**, en el sentido del giro — eso es la **precesión**. Con esos dos trucos funcionan tres instrumentos del panel."
+        },
+        {
+          "type": "text",
+          "md": "El **indicador de actitud** (horizonte artificial) usa la rigidez: su giroscopio queda fijo y el avión se mueve alrededor de él. Es el único instrumento que muestra **cabeceo y alabeo a la vez** — tu horizonte de bolsillo cuando afuera no se ve nada. En vuelo nivelado, el ajuste correcto es alinear el **avioncito en miniatura con la línea del horizonte**."
+        },
+        {
+          "type": "text",
+          "md": "¿Quién hace girar estos trompos? Normalmente una **bomba de vacío** (vacuum pump) del motor mueve el indicador de actitud y el direccional; el coordinador de virajes suele ser **eléctrico**. Está repartido a propósito: si falla el vacío, pierdes actitud y direccional **lentamente** — se van acostando y mienten sin avisar — pero el coordinador te queda vivo."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Un instrumento de vacío que falla **no se apaga: miente despacio**. Por eso siempre se cruza la información entre instrumentos — si la actitud dice una cosa y el coordinador y el altímetro dicen otra, sospecha del vacío."
+        },
+        {
+          "type": "notebook",
+          "id": "8-9-n1",
+          "prompt": "Haz dos columnas: «vacío» (indicador de actitud, direccional) y «eléctrico» (coordinador de virajes). Debajo, define en una línea cada uno: rigidez giroscópica y precesión."
+        },
+        {
+          "type": "check",
+          "id": "8-9-c1",
+          "q": "La tendencia de un giroscopio a mantener fijo su eje de rotación se llama:",
+          "options": ["Precesión.", "Rigidez giroscópica.", "Inclinación magnética."],
+          "answer": 1,
+          "why": "Rigidez en el espacio; la precesión es la fuerza que actúa 90° después en el sentido de giro."
+        },
+        {
+          "type": "check",
+          "id": "8-9-c2",
+          "q": "En vuelo nivelado, el ajuste correcto del indicador de actitud es alinear:",
+          "options": ["El avioncito en miniatura con la línea del horizonte.", "El giroscopio con la brújula magnética.", "La escala de banqueo con la Vy."],
+          "answer": 0,
+          "why": "Se ajusta el avioncito en miniatura contra el horizonte artificial en vuelo recto y nivelado."
+        }
+      ]
+    },
+    {
+      "id": "8-10",
+      "title": "El direccional y el coordinador de virajes",
+      "key_points": [
+        "El direccional se desvía por precesión y fricción: se reajusta con la brújula magnética cada ~15 minutos.",
+        "El reajuste del direccional se hace en vuelo recto, nivelado y a velocidad constante.",
+        "El coordinador de virajes muestra el régimen de alabeo y de viraje, no el ángulo de banqueo.",
+        "Viraje estándar: 3° por segundo, es decir 360° en 2 minutos.",
+        "Bolita del inclinómetro centrada = viraje coordinado; se corrige pisando el pedal del lado de la bolita."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "El **direccional** (heading indicator) es tu brújula tranquila: no tiembla ni se marea en los virajes. Pero tiene un secreto: **no sabe dónde está el norte**. Por la precesión y la fricción se va desviando solito, así que debes **reajustarlo con la brújula magnética** más o menos cada **15 minutos** — y solo en vuelo recto, nivelado y sin acelerar."
+        },
+        {
+          "type": "text",
+          "md": "El **coordinador de virajes** (turn coordinator) usa la precesión a propósito: su avioncito muestra el **régimen de alabeo y de viraje** — no el ángulo de banqueo. Las marcas L y R señalan el **viraje estándar: 3° por segundo**, o sea 360° en **2 minutos**. Abajo vive el **inclinómetro**: bolita centrada = viraje coordinado; si se escapa, «**pisa la bolita**» con el pedal de ese lado."
+        },
+        {
+          "type": "diagram",
+          "src": "ch08-coordinador.svg",
+          "caption": "Coordinador de virajes en viraje estándar a la derecha, con la bolita centrada."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Dos preguntas directas del banco: el coordinador de virajes indica el **régimen de alabeo y de viraje** (rate of roll y rate of turn); y para dar indicaciones precisas, el direccional debe **ajustarse periódicamente con la brújula magnética**."
+        },
+        {
+          "type": "notebook",
+          "id": "8-10-n1",
+          "prompt": "Calcula y anota: a viraje estándar (3°/s), ¿cuántos segundos tardas en girar 180°? ¿Y 90°? Luego dibuja el coordinador con la bolita fuera del centro y escribe qué pedal la corrige."
+        },
+        {
+          "type": "check",
+          "id": "8-10-c1",
+          "q": "Un viraje estándar (standard rate) es:",
+          "options": ["3° por segundo — 360° en 2 minutos.", "30° de banqueo constante.", "10° por segundo — 360° en 36 segundos."],
+          "answer": 0,
+          "why": "El viraje estándar es 3°/s; las marcas del coordinador señalan exactamente ese régimen."
+        },
+        {
+          "type": "check",
+          "id": "8-10-c2",
+          "q": "Para recibir indicaciones precisas del direccional durante el vuelo, el instrumento debe:",
+          "options": ["Ajustarse periódicamente con la brújula magnética.", "Conectarse a la fuente estática alterna.", "Alinearse con el indicador de actitud."],
+          "answer": 0,
+          "why": "El direccional deriva por precesión y fricción; se corrige contra la brújula cada ~15 min."
+        }
+      ]
+    },
+    {
+      "id": "8-11",
+      "title": "La brújula magnética: honesta pero mareada",
+      "key_points": [
+        "Variación: ángulo entre el norte verdadero y el norte magnético.",
+        "Desviación: interferencia de los campos magnéticos del propio avión y sus equipos eléctricos.",
+        "La inclinación magnética (dip) causa los errores de viraje y de aceleración.",
+        "Hemisferio norte: UNOS al virar (se atrasa desde el norte, se adelanta desde el sur) y ANDS al acelerar.",
+        "En el hemisferio sur — donde está Perú — esos errores se invierten; el examen pregunta por el hemisferio norte.",
+        "La brújula solo es precisa en vuelo recto, nivelado y a velocidad constante."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "¿Notaste cómo la brújula de tu celular se marea cuando caminas moviéndolo? La **brújula magnética** del avión es igual de honesta e igual de mareada. Es el instrumento más independiente del panel — no necesita pitot, ni vacío, ni electricidad — pero solo dice la verdad en **vuelo recto, nivelado y a velocidad constante**."
+        },
+        {
+          "type": "text",
+          "md": "Sus tres errores de fábrica: **variación** (variation), el ángulo entre el norte verdadero y el norte magnético — culpa del planeta, no del avión. **Desviación** (deviation): los campos magnéticos del propio avión y sus equipos eléctricos la desvían; se compensa con la tarjetita junto al instrumento. E **inclinación magnética** (dip): las líneas magnéticas se hunden hacia los polos y jalan la brújula — la madre de los errores de viraje y aceleración."
+        },
+        {
+          "type": "text",
+          "md": "En el **hemisferio norte**: al virar desde rumbo **norte**, la brújula se queda corta e indica al inicio un giro al lado contrario (**undershoot**); desde rumbo **sur**, se pasa de largo (**overshoot**) — mnemonia **UNOS**. Al **acelerar** en rumbos este/oeste indica un giro al **norte**; al desacelerar, al **sur** — **ANDS** (Accelerate North, Decelerate South)."
+        },
+        {
+          "type": "table",
+          "headers": ["Situación (hemisferio norte)", "La brújula indica"],
+          "rows": [
+            ["Viras desde rumbo norte", "Se atrasa; al inicio marca giro al lado contrario (undershoot)"],
+            ["Viras desde rumbo sur", "Se adelanta; exagera el giro (overshoot)"],
+            ["Aceleras en rumbo este/oeste", "Giro hacia el norte"],
+            ["Desaceleras en rumbo este/oeste", "Giro hacia el sur"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Honestidad total: **Perú está en el hemisferio sur**, y ahí estos errores se **invierten** (acelerar indica sur; el atraso ocurre virando desde el sur). Pero el banco DGAC pregunta «en el hemisferio norte» — responde lo que la pregunta dice, y en una cabina peruana recuerda que es al revés."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Casi diez preguntas del banco son de brújula: UNOS y ANDS «en el hemisferio norte», qué causa la **desviación** (los campos magnéticos del avión y sus equipos eléctricos), qué es la **variación** (ángulo entre norte verdadero y magnético) y cuándo es precisa (**vuelo recto, nivelado, velocidad constante**)."
+        },
+        {
+          "type": "notebook",
+          "id": "8-11-n1",
+          "prompt": "Copia la tabla UNOS/ANDS del hemisferio norte y, al lado, escribe su versión invertida para el hemisferio sur. Subraya con color: «el examen pregunta por el hemisferio norte»."
+        },
+        {
+          "type": "check",
+          "id": "8-11-c1",
+          "q": "La desviación (deviation) de la brújula magnética la causan:",
+          "options": ["Los campos magnéticos del propio avión y sus equipos eléctricos.", "La diferencia angular entre el norte verdadero y el magnético.", "Las corrientes de aire turbulento en cabina."],
+          "answer": 0,
+          "why": "Eso es desviación; el ángulo entre norte verdadero y magnético es la variación."
+        },
+        {
+          "type": "check",
+          "id": "8-11-c2",
+          "q": "En el hemisferio norte, al acelerar en rumbo este, la brújula indica momentáneamente:",
+          "options": ["Un giro hacia el sur.", "Un giro hacia el norte.", "El rumbo exacto, sin error."],
+          "answer": 1,
+          "why": "ANDS: Accelerate North, Decelerate South — acelerando marca norte (en el hemisferio norte)."
+        }
+      ]
+    },
+    {
+      "id": "8-12",
+      "title": "Los relojes del motor",
+      "key_points": [
+        "El tacómetro marca las RPM; con hélice de paso fijo es el indicador de potencia.",
+        "Tras arrancar, la presión de aceite debe subir en unos 30 segundos (60 en clima frío) o se apaga el motor.",
+        "Presión de aceite bajando con temperatura de aceite subiendo anuncia una falla seria: aterriza pronto.",
+        "Amperímetro en descarga constante = el alternador falló y la batería se está agotando."
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "md": "El motor también te habla, y lo hace por sus relojes. El **tacómetro** marca las **RPM** del motor y la hélice; con hélice de **paso fijo** (como casi todos los entrenadores) es directamente tu **indicador de potencia**. Igual que en una moto: le pides más con el acelerador y lo confirmas en el tacómetro."
+        },
+        {
+          "type": "text",
+          "md": "La **presión de aceite** es lo primero que miras tras arrancar: debe subir en unos **30 segundos** (hasta 60 en clima frío), o apagas el motor. En vuelo, **presión bajando + temperatura de aceite subiendo** = problema serio: aterriza pronto. Y el **amperímetro** cuida la electricidad: en «+», el alternador carga la batería; clavado en «−», el alternador falló y estás gastando batería con los minutos contados."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Ritual de arranque: motor encendido → ojos a la **presión de aceite**. Si no sube en 30 segundos (60 en frío), **motor apagado**. Sin discusión."
+        },
+        {
+          "type": "notebook",
+          "id": "8-12-n1",
+          "prompt": "Dibuja tu mini-panel de motor: tacómetro (RPM), presión de aceite, temperatura de aceite y amperímetro. A cada uno ponle una nota con su señal de alarma (por ejemplo: amperímetro en «−» = alternador muerto)."
+        },
+        {
+          "type": "check",
+          "id": "8-12-c1",
+          "q": "Con hélice de paso fijo, la potencia del motor se lee en:",
+          "options": ["El amperímetro.", "El tacómetro (RPM).", "El variómetro."],
+          "answer": 1,
+          "why": "Con paso fijo, las RPM del tacómetro son la referencia directa de potencia."
+        },
+        {
+          "type": "check",
+          "id": "8-12-c2",
+          "q": "Tras arrancar, la presión de aceite no sube en el tiempo esperado. ¿Qué haces?",
+          "options": ["Apagar el motor.", "Despegar y vigilarla en vuelo.", "Subir las RPM para forzar la presión."],
+          "answer": 0,
+          "why": "Sin presión de aceite el motor se destruye en minutos: se apaga de inmediato."
+        }
+      ]
+    }
+  ]
+}

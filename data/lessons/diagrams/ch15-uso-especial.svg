@@ -1,0 +1,41 @@
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Símbolos de espacio aéreo de uso especial en la carta: zona prohibida P, zona restringida R y zona peligrosa D, con su significado">
+  <defs>
+    <pattern id="rayasP" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="var(--bad)" stroke-width="2"/>
+    </pattern>
+    <pattern id="rayasR" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="var(--accent)" stroke-width="2"/>
+    </pattern>
+    <pattern id="rayasD" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="var(--muted)" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <!-- P: prohibida -->
+  <rect x="25" y="25" width="120" height="70" fill="url(#rayasP)" fill-opacity="0.35" stroke="var(--bad)" stroke-width="2.5"/>
+  <text x="55" y="65" fill="var(--bad)" font-family="inherit" font-size="16" font-weight="bold">SP-P115</text>
+  <text x="25" y="115" fill="var(--bad)" font-family="inherit" font-size="13" font-weight="bold">Prohibida</text>
+  <text x="25" y="131" fill="var(--text)" font-family="inherit" font-size="12">NUNCA entres.</text>
+  <text x="25" y="146" fill="var(--muted)" font-family="inherit" font-size="11">Sin excepciones VFR.</text>
+
+  <!-- R: restringida -->
+  <rect x="180" y="25" width="120" height="70" fill="url(#rayasR)" fill-opacity="0.35" stroke="var(--accent)" stroke-width="2.5"/>
+  <text x="215" y="65" fill="var(--accent)" font-family="inherit" font-size="16" font-weight="bold">SP-R32</text>
+  <text x="180" y="115" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">Restringida</text>
+  <text x="180" y="131" fill="var(--text)" font-family="inherit" font-size="12">Entra solo con</text>
+  <text x="180" y="146" fill="var(--text)" font-family="inherit" font-size="12">permiso de la autoridad.</text>
+
+  <!-- D: peligrosa -->
+  <rect x="335" y="25" width="120" height="70" fill="url(#rayasD)" fill-opacity="0.35" stroke="var(--text)" stroke-width="2.5"/>
+  <text x="372" y="65" fill="var(--text)" font-family="inherit" font-size="16" font-weight="bold">SP-D8</text>
+  <text x="335" y="115" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Peligrosa (danger)</text>
+  <text x="335" y="131" fill="var(--text)" font-family="inherit" font-size="12">Puedes pasar, pero hay</text>
+  <text x="335" y="146" fill="var(--text)" font-family="inherit" font-size="12">actividad riesgosa: evítala.</text>
+
+  <!-- clave de lectura -->
+  <rect x="25" y="170" width="430" height="90" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="40" y="192" fill="var(--text)" font-family="inherit" font-size="13" font-weight="bold">Cómo leer el código: SP-R32</text>
+  <text x="40" y="212" fill="var(--muted)" font-family="inherit" font-size="12">SP = país (Perú) · letra = tipo (P, R, D) · número = identificador</text>
+  <text x="40" y="236" fill="var(--muted)" font-family="inherit" font-size="12">La carta también indica techo, piso y horario de actividad de la zona.</text>
+  <text x="40" y="252" fill="var(--muted)" font-family="inherit" font-size="12">Zonas militares o de alerta: no prohibidas, pero extrema la vigilancia.</text>
+</svg>

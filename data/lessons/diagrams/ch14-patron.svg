@@ -1,0 +1,43 @@
+<svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Patrón de tráfico estándar con virajes a la izquierda: tramos viento en contra, cruzado, viento a favor, básico y final, con entrada a 45 grados">
+  <!-- viento -->
+  <path d="M300 30 h-70 m0 0 l12 -7 m-12 7 l12 7" stroke="var(--bad)" stroke-width="2.5" fill="none"/>
+  <text x="308" y="34" fill="var(--bad)" font-family="inherit" font-size="13" font-weight="bold">viento</text>
+
+  <!-- pista (aterrizando hacia la derecha) -->
+  <rect x="195" y="200" width="120" height="20" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <text x="205" y="215" fill="var(--muted)" font-family="inherit" font-size="12">pista</text>
+
+  <!-- circuito (rectángulo, virajes a la izquierda) -->
+  <!-- viento en contra (upwind) -->
+  <path d="M320 210 H425 m0 0 l-12 -6 m12 6 l-12 6" stroke="var(--text)" stroke-width="2.5" fill="none"/>
+  <text x="330" y="238" fill="var(--text)" font-family="inherit" font-size="13">viento en contra</text>
+  <text x="330" y="253" fill="var(--muted)" font-family="inherit" font-size="12">(upwind)</text>
+  <!-- cruzado -->
+  <path d="M430 205 V95 m0 0 l-6 12 m6 -12 l6 12" stroke="var(--text)" stroke-width="2.5" fill="none"/>
+  <text x="440" y="150" fill="var(--text)" font-family="inherit" font-size="13">cruzado</text>
+  <text x="440" y="165" fill="var(--muted)" font-family="inherit" font-size="12">(crosswind)</text>
+  <!-- viento a favor -->
+  <path d="M425 88 H85 m0 0 l12 -6 m-12 6 l12 6" stroke="var(--text)" stroke-width="2.5" fill="none"/>
+  <text x="170" y="76" fill="var(--text)" font-family="inherit" font-size="13">viento a favor (downwind) · 1,000 ft AGL</text>
+  <!-- básico -->
+  <path d="M80 93 V200 m0 0 l-6 -12 m6 12 l6 -12" stroke="var(--text)" stroke-width="2.5" fill="none"/>
+  <text x="14" y="150" fill="var(--text)" font-family="inherit" font-size="13">básico</text>
+  <text x="14" y="165" fill="var(--muted)" font-family="inherit" font-size="12">(base)</text>
+  <!-- final -->
+  <path d="M85 210 H190 m0 0 l-12 -6 m12 6 l-12 6" stroke="var(--ok)" stroke-width="2.5" fill="none"/>
+  <text x="105" y="238" fill="var(--ok)" font-family="inherit" font-size="13" font-weight="bold">final</text>
+
+  <!-- entrada a 45° al punto medio del viento a favor -->
+  <path d="M330 20 L258 84 m0 0 l4 -13 m-4 13 l13 -4" stroke="var(--ok)" stroke-width="2" stroke-dasharray="7 5" fill="none"/>
+  <text x="322" y="58" fill="var(--ok)" font-family="inherit" font-size="12">entrada a 45°,</text>
+  <text x="322" y="72" fill="var(--ok)" font-family="inherit" font-size="12">a la altitud del patrón</text>
+
+  <!-- salida -->
+  <path d="M430 210 L480 250 m0 0 l-4 -12 m4 12 l-12 -4" stroke="var(--muted)" stroke-width="2" stroke-dasharray="7 5" fill="none"/>
+  <text x="352" y="290" fill="var(--muted)" font-family="inherit" font-size="12">salida: en recto o 45°</text>
+  <text x="352" y="304" fill="var(--muted)" font-family="inherit" font-size="12">hacia el lado del patrón</text>
+
+  <!-- nota virajes -->
+  <text x="180" y="140" fill="var(--accent)" font-family="inherit" font-size="13" font-weight="bold">virajes a la IZQUIERDA</text>
+  <text x="192" y="156" fill="var(--muted)" font-family="inherit" font-size="12">(patrón estándar)</text>
+</svg>

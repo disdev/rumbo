@@ -1,0 +1,42 @@
+<svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cadena del error: cinco eslabones que llevan al accidente, con uno roto que lo evita">
+  <text x="12" y="24" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">La cadena del error</text>
+
+  <!-- eslabones 1 y 2 (ya ocurrieron) -->
+  <rect x="8" y="52" width="92" height="48" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <text x="54" y="72" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">Sales tarde,</text>
+  <text x="54" y="88" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">apurado</text>
+
+  <line x1="100" y1="76" x2="112" y2="76" stroke="var(--text)" stroke-width="2"/>
+
+  <rect x="112" y="52" width="92" height="48" rx="10" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <text x="158" y="72" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">El clima</text>
+  <text x="158" y="88" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">se ve feo</text>
+
+  <!-- eslabón roto -->
+  <line x1="204" y1="76" x2="209" y2="76" stroke="var(--text)" stroke-width="2"/>
+  <path d="M209 66 L214 76 L209 86" fill="none" stroke="var(--ok)" stroke-width="2.5"/>
+  <path d="M221 66 L216 76 L221 86" fill="none" stroke="var(--ok)" stroke-width="2.5"/>
+  <line x1="221" y1="76" x2="226" y2="76" stroke="var(--muted)" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- eslabones 3–5 (lo que NO tiene que pasar) -->
+  <g opacity="0.55">
+    <rect x="226" y="52" width="92" height="48" rx="10" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 3"/>
+    <text x="272" y="72" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Igual</text>
+    <text x="272" y="88" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">despegas</text>
+    <line x1="318" y1="76" x2="330" y2="76" stroke="var(--muted)" stroke-width="2" stroke-dasharray="4 3"/>
+    <rect x="330" y="52" width="92" height="48" rx="10" fill="var(--panel-2)" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 3"/>
+    <text x="376" y="72" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">Vuelas cada</text>
+    <text x="376" y="88" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">vez más bajo</text>
+    <line x1="422" y1="76" x2="434" y2="76" stroke="var(--muted)" stroke-width="2" stroke-dasharray="4 3"/>
+  </g>
+  <rect x="434" y="52" width="80" height="48" rx="10" fill="var(--panel-2)" stroke="var(--bad)" stroke-width="2.5"/>
+  <text x="474" y="81" fill="var(--bad)" font-family="inherit" font-size="13" font-weight="bold" text-anchor="middle">ACCIDENTE</text>
+
+  <!-- la decisión que rompe la cadena -->
+  <path d="M215 92 L215 150" fill="none" stroke="var(--ok)" stroke-width="2.5"/>
+  <path d="M209 142 L215 152 L221 142" fill="none" stroke="var(--ok)" stroke-width="2.5"/>
+  <rect x="120" y="155" width="190" height="52" rx="10" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2.5"/>
+  <text x="215" y="177" fill="var(--ok)" font-family="inherit" font-size="13" font-weight="bold" text-anchor="middle">Rompes el eslabón:</text>
+  <text x="215" y="195" fill="var(--text)" font-family="inherit" font-size="12" text-anchor="middle">esperas, cancelas o das la vuelta</text>
+  <text x="215" y="235" fill="var(--ok)" font-family="inherit" font-size="13" text-anchor="middle">→ la cadena se corta: no hay accidente</text>
+</svg>

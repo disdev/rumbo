@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="La atmósfera: presión y temperatura bajan con la altura">
+  <!-- suelo y mar -->
+  <line x1="90" y1="240" x2="410" y2="240" stroke="var(--text)" stroke-width="2"/>
+  <path d="M95 240 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0" fill="none" stroke="var(--muted)" stroke-width="2"/>
+  <!-- montaña -->
+  <polygon points="250,240 315,140 380,240" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <!-- líneas de altitud -->
+  <line x1="90" y1="70" x2="410" y2="70" stroke="var(--muted)" stroke-width="1" stroke-dasharray="6 5"/>
+  <line x1="90" y1="130" x2="410" y2="130" stroke="var(--muted)" stroke-width="1" stroke-dasharray="6 5"/>
+  <line x1="90" y1="190" x2="410" y2="190" stroke="var(--muted)" stroke-width="1" stroke-dasharray="6 5"/>
+  <text x="98" y="62" font-family="inherit" font-size="12" fill="var(--muted)">30,000 ft · −45 °C</text>
+  <text x="98" y="122" font-family="inherit" font-size="12" fill="var(--muted)">20,000 ft · −25 °C</text>
+  <text x="98" y="182" font-family="inherit" font-size="12" fill="var(--muted)">10,000 ft · −5 °C</text>
+  <!-- flecha de ascenso -->
+  <line x1="40" y1="230" x2="40" y2="70" stroke="var(--accent)" stroke-width="3"/>
+  <polygon points="40,52 31,72 49,72" fill="var(--accent)"/>
+  <text x="58" y="92" font-family="inherit" font-size="13" fill="var(--accent)">al subir:</text>
+  <text x="58" y="112" font-family="inherit" font-size="13" fill="var(--accent)">presión ↓</text>
+  <text x="58" y="132" font-family="inherit" font-size="13" fill="var(--accent)">temperatura ↓</text>
+  <text x="58" y="152" font-family="inherit" font-size="13" fill="var(--accent)">densidad ↓</text>
+  <!-- valores estándar al nivel del mar -->
+  <text x="90" y="266" font-family="inherit" font-size="14" fill="var(--text)">nivel del mar: 15 °C · 29.92 inHg · 1013.2 hPa</text>
+</svg>

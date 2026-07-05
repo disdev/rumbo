@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 310" role="img" aria-label="Guiñada adversa vista desde arriba">
+  <defs>
+    <marker id="ga-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="var(--ok)"/>
+    </marker>
+    <marker id="ga-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="var(--bad)"/>
+    </marker>
+  </defs>
+  <text x="200" y="22" text-anchor="middle" font-family="inherit" font-size="15" fill="var(--text)" font-weight="bold">Quieres girar a la izquierda…</text>
+
+  <!-- avión visto desde arriba, nariz hacia arriba -->
+  <g stroke="var(--text)" fill="var(--panel-2)" stroke-width="1.5">
+    <!-- fuselaje -->
+    <path d="M200,70 C207,80 208,95 208,120 L208,230 C208,242 204,252 200,256 C196,252 192,242 192,230 L192,120 C192,95 193,80 200,70 Z"/>
+    <!-- alas -->
+    <path d="M192,138 L70,158 L70,174 L192,166 Z"/>
+    <path d="M208,138 L330,158 L330,174 L208,166 Z"/>
+    <!-- cola -->
+    <path d="M192,236 L150,250 L150,260 L192,250 Z"/>
+    <path d="M208,236 L250,250 L250,260 L208,250 Z"/>
+  </g>
+
+  <!-- alerón izquierdo arriba -->
+  <rect x="74" y="168" width="52" height="7" fill="var(--muted)"/>
+  <text x="66" y="196" font-family="inherit" font-size="12" fill="var(--muted)">alerón ARRIBA</text>
+  <text x="66" y="211" font-family="inherit" font-size="12" fill="var(--muted)">esta ala baja</text>
+
+  <!-- alerón derecho abajo -->
+  <rect x="274" y="168" width="52" height="7" fill="var(--accent)"/>
+  <text x="252" y="196" font-family="inherit" font-size="12" fill="var(--text)">alerón ABAJO:</text>
+  <text x="252" y="211" font-family="inherit" font-size="12" fill="var(--ok)">+ sustentación (el ala sube)</text>
+  <text x="252" y="226" font-family="inherit" font-size="12" fill="var(--bad)">+ resistencia inducida</text>
+
+  <!-- flecha de resistencia extra en ala derecha (hacia atrás) -->
+  <line x1="300" y1="176" x2="300" y2="250" stroke="var(--bad)" stroke-width="2.5" marker-end="url(#ga-bad)"/>
+  <text x="306" y="246" font-family="inherit" font-size="12" fill="var(--bad)">frena este lado</text>
+
+  <!-- viraje deseado (verde, a la izquierda) -->
+  <path d="M185,62 Q150,52 122,66" fill="none" stroke="var(--ok)" stroke-width="2.5" marker-end="url(#ga-ok)"/>
+  <text x="30" y="52" font-family="inherit" font-size="13" fill="var(--ok)">viraje deseado</text>
+
+  <!-- guiñada adversa (roja, a la derecha) -->
+  <path d="M215,62 Q250,52 278,66" fill="none" stroke="var(--bad)" stroke-width="2.5" marker-end="url(#ga-bad)"/>
+  <text x="262" y="52" font-family="inherit" font-size="13" fill="var(--bad)" font-weight="bold">guiñada adversa</text>
+  <text x="262" y="36" font-family="inherit" font-size="12" fill="var(--bad)">la nariz se va aquí</text>
+
+  <text x="200" y="292" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">Soluciones: alerones diferenciales · tipo Frise · acoplamiento alerón–timón · tu pie en el pedal</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" font-family="inherit">
+  <defs>
+    <marker id="k5e-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--ok)"/></marker>
+    <marker id="k5e-acc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker>
+    <marker id="k5e-txt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--text)"/></marker>
+  </defs>
+  <text x="200" y="20" fill="var(--muted)" font-size="12" text-anchor="middle">Viraje a la derecha, visto desde atrás (banqueo 30°)</text>
+  <g stroke="var(--text)" stroke-width="2.5" fill="var(--panel-2)">
+    <line x1="115" y1="101" x2="285" y2="199"/>
+    <circle cx="200" cy="150" r="12"/>
+    <path d="M196 140 L186 118 L202 128 Z"/>
+  </g>
+  <line x1="200" y1="150" x2="258" y2="50" stroke="var(--ok)" stroke-width="3.5" marker-end="url(#k5e-ok)"/>
+  <text x="268" y="42" fill="var(--ok)" font-size="13">Sustentación total</text>
+  <line x1="200" y1="150" x2="200" y2="54" stroke="var(--ok)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#k5e-ok)"/>
+  <text x="110" y="52" fill="var(--ok)" font-size="12" text-anchor="middle">componente vertical</text>
+  <text x="110" y="66" fill="var(--ok)" font-size="12" text-anchor="middle">(sostiene el peso)</text>
+  <line x1="200" y1="150" x2="284" y2="150" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#k5e-acc)"/>
+  <text x="308" y="140" fill="var(--accent)" font-size="12" text-anchor="middle">componente</text>
+  <text x="308" y="154" fill="var(--accent)" font-size="12" text-anchor="middle">horizontal</text>
+  <text x="308" y="168" fill="var(--accent)" font-size="12" text-anchor="middle">(¡hace girar!)</text>
+  <line x1="258" y1="50" x2="258" y2="146" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <line x1="200" y1="54" x2="254" y2="54" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <line x1="200" y1="164" x2="200" y2="252" stroke="var(--text)" stroke-width="3" marker-end="url(#k5e-txt)"/>
+  <text x="200" y="270" fill="var(--text)" font-size="13" text-anchor="middle">Peso</text>
+  <text x="90" y="230" fill="var(--muted)" font-size="11" text-anchor="middle">La vertical se achica:</text>
+  <text x="90" y="244" fill="var(--muted)" font-size="11" text-anchor="middle">jala el bastón (más AoA)</text>
+</svg>

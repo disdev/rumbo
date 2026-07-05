@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 330" role="img" aria-label="Cuatro tipos de flaps">
+  <text x="220" y="22" text-anchor="middle" font-family="inherit" font-size="15" fill="var(--text)" font-weight="bold">Los cuatro tipos de flap (perfil del ala)</text>
+
+  <!-- Sencillo (plain) -->
+  <g transform="translate(15,45)">
+    <path d="M10,42 C30,14 80,10 120,26 L132,36 L132,40 C90,50 35,52 10,42 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+    <path d="M132,36 L170,62 L164,70 L128,42 Z" fill="var(--accent)" stroke="var(--text)" stroke-width="1"/>
+    <circle cx="131" cy="39" r="2.5" fill="var(--text)"/>
+    <text x="90" y="96" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)" font-weight="bold">Sencillo (plain)</text>
+    <text x="90" y="112" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">toda la paleta gira hacia abajo</text>
+  </g>
+
+  <!-- Partido (split) -->
+  <g transform="translate(235,45)">
+    <path d="M10,42 C30,14 80,10 120,26 L160,40 C110,52 35,52 10,42 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+    <path d="M118,46 L166,72 L160,79 L114,52 Z" fill="var(--accent)" stroke="var(--text)" stroke-width="1"/>
+    <circle cx="117" cy="49" r="2.5" fill="var(--text)"/>
+    <text x="90" y="96" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)" font-weight="bold">Partido (split)</text>
+    <text x="90" y="112" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">solo baja la parte inferior: mucha resistencia</text>
+  </g>
+
+  <!-- Ranurado (slotted) -->
+  <g transform="translate(15,185)">
+    <path d="M10,42 C30,14 80,10 120,26 L128,34 C95,44 35,50 10,42 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+    <path d="M140,44 L176,68 L170,76 L134,50 Z" fill="var(--accent)" stroke="var(--text)" stroke-width="1"/>
+    <path d="M118,40 Q132,44 140,52" fill="none" stroke="var(--ok)" stroke-width="2"/>
+    <path d="M140,52 L136,48 M140,52 L134,53" stroke="var(--ok)" stroke-width="2" fill="none"/>
+    <text x="90" y="96" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--text)" font-weight="bold">Ranurado (slotted) — el más común</text>
+    <text x="90" y="112" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">la ranura sopla aire con energía sobre el flap</text>
+  </g>
+
+  <!-- Fowler -->
+  <g transform="translate(235,185)">
+    <path d="M10,42 C30,14 80,10 120,26 L128,34 C95,44 35,50 10,42 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="1.5"/>
+    <path d="M148,52 L190,74 L184,82 L142,58 Z" fill="var(--accent)" stroke="var(--text)" stroke-width="1"/>
+    <line x1="126" y1="38" x2="146" y2="54" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <text x="90" y="96" text-anchor="middle" font-family="inherit" font-size="13" fill="var(--accent)" font-weight="bold">Fowler — el que más sustenta</text>
+    <text x="90" y="112" text-anchor="middle" font-family="inherit" font-size="12" fill="var(--muted)">se desliza atrás y abajo: gana ÁREA + curvatura</text>
+  </g>
+</svg>

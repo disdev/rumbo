@@ -1,0 +1,58 @@
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Las cinco combinaciones del PAPI de cuatro luces y las tres indicaciones del VASI de dos barras">
+  <text x="26" y="26" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">PAPI (4 luces)</text>
+
+  <!-- 4 blancas -->
+  <circle cx="45" cy="62" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="80" cy="62" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="115" cy="62" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="150" cy="62" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <text x="180" y="67" fill="var(--text)" font-family="inherit" font-size="13">Muy alto</text>
+
+  <!-- 3 blancas 1 roja -->
+  <circle cx="45" cy="112" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="80" cy="112" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="115" cy="112" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="150" cy="112" r="11" fill="var(--bad)"/>
+  <text x="180" y="117" fill="var(--text)" font-family="inherit" font-size="13">Un poco alto</text>
+
+  <!-- 2 y 2 -->
+  <circle cx="45" cy="162" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="80" cy="162" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="115" cy="162" r="11" fill="var(--bad)"/>
+  <circle cx="150" cy="162" r="11" fill="var(--bad)"/>
+  <text x="180" y="167" fill="var(--ok)" font-family="inherit" font-size="13" font-weight="bold">EN LA SENDA (~3°)</text>
+
+  <!-- 1 blanca 3 rojas -->
+  <circle cx="45" cy="212" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="80" cy="212" r="11" fill="var(--bad)"/>
+  <circle cx="115" cy="212" r="11" fill="var(--bad)"/>
+  <circle cx="150" cy="212" r="11" fill="var(--bad)"/>
+  <text x="180" y="217" fill="var(--text)" font-family="inherit" font-size="13">Un poco bajo</text>
+
+  <!-- 4 rojas -->
+  <circle cx="45" cy="262" r="11" fill="var(--bad)"/>
+  <circle cx="80" cy="262" r="11" fill="var(--bad)"/>
+  <circle cx="115" cy="262" r="11" fill="var(--bad)"/>
+  <circle cx="150" cy="262" r="11" fill="var(--bad)"/>
+  <text x="180" y="267" fill="var(--bad)" font-family="inherit" font-size="13" font-weight="bold">MUY bajo: ¡corrige ya!</text>
+
+  <!-- VASI -->
+  <line x1="330" y1="20" x2="330" y2="285" stroke="var(--muted)" stroke-width="1"/>
+  <text x="352" y="26" fill="var(--text)" font-family="inherit" font-size="15" font-weight="bold">VASI (2 barras)</text>
+  <text x="352" y="44" fill="var(--muted)" font-family="inherit" font-size="12">arriba = barra lejana</text>
+
+  <circle cx="372" cy="76" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <circle cx="372" cy="104" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <text x="398" y="86" fill="var(--text)" font-family="inherit" font-size="13">Blanco / blanco:</text>
+  <text x="398" y="102" fill="var(--muted)" font-family="inherit" font-size="12">muy alto</text>
+
+  <circle cx="372" cy="156" r="11" fill="var(--bad)"/>
+  <circle cx="372" cy="184" r="11" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2.5"/>
+  <text x="398" y="166" fill="var(--ok)" font-family="inherit" font-size="13" font-weight="bold">Rojo sobre blanco:</text>
+  <text x="398" y="182" fill="var(--ok)" font-family="inherit" font-size="12">todo bien (en senda)</text>
+
+  <circle cx="372" cy="236" r="11" fill="var(--bad)"/>
+  <circle cx="372" cy="264" r="11" fill="var(--bad)"/>
+  <text x="398" y="246" fill="var(--bad)" font-family="inherit" font-size="13">Rojo / rojo:</text>
+  <text x="398" y="262" fill="var(--muted)" font-family="inherit" font-size="12">muy bajo, ¡cuidado!</text>
+</svg>

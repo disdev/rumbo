@@ -50,6 +50,8 @@ export function derive(log, { config, chapters, bank }, todayKey) {
   const mathReps = {}; // family → {lifetime, streak}
   const famMaint = new Map(); // family → {lastDrillDay, maintCount}
   let notebooksTotal = 0;
+  let rapidfireBest = 0;
+  let everInDeck = false;
   const missQueue = []; // {qid, available (dayKey)}
   const redoByDay = new Map(); // day → [{qid|prob}]
   const activity = new Map(); // day → {math, regla, fraseo, sessionsEnded:Set, minimo, any}
@@ -69,7 +71,7 @@ export function derive(log, { config, chapters, bank }, todayKey) {
 
   function deckCheck(st) {
     // entra: miss en simulacro (inmediato) o 2 misses en trabajo diario (SPEC §5.6)
-    if (!st.inDeck && (st.simMiss || st.misses >= (config.error_deck.daily_miss_threshold))) st.inDeck = true;
+    if (!st.inDeck && (st.simMiss || st.misses >= (config.error_deck.daily_miss_threshold))) { st.inDeck = true; everInDeck = true; }
     // sale: 2 correctas consecutivas en días distintos
     if (st.inDeck) {
       const n = config.error_deck.exit_consecutive_correct;
@@ -161,6 +163,7 @@ export function derive(log, { config, chapters, bank }, todayKey) {
       }
       case 'rapidfire': {
         act.fraseo = true;
+        rapidfireBest = Math.max(rapidfireBest, detail.best_streak || 0);
         for (const it of detail.items || []) recordAnswer(`q:${it.qid}`, day, !!it.correct);
         break;
       }
@@ -327,7 +330,7 @@ export function derive(log, { config, chapters, bank }, todayKey) {
   return {
     todayKey, week, dayLog, streaks, reanudacion, missedRun,
     ladder, familiesAtN2, week6Unlocked, listo, lastSim, simulacros,
-    lessons, mathSeen, mathReps, mathMaintenanceDue, notebooksTotal,
+    lessons, mathSeen, mathReps, mathMaintenanceDue, notebooksTotal, rapidfireBest, everInDeck,
     chapterState, catToChapter, srsDue, errorDeck,
     requeueDue, redoToday: redoByDay.get(todayKey) || [],
     itemStats: item, feedbackByEntry,

@@ -105,11 +105,15 @@ export function planDay(state, { config, chapters, scenarios }, nowLimaHHMM, for
   } else if (readingLocked) {
     s1.push(drill(famB), drill(famA)); // ocupan los huecos de lectura/recuerdo (§6)
   } else {
-    s1.push({ type: 'lectura', chapter: chapterId, title: `Lectura: cap. ${chapterId} — ${ch.title}`, pages: ch.pages });
-    s1.push({ type: 'recall', chapter: chapterId, title: 'Recuerdo libre (libro cerrado)' });
+    s1.push({ type: 'leccion', chapter: chapterId, title: `Lección: cap. ${chapterId} — ${ch.title}` });
+    s1.push({ type: 'recall', chapter: chapterId, title: 'Recuerdo libre (lección cerrada)' });
     s1.push({ type: 'quiz', source: 'chapter', chapter: chapterId, part: 1, title: 'Preguntas de la sección' });
   }
   s1.push(drill(famB));
+  // Mantenimiento (§5.2): niveles superados vuelven con números frescos — nunca se jubilan
+  for (const m of (state.mathMaintenanceDue || []).filter(m => m.family !== famA && m.family !== famB).slice(0, 2)) {
+    s1.push({ type: 'drill', family: m.family, tier: m.tier, mode: 'maintenance', title: `Mantenimiento: ${m.family} nivel ${m.tier}` });
+  }
 
   const s2 = [];
   if (sim) {

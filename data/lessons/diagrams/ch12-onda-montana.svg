@@ -1,0 +1,33 @@
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Onda de montaña: viento fuerte cruza la cresta, ondula a sotavento con nubes lenticulares en las crestas y un rotor turbulento abajo">
+  <!-- suelo y montaña -->
+  <line x1="10" y1="220" x2="470" y2="220" stroke="var(--text)" stroke-width="2"/>
+  <path d="M 60 220 L 150 90 L 240 220 Z" fill="var(--panel-2)" stroke="var(--text)" stroke-width="2"/>
+  <text x="150" y="205" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">cordillera</text>
+
+  <!-- viento entrante -->
+  <line x1="15" y1="110" x2="75" y2="110" stroke="var(--accent)" stroke-width="2.5"/>
+  <polygon points="84,110 70,103 70,117" fill="var(--accent)"/>
+  <text x="18" y="98" fill="var(--accent)" font-family="inherit" font-size="12">viento ≥ 40 kt</text>
+  <text x="18" y="132" fill="var(--muted)" font-family="inherit" font-size="12">aire estable</text>
+  <text x="60" y="240" fill="var(--muted)" font-family="inherit" font-size="12">barlovento</text>
+
+  <!-- onda a sotavento -->
+  <path d="M 90 120 Q 150 55 210 110 Q 250 150 290 105 Q 330 65 370 110 Q 405 148 445 112" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+  <polygon points="452,106 438,108 444,120" fill="var(--accent)"/>
+  <text x="330" y="160" fill="var(--muted)" font-family="inherit" font-size="12" text-anchor="middle">la onda sigue por cientos de km</text>
+  <text x="300" y="240" fill="var(--muted)" font-family="inherit" font-size="12">sotavento (¡descendentes!)</text>
+
+  <!-- lenticulares en las crestas -->
+  <ellipse cx="308" cy="76" rx="34" ry="10" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+  <ellipse cx="308" cy="62" rx="24" ry="7" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+  <text x="308" y="44" fill="var(--ok)" font-family="inherit" font-size="12" text-anchor="middle">lenticular (cresta de la onda)</text>
+  <ellipse cx="160" cy="52" rx="28" ry="8" fill="var(--panel-2)" stroke="var(--ok)" stroke-width="2"/>
+
+  <!-- rotor -->
+  <path d="M 268 185 a 20 20 0 1 1 18 -28" fill="none" stroke="var(--bad)" stroke-width="2.5"/>
+  <polygon points="290,155 276,153 283,166" fill="var(--bad)"/>
+  <circle cx="252" cy="176" r="6" fill="none" stroke="var(--bad)" stroke-width="1.5"/>
+  <text x="268" y="212" fill="var(--bad)" font-family="inherit" font-size="12" text-anchor="middle">ROTOR: turbulencia violenta</text>
+
+  <text x="240" y="256" fill="var(--text)" font-family="inherit" font-size="13" text-anchor="middle">Cruza con MUCHA altitud de sobra: la lenticular parece quieta, pero esconde 50+ kt</text>
+</svg>
