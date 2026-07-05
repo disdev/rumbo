@@ -158,6 +158,19 @@ export async function leccionPlayer(root, block, ctx) {
     });
   }
 
+  // Lección ya completada (día 2 de un capítulo aún no cerrado): no se
+  // re-camina entera — repaso puntual opcional y a cerrar el capítulo.
+  if (ctx.state.lessons.get(String(lesson.chapter))?.completed) {
+    return new Promise(resolve => {
+      const screen = () => root.replaceChildren(el('div', { class: 'card' },
+        el('h3', {}, `📖 Cap. ${lesson.chapter} — ${lesson.title}`),
+        el('p', {}, 'Esta lección ya la completaste ✅. Hoy toca cerrar el capítulo: recuerdo libre y preguntas. Si algo quedó flojo, repasa esa sección puntual primero.'),
+        el('button', { class: 'ghost', onclick: () => lessonReview(root, block.chapter, ctx, screen) }, '📚 Repasar una sección'),
+        el('button', { class: 'primary', onclick: () => resolve() }, 'Seguir al recuerdo →')));
+      screen();
+    });
+  }
+
   const seen = ctx.state.lessons.get(String(lesson.chapter))?.sectionsSeen || new Set();
   let idx = lesson.sections.findIndex(s => !seen.has(s.id));
   if (idx === -1) idx = 0; // todo visto: repaso rápido desde el inicio
