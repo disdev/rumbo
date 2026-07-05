@@ -2,6 +2,12 @@
   "chapter": "17",
   "title": "Factores aeromédicos",
   "resumen": "Tu cuerpo también es parte del avión: cómo la altura, el estrés, el alcohol y tus propios sentidos pueden engañarte en vuelo, y cómo decidir si estás en condiciones de volar.",
+  "videos": [
+    { "title": "Hipoxia y sus tipos", "query": "hipoxia tipos aviacion piloto privado explicado español" },
+    { "title": "Desorientación espacial e ilusiones", "query": "desorientacion espacial ilusiones vuelo aviacion explicado español" },
+    { "title": "Hipoxia vs hiperventilación", "query": "diferencia hipoxia hiperventilacion piloto aviacion español" },
+    { "title": "IMSAFE y aptitud del piloto", "query": "IMSAFE aptitud psicofisica piloto privado aviacion español" }
+  ],
   "sections": [
     {
       "id": "17-1",
@@ -21,6 +27,15 @@
         {
           "type": "text",
           "md": "El **certificado médico** —en el Perú, la **aptitud psicofísica** que emite la DGAC— es un examen que confirma que tu cuerpo cumple los requisitos para volar. Pero tenerlo vigente **no** significa que hoy estés apto: puedes tener gripe, no haber dormido, o estar peleado con alguien. Este capítulo trata de eso: cómo el vuelo afecta tu cuerpo y cómo protegerte."
+        },
+        {
+          "type": "text",
+          "md": "Fíjate en la diferencia. El certificado dice: *'este cuerpo, en general, sirve para volar'*. Lo firma un médico hace meses. La aptitud de **hoy** dice: *'estoy bien AHORA para este vuelo'*. Esa segunda pregunta solo la puedes contestar tú, la mañana del vuelo, mirándote con honestidad."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Regla mental: el certificado es como la revisión técnica del carro (vale un tiempo). La decisión de manejar HOY, con lluvia y sin dormir, sigue siendo del conductor. En el avión, ese conductor eres tú."
         },
         {
           "type": "callout",
@@ -43,6 +58,30 @@
           ],
           "answer": 1,
           "why": "El certificado dice que cumples los requisitos generales; si HOY estás apto solo puedes decidirlo tú, el piloto."
+        },
+        {
+          "type": "check",
+          "id": "17-1-c2",
+          "q": "Un piloto con certificado médico vigente amanece con gripe fuerte y fiebre el día de un vuelo. ¿Qué es lo correcto?",
+          "options": [
+            "Volar igual: el certificado sigue siendo válido.",
+            "No volar: aunque el certificado esté vigente, hoy no está apto.",
+            "Volar solo si el médico que firmó el certificado lo autoriza por teléfono."
+          ],
+          "answer": 1,
+          "why": "Un certificado vigente no garantiza estar apto un día concreto; una enfermedad aguda te incapacita ese día."
+        },
+        {
+          "type": "check",
+          "id": "17-1-c3",
+          "q": "¿Qué estudian los factores aeromédicos?",
+          "options": [
+            "El mantenimiento del motor y los sistemas eléctricos del avión.",
+            "Cómo el vuelo afecta al cuerpo humano y cómo prevenir esos efectos.",
+            "Las reglas de tránsito aéreo entre aeropuertos controlados."
+          ],
+          "answer": 1,
+          "why": "Los factores aeromédicos tratan del cuerpo del piloto: cómo la altura, el estrés o los tóxicos lo afectan y cómo evitarlo."
         }
       ]
     },
@@ -63,18 +102,32 @@
           "md": "¿Qué pasa si subes al Huascarán sin aclimatarte? Te falta el aire, te mareas, piensas lento. Eso es **hipoxia**: un estado de **deficiencia de oxígeno** en el cuerpo. Y no llega de una sola forma: hay cuatro tipos, según en qué parte de la cadena del oxígeno se rompe el eslabón."
         },
         {
+          "type": "text",
+          "md": "Imagina el oxígeno como un delivery: el aire trae el paquete, la sangre es la moto que lo lleva, el corazón hace que la moto avance, y la célula es el cliente que lo recibe. Si falla cualquiera de esos pasos, el pedido no llega. Cada falla es un tipo distinto de hipoxia."
+        },
+        {
           "type": "diagram",
           "src": "ch17-tipos-hipoxia.svg",
           "caption": "Los cuatro tipos de hipoxia, según dónde falla el oxígeno: al respirarlo, al transportarlo, al circularlo o al usarlo."
         },
         {
           "type": "text",
-          "md": "**Hipóxica**: hay poco oxígeno en el aire (subir de altura); la más común volando. **Hipémica** (o anémica): la sangre no lo transporta bien —el **monóxido de carbono** y la anemia la causan—. **Estancada**: la sangre no circula (fuerzas G, frío). **Histotóxica**: la célula no puede usarlo (alcohol, tóxicos). Piensa en un delivery: falta el paquete, falta la moto, la moto no arranca, o el cliente no lo recibe."
+          "md": "**Hipóxica**: hay poco oxígeno en el aire (subir de altura); la más común volando. **Hipémica** (o anémica): la sangre no lo transporta bien —el **monóxido de carbono** y la anemia la causan—. **Estancada**: la sangre no circula (fuerzas G, frío). **Histotóxica**: la célula no puede usarlo (alcohol, tóxicos)."
+        },
+        {
+          "type": "table",
+          "headers": ["Tipo", "Dónde falla", "Causa típica"],
+          "rows": [
+            ["Hipóxica", "Falta O2 en el aire", "Subir de altura"],
+            ["Hipémica", "La sangre no lo lleva", "Monóxido de carbono, anemia"],
+            ["Estancada", "La sangre no circula", "Fuerzas G, frío extremo"],
+            ["Histotóxica", "La célula no lo usa", "Alcohol, drogas, tóxicos"]
+          ]
         },
         {
           "type": "callout",
           "style": "examen",
-          "md": "Pregunta clásica del banco: *¿qué define mejor la hipoxia?* Respuesta: **un estado de deficiencia de oxígeno en el cuerpo**. Apréndelo tal cual."
+          "md": "Pregunta clásica del banco: *¿qué define mejor la hipoxia?* Respuesta: **un estado de deficiencia de oxígeno en el cuerpo**. Cuidado con los distractores: 'aumento anormal del volumen respiratorio' es hiperventilación, y 'burbujas de gas en articulaciones' es enfermedad por descompresión."
         },
         {
           "type": "notebook",
@@ -86,12 +139,12 @@
           "id": "17-2-c1",
           "q": "¿Qué enunciado define mejor la hipoxia?",
           "options": [
-            "Un exceso de dióxido de carbono en la sangre.",
+            "Un aumento anormal del volumen de aire respirado.",
             "Un estado de deficiencia de oxígeno en el cuerpo.",
-            "Una respiración demasiado rápida por estrés."
+            "Una afección de formación de burbujas de gas alrededor de las articulaciones o los músculos."
           ],
           "answer": 1,
-          "why": "Hipoxia = deficiencia de oxígeno. Lo de respirar rápido por estrés es hiperventilación, algo distinto."
+          "why": "Hipoxia = deficiencia de oxígeno. El aumento del volumen respiratorio es hiperventilación; las burbujas de gas son enfermedad por descompresión."
         },
         {
           "type": "check",
@@ -104,18 +157,42 @@
           ],
           "answer": 0,
           "why": "Hipóxica = falta oxígeno en el aire respirado; es la típica de la altura y la más común en aviación."
+        },
+        {
+          "type": "check",
+          "id": "17-2-c3",
+          "q": "El tipo de hipoxia en el que la sangre no puede transportar bien el oxígeno (por anemia o monóxido de carbono) se llama:",
+          "options": [
+            "Hipoxia estancada.",
+            "Hipoxia histotóxica.",
+            "Hipoxia hipémica."
+          ],
+          "answer": 2,
+          "why": "Hipémica = la sangre no lleva el oxígeno; el monóxido de carbono la provoca al ocupar el lugar del O2 en la hemoglobina."
+        },
+        {
+          "type": "check",
+          "id": "17-2-c4",
+          "q": "Un piloto sometido a fuerzas G intensas puede sufrir hipoxia porque la sangre deja de circular bien. Ese tipo es la hipoxia:",
+          "options": [
+            "Hipóxica.",
+            "Estancada.",
+            "Histotóxica."
+          ],
+          "answer": 1,
+          "why": "Estancada = la sangre no fluye (fuerzas G, frío extremo); hay oxígeno, pero no llega a los tejidos."
         }
       ]
     },
     {
       "id": "17-3",
-      "title": "Por qué la hipoxia es traicionera (y peligrosa en la sierra)",
+      "title": "Por qué la hipoxia es traicionera (y el oxígeno suplementario)",
       "key_points": [
         "La hipoxia es traicionera porque no duele y produce una euforia engañosa: te sientes bien mientras rindes cada vez peor.",
         "Sus síntomas incluyen visión reducida, juicio lento, hormigueo, dolor de cabeza y, tarde, cianosis (labios y uñas azulados).",
         "Los efectos empiezan a notarse alrededor de los 10.000-12.000 pies; la visión nocturna se afecta desde los 5.000 pies.",
         "El tiempo de conciencia útil (TUC) es cuánto puedes actuar con sentido antes de desmayarte, y se acorta mucho con la altura.",
-        "En Perú, volar sobre la sierra alta significa exponerte a hipoxia con más facilidad: usa oxígeno o mantén altitudes seguras.",
+        "Por encima de 10.000 pies de altitud de presión de cabina se exige oxígeno suplementario; entre 10.000 y 13.000 pies, para el tiempo que exceda 30 minutos.",
         "El tratamiento es bajar de altura y/o usar oxígeno suplementario."
       ],
       "blocks": [
@@ -128,6 +205,19 @@
           "md": "Los síntomas: visión que se estrecha, juicio y reacciones lentas, hormigueo, dolor de cabeza y, ya tarde, **cianosis** (labios y uñas azulados). Empiezan alrededor de los **10.000-12.000 pies**; la **visión nocturna** se afecta desde los **5.000 pies**. El **tiempo de conciencia útil (TUC)** —cuánto puedes actuar con sentido antes de desmayarte— se desploma con la altura: a 18.000 pies son unos 20-30 minutos; mucho más arriba, segundos."
         },
         {
+          "type": "text",
+          "md": "Escenario: vas cruzando la sierra a 12.000 pies, sin oxígeno, y te sientes de maravilla, tarareando. Eso **es** la trampa: la euforia. No confíes en cómo te sientes; confía en el altímetro y el reloj. Por eso existen reglas de oxígeno que no dependen de tus sensaciones."
+        },
+        {
+          "type": "text",
+          "md": "El **oxígeno suplementario** deja de ser opcional según la altitud de presión de cabina. **Por encima de 10.000 pies**, ninguna persona puede operar sin que cada ocupante reciba oxígeno. Entre **10.000 y 13.000 pies** (incluidos), la tripulación debe usarlo para el tiempo de vuelo que **exceda los 30 minutos** a esa altitud."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta los números exactos: entre **10.000 y 13.000 pies**, oxígeno para el tiempo que **exceda 30 minutos**; y **por encima de 10.000 pies** de altitud de presión de cabina, oxígeno para **cada ocupante**. Apréndelos tal cual."
+        },
+        {
           "type": "callout",
           "style": "ojo",
           "md": "Volar sobre la **sierra peruana** te acerca a esas altitudes sin que lo notes. Si no tienes oxígeno a bordo, mantén altitudes seguras. Ante cualquier síntoma: **baja de altura** y usa **oxígeno** si lo tienes."
@@ -135,7 +225,7 @@
         {
           "type": "notebook",
           "id": "17-3-n1",
-          "prompt": "Escribe por qué la hipoxia es más peligrosa que otras emergencias: incluye la palabra 'euforia' y explica qué es el TUC en una frase. Luego anota qué dos cosas haces si sospechas hipoxia."
+          "prompt": "Escribe por qué la hipoxia es más peligrosa que otras emergencias: incluye la palabra 'euforia' y explica qué es el TUC en una frase. Luego anota los dos números de oxígeno (altitud sobre la que se exige, y minutos de gracia entre 10.000 y 13.000 pies)."
         },
         {
           "type": "check",
@@ -148,6 +238,42 @@
           ],
           "answer": 1,
           "why": "La euforia engañosa hace que el piloto no perciba que está fallando: por eso es tan peligrosa."
+        },
+        {
+          "type": "check",
+          "id": "17-3-c2",
+          "q": "A menos que cada ocupante reciba oxígeno suplementario, ninguna persona puede operar por encima de una altitud de presión de cabina de:",
+          "options": [
+            "10.000 pies.",
+            "12.500 pies.",
+            "14.000 pies."
+          ],
+          "answer": 0,
+          "why": "Por encima de 10.000 pies de altitud de presión de cabina se exige oxígeno para cada ocupante."
+        },
+        {
+          "type": "check",
+          "id": "17-3-c3",
+          "q": "Operando entre 10.000 y 13.000 pies de altitud de presión de cabina, se debe usar oxígeno suplementario durante:",
+          "options": [
+            "Todo el tiempo de vuelo a esas altitudes.",
+            "El tiempo de vuelo que exceda los 10 minutos.",
+            "El tiempo de vuelo que exceda los 30 minutos."
+          ],
+          "answer": 2,
+          "why": "Entre 10.000 y 13.000 pies hay 30 minutos de gracia; a partir de ahí, oxígeno obligatorio."
+        },
+        {
+          "type": "check",
+          "id": "17-3-c4",
+          "q": "Sientes hormigueo y notas que reaccionas lento volando alto, sin oxígeno a bordo. La acción correcta es:",
+          "options": [
+            "Subir un poco para 'despejar la cabeza'.",
+            "Descender a una altitud más baja de inmediato.",
+            "Acelerar la respiración para tomar más aire."
+          ],
+          "answer": 1,
+          "why": "El tratamiento de la hipoxia es bajar de altura y/o usar oxígeno; subir empeora la falta de O2."
         }
       ]
     },
@@ -170,6 +296,15 @@
         {
           "type": "text",
           "md": "El problema: sus síntomas —mareo, hormigueo, visión borrosa, sensación de ahogo— son **casi iguales** a los de la hipoxia. ¿Cómo las distingues? La hiperventilación **no viene de la altura** y suele empezar con un susto. El **tratamiento**: baja el ritmo de tu respiración, respira dentro de una **bolsa de papel** o **habla en voz alta** para retener CO2."
+        },
+        {
+          "type": "table",
+          "headers": ["", "Hipoxia", "Hiperventilación"],
+          "rows": [
+            ["Causa", "Falta de oxígeno (altura)", "Estrés, ansiedad, miedo"],
+            ["Gas alterado", "Falta O2", "Se pierde CO2"],
+            ["Tratamiento", "Bajar / usar oxígeno", "Respirar lento / bolsa / hablar"]
+          ]
         },
         {
           "type": "callout",
@@ -209,6 +344,18 @@
           ],
           "answer": 0,
           "why": "El desencadenante típico es el estrés: el miedo te hace respirar de más sin darte cuenta."
+        },
+        {
+          "type": "check",
+          "id": "17-4-c3",
+          "q": "En una situación estresante en vuelo, un aumento anormal del volumen de aire inhalado y exhalado se conoce como:",
+          "options": [
+            "Hiperventilación.",
+            "Aerosinusitis.",
+            "Aerotitis."
+          ],
+          "answer": 0,
+          "why": "Ese aumento anormal del volumen respiratorio por estrés es la definición de hiperventilación."
         }
       ]
     },
@@ -230,7 +377,11 @@
         },
         {
           "type": "text",
-          "md": "En el avión suele entrar por la **calefacción de cabina**, que calienta el aire cerca del escape del motor. El CO **se pega a la hemoglobina** y le roba el asiento al oxígeno: por eso es hipoxia **hipémica**. Síntomas: dolor de cabeza, sueño, mareo y, en dosis grandes, **pérdida de fuerza muscular**. Y peor: eres **más susceptible al CO a mayor altitud**, porque ya te falta oxígeno."
+          "md": "En el avión suele entrar por la **calefacción de cabina**, que calienta el aire cerca del escape del motor. El CO **se pega a la hemoglobina** y le roba el asiento al oxígeno. Síntomas: dolor de cabeza, sueño, mareo y, en dosis grandes, **pérdida de fuerza muscular**. Y peor: eres **más susceptible al CO a mayor altitud**, porque ya te falta oxígeno."
+        },
+        {
+          "type": "text",
+          "md": "Escenario: es un vuelo frío, prendes la calefacción, y a los minutos te empieza a doler la cabeza y te da sueño. Primer sospechoso: **CO**. No lo achaques al cansancio. Actúa como si hubiera fuga hasta demostrar lo contrario."
         },
         {
           "type": "callout",
@@ -252,11 +403,11 @@
           "id": "17-5-c1",
           "q": "La susceptibilidad al envenenamiento por monóxido de carbono aumenta a medida que:",
           "options": [
-            "Baja la temperatura exterior.",
             "Aumenta la altitud.",
+            "Baja la temperatura exterior.",
             "Disminuye la velocidad del avión."
           ],
-          "answer": 1,
+          "answer": 0,
           "why": "A más altura ya hay menos oxígeno, así que el CO que bloquea la hemoglobina hace aún más daño."
         },
         {
@@ -264,12 +415,36 @@
           "id": "17-5-c2",
           "q": "Grandes acumulaciones de monóxido de carbono en el cuerpo dan como resultado:",
           "options": [
-            "Aumento de la fuerza muscular.",
+            "Una mayor sensación de bienestar.",
             "Pérdida de potencia muscular.",
-            "Mejor visión nocturna."
+            "Opresión únicamente en la frente."
           ],
           "answer": 1,
           "why": "El CO impide que el oxígeno llegue a los músculos: por eso aparece pérdida de potencia muscular."
+        },
+        {
+          "type": "check",
+          "id": "17-5-c3",
+          "q": "En un C-172, la fuente más probable de monóxido de carbono en la cabina es:",
+          "options": [
+            "El sistema eléctrico de las luces.",
+            "La calefacción de cabina, que toma aire cerca del escape del motor.",
+            "El tanque de combustible en las alas."
+          ],
+          "answer": 1,
+          "why": "La calefacción calienta aire junto al escape; si hay una fisura, el CO entra por ahí a la cabina."
+        },
+        {
+          "type": "check",
+          "id": "17-5-c4",
+          "q": "Con la calefacción encendida sientes dolor de cabeza y algo de olor a gases de escape. Tu PRIMERA acción debe ser:",
+          "options": [
+            "Subir de altura para alejarte del olor.",
+            "Cerrar la calefacción y abrir la ventilación de aire fresco.",
+            "Encender un cigarrillo para calmar los nervios."
+          ],
+          "answer": 1,
+          "why": "Cortas la fuente de CO (calefacción) y traes aire limpio; luego consideras oxígeno y aterrizar."
         }
       ]
     },
@@ -294,9 +469,22 @@
           "md": "Para ayudar a igualar la presión del oído usas la **maniobra de Valsalva**: tapa tu nariz, cierra la boca y sopla **suave**. También sirve bostezar, tragar o mascar chicle. ¿El problema mayor? Volar **resfriado o congestionado**: la mucosidad tapa los conductos y el aire no puede igualarse, causando dolor fuerte o hasta daño."
         },
         {
+          "type": "table",
+          "headers": ["Fase", "El aire del oído", "Dolor"],
+          "rows": [
+            ["Ascenso", "Sale solo, fácil", "Raro"],
+            ["Descenso", "Cuesta que entre, se atrapa", "Frecuente (bloqueo)"]
+          ]
+        },
+        {
           "type": "callout",
           "style": "ojo",
           "md": "Regla de oro: **no vueles resfriado**. Un descenso con los senos o el oído bloqueados puede ser muy doloroso e incapacitante justo cuando más concentrado necesitas estar."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**Sube = sale / Baja = bloquea**. El oído sufre en el **descenso**. Contra el bloqueo: Valsalva (tapa nariz + sopla suave), tragar, bostezar o mascar chicle."
         },
         {
           "type": "notebook",
@@ -314,6 +502,30 @@
           ],
           "answer": 1,
           "why": "Al bajar aumenta la presión externa y el aire cuesta entrar: Valsalva, tragar o bostezar igualan la presión."
+        },
+        {
+          "type": "check",
+          "id": "17-6-c2",
+          "q": "¿Por qué no conviene volar con un resfriado fuerte o la nariz muy congestionada?",
+          "options": [
+            "Porque la mucosidad tapa los conductos y el aire no puede igualarse, causando dolor o daño.",
+            "Porque el resfriado hace que el altímetro marque mal.",
+            "Porque a mayor altura el resfriado desaparece solo sin riesgo."
+          ],
+          "answer": 0,
+          "why": "Los conductos tapados impiden igualar la presión; en el descenso eso causa un bloqueo muy doloroso e incapacitante."
+        },
+        {
+          "type": "check",
+          "id": "17-6-c3",
+          "q": "La maniobra de Valsalva se hace correctamente al:",
+          "options": [
+            "Respirar muy rápido por la boca.",
+            "Tapar la nariz, cerrar la boca y soplar suave.",
+            "Contener la respiración durante todo el descenso."
+          ],
+          "answer": 1,
+          "why": "Con nariz tapada y boca cerrada, un soplido suave empuja aire hacia el oído medio y lo iguala."
         }
       ]
     },
@@ -344,6 +556,10 @@
           "md": "Dentro del oído tienes los **canales semicirculares**, llenos de líquido, que sienten los giros. El problema: un giro **lento y sostenido** deja de sentirse; al nivelar, sientes que giras al otro lado —eso se llama **'the leans'**—. Si mueves la cabeza en pleno giro, aparece la **ilusión de Coriolis**: sientes que el avión cabecea o rota de golpe. Todo empeora **sin referencias visuales**, dentro de nubes (IMC)."
         },
         {
+          "type": "text",
+          "md": "Escenario mortal: un piloto VFR entra sin querer en una nube. Sin horizonte, su oído interno empieza a inventar. Cree estar nivelado cuando en realidad está en un viraje que se cierra —la 'espiral de la muerte'—. Por eso volar VFR dentro de nubes lleva a la desorientación y al choque contra el terreno."
+        },
+        {
           "type": "callout",
           "style": "examen",
           "md": "El banco lo pregunta mucho: el peligro de la desorientación se reduce **confiando en los instrumentos** en lugar de tus sensaciones; y eres más propenso cuando **se eliminan las señales visuales (IMC)**. Volar VFR dentro de nubes lleva a desorientación y choque contra el terreno."
@@ -359,11 +575,11 @@
           "q": "Si un piloto sufre desorientación espacial con visibilidad restringida, la mejor forma de superarla es:",
           "options": [
             "Confiar en las indicaciones de los instrumentos del avión.",
-            "Confiar en lo que sienten el cuerpo y el oído interno.",
+            "Concentrarse en las sensaciones de guiñada, cabeceo y alabeo.",
             "Cerrar los ojos hasta que pase la sensación."
           ],
           "answer": 0,
-          "why": "Sin referencias visuales el oído interno miente; los instrumentos dicen la verdad de tu actitud."
+          "why": "Los instrumentos muestran tu actitud real; guiarte por las sensaciones del cuerpo solo empeora el engaño."
         },
         {
           "type": "check",
@@ -372,10 +588,34 @@
           "options": [
             "El día está despejado y con horizonte visible.",
             "Se eliminan las señales visuales, como al entrar en condiciones IMC.",
-            "Vuelan a baja velocidad."
+            "Mueven los ojos a menudo verificando los instrumentos."
           ],
           "answer": 1,
           "why": "Sin horizonte a la vista, el cerebro depende del oído interno, que es poco confiable."
+        },
+        {
+          "type": "check",
+          "id": "17-7-c3",
+          "q": "La falta de orientación respecto a la posición, actitud o movimiento del avión en el espacio se define como:",
+          "options": [
+            "Hipoxia.",
+            "Desorientación espacial.",
+            "Hiperventilación."
+          ],
+          "answer": 1,
+          "why": "Esa es la definición exacta de desorientación espacial; las otras dos afectan el oxígeno o la respiración."
+        },
+        {
+          "type": "check",
+          "id": "17-7-c4",
+          "q": "¿Qué conduce a menudo a la desorientación espacial o al choque contra el terreno volando bajo reglas VFR?",
+          "options": [
+            "Continuar el vuelo VFR dentro de condiciones de instrumentos (nubes).",
+            "Volar a baja velocidad en un día despejado.",
+            "Escanear el cielo en busca de tráfico."
+          ],
+          "answer": 0,
+          "why": "Sin horizonte visible el piloto VFR pierde referencias y el oído interno lo engaña hasta el impacto."
         }
       ]
     },
@@ -447,6 +687,30 @@
           ],
           "answer": 0,
           "why": "Una pista angosta parece lejana/baja, así que te sientes alto y tiendes a descender de más."
+        },
+        {
+          "type": "check",
+          "id": "17-8-c3",
+          "q": "De noche, si fijas la vista en una sola luz quieta puede parecer que se mueve. Esta ilusión se llama:",
+          "options": [
+            "Autokinesis.",
+            "Somatográvica.",
+            "Falso horizonte."
+          ],
+          "answer": 0,
+          "why": "La autokinesis hace que una luz fija parezca moverse; por eso conviene no mirarla fijo y escanear."
+        },
+        {
+          "type": "check",
+          "id": "17-8-c4",
+          "q": "¿Cuál es la mejor defensa general contra las ilusiones visuales en la aproximación nocturna?",
+          "options": [
+            "Confiar en tus sensaciones físicas por encima de todo.",
+            "Confiar en los instrumentos y conocer la pista de antemano.",
+            "Aterrizar siempre lo más rápido posible."
+          ],
+          "answer": 1,
+          "why": "Los instrumentos no se dejan engañar por las luces; conocer la pista te avisa de anchos o pendientes raros."
         }
       ]
     },
@@ -469,6 +733,10 @@
         {
           "type": "text",
           "md": "Adaptarte a la oscuridad toma unos **30 minutos**; por eso hay que **evitar luces blancas brillantes** antes de un vuelo nocturno. Y de noche, para ver el tráfico, mira **ligeramente al costado** del objeto (visión descentrada) y escanea **lento**. De día es distinto: escanea en **sectores de máximo 10°**, deteniéndote **al menos 1 segundo** en cada uno para que el ojo enfoque."
+        },
+        {
+          "type": "text",
+          "md": "Un detalle traicionero: la **bruma**. Con neblina o calima, el tráfico y el terreno parecen **más lejanos** de lo que están de verdad. Es fácil creer que ese otro avión está lejísimos cuando en realidad lo tienes encima. Con bruma, redobla el escaneo y no confíes en la 'distancia' que ves."
         },
         {
           "type": "callout",
@@ -499,10 +767,34 @@
           "options": [
             "Barrer todo el cielo de un solo vistazo rápido.",
             "No exceder los 10 grados y observar cada sector al menos 1 segundo.",
-            "Fijarse solo en el horizonte lejano."
+            "Estar a 30 grados y observar cada sector al menos 3 segundos."
           ],
           "answer": 1,
           "why": "El ojo solo enfoca cuando se detiene; sectores de 10° con pausa de 1 seg permiten detectar el tráfico."
+        },
+        {
+          "type": "check",
+          "id": "17-9-c3",
+          "q": "El mejor método para buscar otro tráfico durante la noche es:",
+          "options": [
+            "Mirar directo al objeto y escanear muy rápido.",
+            "Mirar hacia el costado del objeto y escanear lentamente.",
+            "Fijar la vista en el centro del parabrisas sin moverla."
+          ],
+          "answer": 1,
+          "why": "De noche el centro de la visión es casi ciego; la visión descentrada y el escaneo lento usan los bastones."
+        },
+        {
+          "type": "check",
+          "id": "17-9-c4",
+          "q": "¿Qué efecto tiene la bruma sobre tu capacidad de ver el tráfico o el terreno?",
+          "options": [
+            "Hace que todo parezca más cerca de lo que está.",
+            "Hace que el tráfico y el terreno parezcan más lejos de lo que están.",
+            "No afecta la percepción de distancias."
+          ],
+          "answer": 1,
+          "why": "La bruma engaña haciendo ver los objetos más lejanos: puedes creer que un avión está lejos cuando está cerca."
         }
       ]
     },
@@ -521,6 +813,10 @@
         {
           "type": "text",
           "md": "El **alcohol** en vuelo es peor que en tierra: afecta tu **juicio, coordinación y visión**, y sus efectos **empeoran con la altitud** (un trago 'pega' como si fueran dos). Por eso la regla es estricta: **'de la botella al mando'** deben pasar al menos **8 horas**, y nunca puedes volar con **0,04%** o más de alcohol en sangre. Y jamás bajo la influencia del alcohol."
+        },
+        {
+          "type": "text",
+          "md": "Ojo: la resaca no cuenta como 'ya se me pasó'. Aunque hayan pasado las 8 horas, si todavía sientes los efectos de la noche anterior, no estás apto. Las 8 horas son un mínimo, no una garantía; tu juicio disminuido puede durar más."
         },
         {
           "type": "text",
@@ -551,7 +847,7 @@
             "Se puede volar 2 horas después de beber si es poca cantidad."
           ],
           "answer": 1,
-          "why": "'De la botella al mando': mínimo 8 horas y por debajo de 0,04%; además, nunca bajo la influencia."
+          "why": "'De la botella al mando': mínimo 8 horas y por debajo de 0,04% de alcohol en sangre."
         },
         {
           "type": "check",
@@ -564,6 +860,18 @@
           ],
           "answer": 1,
           "why": "Muchos remedios de venta libre dan sueño o afectan el juicio; solo el médico aeronáutico puede autorizarlos."
+        },
+        {
+          "type": "check",
+          "id": "17-10-c3",
+          "q": "Ninguna persona puede intentar actuar como miembro de la tripulación de una aeronave civil:",
+          "options": [
+            "Bajo la influencia del alcohol.",
+            "Después de las 6 de la tarde.",
+            "Sin haber comido antes del vuelo."
+          ],
+          "answer": 0,
+          "why": "La norma prohíbe desempeñar funciones de tripulante mientras se está bajo la influencia del alcohol."
         }
       ]
     },
@@ -588,9 +896,18 @@
           "md": "La **deshidratación** y el **calor** de la cabina dan fatiga, dolor de cabeza y mareo: toma **agua**. El **mareo de movimiento** (motion sickness) es igual al de leer el celular en un carro en curva: tus **ojos** y tu **oído interno** le dicen cosas distintas al cerebro. Y ojo con el **buceo**: tras bucear con equipo hay que **esperar de 12 a 24 horas** antes de volar, o te da la enfermedad por descompresión."
         },
         {
+          "type": "text",
+          "md": "¿Por qué esperar tras bucear? Bajo el agua tu cuerpo absorbe **nitrógeno**. Si subes de altura muy pronto, ese nitrógeno forma **burbujas** en la sangre y las articulaciones —la enfermedad por descompresión, dolorosa y peligrosa—. Por eso se esperan de **12 a 24 horas**, según qué tan profundo hayas buceado."
+        },
+        {
           "type": "callout",
           "style": "ojo",
           "md": "La fatiga **crónica** es traicionera: te acostumbras a estar cansado y crees que rindes bien. Descansar de verdad es la única cura; un café no la arregla."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "**Buceo → esperar 12 a 24 h antes de volar.** Nitrógeno + subir rápido = burbujas = enfermedad por descompresión."
         },
         {
           "type": "notebook",
@@ -620,6 +937,18 @@
           ],
           "answer": 1,
           "why": "El nitrógeno acumulado al bucear puede formar burbujas al subir de altura: por eso se espera 12-24 h."
+        },
+        {
+          "type": "check",
+          "id": "17-11-c3",
+          "q": "El mareo de movimiento (motion sickness) en vuelo se produce principalmente por:",
+          "options": [
+            "Un conflicto entre lo que ven los ojos y lo que siente el oído interno.",
+            "Falta de oxígeno en el aire de la cabina.",
+            "Comer poco antes del vuelo."
+          ],
+          "answer": 0,
+          "why": "Cuando los ojos y el oído interno le mandan señales distintas al cerebro, aparece el mareo, igual que leyendo en un carro en curva."
         }
       ]
     },
@@ -649,6 +978,10 @@
         {
           "type": "text",
           "md": "**I** = *Illness* (enfermedad): ¿estoy enfermo o resfriado? **M** = *Medication* (medicación): ¿tomé algo que da sueño? **S** = *Stress* (estrés): ¿estoy presionado? **A** = *Alcohol*: ¿respeté las 8 horas y estoy bajo 0,04%? **F** = *Fatigue* (fatiga): ¿descansé bien? **E** = *Emotion* (emoción): ¿algo me tiene alterado? Seis preguntas, treinta segundos, una vida."
+        },
+        {
+          "type": "text",
+          "md": "Fíjate cómo IMSAFE conecta todo el capítulo: la 'I' se acuerda de los oídos bloqueados por resfriado; la 'M' de los antihistamínicos con sueño; la 'A' de las 8 horas; la 'F' de la fatiga crónica. No es una lista de memoria vacía: es el resumen de todo lo que puede dejarte fuera de combate en vuelo."
         },
         {
           "type": "callout",
@@ -683,6 +1016,18 @@
           ],
           "answer": 1,
           "why": "IMSAFE sirve para eso: si un factor te disminuye, la decisión responsable es cancelar el vuelo."
+        },
+        {
+          "type": "check",
+          "id": "17-12-c3",
+          "q": "Dentro del chequeo IMSAFE, ¿cuándo deberías usarlo?",
+          "options": [
+            "Solo cuando te sientes mal antes de un vuelo largo.",
+            "Antes de cada vuelo, como autoevaluación del piloto.",
+            "Únicamente al renovar el certificado médico."
+          ],
+          "answer": 1,
+          "why": "IMSAFE es un chequeo rutinario antes de CADA vuelo, igual que la inspección exterior del avión."
         }
       ]
     }

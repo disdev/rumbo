@@ -2,6 +2,24 @@
   "chapter": "5",
   "title": "Aerodinámica del vuelo",
   "resumen": "Las cuatro fuerzas en acción: qué frena al avión, qué lo hace girar, qué lo mantiene estable y por qué la pérdida es cuestión de ángulo — uno de los temas más preguntados del banco.",
+  "videos": [
+    {
+      "title": "Las cuatro fuerzas y el equilibrio del vuelo",
+      "query": "cuatro fuerzas del vuelo sustentacion peso empuje resistencia piloto privado explicado español"
+    },
+    {
+      "title": "Resistencia parásita e inducida",
+      "query": "resistencia parasita e inducida aerodinamica aviación explicado español"
+    },
+    {
+      "title": "Factor de carga y virajes",
+      "query": "factor de carga virajes aviacion piloto privado español"
+    },
+    {
+      "title": "Pérdida y barrena: por qué ocurren",
+      "query": "perdida stall barrena spin avion angulo de ataque explicado español"
+    }
+  ],
   "sections": [
     {
       "id": "5-1",
@@ -10,7 +28,8 @@
         "Las cuatro fuerzas del vuelo son sustentación, peso, empuje y resistencia.",
         "En vuelo recto y nivelado no acelerado, sustentación = peso y empuje = resistencia.",
         "Las cuatro fuerzas están en equilibrio en todo vuelo no acelerado, incluso en ascensos o descensos constantes.",
-        "Equilibrio significa velocidad y dirección constantes, no que las fuerzas desaparezcan."
+        "Equilibrio significa velocidad y dirección constantes, no que las fuerzas desaparezcan.",
+        "Los cuatro fundamentos del vuelo son vuelo recto y nivelado, virajes, ascensos y descensos."
       ],
       "blocks": [
         {
@@ -26,6 +45,19 @@
           "type": "callout",
           "style": "examen",
           "md": "El banco lo pregunta directo: en vuelo recto y nivelado, **sustentación = peso** y **empuje = resistencia**. Y las cuatro fuerzas están en equilibrio durante el vuelo **no acelerado** — ojo: también en un ascenso o descenso constante, no solo nivelado."
+        },
+        {
+          "type": "text",
+          "md": "Un detalle que tumba a varios: los nombres oficiales. Son **sustentación, peso, empuje y resistencia** — el 'peso' YA ES la gravedad, no son dos cosas distintas. El banco mete listas trampa con 'gravedad', 'potencia' o 'fricción' mezcladas. Si ves dos nombres que significan lo mismo (peso y gravedad) en la misma lista, esa opción es trampa."
+        },
+        {
+          "type": "text",
+          "md": "¿Y cómo se vuela con estas fuerzas? Toda maniobra, por complicada que parezca, se arma combinando los **cuatro fundamentos del vuelo** (four fundamentals): **vuelo recto y nivelado, virajes, ascensos y descensos**. Como en un videojuego de pelea: todos los combos salen de cuatro botones básicos. Un circuito de tráfico completo no es más que esos cuatro fundamentos encadenados."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Otra directa del banco: los cuatro fundamentos de vuelo al maniobrar son **recto y nivelado, virajes, ascensos y descensos**. Las trampas: fases de la operación (arranque, rodaje, despegue, aterrizaje) o controles (potencia, cabeceo, inclinación, compensación). Fundamentos ≠ fases ≠ controles."
         },
         {
           "type": "notebook",
@@ -55,6 +87,30 @@
           ],
           "answer": 0,
           "why": "Velocidad y dirección constantes = equilibrio, aunque estés subiendo o bajando."
+        },
+        {
+          "type": "check",
+          "id": "5-1-c3",
+          "q": "Las cuatro fuerzas que actúan sobre un avión en vuelo son:",
+          "options": [
+            "Sustentación, peso, empuje y resistencia.",
+            "Sustentación, peso, gravedad y empuje.",
+            "Sustentación, gravedad, potencia y fricción."
+          ],
+          "answer": 0,
+          "why": "Peso y gravedad son lo mismo: la lista correcta no repite conceptos ni mete 'potencia' o 'fricción'."
+        },
+        {
+          "type": "check",
+          "id": "5-1-c4",
+          "q": "Selecciona los cuatro fundamentos de vuelo que intervienen al maniobrar una aeronave:",
+          "options": [
+            "Vuelo recto y nivelado, virajes, ascensos y descensos.",
+            "Potencia, cabeceo, inclinación y compensación de la aeronave.",
+            "Arranque, rodaje, despegue y aterrizaje."
+          ],
+          "answer": 0,
+          "why": "Toda maniobra se construye combinando esos cuatro fundamentos; lo demás son controles o fases del vuelo."
         }
       ]
     },
@@ -65,7 +121,9 @@
         "En un ascenso estable el avión sube por exceso de potencia, no por sustentación extra.",
         "En el ascenso la trayectoria está inclinada y la sustentación es un poco menor que en vuelo nivelado.",
         "En un planeo, una componente del peso actúa hacia adelante y reemplaza al empuje.",
-        "Levantar la nariz sin agregar potencia solo hace perder velocidad."
+        "Levantar la nariz sin agregar potencia solo hace perder velocidad.",
+        "En una aproximación de emergencia se mantiene una velocidad de planeo constante para poder juzgar la distancia y el punto de toque.",
+        "Aterrizar con viento de cola implica mayor velocidad sobre el suelo, carrera más larga y riesgo de pasarse del punto."
       ],
       "blocks": [
         {
@@ -80,6 +138,14 @@
           "type": "callout",
           "style": "clave",
           "md": "Subes con **potencia**, no jalando el bastón: si solo levantas la nariz sin agregar potencia, el avión pierde velocidad y termina bajando (o algo peor)."
+        },
+        {
+          "type": "text",
+          "md": "Esto se pone serio el día que el motor falla. En una **aproximación de emergencia** planeando, mantienes una velocidad de planeo **constante** (la de mejor planeo del manual). ¿Por qué tan estricto? Porque si la velocidad varía, se vuelve imposible juzgar con precisión hasta dónde llegas y en qué punto vas a tocar. Velocidad constante = distancia de planeo predecible. Como patear penales: siempre con la misma carrera, o no controlas dónde cae."
+        },
+        {
+          "type": "text",
+          "md": "Otro escenario que pregunta el banco: una emergencia te obliga a aterrizar **a favor del viento** (con viento de cola). Espera tres cosas: **mayor velocidad sobre el suelo** al tocar, una **carrera de aterrizaje más larga** y la probabilidad de **pasarte** del punto deseado. Es como llegar en bici con viento de espalda: entras más rápido y frenas más largo."
         },
         {
           "type": "notebook",
@@ -97,6 +163,42 @@
           ],
           "answer": 0,
           "why": "La capacidad de ascenso depende del empuje que sobra tras vencer la resistencia."
+        },
+        {
+          "type": "check",
+          "id": "5-2-c2",
+          "q": "En una aproximación de emergencia sin motor, es importante mantener una velocidad de planeo constante porque las variaciones de velocidad:",
+          "options": [
+            "Anulan toda precisión para juzgar la distancia de planeo y el punto de aterrizaje.",
+            "Aumentan las posibilidades de que el motor se enfríe demasiado.",
+            "Impiden mantener el ángulo de descenso adecuado hasta la nivelada final."
+          ],
+          "answer": 0,
+          "why": "Con velocidad variable no puedes predecir hasta dónde llega el planeo ni dónde tocarás."
+        },
+        {
+          "type": "check",
+          "id": "5-2-c3",
+          "q": "Una emergencia te obliga a aterrizar a favor del viento. Debes esperar:",
+          "options": [
+            "Mayor velocidad sobre el suelo al tocar, carrera más larga y riesgo de pasarte del punto deseado.",
+            "Mayor velocidad sobre el suelo al tocar, carrera más corta y riesgo de quedarte corto.",
+            "Mayor velocidad indicada al tocar y mejor control durante toda la carrera de aterrizaje."
+          ],
+          "answer": 0,
+          "why": "El viento de cola suma a tu velocidad sobre el suelo: tocas más rápido y necesitas más pista."
+        },
+        {
+          "type": "check",
+          "id": "5-2-c4",
+          "q": "Volando nivelado, levantas la nariz sin agregar potencia. ¿Qué pasa?",
+          "options": [
+            "El avión pierde velocidad y termina descendiendo.",
+            "El avión asciende de forma sostenida gracias a la sustentación extra.",
+            "El avión mantiene altitud y velocidad sin cambios."
+          ],
+          "answer": 0,
+          "why": "Subir de verdad requiere exceso de potencia; solo jalar el bastón intercambia velocidad por unos metros, nada más."
         }
       ]
     },
@@ -129,6 +231,10 @@
           "md": "El dato clave: la parásita crece con el **cuadrado** de la velocidad. Si duplicas la velocidad, esta resistencia se multiplica por **cuatro**. Por eso, cuanto más rápido vuelas, más manda la parásita — igual que en la moto: a 30 km/h ni sientes el viento, a 90 km/h te aplasta."
         },
         {
+          "type": "text",
+          "md": "Aplícalo a un avión real: ¿tren de aterrizaje colgando al viento? Resistencia **de forma**. ¿Fuselaje sucio, con insectos pegados y remaches salidos? **De fricción**. ¿La unión ala-fuselaje o los montantes? **De interferencia**. Por eso los aviones rápidos esconden el tren, se pulen como carro de concurso y llevan **carenados** (fairings) suavizando cada unión: cada pieza expuesta al viento es velocidad que pierdes."
+        },
+        {
           "type": "notebook",
           "id": "5-3-n1",
           "prompt": "Copia la tabla de los tres tipos de resistencia parásita y agrega un ejemplo tuyo en cada fila. Debajo escribe: 'doble velocidad → 4× resistencia parásita'."
@@ -156,6 +262,30 @@
           ],
           "answer": 0,
           "why": "Donde se encuentran dos corrientes de aire (uniones), los flujos chocan y crean resistencia extra."
+        },
+        {
+          "type": "check",
+          "id": "5-3-c3",
+          "q": "Vuelas un avión de tren retráctil y olvidas subir el tren después del despegue. ¿Qué tipo de resistencia aumenta principalmente?",
+          "options": [
+            "De forma: hay más silueta enfrentando al aire.",
+            "Inducida: el ala debe generar más sustentación.",
+            "De fricción: el aire raspa más superficie pulida."
+          ],
+          "answer": 0,
+          "why": "El tren colgando agranda la silueta que enfrenta al aire: resistencia parásita de forma."
+        },
+        {
+          "type": "check",
+          "id": "5-3-c4",
+          "q": "En crucero a alta velocidad, la mayor parte de la resistencia total del avión es:",
+          "options": [
+            "Parásita.",
+            "Inducida.",
+            "De interferencia únicamente."
+          ],
+          "answer": 0,
+          "why": "La parásita crece con el cuadrado de la velocidad: a alta velocidad, es la que domina."
         }
       ]
     },
@@ -189,6 +319,10 @@
           "md": "En el punto **L/D máx** la resistencia parásita y la inducida son **iguales**. Esa es la velocidad de mejor planeo — la que usarías si el motor falla."
         },
         {
+          "type": "text",
+          "md": "Escenario: el motor falla a 3,000 ft. ¿Qué haces primero con la velocidad? La ajustas a la de **mejor planeo** (best glide) que da el manual de tu avión — es la que corresponde a L/D máx. ¿Más rápido? La parásita te come y llegas menos lejos. ¿Más lento? La inducida te come, y además te acercas a la pérdida. Por eso el instructor repite: primero VELOCIDAD de planeo, después buscas campo."
+        },
+        {
           "type": "notebook",
           "id": "5-4-n1",
           "prompt": "Copia la curva de resistencias: parásita subiendo, inducida bajando, total en forma de U. Marca con un punto grande el mínimo y escríbele 'L/D máx = mejor planeo'."
@@ -216,6 +350,30 @@
           ],
           "answer": 0,
           "why": "En L/D máx, parásita e inducida se igualan y su suma (la total) es la menor posible."
+        },
+        {
+          "type": "check",
+          "id": "5-4-c3",
+          "q": "Justo en el punto L/D máx, ¿cuál es la relación entre la resistencia parásita y la inducida?",
+          "options": [
+            "Son iguales.",
+            "La parásita es máxima y la inducida es cero.",
+            "La inducida es el doble de la parásita."
+          ],
+          "answer": 0,
+          "why": "El mínimo de la curva total ocurre exactamente donde las dos resistencias se cruzan."
+        },
+        {
+          "type": "check",
+          "id": "5-4-c4",
+          "q": "El motor falla en crucero y planeas bastante MÁS RÁPIDO que la velocidad de mejor planeo. Tu alcance:",
+          "options": [
+            "Disminuye, porque la resistencia parásita crece y planeas menos lejos.",
+            "Aumenta, porque a más velocidad siempre recorres más distancia.",
+            "No cambia, porque el alcance de planeo no depende de la velocidad."
+          ],
+          "answer": 0,
+          "why": "Lejos de L/D máx — por arriba o por abajo — la resistencia total sube y el planeo rinde menos."
         }
       ]
     },
@@ -250,6 +408,15 @@
           "md": "¿Cómo te proteges detrás de un avión grande? Al **aterrizar**: mantente **por encima** de su trayectoria de aproximación final y toca tierra **más allá** de su punto de toque. Al **despegar**: rota **antes** del punto donde él rotó y sube por encima de su trayectoria, virando hacia el lado de donde viene el viento. Y máxima precaución con **viento de cola ligero**: puede devolver los vórtices a tu zona de toma."
         },
         {
+          "type": "table",
+          "headers": ["Situación", "Qué hacer"],
+          "rows": [
+            ["Aterrizar tras avión grande", "Vuela POR ENCIMA de su final; toca MÁS ALLÁ de su punto de toque"],
+            ["Despegar tras avión grande", "Rota ANTES de su punto de rotación; sube por encima y contra el viento"],
+            ["Viento de cola ligero", "Máxima precaución: empuja los vórtices de vuelta a la pista"]
+          ]
+        },
+        {
           "type": "callout",
           "style": "examen",
           "md": "De aquí caen varias del banco: los vórtices se crean **al generar sustentación**; el peor caso es **pesado + limpio + lento**; giran **hacia afuera y arriba**; se **hunden** debajo y detrás; y el viento más peligroso al aterrizar es el **de cola ligero**."
@@ -282,6 +449,30 @@
           ],
           "answer": 0,
           "why": "Los vórtices se hunden: volando por encima y tocando más allá, te mantienes fuera de ellos."
+        },
+        {
+          "type": "check",
+          "id": "5-5-c3",
+          "q": "¿Cómo circula el vórtice de estela turbulenta alrededor de cada punta de ala?",
+          "options": [
+            "Hacia afuera, hacia arriba y alrededor de cada punta.",
+            "Hacia adentro, hacia arriba y alrededor de cada punta.",
+            "Hacia afuera, hacia abajo y en sentido antihorario."
+          ],
+          "answer": 0,
+          "why": "El aire de alta presión escapa por la punta hacia arriba y afuera, formando el remolino."
+        },
+        {
+          "type": "check",
+          "id": "5-5-c4",
+          "q": "La condición de viento que exige máxima precaución por estela turbulenta al aterrizar es:",
+          "options": [
+            "Un viento de cola ligero.",
+            "Un viento de frente ligero.",
+            "Un viento de frente fuerte."
+          ],
+          "answer": 0,
+          "why": "Un viento de cola suave empuja los vórtices del avión precedente de vuelta hacia tu zona de toque."
         }
       ]
     },
@@ -319,6 +510,10 @@
           "md": "El eje **LONG**itudinal es el **LARGO** (de nariz a cola) y sobre él te ladeas. El **LATERAL** va de a**LA** a a**LA**. Y el **VERTICAL** mueve la nariz de lado a lado, como una **VELETA**."
         },
         {
+          "type": "text",
+          "md": "Ojo con el rol de cada mando, porque el banco lo pregunta seco: el propósito del **timón de dirección** (rudder) es **controlar la guiñada** — punto. No es 'girar el avión' ni 'inclinarlo'. Como en tu simulador favorito: pedales = nariz de lado a lado; bastón a los costados = alerones = ladeo; bastón adelante/atrás = profundidad = nariz arriba/abajo. Cada mando, un eje."
+        },
+        {
           "type": "notebook",
           "id": "5-6-n1",
           "prompt": "Dibuja tu avión visto desde arriba y traza los tres ejes con colores distintos. En cada eje escribe su movimiento (alabeo, cabeceo, guiñada) y la superficie que lo controla."
@@ -346,6 +541,30 @@
           ],
           "answer": 0,
           "why": "Toda rotación del avión ocurre alrededor de su centro de gravedad."
+        },
+        {
+          "type": "check",
+          "id": "5-6-c3",
+          "q": "¿Cuál es el propósito del timón de dirección de un avión?",
+          "options": [
+            "Controlar la guiñada.",
+            "Controlar el alabeo.",
+            "Controlar la tendencia a la sobre-inclinación."
+          ],
+          "answer": 0,
+          "why": "El timón de dirección mueve la nariz de lado a lado: guiñada, alrededor del eje vertical."
+        },
+        {
+          "type": "check",
+          "id": "5-6-c4",
+          "q": "Mueves el bastón a la izquierda y las alas se ladean. Ese movimiento de alabeo ocurre alrededor del eje:",
+          "options": [
+            "Longitudinal.",
+            "Lateral.",
+            "Vertical."
+          ],
+          "answer": 0,
+          "why": "El alabeo rueda el avión sobre el eje que va de nariz a cola: el longitudinal."
         }
       ]
     },
@@ -371,6 +590,10 @@
           "type": "callout",
           "style": "examen",
           "md": "El banco lo pregunta tal cual: un avión inherentemente estable **requiere menos esfuerzo para controlarlo**. No significa que no gire ni que sea imposible entrar en pérdida."
+        },
+        {
+          "type": "text",
+          "md": "Mira la parte dinámica en acción: sueltas el bastón y la nariz baja un poco; el avión acelera, gana sustentación y la nariz sube; luego pierde velocidad y vuelve a bajar… Si cada 'olita' sale más chica que la anterior hasta desaparecer, tienes estabilidad dinámica **positiva** — así se comportan los aviones de entrenamiento. Si las olitas crecieran cada vez más, sería **negativa**: tendrías que corregir tú, todo el tiempo."
         },
         {
           "type": "notebook",
@@ -400,6 +623,30 @@
           ],
           "answer": 0,
           "why": "Positiva = la primera tendencia es regresar, como la canica en el tazón."
+        },
+        {
+          "type": "check",
+          "id": "5-7-c3",
+          "q": "Tras una ráfaga, el avión oscila en cabeceo con oscilaciones cada vez más pequeñas hasta desaparecer. Eso describe:",
+          "options": [
+            "Estabilidad dinámica positiva.",
+            "Estabilidad dinámica negativa.",
+            "Estabilidad estática neutra."
+          ],
+          "answer": 0,
+          "why": "Lo que pasa con las oscilaciones EN EL TIEMPO es la parte dinámica; si se apagan, es positiva."
+        },
+        {
+          "type": "check",
+          "id": "5-7-c4",
+          "q": "Empujas la nariz un poco hacia abajo, sueltas, y el avión se queda en esa nueva actitud sin regresar ni alejarse más. Su estabilidad estática es:",
+          "options": [
+            "Neutra.",
+            "Positiva.",
+            "Negativa."
+          ],
+          "answer": 0,
+          "why": "Quedarse donde lo dejaste — como la canica en la mesa plana — es estabilidad estática neutra."
         }
       ]
     },
@@ -429,6 +676,10 @@
           "md": "Tres seguras del banco: la estabilidad longitudinal la determina la **ubicación del CG respecto al centro de sustentación**; los cambios del **centro de presión** afectan el equilibrio aerodinámico y la controlabilidad; y **CG atrás del límite** = menos estable y difícil recuperar la pérdida."
         },
         {
+          "type": "text",
+          "md": "Ponlo en escena: estás en final, reduces potencia para descender… y sientes que la nariz quiere caer sola. No es magia: con menos chorro de hélice, la cola 'vuela' con menos aire y su fuerza hacia abajo se debilita. ¿La excepción? Los aviones con **cola en T**: su estabilizador va arriba, fuera del chorro de la hélice, así que casi no lo sienten. Por eso el examen dice 'excepto cola en T'."
+        },
+        {
           "type": "notebook",
           "id": "5-8-n1",
           "prompt": "Dibuja un balancín: el triángulo de apoyo es el centro de presión, el CG adelante como una pesa, y en la cola una flecha hacia abajo. Escribe: 'la cola empuja hacia abajo para equilibrar'."
@@ -456,6 +707,30 @@
           ],
           "answer": 0,
           "why": "Con el CG muy atrás, la cola no tiene autoridad para bajar la nariz y romper la pérdida."
+        },
+        {
+          "type": "check",
+          "id": "5-8-c3",
+          "q": "¿Qué hace que un avión (excepto uno con cola en T) baje la nariz cuando se reduce la potencia sin ajustar los mandos?",
+          "options": [
+            "Disminuye el flujo de la hélice sobre la cola y el timón de profundidad pierde eficacia.",
+            "El CG se desplaza hacia adelante al reducirse el empuje y la resistencia.",
+            "Con menos empuje que peso, la sustentación se reduce y las alas ya no soportan el avión."
+          ],
+          "answer": 0,
+          "why": "La cola trabaja bañada por el chorro de la hélice: menos potencia, menos autoridad del elevador."
+        },
+        {
+          "type": "check",
+          "id": "5-8-c4",
+          "q": "Cargar el avión con el CG hacia el límite posterior lo hace:",
+          "options": [
+            "Menos estable a todas las velocidades.",
+            "Menos estable a bajas velocidades, pero más estable a altas.",
+            "Menos estable a altas velocidades, pero más estable a bajas."
+          ],
+          "answer": 0,
+          "why": "El CG atrás acorta el brazo de palanca de la cola: la estabilidad se degrada a cualquier velocidad."
         }
       ]
     },
@@ -481,6 +756,20 @@
         {
           "type": "text",
           "md": "¿Y quién mantiene la nariz apuntando al frente? La estabilidad **direccional** — contra la guiñada — funciona como una **veleta** (weathervane): si el avión se atraviesa al viento relativo, el aire empuja la **deriva vertical**, que está bien atrás del CG, y regresa la nariz al viento. Igual que las plumas de un dardo lo mantienen derecho."
+        },
+        {
+          "type": "table",
+          "headers": ["Estabilidad", "Contra qué movimiento", "Quién la da"],
+          "rows": [
+            ["Longitudinal", "Cabeceo (pitch)", "Posición del CG + cola horizontal"],
+            ["Lateral", "Alabeo (roll)", "Diedro de las alas"],
+            ["Direccional", "Guiñada (yaw)", "Deriva vertical (efecto veleta)"]
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "Trío para no cruzarse: **D**iedro → la**D**eo (lateral). **V**eleta → **V**ertical → guiñada (direccional). Y el CG con la cola → cabeceo (longitudinal). El examen ama intercambiarlos."
         },
         {
           "type": "notebook",
@@ -510,6 +799,30 @@
           ],
           "answer": 0,
           "why": "La superficie vertical atrás del CG actúa como las plumas de una flecha: alinea la nariz con el viento."
+        },
+        {
+          "type": "check",
+          "id": "5-9-c3",
+          "q": "Una ráfaga te ladea a la derecha y, sin que toques los mandos, el avión vuelve solo a alas niveladas. ¿Qué lo enderezó?",
+          "options": [
+            "La estabilidad lateral que aporta el diedro: el ala baja generó más sustentación.",
+            "La estabilidad direccional de la deriva vertical, que giró la nariz al viento.",
+            "El compensador del timón de profundidad, que corrigió el cabeceo."
+          ],
+          "answer": 0,
+          "why": "Al resbalar hacia el ala baja, el diedro le da a esa ala más ángulo de ataque y la levanta."
+        },
+        {
+          "type": "check",
+          "id": "5-9-c4",
+          "q": "Una ráfaga deja al avión volando 'atravesado' respecto al viento relativo. ¿Qué lo realinea con la nariz al viento?",
+          "options": [
+            "La deriva vertical, actuando como veleta detrás del CG.",
+            "El diedro de las alas.",
+            "La fuerza hacia abajo del estabilizador horizontal."
+          ],
+          "answer": 0,
+          "why": "El viento de costado empuja la superficie vertical trasera y la cola 'obedece': la nariz vuelve al viento."
         }
       ]
     },
@@ -543,6 +856,11 @@
           "md": "Pregunta directa del banco: '¿Qué fuerza hace girar un avión?' → la **componente horizontal de la sustentación**. El timón de dirección NO gira el avión: controla la guiñada y coordina el viraje."
         },
         {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Escenario real: estás girando de básica a final y te pasas del eje de pista. La tentación es pisar más pedal para 'apurar' la nariz — eso **derrapa** el viraje, y a baja velocidad y baja altura es el escenario clásico de accidente. La corrección segura: viraje coordinado (más banqueo moderado con pedal justo) o abortar y dar la vuelta. Nunca pedal extra."
+        },
+        {
           "type": "notebook",
           "id": "5-10-n1",
           "prompt": "Dibuja el avión de frente inclinado 30°: flecha grande perpendicular a las alas (sustentación total) y sus dos componentes punteadas — vertical ('sostiene') y horizontal ('gira') — más la flecha del peso hacia abajo."
@@ -570,6 +888,30 @@
           ],
           "answer": 0,
           "why": "El ala que sube lleva el alerón bajado: más sustentación pero también más resistencia, que frena ese lado."
+        },
+        {
+          "type": "check",
+          "id": "5-10-c3",
+          "q": "Entras en un viraje nivelado y notas que el avión empieza a perder altitud. Para mantenerla debes:",
+          "options": [
+            "Aumentar el ángulo de ataque jalando suavemente el bastón.",
+            "Reducir el ángulo de banqueo pisando pedal hacia afuera.",
+            "Bajar la nariz para recuperar sustentación con velocidad."
+          ],
+          "answer": 0,
+          "why": "Al inclinarse la sustentación, su componente vertical se achica; se recupera con más ángulo de ataque."
+        },
+        {
+          "type": "check",
+          "id": "5-10-c4",
+          "q": "Durante la entrada a un viraje, el timón de dirección se usa para:",
+          "options": [
+            "Contrarrestar la guiñada adversa y mantener el viraje coordinado.",
+            "Generar la fuerza que hace girar al avión hacia el centro de la curva.",
+            "Compensar la pérdida de altitud propia del banqueo."
+          ],
+          "answer": 0,
+          "why": "El pedal coordina: cancela la nariz que se va hacia afuera por la resistencia del alerón bajado."
         }
       ]
     },
@@ -614,6 +956,10 @@
           "md": "Pregunta clásica (con la Figura 2 del banco): peso × factor. Ejemplo: 2,300 lb a 60° → 2,300 × 2 = **4,600 lb**. Memoriza: **30°→1.2 · 45°→1.5 · 60°→2**."
         },
         {
+          "type": "text",
+          "md": "Practica con los números reales del banco: avión de **3,300 lb** en viraje nivelado de 30° → 3,300 × 1.2 ≈ **3,960 lb**. Avión de **4,500 lb** a 45° → 4,500 × 1.5 = **6,750 lb**. Fíjate en la trampa de las alternativas: siempre aparece el peso sin multiplicar (como si el viraje no cambiara nada) y un número inflado de más. Haz la multiplicación — no adivines por 'pinta'."
+        },
+        {
           "type": "guided_math",
           "family": "carga",
           "tier": 1
@@ -646,6 +992,30 @@
           ],
           "answer": 0,
           "why": "En el viraje las alas sostienen el peso y además generan la fuerza que curva la trayectoria."
+        },
+        {
+          "type": "check",
+          "id": "5-11-c3",
+          "q": "Un avión pesa 4,500 lb. En un viraje nivelado de 45° manteniendo altitud, su estructura soporta aproximadamente:",
+          "options": [
+            "6,750 lb.",
+            "4,500 lb.",
+            "7,200 lb."
+          ],
+          "answer": 0,
+          "why": "A 45° el factor de carga es ≈1.5G: 4,500 × 1.5 = 6,750 lb."
+        },
+        {
+          "type": "check",
+          "id": "5-11-c4",
+          "q": "La cantidad de exceso de carga que se puede imponer al ala de un avión depende de:",
+          "options": [
+            "La velocidad del avión.",
+            "La posición del CG.",
+            "La brusquedad con que se aplica la carga."
+          ],
+          "answer": 0,
+          "why": "A mayor velocidad, el ala puede generar más sustentación y por lo tanto imponerse más carga."
         }
       ]
     },
@@ -712,6 +1082,30 @@
           ],
           "answer": 0,
           "why": "Sin pérdida no hay barrena: es una pérdida agravada con guiñada (autorrotación)."
+        },
+        {
+          "type": "check",
+          "id": "5-12-c3",
+          "q": "A medida que aumenta la altitud, la velocidad INDICADA a la que un avión entra en pérdida en una configuración dada:",
+          "options": [
+            "Sigue siendo la misma, independientemente de la altitud.",
+            "Disminuye a medida que aumenta la velocidad verdadera.",
+            "Aumenta porque el aire es menos denso."
+          ],
+          "answer": 0,
+          "why": "El velocímetro mide presión dinámica: la pérdida ocurre siempre a la misma velocidad indicada."
+        },
+        {
+          "type": "check",
+          "id": "5-12-c4",
+          "q": "Durante una aproximación a la entrada en pérdida, un factor de carga incrementado hará que el avión:",
+          "options": [
+            "Entre en pérdida a una velocidad aérea más alta.",
+            "Tenga tendencia a girar.",
+            "Sea más difícil de controlar."
+          ],
+          "answer": 0,
+          "why": "Más G exige más sustentación: alcanzas el ángulo crítico a mayor velocidad (Vs × √G)."
         }
       ]
     }

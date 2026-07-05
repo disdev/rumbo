@@ -2,6 +2,24 @@
   "chapter": "3",
   "title": "Estructura de la aeronave",
   "resumen": "El mapa completo del avión: sus cinco componentes mayores, cómo está construido cada uno por dentro, y por qué esas piezas tienen la forma que tienen.",
+  "videos": [
+    {
+      "title": "Las partes del avión y sus funciones",
+      "query": "partes del avion y sus funciones explicado piloto privado español"
+    },
+    {
+      "title": "Superficies de control: alerones, timón y elevador",
+      "query": "superficies de control del avion alerones timon elevador explicado español"
+    },
+    {
+      "title": "Cómo funcionan los flaps",
+      "query": "flaps del avion como funcionan aviacion explicado español"
+    },
+    {
+      "title": "Tren triciclo vs rueda de cola",
+      "query": "tren de aterrizaje avion triciclo convencional rueda de cola explicado"
+    }
+  ],
   "sections": [
     {
       "id": "3-1",
@@ -9,6 +27,7 @@
       "key_points": [
         "Un avión es una aeronave de ala fija, más pesada que el aire, impulsada por motor.",
         "El aire en movimiento contra las alas es lo que lo sostiene en vuelo.",
+        "Ala fija lo distingue del helicóptero; más pesado que el aire, del globo; con motor, del planeador.",
         "Los cinco componentes mayores son: fuselaje, alas, empenaje, tren de aterrizaje y planta motriz.",
         "El fuselaje es el cuerpo central; todo lo demás se une a él.",
         "La planta motriz es el motor más la hélice."
@@ -20,12 +39,51 @@
         },
         {
           "type": "text",
+          "md": "Cada palabra de esa definición trabaja: **ala fija** te distingue del helicóptero (ala rotativa que gira para sustentarse); **más pesada que el aire** te distingue del globo aerostático (que flota como un corcho en el agua); e **impulsada por motor** te distingue del planeador. En el examen la definición aparece por partes — apréndela palabra por palabra."
+        },
+        {
+          "type": "text",
           "md": "Casi todos los aviones comparten **cinco componentes mayores**: el **fuselaje** (el cuerpo central), las **alas** (lo que genera sustentación), el **empenaje** (la cola), el **tren de aterrizaje** (las ruedas y sus patas) y la **planta motriz** (el motor con su hélice). Este capítulo recorre los cinco, uno por uno."
         },
         {
           "type": "diagram",
           "src": "ch03-avion-componentes.svg",
           "caption": "Los cinco componentes mayores de un avión de entrenamiento típico, visto de lado."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Componente",
+            "Su trabajo",
+            "Incluye, por ejemplo"
+          ],
+          "rows": [
+            [
+              "Fuselaje",
+              "Cuerpo central: aloja cabina y carga",
+              "Cabina, cortafuegos"
+            ],
+            [
+              "Alas",
+              "Generan la sustentación",
+              "Alerones, flaps, tanques"
+            ],
+            [
+              "Empenaje",
+              "Estabiliza y dirige la cola",
+              "Timón, elevador"
+            ],
+            [
+              "Tren de aterrizaje",
+              "Soporta al avión en tierra",
+              "Ruedas, frenos, amortiguadores"
+            ],
+            [
+              "Planta motriz",
+              "Produce el empuje",
+              "Motor, hélice, capó"
+            ]
+          ]
         },
         {
           "type": "callout",
@@ -60,6 +118,18 @@
           ],
           "answer": 1,
           "why": "Es aeronave más pesada que el aire: vuela porque el aire en movimiento reacciona contra sus alas fijas."
+        },
+        {
+          "type": "check",
+          "id": "3-1-c3",
+          "q": "Según la definición de avión, ¿qué lo distingue de un helicóptero?",
+          "options": [
+            "Que es más pesado que el aire.",
+            "Que sus alas son fijas, no rotativas.",
+            "Que está impulsado por un motor."
+          ],
+          "answer": 1,
+          "why": "El helicóptero también es más pesado que el aire y tiene motor; la diferencia clave es el ala fija frente al ala rotativa."
         }
       ]
     },
@@ -71,7 +141,8 @@
         "Fuselaje reticulado (truss): jaula de tubos soldados que carga todo; la cubierta solo da forma.",
         "Fuselaje monocasco: la piel (revestimiento) soporta casi toda la carga, como una lata de gaseosa.",
         "El problema del monocasco: cualquier abolladura o daño en la piel compromete su resistencia.",
-        "Fuselaje semimonocasco: piel + cuadernas + larguerillos comparten la carga; es el que domina hoy."
+        "Fuselaje semimonocasco: piel + cuadernas + larguerillos comparten la carga; es el que domina hoy.",
+        "En un semimonocasco, una abolladura profunda en la piel puede ser daño estructural: debe evaluarla un mecánico."
       ],
       "blocks": [
         {
@@ -90,6 +161,35 @@
           "type": "diagram",
           "src": "ch03-fuselaje-tipos.svg",
           "caption": "Los tres tipos de fuselaje en corte: reticulado, monocasco y semimonocasco."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Tipo",
+            "Quién carga el esfuerzo",
+            "Su punto débil"
+          ],
+          "rows": [
+            [
+              "Reticulado (truss)",
+              "La jaula de tubos soldados",
+              "Voluminoso; la cubierta no aporta fuerza"
+            ],
+            [
+              "Monocasco",
+              "La piel, casi sola",
+              "Una abolladura compromete su resistencia"
+            ],
+            [
+              "Semimonocasco",
+              "Piel + cuadernas + larguerillos",
+              "Pocos: por eso domina hoy"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "md": "Llévalo al prevuelo: caminas junto a tu Cessna (semimonocasco) y encuentras una **abolladura profunda** en el revestimiento. No es \"solo pintura\": en un semimonocasco la piel **trabaja**, carga parte del esfuerzo estructural. Una abolladura grande puede haber debilitado esa zona. La regla es simple: no vueles hasta que un mecánico lo evalúe."
         },
         {
           "type": "callout",
@@ -124,6 +224,30 @@
           ],
           "answer": 1,
           "why": "En el truss la estructura de tubos soldados soporta las cargas; la cubierta es solo carenado."
+        },
+        {
+          "type": "check",
+          "id": "3-2-c3",
+          "q": "¿Cuál es la principal desventaja del fuselaje monocasco puro?",
+          "options": [
+            "Su estructura de tubos lo hace pesado y voluminoso.",
+            "Cualquier abolladura o daño en la piel compromete su resistencia.",
+            "Necesita montantes externos para soportar las alas."
+          ],
+          "answer": 1,
+          "why": "En el monocasco la piel carga casi todo el esfuerzo: dañarla es dañar la estructura misma."
+        },
+        {
+          "type": "check",
+          "id": "3-2-c4",
+          "q": "En el prevuelo de un avión semimonocasco encuentras una abolladura profunda en el revestimiento. ¿Qué significa?",
+          "options": [
+            "Nada estructural: las cuadernas y los larguerillos cargan todo el esfuerzo.",
+            "Posible daño estructural: la piel comparte la carga y debe evaluarla un mecánico.",
+            "Solo importa si la abolladura está cerca del motor."
+          ],
+          "answer": 1,
+          "why": "En el semimonocasco la piel trabaja junto con cuadernas y larguerillos: una abolladura profunda puede debilitar la zona."
         }
       ]
     },
@@ -135,8 +259,9 @@
         "Las costillas (ribs) van de adelante hacia atrás y dan al ala su forma de perfil aerodinámico.",
         "Los larguerillos (stringers) refuerzan el revestimiento a lo largo del ala.",
         "El revestimiento (skin) cubre todo y en alas semimonocasco también ayuda a cargar esfuerzo.",
-        "Muchas alas llevan los tanques de combustible en su interior.",
-        "El ala se une al fuselaje en la raíz; el extremo libre es la punta."
+        "Muchas alas llevan los tanques de combustible en su interior; por eso se drenan muestras bajo el ala en el prevuelo.",
+        "El ala se une al fuselaje en la raíz; el extremo libre es la punta.",
+        "La carga extra que puede imponerse al ala depende de la velocidad del avión."
       ],
       "blocks": [
         {
@@ -148,6 +273,14 @@
           "md": "Las **costillas (ribs)** van de adelante hacia atrás, como las costillas de tu pecho, y le dan al ala su forma curva de **perfil aerodinámico**. Los **larguerillos (stringers)** son refuerzos delgados a lo largo, que ayudan a que el **revestimiento (skin)** no se deforme. En un ala semimonocasco, ese revestimiento también carga parte del esfuerzo. Y un dato práctico: muchas alas llevan los **tanques de combustible** adentro."
         },
         {
+          "type": "text",
+          "md": "Mira las alas en un día de turbulencia: las puntas suben y bajan, flexándose. Es el larguero trabajando — está diseñado para doblarse sin romperse, como la rama verde de un árbol. ¿Cuándo sufre de verdad? A **alta velocidad**: a mayor velocidad, el ala puede generar mucha más fuerza, y ese exceso de carga cae directo sobre la estructura."
+        },
+        {
+          "type": "text",
+          "md": "¿Y los tanques en las alas? Por eso en el prevuelo **drenas combustible debajo de cada ala**: buscas agua o suciedad en las muestras. También por eso las tapas de combustible están sobre el ala. Estructura y sistemas conviven en el mismo espacio."
+        },
+        {
           "type": "diagram",
           "src": "ch03-ala-interna.svg",
           "caption": "Ala vista desde arriba con la piel levantada: largueros, costillas, larguerillos y revestimiento."
@@ -155,7 +288,7 @@
         {
           "type": "callout",
           "style": "examen",
-          "md": "El banco DGAC pregunta de qué depende la carga extra que puede imponerse al ala: de la **velocidad** del avión. A mayor velocidad, el ala puede generar más fuerza — y por eso las maniobras bruscas a alta velocidad estresan la estructura (lo verás a fondo en el cap. 5)."
+          "md": "El banco DGAC pregunta de qué depende la carga extra que puede imponerse al ala: de la **velocidad** del avión. A mayor velocidad, el ala puede generar más fuerza — y por eso las maniobras bruscas a alta velocidad estresan la estructura (lo verás a fondo en el cap. 5). Los distractores del banco: \"posición del CG\" y \"brusquedad de los mandos\"."
         },
         {
           "type": "notebook",
@@ -185,6 +318,30 @@
           ],
           "answer": 0,
           "why": "Las costillas van de borde de ataque a borde de salida y definen la forma curva del perfil."
+        },
+        {
+          "type": "check",
+          "id": "3-3-c3",
+          "q": "¿Por qué en el prevuelo drenas muestras de combustible debajo de cada ala?",
+          "options": [
+            "Porque los tanques de combustible suelen ir dentro de las alas.",
+            "Porque el combustible se almacena en la cola y fluye hacia las alas.",
+            "Porque el drenaje lubrica los largueros del ala."
+          ],
+          "answer": 0,
+          "why": "Muchos aviones pequeños llevan los tanques dentro de las alas: los drenajes bajo el ala permiten revisar agua o suciedad."
+        },
+        {
+          "type": "check",
+          "id": "3-3-c4",
+          "q": "La cantidad de carga extra que puede imponerse al ala de un avión depende de:",
+          "options": [
+            "La posición del centro de gravedad.",
+            "La velocidad del avión.",
+            "La brusquedad con que se aplican los mandos."
+          ],
+          "answer": 1,
+          "why": "Pregunta real del banco: a mayor velocidad el ala puede generar más fuerza; esa es la variable de la que depende la carga extra."
         }
       ]
     },
@@ -196,6 +353,7 @@
         "Los montantes (struts) son apoyos externos que ayudan a transmitir las cargas del ala al fuselaje (ala semicantilever).",
         "Un ala cantilever no necesita apoyos externos: toda la carga la aguanta su estructura interna.",
         "El ala alta da buena vista hacia abajo y sombra; el ala baja da buena vista hacia arriba y suele ser cantilever.",
+        "Al virar en un ala alta, el ala levantada te tapa hacia donde giras: despeja el área antes de virar.",
         "La Cessna típica de escuela es monoplano de ala alta con montantes."
       ],
       "blocks": [
@@ -206,6 +364,35 @@
         {
           "type": "text",
           "md": "Ahora, ¿cómo se sostiene el ala? Algunas usan **montantes (struts)**: barras externas que van del ala al fuselaje y ayudan a transmitir las cargas — se llaman alas **semicantilever**. Otras no necesitan nada externo: son **cantilever**, como un trampolín de piscina que aguanta tu peso solo con su estructura interna. Menos piezas afuera = menos resistencia al aire, pero exige una estructura interna más fuerte."
+        },
+        {
+          "type": "text",
+          "md": "En la práctica lo notas volando el circuito: con **ala alta** ves la pista abajo sin estorbo, pero al inclinarte para virar, el ala del lado del viraje se levanta y te tapa justo hacia donde vas — por eso levantas el ala y despejas el área ANTES de virar. Con **ala baja** es al revés: el ala te tapa el suelo, pero el cielo del viraje queda limpio."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Configuración",
+            "Ventaja típica",
+            "La ves en"
+          ],
+          "rows": [
+            [
+              "Ala alta",
+              "Ves el terreno y la pista hacia abajo; da sombra",
+              "Cessna 150/152/172"
+            ],
+            [
+              "Ala baja",
+              "Vista despejada hacia arriba; suele ser cantilever",
+              "Piper Cherokee"
+            ],
+            [
+              "Biplano",
+              "Mucha superficie de ala en poco tamaño",
+              "Acrobacia clásica"
+            ]
+          ]
         },
         {
           "type": "diagram",
@@ -233,6 +420,42 @@
           ],
           "answer": 1,
           "why": "Cantilever = sin montantes; toda la carga la absorbe la estructura interna del ala (largueros más robustos)."
+        },
+        {
+          "type": "check",
+          "id": "3-4-c2",
+          "q": "¿Qué función cumplen los montantes (struts) de un ala semicantilever?",
+          "options": [
+            "Generar sustentación adicional durante el despegue.",
+            "Ayudar a transmitir las cargas del ala al fuselaje.",
+            "Sostener los tanques de combustible del ala."
+          ],
+          "answer": 1,
+          "why": "Los montantes son apoyos estructurales externos: reparten parte de la carga del ala hacia el fuselaje."
+        },
+        {
+          "type": "check",
+          "id": "3-4-c3",
+          "q": "Vuelas una Cessna de ala alta. ¿Cuál es su ventaja práctica de visibilidad?",
+          "options": [
+            "Ves el terreno y la pista hacia abajo sin que el ala estorbe.",
+            "Ves mejor hacia arriba, hacia el lado del viraje.",
+            "Ves la cola y el empenaje desde la cabina."
+          ],
+          "answer": 0,
+          "why": "Ala alta = vista despejada hacia abajo; la vista limpia hacia arriba es ventaja del ala baja."
+        },
+        {
+          "type": "check",
+          "id": "3-4-c4",
+          "q": "Comparada con un ala semicantilever, un ala cantilever:",
+          "options": [
+            "Es más liviana porque elimina los largueros.",
+            "Genera menos resistencia al aire, pero exige una estructura interna más fuerte.",
+            "Solo puede montarse en posición alta."
+          ],
+          "answer": 1,
+          "why": "Sin montantes hay menos piezas en el viento (menos resistencia), pero los largueros deben absorber toda la carga solos."
         }
       ]
     },
@@ -243,7 +466,7 @@
         "Los alerones van en el borde de salida, hacia las puntas, y se mueven en direcciones opuestas para alabear (roll).",
         "Los flaps van en el borde de salida, cerca del fuselaje, y bajan juntos y simétricos.",
         "Los flaps aumentan la sustentación Y la resistencia del ala.",
-        "Extendidos, los flaps permiten un descenso más pronunciado sin aumentar la velocidad.",
+        "Extendidos, los flaps permiten un descenso más pronunciado (incrementan el ángulo de descenso) sin aumentar la velocidad.",
         "Los flaps permiten aproximarse y tocar pista a menor velocidad."
       ],
       "blocks": [
@@ -256,6 +479,10 @@
           "md": "Los flaps son como cambiar de marcha en una bici para subir una cuesta: transforman el ala para otra tarea. Al extenderlos, aumentan la **curvatura** del ala, generando más **sustentación** y también más **resistencia**. ¿El resultado? Puedes volar más lento sin caerte, y puedes bajar en un ángulo más pronunciado **sin ganar velocidad** — perfecto para aterrizar en pistas cortas o con obstáculos."
         },
         {
+          "type": "text",
+          "md": "Escenario: estás en final y vienes alto; hay árboles antes de la cabecera y la pista es corta. Sin flaps, para bajar más tendrías que picar la nariz — y la velocidad se dispara. Extiendes flaps: ahora bajas **más empinado a la misma velocidad**, cruzas los árboles con margen y tocas pista **más lento** — menos pista para frenar."
+        },
+        {
           "type": "widget",
           "name": "flaps",
           "caption": "Mueve la palanca de flaps de 0° a 30° y observa cómo cambia el perfil del ala y crecen las flechas de sustentación y resistencia."
@@ -264,6 +491,11 @@
           "type": "callout",
           "style": "examen",
           "md": "El banco DGAC pregunta esto directo: una de las funciones principales de los flaps en aproximación y aterrizaje es **permitir un ángulo de descenso más pronunciado sin aumentar la velocidad**. También pregunta su propósito general: **aumentar la sustentación del ala** para volar más lento con seguridad."
+        },
+        {
+          "type": "callout",
+          "style": "ojo",
+          "md": "El distractor favorito del banco invierte la frase: dice \"**DISMINUIR** el ángulo de descenso\". Es al revés: los flaps te dejan bajar MÁS empinado (**incrementan** el ángulo de descenso) sin aumentar la velocidad. Léelo dos veces en el examen."
         },
         {
           "type": "notebook",
@@ -276,11 +508,11 @@
           "q": "Una de las funciones principales de los flaps durante la aproximación y el aterrizaje es:",
           "options": [
             "Permitir un ángulo de descenso más pronunciado sin aumentar la velocidad.",
-            "Disminuir la resistencia del ala para planear más lejos.",
-            "Inclinar el avión hacia el lado del viraje."
+            "Disminuir el ángulo de descenso sin aumentar la velocidad.",
+            "Permitir un aterrizaje a una mayor velocidad indicada."
           ],
           "answer": 0,
-          "why": "Los flaps suman sustentación y resistencia: bajas más empinado sin que la velocidad se dispare."
+          "why": "Los flaps suman sustentación y resistencia: bajas MÁS empinado sin que la velocidad se dispare — ojo con el distractor que dice \"disminuir\"."
         },
         {
           "type": "check",
@@ -293,6 +525,30 @@
           ],
           "answer": 1,
           "why": "Alerones opuestos = alabeo (roll); flaps simétricos = más sustentación y resistencia para ambas alas por igual."
+        },
+        {
+          "type": "check",
+          "id": "3-5-c3",
+          "q": "Al extender los flaps, el ala gana:",
+          "options": [
+            "Sustentación y resistencia.",
+            "Sustentación y velocidad.",
+            "Empuje y sustentación."
+          ],
+          "answer": 0,
+          "why": "Más curvatura = más sustentación y más resistencia; por eso puedes volar más lento y descender más empinado."
+        },
+        {
+          "type": "check",
+          "id": "3-5-c4",
+          "q": "En final vienes alto, con árboles antes de una pista corta. ¿Qué logras al extender los flaps?",
+          "options": [
+            "Planear más lejos gracias a la menor resistencia.",
+            "Descender más empinado sin ganar velocidad y tocar pista más lento.",
+            "Aumentar la velocidad de aproximación para llegar antes."
+          ],
+          "answer": 1,
+          "why": "Los flaps agregan resistencia y sustentación: cruzas el obstáculo bajando empinado, con velocidad controlada, y tocas más lento."
         }
       ]
     },
@@ -304,6 +560,7 @@
         "Superficies fijas: estabilizador vertical y estabilizador horizontal — dan estabilidad, como las plumas de una flecha.",
         "El timón (rudder), unido al estabilizador vertical, controla la guiñada (yaw): mover la nariz a izquierda o derecha.",
         "El elevador (elevator), unido al estabilizador horizontal, controla el cabeceo (pitch): nariz arriba o abajo.",
+        "Pedal derecho: el aire empuja la cola a la izquierda y la nariz guiña a la derecha.",
         "El timón NO es lo que hace girar al avión por sí solo."
       ],
       "blocks": [
@@ -316,6 +573,45 @@
           "md": "Las móviles: al estabilizador vertical se une el **timón (rudder)**, que mueve la nariz a la izquierda o derecha — eso se llama **guiñada (yaw)** y lo controlas con los pedales. Al estabilizador horizontal se une el **elevador (elevator)**, que sube o baja la nariz — el **cabeceo (pitch)** — y lo controlas con el bastón o volante. En el capítulo 6 verás cómo se coordinan."
         },
         {
+          "type": "text",
+          "md": "Hazlo mental: en vuelo pisas el **pedal derecho**. El timón se desvía a la derecha, el aire golpea esa cara y empuja la cola hacia la **izquierda**… y la nariz apunta a la **derecha**. Sueltas el pedal y los estabilizadores — como las plumas de la flecha — devuelven todo al centro. Las fijas estabilizan; las móviles dirigen."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Superficie",
+            "¿Fija o móvil?",
+            "Qué controla",
+            "Mando"
+          ],
+          "rows": [
+            [
+              "Estabilizador vertical",
+              "Fija",
+              "Estabilidad direccional (no coletear)",
+              "—"
+            ],
+            [
+              "Estabilizador horizontal",
+              "Fija",
+              "Estabilidad en cabeceo",
+              "—"
+            ],
+            [
+              "Timón (rudder)",
+              "Móvil",
+              "Guiñada: nariz izquierda/derecha",
+              "Pedales"
+            ],
+            [
+              "Elevador (elevator)",
+              "Móvil",
+              "Cabeceo: nariz arriba/abajo",
+              "Bastón o volante"
+            ]
+          ]
+        },
+        {
           "type": "diagram",
           "src": "ch03-empenaje.svg",
           "caption": "El empenaje completo: estabilizadores fijos, timón, elevador y compensador."
@@ -323,7 +619,7 @@
         {
           "type": "callout",
           "style": "examen",
-          "md": "Pregunta real del banco: **¿cuál es el propósito del timón?** Respuesta: **controlar la guiñada (yaw)** — mover la nariz a los lados. OJO: el timón NO es lo que hace girar al avión; el giro lo produce la sustentación al inclinar las alas (cap. 5). El examen pone \"girar el avión\" como distractor."
+          "md": "Pregunta real del banco: **¿cuál es el propósito del timón?** Respuesta: **controlar la guiñada (yaw)** — mover la nariz a los lados. OJO: el timón NO es lo que hace girar al avión; el giro lo produce la sustentación al inclinar las alas (cap. 5). El examen pone \"girar el avión\" y \"controlar el alabeo\" como distractores."
         },
         {
           "type": "notebook",
@@ -337,7 +633,7 @@
           "options": [
             "Hacer girar el avión durante un viraje.",
             "Controlar la guiñada (mover la nariz a izquierda o derecha).",
-            "Subir y bajar la nariz del avión."
+            "Controlar el alabeo (inclinar las alas)."
           ],
           "answer": 1,
           "why": "El timón controla la guiñada. El viraje lo produce la sustentación con las alas inclinadas — clásico distractor de examen."
@@ -353,6 +649,30 @@
           ],
           "answer": 1,
           "why": "Los estabilizadores son fijos y dan estabilidad; timón y elevador son las superficies móviles unidas a ellos."
+        },
+        {
+          "type": "check",
+          "id": "3-6-c3",
+          "q": "¿Qué controla el elevador (elevator) y con qué mando?",
+          "options": [
+            "El cabeceo (nariz arriba/abajo), con el bastón o volante.",
+            "La guiñada (nariz a los lados), con los pedales.",
+            "El alabeo (inclinar las alas), con los pedales."
+          ],
+          "answer": 0,
+          "why": "Elevador = cabeceo, movido con el bastón o volante; los pedales mueven el timón (guiñada)."
+        },
+        {
+          "type": "check",
+          "id": "3-6-c4",
+          "q": "En vuelo pisas el pedal derecho. ¿Qué hace el avión?",
+          "options": [
+            "La nariz baja suavemente.",
+            "La nariz guiña hacia la derecha.",
+            "Entra por sí solo en un viraje coordinado a la derecha."
+          ],
+          "answer": 1,
+          "why": "El timón desviado empuja la cola a la izquierda y la nariz guiña a la derecha; un viraje coordinado requiere más que el pedal."
         }
       ]
     },
@@ -361,6 +681,7 @@
       "title": "Compensadores, stabilator y tab antiservo",
       "key_points": [
         "Los compensadores (trim tabs) son pestañas pequeñas en las superficies móviles que reducen la fuerza que el piloto debe mantener en los mandos.",
+        "Compensar: ajustar la rueda de trim hasta que la presión en el mando desaparece y el avión mantiene la actitud solo.",
         "El stabilator es un estabilizador horizontal de una sola pieza que pivota completo para controlar el cabeceo.",
         "El stabilator es muy sensible; por eso lleva un tab antiservo.",
         "El tab antiservo se mueve en la MISMA dirección que el borde de salida del stabilator, poniendo resistencia al mando.",
@@ -373,7 +694,31 @@
         },
         {
           "type": "text",
+          "md": "Ejemplo: vas en crucero y el avión insiste en bajar la nariz. Llevas veinte minutos jalando el bastón y el antebrazo se queja. Solución: giras la rueda del compensador hacia \"nariz arriba\", poquito a poquito, hasta que la presión desaparece. Sueltas el bastón… y el avión sigue nivelado, solito. Eso es **compensar**: el aire sostiene la superficie por ti."
+        },
+        {
+          "type": "text",
           "md": "Algunos aviones (como muchos Piper) no tienen estabilizador + elevador separados, sino un **stabilator**: el estabilizador horizontal completo es UNA pieza que **pivota** entera. Es muy efectivo... y muy sensible: un toque pequeño mueve mucho la nariz. Para domarlo lleva un **tab antiservo (antiservo tab)** que se mueve en la **misma dirección** que el borde de salida, generando resistencia en el mando para que no sobrecontroles."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Dispositivo",
+            "Qué hace con la fuerza del mando",
+            "Dato clave"
+          ],
+          "rows": [
+            [
+              "Compensador (trim tab)",
+              "La ALIVIA: mantiene la superficie por ti",
+              "Se ajusta desde la cabina"
+            ],
+            [
+              "Tab antiservo",
+              "La AGREGA: pone resistencia al mando",
+              "Se mueve en la MISMA dirección que el borde de salida"
+            ]
+          ]
         },
         {
           "type": "diagram",
@@ -413,6 +758,30 @@
           ],
           "answer": 0,
           "why": "Al moverse en la misma dirección crea una fuerza que se opone al mando: evita sobrecontrolar un stabilator muy sensible."
+        },
+        {
+          "type": "check",
+          "id": "3-7-c3",
+          "q": "¿Qué es un stabilator?",
+          "options": [
+            "Un estabilizador horizontal de una sola pieza que pivota completo para controlar el cabeceo.",
+            "Un estabilizador vertical con el timón integrado en una sola pieza.",
+            "Un compensador grande instalado en el elevador."
+          ],
+          "answer": 0,
+          "why": "Stabilator = todo el plano horizontal pivota entero; por su sensibilidad lleva un tab antiservo."
+        },
+        {
+          "type": "check",
+          "id": "3-7-c4",
+          "q": "Llevas rato sosteniendo presión constante hacia atrás en el bastón para mantener la altitud. ¿Qué corresponde hacer?",
+          "options": [
+            "Extender flaps para que la nariz suba sola.",
+            "Ajustar el compensador hasta que la presión en el mando desaparezca.",
+            "Soltar el bastón y dejar que los estabilizadores nivelen el avión."
+          ],
+          "answer": 1,
+          "why": "Presión constante = trabajo para el trim: lo ajustas hasta que el avión mantiene la actitud sin fuerza en el mando."
         }
       ]
     },
@@ -424,7 +793,8 @@
         "Tren triciclo: dos ruedas principales + rueda de nariz; es el más común hoy.",
         "El triciclo permite frenar con más fuerza, da mejor visibilidad al rodar y mantiene el avión recto en el aterrizaje.",
         "Tren convencional: dos ruedas principales + rueda o patín de cola; útil en pistas rústicas por la mayor luz de la hélice.",
-        "El convencional da poca visibilidad hacia adelante al rodar y es más propenso al trompo (ground loop)."
+        "El convencional da poca visibilidad hacia adelante al rodar y es más propenso al trompo (ground loop).",
+        "El trompo ocurre porque en el convencional el CG va detrás de las ruedas principales y exagera cualquier giro."
       ],
       "blocks": [
         {
@@ -438,6 +808,45 @@
         {
           "type": "text",
           "md": "¿Y para qué querría alguien la rueda atrás? Con la nariz levantada, la hélice queda más lejos del suelo: ideal para **pistas rústicas o no preparadas**, comunes en la selva. El precio: al rodar no ves bien hacia adelante (hay que zigzaguear) y es más propenso al **trompo (ground loop)**, un giro brusco e involuntario en tierra."
+        },
+        {
+          "type": "text",
+          "md": "¿Por qué el trompo? En el convencional, el centro de gravedad va **detrás** de las ruedas principales. Si el avión se tuerce un poco al aterrizar, el peso \"quiere\" pasar adelante y **exagera** el giro — como empujar un carrito de supermercado al revés. En el triciclo, el CG va **delante** de las principales, y eso endereza el avión solito."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Aspecto",
+            "Triciclo",
+            "Convencional"
+          ],
+          "rows": [
+            [
+              "Tercera rueda",
+              "Bajo la nariz",
+              "En la cola"
+            ],
+            [
+              "Visibilidad al rodar",
+              "Buena: nariz horizontal",
+              "Mala: hay que zigzaguear"
+            ],
+            [
+              "Frenado fuerte",
+              "Lo tolera sin irse de nariz",
+              "Riesgo de capotar"
+            ],
+            [
+              "Luz de hélice",
+              "Menor",
+              "Mayor: ideal en pistas rústicas"
+            ],
+            [
+              "Riesgo típico en tierra",
+              "—",
+              "Trompo (ground loop)"
+            ]
+          ]
         },
         {
           "type": "diagram",
@@ -472,6 +881,30 @@
           ],
           "answer": 1,
           "why": "Con la rueda de nariz el fuselaje queda horizontal y ves la pista; la ventaja de luz de hélice es del convencional."
+        },
+        {
+          "type": "check",
+          "id": "3-8-c3",
+          "q": "¿Por qué el tren convencional es propenso al trompo (ground loop)?",
+          "options": [
+            "Su centro de gravedad está detrás de las ruedas principales y exagera cualquier giro en tierra.",
+            "La rueda de cola frena con más fuerza que las principales.",
+            "Su hélice toca el suelo al virar en pistas rústicas."
+          ],
+          "answer": 0,
+          "why": "Con el CG detrás de las principales, el peso tiende a adelantarse y amplifica el giro; en el triciclo el CG adelante lo endereza."
+        },
+        {
+          "type": "check",
+          "id": "3-8-c4",
+          "q": "Un operador vuela carga en pistas de tierra no preparadas en la selva. ¿Por qué le conviene un tren convencional?",
+          "options": [
+            "Ofrece mejor visibilidad hacia adelante durante el rodaje.",
+            "Con la cola abajo, la hélice queda más lejos del suelo y de las piedras.",
+            "Permite frenar con más fuerza sin riesgo de capotar."
+          ],
+          "answer": 1,
+          "why": "La mayor luz de hélice es SU ventaja en pistas rústicas; la visibilidad y el frenado fuerte son ventajas del triciclo."
         }
       ]
     },
@@ -479,9 +912,10 @@
       "id": "3-9",
       "title": "Tren fijo o retráctil, y cómo frenas en tierra",
       "key_points": [
-        "Tren fijo: siempre extendido; simple, liviano y barato de mantener.",
+        "Tren fijo: siempre extendido; simple, liviano y barato de mantener — por eso lo usan los aviones de escuela.",
         "Tren retráctil: se guarda en vuelo para reducir la resistencia al aire y volar más rápido.",
-        "Los frenos actúan sobre las ruedas principales y se accionan con la punta de los pedales.",
+        "En muchos triciclos la rueda de nariz es orientable con los pedales.",
+        "Los frenos actúan sobre las ruedas principales y se accionan con la punta del pie en la parte alta de los pedales.",
         "Los frenos son independientes: izquierdo y derecho por separado.",
         "El frenado diferencial (frenar más de un lado) ayuda a girar en espacios cortos durante el rodaje."
       ],
@@ -492,7 +926,15 @@
         },
         {
           "type": "text",
-          "md": "¿Y cómo frenas? Los **frenos** actúan sobre las ruedas **principales** y se accionan pisando con la **punta del pie** la parte alta de cada pedal. Lo clave: son **independientes** — pedal izquierdo frena la rueda izquierda, pedal derecho la derecha. Eso permite el **frenado diferencial**: frenar más de un lado para girar cerrado en el rodaje, como cuando frenas una sola rueda de la bici y giras en seco."
+          "md": "¿Todo es ganancia con el retráctil? No: pesa más, cuesta más mantener, y agrega el error clásico — olvidar bajar el tren antes de aterrizar. Por eso mientras aprendes vuelas tren fijo: menos sistemas que operar, menos cosas que olvidar, menos plata en el taller."
+        },
+        {
+          "type": "text",
+          "md": "¿Y cómo giras al rodar? En muchos triciclos la **rueda de nariz es orientable**: la mueves con los mismos pedales del timón. Pisa el pedal completo (parte baja) = dirección; pisa con la **punta del pie** la parte alta = freno. Para un giro cerrado en la plataforma combinas ambos: pedal a fondo y un toque de freno de ese mismo lado."
+        },
+        {
+          "type": "text",
+          "md": "Lo clave de los **frenos**: actúan sobre las ruedas **principales** y son **independientes** — pedal izquierdo frena la rueda izquierda, pedal derecho la derecha. Eso permite el **frenado diferencial**: frenar más de un lado para girar cerrado en el rodaje, como cuando frenas una sola rueda de la bici y giras en seco."
         },
         {
           "type": "callout",
@@ -527,6 +969,30 @@
           ],
           "answer": 1,
           "why": "Los frenos son independientes por rueda: aplicar más freno de un lado gira el avión en espacios cortos."
+        },
+        {
+          "type": "check",
+          "id": "3-9-c3",
+          "q": "¿Por qué los aviones de escuela suelen tener tren fijo en vez de retráctil?",
+          "options": [
+            "Porque genera menos resistencia aerodinámica en vuelo.",
+            "Porque es más simple, liviano y de menor mantenimiento.",
+            "Porque permite aterrizar en pistas más cortas."
+          ],
+          "answer": 1,
+          "why": "La menor resistencia es la ventaja del RETRÁCTIL; el fijo gana en simplicidad, peso, costo y menos cosas que olvidar."
+        },
+        {
+          "type": "check",
+          "id": "3-9-c4",
+          "q": "¿Cómo accionas los frenos en un avión pequeño típico?",
+          "options": [
+            "Pisando con la punta del pie la parte alta de los pedales.",
+            "Con una palanca de mano junto al acelerador.",
+            "Pisando la parte baja de los pedales, igual que el timón."
+          ],
+          "answer": 0,
+          "why": "Punta del pie arriba = frenos (independientes, sobre las ruedas principales); el pedal completo mueve timón y rueda de nariz."
         }
       ]
     },
@@ -537,6 +1003,7 @@
         "La planta motriz = motor + hélice.",
         "El motor no solo mueve la hélice: también genera energía eléctrica, provee vacío para algunos instrumentos y es fuente de calefacción para la cabina.",
         "La hélice es un perfil aerodinámico giratorio: convierte la potencia del motor en empuje.",
+        "Una melladura (nick) en la pala de la hélice es seria: repórtala en el prevuelo.",
         "El capó (cowling) cubre el motor, ordena el flujo de aire y lo canaliza para enfriar el motor.",
         "El cortafuegos (firewall) separa el compartimiento del motor de la cabina y sirve de montaje."
       ],
@@ -548,6 +1015,10 @@
         {
           "type": "text",
           "md": "La **hélice (propeller)** no es un simple ventilador: cada pala es un **perfil aerodinámico** — un ala pequeña que gira. Al girar, \"muerde\" el aire y convierte la potencia del motor en **empuje**. Todo el motor va cubierto por el **capó (cowling)**, que ordena el flujo de aire y lo **canaliza para enfriar** los cilindros. Entre el motor y la cabina hay un **cortafuegos (firewall)**: una lámina resistente al fuego que además sirve de montaje del motor."
+        },
+        {
+          "type": "text",
+          "md": "Mira la hélice de perfil en el prevuelo: cada pala tiene curvatura y un ángulo, como un ala pequeña. Al girar, su \"sustentación\" apunta hacia adelante — eso ES el empuje. Por eso una **melladura (nick)** en el borde de la pala es seria: es una herida en un perfil que trabaja a más de dos mil vueltas por minuto. Repórtala siempre."
         },
         {
           "type": "callout",
@@ -582,6 +1053,30 @@
           ],
           "answer": 0,
           "why": "El cowling da forma aerodinámica a la nariz y dirige aire alrededor de los cilindros para refrigerarlos."
+        },
+        {
+          "type": "check",
+          "id": "3-10-c3",
+          "q": "¿Qué hace exactamente la hélice?",
+          "options": [
+            "Convierte la potencia del motor en empuje: cada pala actúa como un perfil aerodinámico.",
+            "Convierte el empuje del motor en sustentación para las alas.",
+            "Solo enfría el motor empujando aire hacia el capó."
+          ],
+          "answer": 0,
+          "why": "Cada pala es un ala que gira: su \"sustentación\" apunta hacia adelante y eso es el empuje que arrastra al avión."
+        },
+        {
+          "type": "check",
+          "id": "3-10-c4",
+          "q": "¿Qué es el cortafuegos (firewall)?",
+          "options": [
+            "Una lámina resistente al fuego que separa el compartimiento del motor de la cabina y sirve de montaje.",
+            "La rejilla del capó por donde entra el aire de refrigeración.",
+            "Un extintor automático instalado en el compartimiento del motor."
+          ],
+          "answer": 0,
+          "why": "El firewall es la barrera resistente al fuego entre motor y cabina, y además sirve como estructura de montaje del motor."
         }
       ]
     },
@@ -590,15 +1085,21 @@
       "title": "¿De qué está hecho? Materiales, subestructuras e instrumentos",
       "key_points": [
         "El aluminio (en aleaciones) domina la construcción: liviano, fuerte y trabajable.",
+        "El aluminio se corroe: en el prevuelo se busca pintura hinchada, polvillo blanco y remaches deteriorados, sobre todo cerca del mar.",
         "Los materiales compuestos (fibra de vidrio, fibra de carbono) crecen: se moldean en formas suaves y no se corroen.",
+        "Un golpe puede dañar los compuestos por dentro sin dejar marca visible por fuera.",
         "Los primeros aviones usaban madera y tela; algunos clásicos aún vuelan así.",
-        "Además de la estructura, el avión tiene subsistemas: sistema eléctrico, controles de vuelo y frenos.",
+        "Además de la estructura, el avión tiene subsistemas: sistema eléctrico, controles de vuelo (cables y varillas) y frenos.",
         "El panel de instrumentos es parte del avión: te dice velocidad, altitud, rumbo y estado del motor."
       ],
       "blocks": [
         {
           "type": "text",
           "md": "¿De qué material está hecho un avión? Los primeros eran de **madera y tela**, como cometas gigantes. Hoy el rey es el **aluminio** en aleaciones: liviano, fuerte y fácil de trabajar — la mayoría de aviones de escuela son de aluminio remachado. Y cada vez más aviones usan **materiales compuestos (composites)**: fibra de vidrio o fibra de carbono, que se moldean en formas suaves y aerodinámicas y **no se corroen** como el metal."
+        },
+        {
+          "type": "text",
+          "md": "El enemigo silencioso del aluminio es la **corrosión** — el \"óxido\" del metal de avión. Si tu escuela está en la costa, el aire salino la acelera. En el prevuelo busca pintura hinchada, polvillo blanco y remaches deteriorados. ¿Y los compuestos? No se corroen, pero tienen su propio truco: un golpe puede dañarlos **por dentro** sin dejar marca visible por fuera."
         },
         {
           "type": "text",
@@ -645,6 +1146,42 @@
           ],
           "answer": 1,
           "why": "Los composites permiten superficies curvas y lisas de una pieza y no se corroen; su reparación es especializada, no más simple."
+        },
+        {
+          "type": "check",
+          "id": "3-11-c2",
+          "q": "¿Qué material domina hoy la construcción de aviones de entrenamiento?",
+          "options": [
+            "Aleaciones de aluminio remachado.",
+            "Fibra de carbono moldeada.",
+            "Tubos de acero cubiertos de tela."
+          ],
+          "answer": 0,
+          "why": "El aluminio en aleaciones es liviano, fuerte y trabajable; los composites crecen, pero la flota de escuela es mayormente de aluminio."
+        },
+        {
+          "type": "check",
+          "id": "3-11-c3",
+          "q": "Tu escuela está frente al mar. En un avión de aluminio, ¿qué buscas con especial cuidado en el prevuelo?",
+          "options": [
+            "Señales de corrosión: pintura hinchada, polvillo blanco, remaches deteriorados.",
+            "Grietas por rayos UV en la fibra de carbono.",
+            "Podredumbre en los largueros de madera."
+          ],
+          "answer": 0,
+          "why": "El aire salino acelera la corrosión del aluminio; esas tres señales son sus huellas típicas."
+        },
+        {
+          "type": "check",
+          "id": "3-11-c4",
+          "q": "¿Qué conecta tus manos y pies con las superficies de control?",
+          "options": [
+            "El sistema de controles de vuelo: cables y varillas.",
+            "El sistema eléctrico del avión.",
+            "El sistema de vacío de los instrumentos."
+          ],
+          "answer": 0,
+          "why": "Los mandos mueven las superficies mediante cables y varillas mecánicas; el eléctrico y el vacío alimentan otros equipos."
         }
       ]
     },
@@ -655,6 +1192,7 @@
         "El avión de escuela típico: monoplano de ala alta con montantes, fuselaje semimonocasco de aluminio, tren triciclo fijo y un motor con hélice.",
         "Cada componente mayor tiene su rol: fuselaje aloja, alas sustentan, empenaje estabiliza y dirige, tren soporta en tierra, planta motriz empuja.",
         "Conocer los nombres de las piezas te permite hacer la inspección prevuelo con criterio.",
+        "El prevuelo recorre el avión pieza por pieza: hélice, capó, montantes, alas, superficies móviles, cola y tren.",
         "Este mapa del avión es la base de los capítulos 4, 5 y 6: por qué vuela y cómo se controla."
       ],
       "blocks": [
@@ -665,6 +1203,10 @@
         {
           "type": "text",
           "md": "¿Y para qué te sirve saberlo? Primero, para la **inspección prevuelo**: cuando camines alrededor del avión revisando montantes, ruedas, superficies y remaches, sabrás QUÉ estás mirando y por qué importa. Segundo, porque los próximos capítulos construyen sobre este: el 4 y el 5 explican por qué esas alas te sostienen, y el 6 cómo esas superficies móviles te obedecen."
+        },
+        {
+          "type": "text",
+          "md": "Imagina tu primer prevuelo completo: empiezas en la hélice (¿melladuras?), sigues al capó (¿tornillos flojos, chorreos de aceite?), montantes (¿abolladuras, juego?), borde de ataque del ala, alerón y flap (¿se mueven libres y firmes?), la cola (¿timón, elevador y compensador libres?) y terminas en el tren (¿llantas, frenos, amortiguadores?). Cada parada del recorrido es una sección de este capítulo."
         },
         {
           "type": "callout",
@@ -699,6 +1241,30 @@
           ],
           "answer": 0,
           "why": "El empenaje (la cola) estabiliza como las plumas de una flecha y aloja timón y elevador para dirigir."
+        },
+        {
+          "type": "check",
+          "id": "3-12-c3",
+          "q": "Ves un avión con dos juegos de alas superpuestos y la tercera rueda en la cola. ¿Cómo lo describes?",
+          "options": [
+            "Biplano con tren convencional.",
+            "Monoplano de ala alta con tren triciclo.",
+            "Biplano con tren triciclo."
+          ],
+          "answer": 0,
+          "why": "Dos juegos de alas = biplano; tercera rueda atrás = tren convencional (tailwheel)."
+        },
+        {
+          "type": "check",
+          "id": "3-12-c4",
+          "q": "En el prevuelo encuentras un montante del ala abollado y con juego. ¿Por qué no debes volar hasta que lo evalúe un mecánico?",
+          "options": [
+            "Porque transmite cargas del ala al fuselaje: es una pieza estructural, no decorativa.",
+            "Porque dentro del montante pasa el combustible hacia el motor.",
+            "Porque sin montante firme la hélice pierde parte del empuje."
+          ],
+          "answer": 0,
+          "why": "En un ala semicantilever el montante comparte las cargas del ala: si falla, la estructura queda comprometida."
         }
       ]
     }

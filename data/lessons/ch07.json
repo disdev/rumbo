@@ -2,6 +2,12 @@
   "chapter": "7",
   "title": "Sistemas de la aeronave",
   "resumen": "Cómo funciona la maquinaria de tu avión: motor, hélice, combustible, aceite, electricidad y encendido — y qué te dicen los instrumentos cuando algo anda mal.",
+  "videos": [
+    {"title": "El motor de tu avioneta por dentro", "query": "como funciona motor de aviación pistones cuatro tiempos explicado español"},
+    {"title": "Hielo de carburador y calefacción", "query": "hielo en el carburador avioneta calefaccion piloto privado español"},
+    {"title": "Hélice de velocidad constante y paso fijo", "query": "helice paso variable velocidad constante aviación explicado español"},
+    {"title": "Magnetos y sistema eléctrico del avión", "query": "magnetos sistema de encendido avion piloto privado explicado"}
+  ],
   "sections": [
     {
       "id": "7-1",
@@ -11,6 +17,7 @@
         "La chispa de la bujía enciende la mezcla en el tiempo de potencia, y la explosión empuja el pistón.",
         "El pistón hace girar el cigüeñal y el cigüeñal hace girar la hélice.",
         "Los cilindros horizontalmente opuestos son los más comunes en aviones de entrenamiento; los radiales van en círculo alrededor del cigüeñal.",
+        "El cigüeñal da dos vueltas completas por cada ciclo: hay un solo tiempo de potencia por ciclo en cada cilindro.",
         "Los motores recíprocos se usan porque son relativamente simples y económicos de operar."
       ],
       "blocks": [
@@ -22,6 +29,20 @@
           "type": "diagram",
           "src": "ch07-motor-4-tiempos.svg",
           "caption": "Los cuatro tiempos: admisión, compresión, potencia y escape. Solo el tercero produce trabajo — los otros tres lo preparan."
+        },
+        {
+          "type": "text",
+          "md": "¿Quieres verlo en cámara lenta? Sigue el orden: el pistón baja con la **válvula de admisión** abierta (entra mezcla), sube con las dos válvulas cerradas (comprime), la bujía dispara y la explosión lo empuja hacia abajo (potencia), y vuelve a subir con la **válvula de escape** abierta (bota los gases). El cigüeñal da **dos vueltas completas** por cada ciclo — y solo recibe UN empujón de potencia. Con cuatro o seis cilindros turnándose, el giro se siente parejo."
+        },
+        {
+          "type": "table",
+          "headers": ["Tiempo", "Pistón", "Válvulas"],
+          "rows": [
+            ["Admisión", "Baja", "Admisión abierta"],
+            ["Compresión", "Sube", "Ambas cerradas"],
+            ["Potencia", "Baja (¡chispa!)", "Ambas cerradas"],
+            ["Escape", "Sube", "Escape abierta"]
+          ]
         },
         {
           "type": "text",
@@ -52,6 +73,22 @@
           "options": ["Mejor distribución del calor", "Son relativamente simples y económicos de operar", "Mantener temperaturas más bajas en la culata"],
           "answer": 1,
           "why": "La ventaja clave de los motores recíprocos es su simplicidad y bajo costo de operación."
+        },
+        {
+          "type": "check",
+          "id": "7-1-c3",
+          "q": "¿Cómo van acomodados los cilindros en la mayoría de los aviones de entrenamiento?",
+          "options": ["En círculo alrededor del cigüeñal, como una estrella", "Horizontalmente opuestos, en pares uno frente al otro", "En línea vertical debajo del cigüeñal"],
+          "answer": 1,
+          "why": "Los horizontalmente opuestos son planos, livianos y se enfrían bien con aire; los radiales (en estrella) son de aviones antiguos."
+        },
+        {
+          "type": "check",
+          "id": "7-1-c4",
+          "q": "Justo después del tiempo de compresión, ¿qué ocurre dentro del cilindro?",
+          "options": ["Se abre la válvula de escape para botar los gases quemados", "La bujía enciende la mezcla comprimida y empieza el tiempo de potencia", "Entra mezcla fresca por la válvula de admisión"],
+          "answer": 1,
+          "why": "El orden es admisión → compresión → potencia → escape: tras comprimir, la chispa enciende la mezcla y la explosión empuja el pistón."
         }
       ]
     },
@@ -59,11 +96,12 @@
       "id": "7-2",
       "title": "La hélice: paso fijo y velocidad constante",
       "key_points": [
-        "La hélice de paso fijo (fixed pitch) tiene un solo ángulo de pala: es un compromiso, y las RPM son tu indicador de potencia.",
+        "La hélice de paso fijo (fixed pitch) tiene un solo ángulo de pala: es un compromiso (paso de ascenso o paso de crucero), y las RPM son tu indicador de potencia.",
         "Con hélice de velocidad constante (constant speed): el acelerador controla la presión de admisión (manifold pressure) y la palanca de hélice controla las RPM.",
         "Su ventaja: seleccionar el ángulo de pala que da el rendimiento más eficiente para cada fase del vuelo.",
         "Precaución: evita alta presión de admisión con RPM bajas — sobrecarga el motor.",
-        "El factor P produce guiñada a la izquierda, máxima con baja velocidad, alta potencia y alto ángulo de ataque."
+        "El factor P produce guiñada a la izquierda porque la pala que desciende (a la derecha) genera más empuje que la que sube.",
+        "El factor P es máximo con baja velocidad, alta potencia y alto ángulo de ataque."
       ],
       "blocks": [
         {
@@ -72,7 +110,20 @@
         },
         {
           "type": "text",
+          "md": "¿Qué significa \"compromiso\" exactamente? Las de paso fijo vienen en dos sabores: **paso de ascenso** (climb prop: ángulo pequeño, acelera y trepa bien, pero cruza lento) y **paso de crucero** (cruise prop: ángulo grande, cruza rápido, pero despega flojo). El fabricante elige una y tú te quedas con sus defectos. La de velocidad constante te da lo mejor de ambas: pala \"fina\" para despegar, pala \"gruesa\" para cruzar — como pasar de primera a quinta."
+        },
+        {
+          "type": "text",
           "md": "Con velocidad constante manejas dos controles: el **acelerador** (throttle) controla la potencia, que lees en el **manómetro de admisión** (manifold pressure gauge), y la **palanca de hélice** regula las RPM. Regla de oro: nunca combines **alta presión de admisión con RPM bajas** — es como subir una cuesta empinada en el cambio más alto de la bici: fuerzas demasiado el mecanismo y puedes dañar los cilindros."
+        },
+        {
+          "type": "table",
+          "headers": ["Control", "¿Qué regula?", "¿Dónde lo lees?"],
+          "rows": [
+            ["Acelerador (negro)", "Potencia / presión de admisión", "Manómetro de admisión"],
+            ["Palanca de hélice (azul)", "RPM", "Tacómetro"],
+            ["Mezcla (rojo)", "Proporción combustible-aire", "—"]
+          ]
         },
         {
           "type": "callout",
@@ -83,6 +134,10 @@
           "type": "callout",
           "style": "ojo",
           "md": "La hélice también empuja el avión a la izquierda: el **factor P** (la pala que baja, a la derecha, genera más empuje). Es máximo con **baja velocidad, alta potencia y alto ángulo de ataque** — o sea, justo en el despegue. El banco lo pregunta en esta categoría."
+        },
+        {
+          "type": "text",
+          "md": "¿Por qué la pala derecha empuja más? Con la nariz arriba, el disco de la hélice queda inclinado respecto al viento: la pala que **desciende** (la derecha, vista desde la cabina) muerde el aire con mayor ángulo de ataque y genera **más empuje** que la que sube a la izquierda. Ese empuje desigual guiña la nariz a la izquierda. Por eso en el despegue — nariz arriba, motor a fondo, poca velocidad — necesitas pie derecho."
         },
         {
           "type": "notebook",
@@ -104,6 +159,30 @@
           "options": ["Baja velocidad, alta potencia, alto ángulo de ataque", "Alta velocidad, alta potencia, alto ángulo de ataque", "Baja velocidad, baja potencia, bajo ángulo de ataque"],
           "answer": 0,
           "why": "La tendencia de giro a la izquierda es máxima con baja velocidad, alta potencia y alto ángulo de ataque (como en el despegue)."
+        },
+        {
+          "type": "check",
+          "id": "7-2-c3",
+          "q": "¿Cuál es la ventaja de una hélice de velocidad constante?",
+          "options": ["Permite seleccionar y mantener la velocidad de crucero deseada", "Permite seleccionar el ángulo de pala que da el rendimiento más eficiente", "Elimina las vibraciones del motor a cualquier RPM"],
+          "answer": 1,
+          "why": "Su gracia es elegir el ángulo de pala óptimo para cada fase del vuelo: despegue, ascenso, crucero."
+        },
+        {
+          "type": "check",
+          "id": "7-2-c4",
+          "q": "Una precaución al operar un motor con hélice de velocidad constante es evitar:",
+          "options": ["RPM altas con alta presión de admisión", "Alta presión de admisión con RPM bajas", "Mezcla rica con RPM altas"],
+          "answer": 1,
+          "why": "Mucha presión con el motor girando lento lo sobrecarga — como subir una cuesta en el cambio más alto."
+        },
+        {
+          "type": "check",
+          "id": "7-2-c5",
+          "q": "La guiñada a la izquierda por factor P se debe a que:",
+          "options": ["La pala que desciende a la derecha produce más empuje que la que sube a la izquierda", "El motor gira en sentido horario y arrastra el fuselaje al sentido contrario", "Las fuerzas giroscópicas actúan 90° después del punto donde se aplican"],
+          "answer": 0,
+          "why": "Con la nariz arriba, la pala descendente (derecha) trabaja con mayor ángulo de ataque: empuje desigual = nariz a la izquierda."
         }
       ]
     },
@@ -128,6 +207,10 @@
           "caption": "Carburador de flotador: el aire acelera en el venturi, la presión baja y succiona combustible del surtidor. La mariposa (conectada al acelerador) regula el flujo."
         },
         {
+          "type": "text",
+          "md": "¿Y quién controla cuánto entra? Dos piezas clave. La **mariposa** (throttle valve) es una tapita giratoria conectada al acelerador: la abres y pasa más mezcla a los cilindros — como el caño de la ducha. Y el **flotador** (float) hace lo mismo que el del tanque del inodoro: cuando la cuba se llena, sube y corta la entrada de gasolina. Así el nivel se mantiene constante sin importar cuánto consuma el motor."
+        },
+        {
           "type": "callout",
           "style": "examen",
           "md": "Pregunta textual del banco: el carburador de flotador se basa en la **diferencia de presión entre la garganta del venturi y la entrada de aire**. Ojo con el distractor: en el venturi la velocidad del aire AUMENTA y la presión DISMINUYE — no al revés."
@@ -143,7 +226,23 @@
           "q": "El funcionamiento del carburador de flotador se basa en:",
           "options": ["La diferencia de presión entre la garganta del venturi y la entrada de aire", "El aumento de presión del aire al acelerarse en el venturi", "La medición automática de aire según la altura"],
           "answer": 0,
-          "why": "La presión baja del venturi frente a la presión de entrada es lo que succiona el combustible de la cuba."
+          "why": "Esa diferencia de presión es la que succiona el combustible de la cuba hacia la corriente de aire."
+        },
+        {
+          "type": "check",
+          "id": "7-3-c2",
+          "q": "Dentro de la garganta del venturi, comparado con la entrada de aire, el aire:",
+          "options": ["Se acelera y su presión disminuye", "Se acelera y su presión aumenta", "Se frena y su presión disminuye"],
+          "answer": 0,
+          "why": "El estrechamiento acelera el aire y por Bernoulli su presión cae — el distractor favorito del banco dice lo contrario."
+        },
+        {
+          "type": "check",
+          "id": "7-3-c3",
+          "q": "¿Qué función cumple el flotador en la cuba del carburador?",
+          "options": ["Mantener constante el nivel de combustible en la cuba", "Pulverizar el combustible en la corriente de aire", "Regular cuánta mezcla entra a los cilindros"],
+          "answer": 0,
+          "why": "El flotador sube con el nivel y corta la entrada de gasolina; pulverizar lo hace el surtidor y regular el flujo, la mariposa."
         }
       ]
     },
@@ -171,6 +270,10 @@
         {
           "type": "text",
           "md": "¿Cómo lo detectas? Con hélice de paso fijo, la primera señal es una **caída de RPM** (con velocidad constante, cae la presión de admisión). La cura es la **calefacción de carburador** (carburetor heat): aire caliente que derrite el hielo. Pero prepárate: al aplicarla, las RPM **caen todavía más** (aire caliente menos denso + agua del hielo derretido pasando por el motor) y **luego suben gradualmente**. Esa secuencia confirma que había hielo."
+        },
+        {
+          "type": "text",
+          "md": "Escenario real: vuelas de Lima a Pisco, 19 °C, húmedo, y reduces potencia para descender. Justo ahí el hielo ataca más: con la mariposa medio cerrada, el hueco que queda es chiquito y un poco de hielo lo tapa rápido. Por eso muchos manuales piden **calefacción de carburador ANTES de reducir potencia** para el descenso. Que haga calorcito afuera no te salva: a 20 °C con humedad alta, el carburador por dentro puede estar bajo cero."
         },
         {
           "type": "callout",
@@ -202,6 +305,22 @@
           "options": ["El motor está detonando", "Había hielo y se está derritiendo", "La mezcla está demasiado pobre"],
           "answer": 1,
           "why": "Caída inicial (aire caliente + agua derretida) seguida de aumento gradual = había hielo y el calor lo está eliminando."
+        },
+        {
+          "type": "check",
+          "id": "7-4-c3",
+          "q": "¿Qué condición es MÁS favorable para la formación de hielo en el carburador?",
+          "options": ["Temperatura exterior entre −7 °C y 21 °C (20–70 °F) con alta humedad", "Cualquier temperatura bajo cero con humedad relativa menor al 50 %", "Solo temperaturas bajo cero con humedad visible"],
+          "answer": 0,
+          "why": "El enfriamiento interno del carburador congela la humedad incluso con calor afuera: el rango clásico es 20–70 °F y humedad alta."
+        },
+        {
+          "type": "check",
+          "id": "7-4-c4",
+          "q": "En términos generales, aplicar calor de carburador:",
+          "options": ["Enriquece la mezcla y disminuye el rendimiento del motor", "Empobrece la mezcla y aumenta el rendimiento del motor", "No afecta ni la mezcla ni el rendimiento"],
+          "answer": 0,
+          "why": "El aire caliente es menos denso: la mezcla se enriquece y el motor rinde menos — por eso las RPM caen al aplicarlo."
         }
       ]
     },
@@ -221,8 +340,22 @@
           "md": "¿Y si el avión no tiene carburador? Los motores modernos usan **inyección de combustible** (fuel injection): en vez de mezclar en un solo punto, un inyector rocía gasolina directo en la entrada de cada cilindro — como servir a cada invitado su plato exacto en vez de un solo tazón para todos. Ventajas: **casi nada de hielo** (no hay venturi que enfríe), mezcla pareja entre cilindros, respuesta más rápida y mejor eficiencia. Desventajas: arranque difícil en caliente, **tapón de vapor** (vapor lock) en días calurosos, y más complejidad."
         },
         {
+          "type": "table",
+          "headers": ["", "Carburador de flotador", "Inyección"],
+          "rows": [
+            ["Hielo interno", "Muy susceptible (venturi)", "Casi inmune"],
+            ["Mezcla entre cilindros", "Desigual", "Uniforme"],
+            ["Arranque en caliente", "Fácil", "Difícil (vapor lock)"],
+            ["Complejidad y costo", "Menor", "Mayor"]
+          ]
+        },
+        {
           "type": "text",
           "md": "¿Y el turbo? A mucha altura el aire es flaco y el motor pierde fuerza. El **turbocargador** (turbocharger) es como soplarle aire extra: una turbina movida por los **gases de escape** — energía que se iba a perder — comprime el aire de admisión. Así el motor respira aire \"de nivel del mar\" aunque vueles alto. Concepto general: sobrealimentar = mantener potencia en altura."
+        },
+        {
+          "type": "text",
+          "md": "Un detalle del turbo que debes entender: no regala potencia mágica — **recupera** la que la altura te roba. A nivel del mar, un motor **normalmente aspirado** (normally aspirated) rinde el 100 %; a 10,000 ft, mucho menos, porque entra menos aire. El turbo comprime el aire de admisión usando la energía de los gases de escape — que de otro modo se botaba — y mantiene la presión de admisión como si volaras bajo."
         },
         {
           "type": "callout",
@@ -241,6 +374,22 @@
           "options": ["Más susceptibles a la formación de hielo", "Igual de susceptibles al hielo", "Menos susceptibles al hielo"],
           "answer": 0,
           "why": "El venturi y la vaporización enfrían el aire dentro del carburador; la inyección no tiene ese punto frío."
+        },
+        {
+          "type": "check",
+          "id": "7-5-c2",
+          "q": "¿Cuál es una ventaja de la inyección de combustible frente al carburador?",
+          "options": ["Distribución más uniforme de la mezcla entre los cilindros", "Arranque más fácil con el motor caliente", "Sistema más simple y barato de mantener"],
+          "answer": 0,
+          "why": "Cada cilindro recibe su dosis exacta; el arranque en caliente y la simplicidad son justamente sus puntos débiles."
+        },
+        {
+          "type": "check",
+          "id": "7-5-c3",
+          "q": "¿Qué impulsa al compresor de un turbocargador?",
+          "options": ["Los gases de escape del motor", "Una correa conectada al cigüeñal", "Un motor eléctrico alimentado por el alternador"],
+          "answer": 0,
+          "why": "El turbo recicla la energía de los gases de escape para comprimir el aire de admisión y mantener la potencia en altura."
         }
       ]
     },
@@ -262,6 +411,10 @@
         {
           "type": "text",
           "md": "¿Y al bajar? Al revés: el aire se vuelve más denso, y si no tocas la perilla, la mezcla queda **excesivamente pobre** (demasiado aire para tan poca gasolina) — el motor puede calentarse o fallar. Bajando, **enriquece**. Otro caso clásico: motor áspero arrancando en un aeropuerto alto (como Cusco o Juliaca), y la aspereza empeora con el calor de carburador → la mezcla está demasiado **rica**: prueba empobrecerla."
+        },
+        {
+          "type": "text",
+          "md": "¿Y si vuelas con la mezcla más rica de la cuenta? El motor no explota, pero sufre: anda **áspero**, las bujías se llenan de **hollín** (fouling) y gastas gasolina de más. Un dato que el banco usa de distractor: el combustible sobrante **absorbe calor y enfría el motor** — eso es cierto de la mezcla rica, pero NO es lo que pasa al descender sin ajustar: ahí la mezcla queda POBRE. Lee siempre hacia dónde va el cambio."
         },
         {
           "type": "callout",
@@ -288,6 +441,14 @@
           "options": ["La mezcla se vuelve excesivamente pobre", "La mezcla se vuelve excesivamente rica", "No pasa nada: la mezcla se autorregula"],
           "answer": 0,
           "why": "Al bajar entra aire más denso con el mismo flujo de combustible: la mezcla queda demasiado pobre."
+        },
+        {
+          "type": "check",
+          "id": "7-6-c3",
+          "q": "Arrancas en un aeropuerto a gran altura: el motor anda ligeramente áspero, la revisión de magnetos no cambia nada, pero con calor de carburador empeora. ¿Acción inicial más lógica?",
+          "options": ["Probar un ajuste más pobre de la mezcla", "Rodar de regreso para una revisión de mantenimiento", "Reducir la presión de admisión para controlar la detonación"],
+          "answer": 0,
+          "why": "En altura el aire ya es menos denso, y el calor de carburador lo adelgaza más: la mezcla está demasiado rica — empobrécela."
         }
       ]
     },
@@ -309,6 +470,10 @@
         {
           "type": "text",
           "md": "Su primo es el **pre-encendido** (preignition): puntos calientes — depósitos de carbón al rojo vivo — encienden la mezcla **antes** de la chispa normal, como una hornilla que prende sola antes de que acerques el fósforo. ¿Y si sospechas detonación durante el ascenso (paso fijo)? **Baja ligeramente la nariz para aumentar la velocidad**: más aire refresca el motor. También ayuda enriquecer la mezcla y reducir potencia."
+        },
+        {
+          "type": "text",
+          "md": "Ponte en situación: despegas de una pista corta en un día caluroso, motor a tope, trepando lento y empinado. Esa es la receta de la detonación: potencia máxima, poco aire de refrigeración y cilindros calientes. Si escuchas golpeteo o ves temperaturas disparadas, lo primero NO es tocar palancas a ciegas: **baja un poco la nariz, gana velocidad** y deja que el aire enfríe. Después: mezcla más rica y, si puedes, menos potencia."
         },
         {
           "type": "table",
@@ -344,6 +509,22 @@
           "options": ["Detonación", "Pre-encendido", "Combustión progresiva"],
           "answer": 1,
           "why": "Pre-encendido: puntos calientes (carbón incandescente) encienden la mezcla antes de tiempo; la detonación es la explosión de la carga no quemada."
+        },
+        {
+          "type": "check",
+          "id": "7-7-c3",
+          "q": "El manual pide un octanaje que no hay en el aeropuerto. ¿Qué combustible usas?",
+          "options": ["El grado de aviación inmediatamente superior", "El grado de aviación inmediatamente inferior", "Gasolina de auto sin plomo del mismo octanaje"],
+          "answer": 0,
+          "why": "Un grado mayor resiste más compresión sin explotar; uno menor invita a la detonación, y el gas de auto no es opción."
+        },
+        {
+          "type": "check",
+          "id": "7-7-c4",
+          "q": "En ascenso tras el despegue (hélice de paso fijo) sospechas que el motor está detonando. ¿Acción correctiva inicial?",
+          "options": ["Bajar ligeramente la nariz para aumentar la velocidad", "Empobrecer la mezcla", "Aplicar calor de carburador"],
+          "answer": 0,
+          "why": "Más velocidad = más aire de refrigeración; empobrecer o meter aire caliente solo agravan la detonación."
         }
       ]
     },
@@ -371,6 +552,10 @@
         {
           "type": "text",
           "md": "El enemigo aquí es el **agua**: es más pesada que la gasolina y se va al fondo. Por eso antes de volar drenas una muestra del **colador** (gascolator) **y de los sumideros de cada tanque** (fuel sumps) con el vasito probador. ¿Y de dónde sale el agua? Condensación en el espacio vacío del tanque. Solución: **llenar los tanques después del último vuelo del día**."
+        },
+        {
+          "type": "text",
+          "md": "Dos piezas más del sistema. El **selector de combustible** (fuel selector) elige de qué tanque tomas: IZQ, DER, AMBOS u OFF — en crucero largo alternas tanques (o usas AMBOS) para no desbalancear las alas. Y el **cebador** (primer) manda un chorrito de gasolina directo a los cilindros para el arranque en frío — como el \"ahogador\" de una moto vieja. En vuelo verifícalo cerrado y asegurado: un cebador suelto hace andar áspero el motor."
         },
         {
           "type": "callout",
@@ -402,6 +587,22 @@
           "options": ["Empuja el agua hacia arriba del tanque", "Evita la condensación de humedad al eliminar el espacio de aire", "Evita que el combustible se expanda"],
           "answer": 1,
           "why": "Sin espacio de aire no se condensa humedad dentro del tanque durante la noche."
+        },
+        {
+          "type": "check",
+          "id": "7-8-c3",
+          "q": "Para purgar bien el agua del sistema de combustible antes de volar, drenas una muestra de:",
+          "options": ["Solo el drenaje del colador (gascolator)", "El colador Y los sumideros de cada tanque", "Solo el sumidero del tanque seleccionado"],
+          "answer": 1,
+          "why": "El agua se asienta en TODOS los puntos bajos: cada sumidero de tanque y el colador tienen su propia muestra."
+        },
+        {
+          "type": "check",
+          "id": "7-8-c4",
+          "q": "Durante la inspección prevuelo, ¿quién es responsable de determinar que la aeronave es segura para volar?",
+          "options": ["El piloto al mando", "El propietario u operador", "El mecánico que hizo la inspección anual"],
+          "answer": 0,
+          "why": "El piloto al mando decide si el avión es seguro para ESE vuelo; mantenerlo aeronavegable en el tiempo es del propietario/operador."
         }
       ]
     },
@@ -424,6 +625,17 @@
         {
           "type": "text",
           "md": "¿Qué te dicen las agujas? Tras arrancar, la presión debe subir en unos **30 segundos** (hasta 60 en frío); si no, apaga: el motor está girando en seco. **Temperatura alta** con presión normal → probablemente **poco aceite**: hay menos litros para repartir el mismo calor. **Temperatura de aceite Y culata altas juntas** → demasiada potencia con mezcla muy pobre. **Presión cayendo** en vuelo → emergencia: aterriza pronto."
+        },
+        {
+          "type": "table",
+          "headers": ["Síntoma", "Sospecha / acción"],
+          "rows": [
+            ["Presión no sube en ~30 s tras arrancar", "Apaga el motor"],
+            ["Temp de aceite alta (sola)", "Nivel de aceite bajo"],
+            ["Aceite + culata altas: ¿operando con qué?", "Mucha potencia + mezcla pobre"],
+            ["Aceite + culata altas: ¿causa más probable?", "Combustible de grado inferior"],
+            ["Presión de aceite cayendo en vuelo", "Emergencia: aterriza pronto"]
+          ]
         },
         {
           "type": "callout",
@@ -450,6 +662,22 @@
           "options": ["Nivel de aceite demasiado bajo", "Mezcla excesivamente rica", "Presión de aceite demasiado alta"],
           "answer": 0,
           "why": "Con poco aceite, el mismo calor se concentra en menos fluido: la temperatura sube."
+        },
+        {
+          "type": "check",
+          "id": "7-9-c3",
+          "q": "La temperatura del aceite Y la de culata han excedido su rango normal. Probablemente estuviste operando con:",
+          "options": ["Demasiada potencia y la mezcla demasiado pobre", "La mezcla demasiado rica", "Presión de aceite superior a la normal"],
+          "answer": 0,
+          "why": "Mucha potencia genera calor extra, y la mezcla pobre le quita el efecto refrigerante del combustible sobrante."
+        },
+        {
+          "type": "check",
+          "id": "7-9-c4",
+          "q": "¿Cuál debe ser tu primera acción después de arrancar el motor?",
+          "options": ["Ajustar las RPM adecuadas y verificar los indicadores del motor", "Pasar los magnetos momentáneamente a OFF para verificar la conexión a tierra", "Probar cada freno y el freno de estacionamiento"],
+          "answer": 0,
+          "why": "Recién arrancado, confirma que el motor está sano: RPM correctas y las agujas (presión de aceite primero) en rango."
         }
       ]
     },
@@ -471,6 +699,10 @@
         {
           "type": "text",
           "md": "¿Y si aun así se calienta? En ascenso vas lento (poco aire) y con potencia máxima (mucho calor) — la peor combinación. Solución: **reduce la velocidad de ascenso y aumenta la velocidad del aire** (baja un poco la nariz). **Enriquecer la mezcla** también enfría: el combustible extra absorbe calor. Recuerda: temperaturas excesivas causan **pérdida de potencia, consumo excesivo de aceite y daños internos permanentes**."
+        },
+        {
+          "type": "text",
+          "md": "En tierra también sufre: rodando (taxi) vas lentísimo y el aire casi no circula — por eso los run-ups largos en clima caliente recalientan el motor. Vigila la temperatura de culata y la de aceite antes de despegar. Y grábate el orden de prioridades si el motor se apaga en vuelo: **primero VUELA el avión** (actitud de planeo + velocidad adecuada); recién después buscas la causa (combustible, mezcla, magnetos) y un campo donde aterrizar."
         },
         {
           "type": "callout",
@@ -497,6 +729,22 @@
           "options": ["Solo un mayor consumo de combustible", "Pérdida de potencia, consumo excesivo de aceite y posibles daños internos permanentes", "Ningún efecto apreciable si dura poco"],
           "answer": 1,
           "why": "El sobrecalentamiento degrada la potencia, quema aceite y puede dañar el motor de forma permanente."
+        },
+        {
+          "type": "check",
+          "id": "7-10-c3",
+          "q": "¿Cuál es un procedimiento para ayudar a enfriar un motor que se sobrecalienta?",
+          "options": ["Enriquecer la mezcla", "Aumentar las RPM", "Reducir la velocidad con respecto al aire"],
+          "answer": 0,
+          "why": "El combustible extra de la mezcla rica absorbe calor; más RPM o menos velocidad solo lo calientan más."
+        },
+        {
+          "type": "check",
+          "id": "7-10-c4",
+          "q": "Se te apaga el motor en pleno vuelo. La regla MÁS importante para recordar es:",
+          "options": ["Establecer de inmediato la actitud de planeo y la velocidad adecuada", "Revisar rápido si se agotó el combustible", "Determinar la dirección del viento para planear el aterrizaje forzoso"],
+          "answer": 0,
+          "why": "Primero vuela el avión: con un planeo estable ganas el tiempo y la altura para todo lo demás."
         }
       ]
     },
@@ -523,6 +771,10 @@
         {
           "type": "text",
           "md": "¿Por qué dos, si con uno alcanza? No es solo respaldo: dos chispas queman la mezcla **más completa y rápidamente** → **mejor rendimiento del motor**. En el run-up haces el **chequeo de magnetos**: pasas la llave a L y a R y esperas una **pequeña caída de RPM** en cada uno. ¿Sin caída? Sospecha: el **cable de tierra** (P-lead) puede estar desconectado — y entonces ese magneto **no se apaga ni con la llave en OFF**."
+        },
+        {
+          "type": "text",
+          "md": "¿Qué buscas exactamente en ese chequeo? Al pasar a un solo magneto, cada cilindro queda con UNA bujía: la combustión es un pelito menos eficiente y las RPM caen un poco — eso es lo **normal y esperado**. Una caída **excesiva** o motor áspero = bujía o magneto con problema. Caída **nula** = sospecha del cable de tierra. Al terminar, la llave siempre vuelve a **BOTH**: con los dos magnetos vuelas."
         },
         {
           "type": "callout",
@@ -554,6 +806,22 @@
           "options": ["No se puede arrancar con la llave en ON", "No se puede apagar girando la llave a OFF", "Funciona áspero en todas las potencias"],
           "answer": 1,
           "why": "Sin cable de tierra el magneto queda siempre 'vivo': la llave en OFF ya no lo desactiva."
+        },
+        {
+          "type": "check",
+          "id": "7-11-c3",
+          "q": "En el run-up pasas la llave a un solo magneto. ¿Qué indicación es NORMAL?",
+          "options": ["Una pequeña caída de RPM", "Ninguna caída de RPM", "Un leve aumento de RPM"],
+          "answer": 0,
+          "why": "Con una sola bujía por cilindro la combustión es algo menos eficiente: una caída pequeña es lo esperado."
+        },
+        {
+          "type": "check",
+          "id": "7-11-c4",
+          "q": "Hay que propulsar el motor a mano (girar la hélice para arrancarlo). Es extremadamente importante que:",
+          "options": ["Un piloto competente esté en los controles de la cabina", "Se grite \"¡contacto!\" antes de tocar la hélice", "El freno de estacionamiento esté suelto para poder mover el avión"],
+          "answer": 0,
+          "why": "Si el motor arranca sin nadie competente en los mandos, el avión se convierte en un peligro sin control."
         }
       ]
     },
@@ -572,6 +840,10 @@
         {
           "type": "text",
           "md": "¿Qué alimenta las luces y los radios? Como en tu casa: una fuente y un tablero con llaves. La **batería** (para arrancar y de reserva) y el **alternador** (alternator, que genera en vuelo y entrega corriente incluso a bajas RPM) alimentan la **barra de bus** a través del **master switch**. De la barra salen circuitos protegidos por **fusibles o breakers** — como las llaves térmicas de tu casa. El **amperímetro** te dice si la batería se carga (+) o se descarga (−)."
+        },
+        {
+          "type": "text",
+          "md": "Aprende a leer esa aguja. En **+**: el alternador está cargando la batería (normal un rato después de arrancar). Cerca de **0**: batería llena, sistema sano. En **−** constante: ¡ojo! la batería se está **descargando** — el alternador dejó de generar y estás viviendo de la reserva. Si te pasa en vuelo: apaga lo eléctrico que no necesites (equipo no esencial) y planea aterrizar antes de quedarte sin radios ni flaps eléctricos."
         },
         {
           "type": "diagram",
@@ -611,6 +883,14 @@
           "options": ["Subir para respirar aire más frío", "Cerrar la calefacción y abrir las ventilaciones", "Enriquecer la mezcla del motor"],
           "answer": 1,
           "why": "Son síntomas de monóxido de carbono: corta la fuente (calefacción) y ventila la cabina de inmediato."
+        },
+        {
+          "type": "check",
+          "id": "7-12-c3",
+          "q": "En crucero notas el amperímetro marcando descarga (−) constante. ¿Qué significa?",
+          "options": ["El alternador dejó de generar y la batería está alimentando el sistema", "La batería se está sobrecargando", "Los magnetos están consumiendo corriente extra"],
+          "answer": 0,
+          "why": "Descarga constante = vives de la reserva de la batería: reduce el consumo eléctrico y planea aterrizar."
         }
       ]
     }

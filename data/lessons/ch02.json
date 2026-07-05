@@ -2,6 +2,12 @@
   "chapter": "2",
   "title": "Toma de decisiones aeronáuticas",
   "resumen": "El capítulo del juicio: cómo piensan los pilotos que llegan a viejos — reconocer actitudes peligrosas, medir el riesgo y decidir a tiempo.",
+  "videos": [
+    { "title": "Las cinco actitudes peligrosas y sus antídotos", "query": "cinco actitudes peligrosas piloto factores humanos aviación explicado español" },
+    { "title": "ADM: cómo deciden los pilotos", "query": "toma de decisiones aeronauticas ADM piloto privado explicado español" },
+    { "title": "IMSAFE y PAVE: gestión de riesgo antes de volar", "query": "IMSAFE PAVE gestion de riesgos piloto privado aviación español" },
+    { "title": "VFR en nubes: los 178 segundos", "query": "178 segundos VFR IMC desorientacion espacial aviación español" }
+  ],
   "sections": [
     {
       "id": "2-1",
@@ -23,6 +29,10 @@
           "md": "Y un accidente casi nunca es *una* cosa que salió mal. Es una **cadena de errores**: salir apurado + clima dudoso + no tener plan B + seguir avanzando. Cada mala decisión es un eslabón. La buena noticia: si **rompes un solo eslabón** — cancelas, das la vuelta, pides ayuda — la cadena se corta y el accidente no ocurre. Al modelo formal se le llama **queso suizo**: para que algo pase, los huecos de varias capas de defensa tienen que alinearse."
         },
         {
+          "type": "text",
+          "md": "Mira una cadena real: un piloto sale **tarde** (eslabón 1), no pide el pronóstico actualizado (2), encuentra nubes más bajas de lo esperado (3), decide continuar porque «ya casi llega» (4) y termina volando cada vez más bajo entre cerros (5). ¿Dónde se cortaba? En cualquiera: salir al día siguiente, pedir el clima, dar la vuelta en el eslabón 3. Fíjate que ningún eslabón por sí solo parecía grave — así funcionan casi todos los accidentes."
+        },
+        {
           "type": "diagram",
           "src": "ch02-cadena-error.svg",
           "caption": "La cadena del error: cada eslabón es una decisión. Basta romper uno — esperar, cancelar, dar la vuelta — para que el accidente nunca ocurra."
@@ -33,6 +43,11 @@
           "md": "El avión rara vez te mata solo. Casi siempre hay una cadena de decisiones antes — y en cada eslabón tuviste la oportunidad de cortarla."
         },
         {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta el **factor común que afecta a la mayoría de los accidentes evitables**: el **error humano**. Los distractores son «fallo estructural» y «mal funcionamiento mecánico» — suenan técnicos, pero son la minoría de los casos."
+        },
+        {
           "type": "notebook",
           "id": "2-1-n1",
           "prompt": "Inventa un «accidente» cotidiano (ej. chocar la moto por llegar tarde al colegio) y dibuja su cadena de 5 eslabones como cajas conectadas. Marca con una X el eslabón que habrías roto y escribe la decisión exacta que lo rompe."
@@ -40,14 +55,14 @@
         {
           "type": "check",
           "id": "2-1-c1",
-          "q": "¿Qué causa la mayoría de los accidentes de aviación?",
+          "q": "¿Cuál es el factor común que afecta a la mayoría de los accidentes evitables?",
           "options": [
-            "Fallas mecánicas del motor.",
-            "El error humano: malas decisiones del piloto.",
-            "Condiciones meteorológicas imposibles de prever."
+            "El fallo estructural de la aeronave.",
+            "El error humano.",
+            "El mal funcionamiento mecánico."
           ],
           "answer": 1,
-          "why": "Cerca del 80% de los accidentes se atribuyen a factores humanos, no al avión ni al clima en sí."
+          "why": "Cerca del 80% de los accidentes se atribuyen a factores humanos: decisiones del piloto, no el avión ni el clima en sí."
         },
         {
           "type": "check",
@@ -60,6 +75,30 @@
           ],
           "answer": 0,
           "why": "El accidente requiere la cadena completa: cortar cualquier eslabón (cancelar, dar la vuelta, pedir ayuda) lo evita."
+        },
+        {
+          "type": "check",
+          "id": "2-1-c3",
+          "q": "El ADM (toma de decisiones aeronáuticas) se define como:",
+          "options": [
+            "Un enfoque sistemático del proceso mental para determinar el mejor curso de acción ante las circunstancias.",
+            "La aplicación de procedimientos de gestión del estrés en la cabina.",
+            "El conjunto de reglamentos que sancionan los errores del piloto."
+          ],
+          "answer": 0,
+          "why": "ADM es un método sistemático para decidir el mejor curso de acción — no es gestión del estrés ni un reglamento."
+        },
+        {
+          "type": "check",
+          "id": "2-1-c4",
+          "q": "Saliste tarde, el clima adelante empeora y quedan pocas opciones de desvío. ¿Qué acción rompe la cadena del error?",
+          "options": [
+            "Acelerar para llegar antes de que el clima cierre.",
+            "Desviarte ahora al alterno, mientras todavía tienes opciones.",
+            "Continuar: ya invertiste demasiado en este vuelo."
+          ],
+          "answer": 1,
+          "why": "Cortar un eslabón temprano — desviarse con opciones abiertas — detiene la cadena; apurarse o insistir solo agrega eslabones."
         }
       ]
     },
@@ -79,6 +118,10 @@
         {
           "type": "text",
           "md": "¿Te ha pasado que un amigo te reta — «¿o te da miedo?» — y sientes esas ganas de demostrar? Esa vocecita tiene nombre en aviación. Hay **cinco actitudes peligrosas** que empujan a malas decisiones, y nos atacan a todos en algún momento. El truco no es ser perfecto: es **reconocer el pensamiento** cuando aparece — ese es siempre el **primer paso** — y responderle con su **antídoto**: una frase fija que te dices a ti mismo."
+        },
+        {
+          "type": "text",
+          "md": "Así suenan en la cabina: «ese espacio aéreo es pura burocracia, cruzo nomás» (**antiautoridad**). «Despego ya, después reviso» (**impulsividad**). «Llevo cincuenta vuelos sin un susto» (**invulnerabilidad**). «¿Viento cruzado? Mírame aterrizar» (**machismo**). «El clima manda, ni modo, sigo» (**resignación**). En el examen te darán frases así, disfrazadas — entrena el oído para ponerles nombre."
         },
         {
           "type": "table",
@@ -102,6 +145,11 @@
           "md": "El banco DGAC pregunta **cada antídoto textual** («¿qué frase revierte la impulsividad?»), pide **nombrar las cinco actitudes** juntas, y pregunta el **primer paso** para neutralizarlas: *reconocer el pensamiento peligroso*. Esta tabla se memoriza completa."
         },
         {
+          "type": "callout",
+          "style": "ojo",
+          "md": "Trampa del banco: los distractores de cada antídoto son **pensamientos peligrosos de otras actitudes** («sé lo que estoy haciendo», «nada pasará», «no me pasará a mí»). El antídoto correcto siempre **contradice** la actitud — nunca la repite suavizada."
+        },
+        {
           "type": "notebook",
           "id": "2-2-n1",
           "prompt": "Copia la tabla de las cinco actitudes peligrosas con su antídoto en dos columnas (actitud → antídoto textual). Luego tápala y escríbela de memoria; repite hasta lograr 5 de 5 sin mirar."
@@ -113,10 +161,10 @@
           "options": [
             "«No me pasará a mí.»",
             "«Me podría pasar a mí.»",
-            "«No estoy indefenso.»"
+            "«No puede ser tan malo.»"
           ],
           "answer": 1,
-          "why": "La invulnerabilidad («a mí no me pasa») se corrige recordando que sí te puede pasar; «no estoy indefenso» es el antídoto de la resignación."
+          "why": "La invulnerabilidad («a mí no me pasa») se corrige recordando que sí te puede pasar; las otras dos opciones son el pensamiento peligroso mismo, disfrazado."
         },
         {
           "type": "check",
@@ -129,6 +177,30 @@
           ],
           "answer": 1,
           "why": "No puedes corregir lo que no ves: primero reconoces el pensamiento, recién después aplicas el antídoto."
+        },
+        {
+          "type": "check",
+          "id": "2-2-c3",
+          "q": "¿Cuáles son las cinco actitudes peligrosas que reconoce el ADM?",
+          "options": [
+            "Mala gestión de riesgos y falta de gestión del estrés.",
+            "Antiautoridad, impulsividad, machismo, resignación e invulnerabilidad.",
+            "Falta de conciencia situacional, juicios apresurados y falta de método de decisión."
+          ],
+          "answer": 1,
+          "why": "Las cinco son antiautoridad, impulsividad, invulnerabilidad, machismo y resignación (A-I-I-M-R); las otras opciones mezclan conceptos de gestión de riesgo."
+        },
+        {
+          "type": "check",
+          "id": "2-2-c4",
+          "q": "Un amigo te reta: «¿aterrizas con este viento cruzado o te da miedo?» y sientes ganas de demostrárselo. ¿Qué frase antídoto aplicas?",
+          "options": [
+            "«Yo puedo hacerlo.»",
+            "«Arriesgarse es una tontería.»",
+            "«Sigue las reglas.»"
+          ],
+          "answer": 1,
+          "why": "Querer demostrar habilidad es machismo; su antídoto textual es «arriesgarse es una tontería». «Yo puedo hacerlo» es el pensamiento machista mismo."
         }
       ]
     },
@@ -139,6 +211,7 @@
         "DECIDE es un proceso continuo de seis pasos para tomar decisiones en vuelo.",
         "Los pasos son: Detectar el cambio, Estimar si hay que reaccionar, Choose (elegir el resultado deseado), Identificar acciones, Do (hacer la mejor acción) y Evaluar el efecto.",
         "DECIDE es un ciclo: si al evaluar el resultado no es el deseado, el proceso vuelve a empezar.",
+        "El resultado deseado se elige antes de identificar las acciones: la C va antes que la I.",
         "El proceso evita las dos reacciones malas: congelarse o actuar por impulso."
       ],
       "blocks": [
@@ -152,8 +225,25 @@
           "caption": "El ciclo DECIDE: seis pasos que se repiten hasta que el problema queda resuelto. Memoriza la letra, la palabra y qué hace cada paso."
         },
         {
+          "type": "table",
+          "headers": ["Letra", "Inglés", "Qué haces"],
+          "rows": [
+            ["D", "Detect", "Detectas que algo cambió"],
+            ["E", "Estimate", "Estimas si hace falta reaccionar"],
+            ["C", "Choose", "Eliges el resultado que quieres"],
+            ["I", "Identify", "Identificas las acciones posibles"],
+            ["D", "Do", "Ejecutas la mejor acción"],
+            ["E", "Evaluate", "Evalúas el efecto de tu acción"]
+          ]
+        },
+        {
           "type": "text",
           "md": "Ejemplo en moto: **detectas** que la llanta trasera se siente floja. **Estimas**: sí, esto es serio. **Eliges** el resultado: llegar sano, no llegar rápido. **Identificas** opciones: parar ya, seguir despacio, llamar a alguien. **Haces**: paras en el grifo. **Evalúas**: ¿aguanta parchada o no? En el aire es exactamente igual — solo que no puedes estacionarte en una nube, así que el ciclo corre más rápido."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "DECIDE mata las dos reacciones malas: **congelarte** (no hacer nada) y el **impulso** (hacer lo primero que se te ocurre). Fíjate que eliges el resultado ANTES de escoger la acción — la C va antes que la I. Primero sabes a dónde quieres llegar; recién ahí comparas caminos."
         },
         {
           "type": "notebook",
@@ -183,6 +273,30 @@
           ],
           "answer": 1,
           "why": "DECIDE es un ciclo continuo: la E final (evaluar) alimenta una nueva vuelta si el resultado no es el deseado."
+        },
+        {
+          "type": "check",
+          "id": "2-3-c3",
+          "q": "En DECIDE, ¿qué haces en el paso C (choose)?",
+          "options": [
+            "Comunicar el problema al ATC.",
+            "Elegir el resultado que deseas lograr en la situación.",
+            "Confirmar el checklist de emergencia."
+          ],
+          "answer": 1,
+          "why": "La C es choose: definir el resultado deseado — y va antes de identificar y comparar las acciones posibles."
+        },
+        {
+          "type": "check",
+          "id": "2-3-c4",
+          "q": "Detectas olor a combustible en la cabina. Según DECIDE, ¿cuál es el paso inmediatamente siguiente?",
+          "options": [
+            "Estimar si el cambio exige reaccionar y qué tan urgente es.",
+            "Ejecutar de inmediato la primera acción que se te ocurra.",
+            "Evaluar el efecto de tus acciones."
+          ],
+          "answer": 0,
+          "why": "Tras detectar (D) viene estimar (E): medir la seriedad del cambio antes de elegir resultado y acciones."
         }
       ]
     },
@@ -208,12 +322,27 @@
         },
         {
           "type": "text",
+          "md": "Aplícala: pronostican **niebla en tu destino al anochecer** y no llevas mucho combustible extra. ¿Probable? Bastante — la niebla en la costa casi nunca «se corre» a tiempo. ¿Grave? Mucho: sin alterno cerca, te quedas sin opciones. Probable + grave = **inaceptable**: sales más temprano, cambias de destino o no vuelas. La matriz no te prohíbe volar — te obliga a **cambiar algo** hasta que el riesgo baje a aceptable."
+        },
+        {
+          "type": "text",
           "md": "Antes de cada vuelo, barre los peligros con **PAVE**: **P**iloto (¿estoy en condiciones? — ahí entra IMSAFE), **A**eronave (¿combustible, mantenimiento, performance?), en**V**ironment — el entorno (¿clima, terreno, pista, luz del día?), y presiones **E**xternas (¿qué me está empujando a volar?). Ya en vuelo, el repaso continuo son las **5 P**: *Plan, Plane, Pilot, Passengers, Programming* — plan, avión, piloto, pasajeros y programación de los equipos — revisadas en cada punto de decisión."
         },
         {
           "type": "diagram",
           "src": "ch02-pave.svg",
           "caption": "PAVE: cuatro cajas de peligros a revisar antes de volar. La E (presiones externas) es la más traicionera porque vive en tu cabeza."
+        },
+        {
+          "type": "table",
+          "headers": ["P", "Significa", "Te preguntas"],
+          "rows": [
+            ["Plan", "El plan", "¿Sigue válido: clima, ruta, combustible?"],
+            ["Plane", "El avión", "¿Sistemas y combustible al día?"],
+            ["Pilot", "El piloto", "¿Cómo estoy yo? (IMSAFE)"],
+            ["Passengers", "Los pasajeros", "¿Están bien? ¿Me presionan?"],
+            ["Programming", "La programación", "¿GPS y radios bien configurados?"]
+          ]
         },
         {
           "type": "callout",
@@ -248,6 +377,30 @@
           ],
           "answer": 1,
           "why": "La esquina probable + grave de la matriz no se mitiga con experiencia: se elimina cambiando el plan."
+        },
+        {
+          "type": "check",
+          "id": "2-4-c3",
+          "q": "La gestión de riesgos, como parte del ADM, se basa en:",
+          "options": [
+            "La aplicación de procedimientos de gestión del estrés.",
+            "La conciencia situacional, el reconocimiento de problemas y el buen juicio.",
+            "El análisis mental de toda la información para tomar una decisión oportuna."
+          ],
+          "answer": 1,
+          "why": "Los tres pilares son conciencia situacional, reconocimiento de problemas y buen juicio; la «gestión del estrés» es el distractor clásico y la tercera opción define al ADM en general."
+        },
+        {
+          "type": "check",
+          "id": "2-4-c4",
+          "q": "Tus amigos ya pagaron el hospedaje y te escriben: «¿a qué hora llegas?». ¿Qué elemento de PAVE está en juego?",
+          "options": [
+            "P: el piloto y su condición física.",
+            "E: las presiones externas.",
+            "V: el entorno del vuelo."
+          ],
+          "answer": 1,
+          "why": "Las expectativas de otros que te empujan a completar el vuelo son presiones externas — la E de PAVE."
         }
       ]
     },
@@ -258,6 +411,7 @@
         "IMSAFE es la lista para evaluar al piloto (la P de PAVE) antes de cada vuelo.",
         "Las letras: Illness (enfermedad), Medication (medicación), Stress (estrés), Alcohol, Fatigue (fatiga), Emotion (emoción).",
         "Basta una sola respuesta desfavorable en IMSAFE para no volar.",
+        "El piloto es el responsable de determinar su aptitud para cada vuelo, aunque tenga certificado médico vigente.",
         "IMSAFE evalúa al piloto, no al avión; la parte médica se profundiza en el capítulo 17."
       ],
       "blocks": [
@@ -266,9 +420,30 @@
           "md": "¿Volarías con gripe y media noche de sueño? ¿Manejarías moto así? La P de PAVE — tú — se revisa con **IMSAFE**, seis preguntas antes de cada vuelo: **I**llness (¿estoy enfermo?), **M**edication (¿tomé medicinas que dan sueño o marean?), **S**tress (¿estrés por exámenes, plata, familia?), **A**lcohol (¿tomé? — cero tolerancia), **F**atigue (¿dormí bien?), **E**motion (¿estoy molesto, triste, alterado?). **Una sola respuesta mala basta para no volar.**"
         },
         {
+          "type": "table",
+          "headers": ["Letra", "Inglés", "Te preguntas"],
+          "rows": [
+            ["I", "Illness", "¿Estoy enfermo?"],
+            ["M", "Medication", "¿Tomé algo que marea o da sueño?"],
+            ["S", "Stress", "¿Cargo presión de plata, estudios, familia?"],
+            ["A", "Alcohol", "¿Tomé? Cero tolerancia."],
+            ["F", "Fatigue", "¿Dormí lo suficiente?"],
+            ["E", "Emotion", "¿Estoy molesto, triste o alterado?"]
+          ]
+        },
+        {
+          "type": "text",
+          "md": "¿Y quién decide si pasas o no pasas IMSAFE? **Tú.** Aunque tengas el certificado médico vigente y firmado, el responsable de determinar si estás en condiciones de volar **hoy, este vuelo**, es **el piloto** — no la autoridad aeronáutica ni el médico examinador. El certificado dice que *en general* estás apto; IMSAFE responde por *este día en particular*."
+        },
+        {
           "type": "callout",
           "style": "clave",
           "md": "IMSAFE evalúa **al piloto**, no al avión. En el capítulo 17 verás el porqué médico de cada letra; aquí es tu herramienta de decisión: es la primera revisión del día, antes incluso de mirar el avión."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Pregunta directa del banco: ¿quién es responsable de determinar si un piloto está en condiciones de volar, aunque tenga certificado médico vigente? **El piloto.** Los distractores: la AAC y el médico."
         },
         {
           "type": "notebook",
@@ -298,6 +473,30 @@
           ],
           "answer": 1,
           "why": "Una sola letra desfavorable basta: medicación que afecta el estado de alerta cancela el vuelo."
+        },
+        {
+          "type": "check",
+          "id": "2-5-c3",
+          "q": "Tienes tu certificado médico vigente. ¿Quién es responsable de determinar si estás en condiciones de volar este vuelo en particular?",
+          "options": [
+            "La AAC (autoridad aeronáutica).",
+            "El médico examinador que firmó el certificado.",
+            "El piloto."
+          ],
+          "answer": 2,
+          "why": "El certificado avala tu aptitud general; la decisión sobre el vuelo de hoy es siempre del piloto."
+        },
+        {
+          "type": "check",
+          "id": "2-5-c4",
+          "q": "Discutiste fuerte con tu familia y subes al avión furioso. ¿Qué letra de IMSAFE te descalifica hoy?",
+          "options": [
+            "S: el estrés acumulado de la vida diaria.",
+            "E: la emoción — un estado emocional intenso.",
+            "I: una enfermedad."
+          ],
+          "answer": 1,
+          "why": "La cólera del momento es la E (emotion); la S es la presión acumulada de fondo, no un estallido puntual."
         }
       ]
     },
@@ -309,6 +508,7 @@
         "Las presiones externas son el factor PAVE más peligroso porque nacen en la cabeza del piloto.",
         "El antídoto es preparar un plan B concreto antes de despegar (alterno, hotel, transporte terrestre).",
         "Hay que avisar a quienes esperan que la hora de llegada nunca está garantizada.",
+        "Los mínimos personales se fijan en tierra, antes del vuelo, y no se renegocian en el aire.",
         "Con plan B, dar la vuelta deja de sentirse como un fracaso."
       ],
       "blocks": [
@@ -319,6 +519,10 @@
         {
           "type": "text",
           "md": "El antídoto se prepara **antes de despegar**: ten un **plan B** concreto — aeropuerto alterno, plata para hotel o bus, y avisar a quienes te esperan que *la hora de llegada nunca está garantizada en avión chico*. Cuando el plan B existe, dar la vuelta deja de sentirse como un fracaso y se convierte en... simplemente el plan B."
+        },
+        {
+          "type": "text",
+          "md": "La otra defensa se fija **en tierra, con cabeza fría**: tus **mínimos personales**. Son tus propios límites — visibilidad mínima, techo mínimo, viento máximo — más conservadores que los legales, escritos ANTES del vuelo. En el aire, con la presión encima, no se renegocian: si el día no cumple tus números, no vuelas. Es como ponerle contraseña a tus decisiones cuando todavía piensas claro."
         },
         {
           "type": "callout",
@@ -341,6 +545,42 @@
           ],
           "answer": 1,
           "why": "El plan B (alterno, hotel, avisar posibles demoras) quita el poder a la presión: dar la vuelta deja de ser un fracaso."
+        },
+        {
+          "type": "check",
+          "id": "2-6-c2",
+          "q": "¿Por qué las presiones externas se consideran el factor de riesgo más traicionero?",
+          "options": [
+            "Porque nacen en la mente del piloto y distorsionan su juicio sin que lo note.",
+            "Porque son imposibles de mitigar con planificación.",
+            "Porque dependen únicamente del clima en ruta."
+          ],
+          "answer": 0,
+          "why": "No vienen del avión ni del cielo: te hacen ver la situación mejor de lo que está, y crecen cuando las opciones se acortan."
+        },
+        {
+          "type": "check",
+          "id": "2-6-c3",
+          "q": "A 30 minutos del destino el clima empeora y piensas: «ya gasté en combustible, más adelante seguro mejora». ¿Qué te está pasando?",
+          "options": [
+            "Estás haciendo un análisis razonable de costo-beneficio.",
+            "El «tengo que llegar» te tiene negociando con el clima: perdiste la objetividad.",
+            "Tienes buena conciencia situacional del vuelo."
+          ],
+          "answer": 1,
+          "why": "Justificar continuar por lo ya invertido es la firma del get-there-itis: es el momento de activar el plan B."
+        },
+        {
+          "type": "check",
+          "id": "2-6-c4",
+          "q": "¿Cuándo deben fijarse los mínimos personales (visibilidad, techo, viento máximo)?",
+          "options": [
+            "En vuelo, ajustándolos según cómo se vea el clima.",
+            "En tierra, antes del vuelo — y en el aire no se renegocian.",
+            "Solo cuando el pronóstico ya es marginal."
+          ],
+          "answer": 1,
+          "why": "Se escriben con cabeza fría, antes de que exista la presión; en el aire solo se obedecen."
         }
       ]
     },
@@ -351,7 +591,8 @@
         "La conciencia situacional es la percepción precisa de todos los factores que afectan al vuelo: piloto, aeronave, entorno y su evolución próxima.",
         "No es solo saber dónde estás: es anticipar qué viene en los próximos minutos.",
         "La distracción, la fijación y la complacencia degradan la conciencia situacional.",
-        "La fatiga, el estrés y la sobrecarga de trabajo abren la puerta a esos tres ladrones."
+        "La fatiga, el estrés y la sobrecarga de trabajo abren la puerta a esos tres ladrones.",
+        "«Ir detrás del avión» es la señal de conciencia situacional perdida; se recupera ganando altura y tiempo."
       ],
       "blocks": [
         {
@@ -361,6 +602,15 @@
         {
           "type": "text",
           "md": "Tres ladrones te la roban. La **distracción**: un pasajero hablando, el celular, un papel que se cae. La **fijación**: clavarte en *un* instrumento o problema y dejar de escanear todo lo demás. La **complacencia**: todo va tan bien que bajas la guardia y dejas de verificar. La fatiga, el estrés y la sobrecarga de tareas les abren la puerta a los tres."
+        },
+        {
+          "type": "text",
+          "md": "¿Y si notas que perdiste el minimapa — no sabes bien dónde estás ni qué sigue? A eso se le llama ir **detrás del avión**: la máquina va más rápido que tu cabeza. La recuperación: **sube** (la altura da tiempo y opciones), **nivela y estabiliza**, vuelve a **escanear** todo, y si hace falta **pregunta** al ATC tu posición. Recuperar la conciencia situacional siempre empieza por darle tiempo a tu cerebro."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Los tres ladrones se combaten con el **escaneo constante**: nunca dejes que un solo instrumento, problema o conversación capture toda tu atención por más de unos segundos."
         },
         {
           "type": "notebook",
@@ -373,7 +623,7 @@
           "q": "Un piloto se concentra tanto en una luz de alarma que no nota que el avión desciende. Eso es:",
           "options": [
             "Fijación: dejó de escanear el resto.",
-            "Complacencia: exceso de confianza.",
+            "Distracción: algo externo capturó su atención.",
             "Resignación: se dio por vencido."
           ],
           "answer": 0,
@@ -390,6 +640,30 @@
           ],
           "answer": 1,
           "why": "Incluye posición, pero es mucho más: piloto, avión, entorno y lo que viene en los próximos minutos."
+        },
+        {
+          "type": "check",
+          "id": "2-7-c3",
+          "q": "¿Qué condiciones les abren la puerta a la distracción, la fijación y la complacencia?",
+          "options": [
+            "La fatiga, el estrés y la sobrecarga de trabajo.",
+            "El exceso de planificación prevuelo.",
+            "Volar acompañado de otro piloto."
+          ],
+          "answer": 0,
+          "why": "Cansado, estresado o saturado, tu escaneo se degrada y los tres ladrones entran fácil."
+        },
+        {
+          "type": "check",
+          "id": "2-7-c4",
+          "q": "Llevas meses volando la misma ruta sin novedades y hoy decides saltarte la verificación visual del combustible «porque siempre está bien». Eso es:",
+          "options": [
+            "Complacencia: la confianza te hizo bajar la guardia.",
+            "Distracción: algo externo capturó tu atención.",
+            "Buena gestión del tiempo prevuelo."
+          ],
+          "answer": 0,
+          "why": "Cuando todo va bien por mucho tiempo, dejar de verificar es la definición de complacencia."
         }
       ]
     },
@@ -400,6 +674,7 @@
         "La prioridad en cabina es fija: primero volar el avión (aviate), luego navegar (navigate), al final comunicar (communicate).",
         "Muchos accidentes ocurrieron por soltar el control del avión para atender la radio o un problema menor.",
         "La carga de trabajo se administra adelantando tareas en las fases tranquilas del vuelo.",
+        "Confiar en la memoria para tareas repetitivas lleva a descuidar las listas de verificación.",
         "Señales de saturación: saltarse ítems del checklist, responder tarde, quedarse atrás del avión.",
         "Ante la saturación: ganar altura y tiempo, y pedir ayuda."
       ],
@@ -413,9 +688,18 @@
           "md": "La otra clave es **repartir la carga en el tiempo**: adelanta en las fases tranquilas (crucero) lo que puedas — frecuencias, repasar la llegada — para que el aterrizaje te encuentre libre. Señales de **saturación**: te saltas ítems del checklist, respondes tarde, sientes que «vas detrás del avión». Si las notas: gana altura, gana tiempo y pide ayuda."
         },
         {
+          "type": "text",
+          "md": "Otra fuga de seguridad: la **memoria**. Cuando una tarea se repite mil veces — prender, rodar, despegar — el cerebro pasa a piloto automático y jura que ya hizo lo que no hizo. Por eso los pilotos que confían en su memoria para las tareas repetitivas terminan **descuidando las listas de verificación** (checklists). El checklist existe justo porque tu memoria es peor de lo que crees, sobre todo cansado o apurado."
+        },
+        {
           "type": "callout",
           "style": "memoria",
           "md": "**Aviate → Navigate → Communicate**: volar, navegar, comunicar — en ese orden y sin excepciones. Si solo recuerdas una cosa del manejo de carga de trabajo, que sea esta."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "El banco pregunta qué se descuida cuando el piloto se apoya en su memoria de corto y largo plazo para tareas repetitivas: **las listas de verificación**. Distractores: la conciencia situacional y «volar fuera del sobre»."
         },
         {
           "type": "notebook",
@@ -433,6 +717,42 @@
           ],
           "answer": 1,
           "why": "El orden es fijo: aviate (volar), navigate (navegar), communicate (comunicar). La radio siempre puede esperar."
+        },
+        {
+          "type": "check",
+          "id": "2-8-c2",
+          "q": "¿Qué elemento se descuida cuando un piloto se basa en su memoria de corto y largo plazo para las tareas repetitivas?",
+          "options": [
+            "Las listas de verificación.",
+            "La conciencia situacional.",
+            "El vuelo dentro del sobre operativo."
+          ],
+          "answer": 0,
+          "why": "La memoria falla justo en lo repetitivo: el checklist es lo que paga el descuido."
+        },
+        {
+          "type": "check",
+          "id": "2-8-c3",
+          "q": "Te descubres respondiendo tarde a la radio y ya te saltaste dos ítems del checklist de descenso. ¿Qué indica eso y qué haces?",
+          "options": [
+            "Estás saturado: gana altura y tiempo, y pide ayuda si hace falta.",
+            "Es normal en el descenso: continúa igual.",
+            "Debes comunicar más rápido para ponerte al día."
+          ],
+          "answer": 0,
+          "why": "Saltarse ítems y responder tarde son señales de saturación: la salida es comprar tiempo, no apurarse más."
+        },
+        {
+          "type": "check",
+          "id": "2-8-c4",
+          "q": "¿En qué fase del vuelo conviene adelantar tareas como sintonizar frecuencias y repasar la llegada?",
+          "options": [
+            "En el crucero, cuando la carga de trabajo es baja.",
+            "En final, para tener la información fresca.",
+            "Durante el despegue, aprovechando la concentración."
+          ],
+          "answer": 0,
+          "why": "La carga se administra en el tiempo: lo que adelantas en crucero te deja libre para las fases críticas."
         }
       ]
     },
@@ -454,6 +774,11 @@
         {
           "type": "text",
           "md": "El GPS y el piloto automático también son recursos — pero con trampa: la **confianza excesiva**. Si dejas que «la caja» vuele siempre, tu habilidad manual se oxida y dejas de cuestionar lo que muestra la pantalla: complacencia pura. Regla doble: **verifica** lo que la automatización te dice contra otras fuentes, y **practica** volar sin ella, para que nunca sea tu única opción."
+        },
+        {
+          "type": "callout",
+          "style": "clave",
+          "md": "Regla doble con la automatización: **verifica** lo que te muestra contra otras fuentes (carta, referencias visuales, ATC) y **practica** volar sin ella. El GPS es un recurso más — no el comandante."
         },
         {
           "type": "notebook",
@@ -483,6 +808,30 @@
           ],
           "answer": 1,
           "why": "La automatización falla o se programa mal; el piloto que dejó de verificar y de practicar a mano queda indefenso."
+        },
+        {
+          "type": "check",
+          "id": "2-9-c3",
+          "q": "El GPS te muestra una posición que no cuadra con el río y la carretera que ves abajo. ¿Qué haces?",
+          "options": [
+            "Confías en el GPS: es más preciso que tus ojos.",
+            "Verificas contra otras fuentes — carta, referencias visuales, ATC — antes de decidir.",
+            "Apagas el GPS para eliminar la confusión."
+          ],
+          "answer": 1,
+          "why": "Ningún recurso se cree a ciegas: la discrepancia se resuelve cruzando fuentes, no eligiendo una al azar."
+        },
+        {
+          "type": "check",
+          "id": "2-9-c4",
+          "q": "Estás desorientado y el combustible baja, pero te da vergüenza llamar al ATC. Según el SRM:",
+          "options": [
+            "Sigues buscando solo: pedir ayuda revela mala planificación.",
+            "Llamas ya: el ATC es un recurso, y pedir ayuda es técnica, no vergüenza.",
+            "Esperas a estar en emergencia declarada para llamar."
+          ],
+          "answer": 1,
+          "why": "El ATC puede darte posición, rumbos y calma; usarlo temprano es exactamente lo que enseña el SRM."
         }
       ]
     },
@@ -493,6 +842,7 @@
         "La carrera scud (scud running) es forzar los límites volando cada vez más bajo para mantener contacto visual con el terreno con poca visibilidad y techo bajo.",
         "El final típico de la carrera scud es el CFIT: vuelo controlado contra el terreno.",
         "Un piloto VFR sin entrenamiento en instrumentos que entra en nubes pierde el control en un promedio de 178 segundos.",
+        "Continuar el vuelo VFR en condiciones de instrumentos conduce a la desorientación espacial o a la colisión con el terreno y los obstáculos.",
         "La decisión correcta es el viraje de 180 grados hecho temprano, cuando aún hay opciones.",
         "Este escenario combina get-there-itis, impulsividad e invulnerabilidad: es el más mortal de la aviación general."
       ],
@@ -506,9 +856,18 @@
           "md": "Y si sigues hasta entrar a la nube — **VFR into IMC** — pierdes toda referencia visual. Un estudio clásico midió cuánto tardaba un piloto sin entrenamiento en instrumentos en perder el control dentro de nubes: **178 segundos** en promedio. Tres minutos. Por eso la decisión correcta es el viraje de **180°** — dar la vuelta — hecho **temprano**, cuando todavía es fácil, no cuando ya estás atrapado entre nubes y cerros."
         },
         {
+          "type": "text",
+          "md": "¿Por qué es tan letal la nube sin entrenamiento? Porque al perder las referencias visuales, tu oído interno **miente**: sientes que estás nivelado cuando estás girando, e inclinado cuando vas derecho. Eso es la **desorientación espacial** — y el vuelo VFR continuado en condiciones de instrumentos (IMC) es lo que más seguido conduce a ella o a la colisión contra el terreno y los obstáculos."
+        },
+        {
           "type": "callout",
           "style": "examen",
           "md": "El banco pregunta el nombre de «empujar tus capacidades y los límites de la aeronave para mantener contacto visual con el terreno en condiciones de poca visibilidad y techo»: **carrera scud** (scud running)."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Otra del banco: ¿qué conduce a menudo a la desorientación espacial o a la colisión con el suelo y los obstáculos volando VFR? **El vuelo continuo en condiciones de instrumentos.** El distractor: «ponerse detrás del avión»."
         },
         {
           "type": "callout",
@@ -535,6 +894,18 @@
         {
           "type": "check",
           "id": "2-10-c2",
+          "q": "En promedio, ¿cuánto tarda un piloto VFR sin entrenamiento en instrumentos en perder el control del avión dentro de nubes?",
+          "options": [
+            "Unos 30 minutos.",
+            "178 segundos: menos de tres minutos.",
+            "Unos 20 segundos."
+          ],
+          "answer": 1,
+          "why": "El estudio clásico midió 178 segundos en promedio — por eso el viraje debe hacerse antes de entrar a la nube."
+        },
+        {
+          "type": "check",
+          "id": "2-10-c3",
           "q": "Un piloto VFR sin entrenamiento en instrumentos ve que va a entrar en nubes. ¿Cuál es la acción correcta?",
           "options": [
             "Descender hasta recuperar la vista del terreno.",
@@ -542,7 +913,19 @@
             "Acelerar para atravesar la nube lo antes posible."
           ],
           "answer": 1,
-          "why": "Sin instrumentos, dentro de la nube el control se pierde en un promedio de 178 segundos: la salida es dar la vuelta a tiempo."
+          "why": "La salida correcta es el viraje temprano de regreso, cuando volver aún es fácil; descender es empezar la carrera scud."
+        },
+        {
+          "type": "check",
+          "id": "2-10-c4",
+          "q": "¿Qué conduce a menudo a la desorientación espacial o a la colisión con el suelo y los obstáculos cuando se vuela VFR?",
+          "options": [
+            "El vuelo continuo en condiciones meteorológicas de instrumentos.",
+            "Ponerse detrás del avión.",
+            "El uso del piloto automático en ruta."
+          ],
+          "answer": 0,
+          "why": "Sin referencias visuales el oído interno engaña: continuar VFR dentro de IMC lleva a la desorientación o al CFIT."
         }
       ]
     }

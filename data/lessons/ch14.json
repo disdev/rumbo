@@ -2,6 +2,12 @@
   "chapter": "14",
   "title": "Operaciones en aeropuertos",
   "resumen": "Cómo leer un aeropuerto: pistas y sus marcas, letreros, luces, el patrón de tráfico y cómo moverte con seguridad en tierra y en el circuito.",
+  "videos": [
+    { "title": "Marcas y letreros del aeropuerto", "query": "señales marcas y letreros de aeropuerto aviación explicado español" },
+    { "title": "El circuito de tráfico paso a paso", "query": "circuito de transito aerodromo piloto privado explicado" },
+    { "title": "PAPI, VASI y luces de pista", "query": "PAPI VASI luces de pista aproximación aviación español" },
+    { "title": "Estela turbulenta: por qué y cómo evitarla", "query": "estela turbulenta vortices punta de ala aviación explicado" }
+  ],
   "sections": [
     {
       "id": "14-1",
@@ -10,7 +16,10 @@
         "Un aeropuerto controlado tiene torre de control que autoriza rodar, despegar y aterrizar.",
         "En un aeropuerto no controlado los pilotos se coordinan solos en una frecuencia común (CTAF).",
         "No controlado no significa sin reglas: todos siguen los mismos procedimientos y se anuncian.",
-        "Cuando la torre cierra, el aeropuerto opera como no controlado."
+        "Cuando la torre cierra, el aeropuerto opera como no controlado.",
+        "Control de tierra autoriza el rodaje; la torre autoriza pista, despegue y aterrizaje; tras aterrizar cambias a tierra cuando la torre lo indica.",
+        "Señales luminosas: verde fija en vuelo = autorizado a aterrizar; verde intermitente en tierra = autorizado a rodar; roja y verde alternadas = precaución extrema.",
+        "Con falla de radio: observa el flujo del tráfico, entra al patrón y busca las señales luminosas de la torre."
       ],
       "blocks": [
         {
@@ -22,14 +31,48 @@
           "md": "Ojo: *no controlado* no significa *sin reglas*. Significa que **tú** eres responsable de coordinarte con los demás en una **frecuencia común (CTAF)**, anunciando tu posición e intenciones. Y algunas torres no operan las 24 horas: cuando la torre cierra, ese aeropuerto funciona como no controlado."
         },
         {
+          "type": "text",
+          "md": "En un aeropuerto controlado hay varias «voces»: primero escuchas el **ATIS** (la grabación con la información del aeropuerto — la viste en el capítulo 13), luego llamas a **control de tierra**, que autoriza el rodaje, y a la **torre**, que autoriza entrar a pista, despegar y aterrizar. Después de aterrizar no cambies de frecuencia por tu cuenta: contactas a control de tierra **cuando la torre te lo indique**."
+        },
+        {
           "type": "callout",
           "style": "clave",
           "md": "Controlado = la torre autoriza todo. No controlado = tú te coordinas por radio en la frecuencia común y sigues los procedimientos establecidos."
         },
         {
+          "type": "text",
+          "md": "¿Y si se muere tu radio en pleno vuelo? La torre tiene un plan B de hace un siglo: una **pistola de señales luminosas** con la que te apunta luces de colores. Cada color y ritmo es un mensaje distinto según estés **en vuelo** o **en tierra**. Es una tabla de memorizar — cae en el examen tal cual."
+        },
+        {
+          "type": "table",
+          "headers": ["Señal", "En vuelo", "En tierra"],
+          "rows": [
+            ["Verde fija", "Autorizado a aterrizar", "Autorizado a despegar"],
+            ["Verde intermitente", "Regresa para aterrizar", "Autorizado a rodar"],
+            ["Roja fija", "Cede el paso y sigue circulando", "Detente"],
+            ["Roja intermitente", "Aeropuerto inseguro: no aterrices", "Despeja la pista en uso"],
+            ["Blanca intermitente", "—", "Regresa a tu punto de partida"],
+            ["Roja y verde alternadas", "Precaución extrema", "Precaución extrema"]
+          ]
+        },
+        {
+          "type": "text",
+          "md": "El procedimiento con **falla de radio** llegando a un aeropuerto controlado: **observa el flujo del tráfico, entra al patrón y busca las señales luminosas** de la torre. Escenario: estás en final y ves roja y verde alternadas… y luego roja intermitente. Traducción: precaución extrema, y el aeropuerto **no es seguro** — abandona la aproximación."
+        },
+        {
+          "type": "callout",
+          "style": "examen",
+          "md": "Del banco, tal cual: **verde fija** en vuelo = autorizado a aterrizar; **verde intermitente** en tierra = autorizado a rodar; **roja fija** en vuelo = cede el paso y sigue circulando; **blanca intermitente** en tierra = regresa a tu punto de partida; **roja y verde alternadas** = precaución extrema."
+        },
+        {
           "type": "notebook",
           "id": "14-1-n1",
           "prompt": "Haz una tabla de dos columnas: 'Controlado' y 'No controlado'. En cada una responde: ¿quién autoriza los movimientos?, ¿qué frecuencia usas?, ¿qué pasa si la torre cierra de noche?"
+        },
+        {
+          "type": "notebook",
+          "id": "14-1-n2",
+          "prompt": "Copia la tabla de señales luminosas completa (6 señales × en vuelo / en tierra). Marca con un círculo la única señal que significa lo mismo en vuelo y en tierra, y apréndete el resto en parejas."
         },
         {
           "type": "check",
@@ -42,6 +85,42 @@
           ],
           "answer": 1,
           "why": "Con la torre cerrada, el aeropuerto funciona como no controlado: te coordinas anunciándote por radio."
+        },
+        {
+          "type": "check",
+          "id": "14-1-c2",
+          "q": "Ruedas hacia la rampa y la torre te dirige una luz blanca intermitente. Significa:",
+          "options": [
+            "Regresa a tu punto de partida en el aeropuerto",
+            "Rueda a mayor velocidad para despejar",
+            "Rueda solo por calles de rodaje, sin cruzar pistas"
+          ],
+          "answer": 0,
+          "why": "Blanca intermitente en tierra = vuelve a tu punto de partida."
+        },
+        {
+          "type": "check",
+          "id": "14-1-c3",
+          "q": "En vuelo, la torre te apunta una luz roja fija. ¿Qué haces?",
+          "options": [
+            "Cedes el paso a otras aeronaves y sigues circulando",
+            "No aterrizas: el aeropuerto es inseguro",
+            "Mantienes tu posición y altitud actuales"
+          ],
+          "answer": 0,
+          "why": "Roja fija en vuelo = cede el paso y continúa en el circuito."
+        },
+        {
+          "type": "check",
+          "id": "14-1-c4",
+          "q": "Te falla la radio llegando a un aeropuerto controlado. El procedimiento recomendado es:",
+          "options": [
+            "Observar el flujo del tráfico, entrar al patrón y buscar señales luminosas de la torre",
+            "Entrar en el tramo cruzado moviendo las alas para que te vean",
+            "Encender las luces de aterrizaje y circular el aeropuerto hasta que despeje el tráfico"
+          ],
+          "answer": 0,
+          "why": "Con radio muda te unes al flujo del patrón y esperas la autorización por señal luminosa."
         }
       ]
     },
@@ -52,7 +131,8 @@
         "El número de pista es el rumbo magnético redondeado a la decena más cercana, dividido entre 10.",
         "Los dos extremos de una misma pista difieren en 18 (180°).",
         "L, C y R distinguen pistas paralelas: izquierda, central y derecha.",
-        "Las dimensiones y la superficie de la pista afectan la distancia de despegue y aterrizaje."
+        "Las dimensiones y la superficie de la pista afectan la distancia de despegue y aterrizaje.",
+        "Como la variación magnética cambia con los años, los aeropuertos a veces renumeran sus pistas."
       ],
       "blocks": [
         {
@@ -62,6 +142,10 @@
         {
           "type": "text",
           "md": "Si hay pistas paralelas, se distinguen con letras: **L** (*left*, izquierda), **C** (*center*, central) y **R** (*right*, derecha) — por ejemplo 12L y 12R. Además del nombre, cada pista tiene dimensiones (largo y ancho) y una superficie (asfalto, concreto, grava, pasto) que determinan cuánta distancia necesita tu avión para despegar y aterrizar."
+        },
+        {
+          "type": "text",
+          "md": "Practícalo: llegas en final con rumbo magnético 176°; la decena más cercana es 180, entre 10 → **Pista 18**. ¿El extremo opuesto de la Pista 04? 4 + 18 = **22** (y si el resultado pasa de 36, réstale 36: el opuesto de la 22 es 40 − 36 = 04). Dato para presumir: como la **variación magnética** se mueve con los años, algunos aeropuertos han tenido que **renumerar** sus pistas — prueba de que el número es magnético, no verdadero."
         },
         {
           "type": "callout",
@@ -96,6 +180,30 @@
           ],
           "answer": 0,
           "why": "L, C y R identifican pistas paralelas: izquierda, central y derecha."
+        },
+        {
+          "type": "check",
+          "id": "14-2-c3",
+          "q": "Llegas en final con rumbo magnético 358°. ¿En qué pista vas a aterrizar?",
+          "options": [
+            "36",
+            "35",
+            "18"
+          ],
+          "answer": 0,
+          "why": "358° se redondea a 360 → entre 10 → Pista 36."
+        },
+        {
+          "type": "check",
+          "id": "14-2-c4",
+          "q": "El extremo opuesto de la Pista 13 es la:",
+          "options": [
+            "31",
+            "26",
+            "18"
+          ],
+          "answer": 0,
+          "why": "Los extremos difieren en 18: 13 + 18 = 31."
         }
       ]
     },
@@ -126,6 +234,10 @@
         {
           "type": "text",
           "md": "¿Y los **chevrones amarillos** en forma de flecha? Zona muerta: es el *blast pad* o zona de parada. **No sirve para nada**: ni rodar, ni despegar, ni aterrizar. Solo existe para el chorro de los motores o una parada de emergencia."
+        },
+        {
+          "type": "text",
+          "md": "Dos más para cerrar: una **X grande** (blanca o amarilla) sobre la cabecera grita **pista cerrada** — ni despegues ni aterrices ahí, aunque el pavimento se vea perfecto. Y en los diagramas tipo examen: si las flechas del umbral desplazado van del punto A al punto B, los **despegues pueden iniciarse en A**, pero la parte de **aterrizaje comienza en B**."
         },
         {
           "type": "callout",
@@ -160,18 +272,45 @@
           ],
           "answer": 2,
           "why": "Los chevrones marcan zona inutilizable: blast pad o zona de parada de emergencia."
+        },
+        {
+          "type": "check",
+          "id": "14-3-c3",
+          "q": "La marca de «barra de demarcación amarilla» indica:",
+          "options": [
+            "Una pista con un umbral desplazado que la precede",
+            "Una línea de espera desde una calle de rodaje hasta una pista",
+            "El comienzo de la pista disponible para aterrizar por el lado de aproximación"
+          ],
+          "answer": 0,
+          "why": "La barra amarilla separa la zona previa (blast pad o calle) del umbral desplazado."
+        },
+        {
+          "type": "check",
+          "id": "14-3-c4",
+          "q": "En el diagrama de un aeropuerto, un área de pista marcada con grandes X se clasifica como:",
+          "options": [
+            "Pista cerrada",
+            "Zona estabilizada",
+            "Helipuerto múltiple"
+          ],
+          "answer": 0,
+          "why": "La X marca pista cerrada: prohibido despegar y aterrizar en ella."
         }
       ]
     },
     {
       "id": "14-4",
-      "title": "Calles de rodaje y las líneas de espera (hold short)",
+      "title": "Calles de rodaje, líneas de espera y rodar con viento",
       "key_points": [
         "Las calles de rodaje se identifican con letras y su eje es una línea amarilla continua.",
         "La marca de posición de espera tiene cuatro líneas amarillas: dos sólidas y dos discontinuas.",
         "Te detienes del lado de las líneas sólidas; en aeropuerto controlado no cruzas sin autorización.",
         "Al salir de la pista debes cruzar las cuatro líneas por completo para estar libre de pista.",
-        "La autorización «taxi a la pista» NO incluye entrar a la pista."
+        "La autorización «taxi a la pista» NO incluye entrar a la pista.",
+        "Una autorización de rodaje no incluye cruzar pistas que se interponen: en cada una necesitas autorización adicional.",
+        "Con viento de frente cuarteado: alerón arriba del lado del viento; con viento de cola: alerón abajo del lado del viento y elevador abajo.",
+        "El viento de cola es la condición más crítica al rodar un ala alta con tren triciclo."
       ],
       "blocks": [
         {
@@ -193,9 +332,41 @@
           "md": "Pregunta típica: te autorizan «taxi a la pista 16». ¿Dónde te detienes? **En la marca de posición de espera de la pista 16** — la autorización de rodaje NO incluye entrar a la pista."
         },
         {
+          "type": "text",
+          "md": "Otra trampa de tierra: te autorizan «ruede a la pista 9» y en tu ruta se cruza otra pista. ¿La pasas sin más? **No**: procedes **hasta la siguiente pista que se interponga, donde requieres autorización adicional** para cruzarla. El permiso se pide pista por pista — y a la 9 jamás entras sin autorización explícita."
+        },
+        {
+          "type": "text",
+          "md": "¿Rodar con viento fuerte? El viento quiere levantarte un ala o la cola, como cuando cargas un cartel grande en la playa con viento. La defensa es posicionar **alerones y elevador**: con viento **de frente** cuarteado, **alerón ARRIBA del lado del viento** (palanca hacia el viento); con viento **de cola** cuarteado, **alerón ABAJO del lado del viento y elevador abajo** (palanca lejos del viento y adelante)."
+        },
+        {
+          "type": "table",
+          "headers": ["Viento cuarteado", "Alerón (lado del viento)", "Elevador"],
+          "rows": [
+            ["De frente, por la izquierda", "Izquierdo ARRIBA (palanca al viento)", "Neutral"],
+            ["De frente, por la derecha", "Derecho ARRIBA (palanca al viento)", "Neutral"],
+            ["De cola, por la izquierda", "Izquierdo ABAJO (palanca al lado contrario)", "Abajo"],
+            ["De cola, por la derecha", "Derecho ABAJO (palanca al lado contrario)", "Abajo"]
+          ]
+        },
+        {
+          "type": "text",
+          "md": "Detalle fino: la tabla es para tren **triciclo** (como tu entrenador). En un avión de **rueda de cola**, con viento de frente el elevador va **arriba** (palanca atrás) para clavar la cola al piso; con viento de cola, ambos lo llevan abajo. Y la condición más crítica rodando un **ala alta con triciclo** es el **viento de cola**: se mete bajo el ala y el estabilizador."
+        },
+        {
+          "type": "callout",
+          "style": "memoria",
+          "md": "«**Trepa HACIA el viento de frente; pícale HUYENDO del viento de cola**»: palanca hacia un viento de frente; palanca lejos y adelante con viento de cola."
+        },
+        {
           "type": "notebook",
           "id": "14-4-n1",
           "prompt": "Dibuja las cuatro líneas de la marca de espera (dos sólidas, dos discontinuas) y un avioncito del lado donde debe detenerse. Escribe debajo: «sólidas de mi lado = me detengo»."
+        },
+        {
+          "type": "notebook",
+          "id": "14-4-n2",
+          "prompt": "Dibuja tu avión visto desde arriba con una flecha de viento de cola entrando por la izquierda. Pinta el alerón izquierdo ABAJO y escribe «palanca a la derecha y adelante». Repite con viento de frente por la derecha."
         },
         {
           "type": "check",
@@ -220,6 +391,42 @@
           ],
           "answer": 1,
           "why": "Despejas la pista solo cuando el avión completo cruzó la marca de posición de espera."
+        },
+        {
+          "type": "check",
+          "id": "14-4-c3",
+          "q": "Control de tierra: «ruede a la pista 9». En tu ruta se interpone la pista 4. Puedes proceder:",
+          "options": [
+            "Hasta la pista 4, donde requieres autorización adicional para cruzarla",
+            "Por calles y pistas hasta la 9, donde puedes despegar de inmediato",
+            "Cruzando la 4 sin detenerte, siempre que no veas tráfico en final"
+          ],
+          "answer": 0,
+          "why": "Cada pista que se interpone exige su propia autorización de cruce; y a la 9 no entras sin autorización."
+        },
+        {
+          "type": "check",
+          "id": "14-4-c4",
+          "q": "Ruedas un triciclo con viento fuerte de cola que entra por tu izquierda. ¿Cómo pones los controles?",
+          "options": [
+            "Alerón izquierdo abajo y elevador abajo",
+            "Alerón izquierdo arriba y elevador neutral",
+            "Alerones y elevador neutrales"
+          ],
+          "answer": 0,
+          "why": "Viento de cola: palanca lejos del viento (alerón abajo del lado del viento) y adelante."
+        },
+        {
+          "type": "check",
+          "id": "14-4-c5",
+          "q": "¿Qué condición de viento es MÁS crítica al rodar un avión de ala alta con tren triciclo?",
+          "options": [
+            "Viento de cola",
+            "Viento cruzado directo",
+            "Viento de frente que disminuye"
+          ],
+          "answer": 0,
+          "why": "El viento de cola se mete bajo el ala alta y la cola, y puede levantar o voltear el avión."
         }
       ]
     },
@@ -231,7 +438,8 @@
         "Letrero negro con borde y letras amarillas = ubicación: te dice dónde estás.",
         "Letrero amarillo con letras negras y flechas = dirección o destino.",
         "El letrero de posición de espera pista/pista denota pistas que se cruzan.",
-        "Cruzar el letrero/marca de límite del área de seguridad confirma que ya despejaste la pista."
+        "Cruzar el letrero/marca de límite del área de seguridad confirma que ya despejaste la pista.",
+        "El letrero rojo «16-34» avisa que LLEGAS a esa pista; el negro con amarillo «22» confirma que estás SOBRE la pista 22."
       ],
       "blocks": [
         {
@@ -246,6 +454,10 @@
         {
           "type": "text",
           "md": "Dos letreros más que caen en el examen: el de **destino de salida** identifica la dirección hacia las pistas de despegue. Y el de **límite del área de seguridad de pista** (parece la marca de espera dibujada en un letrero): lo ves al salir de la pista, y cruzarlo confirma que ya estás **fuera del área protegida** — puedes reportar «pista libre»."
+        },
+        {
+          "type": "text",
+          "md": "No confundas dos letreros que llevan números de pista: el **mandatorio rojo** «16-34» te avisa que estás LLEGANDO a esa pista (detente antes); el de **ubicación de pista** — negro con borde amarillo, «22» — confirma que ya estás **SOBRE** la pista 22. Mismo código de colores que en las calles de rodaje: rojo = alto, negro con amarillo = «aquí estás». Y el **direccional** en una intersección te da la designación y dirección de la calle que sale de ella."
         },
         {
           "type": "callout",
@@ -280,6 +492,30 @@
           ],
           "answer": 0,
           "why": "NO ENTRY es mandatorio: aeronaves no pueden entrar a esa área."
+        },
+        {
+          "type": "check",
+          "id": "14-5-c3",
+          "q": "¿Cuál es el propósito del letrero de posición de espera pista/pista (por ejemplo «15-33»)?",
+          "options": [
+            "Denota pistas que se cruzan",
+            "Indica la entrada a la pista desde una calle de rodaje",
+            "Denota el área protegida para una aeronave que se aproxima o sale"
+          ],
+          "answer": 0,
+          "why": "El letrero pista/pista se ve estando en UNA pista: te avisa que otra pista la cruza adelante."
+        },
+        {
+          "type": "check",
+          "id": "14-5-c4",
+          "q": "Saliendo de una pista ves el letrero con el símbolo del límite del área de seguridad. Desde la cabina te confirma que estás:",
+          "options": [
+            "En una pista, a punto de despejarla",
+            "En una calle de rodaje, a punto de entrar a la zona de pista",
+            "Cerca de una zona crítica de aproximación por instrumentos"
+          ],
+          "answer": 0,
+          "why": "Ese letrero se ve al SALIR: cruzarlo por completo te deja fuera del área protegida de la pista."
         }
       ]
     },
@@ -291,7 +527,9 @@
         "El faro encendido de DÍA indica clima por debajo de los mínimos VFR básicos.",
         "Luces de borde de pista blancas; el umbral se ve verde al llegar y rojo desde adentro.",
         "Las luces de borde de calle de rodaje son azules omnidireccionales; las de eje, verdes.",
-        "Luces controladas por el piloto: 7 clics = alta, 5 = media, 3 = baja."
+        "Luces controladas por el piloto: 7 clics = alta, 5 = media, 3 = baja.",
+        "Luces de posición de otras aeronaves: roja en el ala izquierda, verde en la derecha, blanca en la cola; roja y verde fijas de frente = viene hacia ti.",
+        "Enciende las luces de aterrizaje bajo 10,000 ft dentro de 10 millas de un aeropuerto y en visibilidad reducida."
       ],
       "blocks": [
         {
@@ -314,6 +552,10 @@
           "md": "En algunos aeropuertos sin torre, **tú enciendes las luces** desde el avión con clics del micrófono en la frecuencia común: **7 clics = intensidad alta**, **5 = media**, **3 = baja**. ¿Estaban en alta y las quieres en media? Primero 7 clics para activarlas, luego 5."
         },
         {
+          "type": "text",
+          "md": "Tu radar visual de noche: las **luces de posición** de otros aviones — **roja** en la punta izquierda, **verde** en la derecha, **blanca** en la cola. Si ves roja y verde fijas adelante, a tu altitud… viene **de frente**. ¿Solo la blanca? Se aleja de ti. Y una buena práctica de visibilidad: **enciende tus luces de aterrizaje** por debajo de 10,000 ft dentro de 10 millas de cualquier aeropuerto, y especialmente con visibilidad reducida."
+        },
+        {
           "type": "callout",
           "style": "examen",
           "md": "Tres favoritas del banco: faro de día = clima bajo mínimos VFR; bordes de calle de rodaje = luces **azules omnidireccionales**; helipuerto iluminado = faro **verde, amarillo y blanco**."
@@ -322,6 +564,11 @@
           "type": "notebook",
           "id": "14-6-n1",
           "prompt": "Escribe el código de faros como lista: civil terrestre, militar y helipuerto con sus colores. Luego subraya en azul la respuesta a: ¿de qué color son las luces de borde de las calles de rodaje?"
+        },
+        {
+          "type": "notebook",
+          "id": "14-6-n2",
+          "prompt": "Dibuja un avión visto desde arriba y pinta sus luces de posición: roja (izquierda), verde (derecha), blanca (cola). Debajo dibuja qué combinación verías si viene de frente hacia ti y qué verías si se aleja."
         },
         {
           "type": "check",
@@ -346,6 +593,42 @@
           ],
           "answer": 0,
           "why": "Azul = calle de rodaje; blanco = pista."
+        },
+        {
+          "type": "check",
+          "id": "14-6-c3",
+          "q": "De noche ves un faro que emite dos destellos blancos rápidos entre destellos verdes. Es un:",
+          "options": [
+            "Aeropuerto militar",
+            "Aeropuerto civil terrestre",
+            "Helipuerto"
+          ],
+          "answer": 0,
+          "why": "Dos blancos rápidos entre verdes = militar."
+        },
+        {
+          "type": "check",
+          "id": "14-6-c4",
+          "q": "Las luces de pista están en intensidad alta y las quieres en media. En la frecuencia haces clic:",
+          "options": [
+            "7 veces y luego 5 veces en 5 segundos",
+            "5 veces y luego 3 veces",
+            "3 veces en 3 segundos"
+          ],
+          "answer": 0,
+          "why": "Los 7 clics activan el sistema en alta; luego 5 clics = intensidad media."
+        },
+        {
+          "type": "check",
+          "id": "14-6-c5",
+          "q": "De noche ves luces roja y verde fijas adelante, a tu misma altitud. La otra aeronave:",
+          "options": [
+            "Se acerca de frente",
+            "Se aleja de ti",
+            "Cruza hacia la izquierda"
+          ],
+          "answer": 0,
+          "why": "Ver ambas puntas de ala a la vez (roja izquierda, verde derecha) = viene de frente."
         }
       ]
     },
@@ -358,7 +641,8 @@
         "VASI de 2 barras: rojo sobre blanco = en la senda de planeo.",
         "El VASI garantiza franqueamiento seguro de obstáculos en el área de aproximación, no guía lateral.",
         "Debes mantenerte en o por encima de la senda del VASI hasta necesitar bajar para aterrizar seguro.",
-        "Indicador pulsante: luz roja pulsante = por debajo de la senda."
+        "Indicador pulsante: luz roja pulsante = por debajo de la senda.",
+        "Las aproximaciones VFR nocturnas se vuelan igual que de día."
       ],
       "blocks": [
         {
@@ -378,6 +662,10 @@
         {
           "type": "text",
           "md": "El **VASI** usa dos barras (cercana y lejana). En la senda: lejana roja, cercana blanca — «rojo sobre blanco». Mantenerte en la senda del VASI te asegura **franqueamiento de obstáculos** en el área de aproximación (no te da guía lateral). Regla: al aterrizar en una pista con VASI mantente **en o por encima** de la senda hasta que necesites menos altura para un aterrizaje seguro. Con un indicador **pulsante**: roja pulsante = por debajo."
+        },
+        {
+          "type": "text",
+          "md": "¿Y qué HACES con la información? 4 rojas (muy bajo) = potencia YA y reduce el régimen de descenso; 4 blancas (muy alto) = reduce potencia, baja más rápido o vete al aire y repite. Otro dato que el banco adora: de noche, la aproximación VFR se vuela **igual que de día** — misma senda, mismas velocidades. Los PAPI/VASI existen justo para que la noche no cambie nada."
         },
         {
           "type": "callout",
@@ -412,6 +700,42 @@
           ],
           "answer": 0,
           "why": "La regla: en o sobre la senda del VASI hasta que un descenso menor sea necesario para aterrizar."
+        },
+        {
+          "type": "check",
+          "id": "14-7-c3",
+          "q": "Si permaneces en la senda de planeo del VASI durante la aproximación, ¿qué tienes asegurado?",
+          "options": [
+            "Despeje seguro de obstáculos en el área de aproximación",
+            "Identificación de pista y guía de rumbo",
+            "Guía lateral hacia el eje de la pista"
+          ],
+          "answer": 0,
+          "why": "El VASI garantiza franqueamiento de obstáculos; no da guía lateral ni identifica la pista."
+        },
+        {
+          "type": "check",
+          "id": "14-7-c4",
+          "q": "Con un indicador de senda de aproximación pulsante, estar POR DEBAJO de la senda se indica con:",
+          "options": [
+            "Luz roja pulsante",
+            "Luz blanca pulsante",
+            "Luz blanca constante"
+          ],
+          "answer": 0,
+          "why": "Pulsante y rojo = por debajo; las blancas indican alto o en senda."
+        },
+        {
+          "type": "check",
+          "id": "14-7-c5",
+          "q": "Las aproximaciones VFR a tierra por la noche deben realizarse:",
+          "options": [
+            "Igual que durante el día",
+            "Con un descenso más pronunciado",
+            "A una mayor velocidad aerodinámica"
+          ],
+          "answer": 0,
+          "why": "De noche vuelas la misma aproximación que de día; los indicadores visuales te mantienen en la senda."
         }
       ]
     },
@@ -423,7 +747,8 @@
         "Tramos: viento en contra (upwind), cruzado, viento a favor (downwind), básico (base) y final.",
         "La entrada recomendada es a 45° hacia el punto medio del tramo a favor del viento, a la altitud del patrón.",
         "Para salir: en recto o con viraje de 45° hacia el lado del patrón, cumpliendo los procedimientos establecidos.",
-        "El tramo a favor del viento es paralelo a la pista, en sentido contrario al aterrizaje."
+        "El tramo a favor del viento es paralelo a la pista, en sentido contrario al aterrizaje.",
+        "Al tocar tierra mantén el eje longitudinal paralelo a la dirección del movimiento para minimizar cargas laterales en el tren."
       ],
       "blocks": [
         {
@@ -440,6 +765,14 @@
           "md": "Los cinco tramos: **viento en contra** (*upwind*, en el sentido del despegue), **cruzado** (*crosswind*), **viento a favor** (*downwind*, paralelo a la pista en sentido contrario al aterrizaje), **básico** (*base*) y **final** (alineado con la pista). La **entrada recomendada**: a **45° hacia el punto medio del tramo a favor del viento**, ya a la altitud del patrón. Para salir: en recto o con viraje de 45° hacia el lado del patrón."
         },
         {
+          "type": "text",
+          "md": "Hazlo concreto: pista **36** en uso (aterrizas rumbo 360°), patrón izquierdo. Despegas rumbo 360, viras a la izquierda al cruzado (270°), otra vez a viento a favor (**180°** — paralelo y opuesto), al básico (090°) y a final (360°). Si te piden «reporte viento a favor pista 36», ya sabes qué rumbo llevas: 180°."
+        },
+        {
+          "type": "text",
+          "md": "Dos detalles que valen puntos: en un aeropuerto no controlado la salida del patrón **no es libre** — cumples el procedimiento que la autoridad estableció para ese aeropuerto. Y al tocar tierra, cuida el tren: mantén el **eje longitudinal del avión paralelo a la dirección de su movimiento**; si el avión apunta a un lado mientras se mueve hacia adelante, las ruedas reciben cargas laterales que pueden dañarlas."
+        },
+        {
           "type": "callout",
           "style": "examen",
           "md": "Dos seguras del banco: la entrada recomendada es **a 45° al punto medio del viento a favor, a la altitud del patrón**; y la salida correcta en un aeropuerto no controlado es **cumplir el patrón de tráfico establecido por la autoridad (AAC/DGAC)** para ese aeropuerto."
@@ -447,7 +780,7 @@
         {
           "type": "notebook",
           "id": "14-8-n1",
-          "prompt": "Dibuja el patrón de tráfico completo alrededor de una pista y etiqueta CADA tramo en español y en inglés. Marca la flecha del viento, la entrada a 45° y escribe «1,000 ft AGL»."
+          "prompt": "Dibuja el patrón de tráfico completo alrededor de una pista y etiqueta CADA tramo en español y en inglés. Marca la flecha del viento, la entrada a 45° y escribe «1,000 ft AGL». Anota junto a cada tramo el rumbo si la pista en uso es la 36."
         },
         {
           "type": "check",
@@ -472,6 +805,42 @@
           ],
           "answer": 1,
           "why": "El downwind es paralelo a la pista en sentido contrario al aterrizaje."
+        },
+        {
+          "type": "check",
+          "id": "14-8-c3",
+          "q": "¿Cuál es el procedimiento de salida de patrón correcto en un aeropuerto no controlado?",
+          "options": [
+            "Cumplir el patrón de tráfico que la AAC estableció para ese aeropuerto",
+            "Salir en cualquier dirección segura después de cruzar el límite del aeropuerto",
+            "Hacer todos los virajes a la izquierda"
+          ],
+          "answer": 0,
+          "why": "La salida no es libre: sigues el procedimiento establecido por la autoridad para ese aeropuerto."
+        },
+        {
+          "type": "check",
+          "id": "14-8-c4",
+          "q": "Pista 36 en uso, patrón izquierdo. En el tramo a favor del viento tu rumbo es aproximadamente:",
+          "options": [
+            "180°",
+            "360°",
+            "090°"
+          ],
+          "answer": 0,
+          "why": "Paralelo y opuesto al rumbo de aterrizaje (360°): vuelas rumbo 180°."
+        },
+        {
+          "type": "check",
+          "id": "14-8-c5",
+          "q": "Para minimizar las cargas laterales sobre el tren de aterrizaje al tocar tierra, mantienes:",
+          "options": [
+            "El eje longitudinal del avión paralelo a la dirección de su movimiento",
+            "La dirección del movimiento del avión paralela al eje de la pista",
+            "El ala del lado del viento baja hasta eliminar todo derrape"
+          ],
+          "answer": 0,
+          "why": "Si el avión apunta hacia donde se mueve, las ruedas tocan sin arrastre lateral."
         }
       ]
     },
@@ -483,7 +852,8 @@
         "La manga se infla apuntando hacia donde VA el viento; el viento entra por la boca ancha.",
         "El tetraedro apunta en la dirección en que se debe aterrizar.",
         "El círculo segmentado tiene el indicador de viento al centro y extensiones en L alrededor.",
-        "Las extensiones en L muestran la dirección del viraje de básico a final: te dicen si el patrón es izquierdo o derecho."
+        "Las extensiones en L muestran la dirección del viraje de básico a final: te dicen si el patrón es izquierdo o derecho.",
+        "Los patrones del círculo segmentado a veces se disponen para evitar sobrevolar áreas sensibles cercanas."
       ],
       "blocks": [
         {
@@ -500,9 +870,17 @@
           "md": "El **círculo segmentado** reúne todo: al centro, el indicador de viento; alrededor, **extensiones en forma de L** que muestran, para cada pista, la dirección del viraje de **básico a final**. Si la L indica que el tráfico llega por la derecha de una pista, esa pista usa **patrón derecho** (virajes a la derecha). Así, sin radio, sabes qué pista usar y con qué patrón."
         },
         {
+          "type": "text",
+          "md": "Un ejemplo tipo examen: el círculo muestra tráfico a la **izquierda** para la Pista 36 y a la **derecha** para la 18 (¡es la misma pista física, vista desde cada extremo!). ¿Por qué ese arreglo? Muchas veces para **evitar sobrevolar un área sensible** — un pueblo, un colegio — que queda de un lado del aeropuerto. La manga decide la pista; la L decide el lado del circuito."
+        },
+        {
+          "type": "text",
+          "md": "Ojo con el tetraedro: en algunos aeropuertos lo dejan **amarrado** señalando la pista en uso aunque el viento cambie. Confírmalo siempre con la manga, que nunca miente."
+        },
+        {
           "type": "callout",
           "style": "examen",
-          "md": "Las preguntas de la Figura 50 del banco son exactamente esto: leer el círculo segmentado para decidir **qué pista y qué patrón** usar según la manga — por ejemplo, «tráfico a la izquierda para la Pista 36 y a la derecha para la 18». Practícalas mirando la L de cada pista."
+          "md": "Las preguntas de la Figura 50 del banco son exactamente esto: leer el círculo segmentado para decidir **qué pista y qué patrón** usar según la manga — por ejemplo, «tráfico a la izquierda para la Pista 36 y a la derecha para la 18». También preguntan para qué se dispone así el patrón: **evitar sobrevolar un área** cercana. Practícalas mirando la L de cada pista."
         },
         {
           "type": "notebook",
@@ -532,6 +910,30 @@
           ],
           "answer": 0,
           "why": "Las L muestran cómo se une básico con final: revelan si el patrón es izquierdo o derecho."
+        },
+        {
+          "type": "check",
+          "id": "14-9-c3",
+          "q": "El tetraedro de un aeropuerto apunta hacia el este. ¿Qué te indica?",
+          "options": [
+            "Que debes aterrizar hacia el este",
+            "Que el viento se dirige hacia el oeste",
+            "Que la pista con orientación este está cerrada"
+          ],
+          "answer": 0,
+          "why": "El tetraedro apunta en la dirección en que se debe aterrizar."
+        },
+        {
+          "type": "check",
+          "id": "14-9-c4",
+          "q": "El círculo segmentado muestra tráfico a la izquierda para la Pista 36 y a la derecha para la 18. La manga indica viento del norte. ¿Qué haces?",
+          "options": [
+            "Aterrizas en la 36 con patrón izquierdo",
+            "Aterrizas en la 18 con patrón derecho",
+            "Aterrizas en la 36 con patrón derecho"
+          ],
+          "answer": 0,
+          "why": "Viento del norte → aterrizas hacia el norte (Pista 36); su L indica virajes a la izquierda."
         }
       ]
     },
@@ -543,7 +945,8 @@
         "Se monitorea la CTAF desde 10 millas antes de llegar hasta aterrizar (y de salida hasta 10 millas fuera).",
         "Los auto-anuncios informan posición e intenciones; nadie autoriza — tú informas.",
         "Se anuncia al rodar, antes de entrar a pista, en cada tramo del patrón y al despejar la pista.",
-        "UNICOM puede dar información (viento, combustible) pero no es control de tráfico."
+        "UNICOM puede dar información (viento, combustible) pero no es control de tráfico.",
+        "Si no hay torre, FSS ni UNICOM, la CTAF es la frecuencia MULTICOM: 122.9 MHz."
       ],
       "blocks": [
         {
@@ -553,6 +956,10 @@
         {
           "type": "text",
           "md": "En la CTAF haces **auto-anuncios** «a ciegas»: nadie tiene que contestarte; tú informas quién eres, dónde estás y qué vas a hacer. ¿Cuándo? Antes de rodar, antes de entrar a la pista para despegar, **al entrar al patrón y en cada tramo** (viento a favor, básico, final) y al despejar la pista. Ejemplo: «Tráfico de Nasca: OB-1234, tramo a favor del viento, pista 27, Nasca»."
+        },
+        {
+          "type": "text",
+          "md": "¿Y cuál es la CTAF? La encuentras en la carta aeronáutica y en la publicación del aeropuerto. Puede ser la frecuencia de una estación **UNICOM** (una estación privada: te da viento, pista en uso, combustible… pero **no controla tráfico**), la frecuencia de la torre cuando está cerrada, o — si no hay ninguna estación en el campo — la frecuencia **MULTICOM** (122.9 MHz), donde solo hablan pilotos con pilotos."
         },
         {
           "type": "callout",
@@ -586,7 +993,31 @@
             "Activar automáticamente las luces de pista"
           ],
           "answer": 1,
-          "why": "Nadie autoriza en la CTAF: te anuncias para que todos sepan dónde estás y qué harás."
+          "why": "Te anuncias «a ciegas» para que el resto del tráfico sepa dónde estás y qué harás."
+        },
+        {
+          "type": "check",
+          "id": "14-10-c3",
+          "q": "Llegas a aterrizar a un aeropuerto sin torre cuya CTAF/MULTICOM es 122.9. El procedimiento recomendado es:",
+          "options": [
+            "Transmitir intenciones en 122.9 a 10 millas y dar reportes de posición en el patrón",
+            "Contactar UNICOM a 10 millas para pedir autorización de ingreso",
+            "Circular el aeropuerto con virajes a la izquierda antes de entrar al tráfico"
+          ],
+          "answer": 0,
+          "why": "A 10 millas transmites intenciones y luego reportas cada tramo del circuito."
+        },
+        {
+          "type": "check",
+          "id": "14-10-c4",
+          "q": "La estación UNICOM de un aeropuerto sin torre puede:",
+          "options": [
+            "Darte información como viento y pista en uso, sin controlar el tráfico",
+            "Autorizarte a aterrizar cuando la torre está cerrada",
+            "Ordenar la secuencia de aterrizaje entre las aeronaves"
+          ],
+          "answer": 0,
+          "why": "UNICOM es una estación privada de información; no emite autorizaciones."
         }
       ]
     },
@@ -598,7 +1029,8 @@
         "La estela es peor con un avión pesado, limpio (sin flaps) y lento.",
         "Despegando detrás de un grande: rota ANTES de su punto de rotación y sube por el lado de donde viene el viento.",
         "Aterrizando detrás de un grande: mantente por ENCIMA de su trayectoria y toca tierra DESPUÉS de su punto de toque.",
-        "Un viento de cola ligero es la condición más peligrosa para la estela al aterrizar."
+        "Un viento de cola ligero es la condición más peligrosa para la estela al aterrizar.",
+        "Los vórtices nacen en la rotación y mueren en el toque; un viento cruzado de 2–3 nudos puede mantener un vórtice sobre la pista."
       ],
       "blocks": [
         {
@@ -610,14 +1042,28 @@
           "md": "La receta para esquivarlos en el circuito: **despegando detrás de un grande**, despega **ANTES** de su punto de rotación y sube por el lado de donde viene el viento (barlovento), alejándote de la estela. **Aterrizando detrás de un grande**, mantente **por ENCIMA** de su trayectoria de aproximación y toca tierra **DESPUÉS** de su punto de toque. La condición más traicionera: un **viento de cola ligero**, que empuja los vórtices hacia tu zona de toque."
         },
         {
+          "type": "text",
+          "md": "Piensa dónde EMPIEZA y dónde TERMINA su estela: los vórtices **nacen cuando el grande rota** (ahí empieza la sustentación) y **mueren cuando toca tierra**. Por eso hay cuatro combinaciones — la tabla de abajo las resume. Y el viento los mueve como humo: un viento cruzado ligero (2–3 nudos) puede **mantener el vórtice de barlovento flotando sobre la pista** y empujar el otro hacia una pista paralela. No asumas que «el viento ya limpió»."
+        },
+        {
+          "type": "table",
+          "headers": ["Situación", "Tu acción"],
+          "rows": [
+            ["Despegas tras un grande que DESPEGÓ", "Rota ANTES de su punto de rotación; sube por barlovento"],
+            ["Despegas tras un grande que ATERRIZÓ", "Rota DESPUÉS de su punto de toque"],
+            ["Aterrizas tras un grande que ATERRIZÓ", "Mantente encima de su senda; toca DESPUÉS de su punto de toque"],
+            ["Aterrizas tras un grande que DESPEGÓ", "Toca ANTES de su punto de rotación"]
+          ]
+        },
+        {
           "type": "callout",
           "style": "memoria",
-          "md": "Despega ANTES de donde él rotó; aterriza DESPUÉS de donde él tocó. Y siempre por encima de su camino."
+          "md": "Despega ANTES de donde él rotó; aterriza DESPUÉS de donde él tocó. Y siempre por encima de su camino. Su estela vive ENTRE su rotación y su toque: tú quédate fuera de ese tramo."
         },
         {
           "type": "notebook",
           "id": "14-11-n1",
-          "prompt": "Dibuja la pista de perfil: un avión grande despegando con su punto de rotación, y marca con una X dónde despegas tú (antes). Repite para aterrizaje: su punto de toque y dónde tocas tú (después)."
+          "prompt": "Dibuja la pista de perfil: un avión grande despegando con su punto de rotación, y marca con una X dónde despegas tú (antes). Repite para aterrizaje: su punto de toque y dónde tocas tú (después). Copia la tabla de las cuatro combinaciones."
         },
         {
           "type": "check",
@@ -642,6 +1088,30 @@
           ],
           "answer": 0,
           "why": "Un viento de cola ligero empuja los vórtices del grande hacia tu zona de toque."
+        },
+        {
+          "type": "check",
+          "id": "14-11-c3",
+          "q": "Un avión grande genera vórtices de punta de ala:",
+          "options": [
+            "Desde que rota al despegar hasta que toca tierra al aterrizar",
+            "Solo cuando lleva flaps y tren extendidos",
+            "Solo cuando vuela a alta velocidad"
+          ],
+          "answer": 0,
+          "why": "Hay vórtices siempre que el ala genera sustentación: de la rotación al toque."
+        },
+        {
+          "type": "check",
+          "id": "14-11-c4",
+          "q": "Vas a despegar y un avión grande acaba de ATERRIZAR en tu pista. ¿Dónde rotas?",
+          "options": [
+            "Después de su punto de toque",
+            "Antes de su punto de toque",
+            "Exactamente en el punto donde él tocó"
+          ],
+          "answer": 0,
+          "why": "Su estela terminó donde él tocó: rota más allá de ese punto y quedas fuera de ella."
         }
       ]
     },
@@ -653,12 +1123,17 @@
         "Para prevenirlas: escribe las instrucciones, colaciona todo «hold short», usa el diagrama del aeropuerto y, si te pierdes, detente y pregunta.",
         "LAHSO: aterrizar y detenerse antes de un punto; puedes (y debes) rechazarla si no puedes cumplirla.",
         "Trata la hélice siempre como si fuera a girar; nunca camines por su arco.",
-        "Señal de marshalling con los brazos cruzados sobre la cabeza = ALTO."
+        "Señal de marshalling con los brazos cruzados sobre la cabeza = ALTO.",
+        "Si te desorientas rodando: detente, avisa y pide rodaje progresivo."
       ],
       "blocks": [
         {
           "type": "text",
           "md": "¿Qué es una **incursión en pista**? Una aeronave, vehículo o persona donde no debe estar: en una pista en uso. Es de los accidentes más evitables. Tu kit anti-incursiones: **escribe** las instrucciones de rodaje, **colaciona** (repite) toda instrucción de mantener fuera (*hold short*), estudia el **diagrama del aeropuerto** antes de rodar, y si te pierdes, **detente y pregunta**. Nunca cruces una marca de espera sin estar seguro de tu autorización."
+        },
+        {
+          "type": "text",
+          "md": "Escenario real: ruedas de noche, te desorientas y no sabes si lo que tienes adelante es pista o calle. ¿Qué haces? **Detente donde estás** (fuera de pista), confiesa por radio — «no estoy seguro de mi posición» — y pide **rodaje progresivo** (*progressive taxi*): te van guiando giro por giro. Perderse no es vergüenza; cruzar una pista sin saberlo, sí."
         },
         {
           "type": "text",
@@ -697,6 +1172,30 @@
           ],
           "answer": 1,
           "why": "Colacionar el hold short y saber dónde estás (diagrama) son las defensas clave contra incursiones."
+        },
+        {
+          "type": "check",
+          "id": "14-12-c3",
+          "q": "Rodando de noche te desorientas y no estás seguro de si hay una pista adelante. Lo correcto es:",
+          "options": [
+            "Detenerte donde estás y pedir ayuda o rodaje progresivo",
+            "Continuar despacio hasta reconocer algún letrero",
+            "Regresar rodando por donde viniste"
+          ],
+          "answer": 0,
+          "why": "Perdido en tierra = detente (fuera de pista) y pide guía; nunca avances hacia lo desconocido."
+        },
+        {
+          "type": "check",
+          "id": "14-12-c4",
+          "q": "El señalero de rampa cruza los brazos sobre su cabeza. Te está indicando:",
+          "options": [
+            "Alto total",
+            "Avanza más rápido",
+            "Corta el motor"
+          ],
+          "answer": 0,
+          "why": "Brazos cruzados sobre la cabeza = ALTO."
         }
       ]
     }
