@@ -210,6 +210,7 @@ function renderHome() {
   if (state.errorDeck.length) nodes.push(el('p', { class: 'note center' }, `Mazo de errores: ${state.errorDeck.length} pendiente(s)`));
   nodes.push(el('footer', { class: 'home-footer' },
     el('span', { id: 'offline-dot', class: 'offline-dot', title: 'listo sin conexión' }, '●'),
+    el('a', { href: 'bitacora-rumbo.pdf', target: '_blank', rel: 'noopener' }, '🗒️ Bitácora (PDF)'),
     el('a', { href: '#', onclick: (e) => { e.preventDefault(); doRestore(); } }, 'Restaurar progreso')));
 
   app.replaceChildren(el('div', { class: 'home' }, ...nodes));

@@ -5,6 +5,8 @@ An 8-week, PHAK-first study program for the DGAC (Peru) private pilot written ex
 **Deployed (2026-07-04):** https://rumbo-atk.pages.dev — student app; `/progreso/` — mentor dashboard.
 
 **Lecciones (2026-07-05):** the app now teaches every assigned PHAK chapter in-app (`data/lessons/chNN.json`, rendered by `src/js/lessons.js`), with guided step-by-step math, notebook prompts, checks, and badges. Content workflow: edit lesson JSON → `node scripts/validate-lessons.mjs` → `node scripts/sync-chapters.mjs` (regenerates `chapters.json` sections + the SW precache index) → bump `content_version` in `data/config.json` → deploy. Authoring rules: `docs/lesson-authoring.md`. Tests: `node --test tests/*.mjs`.
+
+**Bitácora (printable pilot-style checklist):** `bitacora-rumbo.pdf`, linked from the app footer. Regenerate after program-structure changes: `node scripts/gen-bitacora.mjs` then print `scripts/bitacora.html` to PDF with headless Chrome (`--headless=new --print-to-pdf=bitacora-rumbo.pdf --no-pdf-header-footer`).
 Cloudflare account `dspeer@outlook.com` · D1 `rumbo` · R2 `rumbo-audio` · Access team `little-bar-6fd6.cloudflareaccess.com` (two apps: site-wide for student+mentor, mentor-only for `/progreso*` + `/api/progress`; 1-month sessions, email OTP). Only rows stamped with `STUDENT_EMAIL` count toward progress — the mentor can use the student app without polluting it.
 
 ## Layout
