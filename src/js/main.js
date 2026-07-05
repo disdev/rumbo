@@ -52,6 +52,12 @@ const ctx = {
 };
 
 async function boot() {
+  // Rebote del dashboard (§8): /progreso nos mandó aquí solo para completar
+  // el login del app principal — de vuelta al dashboard.
+  if (new URLSearchParams(location.search).get('volver') === 'progreso') {
+    location.replace('/progreso/');
+    return;
+  }
   const [config, chapters, bank, templates, scenarios] = await Promise.all(
     ['config', 'chapters', 'bank', 'math-templates', 'scenarios'].map(f =>
       fetch(`data/${f}.json`).then(r => r.json())));

@@ -32,6 +32,22 @@
 </head>
 <body>
   <main id="app"><div class="card center"><p>Loading…</p></div></main>
-  <script type="module" src="dash.js"></script>
+  <script>
+    // Two Access apps guard this page: /progreso* (mentor) and the site-wide
+    // app (which owns ../src, ../data, /api/log). Without a site-wide session
+    // the module imports would be redirected to the Access login and die
+    // silently. Probe first; if blocked, bounce through the main app's login.
+    fetch('/data/config.json', { cache: 'no-store' })
+      .then((r) => {
+        const ct = r.headers.get('content-type') || '';
+        if (!r.ok || ct.includes('text/html')) throw new Error('no site session');
+        return import('./dash.js');
+      })
+      .catch(() => {
+        document.querySelector('#app p').textContent =
+          'Signing you into the main app first… (Access needs both sessions)';
+        location.href = '/?volver=progreso';
+      });
+  </script>
 </body>
 </html>
