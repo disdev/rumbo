@@ -4,8 +4,8 @@
   "lang": "es",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#0d1b2a",
-  "theme_color": "#0d1b2a",
+  "background_color": "#faf9f5",
+  "theme_color": "#faf9f5",
   "description": "Programa de estudio de 8 semanas para el examen escrito DGAC de piloto privado.",
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
