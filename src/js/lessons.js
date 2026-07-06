@@ -225,6 +225,7 @@ function runSection(root, lesson, idx, ctx, { mode, isLast }) {
     const doneLabel = isLast && mode === 'primera' ? 'Terminé la lección ✅' : 'Continuar →';
 
     async function showTeach() {
+      ctx.nav?.('leccion', { chapter, section: sec.id, mode }); // rastro: sección abierta (spec 2026-07-06)
       const body = el('div', { class: 'lesson-body' });
       const silent = { total: 0, answered: 0, onChange: () => {} };
       for (const b of teachBlocks) body.append(await renderBlock(b, ctx, sec, chapter, silent));
@@ -248,6 +249,7 @@ function runSection(root, lesson, idx, ctx, { mode, isLast }) {
     }
 
     async function showChecks() {
+      ctx.nav?.('leccion-checks', { chapter, section: sec.id, mode });
       const checksState = { total: 0, answered: 0, onChange: updateGate };
       const body = el('div', { class: 'lesson-body' });
       for (const b of checkBlocks) body.append(await renderBlock(b, ctx, sec, chapter, checksState));

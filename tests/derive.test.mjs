@@ -65,3 +65,14 @@ test('mantenimiento vence según la escalera de intervalos', () => {
   ], data, today);
   assert.ok(!st2.mathMaintenanceDue.some(d => d.family === 'nubes'));
 });
+
+test('nav es inerte: no cuenta como actividad ni rompe derive (spec 2026-07-06)', () => {
+  const st = derive([
+    row(0, 'nav', { detail: { screen: 'inicio', action: 'enter' } }),
+    row(0, 'nav', { chapter: '3', detail: { screen: 'leccion', section: '3-1', action: 'enter' } }),
+    row(0, 'nav', { detail: { screen: 'leccion', action: 'leave' } }),
+  ], data, today);
+  assert.ok(!st.activityToday.any); // abrir la app no es estudiar
+  assert.equal(st.dayLog.get(today), 'perdido');
+  assert.equal(st.streaks.overall, 0);
+});

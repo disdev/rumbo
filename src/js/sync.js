@@ -3,7 +3,7 @@
 // detecta y se muestra el banner persistente; el re-login es una navegación
 // completa (un fetch no puede completar el flujo de login).
 
-import { pendingRows, markSynced, toApiRow, restoreFrom, queueSize } from './store.js';
+import { pendingRows, markSynced, parkRejected, rejectedRows, toApiRow, restoreFrom, queueSize } from './store.js';
 
 const FEEDBACK_QUEUE_KEY = 'rumbo_feedback_queue_v1';
 let onStatus = () => {};
@@ -26,6 +26,7 @@ async function apiFetch(path, opts = {}) {
 }
 
 class SessionExpired extends Error { constructor() { super('access_session_expired'); this.expired = true; } }
+class SyncRejected extends Error { constructor() { super('sync_rejected'); this.rejected = true; } }
 
 export async function flush() {
   if (flushing || !navigator.onLine) return;
@@ -34,14 +35,30 @@ export async function flush() {
     const rows = pendingRows();
     if (rows.length) {
       const res = await apiFetch('/api/result', { method: 'POST', body: JSON.stringify(rows.map(toApiRow)) });
-      if (res.ok) markSynced(rows.map(r => r.id));
+      // Contrato por fila (spec 2026-07-06): el servidor inserta lo válido y
+      // reporta lo rechazado — lo rechazado se estaciona para que UNA fila
+      // mala nunca vuelva a frenar toda la cola (el bug de las lecciones).
+      const data = await res.json().catch(() => null);
+      const rejected = Array.isArray(data?.rejected) ? data.rejected : [];
+      if (rejected.length) parkRejected(rejected);
+      if (res.ok) {
+        const bad = new Set(rejected.map(r => r.id));
+        markSynced(rows.map(r => r.id).filter(id => !bad.has(id)));
+      } else {
+        // non-ok SIN detalle por fila (error interno o servidor viejo):
+        // nada se marca; el banner avisa — jamás reportar 'ok' en silencio.
+        throw new SyncRejected();
+      }
     }
     await flushFeedback();
     const { uploadPendingAudio } = await import('./audio.js');
     await uploadPendingAudio();
-    onStatus({ state: 'ok', pending: queueSize(), lastSync: Date.now() });
+    const parked = rejectedRows().length;
+    onStatus({ state: parked ? 'rejected' : 'ok', pending: queueSize(), rejected: parked, lastSync: Date.now() });
   } catch (e) {
-    onStatus(e.expired ? { state: 'expired', pending: queueSize() } : { state: 'offline', pending: queueSize() });
+    onStatus(e.expired ? { state: 'expired', pending: queueSize() }
+      : e.rejected ? { state: 'rejected', pending: queueSize(), rejected: rejectedRows().length }
+      : { state: 'offline', pending: queueSize() });
   } finally {
     flushing = false;
   }

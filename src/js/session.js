@@ -38,6 +38,7 @@ export async function runSession(root, plan, ctx, onExit) {
     for (let b = (s === cursor.s ? cursor.b : 0); b < session.blocks.length; b++) {
       saveCursor({ date: ctx.todayKey, s, b });
       const block = session.blocks[b];
+      ctx.nav?.('bloque', { type: block.type, chapter: block.chapter || null }); // rastro para el mentor (spec 2026-07-06)
       const done = await runBlock(root, block, ctx, { session: session.name, minimo });
       if (!done.skipped) ctx.append({ kind: 'block', detail: { type: block.type, chapter: block.chapter || null, done: true, session: s + 1 } });
       ctx.refresh();

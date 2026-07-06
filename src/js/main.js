@@ -44,11 +44,43 @@ function append(ev) {
   return row;
 }
 
+// ---- rastro de navegación (spec 2026-07-06) ----
+// nav() deja una fila 'nav' por pantalla/sección visitada; derive la ignora
+// (no es estudio) — solo alimenta la línea de tiempo del mentor. Dedup de 60s
+// contra parpadeos (re-renders de la misma pantalla).
+let currentNav = null; // pantalla activa
+let lastLeftNav = null; // para re-entrar al volver de segundo plano
+let lastNavKey = '', lastNavTs = 0;
+
+function nav(screen, extra = {}) {
+  const key = JSON.stringify([screen, extra.section ?? null, extra.chapter ?? null, extra.type ?? null]);
+  const now = Date.now();
+  if (key === lastNavKey && now - lastNavTs < 60_000) return;
+  lastNavKey = key; lastNavTs = now;
+  currentNav = { ...extra, screen };
+  append({ kind: 'nav', chapter: extra.chapter || null, detail: { ...extra, screen, action: 'enter' } });
+}
+
+function navLeave() {
+  if (!currentNav) return; // ya salimos (hidden + pagehide no duplican)
+  append({ kind: 'nav', chapter: currentNav.chapter || null, detail: { ...currentNav, action: 'leave' } });
+  lastLeftNav = currentNav;
+  currentNav = null;
+  lastNavKey = ''; // el próximo enter siempre se registra
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (!data) return;
+  if (document.hidden) navLeave();
+  else if (!currentNav && lastLeftNav) nav(lastLeftNav.screen, lastLeftNav);
+});
+window.addEventListener('pagehide', () => { if (data) navLeave(); });
+
 const ctx = {
   get state() { return state; },
   get data() { return data; },
   get todayKey() { return todayKey(); },
-  append, refresh, requestFeedback,
+  append, refresh, requestFeedback, nav,
 };
 
 async function boot() {
@@ -75,7 +107,12 @@ async function boot() {
 }
 
 function renderBanner(status) {
-  if (status.state === 'expired') {
+  if (status.state === 'rejected') {
+    // Tripwire (spec 2026-07-06): el servidor rechazó filas — jamás en
+    // silencio. Los datos siguen guardados localmente y estacionados.
+    banner.replaceChildren(el('span', {}, `⚠️ El servidor rechazó ${status.rejected} resultado(s) — están guardados aquí, pero el mentor no los ve. Avísale a tu mentor.`));
+    banner.className = 'banner expired';
+  } else if (status.state === 'expired') {
     banner.replaceChildren(
       el('span', {}, '🔐 La sesión expiró — tus resultados están guardados aquí, pero el mentor no los ve.'),
       el('button', { onclick: relogin }, 'Iniciar sesión para sincronizar'));
@@ -165,6 +202,7 @@ function streakChips() {
 
 function renderHome() {
   refresh();
+  nav('inicio');
   const wd = weekday(todayKey());
   const cursor = loadCursor(todayKey());
   const plan = planDay(state, data, limaHHMM(), cursor.dayType || null);
@@ -190,7 +228,7 @@ function renderHome() {
       el('h3', {}, '✅ Día completo'),
       el('p', {}, 'Ya está. Nos vemos mañana a las 8:00.'),
       el('p', { class: 'note' }, '¿Te quedó cuerda? El hangar tiene vuelos por el Perú esperándote. 👇'),
-      el('button', { class: 'primary', onclick: () => hangarView(app, ctx, renderHome) }, '🛩️ Abrir el hangar')));
+      el('button', { class: 'primary', onclick: () => { nav('hangar'); hangarView(app, ctx, renderHome); } }, '🛩️ Abrir el hangar')));
   } else {
     const label = plan.dayType === 'minimo' ? 'Comenzar día mínimo'
       : plan.dayType === 'reanudacion' ? 'Reanudar — día ligero'
@@ -202,9 +240,9 @@ function renderHome() {
 
   nodes.push(...badgeShelf());
   nodes.push(el('h4', { class: 'section-title' }, 'Escalera de matemática'), trackerGrid());
-  nodes.push(el('button', { class: 'ghost', onclick: () => planView(app, ctx, renderHome) }, '📅 Mostrar plan — las 8 semanas'));
-  nodes.push(el('button', { class: 'ghost', onclick: () => hangarView(app, ctx, renderHome) }, '🛩️ El hangar — vuelos y rutas para el tiempo libre'));
-  nodes.push(el('button', { class: 'ghost', onclick: () => lessonList(app, ctx, renderHome) }, '📚 Repasar lecciones'));
+  nodes.push(el('button', { class: 'ghost', onclick: () => { nav('plan'); planView(app, ctx, renderHome); } }, '📅 Mostrar plan — las 8 semanas'));
+  nodes.push(el('button', { class: 'ghost', onclick: () => { nav('hangar'); hangarView(app, ctx, renderHome); } }, '🛩️ El hangar — vuelos y rutas para el tiempo libre'));
+  nodes.push(el('button', { class: 'ghost', onclick: () => { nav('repaso'); lessonList(app, ctx, renderHome); } }, '📚 Repasar lecciones'));
   nodes.push(el('button', { class: 'ghost', onclick: quickFraseo }, '🎧 Fraseología rápida — una ronda extra'));
 
   if (state.errorDeck.length) nodes.push(el('p', { class: 'note center' }, `Mazo de errores: ${state.errorDeck.length} pendiente(s)`));

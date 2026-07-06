@@ -71,6 +71,33 @@ export function markSynced(ids) {
 
 export function queueSize() { return queue.length; }
 
+const REJECTED_KEY = 'rumbo_rejected_v1';
+
+/**
+ * El servidor rechazó estas filas (spec 2026-07-06): salen de la cola para no
+ * frenar la sincronización de las demás, y quedan guardadas para diagnóstico.
+ * @param {{id: string|null, error: string}[]} entries
+ */
+export function parkRejected(entries) {
+  const parked = load(REJECTED_KEY, []);
+  const known = new Set(parked.map(p => p.id));
+  const ids = new Set();
+  for (const e of entries) {
+    if (!e?.id) continue;
+    ids.add(e.id);
+    if (!known.has(e.id)) { parked.push({ id: e.id, error: e.error, ts: Date.now() }); known.add(e.id); }
+  }
+  if (!ids.size) return;
+  queue = queue.filter(id => !ids.has(id));
+  persist();
+  try { localStorage.setItem(REJECTED_KEY, JSON.stringify(parked)); } catch { /* diagnóstico, no crítico */ }
+}
+
+/** Filas rechazadas acumuladas (diagnóstico para el banner y el mentor). */
+export function rejectedRows() {
+  return load(REJECTED_KEY, []);
+}
+
 /**
  * Restaurar progreso (SPEC §8): reemplaza el log local con las filas del
  * servidor (unión por id — nunca pierde filas locales no sincronizadas).

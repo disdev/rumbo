@@ -5,6 +5,7 @@
 import { derive, dayKey, weekday, addDays } from '../src/js/derive.js';
 import { generateProblem, FAMILY_IDS } from '../src/js/mathgen.js';
 import { earnedBadges } from '../src/js/badges.js';
+import { buildTimeline, lastSeen } from '../src/js/timeline.js';
 
 const app = document.getElementById('app');
 
@@ -74,6 +75,14 @@ function render(ctx) {
   const ck = checkinInfo(rows, today);
   if (ck.missedConsecutive >= 2) nodes.push(el('div', { class: 'stale' }, '🔴 Two consecutive Sunday check-ins missed.'));
 
+  // ---- last seen (spec 2026-07-06): the client flushes every 90s → near-live ----
+  const seen = lastSeen(rows);
+  if (seen) {
+    const mins = Math.round((Date.now() - seen.ts) / 60_000);
+    const ago = mins < 2 ? 'just now' : mins < 60 ? `${mins} min ago` : fmtTs(seen.ts);
+    nodes.push(el('p', { class: 'note' }, `👁️ Last seen: ${ago} — ${seen.label}`));
+  }
+
   // ---- KPIs ----
   const s = state.streaks;
   nodes.push(el('div', { class: 'kpi-row' },
@@ -108,6 +117,22 @@ function render(ctx) {
   }
   nodes.push(section('Last 7 study days', el('div', { class: 'days' }, ...days),
     el('p', { class: 'note' }, `Times are anchors, not limits — a "→HH:MM" marks a day he kept going past ${plannedEnd} (pacing signal for the check-in, never a problem).`)));
+
+  // ---- activity timeline (spec 2026-07-06): days → sessions → entries ----
+  const tl = buildTimeline(rows).slice(0, 7);
+  const fmtHM = (ts) => new Date(ts).toLocaleTimeString('en-US', { timeZone: 'America/Lima', hour: 'numeric', minute: '2-digit' });
+  if (tl.length) {
+    nodes.push(section('Activity timeline (last 7 active days)', ...tl.map(d =>
+      el('div', { class: 'entry' },
+        el('div', { class: 'meta' }, el('b', {}, d.day)),
+        ...d.sessions.map(s => [
+          el('div', { class: 'meta' }, `— ${fmtHM(s.start)}–${fmtHM(s.end)} · ${s.minutes} min`),
+          el('table', { class: 'plain' }, ...s.entries.map(e => el('tr', {},
+            el('td', {}, fmtHM(e.ts)),
+            el('td', {}, `${e.icon} ${e.label}${e.abandoned ? '  ⚠️ opened but never finished' : ''}`)))),
+        ]).flat())),
+      el('p', { class: 'note' }, 'Sessions split at 25 min of inactivity. 👁️ rows are navigation (opened, not necessarily worked); ⚠️ marks a lesson section he entered but never completed.')));
+  }
 
   // ---- skipped blocks ----
   if (state.skips.length) {

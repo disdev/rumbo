@@ -105,7 +105,9 @@ export function derive(log, { config, chapters, bank }, todayKey) {
     const detail = r.detail || {};
     if (!activity.has(day)) activity.set(day, { math: false, regla: false, fraseo: false, sessionsEnded: new Set(), minimo: false, any: false });
     const act = activity.get(day);
-    if (r.kind !== 'feedback') act.any = true;
+    // feedback es del sistema y nav es solo navegación (spec 2026-07-06):
+    // abrir la app no es estudiar — ninguno cuenta para rachas ni dayLog.
+    if (r.kind !== 'feedback' && r.kind !== 'nav') act.any = true;
 
     switch (r.kind) {
       case 'drill': {

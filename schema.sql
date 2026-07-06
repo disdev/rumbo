@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS results (
   id TEXT PRIMARY KEY,            -- client UUID (idempotency)
   ts INTEGER NOT NULL,            -- unix ms
   user_email TEXT,                -- stamped server-side from Cf-Access-Authenticated-User-Email
-  kind TEXT NOT NULL,             -- drill | quiz | redo | simulacro | recall | scenario | block | rapidfire | distractor_explain | feedback
+  kind TEXT NOT NULL,             -- drill | quiz | redo | simulacro | recall | scenario | block | rapidfire | distractor_explain | feedback | lesson_progress | lesson_check | notebook | nav
   family TEXT,
   tier INTEGER,
   chapter TEXT,

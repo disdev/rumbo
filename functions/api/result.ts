@@ -1,5 +1,8 @@
 // POST /api/result — append result row(s), idempotent via client UUID.
 
+// @ts-ignore — módulo JS compartido con los tests de node (tests/result-validate.test.mjs)
+import { partitionRows } from "./_validate.mjs";
+
 // Minimal ambient Cloudflare types (no @cloudflare/workers-types dependency).
 interface D1Result {
   success: boolean;
@@ -30,19 +33,6 @@ interface Env {
   ANTHROPIC_API_KEY?: string;
 }
 
-const KINDS = new Set([
-  "drill",
-  "quiz",
-  "redo",
-  "simulacro",
-  "recall",
-  "scenario",
-  "block",
-  "rapidfire",
-  "distractor_explain",
-  "feedback",
-]);
-
 const INSERT_SQL =
   "INSERT OR IGNORE INTO results (id, ts, user_email, kind, family, tier, chapter, category, score, total, duration_sec, detail_json) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)";
 
@@ -51,19 +41,6 @@ function json(body: unknown, status = 200): Response {
     status,
     headers: { "Content-Type": "application/json" },
   });
-}
-
-function validate(row: unknown): string | null {
-  if (typeof row !== "object" || row === null) return "result must be an object";
-  const r = row as Record<string, unknown>;
-  if (typeof r.id !== "string" || r.id.length === 0 || r.id.length > 64) {
-    return "id must be a string of at most 64 chars";
-  }
-  if (typeof r.ts !== "number" || !isFinite(r.ts)) return "ts must be a number";
-  if (typeof r.kind !== "string" || !KINDS.has(r.kind)) {
-    return "kind must be one of: " + Array.from(KINDS).join(", ");
-  }
-  return null;
 }
 
 export const onRequestPost: PagesFunction<Env> = async (ctx) => {
@@ -83,11 +60,19 @@ export const onRequestPost: PagesFunction<Env> = async (ctx) => {
       return json({ ok: false, error: "empty result array" }, 400);
     }
 
+    // Validación POR FILA (spec 2026-07-06): las filas inválidas se reportan
+    // en `rejected` y las válidas se insertan igual — un kind desconocido
+    // jamás vuelve a frenar la cola entera del estudiante.
+    const { valid, rejected } = partitionRows(rows) as {
+      valid: Record<string, unknown>[];
+      rejected: { id: string | null; error: string }[];
+    };
+    if (valid.length === 0) {
+      return json({ ok: false, error: rejected[0]?.error ?? "no valid rows", rejected }, 400);
+    }
+
     const statements: D1PreparedStatement[] = [];
-    for (const row of rows) {
-      const err = validate(row);
-      if (err) return json({ ok: false, error: err }, 400);
-      const r = row as Record<string, unknown>;
+    for (const r of valid) {
       const detail =
         r.detail_json == null
           ? null
@@ -118,7 +103,7 @@ export const onRequestPost: PagesFunction<Env> = async (ctx) => {
       await ctx.env.DB.batch(statements);
     }
 
-    return json({ ok: true, received: statements.length });
+    return json({ ok: true, received: statements.length, rejected });
   } catch (err) {
     console.error("POST /api/result failed:", err);
     return json({ ok: false, error: "internal error" }, 500);
