@@ -8391,7 +8391,8 @@
    "Turn right heading 030 to intercept UG437",
    "Turn right radial 030 to intercept UG437"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Vire a la derecha» es \"turn right\" (no \"turn left\") y «rumbo» se dice \"heading\". \"Radial\" es un radial VOR, no un rumbo asignado."
  },
  {
   "id": "x656",
@@ -8402,7 +8403,8 @@
    "After departure continue taxiway heading to level 050",
    "After departure continue runway heading to level 050"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Rumbo de pista» es \"runway heading\": mantener el rumbo de la pista tras el despegue. \"Taxiway\" es calle de rodaje, y omitir \"runway\" deja la instrucción incompleta."
  },
  {
   "id": "x657",
@@ -8413,7 +8415,8 @@
    "Proceed offset 20 miles right of UG437 at 1515 until 1545",
    "Proceed deviated 20 miles right of UG437 at 1515 until 1545"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Derrota desplazada» se dice \"offset\" en fraseología OACI. \"Displaced\" y \"deviated\" no son los términos estándar para vuelo paralelo desplazado."
  },
  {
   "id": "x658",
@@ -8424,7 +8427,8 @@
    "Advise if able to proceed displaced offset",
    "Advise if able to proceed scrolled offset"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "La expresión OACI es \"parallel offset\": derrota paralela desplazada. \"Displaced offset\" y \"scrolled offset\" no existen en fraseología estándar."
  },
  {
   "id": "x659",
@@ -8435,7 +8439,8 @@
    "Delay not specified",
    "Delay not defined"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«No determinada» se dice \"not determined\". \"Not specified\" y \"not defined\" no son la fraseología OACI para una demora sin determinar."
  },
  {
   "id": "x660",
@@ -8446,7 +8451,8 @@
    "Give way to B767 behind you",
    "Give step to B767 behind you"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Ceda paso» es \"give way\" (no \"give step\") y «detrás suyo» es \"behind you\", no \"in front of you\" (delante)."
  },
  {
   "id": "x661",
@@ -8457,7 +8463,8 @@
    "Twilight",
    "Sunrise"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Crepúsculo» es \"twilight\". \"Sunset\" es puesta de sol y \"sunrise\" es salida del sol, momentos distintos del crepúsculo."
  },
  {
   "id": "x662",
@@ -8468,7 +8475,8 @@
    "Without transponder",
    "Negative squawq"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Transpondedor negativo» se dice \"negative transponder\". Ojo con la trampa ortográfica: el término correcto sería \"squawk\", no \"squawq\", y \"without\" no es fraseología estándar."
  },
  {
   "id": "x663",
@@ -8479,7 +8487,8 @@
    "Report established on glide path",
    "Report established on localizer"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Trayectoria de planeo» es \"glide path\", la guía vertical del ILS. \"Localizer\" es el localizador (guía lateral) y \"glide track\" no es término OACI."
  },
  {
   "id": "x664",
@@ -8490,7 +8499,8 @@
    "Maintain 3000 feet until localizer path interception",
    "Maintain 3000 feet until ILS interception"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Trayectoria de planeo» es \"glide path\". \"Localizer\" es solo la guía lateral e \"ILS\" nombra el sistema completo, no la trayectoria de planeo."
  },
  {
   "id": "x665",
@@ -8501,7 +8511,8 @@
    "Stop turn now",
    "Interrupt turn now"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Interrumpa viraje» se dice \"stop turn\" en fraseología OACI. \"Cut\" e \"interrupt\" no son los verbos estándar para detener un viraje."
  },
  {
   "id": "x666",
@@ -8512,7 +8523,8 @@
    "Report established on track",
    "Report established on localizer"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Localizador» es \"localizer\", la guía lateral del ILS. \"Glide path\" es la trayectoria de planeo (vertical) y \"track\" es derrota, no el localizador."
  },
  {
   "id": "x667",
@@ -8523,7 +8535,8 @@
    "Will shortly lose identification, resume proper navigation",
    "Will shortly lose identification, start own navigation"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Propia navegación» se dice \"own navigation\" con el verbo \"resume\" (reasumir). \"Proper\" significa apropiada, no propia, y \"start\" no es el verbo estándar."
  },
  {
   "id": "x668",
@@ -8534,7 +8547,8 @@
    "Radar service out of service",
    "Radar service terminated"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Terminado» se dice \"terminated\" en fraseología radar: \"radar service terminated\". \"Finished\" y \"out of service\" no son términos OACI para finalizar el servicio."
  },
  {
   "id": "x669",
@@ -8545,7 +8559,8 @@
    "Radar control terminated",
    "Radar control over"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Terminado» es \"terminated\": \"radar control terminated\". \"Finished\" no es fraseología estándar y \"over\" significa cambio en radiotelefonía, no terminación."
  },
  {
   "id": "x670",
@@ -8556,7 +8571,8 @@
    "f you read me, press the microphone two times",
    "If you read me, press the microphone double"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Dos veces» se dice \"twice\" en la fraseología estándar de falla de comunicaciones. \"Two times\" y \"double\" no son las formas OACI; note también que una opción trampa omite letras."
  },
  {
   "id": "x671",
@@ -8567,7 +8583,8 @@
    "If no transmissions received for 3 minutes, come back to this frequency",
    "If no transmissions received for 3 minutes, return to this frequency"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Retorne» se dice \"return\": \"return to this frequency\". \"Keep on\" significa permanecer y \"come back\" no es fraseología OACI estándar."
  },
  {
   "id": "x672",
@@ -8578,7 +8595,8 @@
    "Secondary radar out of service",
    "Secondary radar fuser"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Fuera de servicio» se dice \"out of service\". \"Unavailable\" significa no disponible (otro concepto) y \"fuser\" es una palabra inventada como trampa."
  },
  {
   "id": "x673",
@@ -8589,7 +8607,8 @@
    "Orbit right due traffic",
    "Orbit left hand due traffic"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Vire en círculo» es \"orbit\" y «izquierda» es \"left\" a secas: \"orbit left\". Las trampas cambian el sentido a \"right\" o añaden \"hand\", que no es estándar."
  },
  {
   "id": "x674",
@@ -8600,7 +8619,8 @@
    "Make a three sixty turn right due traffic",
    "Make a three sixty turn left due traffic"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "Un viraje de 360 grados se dice \"three sixty turn\" y «izquierda» es \"left\". Las trampas dicen \"three six\" (incompleto) o cambian el sentido a \"right\"."
  },
  {
   "id": "x675",
@@ -8611,7 +8631,8 @@
    "Heading is good",
    "Heading OK"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "La confirmación estándar es \"heading is good\": el rumbo es correcto. \"Heading correct\" y \"heading OK\" no son las formas OACI."
  },
  {
   "id": "x676",
@@ -8622,7 +8643,8 @@
    "Air-Taxi to parking position navy zone",
    "Air-Taxi to helicopter parking position navy zone"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Puesto de estacionamiento de helicópteros» requiere ambos términos: \"helicopter parking position\". Las trampas omiten \"parking\" o \"helicopter\" y quedan incompletas."
  },
  {
   "id": "x677",
@@ -8633,7 +8655,8 @@
    "Take first left and contact ground 121,9",
    "Take first and contact ground 121,9"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«A la izquierda» es \"left\" (no \"right\") y «tierra» es \"ground\": \"take first left, contact ground\". Una trampa omite la dirección por completo."
  },
  {
   "id": "x678",
@@ -8644,7 +8667,8 @@
    "Your post 7",
    "Your position 7"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Puesto» de estacionamiento se dice \"stand\" en fraseología OACI: \"your stand 7\". \"Post\" y \"position\" no son el término estándar para el puesto asignado."
  },
  {
   "id": "x679",
@@ -8655,7 +8679,8 @@
    "Hurry up vacating",
    "Expedite vacating"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Acelere» se dice \"expedite\" en fraseología OACI: \"expedite vacating\". \"Hurry up\" es coloquial y \"acelerate\" es una trampa mal escrita (sería \"accelerate\"), no estándar."
  },
  {
   "id": "x680",
@@ -8666,7 +8691,8 @@
    "When vacated contact ground 121,9",
    "When vacated contact surface 121,9"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Tierra» es la dependencia \"ground\" (control de superficie): \"contact ground\". \"Apron\" es plataforma y \"surface\" no es una dependencia de control."
  },
  {
   "id": "x681",
@@ -8677,7 +8703,8 @@
    "Air-Taxi to helicopter parking",
    "Air-Taxi to helicopter post"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Puesto de estacionamiento de helicópteros» se dice \"helicopter stand\". \"Parking\" a secas y \"post\" no son el término OACI para el puesto de estacionamiento."
  },
  {
   "id": "x682",
@@ -8688,7 +8715,8 @@
    "Contact earth 121,9",
    "Contact ramp 121,9"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Tierra» es la dependencia \"ground\": \"contact ground 121,9\". \"Earth\" es el planeta (traducción literal falsa) y \"ramp\" no es la dependencia correcta aquí."
  },
  {
   "id": "x683",
@@ -8699,7 +8727,8 @@
    "Caution jet blast",
    "Caution jet stream"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Chorro de reactor» es \"jet blast\", el chorro de los motores en tierra. \"Wake turbulence\" es estela turbulenta en vuelo y \"jet stream\" es la corriente en chorro meteorológica."
  },
  {
   "id": "x684",
@@ -8710,7 +8739,8 @@
    "Caution wake turbulence from arriving A320",
    "Caution jet blast from departing A320"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Estela turbulenta» es \"wake turbulence\" y «que sale» es \"departing\". Las trampas confunden con \"jet blast\" (chorro de reactor) o \"arriving\" (que llega)."
  },
  {
   "id": "x685",
@@ -8721,7 +8751,8 @@
    "Right wheel does not appear outside",
    "Right wheel does not appear down"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Desplegada» referido al tren de aterrizaje se dice \"down\": \"does not appear down\". \"Below\" y \"outside\" son traducciones literales que no aplican al tren desplegado."
  },
  {
   "id": "x686",
@@ -8732,7 +8763,8 @@
    "Wheels appear up",
    "Wheels appear down"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Replegadas» (retraídas) se dice \"up\": las ruedas parecen arriba. \"Down\" significa lo contrario (extendidas) y \"above\" no es fraseología estándar para el tren de aterrizaje."
  },
  {
   "id": "x687",
@@ -8743,7 +8775,8 @@
    "Right wheel appears down",
    "Right wheel appears above"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Replegada» se dice \"up\" (rueda retraída). \"Down\" indicaría rueda extendida, lo opuesto, y \"above\" no se usa en fraseología para el tren de aterrizaje."
  },
  {
   "id": "x688",
@@ -8754,7 +8787,8 @@
    "Caution wake turbulence",
    "Caution slipstream"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "La estela de una aeronave de hélice es \"slipstream\". \"Wake turbulence\" es la turbulencia de estela de aeronaves grandes y \"jet blast\" es el chorro de un reactor: fenómenos distintos."
  },
  {
   "id": "x689",
@@ -8765,7 +8799,8 @@
    "Make another turn",
    "Make another turn around"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Dé otra vuelta» al circuito de tránsito es \"make another circuit\". \"Turn\" significa «viraje», un simple cambio de rumbo, no una vuelta completa al circuito."
  },
  {
   "id": "x690",
@@ -8776,7 +8811,8 @@
    "Air-Taxi via taxiway foxtrot, caution loose debris",
    "Air-Taxi via taxiway foxtrot, caution lose debris"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Detritos libres» (sueltos) se dice \"loose debris\". Cuidado con la trampa ortográfica \"lose\" (perder); \"free\" tampoco es el término estándar."
  },
  {
   "id": "x691",
@@ -8787,7 +8823,8 @@
    "Radar transfer N5175W squawking 5775 position 20 miles LIM vor, level 100",
    "Radar release N5175W squawking 5775 position 20 miles LIM vor, level 100"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Transferencia radar» entre dependencias es \"radar handover\" en fraseología OACI. \"Transfer\" y \"release\" no son los términos normalizados para este traspaso de control."
  },
  {
   "id": "x692",
@@ -8798,7 +8835,8 @@
    "Fly heading 210, proceed direct SLS",
    "Fly heading 210, when able go direct SLS"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Cuando pueda» es \"when able\" y «diríjase» es \"proceed\". Las trampas omiten \"when able\" o usan \"go\", que no es fraseología estándar."
  },
  {
   "id": "x693",
@@ -8809,7 +8847,8 @@
    "Cut turn heading 080",
    "Stop turn heading 080"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Interrumpa el viraje» se dice \"stop turn\" en fraseología OACI. \"Interrupt\" y \"cut\" son traducciones literales que no existen en la fraseología normalizada."
  },
  {
   "id": "x694",
@@ -8820,7 +8859,8 @@
    "Fly heading 060",
    "Flew heading 060"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Vuele» es el imperativo \"fly\". \"Flight\" es el sustantivo (vuelo) y \"flew\" es el pasado (voló): solo \"fly heading\" es la instrucción correcta."
  },
  {
   "id": "x695",
@@ -8831,7 +8871,8 @@
    "Continue present track",
    "Continue present radial"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Rumbo» es \"heading\". \"Track\" es la derrota (trayectoria sobre el suelo) y \"radial\" es un radial VOR: conceptos distintos que no traducen «rumbo»."
  },
  {
   "id": "x696",
@@ -8842,7 +8883,8 @@
    "Not identified, start own navigation",
    "Not identified, resume own navigation"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Reanude» es \"resume\": reanudar la propia navegación tras perder la identificación radar. \"Start\" (iniciar) y \"go ahead\" (prosiga con su mensaje) no significan reanudar."
  },
  {
   "id": "x697",
@@ -8853,7 +8895,8 @@
    "Air-taxi via runway foxtrot, avoid vehicles",
    "Air-taxi via taxiway foxtrot, avoid vehicles"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Calle de rodaje» es \"taxiway\" (no \"runway\", que es pista) y «vehículos» es \"vehicles\" (no \"personnel\", que es personal)."
  },
  {
   "id": "x698",
@@ -8864,7 +8907,8 @@
    "Maintain Mach 1 or greater until Iremi",
    "Maintain Mach 1 or upper until Iremi"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«O mayor» es \"or greater\". \"Or less\" significa lo contrario (o menor) y \"upper\" no se usa para comparar velocidades en fraseología."
  },
  {
   "id": "x699",
@@ -8875,7 +8919,8 @@
    "COA111 advise if unable to cross SLS at 2135 at level 180",
    "COA111 please advice if able to cross SLS at 2135 at level 180"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Si puede» es \"if able\". \"If unable\" significa lo contrario (si no puede) y \"advice\" es un error: el verbo notificar es \"advise\", con s."
  },
  {
   "id": "x700",
@@ -8886,7 +8931,8 @@
    "Unable, traffic southbound A320 level 290 over ZCO at 1727 AAL701. Advise intentions",
    "Unable, traffic southbound A320 level 290 estimated over ZCO at 1727 AAL701. Advise intentions"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Rumbo sur» es \"southbound\" (no \"southeast\", que es sureste) y «estimado» exige \"estimated\": la trampa omite esa palabra clave del estimado sobre ZCO."
  },
  {
   "id": "x701",
@@ -8897,7 +8943,8 @@
    "DLH533 report taxiway lights in sight",
    "DLH533 report runway lights in sight"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Notifique» es \"report\" y «luces de pista» es \"runway lights\". Las trampas cambian a \"taxiway lights\" (calle de rodaje) o escriben mal el verbo (\"notyfy\")."
  },
  {
   "id": "x702",
@@ -8908,7 +8955,8 @@
    "Request visual descend",
    "Request seen approach"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Aproximación visual» es \"visual approach\". \"Descend\" significa descender, no aproximación, y \"seen\" no existe en fraseología: lo visual se dice \"visual\"."
  },
  {
   "id": "x703",
@@ -8919,7 +8967,8 @@
    "N5175W not exceed Mach 1",
    "N5175W do not exceed Mach 1"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«No supere» es \"do not exceed\", la forma normalizada. \"Surpass\" no es fraseología OACI y \"not exceed\" sin \"do\" es gramaticalmente incorrecto."
  },
  {
   "id": "x704",
@@ -8930,7 +8979,8 @@
    "Report Sigas leaving",
    "Report Sigas outbound"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«En alejamiento» es \"outbound\". \"Inbound\" significa lo contrario (en acercamiento) y \"leaving\" se usa para abandonar un nivel, no para el tramo de alejamiento."
  },
  {
   "id": "x705",
@@ -8941,7 +8991,8 @@
    "Expected approach time 0926",
    "Expected inbound time 0926"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Hora prevista de aproximación» es \"expected approach time\" (EAT). \"Direct\" e \"inbound\" no forman parte de este término normalizado de esperas."
  },
  {
   "id": "x706",
@@ -8952,7 +9003,8 @@
    "Cleared visual approach runway 15",
    "Cleared visual direct runway 15"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Aproximación visual» es \"visual approach\". \"Watched\" no existe en fraseología y \"direct\" significa directo, no aproximación."
  },
  {
   "id": "x707",
@@ -8963,7 +9015,8 @@
    "Cleared to the 280 radial of the LIM vor at 5 miles DME fix, maintain level 100, maintain southbound, right hand pattern, approach time one minute",
    "Cleared to the 280 radial of the LIM vor at 5 miles DME fix, maintain level 100, maintain southbound, right hand pattern, outbound time one minute"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Viraje a la derecha» es \"right hand pattern\" (no \"left hand\") y «tiempo de alejamiento» es \"outbound time\" (no \"inbound\" ni \"approach time\", que serían de acercamiento)."
  },
  {
   "id": "x708",
@@ -8974,7 +9027,8 @@
    "Expect approach clearance at 2210",
    "Expect approach clears at 2210"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Autorización» es el sustantivo \"clearance\". \"Cleared\" es el participio (autorizado) y \"clears\" un verbo conjugado: aquí se espera la autorización, no la acción."
  },
  {
   "id": "x709",
@@ -8985,7 +9039,8 @@
    "Request waiting instructions",
    "Request clearance instructions"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Espera» (circuito de espera) es \"holding\". \"Waiting\" es una traducción literal que no existe en fraseología y \"clearance\" significa autorización."
  },
  {
   "id": "x710",
@@ -8996,7 +9051,8 @@
    "Hold sight over Ancon",
    "Hold visual over Ancon"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Mantenga espera» es \"hold\" y «visual» se mantiene como \"visual\": \"hold visual\". \"Maintain visual\" no es la fraseología de espera y \"sight\" no se usa aquí."
  },
  {
   "id": "x711",
@@ -9007,7 +9063,8 @@
    "No time expected",
    "No distress expected"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Demora» es \"delay\": \"no delay expected\". \"Time\" es tiempo y \"distress\" es peligro/socorro, términos que cambian por completo el mensaje."
  },
  {
   "id": "x712",
@@ -9018,7 +9075,8 @@
    "Maintain proper separation",
    "Maintain separation"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Su propia separación» exige \"own\": \"maintain own separation\". Las trampas omiten \"own\" o usan \"proper\", perdiendo la idea de que el piloto asume su propia separación."
  },
  {
   "id": "x713",
@@ -9029,7 +9087,8 @@
    "Report Sigas outbound",
    "Report Sigas approaching"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«En acercamiento» es \"inbound\". \"Outbound\" significa lo contrario (en alejamiento) y \"approaching\" no es el término normalizado para el tramo de acercamiento."
  },
  {
   "id": "x714",
@@ -9040,7 +9099,8 @@
    "Request VMC stall",
    "Request VMC descent"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Descenso» es el sustantivo \"descent\": \"VMC descent\". La trampa omite el descenso o añade \"stall\" (pérdida), que no tiene relación."
  },
  {
   "id": "x715",
@@ -9051,7 +9111,8 @@
    "N1985W report commencing procedure turn",
    "N1985W report starting procedure turn"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Inicio» se dice \"beginning\" en esta frase del banco: \"report beginning procedure turn\". «Viraje reglamentario» es \"procedure turn\"; las trampas cambian el verbo por \"commencing\" o \"starting\"."
  },
  {
   "id": "x716",
@@ -9062,7 +9123,8 @@
    "Are you familiar with Charlie approach procedure?",
    "Have you known Charlie approach procedure?"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«¿Conoce...?» se pregunta \"Are you familiar with...?\". \"Do you familiar\" es gramaticalmente incorrecto y \"have you known\" no es la forma usada en fraseología."
  },
  {
   "id": "x717",
@@ -9073,7 +9135,8 @@
    "Radar contact",
    "Radar service"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "La frase OACI estándar para «contacto radar» es \"radar contact\". Ni \"radar observed\" ni \"radar service\" son fraseología normalizada para informar que la aeronave está identificada."
  },
  {
   "id": "x718",
@@ -9084,7 +9147,8 @@
    "For identification turn left track 280",
    "For identification turn left heading 280"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Rumbo» se dice \"heading\". \"Radial\" es un radial VOR y \"track\" es la trayectoria sobre el terreno; para instrucciones de viraje siempre se usa \"heading\"."
  },
  {
   "id": "x719",
@@ -9095,7 +9159,8 @@
    "Report heading and altitude",
    "Report heading and level"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Altitud» es \"altitude\". \"Flight level\" es «nivel de vuelo» y \"level\" a secas es «nivel»; son referencias verticales distintas de la altitud."
  },
  {
   "id": "x720",
@@ -9106,7 +9171,8 @@
    "impossible RVSM due equipment",
    "Negative RVSM due equipment"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Imposible» en fraseología es \"unable\". \"Impossible\" no es término OACI y \"negative\" solo significa «negativo/no», no expresa incapacidad de cumplir."
  },
  {
   "id": "x721",
@@ -9117,7 +9183,8 @@
    "Negative RVSM due turbulence",
    "Unable RVSM due turbulence"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "La incapacidad de cumplir se expresa con \"unable\". \"Impossible\" no existe en fraseología OACI y \"negative\" significa solo «no», sin indicar imposibilidad."
  },
  {
   "id": "x722",
@@ -9128,7 +9195,8 @@
    "Negative RVSM",
    "Unable RVSM"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Negativo RVSM» es \"Negative RVSM\": la aeronave no está aprobada RVSM. No confundir con \"Unable RVSM\", que indica imposibilidad temporal por equipo o turbulencia."
  },
  {
   "id": "x723",
@@ -9139,7 +9207,8 @@
    "Transmit for identification and report radial",
    "Transmit for identification and report glide path"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Notifique rumbo» es \"report heading\". Las trampas cambian el dato pedido: \"radial\" es un radial VOR y \"glide path\" es la trayectoria de planeo del ILS."
  },
  {
   "id": "x724",
@@ -9150,7 +9219,8 @@
    "Taxi right ahead",
    "Taxi straight behind"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«En línea recta» se dice \"straight ahead\". \"Right ahead\" no es fraseología estándar y \"behind\" significa «detrás», lo contrario de avanzar recto."
  },
  {
   "id": "x725",
@@ -9161,7 +9231,8 @@
    "Report passing 310 radial Lima VOR",
    "Confirm passing 310 radial Lima VOR"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Notifique» se dice \"report\". \"Notify\" no es fraseología OACI y \"confirm\" («confirme») pide verificar algo, no informar al pasar el radial."
  },
  {
   "id": "x726",
@@ -9172,7 +9243,8 @@
    "Backtrack runway 06",
    "Come back runway 06"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Pista de regreso» (rodar por la pista en sentido contrario) es \"backtrack\". \"Return\" y \"come back\" no son fraseología OACI."
  },
  {
   "id": "x727",
@@ -9183,7 +9255,8 @@
    "Unable issue clearance into RVSM airspace, descend to 280",
    "Unable issue clearance into RVSM airspace, maintain 280"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Mantenga» es \"maintain\". Las trampas cambian la instrucción vertical: \"climb\" es «ascienda» y \"descend\" es «descienda»."
  },
  {
   "id": "x728",
@@ -9194,7 +9267,8 @@
    "Confirm RVSM approved",
    "Verify RVSM approved"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "La frase estándar es \"confirm RVSM approved\" (aprobado). «Confirme» es \"confirm\", no \"verify\", y el término fijo es \"approved\", no \"approval\"."
  },
  {
   "id": "x729",
@@ -9205,7 +9279,8 @@
    "Taxiway lighting inoperative",
    "Runway lighting inoperative"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Calle de rodaje» es \"taxiway\". \"Runway\" es «pista» y \"holding bay\" es «apartadero de espera»; son superficies distintas del aeródromo."
  },
  {
   "id": "x730",
@@ -9216,7 +9291,8 @@
    "Braking efficiency reported by B767 at 1030 poor",
    "Braking efficacy reported by B767 at 1030 poor"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Eficacia de frenado» tiene término fijo: \"braking action\". Ni \"efficiency\" ni \"efficacy\" son fraseología OACI aunque parezcan traducciones literales."
  },
  {
   "id": "x731",
@@ -9227,7 +9303,8 @@
    "Caution construction work inside of runway 15",
    "Caution construction work aside of runway 15"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«A ambos lados» es \"both sides\". \"Inside\" significa «dentro» y \"aside\" «a un lado»; ninguna describe obras en los dos costados de la pista."
  },
  {
   "id": "x732",
@@ -9238,7 +9315,8 @@
    "Caution, construction work on runway Alpha",
    "Caution, construction work on taxiway Alpha"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Calle de rodaje» se dice \"taxiway\". Las trampas cambian el lugar: \"runway\" es «pista» y \"holding bay\" es «apartadero de espera»."
  },
  {
   "id": "x733",
@@ -9249,7 +9327,8 @@
    "Landing surface operative",
    "Landing surface not available"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Operativa» es \"operative\": la superficie está disponible. \"Out of service\" y \"not available\" dicen lo contrario, que está fuera de servicio."
  },
  {
   "id": "x734",
@@ -9260,7 +9339,8 @@
    "Lima, runway surface condition, runway 15, not updated",
    "Lima, runway surface condition, runway 15, not operative"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«No actualizada» en los informes de estado de pista es \"not current\". \"Not updated\" es traducción literal no estándar y \"not operative\" significa «inoperativa»."
  },
  {
   "id": "x735",
@@ -9271,7 +9351,8 @@
    "Notify distance from trujillo DME",
    "Confirm distance from Trujillo DME"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Notifique» es \"report\". \"Notify\" no es fraseología OACI y \"confirm\" pide confirmar, no informar la distancia DME."
  },
  {
   "id": "x736",
@@ -9282,7 +9363,8 @@
    "Acknowledge position reporting",
    "Revert position reporting"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Reanude» es \"resume\". \"Acknowledge\" significa «acuse recibo» y \"revert\" no es fraseología OACI para retomar los informes de posición."
  },
  {
   "id": "x737",
@@ -9293,7 +9375,8 @@
    "Avoid position reports until Piura",
    "Omit position reports until Piura"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Omita» es \"omit\". Ni \"skip\" ni \"avoid\" («evite») son fraseología OACI para suprimir informes de posición."
  },
  {
   "id": "x738",
@@ -9304,7 +9387,8 @@
    "RVSM not possible due wake turbulence",
    "Unable RVSM due turbulence"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Turbulencia» es \"turbulence\" a secas. \"Jet blast\" es «chorro de reactor» y \"wake turbulence\" es «turbulencia de estela», fenómenos distintos; además la fórmula fija es \"unable RVSM due...\"."
  },
  {
   "id": "x739",
@@ -9315,7 +9399,8 @@
    "Unable RVSM due team",
    "Unable RVSM due equipped"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Equipo» (de a bordo) es \"equipment\". \"Team\" es un equipo de personas y \"equipped\" es el adjetivo «equipado»; ninguno nombra el equipamiento del avión."
  },
  {
   "id": "x740",
@@ -9326,7 +9411,8 @@
    "Report when able to resume RVSM",
    "Say when able to resume RVSM"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Informe» es \"report\": la frase fija es \"report when able to resume RVSM\". \"Notify\" y \"say\" no son fraseología estándar para este mensaje."
  },
  {
   "id": "x741",
@@ -9337,7 +9423,8 @@
    "Inform able to resume RVSM",
    "Confirm able to resume RVSM"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Confirme» es \"confirm\": la frase fija es \"confirm able to resume RVSM\". \"Advise\" e \"inform\" no corresponden a esta petición estándar."
  },
  {
   "id": "x742",
@@ -9348,7 +9435,8 @@
    "AAL701 cross Iremi below level 290",
    "AAL701 cross Iremi after level 290"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Por encima de» es \"above\". Las trampas invierten o cambian la condición: \"below\" es «por debajo» y \"after\" es «después de»."
  },
  {
   "id": "x743",
@@ -9359,7 +9447,8 @@
    "N1989F maintain 380 while in controlled space",
    "N1989F maintain 380 while in controlled airspace"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Espacio aéreo» es \"airspace\", una sola palabra técnica; \"controlled space\" no es fraseología. Además «mientras esté en» exige \"while in\"."
  },
  {
   "id": "x744",
@@ -9370,7 +9459,8 @@
    "DLH533 maintain 390 until further advised",
    "DLH533 maintain 390 until further adviced"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Hasta nuevo aviso» es \"until further advised\" (con esa ortografía; \"adviced\" no existe). \"At least\" significa «como mínimo», que cambia el sentido."
  },
  {
   "id": "x745",
@@ -9381,7 +9471,8 @@
    "AAL801 maintain 370 until notified by Lima control",
    "AAL801 maintain 370 until Lima control"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Hasta que le avise» es \"until advised by\". \"Notified\" no es fraseología OACI y omitir el verbo (\"until Lima control\") deja la instrucción incompleta."
  },
  {
   "id": "x746",
@@ -9392,7 +9483,8 @@
    "N1985W maintain level 350 during 10 minutes before passing Palon",
    "N1985W maintain level 350 during 10 minutes after passing Palon"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Después de pasar» es \"after passing\". Las trampas invierten el momento con \"before\" («antes de»), cambiando cuándo termina la restricción de nivel."
  },
  {
   "id": "x747",
@@ -9403,7 +9495,8 @@
    "Report flight conditions",
    "Report fly conditions"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Condiciones de vuelo» es \"flight conditions\". \"Weather conditions\" son «condiciones meteorológicas» (otro dato) y \"fly conditions\" es gramaticalmente incorrecto."
  },
  {
   "id": "x748",
@@ -9414,7 +9507,8 @@
    "N3736Y maintain level 310 until passing Palon",
    "N3736Y maintain level 310 when passing Palon"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Hasta haber pasado» es \"until passing\". \"Until reaching\" significa hasta alcanzar (antes de llegar), y \"when passing\" cambia la condición: sería «al pasar», no «hasta haber pasado»."
  },
  {
   "id": "x749",
@@ -9425,7 +9519,8 @@
    "Escape from controlled airspace via Oyon at level 290",
    "Leave controlled airspace via Oyon at level 290"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Abandone» el espacio aéreo se dice \"leave\" en fraseología OACI. \"Abandon\" y \"escape\" no son términos estándar y sugieren emergencia o abandono de la aeronave."
  },
  {
   "id": "x750",
@@ -9436,7 +9531,8 @@
    "Enter controlled airspace via Oyon at level 280 at 1635",
    "Enter controlled space via Oyon at level 280 at 1635"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Espacio aéreo controlado» es \"controlled airspace\". Las trampas omiten \"controlled\" o usan \"space\" a secas; el término técnico completo es \"controlled airspace\"."
  },
  {
   "id": "x751",
@@ -9447,7 +9543,8 @@
    "Basic GNSS unavailable due to lost of RAIM",
    "Basic GNSS unavailable due to loss of RAIM"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Pérdida» es el sustantivo \"loss\": \"due to loss of RAIM\". \"Lose\" es verbo y \"lost\" es participio; ninguno funciona como sustantivo después de \"due to\"."
  },
  {
   "id": "x752",
@@ -9458,7 +9555,8 @@
    "Make straight-in approach runway 15, wind 180 degrees 14 KMH temperature 28, QNH1013,7 hectopascals, no transit notified",
    "Make straight-in approach runway 15, wind 180 degrees 14 KMH temperature 28, QNH 1013,7 hectopascals, no traffic reported"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Aproximación directa» es \"straight-in approach\" y «tránsito notificado» es \"traffic reported\". Las trampas omiten \"-in\" o traducen mal tránsito como \"transit notified\"."
  },
  {
   "id": "x753",
@@ -9469,7 +9567,8 @@
    "Climb straight ahead until reaching level 250",
    "Climb straight-in until reaching level 250"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Directamente» tras el despegue es \"straight ahead\" (en línea recta). \"Straight-in\" se usa para aproximación directa, no para ascenso, y \"straight\" solo está incompleto."
  },
  {
   "id": "x754",
@@ -9480,7 +9579,8 @@
    "Heading extended centre line",
    "Runway extended centre line"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Derrota» es \"track\" (la trayectoria sobre el terreno). No confundir con \"heading\", que es «rumbo» de la aeronave; \"runway\" tampoco nombra la derrota."
  },
  {
   "id": "x755",
@@ -9491,7 +9591,8 @@
    "Continue runway course, contact Lima approach 119,7",
    "Continue runway heading, contact Lima approach 119,7"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Rumbo» es \"heading\". \"Track\" es «derrota» (trayectoria sobre el suelo) y \"course\" no es el término OACI para la instrucción de mantener rumbo de pista."
  },
  {
   "id": "x756",
@@ -9502,7 +9603,8 @@
    "After passing level 080 contact Lima control on 128,1",
    "After passing level 080 communicate Lima control on 128,1"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Comunique» una dependencia es \"contact\" en fraseología OACI. \"Call\" y \"communicate\" no son los términos estándar para transferir la comunicación a otra frecuencia."
  },
  {
   "id": "x757",
@@ -9513,7 +9615,8 @@
    "Will advise later for left turn",
    "Will advise after for left turn"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Notificará más tarde» es \"will advise later\". \"Further\" significa «adicional» y \"after\" necesita complemento; el adverbio correcto de tiempo es \"later\"."
  },
  {
   "id": "x758",
@@ -9524,7 +9627,8 @@
    "Report departed",
    "Report airborne"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«En el aire» es \"airborne\", el término OACI para notificar que la aeronave ya despegó. \"On the air\" es un calco incorrecto y \"departed\" no es la fraseología estándar."
  },
  {
   "id": "x759",
@@ -9535,7 +9639,8 @@
    "Side turn approved",
    "Straight turn approved"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Viraje derecha» es \"right turn\". Las trampas usan \"side\" y \"straight\", que no describen dirección de viraje; los virajes solo son \"left\" o \"right\"."
  },
  {
   "id": "x760",
@@ -9546,7 +9651,8 @@
    "GNSS reported unreliable due to interference",
    "GNSS notified unreliable due to interference"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "Para señal GNSS «transmitida no fiable» la fraseología es \"GNSS reported unreliable\": se notifica (reported) la condición. Las variantes con \"signal\" o \"notified\" no siguen la fórmula estándar."
  },
  {
   "id": "x761",
@@ -9557,7 +9663,8 @@
    "OK to resume RVSM",
    "All ready to resume RVSM"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Listo para» es \"ready to\": \"ready to resume RVSM\". \"OK\" y \"all ready\" no son fraseología estándar; «reanudar» es \"resume\"."
  },
  {
   "id": "x762",
@@ -9568,7 +9675,8 @@
    "Level 240 not available, 260 and 280, advice",
    "Level 240 not available due traffic alternatives are level 260 and 280, inform"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Avise» es \"advise\" (verbo, con s). La trampa \"advice\" es el sustantivo «consejo», e \"inform\" no es el término OACI para pedir la intención del piloto."
  },
  {
   "id": "x763",
@@ -9579,7 +9687,8 @@
    "AFR201 cross Gatuk at 1830 or before at level 280",
    "AFR201 cross Gatuk at 1830 or later at level 280"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«O antes» es \"or before\". Las trampas \"or after\" y \"or later\" invierten la restricción: permitirían cruzar después de las 1830, lo contrario de lo instruido."
  },
  {
   "id": "x764",
@@ -9590,7 +9699,8 @@
    "Runway visual range runway 27 not operative",
    "Runway visual range runway 27 not notified"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«No disponible» es \"not available\". \"Not operative\" y \"not notified\" no son la fraseología estándar para informar que el RVR no está disponible."
  },
  {
   "id": "x765",
@@ -9601,7 +9711,8 @@
    "Request side turn",
    "Request left turn"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Izquierda» es \"left\": \"request left turn\". La trampa principal invierte el sentido con \"right\" (derecha); \"side turn\" no existe en fraseología."
  },
  {
   "id": "x766",
@@ -9612,7 +9723,8 @@
    "After departure turn right contact Lima approach on 119,7",
    "After departure turn straight contact Lima approach on 119,7"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Aproximación» es \"approach\": la dependencia se llama \"Lima approach\". La trampa \"aproximation\" es un anglicismo inexistente, y \"turn straight\" no describe un viraje."
  },
  {
   "id": "x767",
@@ -9623,7 +9735,8 @@
    "Request depart instructions",
    "Request departing instructions"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Instrucciones de salida» es \"departure instructions\", con el sustantivo \"departure\". Las formas \"depart\" (verbo) y \"departing\" (gerundio) no se usan como modificador estándar."
  },
  {
   "id": "x768",
@@ -9634,7 +9747,8 @@
    "Departed 1959",
    "On the air 1959"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«En el aire» al notificar la hora de despegue es \"airborne\". \"On the air\" es traducción literal incorrecta y \"departed\" no es el término OACI."
  },
  {
   "id": "x769",
@@ -9645,7 +9759,8 @@
    "Additional traffic southbound B747 level 270 reported Gatuk at 1920",
    "Additional traffic southbound B747 level 270 estimated Gatuk at 1920"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Rumbo sur» es \"southbound\" y «previsto» es \"estimated\". Las trampas usan \"south\" a secas o \"reported\" (notificado), que cambia previsión por hecho ya ocurrido."
  },
  {
   "id": "x770",
@@ -9656,7 +9771,8 @@
    "If possible maintain level 280 and notify",
    "If able maintain level 280 and advise"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Si no es posible» es \"if unable\". La trampa \"if able\" significa lo contrario (si es posible) e \"if possible\" tampoco corresponde; «notifique» es \"advise\"."
  },
  {
   "id": "x771",
@@ -9667,7 +9783,8 @@
    "Maintain below separation and VMC above 080",
    "Maintain own separation and VMC above 080"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Propia separación» es \"own separation\". La trampa \"proper\" (adecuada) suena parecido pero cambia el sentido: el piloto asume su propia separación en VMC."
  },
  {
   "id": "x772",
@@ -9678,7 +9795,8 @@
    "Hold own separation and VMC from 100 to 180",
    "Maintain own separation and VMC from 100 to 180"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Mantenga» es \"maintain\" en fraseología OACI. \"Keep\" y \"hold\" no se usan para separación; \"hold\" además significa esperar en circuito, otra instrucción distinta."
  },
  {
   "id": "x773",
@@ -9689,7 +9807,8 @@
    "Request descent at 1720",
    "Request lower at 1720"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Descenso» es \"descent\" (sustantivo): \"request descent\". \"Landing\" es aterrizaje y \"lower\" no es el término estándar para solicitar descender."
  },
  {
   "id": "x774",
@@ -9700,7 +9819,8 @@
    "Predict climb at 1500",
    "Foresee climb at 1500"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Prevea» es \"expect\", el término OACI para anticipar una autorización futura. \"Predict\" y \"foresee\" no existen en fraseología estándar."
  },
  {
   "id": "x775",
@@ -9711,7 +9831,8 @@
    "When you are ready descend to level 200",
    "When is ready descend to level 200"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Cuando esté listo» es \"when ready\", fórmula fija sin sujeto. Las variantes con \"you are\" o \"is\" agregan palabras que la fraseología OACI omite."
  },
  {
   "id": "x776",
@@ -9722,7 +9843,8 @@
    "Expedite descent until passing 280",
    "Expedite landing until passing 280"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Acelere» el descenso es \"expedite\", el término OACI para apurar una maniobra. \"Accelerate\" no es estándar, y \"expedite landing\" cambia descenso por aterrizaje."
  },
  {
   "id": "x777",
@@ -9733,7 +9855,8 @@
    "Go on climb to 350",
    "Continue climb to 350"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Siga» o continúe es \"continue\": \"continue climb\". \"Follow\" (seguir a algo/alguien) y \"go on\" no son fraseología estándar para continuar el ascenso."
  },
  {
   "id": "x778",
@@ -9744,7 +9867,8 @@
    "Ask level change to Lima control at 1715",
    "Request level exchange from Lima control at 1715"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Solicite... a Lima control» es \"request... from Lima control\": se pide algo de la dependencia. \"Ask\" no es estándar y \"exchange\" (intercambio) no significa cambio de nivel."
  },
  {
   "id": "x779",
@@ -9755,7 +9879,8 @@
    "Maintain at least 1000 feet above N5175X",
    "Maintain at less 1000 feet above N5175X"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Por encima» es \"above\"; el distractor con \"below\" invierte la separación vertical. Además, «por lo menos» es \"at least\", no \"at less\", que es gramaticalmente incorrecto."
  },
  {
   "id": "x780",
@@ -9766,7 +9891,8 @@
    "AAL801, stand 11, request taxi to holding bay runway 15",
    "AAL801, stand 11, request taxi to holding point runway 15"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Puerta» de estacionamiento es \"stand\" (no \"door\") y «punto de espera» es \"holding point\" (no \"holding bay\", que es apartadero de espera)."
  },
  {
   "id": "x781",
@@ -9777,7 +9903,8 @@
    "TCAS descent",
    "TCAS climb"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "El descenso ordenado por el TCAS se notifica \"TCAS descent\". «Descenso» es \"descent\"; el distractor \"TCAS climb\" indica ascenso, lo contrario, y \"TCAS\" solo no describe la maniobra."
  },
  {
   "id": "x782",
@@ -9788,7 +9915,8 @@
    "TCAS climb completed, climb to level 350 resumed",
    "TCAS climb completed, climb to level 350 terminated"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Completado» es \"completed\" y «reanudado» es \"resumed\", que indica retomar el ascenso autorizado; \"terminated\" y \"finished\" no son la fraseología OACI para esta notificación."
  },
  {
   "id": "x783",
@@ -9799,7 +9927,8 @@
    "Unable, TCAS resolution report",
    "Unable, TCAS resolution notam"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "El aviso de resolución del TCAS se llama \"resolution advisory\" (RA). «Aviso» aquí es \"advisory\", no \"report\" (informe) ni \"notam\", que es otro tipo de aviso aeronáutico."
  },
  {
   "id": "x784",
@@ -9810,7 +9939,8 @@
    "Notify Lima tower on 118,1 now",
    "Contact Lima tower on 118,1 now"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Comunique» con una estación es \"contact\" en fraseología OACI; \"call\" y \"notify\" no son los términos estándar para ordenar el cambio de comunicación."
  },
  {
   "id": "x785",
@@ -9821,7 +9951,8 @@
    "Negative observed contact",
    "Negative contact"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Contacto negativo» (no se ve el tránsito) es \"negative contact\": el calificativo \"negative\" precede al sustantivo. Los distractores alteran el orden o afirman lo contrario con \"observed\"."
  },
  {
   "id": "x786",
@@ -9832,7 +9963,8 @@
    "Traffic in sight",
    "Traffic not observed"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«A la vista» es \"in sight\": la frase estándar es \"traffic in sight\". \"To my sight\" no es fraseología OACI y \"not observed\" significa lo opuesto."
  },
  {
   "id": "x787",
@@ -9843,7 +9975,8 @@
    "Observing",
    "Watching"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "La respuesta estándar cuando se busca el tránsito es \"looking out\" («estoy observando/vigilando»); \"observing\" y \"watching\" no son fraseología OACI."
  },
  {
   "id": "x788",
@@ -9854,7 +9987,8 @@
    "Traffic reported negative",
    "No reported traffic"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "La frase estándar es \"no reported traffic\": «notificado» es \"reported\" y el orden fijo comienza con \"no\". \"Notified\" no se usa para tránsito en fraseología OACI."
  },
  {
   "id": "x789",
@@ -9865,7 +9999,8 @@
    "Come back to flight plan call sign",
    "Revert to flight plan call sign"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Vuelva a» un distintivo anterior es \"revert to\" en fraseología OACI; \"change to\" ordena cambiar y \"come back\" no es término estándar."
  },
  {
   "id": "x790",
@@ -9876,7 +10011,8 @@
    "Wind at level 350, 270 celsius 14 kilometers per hour",
    "Wind at level 350, 270 degrees 14 kilometers per minute"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "Los grados de dirección son \"degrees\" (no \"celsius\", que es temperatura) y la velocidad del viento se da en \"kilometers per hour\", no por minuto."
  },
  {
   "id": "x791",
@@ -9887,7 +10023,8 @@
    "Change your call sign to OB1248 until further advised",
    "Alter your call sign to OB1248 until further advised"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Modifique» el distintivo se dice \"change your call sign\" en fraseología OACI; \"modify\" y \"alter\" no son los verbos estándar. «Hasta nuevo aviso» es \"until further advised\"."
  },
  {
   "id": "x792",
@@ -9898,7 +10035,8 @@
    "When ready inform Lima Tower on 118,1",
    "When ready contact Lima Tower on 118,1"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Comunique» es \"contact\" en fraseología OACI; \"call\" e \"inform\" no son el verbo estándar para establecer comunicación con una estación."
  },
  {
   "id": "x793",
@@ -9909,7 +10047,8 @@
    "Frequency return approved",
    "Return to frequency approved"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Cambio de frecuencia» es \"frequency change\" y «aprobado» es \"approved\": la frase fija es \"frequency change approved\". \"Return\" significaría retornar, no cambiar."
  },
  {
   "id": "x794",
@@ -9920,7 +10059,8 @@
    "Report change to 128,1",
    "Ask change to 128,1"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Solicito» es \"request\"; \"report\" significa «notifique» y \"ask\" no es fraseología OACI. Aquí el piloto pide autorización para cambiar de frecuencia."
  },
  {
   "id": "x795",
@@ -9931,7 +10071,8 @@
    "If no report return to this frequency",
    "If no established return to this frequency"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Si no establece contacto» es \"if no contact\" y «retorne» es \"return to this frequency\". Los distractores usan \"report\" (notificar) o construcciones gramaticalmente incorrectas."
  },
  {
   "id": "x796",
@@ -9942,7 +10083,8 @@
    "At 1720 contact Guayaquil control frequency 123,9",
    "At 1720 stand by for Guayaquil control on frequency 123,9"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Llame» a una estación es \"contact\" en fraseología OACI; \"call\" no es el verbo estándar y \"stand by\" significa «espere», no establecer comunicación."
  },
  {
   "id": "x797",
@@ -9953,7 +10095,8 @@
    "Remain this frequency",
    "Keep this frequency"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Mantenga» la frecuencia se dice \"remain this frequency\" en fraseología OACI; \"maintain\" se reserva para niveles o rumbos y \"keep\" no es término estándar."
  },
  {
   "id": "x798",
@@ -9964,7 +10107,8 @@
    "N1989F cruise climb before level 290",
    "N1989F cruise climb above level 290"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Por encima de» es \"above\"; \"below\" (por debajo) y \"before\" (antes) invierten o cambian el sentido. «Ascenso en crucero» es \"cruise climb\"."
  },
  {
   "id": "x799",
@@ -9975,7 +10119,8 @@
    "B767, 10 miles, level 050, information Charlie, for arriving",
    "B767, 10 miles, level 050, information Charlie, for departing"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Para aterrizar» es \"for landing\"; \"arriving\" (llegando) y \"departing\" (saliendo) no expresan la intención de aterrizaje en la notificación inicial de llegada."
  },
  {
   "id": "x800",
@@ -9986,7 +10131,8 @@
    "Do short approach",
    "Perform short approach"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Efectúe» se dice \"make\" en fraseología OACI: la frase fija es \"make short approach\". \"Do\" y \"perform\" no son los verbos estándar."
  },
  {
   "id": "x801",
@@ -9997,7 +10143,8 @@
    "Number 2, behind B757 on final runway 15",
    "Number 2, follow B757 on final runway 15"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Siga a» otra aeronave es \"follow\": instrucción de secuencia visual. \"After\" y \"behind\" indican posición pero no son la fraseología estándar para ordenar seguimiento."
  },
  {
   "id": "x802",
@@ -10008,7 +10155,8 @@
    "Circle the aerodrome",
    "Circling the aerodrome"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Entre en circuito» sobre el aeródromo se expresa con el verbo \"circle\" (\"circle the aerodrome\"); \"join\" requiere nombrar un tramo y \"circling\" es la forma incorrecta para la orden."
  },
  {
   "id": "x803",
@@ -10019,7 +10167,8 @@
    "Request circling approach, left turn to helicopters stand, maintain out of active runway",
    "Request circling approach, left turn to helicopters stand, hold out of active runway"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Mantenga fuera de pista activa» es \"hold short of\": la frase fija para detenerse antes de la pista. \"Maintain out\" y \"hold out\" no son fraseología OACI."
  },
  {
   "id": "x804",
@@ -10030,7 +10179,8 @@
    "Request circle approach, left turn to helicopters stand",
    "Request circling approach, left turn to helicopters stand"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Aproximación en circuito» es \"circling approach\" en fraseología OACI; \"circle approach\" e \"in circuit approach\" no son el término estándar."
  },
  {
   "id": "x805",
@@ -10041,7 +10191,8 @@
    "Cleared low pass",
    "Cleared low landing"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Pasada baja» es \"low pass\": pasar sobre la pista sin aterrizar. \"Below pass\" es incorrecto y \"low landing\" implicaría aterrizaje, que no se solicita."
  },
  {
   "id": "x806",
@@ -10052,7 +10203,8 @@
    "Request lower pass",
    "Request below pass"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Pasada baja» es \"low pass\"; \"lower\" (más baja) y \"below\" (debajo de) no forman el término estándar para esta maniobra."
  },
  {
   "id": "x807",
@@ -10063,7 +10215,8 @@
    "Join downwind leg, runway 15, QNH 1013,6 hectopascals, traffic B747 on final runway 15",
    "Come downwind leg, runway 15, QNH 1013,6 hectopascals, traffic B747 on final runway 15"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Entre en» un tramo del circuito es \"join\" (\"join downwind leg\"); \"enter\" y \"come\" no son la fraseología OACI. «Tramo a favor del viento» es \"downwind leg\"."
  },
  {
   "id": "x808",
@@ -10074,7 +10227,8 @@
    "Cleared below approach runway 12",
    "Cleared low approach runway 12"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Aproximación baja» es \"low approach\": aproximación sin tocar la pista. \"Lower\" (más baja) y \"below\" (debajo) no forman el término estándar OACI."
  },
  {
   "id": "x809",
@@ -10085,7 +10239,8 @@
    "Make complete stop",
    "Make full landing"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Aterrizaje completo» (con detención total, sin toque y despegue) es \"make full stop\"; \"complete stop\" y \"full landing\" no son la fraseología estándar."
  },
  {
   "id": "x810",
@@ -10096,7 +10251,8 @@
    "Cleared touching and going",
    "Cleared touch and go"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Toma y despegue» es la maniobra fija \"touch and go\". Los distractores usan gerundios (\"touching and going\") que deforman el término estándar OACI."
  },
  {
   "id": "x811",
@@ -10107,7 +10263,8 @@
    "Runway 06 cleared to land",
    "Runway 06 cleared for land"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "Tras \"cleared to\" va el verbo en infinitivo: \"cleared to land\". Las formas \"cleared to landing\" y \"cleared for land\" son gramaticalmente incorrectas."
  },
  {
   "id": "x812",
@@ -10118,7 +10275,8 @@
    "Continue approach, prepare for engine airborne",
    "Continue approach, prepare for possible go around"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Motor y al aire» es \"go around\" y «aproximación» es \"approach\". Las trampas: \"continue landing\" cambia la instrucción y \"engine airborne\" es una traducción literal sin sentido."
  },
  {
   "id": "x813",
@@ -10129,7 +10287,8 @@
    "Extend downwind",
    "Stretch downwind"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Prolongue» se dice \"extend\" en fraseología OACI; «a favor del viento» es el tramo \"downwind\". \"Enlarge\" y \"stretch\" no son términos aeronáuticos."
  },
  {
   "id": "x814",
@@ -10140,7 +10299,8 @@
    "Request low approach",
    "Request lower approach"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Aproximación baja» (pasada sin aterrizar) es \"low approach\". \"Below\" significa «debajo de» y \"lower\" es comparativo («más baja»); ninguno es el término estándar."
  },
  {
   "id": "x815",
@@ -10151,7 +10311,8 @@
    "Hold",
    "Stopping"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "El acuse del piloto que ya inició la carrera y está deteniéndose es \"Stopping\". \"Hold\" y \"Maintain\" son instrucciones del ATC, no la respuesta del piloto."
  },
  {
   "id": "x816",
@@ -10162,7 +10323,8 @@
    "Maintaining",
    "Standing by"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Mantengo posición» se acusa con \"Holding\" (de \"hold position\"). \"Maintaining\" se usa para altitudes y \"standing by\" significa «a la espera» en frecuencia."
  },
  {
   "id": "x817",
@@ -10173,7 +10335,8 @@
    "Hold position, cancel take-off, I say again, continue take-off due to invasion of persons on the runway",
    "Hold position, cancel take-off, I say again, cancel take-off due to invasion of persons on the runway"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Repito» en OACI es \"I say again\" (la palabra \"repeat\" se evita). Ojo con el distractor que dice \"continue take-off\": invierte la instrucción de cancelar."
  },
  {
   "id": "x818",
@@ -10184,7 +10347,8 @@
    "Wait out",
    "Holding out"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Espero fuera» (de la pista) es \"holding short\": mantenerse antes del punto de espera. \"Wait out\" y \"holding out\" no existen en fraseología OACI."
  },
  {
   "id": "x819",
@@ -10195,7 +10359,8 @@
    "Stop position",
    "Hold position"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Mantenga posición» es \"hold position\". \"Maintain\" se reserva para mantener altitud, velocidad o rumbo, no para permanecer detenido en tierra."
  },
  {
   "id": "x820",
@@ -10206,7 +10371,8 @@
    "Slowing down",
    "Taxiing slowly"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "Reducir la velocidad de rodaje se notifica con \"slowing down\". \"Taxiing slow\" y \"taxiing slowly\" describen el rodaje pero no son la fraseología estándar."
  },
  {
   "id": "x821",
@@ -10217,7 +10383,8 @@
    "Caution, taxi slower, personal working on taxiway Alpha",
    "Caution, taxi slower, person working on taxiway Alpha"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Personal» (trabajadores) se dice \"personnel\". La trampa es \"personal\", que en inglés es un adjetivo («personal, privado»), y \"person\" es una sola persona."
  },
  {
   "id": "x822",
@@ -10228,7 +10395,8 @@
    "Acelerating",
    "Expediting"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Apresurar» en fraseología OACI es \"expedite\"; el acuse es \"expediting\". \"Running\" significa «corriendo» y \"acelerating\" está mal escrito y no es estándar."
  },
  {
   "id": "x823",
@@ -10239,7 +10407,8 @@
    "Expedite taxi due traffic",
    "Speed up taxi due traffic"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Apresure» es \"expedite\", el único término OACI para pedir rapidez. \"Hurry up\" y \"speed up\" son expresiones coloquiales que no se usan en radio."
  },
  {
   "id": "x824",
@@ -10250,7 +10419,8 @@
    "Runway free",
    "Runway clear"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Pista libre» (ya la abandoné) se notifica con \"runway vacated\". \"Vacate\" es el término OACI para abandonar la pista; \"free\" y \"clear\" no lo son."
  },
  {
   "id": "x825",
@@ -10261,7 +10431,8 @@
    "Clear runway",
    "Vacate runway"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Deje pista libre» es \"vacate runway\": abandonar la pista. \"Clear\" y \"free\" son traducciones literales que no forman parte de la fraseología estándar."
  },
  {
   "id": "x826",
@@ -10272,7 +10443,8 @@
    "Taxi into holding bay",
    "Taxi into standing bay"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Apartadero de espera» es \"holding bay\". La familia de la espera usa \"holding\" (hold, holding point, holding bay); \"waiting\" y \"standing\" no son términos OACI."
  },
  {
   "id": "x827",
@@ -10283,7 +10455,8 @@
    "Traffic in watch",
    "Traffic in mind"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«A la vista» es \"in sight\"; la frase fija es \"traffic in sight\". \"In watch\" e \"in mind\" son invenciones que no existen en fraseología."
  },
  {
   "id": "x828",
@@ -10294,7 +10467,8 @@
    "Giving space to A320",
    "Giving way to A320"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Ceder el paso» es \"give way\"; el acuse es \"giving way to\". \"Step\" (escalón) y \"space\" (espacio) son traducciones literales erróneas de «paso»."
  },
  {
   "id": "x829",
@@ -10305,7 +10479,8 @@
    "Request cross runway 18",
    "Request abeam runway 18"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Cruzar» es \"cross\". Las trampas: \"climb\" significa «ascender» y \"abeam\" significa «al través de», no cruzar la pista."
  },
  {
   "id": "x830",
@@ -10316,7 +10491,8 @@
    "Cross runway 20, report cleared",
    "Cross runway 20, report vacated"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Notifique» es \"report\" y «pista libre» (abandonada) es \"vacated\". \"Report free\" y \"report cleared\" usan términos que no son la fraseología OACI para abandonar pista."
  },
  {
   "id": "x831",
@@ -10327,7 +10503,8 @@
    "Acelerate crossing runway 20, traffic B757, 2 miles, final",
    "Rapid crossing runway 20, traffic B757, 2 miles, final"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Apresure» es \"expedite\", término OACI de urgencia. \"Acelerate\" está mal escrito (sería \"accelerate\") y \"rapid\" es un adjetivo, no una instrucción."
  },
  {
   "id": "x832",
@@ -10338,7 +10515,8 @@
    "N5175X recleared to Miami via flight plan route",
    "N5175X clearance to Miami via flight planned route"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Autorizado» es \"cleared\" y la ruta del plan de vuelo es \"flight planned route\". \"Recleared\" significa «reautorizado» y \"clearance\" es el sustantivo, no la autorización dada."
  },
  {
   "id": "x833",
@@ -10349,7 +10527,8 @@
    "N1234X expect clearance at 1530",
    "N1234X hope clearance at 1530"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Espere autorización» (prevéala) es \"expect clearance\". \"Wait\" es esperar detenido y \"hope\" es «tener esperanza»; ninguno transmite la previsión que indica \"expect\"."
  },
  {
   "id": "x834",
@@ -10360,7 +10539,8 @@
    "N2453B expect 20 minutes delayed traffic",
    "N2453B expect 20 minutes delay due traffic"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Demora» es \"delay\": \"expect 20 minutes delay due traffic\". La trampa \"holding\" significa espera en circuito, y \"delayed traffic\" cambia el sentido de la frase."
  },
  {
   "id": "x835",
@@ -10371,7 +10551,8 @@
    "Push back at own discretion",
    "Start back at own discretion"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Retroceso remolcado» es \"push back\". La trampa clásica es \"backtrack\", que significa retroceder rodando por la propia pista, una maniobra totalmente distinta."
  },
  {
   "id": "x836",
@@ -10382,7 +10563,8 @@
    "Push up approved",
    "Push down cleared"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Retroceso remolcado» es \"push back\" y «aprobado» es \"approved\". \"Push up\" y \"push down\" no existen como maniobras en fraseología aeronáutica."
  },
  {
   "id": "x837",
@@ -10393,7 +10575,8 @@
    "Attention all aircraft in the vicinity of Lima Vor descent in progress from level 200",
    "Attention all aircrafts in the vicinity of Lima Vor emergency descent in progress from level 200"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Aeronaves» en inglés es invariable: \"aircraft\", nunca \"aircrafts\". Además debe decirse \"emergency descent\" completo; omitir \"emergency\" pierde la urgencia del mensaje."
  },
  {
   "id": "x838",
@@ -10404,7 +10587,8 @@
    "Taxi to holding point runway 15 via taxiway Alpha, hold short of runway 15",
    "Taxi to holding stand runway 15 via taxiway Alpha, hold short of runway 15"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Punto de espera» es \"holding point\" y «espere fuera» es \"hold short\". \"Holding bay\" es el apartadero de espera y \"holding stand\" no existe."
  },
  {
   "id": "x839",
@@ -10415,7 +10599,8 @@
    "Take off immediately or hold short of runway",
    "Take off immediately or leave the runway"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Espere fuera de pista» es \"hold short of runway\": no entrar. \"Vacate\" y \"leave\" significan abandonar la pista, lo contrario de quedarse fuera."
  },
  {
   "id": "x840",
@@ -10426,7 +10611,8 @@
    "Take off immediately or hold short of runway",
    "Take off immediately or clear the runway"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Deje pista libre» es \"vacate runway\": abandonarla. Compárese con \"hold short\", que es esperar fuera sin entrar; aquí la aeronave ya está en la pista."
  },
  {
   "id": "x841",
@@ -10437,7 +10623,8 @@
    "Expect departure 0715 start up at own discretion",
    "Expect departure 0715 push up at own discretion"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Puesta en marcha» (de motores) es \"start up\". \"Tow up\" y \"push up\" no existen en fraseología OACI: \"tow\" es remolque y \"push back\" es retroceso remolcado."
  },
  {
   "id": "x842",
@@ -10448,7 +10635,8 @@
    "request tug, Lufthansa B747, from gate 5 to black zone",
    "request backtrack, Lufthansa B747, from gate 5 to black zone"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Remolque» se dice \"tow\" en fraseología OACI. \"Tug\" es el vehículo tractor, no la maniobra, y \"backtrack\" significa regresar rodando por la pista."
  },
  {
   "id": "x843",
@@ -10459,7 +10647,8 @@
    "Follow up at own discretion",
    "Move up at own discretion"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Puesta en marcha» es \"start up\". \"Follow up\" y \"move up\" no son términos de fraseología: no se refieren al encendido de motores."
  },
  {
   "id": "x844",
@@ -10470,7 +10659,8 @@
    "Start up at 0700",
    "Push back at 0700"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Ponga en marcha» (los motores) es \"start up\". \"Tow\" es remolcar y \"push back\" es el retroceso remolcado desde la puerta, maniobras distintas al encendido."
  },
  {
   "id": "x845",
@@ -10481,7 +10671,8 @@
    "Start up cleared",
    "Push up approved"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "La puesta en marcha se aprueba con \"approved\", no con \"cleared\": \"cleared\" se reserva para despegue, aterrizaje y autorizaciones de ruta. Además \"push up\" no existe."
  },
  {
   "id": "x846",
@@ -10492,7 +10683,8 @@
    "Request backtrack",
    "Request start up"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Puesta en marcha» es \"start up\". \"Push back\" es retroceso remolcado y \"backtrack\" es regresar rodando por la pista; ninguno se refiere a encender motores."
  },
  {
   "id": "x847",
@@ -10503,7 +10695,8 @@
    "Acknowledge by flashing landing lights",
    "Acknowledge by turning off landing lights"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Encendiendo y apagando» los faros es \"flashing\" (destellar). \"Turning on\" es solo encender y \"turning off\" solo apagar; la señal OACI exige el destello intermitente."
  },
  {
   "id": "x848",
@@ -10514,7 +10707,8 @@
    "Acknowledge by balancing wings",
    "Acknowledge by moving wings"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Balanceando alas» se dice \"rocking wings\" en fraseología OACI. \"Balancing\" y \"moving\" son traducciones literales que no corresponden a la señal estándar."
  },
  {
   "id": "x849",
@@ -10525,7 +10719,8 @@
    "Wait start up at 0710",
    "Expect start up at 0710"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Prevea» es \"expect\" y «puesta en marcha» es \"start up\". \"Wait\" no es el término estándar y \"push back\" es otra maniobra (retroceso remolcado)."
  },
  {
   "id": "x850",
@@ -10536,7 +10731,8 @@
    "Acknowledge by moving ailerons",
    "Acknowledge by moving rudder"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Timón de dirección» es \"rudder\". Las \"wings\" son las alas y los \"ailerons\" son los alerones: superficies distintas que confunden al traducir controles de vuelo."
  },
  {
   "id": "x851",
@@ -10547,7 +10743,8 @@
    "Tow approved via taxiway Alpha",
    "Tow approved via runway Alpha"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Remolque» es \"tow\" y «calle de rodaje» es \"taxiway\". \"Backtrack\" es regresar por la pista, y \"runway\" (pista) no es lo mismo que taxiway."
  },
  {
   "id": "x852",
@@ -10558,7 +10755,8 @@
    "Request take-off information",
    "Request depart information"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Información de salida» es \"departure information\". \"Take-off\" se refiere solo al despegue en sí, y \"depart\" como adjetivo es incorrecto: el término estándar es \"departure\"."
  },
  {
   "id": "x853",
@@ -10569,7 +10767,8 @@
    "Come back through the runway approved",
    "Return by the runway approved"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Regreso por la pista» tiene un término OACI específico: \"backtrack\". Las traducciones literales \"come back through\" o \"return by the runway\" no son fraseología estándar."
  },
  {
   "id": "x854",
@@ -10580,7 +10779,8 @@
    "Request come back through the runway",
    "Request backtrack"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "Regresar rodando por la pista en sentido contrario se dice \"backtrack\", término OACI único. \"Return by\" y \"come back through\" son traducciones literales no estándar."
  },
  {
   "id": "x855",
@@ -10591,7 +10791,8 @@
    "Air-taxi via taxiway Foxtrot, caution taxiing light aircraft",
    "Aero-taxi via taxiway Foxtrot, caution taxiing light aircraft"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Rodaje aéreo» de helicópteros es \"air-taxi\" en fraseología OACI. \"Taxi\" a secas es rodaje en superficie y \"aero-taxi\" no existe como término estándar."
  },
  {
   "id": "x856",
@@ -10602,7 +10803,8 @@
    "Request taxiing from taxiway Foxtrot to helicopters stand",
    "Request air-taxiing from taxiway Foxtrot to helicopters"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Rodaje aéreo» es \"air-taxiing\" y «puesto de estacionamiento» es \"stand\". \"Taxiing\" solo es rodaje en tierra, y omitir \"stand\" deja la frase incompleta."
  },
  {
   "id": "x857",
@@ -10613,7 +10815,8 @@
    "Taxi to parking gate 7",
    "Taxi to stand 7"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Puesto de estacionamiento» es \"stand\" en fraseología OACI. \"Parking lot\" es un estacionamiento de autos y \"parking gate\" no es el término estándar."
  },
  {
   "id": "x858",
@@ -10624,7 +10827,8 @@
    "Request verify time",
    "Request time check"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Verificación de hora» es \"time check\", término OACI fijo. \"Verification of time\" y \"verify time\" son traducciones literales que no se usan en radiotelefonía."
  },
  {
   "id": "x859",
@@ -10635,7 +10839,8 @@
    "Taxi to general aviation area",
    "Taxi to general aviation field"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Zona» en este contexto es \"area\": la fraseología usa \"general aviation area\". \"Zone\" y \"field\" son traducciones literales que no corresponden al término estándar."
  },
  {
   "id": "x860",
@@ -10646,7 +10851,8 @@
    "Take second left",
    "Take second right"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Segunda intersección izquierda» es \"take second left\": el verbo es \"take\" y hay que respetar el número («segunda» = \"second\") y el lado («izquierda» = \"left\", no \"right\")."
  },
  {
   "id": "x861",
@@ -10657,7 +10863,8 @@
    "Hold short of runway 15",
    "Hold out of runway 15"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Espere fuera de pista» es \"hold short of runway\", instrucción OACI crítica. \"Wait out\" y \"hold out\" son traducciones literales; el término correcto es \"hold short\"."
  },
  {
   "id": "x862",
@@ -10668,7 +10875,8 @@
    "AZA544, B747 heavy, request taxi instructions",
    "AZA544, B747 heavy, request minimum taxi instructions"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Detalladas» es \"detailed\". \"Minimum\" significa lo contrario (mínimas), y omitir el adjetivo cambia la solicitud: un B747 pesado pide instrucciones de rodaje detalladas."
  },
  {
   "id": "x863",
@@ -10679,7 +10887,8 @@
    "Taxi to holding stand runway 15",
    "Taxi to holding point runway 15"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Punto de espera» es \"holding point\" en fraseología OACI. \"Holding bay\" es el apartadero de espera (una plataforma) y \"holding stand\" no existe."
  },
  {
   "id": "x864",
@@ -10690,7 +10899,8 @@
    "Request taxi",
    "Request taxiway"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Rodaje» (la maniobra) es \"taxi\". \"Taxiway\" es la calle de rodaje (el lugar) y \"running\" no es término de fraseología aeronáutica."
  },
  {
   "id": "x865",
@@ -10701,7 +10911,8 @@
    "Taxi via runway Alpha",
    "Taxi via holding bay Alpha"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Calle de rodaje» es \"taxiway\". \"Runway\" es la pista y \"holding bay\" es el apartadero de espera: lugares distintos que las opciones incorrectas confunden."
  },
  {
   "id": "x866",
@@ -10712,7 +10923,8 @@
    "Show landing lights",
    "Start landing lights"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Encienda» los faros se dice \"show landing lights\" en fraseología OACI. \"Light on\" y \"start\" son traducciones literales que no corresponden al término estándar."
  },
  {
   "id": "x867",
@@ -10723,7 +10935,8 @@
    "Request push down",
    "Request push back"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Retroceso remolcado» es \"push back\", término OACI fijo. \"Push up\" y \"push down\" no existen en fraseología: solo \"back\" indica el retroceso desde la puerta."
  },
  {
   "id": "x868",
@@ -10734,7 +10947,8 @@
    "Verified expected approach time 0932",
    "Revised expected approach time 0932"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Revisión» (hora corregida) es \"revised\": \"revised expected approach time\". \"Review\" es un examen y \"verified\" es verificado; ninguno indica que la hora fue actualizada."
  },
  {
   "id": "x869",
@@ -10745,7 +10959,8 @@
    "Cleared straight-in approach runway 15",
    "Cleared direct approach runway 15"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Autorizado» es \"cleared\" (no \"authorized\") y «aproximación directa» es \"straight-in approach\". \"Direct\" se usa para proceder directo a un punto, no para este tipo de aproximación."
  },
  {
   "id": "x870",
@@ -10756,7 +10971,8 @@
    "Request direct approach runway 15",
    "Request directly approach runway 15"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Aproximación directa» es \"straight-in approach\", término OACI fijo. \"Direct approach\" y \"directly approach\" son traducciones literales; \"direct\" se usa para rutas, no aproximaciones."
  },
  {
   "id": "x871",
@@ -10767,7 +10983,8 @@
    "N3736J report approach at 2035",
    "N3736J commence approach at 2035"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Inicie» la aproximación es \"commence\" en fraseología OACI. \"Begin\" no es el término estándar y \"report\" significa notificar, no iniciar."
  },
  {
   "id": "x872",
@@ -10778,7 +10995,8 @@
    "N5175W runway 15, cleared for take-off, advice airborne",
    "N5175W runway 15, cleared for take-off, report airborne"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Notifique» se dice \"report\" en fraseología OACI. \"Notify\" no es estándar y \"advice\" es además un error (sería \"advise\"); tras el despegue se usa \"report airborne\"."
  },
  {
   "id": "x873",
@@ -10789,7 +11007,8 @@
    "Line up, be ready for immediate departure",
    "Taxi straight, be ready for immediate departure"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Ruede a posición» (entrar a la pista y alinearse) es \"line up\". \"Taxi up\" y \"taxi straight\" no existen en fraseología OACI; \"taxi\" es solo rodar por calles de rodaje."
  },
  {
   "id": "x874",
@@ -10800,7 +11019,8 @@
    "Taxi up runway 15",
    "Taxi to runway 15"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Ruede a posición» es \"line up\": alinearse en la pista listo para despegar. \"Taxi to runway 15\" significa rodar hacia la pista, sin entrar a ella."
  },
  {
   "id": "x875",
@@ -10811,7 +11031,8 @@
    "VRG876 stop immediately, VRG876 stop immediately",
    "VRG876 stop as soon as possible, VRG876 stop as soon as possible"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "Para cancelar un despegue ya iniciado, «pare inmediatamente» es \"stop immediately\", repetido para urgencia. \"Soon\" y \"as soon as possible\" no transmiten la orden inmediata que exige la OACI."
  },
  {
   "id": "x876",
@@ -10822,7 +11043,8 @@
    "Line up and holding",
    "Line up and wait"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Ruede a posición y espere» es la frase estándar \"line up and wait\": alinearse en la pista sin despegar. \"Maintain\" es mantener altitud o velocidad, y \"holding\" no es la forma correcta."
  },
  {
   "id": "x877",
@@ -10833,7 +11055,8 @@
    "Are you ready for immediately departing?",
    "Are you ready for rapid departure?"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Salida inmediata» es \"immediate departure\": adjetivo + sustantivo. \"Immediately departing\" es gramaticalmente incorrecto aquí y \"rapid\" no es término OACI."
  },
  {
   "id": "x878",
@@ -10844,7 +11067,8 @@
    "Are you list for departure?",
    "Are you ready for departure?"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Listo» es \"ready\" y «salir» es \"departure\": \"ready for departure\". \"List\" es un falso amigo de «listo», y \"airborne\" significa ya en el aire, no listo para salir."
  },
  {
   "id": "x879",
@@ -10855,7 +11079,8 @@
    "Report when ready for departure",
    "Advice when ready for departure"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Notifique» es \"report\" en fraseología OACI. \"Notify\" no es estándar y \"advice\" es un sustantivo (el verbo sería \"advise\"), tampoco usado por la OACI."
  },
  {
   "id": "x880",
@@ -10866,7 +11091,8 @@
    "Able to issue SLS 2 departure due traffic",
    "Cleared to issue SLS 2 departure due traffic"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Imposible» es \"unable\", la palabra OACI para negar una solicitud. \"Able\" y \"cleared\" dicen lo contrario: que sí puede o está autorizado."
  },
  {
   "id": "x881",
@@ -10877,7 +11103,8 @@
    "Runway cleared",
    "Runway vacated"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Pista libre» es \"runway vacated\": la aeronave ya abandonó la pista por completo. \"Free\" no es término OACI y \"cleared\" se confundiría con una autorización (\"cleared to land\")."
  },
  {
   "id": "x882",
@@ -10888,7 +11115,8 @@
    "Wait, traffic on final",
    "Maintain, traffic on final"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Espere» (aguarde en frecuencia) es \"stand by\". \"Wait\" no es fraseología estándar y \"maintain\" significa mantener una altitud o velocidad, no esperar."
  },
  {
   "id": "x883",
@@ -10899,7 +11127,8 @@
    "Circle left from present position",
    "Orbit left from present position"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Vuele en círculos» es \"orbit\": la palabra OACI para dar vueltas sobre la posición actual. \"Circle\" y \"flight in circles\" no son fraseología estándar."
  },
  {
   "id": "x884",
@@ -10910,7 +11139,8 @@
    "Landing gear appears up",
    "Landing gear appears down"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Desplegado» (tren abajo) es \"down\": \"landing gear appears down\". \"Up\" significa tren retraído, lo contrario, y \"disappears\" es una trampa fonética de \"appears\"."
  },
  {
   "id": "x885",
@@ -10921,7 +11151,8 @@
    "Go around",
    "Engine around"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Motor y al aire» (abortar el aterrizaje) es la frase estándar \"go around\". Las traducciones literales con \"engine\" no existen en fraseología OACI."
  },
  {
   "id": "x886",
@@ -10932,7 +11163,8 @@
    "Traffic five o´clock, 15 miles, westbound, closing",
    "Traffic five o´clock, 15 miles, eastbound, close"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Rumbo este» es \"eastbound\" (no \"westbound\", que es oeste) y «acercándose» es \"closing\". \"Close\" (cerca) no indica movimiento de acercamiento."
  },
  {
   "id": "x887",
@@ -10943,7 +11175,8 @@
    "Traffic six o´clock, 20 miles, northbound, faster moving",
    "Traffic six o´clock, 20 miles, northbound, fast moving"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Rápido» al describir tránsito es \"fast moving\". \"Fastly\" no existe en inglés y \"faster\" es comparativo (más rápido), no la descripción estándar."
  },
  {
   "id": "x888",
@@ -10954,7 +11187,8 @@
    "Traffic two o´clock, 20 miles, northbound, slow moving",
    "Traffic two o´clock, 20 miles, northbound, slow motion"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Lento» es \"slow moving\", la descripción OACI del tránsito. \"Fast moving\" es lo contrario (rápido) y \"slow motion\" significa cámara lenta, no aplica."
  },
  {
   "id": "x889",
@@ -10965,7 +11199,8 @@
    "Traffic three o´clock, 10 miles, southbound, known",
    "Traffic three o´clock, 10 miles, southbound, not known"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Desconocido» es \"unknown\": el radar no identifica el tránsito. \"Known\" dice lo contrario y \"not known\" no es la forma estándar OACI."
  },
  {
   "id": "x890",
@@ -10976,7 +11211,8 @@
    "Start position reporting",
    "Resume position reporting"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Reanude» es \"resume\": volver a hacer algo que se había suspendido. \"Renew\" (renovar) y \"start\" (iniciar) no son términos de fraseología OACI."
  },
  {
   "id": "x891",
@@ -10987,7 +11223,8 @@
    "Omit position reports until Palon",
    "Omit reports until Palon"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Informes de posición» es \"position reports\": la frase completa \"omit position reports\" es la estándar. Las otras opciones omiten \"reports\" o \"position\" y quedan incompletas."
  },
  {
   "id": "x892",
@@ -10998,7 +11235,8 @@
    "No ATC restrictions",
    "No ATC speed problems"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Limitaciones de velocidad» es \"speed restrictions\": la frase estándar es \"no ATC speed restrictions\". Sin \"speed\" el mensaje queda incompleto, y \"problems\" no es término OACI."
  },
  {
   "id": "x893",
@@ -11009,7 +11247,8 @@
    "Reduce to minimum straight-in approach speed",
    "Reduce to minimum approach speed"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Velocidad mínima de aproximación» es \"minimum approach speed\". Sin \"approach\" falta el dato clave, y \"straight-in\" (aproximación directa) agrega algo que la frase en español no dice."
  },
  {
   "id": "x894",
@@ -11020,7 +11259,8 @@
    "Resume normal speed",
    "Continue normal speed"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Reanude» es \"resume\": recuperar la velocidad normal tras una restricción. \"Renew\" (renovar) es un falso amigo y \"continue\" implica que nunca se cambió."
  },
  {
   "id": "x895",
@@ -11031,7 +11271,8 @@
    "Do not pass 200 knots",
    "Do not run 200 knots"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«No exceda» es \"do not exceed\", el verbo OACI para límites de velocidad. \"Pass\" y \"run\" son traducciones literales que no se usan en fraseología."
  },
  {
   "id": "x896",
@@ -11042,7 +11283,8 @@
    "Maintain 250 knots or less until SLS",
    "Maintain 250 knots or greater until SLS"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«O más» es \"or greater\" en fraseología OACI de velocidad. \"Or less\" dice lo contrario (o menos) y \"or more\" no es la forma estándar."
  },
  {
   "id": "x897",
@@ -11053,7 +11295,8 @@
    "Traffic seven o´clock, 15 miles, southbound, same direction",
    "Traffic seven o´clock, 15 miles, southbound, opposite direction"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«Rumbo sur» es \"southbound\" y «mismo sentido» es \"same direction\". Cuidado: una opción cambia el rumbo a \"eastbound\" y otra dice \"opposite direction\" (sentido contrario)."
  },
  {
   "id": "x898",
@@ -11064,7 +11307,8 @@
    "Traffic two o´clock, 15 miles, westbound, overcrossing",
    "Traffic two o´clock, 15 miles, westbound, overtaking"
   ],
-  "answer": 2
+  "answer": 2,
+  "reason": "«Sobrepasando» (alcanzando y pasando a otra aeronave) es \"overtaking\". \"Overpassing\" y \"overcrossing\" no existen en fraseología OACI."
  },
  {
   "id": "x899",
@@ -11075,7 +11319,8 @@
    "Turn left immediately heading 030 to skip unidentified traffic two o ´clock, 20 miles",
    "Turn left immediately heading 030 to verify unidentified traffic two o ´clock, 20 miles"
   ],
-  "answer": 0
+  "answer": 0,
+  "reason": "«Para evitar» es \"to avoid\", el término OACI en instrucciones de tránsito. \"Skip\" (saltarse) y \"verify\" (verificar) cambian el sentido de la maniobra evasiva."
  },
  {
   "id": "x900",
@@ -11086,6 +11331,7 @@
    "If radio contact lost, proceed according your last clearance",
    "If radio contact lost, proceed according your clearance"
   ],
-  "answer": 1
+  "answer": 1,
+  "reason": "«De acuerdo a su última autorización» es \"according your last clearance\": debe incluir \"last\" (última). \"Proceed with\" no es la forma estándar y omitir \"last\" cambia la instrucción."
  }
 ]

@@ -32,7 +32,7 @@ A web app that runs an 8-week, PHAK-first study program for the DGAC (Peru) priv
 
 ### 3.1 Question bank
 - Source: `~/Workspace/flashcards/cards.json` (imported into repo at `data/bank.json`).
-- **901 questions**, fields: `category`, `question`, `options` (array of 3), `answer` (index of correct option), `reason` (explanation; absent only on fraseología, where none is needed), `figures` (array of PNG filenames; present on 174 questions, 45 unique files, all present in the source `figures/` directory). **There is no per-question `pages` field** — chapter/page attribution comes from `chapters.json`'s category→chapter mapping and chapter page ranges, not from questions. Question IDs are embedded as `NNNN.-` prefixes in the question text; the import extracts them as stable `id`s.
+- **901 questions**, fields: `category`, `question`, `options` (array of 3), `answer` (index of correct option), `reason` (explanation; present on all 901 since 2026-07-13 — fraseología reasons teach the discriminating English/Spanish vocabulary, feeding error-deck reveals and AI-feedback grounding), `figures` (array of PNG filenames; present on 174 questions, 45 unique files, all present in the source `figures/` directory). **There is no per-question `pages` field** — chapter/page attribution comes from `chapters.json`'s category→chapter mapping and chapter page ranges, not from questions. Question IDs are embedded as `NNNN.-` prefixes in the question text; the import extracts them as stable `id`s.
 - Categories and counts:
 
 | Category | Count | Notes |
@@ -325,4 +325,4 @@ Structure everything so these can be added later — this app doubles as a valid
 2. **`chapters.json`** — **critical path, week-0 deliverable**: the chapter loop (§4.3), recall-feedback grounding, and coverage math all block on it. Boundaries inferred from page clustering, mentor corrects; per-section key-point lists AI-drafted at build time, mentor-reviewed (§3.2). Lesson authoring (§3.4) produces the section lists and key points as a by-product. The three daily tracks are buildable and usable before it exists.
 3. **Figure PNGs** — the mentor supplies the image set matching the `figures` filenames.
 4. **RAP source excerpts** — optional later enrichment for reglamentación reveals where `reason` is missing.
-5. **Some bank entries lack `reason`** — AI-draft explanations at build time, grounded in the referenced PHAK pages; the mentor reviews before they ship in `bank.json`. Until backfilled, reveal falls back to correct-answer-plus-pages; flag remaining gaps in a report.
+5. **Some bank entries lack `reason`** — resolved 2026-07-13: the 246 gaps (all fraseología) were AI-drafted at build time (each explains the discriminating English/Spanish vocabulary; none reference option positions, which shuffle at display) and pass a two-reviewer accuracy check. Gap report: 0 of 901 bank questions lack `reason`.
