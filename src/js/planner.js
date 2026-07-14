@@ -122,6 +122,11 @@ export function planDay(state, { config, chapters, scenarios }, nowLimaHHMM, for
     if (ch && !week8 && !readingLocked) s2.push({ type: 'quiz', source: 'chapter', chapter: chapterId, part: 2, title: 'Más preguntas del capítulo' });
     s2.push({ type: 'quiz', source: 'srs', title: 'Repaso espaciado (10)' });
     s2.push({ type: 'quiz', source: 'regla', title: 'Reglamentación' });
+    // Mazo en días normales cuando tiene preguntas (directiva del mentor 2026-07-14):
+    // los errores acumulados no esperan a la semana 8. (En semana 8 / sin capítulo ya va en s1.)
+    if (ch && !week8 && state.errorDeck.some(e => e.type === 'q')) {
+      s2.push({ type: 'quiz', source: 'errordeck', title: 'Mazo de errores' });
+    }
     if (state.week >= 5) s2.push({ type: 'chart', source: 'chart', title: 'Lectura de carta seccional' });
     else if (scen && weekday(state.todayKey) === 3) s2.push({ type: 'scenario', id: scen.id, title: `Vuelo de escritorio: ${scen.title}` });
     s2.push({ type: 'redo', title: 'Rehacer los errores de hoy (con procedimiento)' });

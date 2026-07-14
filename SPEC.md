@@ -187,6 +187,7 @@ A mínimo handles a bad day; illness needs a different shape. After **3+ consecu
 ### 5.6 Error deck (mazo de errores)
 - Auto-assembled: **simulacro misses join immediately** (a miss under exam conditions is strong evidence); daily-work items join on the **second** miss — any bank question missed twice, or math family/parameter-pattern missed twice. Entries carry their `reason`/worked steps.
 - Week 7–8 sessions draw from it; an item leaves the deck after two consecutive correct answers on separate days.
+- **Normal days too (mentor directive 2026-07-14):** whenever the deck holds questions, Sesión 2 gets a "Mazo de errores" block (up to 15, shuffled) — accumulated misses don't wait for week 8. Math deck entries still spawn drills only in the week-8/no-chapter template.
 
 ### 5.7 AI feedback on free-text entries
 The one feedback loop the static design can't close: free-text answers — free recall (§4.3), explain-the-distractors (§5.3), vuelo de escritorio (§4.4) — would otherwise sit unread until Sunday. On submit, a `POST /api/feedback` Function (§8) sends the entry plus its grounding material to the Claude API and returns short, structured Spanish feedback. For recall: "Cubriste: X, Y. Te faltó: Z — revisa páginas N–M."
