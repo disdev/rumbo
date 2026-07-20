@@ -384,7 +384,7 @@ export async function rapidfirePlayer(root, block, ctx) {
   let streak = 0, best = 0;
   for (let i = 0; i < cards.length; i++) {
     const q = cards[i];
-    const r = await rapidCard(root, q, { index: i + 1, total: cards.length, streak });
+    const r = await rapidCard(root, q, ctx, { index: i + 1, total: cards.length, streak });
     streak = r.correct ? streak + 1 : 0;
     best = Math.max(best, streak);
     if (streak === 15) flashCelebrate(root, '¡RACHA ×15! 🎧🔥');
@@ -395,14 +395,28 @@ export async function rapidfirePlayer(root, block, ctx) {
   return waitDone(root);
 }
 
-function rapidCard(root, q, { index, total, streak }) {
+function rapidCard(root, q, ctx, { index, total, streak }) {
   return new Promise(resolve => {
     const opts = shuffle(q.options.map((text, i) => ({ text, correct: i === q.answer })));
     const buttons = opts.map((o, i) => el('button', { class: 'option big', onclick: () => pick(i) }, o.text));
     function pick(i) {
+      const correct = opts[i].correct;
       buttons.forEach((b, j) => { b.disabled = true; if (opts[j].correct) b.classList.add('correct'); else if (j === i) b.classList.add('wrong'); });
-      card.classList.add(opts[i].correct ? 'flash-ok' : 'flash-bad');
-      setTimeout(() => resolve({ correct: opts[i].correct }), opts[i].correct ? 450 : 1600);
+      card.classList.add(correct ? 'flash-ok' : 'flash-bad');
+      const reveal = correct
+        ? el('div', { class: 'reveal' },
+          el('button', { class: 'primary', onclick: () => resolve({ correct: true }) }, 'Siguiente'))
+        : el('div', { class: 'reveal' },
+          el('p', { class: 'reason' }, q.reason || `Respuesta correcta: ${q.options[q.answer]}`),
+          el('p', { class: 'note' }, '📓 Anota esta frase y su traducción correcta en tu cuaderno antes de continuar.'),
+          el('button', {
+            class: 'primary', onclick: () => {
+              ctx.append({ kind: 'notebook', detail: { prompt_id: `fraseo-${q.id}`, context: 'fraseologia' } });
+              resolve({ correct: false });
+            },
+          }, 'Anotado en mi cuaderno ✓'));
+      card.append(reveal);
+      reveal.querySelector('button').focus();
     }
     const card = el('div', { class: 'card rapid' },
       el('div', { class: 'progress-line' }, `${index}/${total}${streak >= 2 ? ` · racha ${streak} 🔥` : ''}`),
