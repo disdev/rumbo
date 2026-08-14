@@ -1,6 +1,14 @@
 // Service worker (SPEC §8, contrato offline): precachea shell + data + TODAS
 // las figuras al instalar; versión de caché atada a content_version; arranque
 // en frío sin red debe funcionar completo. /api/* jamás se cachea.
+//
+// El navegador solo reinstala este SW cuando estos BYTES cambian — por eso
+// SW_VERSION debe cambiar en cada deploy con contenido nuevo, o clientes que
+// ya tienen el SW instalado se quedan sirviendo caché vieja indefinidamente
+// (nunca vuelven a pedir CORE a la red). No la edites a mano: correr
+// `node scripts/sync-sw-version.mjs` después de bumpear content_version en
+// data/config.json la mantiene sincronizada (ver tests/sw-version.test.mjs).
+const SW_VERSION = '2026-07-14.1';
 
 const CORE = [
   './', 'index.html', 'manifest.webmanifest',
@@ -21,6 +29,7 @@ async function cacheName() {
 }
 
 self.addEventListener('install', (e) => {
+  console.log(`[sw] installing SW_VERSION ${SW_VERSION}`);
   e.waitUntil((async () => {
     const name = await cacheName();
     const cache = await caches.open(name);

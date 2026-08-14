@@ -4,7 +4,7 @@ An 8-week, PHAK-first study program for the DGAC (Peru) private pilot written ex
 
 **Deployed (2026-07-04):** https://rumbo-atk.pages.dev — student app; `/progreso/` — mentor dashboard.
 
-**Lecciones (2026-07-05):** the app now teaches every assigned PHAK chapter in-app (`data/lessons/chNN.json`, rendered by `src/js/lessons.js`), with guided step-by-step math, notebook prompts, checks, and badges. Content workflow: edit lesson JSON → `node scripts/validate-lessons.mjs` → `node scripts/sync-chapters.mjs` (regenerates `chapters.json` sections + the SW precache index) → bump `content_version` in `data/config.json` → deploy. Authoring rules: `docs/lesson-authoring.md`. Tests: `node --test tests/*.mjs`.
+**Lecciones (2026-07-05):** the app now teaches every assigned PHAK chapter in-app (`data/lessons/chNN.json`, rendered by `src/js/lessons.js`), with guided step-by-step math, notebook prompts, checks, and badges. Content workflow: edit lesson JSON → `node scripts/validate-lessons.mjs` → `node scripts/sync-chapters.mjs` (regenerates `chapters.json` sections + the SW precache index) → bump `content_version` in `data/config.json` → `node scripts/sync-sw-version.mjs` (keeps `sw.js#SW_VERSION` in lockstep so browsers with the SW already installed actually detect the update — otherwise they're stuck on stale cached JS/data forever) → deploy. Authoring rules: `docs/lesson-authoring.md`. Tests: `node --test tests/*.mjs`.
 
 **Bitácora (printable pilot-style checklist):** `bitacora-rumbo.pdf`, linked from the app footer. Regenerate after program-structure changes: `node scripts/gen-bitacora.mjs` then print `scripts/bitacora.html` to PDF with headless Chrome (`--headless=new --print-to-pdf=bitacora-rumbo.pdf --no-pdf-header-footer`).
 Cloudflare account `dspeer@outlook.com` · D1 `rumbo` · R2 `rumbo-audio` · Access team `little-bar-6fd6.cloudflareaccess.com` (two apps: site-wide for student+mentor, mentor-only for `/progreso*` + `/api/progress`; 1-month sessions, email OTP). Only rows stamped with `STUDENT_EMAIL` count toward progress — the mentor can use the student app without polluting it.
@@ -50,7 +50,7 @@ Open http://localhost:8788. `MENTOR_EMAIL` is a placeholder locally, so exercise
 - `data/chapters.json`: PHAK page ranges per chapter + per-section `key_points` (grounds the AI recall feedback) — **mentor, week 0**.
 - Exam pass mark + per-category weighting + whether the mechanical E6B is allowed → `data/config.json`.
 - `data/scenarios.json` drafts are marked BORRADOR — mentor reviews.
-- Re-import the bank after corrections: `node scripts/import-bank.mjs` then bump `content_version` in `data/config.json` (this re-keys the offline cache).
+- Re-import the bank after corrections: `node scripts/import-bank.mjs` then bump `content_version` in `data/config.json` and run `node scripts/sync-sw-version.mjs` (this re-keys the offline cache and forces the SW to actually reinstall on clients).
 
 ## Architecture in one paragraph
 
