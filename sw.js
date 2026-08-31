@@ -8,7 +8,7 @@
 // (nunca vuelven a pedir CORE a la red). No la edites a mano: correr
 // `node scripts/sync-sw-version.mjs` después de bumpear content_version en
 // data/config.json la mantiene sincronizada (ver tests/sw-version.test.mjs).
-const SW_VERSION = '2026-07-14.1';
+const SW_VERSION = '2026-08-30.1';
 
 const CORE = [
   './', 'index.html', 'manifest.webmanifest',

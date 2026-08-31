@@ -11333,5 +11333,137 @@
   ],
   "answer": 1,
   "reason": "«De acuerdo a su última autorización» es \"according your last clearance\": debe incluir \"last\" (última). \"Proceed with\" no es la forma estándar y omitir \"last\" cambia la instrucción."
+ },
+ {
+  "id": "r1",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Vire a la izquierda rumbo 090 hasta interceptar UG512",
+  "options": [
+   "Turn right heading 090 to intercept UG512",
+   "Turn left heading 090 to intercept UG512",
+   "Turn left radial 090 to intercept UG512"
+  ],
+  "answer": 1,
+  "reason": "«Vire a la izquierda» es \"turn left\" y «rumbo» se dice \"heading\" (no \"radial\", que es un radial VOR)."
+ },
+ {
+  "id": "r2",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Tránsito a las dos, 20 millas, rumbo oeste, sentido contrario",
+  "options": [
+   "Traffic two o'clock, 20 miles, westbound, opposite direction",
+   "Traffic two o'clock, 20 miles, eastbound, opposite direction",
+   "Traffic two o'clock, 20 miles, westbound, same direction"
+  ],
+  "answer": 0,
+  "reason": "«Rumbo oeste» es \"westbound\" y «sentido contrario» es \"opposite direction\" (no \"same direction\", que es mismo sentido)."
+ },
+ {
+  "id": "r3",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Manteniendo posición",
+  "options": [
+   "Keeping position",
+   "Holding position",
+   "Staying position"
+  ],
+  "answer": 1,
+  "reason": "La fraseología estándar OACI para no moverse en tierra o en el aire es \"holding position\". \"Keeping\" y \"staying position\" no son las formas estándar."
+ },
+ {
+  "id": "r4",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Apresurando despegue",
+  "options": [
+   "Rushing departure",
+   "Accelerating departure",
+   "Expediting departure"
+  ],
+  "answer": 2,
+  "reason": "«Apresurar» en fraseología OACI es \"expedite\"; el acuse es \"expediting\". \"Rushing\" y \"accelerating\" no son la forma estándar."
+ },
+ {
+  "id": "r5",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Ningún tránsito notificado en el circuito",
+  "options": [
+   "No traffic notified in the circuit",
+   "Traffic reported negative in the circuit",
+   "No reported traffic in the circuit"
+  ],
+  "answer": 2,
+  "reason": "La frase estándar es \"no reported traffic\", con el orden fijo que comienza con \"no\". \"Notified\" no se usa para tránsito en fraseología OACI."
+ },
+ {
+  "id": "r6",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Cuando esté listo, ascienda hasta nivel 180",
+  "options": [
+   "When ready climb to level 180",
+   "When you are ready climb to level 180",
+   "When is ready climb to level 180"
+  ],
+  "answer": 0,
+  "reason": "«Cuando esté listo» es \"when ready\", fórmula fija sin sujeto. Las variantes con \"you are\" o \"is\" agregan palabras que la fraseología OACI omite."
+ },
+ {
+  "id": "r7",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Si me recibe, identifíquese y presione el micrófono dos veces",
+  "options": [
+   "If you read me, identify and press the microphone twice",
+   "If you read me, identify and press the microphone two times",
+   "If you read me, identify and press the microphone double"
+  ],
+  "answer": 0,
+  "reason": "«Dos veces» se dice \"twice\" en la fraseología estándar de falla de comunicaciones. \"Two times\" y \"double\" no son las formas OACI."
+ },
+ {
+  "id": "r8",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Señal DME transmitida no fiable debido a interferencia",
+  "options": [
+   "DME signal unreliable due to interference",
+   "DME reported unreliable due to interference",
+   "DME notified unreliable due to interference"
+  ],
+  "answer": 1,
+  "reason": "Para una señal de radioayuda «transmitida no fiable» la fraseología es \"reported unreliable\": se notifica (reported) la condición. Las variantes con \"signal\" o \"notified\" no siguen la fórmula estándar."
+ },
+ {
+  "id": "r9",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Autorizado aproximación baja pista 24",
+  "options": [
+   "Cleared below approach runway 24",
+   "Cleared lower approach runway 24",
+   "Cleared low approach runway 24"
+  ],
+  "answer": 2,
+  "reason": "«Aproximación baja» es \"low approach\": aproximación sin tocar la pista. \"Lower\" (más baja) y \"below\" (debajo) no forman el término estándar OACI."
+ },
+ {
+  "id": "r10",
+  "category": "FRASEOLOGIA AERONAUTICA",
+  "question": "Solicite ascenso a nivel 200 a Cusco control a las 0900",
+  "options": [
+   "Request climb to level 200 from Cusco control at 0900",
+   "Ask climb to level 200 to Cusco control at 0900",
+   "Request climb exchange to level 200 from Cusco control at 0900"
+  ],
+  "answer": 0,
+  "reason": "«Solicite... a Cusco control» es \"request... from Cusco control\": se pide algo de la dependencia. \"Ask\" no es estándar y \"exchange\" (intercambio) no aplica a un ascenso."
+ },
+ {
+  "id": "r11",
+  "category": "REGLAMENTACIÓN",
+  "question": "Los requisitos de visibilidad VFR diurna y despeje de nubes para operar en espacio aéreo Clase G por encima de 1,000 pies AGL (y por debajo de 10,000 pies MSL):",
+  "options": [
+   "5 km y libre de nubes y con la superficie a la vista.",
+   "8 km, 1,500 m horizontalmente y 300 m (1,000 pies) verticalmente de las nubes.",
+   "3 km y despejado de nubes."
+  ],
+  "answer": 1,
+  "reason": "Clase G por encima de 900 m (1,000 pies) AGL y por debajo de FL100, de día: 8 km de visibilidad, 1,500 m horizontal y 300 m (1,000 pies) vertical de las nubes (OACI Anexo 2, tabla VMC). Contraste directo con la regla a 1,000 pies o menos AGL: 5 km, libre de nubes, superficie a la vista."
  }
 ]
