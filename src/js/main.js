@@ -10,6 +10,7 @@ import { FAMILY_IDS } from './mathgen.js';
 import { lessonList } from './lessons.js';
 import { planView } from './plan-view.js';
 import { hangarView } from './hangar.js';
+import { practiceView } from './practice.js';
 import { earnedBadges } from './badges.js';
 
 const app = document.getElementById('app');
@@ -244,6 +245,7 @@ function renderHome() {
   nodes.push(el('button', { class: 'ghost', onclick: () => { nav('hangar'); hangarView(app, ctx, renderHome); } }, '🛩️ El hangar — vuelos y rutas para el tiempo libre'));
   nodes.push(el('button', { class: 'ghost', onclick: () => { nav('repaso'); lessonList(app, ctx, renderHome); } }, '📚 Repasar lecciones'));
   nodes.push(el('button', { class: 'ghost', onclick: quickFraseo }, '🎧 Fraseología rápida — una ronda extra'));
+  nodes.push(el('button', { class: 'ghost', onclick: () => { nav('practicar'); practiceView(app, ctx, renderHome); } }, '🎯 Practicar — simulacro o quiz por tema'));
 
   if (state.errorDeck.length) nodes.push(el('p', { class: 'note center' }, `Mazo de errores: ${state.errorDeck.length} pendiente(s)`));
   nodes.push(el('footer', { class: 'home-footer' },

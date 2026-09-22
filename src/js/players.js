@@ -91,7 +91,10 @@ export async function quizPlayer(root, block, ctx) {
     ctx.append({
       kind: block.type === 'redo' ? 'redo' : 'quiz',
       chapter: block.chapter || null,
-      category: block.source === 'regla' ? ctx.data.chapters.track_categories.reglamentacion : (block.source === 'chart' ? 'VUELO EN RUTA' : null),
+      category: block.source === 'regla' ? ctx.data.chapters.track_categories.reglamentacion
+        : block.source === 'chart' ? 'VUELO EN RUTA'
+        : block.source === 'category' ? block.category
+        : null,
       score, total: items.length,
       detail: { items, ...(block.chapter ? { chapter: block.chapter } : {}) },
     });

@@ -199,6 +199,10 @@ export function selectQuestions(block, state, { bank, chapters, config }, rng = 
       const qids = state.errorDeck.filter(e => e.type === 'q').map(e => e.qid);
       return shuffled(qids.map(id => bank.find(q => q.id === id)).filter(Boolean)).slice(0, 15);
     }
+    case 'category': {
+      const pool = bank.filter(q => q.category === block.category);
+      return shuffled(pool).slice(0, block.cap || 20);
+    }
     default: return [];
   }
 }
