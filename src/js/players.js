@@ -8,6 +8,7 @@ import { uuid } from './store.js';
 import { startRecording, saveRecording } from './audio.js';
 import { guidedExample, firstExposure } from './guided.js';
 import { lessonReview } from './lessons.js';
+import { buildExplainPrompt } from './explain-prompt.js';
 
 /** Micro-celebración (§5.9): flash breve, jamás un modal que interrumpa. */
 export function flashCelebrate(root, text) {
@@ -100,7 +101,10 @@ export async function quizPlayer(root, block, ctx) {
     });
   }
   const missed = items.some(i => !i.correct);
-  showScore(root, score, items.length, missed && block.chapter ? { reviewChapter: block.chapter, ctx } : {});
+  const missedItems = block.source === 'category'
+    ? items.filter(i => !i.correct).map(i => questions.find(q => q.id === i.qid)).filter(Boolean)
+    : [];
+  showScore(root, score, items.length, { ...(missed && block.chapter ? { reviewChapter: block.chapter, ctx } : {}), missedItems });
   return waitDone(root);
 }
 
@@ -172,7 +176,7 @@ function askQuestion(root, q, ctx, { index, total, explainMode, noFeedback = fal
   });
 }
 
-function showScore(root, score, total, { reviewChapter = null, ctx = null } = {}) {
+function showScore(root, score, total, { reviewChapter = null, ctx = null, missedItems = [] } = {}) {
   const nodes = [
     el('h2', {}, `${score} / ${total}`),
     el('p', {}, score / total >= 0.8 ? '¡Buen trabajo! 💪' : 'Lo que fallaste no se pierde: la app te lo vuelve a traer sola hasta que sea tuyo. Equivocarse aquí es parte del plan.'),
@@ -180,15 +184,44 @@ function showScore(root, score, total, { reviewChapter = null, ctx = null } = {}
   // Miss routing (§4.3): volver a la sección de la lección es un tap, no tarea
   if (reviewChapter && ctx) {
     nodes.push(el('button', {
-      class: 'ghost', onclick: () => lessonReview(root, reviewChapter, ctx, () => showScore(root, score, total, { reviewChapter, ctx })),
+      class: 'ghost', onclick: () => lessonReview(root, reviewChapter, ctx, () => showScore(root, score, total, { reviewChapter, ctx, missedItems })),
     }, '📚 Volver a la lección de este capítulo'));
   }
   nodes.push(el('button', { class: 'primary', onclick: () => root.dispatchEvent(new Event('blockdone')) }, 'Continuar'));
-  root.replaceChildren(el('div', { class: 'card center' }, ...nodes));
+  root.replaceChildren(el('div', { class: 'card center' }, ...nodes, missedPromptsSection(missedItems)));
 }
 
 function waitDone(root) {
   return new Promise(res => root.addEventListener('blockdone', res, { once: true }));
+}
+
+// ---------- Prompt para ChatGPT por pregunta fallada (mentor directive 2026-09-22) ----------
+
+function explainPromptBlock(item) {
+  const prompt = buildExplainPrompt(item);
+  const copyBtn = el('button', { class: 'ghost small' }, '📋 Copiar para ChatGPT');
+  const ta = el('textarea', { class: 'explain-prompt', readonly: 'readonly', rows: '7' }, prompt);
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(prompt);
+      copyBtn.textContent = '✅ Copiado';
+    } catch {
+      ta.select();
+      copyBtn.textContent = '⚠️ Selecciona y copia (Cmd/Ctrl+C)';
+    }
+    setTimeout(() => { copyBtn.textContent = '📋 Copiar para ChatGPT'; }, 2000);
+  });
+  return el('div', { class: 'explain-card' },
+    el('p', { class: 'explain-q' }, `${item.category} — ${item.question}`),
+    ta, copyBtn);
+}
+
+function missedPromptsSection(items) {
+  if (!items.length) return '';
+  return el('div', { class: 'explain-section' },
+    el('h4', { class: 'section-title' }, '🤖 Preguntas falladas — pide la explicación a ChatGPT'),
+    el('p', { class: 'note' }, 'Copia el texto y pégalo en ChatGPT (u otro asistente) para una explicación paso a paso.'),
+    ...items.map(explainPromptBlock));
 }
 
 // ---------- Matemática (§5.2) ----------
@@ -515,6 +548,7 @@ export async function simulacroPlayer(root, block, ctx) {
 
   const deadline = Date.now() + config.exam.minutes * 60_000;
   const items = [];
+  const missedItems = [];
   for (let i = 0; i < qs.length; i++) {
     if (Date.now() >= deadline) break;
     const q = qs[i];
@@ -524,6 +558,7 @@ export async function simulacroPlayer(root, block, ctx) {
     items.push(gen
       ? { family: gen.familyId, tier: gen.tier, correct: r.correct, category: 'PERFORMANCE' }
       : { qid: q.id, correct: r.correct, category: q.category });
+    if (!r.correct) missedItems.push({ category: q.category, question: q.question, options: q.options, answer: q.answer });
   }
 
   const score = items.filter(i => i.correct).length;
@@ -540,7 +575,8 @@ export async function simulacroPlayer(root, block, ctx) {
     el('p', { class: 'center' }, pct >= config.gates.listo_simulacro_pct ? `≥ ${config.gates.listo_simulacro_pct}% — objetivo alcanzado 🏅` : `Objetivo: ${config.gates.listo_simulacro_pct}%. Cada error ya entró al mazo — esa es tu lista exacta de qué estudiar, no una condena.`),
     el('table', { class: 'cat-table' }, ...Object.entries(byCat).map(([c, v]) =>
       el('tr', {}, el('td', {}, c), el('td', {}, `${v.ok}/${v.n}`), el('td', {}, `${Math.round(100 * v.ok / v.n)}%`)))),
-    el('button', { class: 'primary', onclick: () => root.dispatchEvent(new Event('blockdone')) }, 'Continuar')));
+    el('button', { class: 'primary', onclick: () => root.dispatchEvent(new Event('blockdone')) }, 'Continuar'),
+    missedPromptsSection(missedItems)));
   return waitDone(root);
 }
 

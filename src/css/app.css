@@ -139,6 +139,11 @@ button { font: inherit; cursor: pointer; }
 .checklist li { margin: 10px 0; }
 .explain-box { background: var(--panel-2); border-radius: 10px; padding: 10px; margin-bottom: 10px; }
 
+.explain-section { text-align: left; margin-top: 16px; }
+.explain-card { background: var(--panel-2); border-radius: 10px; padding: 10px; margin: 10px 0; }
+.explain-q { font-weight: 600; margin: 0 0 8px; }
+.explain-prompt { width: 100%; box-sizing: border-box; font: inherit; font-size: 13px; resize: vertical; margin-bottom: 8px; }
+
 /* ---- lecciones (§5.8) ---- */
 .lesson-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
 .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--panel-2); border: 1px solid var(--border); }
