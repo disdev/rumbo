@@ -8,8 +8,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const lessonsDir = join(root, 'data', 'lessons');
 const diagramsDir = join(lessonsDir, 'diagrams');
 
-const WIDGETS = ['angulo-ataque', 'cuatro-fuerzas', 'superficies-control', 'flaps', 'instrumento'];
-const FAMILIES = ['carga', 'altimetro', 'nubes', 'altitudes', 'peso_balance', 'tvd'];
+const WIDGETS = ['angulo-ataque', 'cuatro-fuerzas', 'superficies-control', 'flaps', 'instrumento', 'torre', 'rodaje', 'navegador'];
+const FAMILIES = ['carga', 'altimetro', 'nubes', 'altitudes', 'peso_balance', 'tvd', 'rumbo', 'circuito'];
 const CALLOUTS = ['clave', 'ojo', 'memoria', 'examen'];
 const BLOCK_TYPES = ['text', 'diagram', 'callout', 'table', 'widget', 'check', 'notebook', 'guided_math', 'figure'];
 

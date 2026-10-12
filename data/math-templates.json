@@ -245,6 +245,86 @@
           "wording": "TAS {tas} kt, viento {winddir} de {wind} kt, distancia {d} NM, consumo {burn} gal/h y reserva de {resmin} min. ¿Cuánto combustible mínimo necesitas?"
         }
       }
+    },
+    {
+      "id": "rumbo",
+      "name": "Rumbo magnético",
+      "formula": "RV = curso ± WCA (derecha suma) · RM = RV − variación Este / + variación Oeste · RB = RM ± desviación",
+      "unit": "°",
+      "steps": {
+        "1": [
+          { "label": "Variación {var}° {dir}: ¿se suma o se resta? (escribe con signo, p. ej. −3 o +3)", "formula": "Este resta (−) · Oeste suma (+)", "unit": "°" },
+          { "label": "Aplica la corrección al rumbo verdadero", "formula": "RM = {th} ± variación", "unit": "°" }
+        ],
+        "2": [
+          { "label": "Rumbo verdadero: corriges {wca}° a la {side}", "formula": "RV = {tc} ± {wca} (derecha suma, izquierda resta)", "unit": "°" },
+          { "label": "Variación {var}° {dir} con su signo", "formula": "Este resta (−) · Oeste suma (+)", "unit": "°" },
+          { "label": "Rumbo magnético", "formula": "RM = RV ± variación", "unit": "°" }
+        ],
+        "3": [
+          { "label": "Rumbo verdadero: corriges {wca}° a la {side}", "formula": "RV = {tc} ± {wca} (derecha suma, izquierda resta)", "unit": "°" },
+          { "label": "Rumbo magnético (variación {var}° {dir})", "formula": "RM = RV − Este / + Oeste", "unit": "°" },
+          { "label": "Rumbo de brújula (desviación {dev}°)", "formula": "RB = RM {dev}", "unit": "°" }
+        ]
+      },
+      "tiers": {
+        "1": {
+          "headings": [30, 45, 75, 110, 135, 160, 200, 225, 250, 290, 315, 330],
+          "vars": [1, 2, 3, 4, 5, 6, 8],
+          "wording": "Tu rumbo verdadero es {th}°. La carta indica variación {var}° {dir}. ¿Cuál es tu rumbo magnético?"
+        },
+        "2": {
+          "headings": [30, 45, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330],
+          "vars": [1, 2, 3, 4, 5, 6],
+          "wcas": [3, 4, 5, 6, 7, 8, 10],
+          "wording": "Curso verdadero {tc}°. Para compensar el viento corriges {wca}° a la {side}. La variación es {var}° {dir}. ¿Qué rumbo magnético vuelas?"
+        },
+        "3": {
+          "headings": [30, 45, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330],
+          "vars": [1, 2, 3, 4, 5, 6],
+          "wcas": [3, 4, 5, 6, 7, 8, 10],
+          "devs": [-3, -2, -1, 1, 2, 3],
+          "wording": "Curso verdadero {tc}°; corriges {wca}° a la {side} por viento; variación {var}° {dir}. La tarjeta de desviación indica {dev}° para ese rumbo (súmalo con su signo). ¿Qué rumbo de brújula vuelas?"
+        }
+      }
+    },
+    {
+      "id": "circuito",
+      "name": "Rumbos del circuito",
+      "formula": "aterrizaje = pista × 10 · a favor = aterrizaje ± 180 · izquierdo: cruzado −90, básico +90 · derecho: cruzado +90, básico −90",
+      "unit": "°",
+      "steps": {
+        "1": [
+          { "label": "Rumbo de aterrizaje de la pista {rwy}", "formula": "pista × 10 (360 = norte)", "unit": "°" },
+          { "label": "Tramo a favor del viento: paralelo y opuesto", "formula": "aterrizaje ± 180", "unit": "°" }
+        ],
+        "2": [
+          { "label": "Rumbo de aterrizaje de la pista {rwy}", "formula": "pista × 10 (360 = norte)", "unit": "°" },
+          { "label": "Tramo a favor del viento", "formula": "aterrizaje ± 180", "unit": "°" },
+          { "label": "Tramo básico, patrón {side}", "formula": "izquierdo: aterrizaje + 90 · derecho: aterrizaje − 90", "unit": "°" }
+        ],
+        "3": [
+          { "label": "Elige la pista contra el viento de {wind}° (escribe su número)", "formula": "la cabecera cuyo rumbo esté más cerca de {wind}°", "unit": "" },
+          { "label": "Rumbo de despegue (tramo viento en contra)", "formula": "pista × 10 (360 = norte)", "unit": "°" },
+          { "label": "Tramo de viento cruzado, patrón {side}", "formula": "izquierdo: despegue − 90 · derecho: despegue + 90", "unit": "°" }
+        ]
+      },
+      "tiers": {
+        "1": {
+          "runways": [36, 9, 27, 18, 13, 31, 4, 22, 15, 33, 6, 24],
+          "wording": "Pista {rwy} en uso, patrón izquierdo estándar. ¿Qué rumbo llevas en el tramo a favor del viento (downwind)? (Escribe 360 para el norte.)"
+        },
+        "2": {
+          "runways": [36, 9, 27, 18, 13, 31, 4, 22, 15, 33, 6, 24],
+          "wording": "Pista {rwy} en uso con patrón {side} (virajes a la {turn}). ¿Qué rumbo llevas en el tramo básico (base)? (Escribe 360 para el norte.)"
+        },
+        "3": {
+          "pairs": [[36, 18], [9, 27], [13, 31], [4, 22], [15, 33], [6, 24]],
+          "wind_offsets": [-40, -30, -20, -10, 0, 10, 20, 30, 40],
+          "wind_kt": [6, 8, 10, 12, 15],
+          "wording": "Viento {wind}° a {ws} kt. El aeródromo tiene una sola pista {a}/{b} con patrón {side} en ambas cabeceras. Despegas contra el viento: ¿qué rumbo llevas en el tramo de viento cruzado (crosswind)? (Escribe 360 para el norte.)"
+        }
+      }
     }
   ]
 }

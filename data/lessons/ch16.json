@@ -366,6 +366,17 @@
           "md": "En las preguntas de curso magnético con figura (p. ej. «variación 6°30'E»), el procedimiento es siempre el mismo: mide el curso **verdadero** con el transportador sobre un meridiano, y aplica la variación: 081° verdadero con 6°E ≈ **075°** magnético. Redondea el 30' al grado más cercano."
         },
         {
+          "type": "widget",
+          "name": "navegador",
+          "params": { "windKt": 0, "tc": 60, "varE": -3 },
+          "caption": "Mueve la variación: a la izquierda es Oeste (se suma), a la derecha es Este (se resta). Mira cómo Nm se separa de Nv y cómo cambia el rumbo magnético."
+        },
+        {
+          "type": "guided_math",
+          "family": "rumbo",
+          "tier": 1
+        },
+        {
           "type": "notebook",
           "id": "16-4-n1",
           "prompt": "Dibuja dos flechas desde un mismo punto: NV recto arriba y NM inclinado a la izquierda con el ángulo marcado 'variación O'. Debajo resuelve: RV 090° + var 3°O = RM ___ (respuesta: 093°)."
@@ -525,6 +536,11 @@
           "type": "callout",
           "style": "examen",
           "md": "El banco muestra un triángulo de viento (Figura 68) y pregunta qué representa cada línea: el vector **aire** = rumbo verdadero + velocidad aérea; el vector **tierra** = curso verdadero + velocidad terrestre; el tercero = **dirección y velocidad del viento**. También: WCA a la derecha se **suma**, a la izquierda se **resta** — y lo combinan con variación en una sola pregunta."
+        },
+        {
+          "type": "widget",
+          "name": "navegador",
+          "caption": "El triángulo de viento vivo: mueve el viento y mira cómo la nariz se corrige. Pulsa «Sin corregir» para ver cuánto te deriva. También está en el 🧪 Taller del inicio."
         },
         {
           "type": "notebook",

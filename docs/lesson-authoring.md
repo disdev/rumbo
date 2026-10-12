@@ -46,6 +46,11 @@ Every section: ≥1 `check` and ≥1 `notebook` (max 3 notebooks). Order within 
 - `superficies-control` — move stick/pedals → surfaces deflect → axis rotation. (ch6)
 - `flaps` — flap lever 0–30° → wing profile, lift & drag arrows. (ch3/ch5)
 - `instrumento` — readable altimeter/ASI dial with adjustable value. (ch8)
+- `torre` — wind slider + airfield picker: read the windsock/tetrahedron and segmented-circle L's, pick the runway and pattern side, then see the circuit with every leg's heading. params: `airfield` (`a`|`b`|`c`), `wind`. (ch14 §14-9)
+- `rodaje` — taxi game on an airport plan: follow a clearance node by node, stop at the right hold line; entering an uncleared runway is a runway incursion. params: `scenario`. (ch14 §14-12)
+- `navegador` — live wind triangle (course always up) + true/magnetic north inset, with the full course → WCA → true heading → variation → magnetic heading chain. params: `tc`, `tas`, `windFrom`, `windKt`, `varE` (+E/−W), `correct`. (ch16 §16-4, §16-6)
+
+The same three widgets are also reachable any time from the home screen's 🧪 Taller (SPEC §5.11). Their pure logic lives in `src/js/ops-logic.js` (tested in `tests/ops-logic.test.mjs`).
 
 Use a widget only where listed; elsewhere use diagrams.
 

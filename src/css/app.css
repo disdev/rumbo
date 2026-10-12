@@ -189,6 +189,21 @@ button { font: inherit; cursor: pointer; }
 .widget-btnrow { display: flex; gap: 8px; margin: 8px 0; }
 .widget-btn { flex: 1; padding: 10px 6px; border-radius: 10px; border: 1px solid var(--border); background: var(--panel); color: var(--text); font-size: 14px; }
 .widget-btn.active { border-color: var(--accent); color: var(--accent); font-weight: 700; background: var(--bg); }
+.widget-ctl { display: block; font-size: 14px; margin-top: 6px; }
+.reason.ok { border-left: 4px solid var(--ok); }
+.reason.bad { border-left: 4px solid var(--bad); color: var(--bad-ink); font-weight: 600; }
+.reason.warn { border-left: 4px solid var(--warn); }
+.nav-chain { margin: 10px 0; padding-left: 22px; font-size: 15px; line-height: 1.5; }
+.nav-chain .note { font-size: 13px; }
+/* letreros del aeropuerto: colores reales, iguales en tema claro y oscuro */
+.sign-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0; }
+.sign { font-family: var(--sans); font-weight: 800; font-size: 14px; padding: 3px 8px; border-radius: 3px; letter-spacing: .04em; }
+.sign-loc { background: #1c1b18; color: #e8c547; border: 2px solid #e8c547; }
+.sign-dir { background: #e8c547; color: #1c1b18; }
+.sign-mand { background: #b8442f; color: #fff; border: 2px solid #fff; outline: 1px solid #b8442f; }
+.incursion-flash { animation: incursion .6s; }
+@keyframes incursion { 0%, 100% { box-shadow: none; } 30%, 70% { box-shadow: 0 0 0 4px var(--bad); } }
+.recipe-level { border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
 
 /* ---- logros (§5.9) ---- */
 .badge-shelf { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 2px; }

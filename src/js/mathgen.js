@@ -3,6 +3,8 @@
 // distractores viven aquí, indexados por family.id. Todo debe salir con
 // números trabajables a mano: el examen no permite calculadora.
 
+import { hdg, hdgStr, rwyStr, patternLegs, bestRunway } from './ops-logic.js';
+
 export function mulberry32(seed) {
   let a = seed >>> 0;
   return function () {
@@ -18,6 +20,17 @@ const fmt = (n) => Number.isInteger(n) ? n.toLocaleString('es-PE') : n.toLocaleS
 
 function fill(wording, vars) {
   return wording.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? `{${k}}`);
+}
+
+// Dos distractores distintos entre sí y de la respuesta (dos trampas de signo
+// pueden coincidir en el mismo número): rellena con ±10° si hace falta.
+function twoDistinct(answer, cands) {
+  const out = [];
+  for (const c of [...cands, answer + 10, answer - 10, answer + 20]) {
+    if (c !== answer && !out.includes(c) && c >= 1 && c <= 360) out.push(c);
+    if (out.length === 2) break;
+  }
+  return out;
 }
 
 // Cada generador devuelve { vars, answer, unit, worked, distract: [n1, n2] }.
@@ -223,6 +236,86 @@ const GEN = {
       stepVals: [gs, h, Math.round(h * burn * 10) / 10, Math.round((resmin / 60) * burn * 10) / 10, Math.round(fuel * 10) / 10],
     };
   },
+
+  // Rumbo magnético (cap. 16): curso → WCA → variación → desviación.
+  // Rangos elegidos para no cruzar el norte (las respuestas quedan en 010–350).
+  rumbo(rng, t, tier) {
+    const th0 = pick(rng, t.headings), v = pick(rng, t.vars), east = rng() < 0.5;
+    const dirWord = east ? 'Este' : 'Oeste';
+    const corr = east ? -v : v; // Este resta, Oeste suma
+    if (tier === 1) {
+      const mh = th0 + corr;
+      return {
+        vars: { th: hdgStr(th0), var: v, dir: dirWord },
+        answer: mh, unit: '°',
+        worked: `${hdgStr(th0)} ${east ? '−' : '+'} ${v} = ${hdgStr(mh)}° (${east ? 'Este resta' : 'Oeste suma'})`,
+        distract: twoDistinct(mh, [th0 - corr, th0]),
+        stepVals: [corr, mh],
+      };
+    }
+    const wca = pick(rng, t.wcas), right = rng() < 0.5;
+    const th = th0 + (right ? wca : -wca);
+    const mh = th + corr;
+    const base = {
+      tc: hdgStr(th0), wca, side: right ? 'derecha' : 'izquierda', var: v, dir: dirWord,
+    };
+    if (tier === 2) {
+      return {
+        vars: base,
+        answer: mh, unit: '°',
+        worked: `RV = ${hdgStr(th0)} ${right ? '+' : '−'} ${wca} = ${hdgStr(th)}°; RM = ${hdgStr(th)} ${east ? '−' : '+'} ${v} = ${hdgStr(mh)}°`,
+        distract: twoDistinct(mh, [th - corr, th0 + (right ? -wca : wca) + corr]),
+        stepVals: [th, corr, mh],
+      };
+    }
+    const dev = pick(rng, t.devs);
+    const ch = mh + dev;
+    return {
+      vars: { ...base, dev: dev > 0 ? `+${dev}` : `−${-dev}` },
+      answer: ch, unit: '°',
+      worked: `RV = ${hdgStr(th0)} ${right ? '+' : '−'} ${wca} = ${hdgStr(th)}°; RM = ${hdgStr(th)} ${east ? '−' : '+'} ${v} = ${hdgStr(mh)}°; RB = ${hdgStr(mh)} ${dev > 0 ? '+' : '−'} ${Math.abs(dev)} = ${hdgStr(ch)}°`,
+      distract: twoDistinct(ch, [th - corr + dev, mh - dev]),
+      stepVals: [th, mh, ch],
+    };
+  },
+
+  // Rumbos del circuito de tránsito (cap. 14): pista → tramos.
+  circuito(rng, t, tier) {
+    if (tier <= 2) {
+      const rwy = pick(rng, t.runways);
+      const side = tier === 1 ? 'izq' : (rng() < 0.5 ? 'izq' : 'der');
+      const legs = patternLegs(rwy, side), other = patternLegs(rwy, side === 'izq' ? 'der' : 'izq');
+      if (tier === 1) {
+        return {
+          vars: { rwy: rwyStr(rwy) },
+          answer: legs.downwind, unit: '°',
+          worked: `Pista ${rwyStr(rwy)} → aterrizas a ${hdgStr(legs.final)}°; a favor del viento = ${hdgStr(legs.final)} ± 180 = ${hdgStr(legs.downwind)}°`,
+          distract: [legs.final, legs.base],
+          stepVals: [legs.final, legs.downwind],
+        };
+      }
+      return {
+        vars: { rwy: rwyStr(rwy), side: side === 'der' ? 'derecho' : 'izquierdo', turn: side === 'der' ? 'derecha' : 'izquierda' },
+        answer: legs.base, unit: '°',
+        worked: `Aterrizaje ${hdgStr(legs.final)}°; a favor del viento ${hdgStr(legs.downwind)}°; básico (patrón ${side === 'der' ? 'derecho: aterrizaje − 90' : 'izquierdo: aterrizaje + 90'}) = ${hdgStr(legs.base)}°`,
+        distract: [other.base, legs.downwind],
+        stepVals: [legs.final, legs.downwind, legs.base],
+      };
+    }
+    const [a, b] = pick(rng, t.pairs);
+    const end = rng() < 0.5 ? a : b;
+    const wind = hdg(end * 10 + pick(rng, t.wind_offsets));
+    const rwy = bestRunway(wind, [a, b]).best;
+    const side = rng() < 0.5 ? 'izq' : 'der';
+    const legs = patternLegs(rwy, side), other = patternLegs(rwy, side === 'izq' ? 'der' : 'izq');
+    return {
+      vars: { wind: hdgStr(wind), ws: pick(rng, t.wind_kt), a: rwyStr(a), b: rwyStr(b), side: side === 'der' ? 'derecho' : 'izquierdo' },
+      answer: legs.crosswind, unit: '°',
+      worked: `Viento de ${hdgStr(wind)}° → pista ${rwyStr(rwy)} (despegas a ${hdgStr(legs.upwind)}°); cruzado (${side === 'der' ? 'derecho: + 90' : 'izquierdo: − 90'}) = ${hdgStr(legs.crosswind)}°`,
+      distract: [other.crosswind, legs.upwind],
+      stepVals: [rwy, legs.upwind, legs.crosswind],
+    };
+  },
 };
 
 // Normaliza atajos de acceso a constantes de la familia.
@@ -291,3 +384,7 @@ export function checkAnswer(prob, input, tolerancePct = 2) {
 }
 
 export const FAMILY_IDS = ['carga', 'altimetro', 'nubes', 'altitudes', 'peso_balance', 'tvd'];
+
+// Familias del taller (§5.11): mismas recetas guiadas y práctica, pero FUERA
+// de la escalera — no tocan la cuadrícula, las puertas ni el planificador.
+export const TALLER_FAMILY_IDS = ['rumbo', 'circuito'];

@@ -3,22 +3,8 @@
 // Si un widget falla, el player degrada a su caption (§5.8): nunca bloquea.
 
 import { el } from './players.js';
-
-const SVGNS = 'http://www.w3.org/2000/svg';
-function svg(tag, attrs = {}, ...children) {
-  const n = document.createElementNS(SVGNS, tag);
-  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
-  n.append(...children);
-  return n;
-}
-const txt = (x, y, s, extra = {}) => svg('text', { x, y, fill: 'var(--text)', 'font-size': 13, 'font-family': 'inherit', ...extra }, s);
-
-function slider(min, max, value, step, oninput) {
-  const s = el('input', { type: 'range', class: 'widget-slider' });
-  s.min = min; s.max = max; s.value = value; s.step = step;
-  s.addEventListener('input', () => oninput(Number(s.value)));
-  return s;
-}
+import { svg, txt, slider } from './widget-kit.js';
+import { torre, rodaje, navegador } from './widgets-ops.js';
 
 // ---------- ángulo de ataque → sustentación ----------
 function anguloAtaque(container) {
@@ -227,4 +213,7 @@ export const WIDGETS = {
   'superficies-control': superficiesControl,
   'flaps': flaps,
   'instrumento': instrumento,
+  'torre': torre,
+  'rodaje': rodaje,
+  'navegador': navegador,
 };

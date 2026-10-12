@@ -78,6 +78,8 @@ Generated, not stored. Six families, each a template with randomized parameters 
 
 Parameter generation rules per tier live in `data/math-templates.json` (ranges, rounding, distractor logic if multiple-choice presentation is used; free-entry numeric answer with tolerance is also acceptable and preferred for math — accept within ±2% or exact for clean-number tiers). Each template also defines its rounding convention and expected units. The app offers no calculator affordances anywhere; the mental answer is committed before any E6B verification.
 
+**Taller families (2026-10-12):** two extra families — **Rumbo magnético** (`rumbo`: RV = curso ± WCA, RM = RV − Este / + Oeste, RB = RM ± desviación) and **Rumbos del circuito** (`circuito`: aterrizaje = pista × 10, a favor = ± 180, izquierdo: cruzado −90 / básico +90, derecho al revés) — live in the same `math-templates.json` with steps and three tiers, but **outside the ladder** (`TALLER_FAMILY_IDS`, not `FAMILY_IDS`): they never appear in the tracker grid, the planner, the week-6 gate or maintenance. They're practiced from the taller (§5.11) and from `guided_math` blocks in lessons 14-8 and 16-4; their drill rows count toward reps and the math streak like any guiada/practica row. Headings answer as 1–360 (north = 360).
+
 **Worked steps (`steps`):** each family additionally defines an ordered `steps` array — per step: a Spanish label ("Calcula el momento total actual"), the symbolic formula ("Momento = Peso × Brazo"), a compute expression over the generated parameters, and the unit. Because steps live on the template, **any** generated problem can render its complete worked solution with its own numbers. This powers resolución guiada (§5.2), `guided_math` lesson blocks (§3.4), and the redo-with-work-shown (§4.4). The one-line reveal above remains the reveal for scored attempts.
 
 ### 3.4 Lessons (in-app teaching content)
@@ -218,6 +220,15 @@ Badges and micro-celebrations, tuned for ADHD reward cadence (mentor directive 2
 
 ### 5.10 El hangar (optional enrichment)
 For surplus time on days finished early (mentor directive 2026-07-05): a home-screen view (`data/hangar.json`, `src/js/hangar.js`) of **optional, fun, aviation-love-building activities** — Peru-specific flight-simulator flights with briefings tied to the week's material (coastal Lima→Pisco in week 1, the Cusco density-altitude challenge in week 3, Amazon weather-reading at Iquitos in week 4, the Pisco→Nazca navigation flight with the Nazca Lines overflight in week 6, a night flight in week 7, a self-planned "graduation flight" in week 8), paper/SkyVector route-planning exercises that use the math recipes for real, plus pointers to the lesson videos and PHAK deep-reading. Any simulator counts (MSFS, X-Plane, FlightGear, GeoFS). Activities unlock by program week so they accompany the material. **Never gates, never homework**: self-reported "La hice ✓" logs a `block/hangar` row (visible to the mentor), surfaced prominently on the día-completo screen. Repeats allowed and encouraged.
+
+### 5.11 El taller (any-time practice for ops & navigation)
+Added 2026-10-12 after the student flagged three weak topics (indicador de dirección del patrón de tráfico, diagrama de aeropuerto, navegación). A home-screen button opens `src/js/taller.js`, available at any time, outside the day plan:
+
+- **Juegos:** the `torre`, `rodaje` and `navegador` widgets (§3.4), each with a how-to and one-tap links into the matching lesson sections (review mode). Like every widget they never score and never log; in-widget streak flashes are visual only (§5.9). The same widgets are embedded in lessons 14-9, 14-12, 16-4 and 16-6.
+- **Recetas:** guided example and 4-problem práctica per tier for the two taller math families (§3.3). Logged as `drill` rows (`mode: guiada|practica`) like all math practice.
+- **En el simulador:** two hangar missions (`sim-viento-circuito`, `sim-rodaje-diagrama`, week 1+) that fly the same skills in a simulator.
+
+Never a gate, never homework.
 
 ---
 

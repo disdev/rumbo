@@ -31,6 +31,36 @@
       ]
     },
     {
+      "id": "sim-viento-circuito",
+      "type": "sim",
+      "week_min": 1,
+      "title": "Tú eliges la pista: viento, manga y circuito",
+      "duration": "30–45 min",
+      "desc": "Nadie te dice qué pista usar: pones viento en el simulador, lo lees en la manga y vuelas el circuito correcto anunciando cada tramo. Lo mismo que el juego «Tú eres la torre» del taller, pero volado de verdad (cap. 14).",
+      "briefing": [
+        "Antes de cargar el vuelo, elige un viento al azar en la configuración del clima (por ejemplo 330° a 10 kt) y no vuelvas a mirarlo.",
+        "En plataforma, busca la manga: apunta hacia donde VA el viento, así que viene del lado contrario. Elige la cabecera contra el viento y compruébalo: número de pista × 10.",
+        "Antes de despegar, escribe en el cuaderno los rumbos de los 5 tramos (receta del taller: aterrizaje, ± 180, ± 90).",
+        "Vuela el circuito a 1,000 ft AGL anunciando en voz alta cada tramo, como en la CTAF: «Tránsito Pisco, Rumbo 1-2-3, viento a favor pista __».",
+        "Repite con un viento que te obligue a usar la otra cabecera. ¿Cambiaron todos los rumbos?"
+      ]
+    },
+    {
+      "id": "sim-rodaje-diagrama",
+      "type": "sim",
+      "week_min": 1,
+      "title": "Rodaje en Lima con el diagrama en la mano",
+      "duration": "20–30 min",
+      "desc": "El aeropuerto grande sin perderte: en SPJC, con el diagrama de aeródromo a la vista, ruedas de la plataforma al punto de espera sin pisar una pista que nadie te autorizó (cap. 14).",
+      "briefing": [
+        "Abre el diagrama de aeródromo de SPJC (SkyVector o la AIP del Perú) y tenlo a la vista mientras vuelas.",
+        "Escríbete una autorización antes de moverte —«rodar al punto de espera pista __ vía __»— y trázala con el dedo en el diagrama.",
+        "Rueda despacio. En cada cruce lee los letreros: negro con amarillo = dónde estás; amarillo con negro = hacia dónde va cada calle; rojo = no pasas sin autorización.",
+        "Detente en cada línea de espera del lado de las líneas sólidas y di la colación en voz alta: «Mantengo posición antes de pista __».",
+        "Si en algún momento no sabes dónde estás: detente. En la vida real pides rodaje progresivo."
+      ]
+    },
+    {
       "id": "ruta-tvd-basica",
       "type": "ruta",
       "week_min": 1,

@@ -3,12 +3,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { generateProblem, checkAnswer, mulberry32, FAMILY_IDS } from '../src/js/mathgen.js';
+import { generateProblem, checkAnswer, mulberry32, FAMILY_IDS, TALLER_FAMILY_IDS } from '../src/js/mathgen.js';
 
 const templates = JSON.parse(readFileSync(new URL('../data/math-templates.json', import.meta.url)));
 
 test('cada familia×nivel genera steps completos que cierran en la respuesta', () => {
-  for (const fam of FAMILY_IDS) {
+  for (const fam of [...FAMILY_IDS, ...TALLER_FAMILY_IDS]) {
     for (const tier of [1, 2, 3]) {
       const rng = mulberry32(fam.length * 100 + tier);
       for (let i = 0; i < 25; i++) {
@@ -32,4 +32,22 @@ test('checkAnswer acepta el valor de cada paso como entrada exacta', () => {
   for (const s of p.steps) {
     assert.ok(checkAnswer({ answer: s.value, tolerancePct: 2 }, String(s.value), 2));
   }
+});
+
+test('rumbos del taller: siempre 1–360, sin cruzar el norte, y la trampa del signo es un distractor', () => {
+  for (const fam of TALLER_FAMILY_IDS) {
+    for (const tier of [1, 2, 3]) {
+      const rng = mulberry32(tier * 31 + fam.length);
+      for (let i = 0; i < 200; i++) {
+        const p = generateProblem(templates, fam, tier, { rng, mc: true });
+        assert.ok(Number.isInteger(p.answer) && p.answer >= 1 && p.answer <= 360, `${fam} n${tier}: rumbo fuera de rango ${p.answer}`);
+        assert.equal(p.tolerancePct, 0);
+        assert.equal(new Set(p.options).size, 3, `${fam} n${tier}: opciones repetidas ${p.options}`);
+      }
+    }
+  }
+  // pista 36 patrón izquierdo: a favor del viento = 180
+  const p = generateProblem(templates, 'circuito', 1, { rng: () => 0 });
+  assert.equal(p.params.rwy, '36');
+  assert.equal(p.answer, 180);
 });

@@ -844,6 +844,15 @@
           "md": "Dos seguras del banco: la entrada recomendada es **a 45° al punto medio del viento a favor, a la altitud del patrón**; y la salida correcta en un aeropuerto no controlado es **cumplir el patrón de tráfico establecido por la autoridad (AAC/DGAC)** para ese aeropuerto."
         },
         {
+          "type": "text",
+          "md": "Ahora hazlo tú con números: la receta es siempre la misma. **Aterrizaje = número de pista × 10**; **a favor del viento = aterrizaje ± 180**; en patrón **izquierdo** el básico es **aterrizaje + 90** (en derecho, − 90). Escríbelo en tu cuaderno y practica abajo."
+        },
+        {
+          "type": "guided_math",
+          "family": "circuito",
+          "tier": 1
+        },
+        {
           "type": "notebook",
           "id": "14-8-n1",
           "prompt": "Dibuja el patrón de tráfico completo alrededor de una pista y etiqueta CADA tramo en español y en inglés. Marca la flecha del viento, la entrada a 45° y escribe «1,000 ft AGL». Anota junto a cada tramo el rumbo si la pista en uso es la 36."
@@ -947,6 +956,11 @@
           "type": "callout",
           "style": "examen",
           "md": "Las preguntas de la Figura 50 del banco son exactamente esto: leer el círculo segmentado para decidir **qué pista y qué patrón** usar según la manga — por ejemplo, «tráfico a la izquierda para la Pista 36 y a la derecha para la 18». También preguntan para qué se dispone así el patrón: **evitar sobrevolar un área** cercana. Practícalas mirando la L de cada pista."
+        },
+        {
+          "type": "widget",
+          "name": "torre",
+          "caption": "Tú eres la torre: mueve el viento, elige la pista leyendo la manga y el lado del patrón leyendo la L. También está en el 🧪 Taller del inicio, para cuando quieras."
         },
         {
           "type": "notebook",
@@ -1265,6 +1279,11 @@
           "type": "callout",
           "style": "examen",
           "md": "Del banco: ¿por qué presentar un plan de vuelo VFR? Para tener **búsqueda y rescate** en caso de emergencia. Ítem 15 (nivel) = **altitud de crucero VFR**. El ELT activado transmite en **406 MHz**, y verificas que no se disparó **monitoreando 121.5 antes de apagar el motor**."
+        },
+        {
+          "type": "widget",
+          "name": "rodaje",
+          "caption": "Rodaje sin incursiones: lee la autorización entera y rueda tramo por tramo. ¿Dónde termina? ¿Qué pistas puedes cruzar? También está en el 🧪 Taller del inicio."
         },
         {
           "type": "notebook",
