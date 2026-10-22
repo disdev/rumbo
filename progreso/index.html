@@ -23,6 +23,15 @@
     .day.parcial { background: var(--accent); color: var(--on-accent); }
     .day.perdido { background: var(--bad); color: var(--on-bad); }
     table.plain { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .mis-row { background: var(--panel); border-radius: 12px; padding: 10px 14px; margin: 8px 0; }
+    .mis-row.soon { opacity: .55; }
+    .mis-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .mis-cell { display: flex; flex-direction: column; align-items: center; min-width: 74px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; font: inherit; }
+    .mis-cell .n { font-weight: 700; }
+    .mis-cell.done { border-color: var(--ok); }
+    .mis-cell.opened { border-color: var(--warn); }
+    .mis-cell.not_started { opacity: .55; }
+    .mis-detail h4 { margin: 14px 0 4px; }
     table.plain td, table.plain th { padding: 6px 8px; border-bottom: 1px solid var(--panel-2); text-align: left; }
     details { margin: 12px 0; }
     summary { cursor: pointer; font-weight: 700; padding: 8px 0; }

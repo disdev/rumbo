@@ -129,7 +129,11 @@ export function missionReport(rows, missions) {
     const mine = sorted.filter(r => isMission(r, m.id));
     const progressRows = mine.filter(r => r.kind === 'mission_progress');
     const firstDone = progressRows.find(r => r.detail.completed);
-    const prueba = mine.filter(r => r.kind === 'quiz').pop();
+    const pruebas = mine.filter(r => r.kind === 'quiz');
+    const prueba = pruebas[pruebas.length - 1];
+    // corte antes/después: la primera prueba de la misión (ya es «después de enseñar»);
+    // la fila quiz se escribe al terminar la prueba, así que sus respuestas caen del lado «después»
+    const cut = pruebas.length ? pruebas[0].ts : firstDone ? firstDone.ts : null;
     const stepSeconds = mine.filter(r => r.kind === 'mission_step').reduce((s, r) => s + (r.detail.seconds || 0), 0);
     const steps = (m.steps || []).map(s => {
       const stepRows = mine.filter(r => r.detail.step === s.id);
@@ -156,7 +160,7 @@ export function missionReport(rows, missions) {
       status: firstDone ? 'done' : mine.length ? 'in_progress' : 'not_started',
       seconds: progressRows.length ? progressRows.reduce((s, r) => s + (r.detail.seconds || 0), 0) : stepSeconds,
       prueba: prueba ? { score: prueba.score, total: prueba.total } : null,
-      accuracy: missionAccuracy(rows, m, firstDone ? firstDone.ts : null),
+      accuracy: missionAccuracy(rows, m, cut),
       steps,
     };
   });

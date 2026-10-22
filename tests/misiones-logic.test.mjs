@@ -150,3 +150,14 @@ test('missionReport: tries cuenta todos los intentos; first_try_correct del prim
   assert.deepEqual(rep.stuck.map(s => s.step), ['m1-1', 'm1-2']); // 4+0 vs 2+2: empate → orden de misión
   assert.equal(rep.stuck[0].title, 'A');
 });
+
+test('missionReport: la prueba de la misión ya cuenta como «después» (corte = la prueba, no la fila de completada)', () => {
+  const rows = [
+    r(1, 'quiz', { items: [{ qid: 'q1', correct: false }] }),
+    stepRow(2, 'm1-1'), stepRow(3, 'm1-2'), stepRow(4, 'm1-3'),
+    r(5, 'quiz', { mission: 'm1', items: [{ qid: 'q1', correct: true }, { qid: 'q2', correct: true }] }, { score: 2, total: 2 }),
+    r(6, 'mission_progress', { mission: 'm1', completed: true, seconds: 100 }),
+  ];
+  const m1 = missionReport(rows, MISSIONS).missions[0];
+  assert.deepEqual(m1.accuracy, { before: { n: 1, ok: 0 }, after: { n: 2, ok: 2 } });
+});
