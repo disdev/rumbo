@@ -121,7 +121,7 @@ test('missionAccuracy: solo el primer intento por qid a cada lado de completedTs
   assert.deepEqual(missionAccuracy(rows, MISSIONS[0], 10), { before: { n: 3, ok: 1 }, after: { n: 2, ok: 2 } });
 });
 
-test('missionReport: tries cuenta todos los intentos; first_try_correct del primer mission_step; stuck ordena por tries+2·revealed', () => {
+test('missionReport: tries hasta la primera vez terminado; first_try_correct del primer intento; stuck ordena por tries+2·revealed', () => {
   const att = (ts, step, correct) => r(ts, 'mission_attempt', { mission: step.split('-')[0], step, try: 1, answer: { value: ts }, correct, off_by: 3, ms_to_answer: 900, hint_shown: false });
   const rows = [
     r(0, 'nav', { screen: 'mision', mission: 'm1', step: 'm1-3', view: 'step', action: 'enter' }),
@@ -139,7 +139,7 @@ test('missionReport: tries cuenta todos los intentos; first_try_correct del prim
   assert.equal(m1.status, 'done');
   assert.deepEqual(m1.prueba, { score: 4, total: 6 });
   const [s1, s2, s3] = m1.steps;
-  assert.equal(s1.tries, 4);
+  assert.equal(s1.tries, 3); // hasta la primera vez que lo terminó; la repetición no suma
   assert.equal(s1.first_try_correct, false);
   assert.equal(s1.seconds, 60);
   assert.equal(s1.attempts.length, 4);
@@ -147,8 +147,8 @@ test('missionReport: tries cuenta todos los intentos; first_try_correct del prim
   assert.equal(s2.revealed, true);
   assert.equal(s3.status, 'opened');
   assert.equal(rep.missions[1].status, 'not_started');
-  assert.deepEqual(rep.stuck.map(s => s.step), ['m1-1', 'm1-2']); // 4+0 vs 2+2: empate → orden de misión
-  assert.equal(rep.stuck[0].title, 'A');
+  assert.deepEqual(rep.stuck.map(s => s.step), ['m1-2', 'm1-1']); // 2+2 (mostrada) > 3+0
+  assert.equal(rep.stuck[0].title, 'B');
 });
 
 test('missionReport: la prueba de la misión ya cuenta como «después» (corte = la prueba, no la fila de completada)', () => {
@@ -160,4 +160,43 @@ test('missionReport: la prueba de la misión ya cuenta como «después» (corte 
   ];
   const m1 = missionReport(rows, MISSIONS).missions[0];
   assert.deepEqual(m1.accuracy, { before: { n: 1, ok: 0 }, after: { n: 2, ok: 2 } });
+});
+
+// ---- correcciones de la revisión final ----
+import { parseNumber, trueTrackOf } from '../src/js/misiones-logic.js';
+
+test('parseNumber: coma de miles como en el banco («1,749»), coma decimal («60,5»), espacios', () => {
+  assert.equal(parseNumber('1,749'), 1749);
+  assert.equal(parseNumber('1 749'), 1749);
+  assert.equal(parseNumber('60,5'), 60.5);
+  assert.equal(parseNumber('1,749.5'), 1749.5);
+  assert.equal(parseNumber('339'), 339);
+  assert.ok(Number.isNaN(parseNumber('abc')));
+});
+
+test('trueTrackOf: el curso magnético se dibuja convertido a verdadero; otros pasos no dibujan línea', () => {
+  const chartV = { variation: { deg: -4 } };
+  assert.equal(trueTrackOf({ kind: 'number', unit: 'deg', compute: 'true_course' }, 330, chartV), 330);
+  assert.equal(trueTrackOf({ kind: 'number', unit: 'deg', compute: 'magnetic_course' }, 339, chartV), 335);
+  assert.equal(trueTrackOf({ kind: 'number', unit: 'ft', compute: 'obstacle_clearance' }, 1749, chartV), null);
+  assert.equal(trueTrackOf({ kind: 'number', unit: 'deg', expected: 90 }, 90, chartV), null);
+});
+
+test('missionReport: reanudar tras un fallo no borra el fallo; repetir no infla «atascado»', () => {
+  const att = (ts, step, correct) => r(ts, 'mission_attempt', { mission: 'm1', step, try: 1, answer: {}, correct });
+  const rows = [
+    att(1, 'm1-1', false),                                   // falla, sale
+    r(2, 'mission_progress', { mission: 'm1', completed: false, last_step: 'm1-1' }),
+    att(3, 'm1-1', true),                                    // reanuda y acierta
+    stepRow(4, 'm1-1', { tries: 1, first_try_correct: true }),
+    att(5, 'm1-2', true), stepRow(6, 'm1-2', { tries: 1, first_try_correct: true }),
+    att(7, 'm1-2', true), stepRow(8, 'm1-2', { tries: 1, first_try_correct: true }), // repetición limpia
+  ];
+  const rep = missionReport(rows, MISSIONS);
+  const [s1, s2] = rep.missions[0].steps;
+  assert.equal(s1.first_try_correct, false);
+  assert.equal(s1.tries, 2);
+  assert.equal(s2.tries, 1);           // intentos hasta la primera vez que lo terminó
+  assert.equal(s2.attempts.length, 2); // pero el mentor ve todas las respuestas
+  assert.deepEqual(rep.stuck.map(s => s.step), ['m1-1']);
 });

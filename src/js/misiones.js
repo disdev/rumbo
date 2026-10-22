@@ -10,7 +10,7 @@ import { el, quizPlayer, flashCelebrate } from './players.js';
 import { getLog } from './store.js';
 import { renderCarta } from './carta.js';
 import { renderFigura } from './figura-overlay.js';
-import { gradeAnswer, expectedValue, missionProgress } from './misiones-logic.js';
+import { gradeAnswer, expectedValue, missionProgress, parseNumber, trueTrackOf } from './misiones-logic.js';
 import { lessonReview } from './lessons.js';
 
 /** Carga perezosa: si falla (sin red y sin caché) el resto de la app sigue igual. */
@@ -67,9 +67,15 @@ export async function misionView(root, ctx, missionId, onExit, startAt = null) {
   let currentStep = null, stepsDone = 0, lastDone = null, finished = false;
   document.body.classList.add('misiones-wide');
 
-  function leave() {
+  let stepCleanup = null; // herramienta + cronómetro del paso en curso
+  function teardown() {
+    stepCleanup?.(); stepCleanup = null;
+    surfaceApi?.destroy?.(); surfaceApi = null;
     document.body.classList.remove('misiones-wide');
     runTimer.stop();
+  }
+  function leave() {
+    teardown();
     onExit();
   }
   function exitMission() {
@@ -139,6 +145,7 @@ export async function misionView(root, ctx, missionId, onExit, startAt = null) {
       const api = mountSurface(step.surface, step);
       const timer = activeTimer();
       let tries = 0, hintShown = false, firstTry = null, shownAt = Date.now(), tool = null, done = false;
+      stepCleanup = () => { tool?.destroy?.(); timer.stop(); };
 
       const feedback = el('div', { class: 'mision-feedback', 'aria-live': 'polite' });
       const controls = el('div', { class: 'mision-controls' });
@@ -178,13 +185,18 @@ export async function misionView(root, ctx, missionId, onExit, startAt = null) {
           lines.push(step.unit === 'deg' && off1 >= 170
             ? `Pusiste ${fmtNum(answer.value, step.unit)}: es el curso AL REVÉS (±180°). Vas en la dirección contraria.`
             : `Pusiste ${fmtNum(answer.value, step.unit)}: ${off > 0 ? 'te pasaste' : 'te faltó'} por ${step.unit === 'deg' ? `${off1}°` : fmtNum(off1, step.unit)}.`);
-          if (step.unit === 'deg' && api.kind === 'carta' && step.route) {
+          const track = api.kind === 'carta' && step.route ? trueTrackOf(step, answer.value, chart) : null;
+          if (track != null) {
             const r = chart.routes.find(x => x.id === step.route), from = chart.airports.find(a => a.id === r.from);
-            api.drawLine(from, answer.value, api.routeDistance(step.route) * 0.85, 'me');
-            lines.push('La línea naranja es TU curso: mira hacia dónde te lleva.');
+            api.drawLine(from, track, api.routeDistance(step.route) * 0.85, 'me');
+            lines.push(step.compute === 'magnetic_course'
+              ? 'La línea naranja es la derrota que saldría con TU respuesta: si fuera el magnético correcto, caería sobre la ruta.'
+              : 'La línea naranja es TU curso: mira hacia dónde te lleva.');
           }
         } else if (step.kind === 'place') {
-          lines.push(`Tu avión quedó a ${off.toFixed(1)} NM del punto.`);
+          api.showPoint(answer, 'bad');
+          const dm = (v) => { const a = Math.abs(v), d = Math.floor(a), m = Math.round((a - d) * 60); return m === 60 ? `${d + 1}°00′` : `${d}°${String(m).padStart(2, '0')}′`; };
+          lines.push(`Lo soltaste en ${dm(answer.lat)}S · ${dm(answer.lon)}W (el avión rojo): a ${off.toFixed(1)} NM del punto.`);
         } else if (step.kind === 'tap' && answer.feature) {
           api.highlight([answer.feature], 'bad');
           if (api.kind === 'carta') api.explainFeature(answer.feature);
@@ -195,23 +207,23 @@ export async function misionView(root, ctx, missionId, onExit, startAt = null) {
 
       function finish(revealed, answer) {
         done = true;
-        tool?.destroy?.();
+        stepCleanup?.(); stepCleanup = null;
         if (!revealed || step.kind !== 'number') api.clearMarks(); // fuera las marcas del error; queda la respuesta
         // mostrar la respuesta correcta en la superficie
         if (step.kind === 'tap') api.highlight(step.targets, 'ok');
         if (step.kind === 'place') { api.showRing(step.target, step.tol, 'ok'); if (!revealed) api.showPoint(answer, 'ok'); else api.showPoint(answer, 'me'); }
-        if (step.kind === 'number' && step.unit === 'deg' && api.kind === 'carta' && step.route) {
+        const okTrack = step.kind === 'number' && api.kind === 'carta' && step.route ? trueTrackOf(step, expectedValue(step, chart), chart) : null;
+        if (okTrack != null) {
           const r = chart.routes.find(x => x.id === step.route), from = chart.airports.find(a => a.id === r.from);
-          api.drawLine(from, expectedValue(step, chart), api.routeDistance(step.route), 'ok');
+          api.drawLine(from, okTrack, api.routeDistance(step.route), 'ok');
         }
-        if (step.id === 'm2-8' || (api.kind === 'figura' && step.surface.hotspots?.length > 1 && step.kind === 'choice')) {
+        if (api.kind === 'figura' && step.surface.hotspots?.length > 1 && step.kind === 'choice') {
           const [h1, h2] = step.surface.hotspots;
           api.drawLine(h1, h2, 'ok');
         }
         controls.querySelectorAll('button, input').forEach(n => { n.disabled = true; });
         if (step.kind === 'choice') controls.querySelectorAll('.option').forEach(b => { if (Number(b.dataset.orig) === step.answer) b.classList.add('correct'); });
         const seconds = timer.seconds();
-        timer.stop();
         ctx.append({ kind: 'mission_step', detail: {
           mission: M.id, step: step.id, title: step.title, tries, first_try_correct: !!firstTry, revealed, seconds,
         } });
@@ -239,8 +251,12 @@ export async function misionView(root, ctx, missionId, onExit, startAt = null) {
 
       // ---- controles según el tipo de paso ----
       if (step.kind === 'tap') {
-        controls.append(el('p', { class: 'note' }, api.kind === 'carta' ? '👆 Toca en la carta.' : '👆 Toca en la figura.'));
-        api.onTap((id) => { if (id) submit({ feature: id }); });
+        controls.append(el('p', { class: 'note' }, api.kind === 'carta' ? '👆 Toca en la carta.' : '👆 Toca uno de los círculos de la figura.'));
+        if (api.kind === 'figura') api.outline?.(step.surface.hotspots.map(h => h.id));
+        api.onTap((id) => {
+          if (id) return submit({ feature: id });
+          if (api.kind === 'figura' && !done) feedback.replaceChildren(el('p', { class: 'note' }, 'Toca justo dentro de uno de los círculos marcados.'));
+        });
       } else if (step.kind === 'choice') {
         api.onTap?.(() => {});
         const order = step.options.map((t, i) => ({ t, i })).sort(() => Math.random() - 0.5);
@@ -256,7 +272,7 @@ export async function misionView(root, ctx, missionId, onExit, startAt = null) {
         const input = el('input', { class: 'math-input mision-input', inputmode: 'decimal', autocomplete: 'off', 'aria-label': `Respuesta en ${UNIT_LABEL[step.unit] || ''}`, placeholder: step.unit === 'deg' ? 'p. ej. 090' : '' });
         const go = el('button', { class: 'primary', onclick: send }, 'Comprobar');
         function send() {
-          const v = parseFloat(String(input.value).replace(/\s/g, '').replace(',', '.'));
+          const v = parseNumber(input.value);
           if (!Number.isFinite(v)) { input.focus(); return; }
           submit({ value: v });
           if (!done) { input.select(); input.focus(); }
@@ -302,7 +318,7 @@ export async function misionView(root, ctx, missionId, onExit, startAt = null) {
       el('div', { class: 'mision-receta' }, el('p', { class: 'lesson-kicker' }, 'Tus recetas de esta misión'),
         ...M.recetas.map(r => el('p', {}, el('b', {}, `${r.title}: `), r.body))),
       nextM?.live
-        ? el('button', { class: 'primary', onclick: () => { document.body.classList.remove('misiones-wide'); runTimer.stop(); misionView(root, ctx, nextM.id, onExit); } }, `Siguiente: Misión ${nextM.n} · ${nextM.title} →`)
+        ? el('button', { class: 'primary', onclick: () => { teardown(); misionView(root, ctx, nextM.id, onExit); } }, `Siguiente: Misión ${nextM.n} · ${nextM.title} →`)
         : el('p', { class: 'note' }, nextM ? `La Misión ${nextM.n} (${nextM.title}) llega pronto.` : '¡Todas las misiones listas!'),
       el('button', { class: 'ghost', onclick: leave }, '← Volver al taller'));
     flashCelebrate(panel, '🏁 ¡Misión completa!');

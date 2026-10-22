@@ -79,6 +79,16 @@ export function renderFigura(container, surface) {
     drawLine(a, b, tone = 'me') {
       gMarks.append(svg('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, stroke: TONES[tone] || tone, 'stroke-width': 5, 'stroke-linecap': 'round' }));
     },
+    /** Círculos neutros: «estos son los candidatos» (no delatan la respuesta). */
+    outline(ids) {
+      const draw = () => {
+        for (const id of ids) {
+          const hs = (surface.hotspots || []).find(h => h.id === id);
+          if (hs) gHot.prepend(svg('circle', { cx: hs.x, cy: hs.y, r: (hs.r || 18) + 6, fill: 'none', stroke: '#c96442', 'stroke-width': 3, 'stroke-dasharray': '7 5', 'pointer-events': 'none' }));
+        }
+      };
+      if (img.complete && img.naturalWidth) draw(); else img.addEventListener('load', draw, { once: true });
+    },
     clearMarks() { gMarks.replaceChildren(); },
     destroy() { container.replaceChildren(); },
   };

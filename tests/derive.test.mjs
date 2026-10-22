@@ -76,3 +76,13 @@ test('nav es inerte: no cuenta como actividad ni rompe derive (spec 2026-07-06)'
   assert.equal(st.dayLog.get(today), 'perdido');
   assert.equal(st.streaks.overall, 0);
 });
+
+test('filas de misión son inertes para el plan del día (spec 2026-10-22: «como nav»)', () => {
+  const st = derive([
+    row(0, 'mission_attempt', { detail: { mission: 'm1', step: 'm1-1', correct: true } }),
+    row(0, 'mission_step', { detail: { mission: 'm1', step: 'm1-1', tries: 1 } }),
+    row(0, 'mission_progress', { detail: { mission: 'm1', completed: false } }),
+  ], data, today);
+  assert.ok(!st.activityToday.any);
+  assert.equal(st.dayLog.get(today), 'perdido');
+});

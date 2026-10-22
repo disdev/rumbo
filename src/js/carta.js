@@ -27,6 +27,10 @@ function explainText(f, kind, chart) {
       return `Bandera magenta = punto de notificación visual VFR: «${f.name}». Desde aquí reportas tu posición.`;
     case 'airspace':
       return `Clase C de ${f.name}: el núcleo va del suelo a ${fmtFt(f.rings[0].ceiling)} ft MSL; el anillo de afuera, de ${fmtFt(f.rings[1].floor)} a ${fmtFt(f.rings[1].ceiling)} ft MSL. Para entrar, contacto por radio con el ATC.`;
+    case 'caution':
+      return `Cuadro de PRECAUCIÓN: avisa un peligro que desde el aire no ves. La altura está en ft MSL (sobre el nivel del mar), salvo que diga AGL.`;
+    case 'legend':
+      return 'Leyenda de tintes: cada color es una banda de elevación del terreno, en pies MSL. Verde = lo más bajo; mientras más tostado, más alto.';
     case 'mef':
       return `MEF ${Math.floor(f.ft / 1000)}${f.ft % 1000 / 100}: lo más alto de este cuadrante (terreno u obstáculo), redondeado hacia arriba = ${fmtFt(f.ft)} ft MSL.`;
     default:
@@ -164,6 +168,24 @@ export function renderCarta(container, chart, opts = {}) {
       svg('text', { x: c.x + 4, y: c.y + 15, fill: MAG, 'font-size': 13, 'font-weight': 700, 'text-anchor': 'middle' }, p.name.toUpperCase()));
   }
 
+  for (const cz of chart.cautions || []) {
+    const c = xy(cz), w = 116, h = 16 * cz.lines.length + 8;
+    feature(gCp, cz.id, 'caution', cz, { x: c.x + w / 2, y: c.y + h / 2 },
+      svg('rect', { x: c.x, y: c.y, width: w, height: h, fill: '#fffaf6', 'fill-opacity': 0.9, stroke: MAG, 'stroke-width': 1.6 }),
+      ...cz.lines.map((t, i) => svg('text', { x: c.x + w / 2, y: c.y + 18 + i * 16, 'text-anchor': 'middle', fill: MAG, 'font-size': 12.5, 'font-weight': i === 0 ? 800 : 700 }, t)));
+  }
+  { // leyenda de tintes (en el mar, abajo a la izquierda)
+    const c = xy({ lat: chart.bounds.south + 0.33, lon: chart.bounds.west + 0.04 });
+    const tops = [1000, ...chart.terrain.map(t => t.top_ft)];
+    const rows = tops.map((top, i) => [TERRAIN[top] || TERRAIN[10000], `${i ? fmtFt(tops[i - 1]) : '0'} – ${fmtFt(top)} ft`]);
+    feature(gCp, 'legend', 'legend', {}, { x: c.x + 95, y: c.y + 20 + rows.length * 13 },
+      svg('rect', { x: c.x, y: c.y, width: 190, height: 34 + rows.length * 26, rx: 6, fill: '#fffdf4', stroke: '#8f8668' }),
+      svg('text', { x: c.x + 10, y: c.y + 20, fill: INK, 'font-size': 11.5, 'font-weight': 800, 'letter-spacing': 0.6 }, 'TERRENO (ft MSL)'),
+      ...rows.flatMap(([col, label], i) => [
+        svg('rect', { x: c.x + 10, y: c.y + 30 + i * 26, width: 34, height: 18, fill: col, stroke: '#8f8668', 'stroke-width': 0.8 }),
+        svg('text', { x: c.x + 52, y: c.y + 44 + i * 26, fill: INK, 'font-size': 13, 'font-weight': 600 }, label)]));
+  }
+
   for (const a of chart.airports) {
     const c = xy(a), col = a.tower ? BLUE : MAG;
     const kids = [svg('circle', { cx: c.x, cy: c.y, r: 22, fill: 'transparent' }),
@@ -285,7 +307,8 @@ export function renderCarta(container, chart, opts = {}) {
     });
   }
   const toolButton = (label, fn) => el('button', { class: 'carta-toolbtn', onclick: fn }, label);
-  function clearTools() { gTools.replaceChildren(); toolBar.replaceChildren(); }
+  let toolCleanup = null; // listeners de la herramienta activa (p. ej. ← → del plotter)
+  function clearTools() { toolCleanup?.(); toolCleanup = null; gTools.replaceChildren(); toolBar.replaceChildren(); }
 
   const planeShape = () => svg('path', {
     d: 'M0,-15 L3,-4 L15,3 L15,6 L3,3 L2,11 L6,14 L6,16 L0,14 L-6,16 L-6,14 L-2,11 L-3,3 L-15,6 L-15,3 L-3,-4 Z',
@@ -404,9 +427,9 @@ export function renderCarta(container, chart, opts = {}) {
         if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); setAngle(angle + (e.key === 'ArrowRight' ? 1 : -1) * (e.shiftKey ? 10 : 1)); }
       };
       document.addEventListener('keydown', key);
+      toolCleanup = () => document.removeEventListener('keydown', key);
       toolBar.append(el('span', { class: 'carta-readout' }, 'Gira la regla (arrastra, rueda o ← →) hasta que la flecha vaya de ', A.name, ' hacia ', B.name, '. Lee el número de la rosa.'));
-      const destroy = () => { document.removeEventListener('keydown', key); clearTools(); };
-      return { angle: () => angle, destroy };
+      return { angle: () => angle, destroy: clearTools };
     },
     /** Tira de papel: marcas en los dos extremos de la ruta; se lleva al meridiano y se cuentan minutos (1′ = 1 NM). */
     paperStrip(routeId) {

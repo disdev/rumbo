@@ -67,6 +67,25 @@ export function expectedValue(step, chart) {
   }
 }
 
+/** Número escrito a mano: coma de miles como en el banco («1,749»), coma decimal («60,5»), espacios. */
+export function parseNumber(input) {
+  let s = String(input).replace(/\s/g, '');
+  if (s.includes('.')) s = s.replace(/,/g, '');
+  else if (/,\d{1,2}$/.test(s)) s = s.replace(',', '.');
+  else s = s.replace(/,/g, '');
+  return s === '' ? NaN : Number(s);
+}
+
+/** Curso verdadero a dibujar en la carta para una respuesta en grados, o null si el
+ *  paso no es un curso. La carta es de norte verdadero: un curso magnético se
+ *  convierte (+ variación con signo) para no pintar una derrota distinta. */
+export function trueTrackOf(step, value, chart) {
+  if (step.unit !== 'deg') return null;
+  if (step.compute === 'true_course') return hdg(value);
+  if (step.compute === 'magnetic_course') return hdg(value + chart.variation.deg);
+  return null;
+}
+
 /** @returns {{correct: boolean, off_by: number|null}} off_by en la unidad del paso. */
 export function gradeAnswer(step, answer, chart) {
   switch (step.kind) {
@@ -140,14 +159,18 @@ export function missionReport(rows, missions) {
       const completions = stepRows.filter(r => r.kind === 'mission_step');
       const attempts = stepRows.filter(r => r.kind === 'mission_attempt');
       const opened = stepRows.some(r => r.kind === 'nav' || r.kind === 'mission_attempt');
+      // la primera vez que lo terminó manda (aunque haya reanudado a medias): las
+      // repeticiones suman respuestas al detalle, no «intentos» ni «atascado»
+      const first = completions[0];
+      const untilFirst = first ? attempts.filter(r => r.ts <= first.ts) : attempts;
       return {
         id: s.id,
         title: s.title,
         status: completions.length ? 'done' : opened ? 'opened' : 'not_started',
         seconds: completions.reduce((sum, r) => sum + (r.detail.seconds || 0), 0),
-        tries: attempts.length,
-        first_try_correct: completions.length ? !!completions[0].detail.first_try_correct : null,
-        revealed: completions.some(r => r.detail.revealed),
+        tries: untilFirst.length,
+        first_try_correct: first ? !!attempts[0]?.detail.correct : null,
+        revealed: first ? !!first.detail.revealed : false,
         attempts: attempts.map(r => ({
           ts: r.ts, answer: r.detail.answer, correct: !!r.detail.correct, off_by: r.detail.off_by ?? null,
           ms_to_answer: r.detail.ms_to_answer ?? null, hint_shown: !!r.detail.hint_shown,

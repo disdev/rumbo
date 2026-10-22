@@ -109,3 +109,22 @@ test('pasos: ids secuenciales, campos por tipo y nada de plotter en la figura de
     assert.ok(m.steps.some(s => s.surface !== 'carta'), `${m.id}: falta el paso puente en la figura del examen`);
   }
 });
+
+test('m1 enseña lo que pregunta su prueba: tintes, combustible, cuadro de precaución, meridianos', () => {
+  const m1 = M.missions[0];
+  assert.ok(chart.cautions?.length >= 1, 'la carta necesita un cuadro de PRECAUCIÓN');
+  assert.ok(m1.steps.some(s => s.focus === 'legend'), 'paso de tintes con la leyenda');
+  assert.ok(m1.steps.some(s => s.focus === chart.cautions[0].id), 'paso del cuadro de precaución');
+  assert.ok(m1.steps.some(s => /rayitas/.test(s.prompt) && /combustible/.test(JSON.stringify(s.options))), 'paso de combustible');
+  assert.ok(/Greenwich/.test(m1.recetas.find(r => r.id === 'r-latlon').body), 'meridianos y Greenwich en la receta');
+});
+
+test('figura 20: frecuencia de Norfolk y posición de Chesapeake verificadas contra la imagen', () => {
+  const m1 = M.missions[0];
+  assert.ok(m1.steps.some(s => /120\.8/.test(s.prompt)));
+  assert.ok(!JSON.stringify(M).includes('128.8'));
+  for (const s of M.missions.flatMap(m => m.steps)) {
+    const h = s.surface?.hotspots?.find(x => x.id === 'chesapeake');
+    if (h) assert.deepEqual([h.x, h.y], [251, 731], s.id);
+  }
+});

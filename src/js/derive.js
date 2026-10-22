@@ -107,7 +107,9 @@ export function derive(log, { config, chapters, bank }, todayKey) {
     const act = activity.get(day);
     // feedback es del sistema y nav es solo navegación (spec 2026-07-06):
     // abrir la app no es estudiar — ninguno cuenta para rachas ni dayLog.
-    if (r.kind !== 'feedback' && r.kind !== 'nav') act.any = true;
+    // nav y filas de misión (spec 2026-10-22) son rastro para el mentor, no estudio del plan;
+    // la prueba de una misión sí cuenta: es una fila quiz normal.
+    if (r.kind !== 'feedback' && r.kind !== 'nav' && !r.kind.startsWith('mission_')) act.any = true;
 
     switch (r.kind) {
       case 'drill': {

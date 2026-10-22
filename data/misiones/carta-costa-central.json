@@ -435,6 +435,20 @@
    "lon": -77.205
   }
  ],
+ "cautions": [
+  {
+   "id": "caution1",
+   "lat": -11.66,
+   "lon": -77.02,
+   "lines": [
+    "PRECAUCIÓN:",
+    "GLOBO CAUTIVO",
+    "EN CABLE A",
+    "1 200 MSL"
+   ],
+   "msl": 1200
+  }
+ ],
  "airspace": [
   {
    "id": "lima-c",
