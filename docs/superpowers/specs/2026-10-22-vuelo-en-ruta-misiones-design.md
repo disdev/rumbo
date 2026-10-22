@@ -30,13 +30,13 @@ Piero can open one of the exam's own chart questions, for example "Refiérase a 
 - Formulas appear only *after* he has done the thing by hand. They become a small "receta" card he unlocks and can look at again.
 - Visuals have to be **incredible**. This is the mentor's explicit bar. It should look like a real aeronautical chart that someone cared about, not a wireframe.
 - Easy to use: open it and the next step is obvious. No menus to work through and no decisions about what to study.
+- The mentor can see **every step** of his progress: each screen opened and for how long, every answer and try, and how each mission and its questions went. See "Tracking".
 
 ## Non-goals
 
 - Replacing the chapter 15 and 16 lessons. They stay as they are. Missions link into them in review mode, the same way taller tools do now.
 - Adding missions to the daily plan, the gates, or the 8-week calendar. Like everything else in the taller (§5.11), missions are never a gate and never homework.
 - Teaching IFR, the VOR beyond what the bank asks, or real CORPAC chart products.
-- A mentor dashboard view in the first release. Rows are logged from day one, and a dashboard line can follow.
 
 ## Anti-goals (failure even if it "works")
 
@@ -117,11 +117,42 @@ The figures are raster JPGs (for example Figure 20 is 1002×1400). Interactions 
   - `src/js/carta.js`: the living chart component, reusable by lessons and the taller
   - pure logic (geometry, wind triangle, scoring of a placement) in an `-logic.js` module with `node:test` tests, like `ops-logic.js`
   - content as data: `data/misiones.json` (missions, steps, question mapping, recetas) and chart data/SVG under `data/misiones/`
-- **Logging**: each completed step appends a row (proposed `kind: 'mission_step'`, `detail: {mission, step, tries, first_try_correct}`). Row kinds that `derive.js` doesn't know about must stay harmless. **The new kind must also be added to `KINDS` in `functions/api/_validate.mjs`**, or the server rejects those rows. The prueba final uses normal `quiz` rows (needs a new `quizPlayer` source for an explicit id list). Those rows behave exactly like today's Practicar → Quiz por tema rows: they feed the error deck, SRS and chapter credit the same way. That behavior is accepted, not new. This is a deliberate exception to "widgets never log": a mission is a study activity, not a toy.
+- **Tracking:** see the dedicated section below. This is a deliberate exception to "widgets never log": a mission is a study activity, not a toy.
 - **Progress** is derived from the log (mission/step completed), never stored separately, consistent with the app's replay architecture.
 - **Offline**: every new JS and data file goes into the SW precache (`sw.js` `CORE` or the lesson-assets list). Follow the README content workflow: bump `content_version` → `node scripts/sync-sw-version.mjs`.
 - **SPEC.md**: add a §5.11 subsection describing missions.
 - **No change to the category→chapter mapping** in `chapters.json` (my call). `derive.js` credits chapterless quiz rows to the *first* chapter listed for the category and recomputes the whole log on every load. Adding chapter 15 would therefore rewrite Piero's past chapter 15/16 progress. Instead, mission 4 links into the chapter 15 airspace sections (review mode), and the SPEC notes that Vuelo en ruta's airspace questions are taught in chapter 15.
+
+## Tracking — every step, visible to the mentor (mentor requirement, 2026-10-22)
+
+The mentor wants to see **everything** that shows Piero's progress: when he opens each screen, how long he stays on it, every answer he gives, and how each mission and its questions go. This is a first-class goal and ships **in the first slice**, not later.
+
+It builds on what the app already does: an append-only log, synced to D1, replayed by the mentor dashboard. `nav` rows already record when he enters and leaves a screen, including when he switches away from the app. `/progreso` already shows them in its activity timeline.
+
+**What gets logged:**
+
+| Moment | Row | What it records |
+|---|---|---|
+| Opens any mission screen: taller entry, briefing, each step, receta, bridge step, prueba, mission complete | existing `nav` enter/leave with `screen: 'mision'`, `detail: {mission, step, view}` | when he opened it and how long he stayed (enter→leave, including backgrounding the app) |
+| Submits an answer on a step, **every try including wrong ones** | new `mission_attempt` | `{mission, step, try, answer, correct, off_by, ms_to_answer, hint_shown}`. `answer` is what he actually did: the option he picked, the degrees he entered, where he dropped the plane (lat/long), the distance he marked. `off_by` is how far off he was in that step's unit (°, NM, ft) |
+| Finishes a step | new `mission_step` | `{mission, step, tries, first_try_correct, revealed, seconds}` |
+| Opens a receta card / marks a cuaderno prompt done | `nav` / existing `notebook` row | that he looked at it / did it |
+| Answers the prueba | existing `quiz` rows (already record each item's chosen option and correctness) | the score and every answer |
+| Finishes or abandons a mission | new `mission_progress` | `{mission, completed, seconds, steps_done}`. "Abandoned" is written when he leaves mid-mission, so the mentor sees where he dropped off |
+
+Rules:
+- Raw pointer movement (every drag position) is **not** logged, only the answer he commits. My call: it would bloat the log and sync without telling the mentor anything more.
+- **All new kinds must be added to `KINDS` in `functions/api/_validate.mjs`**, or the server silently drops them row by row. Add a test that every kind the app writes is in `KINDS`.
+- `derive.js` must ignore the new kinds for study state, as it already does for `nav`. They exist for the mentor view and for "where he left off".
+- Prueba `quiz` rows (new `quizPlayer` source for an explicit id list) behave exactly like today's Practicar → Quiz por tema rows: they feed the error deck, SRS and chapter credit the same way.
+
+**What the mentor sees in `/progreso`:**
+- **Activity timeline:** mission rows show up with readable labels, for example "🛩️ Misión 2 · paso 3 «Mide el curso» · 2 intentos · 1 min 40 s".
+- **New "Misiones" section:** a grid of missions × steps showing done / in progress / not started. For each step: time spent, number of tries, first try right or wrong, whether the answer had to be revealed. Tap a step to see every answer he gave and how far off it was.
+- Per mission: total time, the prueba score, and **before vs after** accuracy on that mission's bank questions (see "What success looks like").
+- A short "atascado" list: the steps with the most tries or reveals, so the Sunday check-in knows where to dig.
+
+Both views read the same synced log as the rest of the dashboard. No new server storage is needed beyond the `KINDS` additions.
 
 ## Visual bar
 
@@ -132,10 +163,9 @@ The figures are raster JPGs (for example Figure 20 is 1002×1400). Interactions 
 
 ## Delivery order (two-week window)
 
-1. **First slice (aim: within ~3–4 days):** the chart component + mission player + missions 1 and 2 + their bank-question mapping + prueba final. Ship it so Piero can start.
+1. **First slice (aim: within ~3–4 days):** the chart component + mission player + missions 1 and 2 + their bank-question mapping + prueba final + **all tracking rows and the `/progreso` Misiones section and timeline labels**. Ship it so Piero can start, with the mentor seeing everything from his first tap.
 2. Missions 3 and 4.
 3. Missions 5 and 6.
-4. Optional: a mentor dashboard line showing missions done and first-try accuracy per mission.
 
 Each slice is deployed on its own with the normal content_version bump.
 
