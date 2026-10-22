@@ -157,9 +157,15 @@ Both views read the same synced log as the rest of the dashboard. No new server 
 ## Visual bar
 
 - Use the app's own tokens (terracota accent, warm paper, serif titles) for the UI. Use **real sectional conventions** for the chart: blue/magenta airports, solid magenta Class C, segmented blue Class D, terrain tints, bold MEF numbers, obstacle symbols. The chart should be immediately recognizable as the same "language" as Figure 20.
-- Mobile first (Piero's phone), touch targets ≥44px, smooth drag/rotate (pointer events, no lag), small motion on feedback (drift animation, the plane flying the route at mission end).
+- **Laptop first** (mentor, 2026-10-22: Piero studies on a laptop). Target 1280×800 and 1440×900:
+  - At ≥ 1024px the chart (or exam figure) sits large on the left and the step panel on the right, so he never scrolls between the map and the question.
+  - Mouse/trackpad drag and rotate must feel smooth (pointer events, no lag).
+  - Number answers are typed on the keyboard, and Enter submits.
+  - Exam figures get click-to-zoom.
+  - Narrower windows stack the panels and must not break, but phone polish is not a goal.
+- Small motion on feedback: a drift animation, and the plane flying the route at mission end.
 - Works in light and dark. The chart keeps its paper look in dark mode (a framed "paper" surface) rather than inverting.
-- Test on a real phone-sized viewport before calling a mission done.
+- Test at a real laptop viewport (1280×800) before calling a mission done.
 
 ## Delivery order (two-week window)
 

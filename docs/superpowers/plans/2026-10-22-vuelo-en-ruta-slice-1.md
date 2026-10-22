@@ -17,7 +17,11 @@
 - At most about **40 words of instruction per step screen**. No step should take longer than about 60 seconds.
 - Exam-day tools: **none**. No calculator, no plotter, no E6B. In-app plotter/strip tools appear only on the Peru chart and only in the "see it once" steps. **Exam-figure steps never offer a plotter.**
 - The chart must show the label **"Carta de entrenamiento — no usar para navegación"**.
-- Use the app's CSS tokens (`src/css/app.css :root`) for the UI. The chart keeps a paper surface in dark mode (it is framed, not inverted). Touch targets must be ≥ 44px. It must work at 375px width.
+- Use the app's CSS tokens (`src/css/app.css :root`) for the UI. The chart keeps a paper surface in dark mode (it is framed, not inverted). **Laptop first:** target 1280×800 and 1440×900.
+  - At ≥ 1024px the surface (chart/figure) goes on the left and the step panel on the right, with no scrolling between map and question.
+  - Mouse/trackpad drag and rotate.
+  - Number answers typed on the keyboard, Enter submits, and focus lands in the input automatically.
+  - Narrower windows stack the panels and must not break. Phone polish is not a goal.
 - Every new JS/data file is precached in `sw.js` and works fully offline.
 - Content workflow for the final task: bump `content_version` in `data/config.json` → `node scripts/sync-sw-version.mjs`.
 - Missions are never a gate and never homework. Nothing in `planner.js` schedules them.
@@ -30,7 +34,7 @@
 2. **Angle wraparound when grading.** Entering 2° when 358° is expected, or 360 vs 0, must grade as close and correct. Pinned in Task 2 (`gradeAnswer`).
 3. **Replaying a mission.** Repeated runs must not inflate "first try" stats. The before/after metric uses each question's first attempt on each side of the first mission completion. Pinned in Task 2 (`missionReport`, `missionAccuracy`).
 4. **Offline.** Opening the taller and running a mission with no network must work. Pinned in Task 10 (test that `CORE` lists every new file).
-5. **Dragging on a phone scrolls the page instead of moving the plane or plotter.** Pinned in Task 5 (`touch-action: none` on the chart surface plus a manual check at 375px).
+5. **Trackpad drag selects text or drags the page instead of moving the plane or plotter, or the pointer leaves the SVG mid-drag and the drag sticks.** Pinned in Task 5 (`user-select: none` and `setPointerCapture` on the chart surface, plus a manual trackpad check at 1280×800).
 
 ---
 
@@ -343,15 +347,15 @@ Visual requirements, from the spec's "Visual bar":
   - lat/long graticule with minute ticks on meridians, which the paper-strip step needs
   - the training label in a corner
 - Pinch/scroll zoom is not required. The chart fits the width, with a tap-to-enlarge full-screen mode.
-- `touch-action: none` on the interactive SVG surface. Use pointer events for drag and rotate, and keep 60fps (update transforms, don't re-render the SVG on every move).
+- `user-select: none` and `touch-action: none` on the interactive SVG surface. Use pointer events with `setPointerCapture` for drag and rotate, and keep 60fps (update transforms, don't re-render the SVG on every move). The plotter also rotates with the scroll wheel or the arrow keys for fine adjustment.
 - When `explain` is on, tapping any feature shows a one-line Spanish popover.
 
 - [ ] **Step 1: Build a dev harness page** `scripts/carta-dev.html`. It is not precached. It loads the chart and buttons calling each `api` method.
 
 - [ ] **Step 2: Implement `carta.js` and its CSS.**
 
-- [ ] **Step 3: Verify in the browser** (`npx wrangler pages dev . --port 8788` → `/scripts/carta-dev.html`). Check light and dark mode at **375×812** and desktop. Check:
-  - the dragged plane follows the finger without scrolling the page
+- [ ] **Step 3: Verify in the browser** (`npx wrangler pages dev . --port 8788` → `/scripts/carta-dev.html`). Check light and dark mode at **1280×800** and **1440×900**, and confirm 900px wide stacks without breaking. Check:
+  - the dragged plane follows the trackpad without selecting text, and releasing outside the SVG ends the drag
   - the plotter rotates smoothly
   - the paper strip reads the same NM as `distanceNM` (±2)
   - the side view shows the plane inside or outside the shelf correctly
@@ -379,7 +383,7 @@ Visual requirements, from the spec's "Visual bar":
 
 - [ ] **Step 1: Implement.** Use an `<img>` from `data/figures/` with an absolutely positioned SVG overlay whose `viewBox` is the image's natural size, so coordinates survive any scale. Tap tolerance is `max(r, 22 screen px)`.
 
-- [ ] **Step 2: Verify in the browser** on Figure 20 at 375px and desktop. Tapping a hotspot fires its id, and the picker logs coordinates.
+- [ ] **Step 2: Verify in the browser** on Figure 20 at 1280×800. Clicking a hotspot fires its id, click-to-zoom works, and the picker logs coordinates.
 
 - [ ] **Step 3: Commit** `feat(misiones): exam-figure overlay with hotspots and coordinate picker`
 
@@ -489,7 +493,7 @@ Behavior:
 
 - [ ] **Step 1: Implement the player and the taller section.**
 
-- [ ] **Step 2: Browser run-through** at 375×812 in light and dark:
+- [ ] **Step 2: Browser run-through** at 1280×800 in light and dark, using only mouse/trackpad and keyboard:
   - Play m1 and m2 end to end, including deliberately wrong answers, a reveal, a receta, the bridge and the prueba.
   - Then quit m2 halfway, reload, press "Continuar", and confirm it resumes at the same step.
   - In the console, dump `getLog()` and check every row shape against Task 1. Check that there are no duplicate `mission_step` rows for one completion and that `mission_progress` exists for both the quit and the finish.
