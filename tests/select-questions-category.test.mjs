@@ -22,3 +22,22 @@ test('source: category respeta el tope (cap)', () => {
   const qs = selectQuestions({ type: 'quiz', source: 'category', category: 'NAVEGACIÓN', cap: 2 }, state, { bank });
   assert.equal(qs.length, 2);
 });
+
+test('source: ids — solo esos ids, no vistos primero, luego fallados, tope cap', () => {
+  const bank = ['a', 'b', 'c', 'd'].map(id => ({ id, category: 'VUELO EN RUTA', options: ['x', 'y', 'z'], answer: 0 }));
+  const itemStats = new Map([
+    ['q:a', { lastDays: [{ correct: true }] }],
+    ['q:b', { lastDays: [{ correct: false }] }],
+  ]);
+  const qs = selectQuestions({ type: 'quiz', source: 'ids', ids: ['a', 'b', 'c'], cap: 2 }, { itemStats }, { bank }, () => 0.5);
+  assert.deepEqual(qs.map(q => q.id), ['c', 'b']);
+  const all = selectQuestions({ type: 'quiz', source: 'ids', ids: ['a', 'b', 'c'] }, { itemStats }, { bank }, () => 0.5);
+  assert.deepEqual(all.map(q => q.id), ['c', 'b', 'a']);
+});
+
+test('source: ids — ids inexistentes se ignoran y el tope por defecto es 8', () => {
+  const bank = Array.from({ length: 12 }, (_, i) => ({ id: `v${i}`, category: 'VUELO EN RUTA', options: ['x', 'y', 'z'], answer: 0 }));
+  const state = { itemStats: new Map() };
+  assert.deepEqual(selectQuestions({ type: 'quiz', source: 'ids', ids: ['zz', 'v1'] }, state, { bank }).map(q => q.id), ['v1']);
+  assert.equal(selectQuestions({ type: 'quiz', source: 'ids', ids: bank.map(q => q.id) }, state, { bank }).length, 8);
+});

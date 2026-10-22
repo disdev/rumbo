@@ -94,14 +94,14 @@ export async function quizPlayer(root, block, ctx) {
       chapter: block.chapter || null,
       category: block.source === 'regla' ? ctx.data.chapters.track_categories.reglamentacion
         : block.source === 'chart' ? 'VUELO EN RUTA'
-        : block.source === 'category' ? block.category
+        : block.source === 'category' || block.source === 'ids' ? block.category
         : null,
       score, total: items.length,
-      detail: { items, ...(block.chapter ? { chapter: block.chapter } : {}) },
+      detail: { items, ...(block.chapter ? { chapter: block.chapter } : {}), ...(block.mission ? { mission: block.mission } : {}) },
     });
   }
   const missed = items.some(i => !i.correct);
-  const missedItems = block.source === 'category'
+  const missedItems = block.source === 'category' || block.source === 'ids'
     ? items.filter(i => !i.correct).map(i => questions.find(q => q.id === i.qid)).filter(Boolean)
     : [];
   showScore(root, score, items.length, { ...(missed && block.chapter ? { reviewChapter: block.chapter, ctx } : {}), missedItems });
@@ -319,7 +319,6 @@ export async function drillPlayer(root, block, ctx) {
 function askMath(root, prob, ctx, { index, total, tier, preview = false }) {
   return new Promise(resolve => {
     const input = el('input', { class: 'math-input', inputmode: 'decimal', placeholder: `Respuesta (${prob.unit})`, autocomplete: 'off' });
-    const e6b = ['peso_balance', 'tvd'].includes(prob.familyId) ? el('p', { class: 'note' }, 'Resuelve primero mentalmente, luego verifica con el E6B.') : '';
 
     function submit() {
       if (!input.value.trim()) return;
@@ -339,7 +338,7 @@ function askMath(root, prob, ctx, { index, total, tier, preview = false }) {
       el('div', { class: 'progress-line' }, `${preview ? 'Vista previa ' : ''}${index} / ${total} · nivel ${tier}`),
       tier === 1 ? el('p', { class: 'formula' }, prob.formula) : '',
       el('p', { class: 'question' }, prob.text),
-      e6b, input, btn);
+      input, btn);
     root.replaceChildren(card);
     input.focus();
   });

@@ -203,6 +203,15 @@ export function selectQuestions(block, state, { bank, chapters, config }, rng = 
       const pool = bank.filter(q => q.category === block.category);
       return shuffled(pool).slice(0, block.cap || 20);
     }
+    case 'ids': {
+      // Prueba de misión (spec 2026-10-22): las preguntas de esa misión — no vistas,
+      // luego falladas, luego el resto.
+      const pool = block.ids.map(id => bank.find(q => q.id === id)).filter(Boolean);
+      const unseen = pool.filter(q => !seen.has(`q:${q.id}`));
+      const wrong = pool.filter(q => seen.has(`q:${q.id}`) && latestCorrect(q.id) === false);
+      const rest = pool.filter(q => !unseen.includes(q) && !wrong.includes(q));
+      return [...shuffled(unseen), ...shuffled(wrong), ...shuffled(rest)].slice(0, block.cap ?? 8);
+    }
     default: return [];
   }
 }
