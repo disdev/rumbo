@@ -57,3 +57,55 @@ test('carta: las rutas resuelven a dos aeropuertos y Lima → Huacho es NNO a 50
   assert.ok(d > 50 && d < 80, `distancia ${d}`);
   assert.ok(tc > 300 && tc <= 360, `curso ${tc}`);
 });
+
+// ---- misiones y mapeo de las 77 preguntas ----
+import { existsSync } from 'node:fs';
+import { expectedValue } from '../src/js/misiones-logic.js';
+const M = load('data/misiones.json');
+const bank = load('data/bank.json');
+const ruta = bank.filter(q => q.category === 'VUELO EN RUTA').map(q => q.id).sort();
+const live = M.missions.filter(m => m.live);
+
+test('mapeo: exactamente las 77 preguntas de VUELO EN RUTA, cada una en una misión', () => {
+  assert.equal(ruta.length, 77);
+  assert.deepEqual(Object.keys(M.question_map).sort(), ruta);
+  for (const m of M.missions) {
+    const mapped = Object.entries(M.question_map).filter(([, v]) => v.mission === m.id).map(([k]) => k).sort();
+    assert.deepEqual([...m.questions].sort(), mapped, m.id);
+  }
+  assert.deepEqual(M.missions.map(m => m.id), ['m1', 'm2', 'm3', 'm4', 'm5', 'm6']);
+});
+
+test('mapeo: m1 y m2 en vivo, con preguntas suficientes y método a mano para cada una', () => {
+  assert.deepEqual(live.map(m => m.id), ['m1', 'm2']);
+  assert.ok(M.missions[0].questions.length >= 5);
+  assert.ok(M.missions[1].questions.length >= 4);
+  for (const m of live) for (const id of m.questions) {
+    const e = M.question_map[id];
+    assert.ok(typeof e.method === 'string' && e.method.length > 10, `método de ${id}`);
+    assert.equal(typeof e.by_hand_ok, 'boolean', `by_hand_ok de ${id}`);
+  }
+});
+
+const REQ = { tap: ['targets'], choice: ['options', 'answer'], number: ['unit', 'tol'], place: ['target', 'tol'] };
+
+test('pasos: ids secuenciales, campos por tipo y nada de plotter en la figura del examen', () => {
+  for (const m of live) {
+    m.steps.forEach((s, i) => {
+      assert.equal(s.id, `${m.id}-${i + 1}`);
+      for (const f of REQ[s.kind] || assert.fail(`tipo ${s.kind}`)) assert.ok(s[f] !== undefined, `${s.id}.${f}`);
+      assert.ok(s.title && s.prompt && s.hint, `${s.id} título/prompt/pista`);
+      assert.ok(s.prompt.split(/\s+/).length <= 40, `${s.id}: prompt de más de 40 palabras`);
+      if (s.kind === 'choice') assert.ok(s.answer >= 0 && s.answer < s.options.length, s.id);
+      if (s.kind === 'number') assert.ok(Number.isFinite(expectedValue(s, chart)), `${s.id}: valor esperado`);
+      if (s.surface !== 'carta') {
+        assert.ok(existsSync(new URL(`../data/figures/${s.surface.figure}`, import.meta.url)), `${s.id}: figura`);
+        assert.ok(!s.tool && s.kind !== 'place', `${s.id}: sin plotter ni place en la figura del examen`);
+        if (s.kind === 'tap') for (const t of s.targets) assert.ok(s.surface.hotspots.some(h => h.id === t), `${s.id}: hotspot ${t}`);
+      }
+      if (s.receta) assert.ok(m.recetas.some(r => r.id === s.receta), `${s.id}: receta ${s.receta}`);
+      if (s.route) assert.ok(chart.routes.some(r => r.id === s.route), `${s.id}: ruta`);
+    });
+    assert.ok(m.steps.some(s => s.surface !== 'carta'), `${m.id}: falta el paso puente en la figura del examen`);
+  }
+});

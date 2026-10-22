@@ -479,7 +479,7 @@
   {
    "lat_n": -11.0,
    "lon_w": -77.5,
-   "ft": 5100
+   "ft": 2300
   },
   {
    "lat_n": -11.0,
@@ -522,6 +522,11 @@
    "id": "lima-huacho",
    "from": "SPJC",
    "to": "HUACHO"
+  },
+  {
+   "id": "lima-libmandi",
+   "from": "SPJC",
+   "to": "SPLX"
   }
  ]
 }
