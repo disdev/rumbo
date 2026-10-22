@@ -75,3 +75,35 @@ test('nav leave al final marca que salió de la app', () => {
   const seen = lastSeen(rows);
   assert.match(seen.label, /salió|cerró/i);
 });
+
+test('misiones: paso con título, intentos y tiempo; intentos sueltos no aparecen', () => {
+  const rows = [
+    row(10, 'nav', { detail: { screen: 'mision', mission: 'm2', step: 'm2-3', view: 'step', action: 'enter' } }),
+    row(9, 'mission_attempt', { detail: { mission: 'm2', step: 'm2-3', try: 1, correct: false } }),
+    row(8, 'mission_step', { detail: { mission: 'm2', step: 'm2-3', title: 'Mide el curso', tries: 2, first_try_correct: false, revealed: false, seconds: 100 } }),
+    row(7, 'mission_progress', { detail: { mission: 'm2', title: 'Medir', completed: false, seconds: 300, steps_done: 3, last_step: 'm2-3' } }),
+  ];
+  const entries = buildTimeline(rows)[0].sessions[0].entries;
+  const labels = entries.map(e => e.label);
+  assert.ok(labels.some(l => l.includes('Misión 2 · paso 3 «Mide el curso» · 2 intentos · 1 min 40 s')), labels.join(' | '));
+  assert.ok(labels.some(l => l.includes('Misión 2') && l.includes('salió en el paso 3')), labels.join(' | '));
+  assert.equal(entries.length, 3); // nav + paso + progreso; el intento suelto no aparece
+  assert.ok(!entries.some(e => e.abandoned)); // el paso abierto sí se terminó
+});
+
+test('misiones: paso abierto sin mission_step posterior se marca abandonado', () => {
+  const rows = [row(5, 'nav', { detail: { screen: 'mision', mission: 'm1', step: 'm1-4', view: 'step', action: 'enter' } })];
+  const e = buildTimeline(rows)[0].sessions[0].entries[0];
+  assert.equal(e.abandoned, true);
+  assert.match(e.label, /Misión/);
+});
+
+test('misiones: completa con minutos; paso de menos de un minuto en segundos y «mostrada»', () => {
+  const rows = [
+    row(6, 'mission_step', { detail: { mission: 'm1', step: 'm1-2', title: 'Elevación', tries: 1, first_try_correct: true, revealed: true, seconds: 42 } }),
+    row(5, 'mission_progress', { detail: { mission: 'm1', title: 'Leer el mapa', completed: true, seconds: 720, steps_done: 7, last_step: 'm1-7' } }),
+  ];
+  const labels = buildTimeline(rows)[0].sessions[0].entries.map(e => e.label);
+  assert.ok(labels.includes('Misión 1 · paso 2 «Elevación» · 1 intento · 42 s · mostrada'), labels.join(' | '));
+  assert.ok(labels.includes('Misión 1 «Leer el mapa» completa · 12 min'), labels.join(' | '));
+});

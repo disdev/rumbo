@@ -55,7 +55,7 @@ let lastLeftNav = null; // para re-entrar al volver de segundo plano
 let lastNavKey = '', lastNavTs = 0;
 
 function nav(screen, extra = {}) {
-  const key = JSON.stringify([screen, extra.section ?? null, extra.chapter ?? null, extra.type ?? null]);
+  const key = JSON.stringify([screen, extra]); // misiones: cambia solo mission/step/view
   const now = Date.now();
   if (key === lastNavKey && now - lastNavTs < 60_000) return;
   lastNavKey = key; lastNavTs = now;

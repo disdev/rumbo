@@ -19,6 +19,9 @@ export const KINDS = new Set([
   "lesson_check",
   "notebook",
   "nav",
+  "mission_attempt",
+  "mission_step",
+  "mission_progress",
 ]);
 
 /** @returns {string|null} mensaje de error, o null si la fila es válida */

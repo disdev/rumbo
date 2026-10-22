@@ -13,12 +13,23 @@ const SCREEN_LABELS = {
   hangar: 'Hangar',
   plan: 'Plan de 8 semanas',
   repaso: 'Repaso de lecciones',
+  mision: 'Misión',
 };
+
+// Misiones (spec 2026-10-22): ids 'm2' y 'm2-3' → «2» y «3».
+const missionNum = (id) => String(id || '').replace(/^m/, '');
+const stepNum = (id) => String(id || '').split('-').pop();
+function fmtDur(sec) {
+  const s = Math.max(0, Math.round(sec || 0));
+  return s < 60 ? `${s} s` : `${Math.floor(s / 60)} min${s % 60 ? ` ${s % 60} s` : ''}`;
+}
 
 function navLabel(r) {
   const d = r.detail || {};
   const base = SCREEN_LABELS[d.screen] || d.screen || '?';
-  const where = [d.type, r.chapter && `cap. ${r.chapter}`, d.section && `§${d.section}`].filter(Boolean).join(' ');
+  const where = d.mission
+    ? [missionNum(d.mission), d.step && `paso ${stepNum(d.step)}`, d.view && `(${d.view})`].filter(Boolean).join(' · ')
+    : [d.type, r.chapter && `cap. ${r.chapter}`, d.section && `§${d.section}`].filter(Boolean).join(' ');
   return where ? `${base} ${where}` : base;
 }
 
@@ -59,6 +70,17 @@ function entryFor(r) {
       if (d.reason) return { icon: '⏭️', label: `Saltó ${d.type} — «${d.reason}»` };
       return { icon: '✅', label: `Bloque ${d.type || ''}${d.chapter ? ` cap. ${d.chapter}` : ''}` };
     }
+    case 'mission_step': {
+      const bits = [`Misión ${missionNum(d.mission)} · paso ${stepNum(d.step)} «${d.title || d.step}»`,
+        `${d.tries} intento${d.tries === 1 ? '' : 's'}`, fmtDur(d.seconds)];
+      if (d.revealed) bits.push('mostrada');
+      return { icon: '🛩️', label: bits.join(' · ') };
+    }
+    case 'mission_progress':
+      return d.completed
+        ? { icon: '🏁', label: `Misión ${missionNum(d.mission)} «${d.title || d.mission}» completa · ${Math.max(1, Math.round((d.seconds || 0) / 60))} min` }
+        : { icon: '⚠️', label: `Misión ${missionNum(d.mission)} «${d.title || d.mission}»: salió en el paso ${stepNum(d.last_step) || '?'}` };
+    case 'mission_attempt': // se ven en la sección Misiones del dashboard, no en la línea de tiempo
     default:
       return null; // feedback y kinds futuros: invisibles
   }
@@ -87,12 +109,16 @@ function collapseChecks(entries) {
   return out;
 }
 
-/** Marca entradas de sección de lección abiertas sin lesson_progress posterior. */
+/** Marca secciones de lección (sin lesson_progress en la sesión) y pasos de
+ *  misión (sin mission_step posterior) que se abrieron y no se terminaron. */
 function flagAbandoned(sessionRows, entries) {
   const finished = new Set(sessionRows.filter(r => r.kind === 'lesson_progress').map(r => r.detail?.section));
+  const stepDone = (step, ts) => sessionRows.some(r => r.kind === 'mission_step' && r.detail?.step === step && r.ts >= ts);
   for (const e of entries) {
     if (e._navSection && !finished.has(e._navSection)) e.abandoned = true;
+    if (e._navStep && !stepDone(e._navStep, e.ts)) e.abandoned = true;
     delete e._navSection;
+    delete e._navStep;
   }
 }
 
@@ -120,6 +146,7 @@ export function buildTimeline(rows, { gapMinutes = 25 } = {}) {
       if (!e) continue;
       e.ts = r.ts;
       if (r.kind === 'nav' && r.detail?.screen === 'leccion' && r.detail?.section) e._navSection = r.detail.section;
+      if (r.kind === 'nav' && r.detail?.screen === 'mision' && r.detail?.view === 'step' && r.detail?.step) e._navStep = r.detail.step;
       raw.push(e);
     }
     const entries = collapseChecks(raw);

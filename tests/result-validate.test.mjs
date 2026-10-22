@@ -41,3 +41,9 @@ test('partitionRows rechaza una fila sin id utilizable con id null', () => {
   assert.equal(rejected[0].id, null);
   assert.equal(rejected[1].id, null);
 });
+
+test('acepta los kinds de misiones', () => {
+  for (const k of ['mission_attempt', 'mission_step', 'mission_progress']) {
+    assert.equal(validateRow(row(k)), null, `kind ${k} debería ser válido`);
+  }
+});
