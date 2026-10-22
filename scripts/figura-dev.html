@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><title>Figura — dev</title>
+<base href="../">
+<link rel="stylesheet" href="src/css/app.css">
+<style>body{margin:0} #f{height:calc(100vh - 60px);margin:8px} #o{font:13px monospace;margin:8px}</style>
+</head><body><div id="o">?fig=Figure%2020.jpg&pick</div><div id="f"></div>
+<script type="module">
+import { renderFigura } from './src/js/figura-overlay.js';
+const fig = new URLSearchParams(location.search).get('fig') || 'Figure 20.jpg';
+const api = renderFigura(document.getElementById('f'), { figure: fig, hotspots: [{ id: 'demo', x: 500, y: 700, r: 30 }] });
+window.api = api;
+api.onTap(id => { document.getElementById('o').textContent = `tap: ${id}`; if (id) api.highlight([id], 'ok'); });
+</script></body></html>
