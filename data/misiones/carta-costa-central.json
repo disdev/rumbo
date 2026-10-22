@@ -413,9 +413,9 @@
   {
    "id": "ob4",
    "name": "Antena",
-   "lat": -11.95,
-   "lon": -76.95,
-   "msl": 2749,
+   "lat": -12.2,
+   "lon": -76.92,
+   "msl": 1349,
    "agl": 549,
    "lighted": true,
    "group": false

@@ -298,6 +298,30 @@ export function renderCarta(container, chart, opts = {}) {
     onTap(fn) { tapFn = fn; },
     focusRoute(routeId, marginNm) { focusBox(routeBox(routeId, marginNm)); },
     focusAll() { focusBox({ x: 0, y: 0, w: W, h: H }); },
+    focusFeature(id, nm = 14) {
+      const f = features.get(id);
+      if (!f) return;
+      const m = nm * nmUnits;
+      // aeropuertos: correr el encuadre hacia su caja de datos para que se lea entera
+      const dx = f.kind === 'airport' ? (f.data.label?.side === 'left' || (!f.data.label && f.data.lon < -77.4) ? -0.4 : 0.4) * m : 0;
+      focusBox({ x: f.at.x - m + dx, y: f.at.y - m, w: 2 * m, h: 2 * m });
+    },
+    /** Celebración: el avión vuela la ruta de punta a punta. */
+    flyRoute(routeId, ms = 2600) {
+      const r = chart.routes.find(x => x.id === routeId);
+      const a = xy(apById[r.from]), c = xy(apById[r.to]);
+      const ang = Math.atan2(c.x - a.x, a.y - c.y) * 180 / Math.PI;
+      const g = svg('g', {}, planeShape());
+      gTools.append(g);
+      const t0 = performance.now();
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const frameFn = (now) => {
+        const k = reduce ? 1 : Math.min(1, (now - t0) / ms), e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
+        g.setAttribute('transform', `translate(${a.x + (c.x - a.x) * e} ${a.y + (c.y - a.y) * e}) rotate(${ang}) scale(1.4)`);
+        if (k < 1) requestAnimationFrame(frameFn);
+      };
+      requestAnimationFrame(frameFn);
+    },
     explainFeature(id) { const f = features.get(id); if (f) showPop(explainText(f.data, f.kind, chart), null); },
     highlight(ids, tone = 'hint') {
       for (const id of ids) {
@@ -329,7 +353,7 @@ export function renderCarta(container, chart, opts = {}) {
       if (tone !== 'me') gMarks.lastChild.firstChild.setAttribute('fill', TONES[tone]);
     },
     /** Avión arrastrable. Devuelve {value() → {lat,lon}, destroy()}. */
-    placePlane(initialLatLon) {
+    placePlane(initialLatLon, { readout: withReadout = true } = {}) {
       clearTools();
       const pos = { ...initialLatLon };
       const g = svg('g', { class: 'c-plane' }, svg('circle', { r: 26, fill: PENCIL, 'fill-opacity': 0.14, stroke: PENCIL, 'stroke-opacity': 0.5 }), planeShape());
@@ -342,7 +366,8 @@ export function renderCarta(container, chart, opts = {}) {
         readout.textContent = `${dm(pos.lat)}S · ${dm(pos.lon)}W`;
       };
       show();
-      toolBar.append(readout);
+      if (withReadout) toolBar.append(readout);
+      else toolBar.append(el('span', { class: 'carta-readout' }, 'Arrastra el avión ✈'));
       draggable(g, { onMove: (p) => { Object.assign(pos, P.toLatLon(p)); put(); show(); } });
       return { value: () => ({ lat: pos.lat, lon: pos.lon }), destroy: clearTools };
     },
@@ -393,7 +418,7 @@ export function renderCarta(container, chart, opts = {}) {
       const pos = { x: a.x, y: a.y };
       let vertical = false;
       const strip = svg('g', { class: 'c-strip' },
-        svg('rect', { x: -14, y: -len - 30, width: 28, height: len + 60, fill: '#fffdf4', stroke: '#b9b29a', rx: 2, filter: '' }),
+        svg('rect', { x: -14, y: -len - 30, width: 28, height: len + 60, fill: '#fffdf4', 'fill-opacity': 0.55, stroke: '#8f8668', rx: 2 }),
         svg('line', { x1: -14, y1: 0, x2: 14, y2: 0, stroke: INK, 'stroke-width': 2.4 }),
         svg('line', { x1: -14, y1: -len, x2: 14, y2: -len, stroke: INK, 'stroke-width': 2.4 }),
         svg('text', { x: 18, y: 4, fill: INK, 'font-size': 12, 'font-style': 'italic' }, 'A'),

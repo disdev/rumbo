@@ -246,7 +246,7 @@ button { font: inherit; cursor: pointer; }
 .carta-zoom { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 6px; }
 .carta-zbtn { width: 36px; height: 36px; border-radius: 8px; border: 1px solid #b9b29a; background: #fffdf4; color: #2b2a26; font-size: 19px; font-weight: 700; cursor: pointer; }
 .carta-zbtn:hover { background: #fff; }
-.carta-toolbar { position: absolute; left: 10px; right: 56px; bottom: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; pointer-events: none; }
+.carta-toolbar { position: absolute; left: 10px; right: 56px; top: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; pointer-events: none; }
 .carta-toolbar > * { pointer-events: auto; }
 .carta-toolbtn { padding: 8px 12px; border-radius: 8px; border: 1px solid #b9b29a; background: #fffdf4; color: #2b2a26; font-size: 14px; font-weight: 600; cursor: pointer; }
 .carta-readout { padding: 6px 10px; border-radius: 8px; background: rgba(43, 42, 38, .82); color: #fffdf4; font-size: 13.5px; font-variant-numeric: tabular-nums; }
@@ -265,3 +265,33 @@ button { font: inherit; cursor: pointer; }
 .figura-zoom { position: absolute; top: 10px; right: 18px; z-index: 2; }
 .figura-pick { position: absolute; left: 10px; top: 10px; }
 .figura-pick.hidden { display: none; }
+body.misiones-wide #app { max-width: 1440px; }
+.mision-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 18px; height: calc(100vh - 52px); min-height: 560px; }
+.mision-surface { min-width: 0; height: 100%; }
+.mision-panel { margin: 0; overflow-y: auto; display: flex; flex-direction: column; }
+.mision-panel .mision-exit { margin-top: auto; }
+.mision-title { margin: 4px 0 10px; }
+.mision-steps { display: flex; gap: 4px; margin-bottom: 14px; }
+.mision-steps i { flex: 1; height: 6px; border-radius: 3px; background: var(--panel-2); }
+.mision-steps i.done { background: var(--ok); }
+.mision-steps i.on { background: var(--accent); }
+.mision-steps i.prueba { flex: 0 0 18px; background: var(--border); }
+.mision-steps i.prueba.on { background: var(--accent); }
+.mision-prompt { font-size: 18px; line-height: 1.45; font-family: var(--serif); margin: 4px 0 14px; }
+.mision-numrow { display: flex; align-items: center; gap: 8px; }
+.mision-numrow .mision-input { flex: 1; font-size: 22px; }
+.mision-unit { font-size: 20px; font-weight: 700; color: var(--muted); min-width: 32px; }
+.mision-feedback .reveal p { margin: 4px 0; }
+.mision-receta { background: var(--bg); border: 1px dashed var(--accent); border-radius: 12px; padding: 12px 14px; margin: 8px 0 12px; }
+.mision-receta h4 { margin: 4px 0; font-family: var(--serif); }
+.mision-chips { display: flex; gap: 8px; margin: 6px 0 4px; }
+.mision-chip { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; border: 2px solid var(--border); color: var(--muted); }
+.mision-chip.done { background: var(--ok); border-color: var(--ok); color: var(--on-ok); }
+.mision-chip.cur { border-color: var(--accent); color: var(--accent); }
+.mision-chip.soon { opacity: .45; border-style: dashed; }
+.mision-recetas { margin-top: 10px; }
+.mision-recetas summary { cursor: pointer; font-weight: 700; }
+@media (max-width: 1023px) {
+  .mision-grid { grid-template-columns: 1fr; height: auto; }
+  .mision-surface { height: 62vh; }
+}

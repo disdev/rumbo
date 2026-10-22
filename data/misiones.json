@@ -39,7 +39,7 @@
       "hint": "Busca la línea de 11°30′S y baja 10 rayitas. Desde la línea de 77°30′W, avanza 10 rayitas al este.",
       "explain_ok": "¡Ahí! Cada rayita del meridiano es 1′. En Perú todo es Sur y Oeste.", "receta": "r-latlon" },
     { "id": "m1-8", "title": "Ahora en la carta del examen", "kind": "tap",
-      "surface": { "figure": "Figure 20.jpg", "hotspots": [ { "id": "norfolk", "x": 345, "y": 520, "r": 26 }, { "id": "chesapeake", "x": 255, "y": 725, "r": 26 } ] },
+      "surface": { "figure": "Figure 20.jpg", "hotspots": [ { "id": "norfolk", "x": 345, "y": 520, "r": 26 }, { "id": "chesapeake", "x": 245, "y": 702, "r": 26 } ] },
       "prompt": "Esta es la Figura 20 del examen. Mismo idioma que tu carta: toca un aeropuerto CON torre.", "targets": ["norfolk"],
       "hint": "Busca el símbolo azul: Norfolk Intl, en el centro de los círculos magenta.",
       "explain_ok": "Norfolk International: azul, con torre. Chesapeake Regional es magenta: sin torre." },
@@ -99,11 +99,11 @@
       "hint": "La tarjeta ya hace la cuenta: «para» lo que quieres, «vuela» lo que lees en la brújula.",
       "explain_ok": "332°. La desviación es el error de TU brújula (metales y cables del avión); la tarjeta lo corrige." },
     { "id": "m2-8", "title": "Ahora en la carta del examen", "kind": "choice",
-      "surface": { "figure": "Figure 20.jpg", "hotspots": [ { "id": "norfolk", "x": 345, "y": 520, "r": 26 }, { "id": "chesapeake", "x": 255, "y": 725, "r": 26 } ] },
+      "surface": { "figure": "Figure 20.jpg", "hotspots": [ { "id": "norfolk", "x": 345, "y": 520, "r": 26 }, { "id": "chesapeake", "x": 245, "y": 702, "r": 26 } ] },
       "prompt": "Figura 20, a mano: de Norfolk Intl (azul, centro) a Chesapeake Regional (magenta, abajo a la izquierda). ¿Curso verdadero aproximado?",
-      "options": ["024°", "114°", "204°"], "answer": 2,
+      "options": ["029°", "119°", "209°"], "answer": 2,
       "hint": "Primero el cuadrante: la línea baja (sur) y un poco a la izquierda (oeste).",
-      "explain_ok": "Suroeste, apenas pasado el sur: ~204°. 024° es el regreso y 114° está en otro cuadrante." }
+      "explain_ok": "Suroeste, apenas pasado el sur: ~209°. 029° es el regreso y 119° está en otro cuadrante." }
    ],
    "recetas": [
     { "id": "r-recip", "title": "El curso de regreso", "body": "Misma línea al revés: suma o resta 180°. Mira el cuadrante para descartar la opción «al revés»." },
