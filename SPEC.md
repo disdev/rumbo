@@ -54,11 +54,12 @@ A web app that runs an 8-week, PHAK-first study program for the DGAC (Peru) priv
 - **Exam format:** 3 options per question, one correct, order randomized at exam time. Mirror this: always shuffle option order on every presentation.
 
 ### 3.2 PHAK chapter map
+- **Vuelo en ruta note (2026-10-22):** the VUELO EN RUTA bank category maps to chapter 16 only, but about a third of its questions are airspace taught in chapter 15. The mapping is intentionally unchanged (derive replays the whole log, so remapping would rewrite past chapter 15/16 progress); the Vuelo en ruta missions (§5.11) teach across both and link to the chapter 15 sections.
 - Questions carry no page references (§3.1), so attribution is authored top-down: `data/chapters.json` maps each chapter → page range in the Spanish PHAK extraction, and each bank category → its chapter(s) per the weekly spine (§4.1).
 - **TODO (build task, mentor input pending):** the mentor supplies/corrects chapter page ranges and section boundaries. Once mapped, every non-fraseología, non-reglamentación question belongs to a chapter via its category, and the app can compute per-chapter coverage — including PHAK sections with **zero** questions, which are surfaced to the mentor as "the bank can't measure this; check it in teach-back." `chapters.json` also carries a **per-section key-point list** (the 5–8 concepts a good free recall should mention) — AI-drafted at build time from the PHAK text, mentor-reviewed before shipping. These ground the runtime recall feedback (§5.7).
 
 ### 3.3 Math problem templates
-Generated, not stored. Six families, each a template with randomized parameters and three tiers. **The exam permits no calculator**, so every generated problem at every tier must be solvable with pencil-and-paper arithmetic — parameter generation rules must produce hand-workable numbers (this is a hard constraint on `math-templates.json` ranges, not a nice-to-have). The manual (mechanical) E6B is assumed to still be permitted since it is not a calculator — confirm (§10); Families 5–6 display a reminder: "resuelve primero mentalmente, luego verifica con el E6B."
+Generated, not stored. Six families, each a template with randomized parameters and three tiers. **The exam permits no calculator**, so every generated problem at every tier must be solvable with pencil-and-paper arithmetic — parameter generation rules must produce hand-workable numbers (this is a hard constraint on `math-templates.json` ranges, not a nice-to-have). **Exam-day tools: none** (mentor, 2026-10-22) — no calculator, no plotter, no E6B: everything is solved by hand with the printed figure, pencil and scratch paper. (The former "verifica con el E6B" reminder on families 5–6 was removed.)
 
 | # | Family | Formula / rule |
 |---|--------|----------------|
@@ -76,7 +77,7 @@ Generated, not stored. Six families, each a template with randomized parameters 
 
 **Reveal content for generated problems:** the one-line worked calculation (e.g., "2,300 × 2.0 = 4,600 lb"), plus the formula on Nivel 2/3 reveals.
 
-Parameter generation rules per tier live in `data/math-templates.json` (ranges, rounding, distractor logic if multiple-choice presentation is used; free-entry numeric answer with tolerance is also acceptable and preferred for math — accept within ±2% or exact for clean-number tiers). Each template also defines its rounding convention and expected units. The app offers no calculator affordances anywhere; the mental answer is committed before any E6B verification.
+Parameter generation rules per tier live in `data/math-templates.json` (ranges, rounding, distractor logic if multiple-choice presentation is used; free-entry numeric answer with tolerance is also acceptable and preferred for math — accept within ±2% or exact for clean-number tiers). Each template also defines its rounding convention and expected units. The app offers no calculator affordances anywhere.
 
 **Taller families (2026-10-12):** two extra families — **Rumbo magnético** (`rumbo`: RV = curso ± WCA, RM = RV − Este / + Oeste, RB = RM ± desviación) and **Rumbos del circuito** (`circuito`: aterrizaje = pista × 10, a favor = ± 180, izquierdo: cruzado −90 / básico +90, derecho al revés) — live in the same `math-templates.json` with steps and three tiers, but **outside the ladder** (`TALLER_FAMILY_IDS`, not `FAMILY_IDS`): they never appear in the tracker grid, the planner, the week-6 gate or maintenance. They're practiced from the taller (§5.11) and from `guided_math` blocks in lessons 14-8 and 16-4; their drill rows count toward reps and the math streak like any guiada/practica row. Headings answer as 1–360 (north = 360).
 
@@ -230,6 +231,11 @@ Added 2026-10-12 after the student flagged three weak topics (indicador de direc
 
 Never a gate, never homework.
 
+#### 5.11.1 Misiones de Vuelo en ruta (2026-10-22)
+Design: `docs/superpowers/specs/2026-10-22-vuelo-en-ruta-misiones-design.md`. The taller's top section teaches the whole VUELO EN RUTA category through **missions**: one real flight per mission, ~8 steps of ≤60 s each, on a **living chart** (`src/js/carta.js`) — an authored sectional-style training chart of Peru's central coast (`data/misiones/carta-costa-central.json`: real coast/airfields/WMM variation, invented obstacles/checkpoints/airspace, labelled "no usar para navegación"). Step kinds: tap, choice, typed number, drag-the-plane. The plotter and paper-strip tools exist only on the Peru chart (to *see* an idea once); every skill ends in a by-hand method because exam day has no tools (§3.3). Each mission ends with a **bridge step** on the matching exam figure (`src/js/figura-overlay.js`, hotspots in image px, no plotter) and a **prueba** of the mission's own bank questions (`quizPlayer` source `ids`; ordinary `quiz` rows, so misses feed the error deck/SRS like Practicar). After two misses a step reveals the answer — never blocks. Laptop-first layout (chart left, step right at ≥1024px). Content: `data/misiones.json` (missions, steps, recetas, and all 77 VUELO EN RUTA questions mapped to the mission that teaches them, with a by-hand `method` per live question). Slice 1 ships missions 1 (Leer el mapa) and 2 (Medir); 3–6 show as "próximamente".
+
+**Tracking (mentor requirement):** `nav` rows (`screen: 'mision'`, `{mission, step, view}`) give when/how long each screen was open; `mission_attempt` logs every submitted answer (`{answer, correct, off_by, ms_to_answer, hint_shown}`); `mission_step` each finished step (`{tries, first_try_correct, revealed, seconds}`); `mission_progress` each finished or abandoned run. Progress/resume is derived from the log (`src/js/misiones-logic.js`). `/progreso` shows a **Vuelo en ruta missions** section — missions × steps grid with time, attempts and every answer per step, prueba score, before→after first-attempt accuracy on each mission's bank questions (cut = the mission's first prueba), and a "stuck" list for the Sunday check-in.
+
 ---
 
 ## 6. Gates (enforced by the app)
@@ -333,7 +339,7 @@ Structure everything so these can be added later — this app doubles as a valid
 
 ## 10. Open items / config to confirm
 
-1. **Official exam blueprint** — confirmed: **50 questions, 90 minutes, no calculator permitted** (in `config.json`). Still open: pass mark, per-category weighting, and whether the manual (mechanical) E6B counts as a calculator (§3.3 assumes it does not). Target display stays 85% regardless.
+1. **Official exam blueprint** — confirmed: **50 questions, 90 minutes, no calculator permitted** (in `config.json`). Still open: pass mark and per-category weighting. **Resolved 2026-10-22:** no E6B and no plotter either — all by hand (§3.3). Target display stays 85% regardless.
 2. **`chapters.json`** — **critical path, week-0 deliverable**: the chapter loop (§4.3), recall-feedback grounding, and coverage math all block on it. Boundaries inferred from page clustering, mentor corrects; per-section key-point lists AI-drafted at build time, mentor-reviewed (§3.2). Lesson authoring (§3.4) produces the section lists and key points as a by-product. The three daily tracks are buildable and usable before it exists.
 3. **Figure PNGs** — the mentor supplies the image set matching the `figures` filenames.
 4. **RAP source excerpts** — optional later enrichment for reglamentación reveals where `reason` is missing.
