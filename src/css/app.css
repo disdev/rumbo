@@ -233,3 +233,23 @@ button { font: inherit; cursor: pointer; }
 .plan-week-sub { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
 .plan-week.now { border-color: var(--accent); background: var(--panel); }
 .plan-week.past { opacity: .7; }
+
+/* ---- Vuelo en ruta: carta viva y misiones (spec 2026-10-22, laptop primero) ---- */
+.carta-frame { position: relative; width: 100%; height: 100%; min-height: 420px; border-radius: 12px; overflow: hidden;
+  background: #cfe3ea; border: 1px solid var(--border); box-shadow: 0 0 0 6px #f3efe2 inset; }
+.carta-svg { display: block; width: 100%; height: 100%; user-select: none; -webkit-user-select: none; touch-action: none; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; }
+.carta-svg .c-feat { cursor: pointer; outline: none; }
+.carta-svg .c-feat:hover, .carta-svg .c-feat:focus-visible { filter: drop-shadow(0 0 3px rgba(201, 100, 66, .9)); }
+.carta-svg .c-pulse { animation: carta-pulse 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes carta-pulse { 0%, 100% { opacity: .95; } 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .carta-svg .c-pulse { animation: none; } }
+.carta-zoom { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 6px; }
+.carta-zbtn { width: 36px; height: 36px; border-radius: 8px; border: 1px solid #b9b29a; background: #fffdf4; color: #2b2a26; font-size: 19px; font-weight: 700; cursor: pointer; }
+.carta-zbtn:hover { background: #fff; }
+.carta-toolbar { position: absolute; left: 10px; right: 56px; bottom: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; pointer-events: none; }
+.carta-toolbar > * { pointer-events: auto; }
+.carta-toolbtn { padding: 8px 12px; border-radius: 8px; border: 1px solid #b9b29a; background: #fffdf4; color: #2b2a26; font-size: 14px; font-weight: 600; cursor: pointer; }
+.carta-readout { padding: 6px 10px; border-radius: 8px; background: rgba(43, 42, 38, .82); color: #fffdf4; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.carta-pop { position: absolute; width: 280px; padding: 10px 12px; border-radius: 10px; background: #2b2a26; color: #f3efe2; font-size: 14px; line-height: 1.4; box-shadow: 0 6px 18px rgba(0,0,0,.25); z-index: 2; }
+.carta-pop.hidden { display: none; }
+.carta-side { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); }

@@ -333,7 +333,11 @@
    "rwy_len_ft": 11506,
    "lighted": true,
    "ct_freq": "118.1",
-   "source": "OurAirports airports.csv (descargado 2026-10-22) ident SPIM/gps SPJC; pista 16L/34R 11 506 ft (runways.csv); TWR 118.1 (airport-frequencies.csv)"
+   "source": "OurAirports airports.csv (descargado 2026-10-22) ident SPIM/gps SPJC; pista 16L/34R 11 506 ft (runways.csv); TWR 118.1 (airport-frequencies.csv)",
+   "label": {
+    "side": "right",
+    "dy": -34
+   }
   },
   {
    "id": "HUACHO",

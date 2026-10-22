@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><title>Carta — dev</title>
+<link rel="stylesheet" href="../src/css/app.css">
+<style>body{margin:0} .wrap{display:grid;grid-template-columns:1fr 320px;gap:16px;height:100vh;padding:16px;box-sizing:border-box} #c{height:calc(100vh - 32px)} .side{overflow:auto} .side button{display:block;width:100%;margin:6px 0;padding:8px} pre{white-space:pre-wrap;font-size:12px}</style>
+</head><body><div class="wrap"><div id="c"></div><div class="side" id="s"></div></div>
+<script type="module">
+import { renderCarta } from '../src/js/carta.js';
+const chart = await (await fetch('../data/misiones/carta-costa-central.json')).json();
+const api = renderCarta(document.getElementById('c'), chart, { explain: true, route: 'lima-huacho' });
+window.api = api;
+const s = document.getElementById('s'), out = document.createElement('pre');
+let tool = null;
+const b = (t, f) => { const x = document.createElement('button'); x.textContent = t; x.onclick = f; s.append(x); };
+api.onTap(id => { out.textContent = `tap: ${id}`; });
+b('Ruta completa', () => api.focusRoute('lima-huacho'));
+b('Toda la carta', () => api.focusAll());
+b('Sin terreno', () => api.setLayers({ terreno: false }));
+b('Con terreno', () => api.setLayers({ terreno: true }));
+b('Highlight SPJC (ok)', () => api.highlight(['SPJC'], 'ok'));
+b('Mi curso 300° vs ruta', () => { const a = chart.airports[0]; api.drawLine(a, 300, 40, 'me'); api.drawLine(a, api.routeCourse('lima-huacho'), 60, 'ok'); });
+b('Anillo 3 NM en Huacho', () => api.showRing(chart.airports[1], 3));
+b('Avión arrastrable', () => { tool = api.placePlane({ lat: -11.6, lon: -77.3 }); });
+b('Plotter', () => { tool = api.plotter('lima-huacho'); });
+b('Tira de papel', () => { tool = api.paperStrip('lima-huacho'); });
+b('Leer herramienta', () => { out.textContent = JSON.stringify({ value: tool?.value?.(), angle: tool?.angle?.(), nm: tool?.nm?.(), course: api.routeCourse('lima-huacho'), dist: api.routeDistance('lima-huacho') }, null, 1); });
+b('Limpiar', () => { api.clearMarks(); api.clearTools(); });
+b('Corte lateral 3000 ft', () => s.append(api.sideView('lima-c', 3000)));
+s.append(out);
+</script></body></html>
