@@ -1,0 +1,523 @@
+{
+ "id": "costa-central",
+ "title": "Costa central del Perú",
+ "label": "Carta de entrenamiento — no usar para navegación",
+ "note": "Costa, aeródromos y variación son reales (fuentes abajo). Terreno simplificado; obstáculos, puntos de notificación y el espacio aéreo de Lima son inventados para enseñar los símbolos de la carta seccional.",
+ "bounds": {
+  "north": -10.5,
+  "south": -12.5,
+  "west": -78.0,
+  "east": -76.5
+ },
+ "variation": {
+  "deg": -4,
+  "source": "NOAA WMM-2025 para 12.02°S 77.11°W, 2026-10-22: −3.62° (3.6° Oeste), redondeado a 4° O como en una isogónica de carta"
+ },
+ "coast": [
+  [
+   -10.4033,
+   -78.0129
+  ],
+  [
+   -10.4781,
+   -77.9663
+  ],
+  [
+   -10.4939,
+   -77.9685
+  ],
+  [
+   -10.5308,
+   -77.9226
+  ],
+  [
+   -10.5664,
+   -77.912
+  ],
+  [
+   -10.6738,
+   -77.8485
+  ],
+  [
+   -10.7615,
+   -77.7637
+  ],
+  [
+   -10.7921,
+   -77.7478
+  ],
+  [
+   -10.8158,
+   -77.7532
+  ],
+  [
+   -10.8522,
+   -77.7092
+  ],
+  [
+   -10.868,
+   -77.7116
+  ],
+  [
+   -10.9275,
+   -77.6705
+  ],
+  [
+   -10.9965,
+   -77.6468
+  ],
+  [
+   -11.0145,
+   -77.6613
+  ],
+  [
+   -11.0566,
+   -77.6343
+  ],
+  [
+   -11.0927,
+   -77.6334
+  ],
+  [
+   -11.1154,
+   -77.6128
+  ],
+  [
+   -11.1272,
+   -77.6186
+  ],
+  [
+   -11.1651,
+   -77.5947
+  ],
+  [
+   -11.2068,
+   -77.5978
+  ],
+  [
+   -11.2223,
+   -77.648
+  ],
+  [
+   -11.2923,
+   -77.6473
+  ],
+  [
+   -11.4499,
+   -77.3778
+  ],
+  [
+   -11.4937,
+   -77.3205
+  ],
+  [
+   -11.5573,
+   -77.2779
+  ],
+  [
+   -11.5821,
+   -77.2814
+  ],
+  [
+   -11.6464,
+   -77.2109
+  ],
+  [
+   -11.7361,
+   -77.1711
+  ],
+  [
+   -11.7565,
+   -77.1671
+  ],
+  [
+   -11.7704,
+   -77.178
+  ],
+  [
+   -11.7678,
+   -77.1963
+  ],
+  [
+   -11.7768,
+   -77.1964
+  ],
+  [
+   -11.8006,
+   -77.1814
+  ],
+  [
+   -11.8459,
+   -77.1817
+  ],
+  [
+   -11.9321,
+   -77.1459
+  ],
+  [
+   -11.9992,
+   -77.1407
+  ],
+  [
+   -12.0719,
+   -77.1749
+  ],
+  [
+   -12.089,
+   -77.089
+  ],
+  [
+   -12.1142,
+   -77.0539
+  ],
+  [
+   -12.1537,
+   -77.0383
+  ],
+  [
+   -12.1948,
+   -77.0445
+  ],
+  [
+   -12.2258,
+   -77.0172
+  ],
+  [
+   -12.2501,
+   -76.949
+  ],
+  [
+   -12.3026,
+   -76.8536
+  ],
+  [
+   -12.3525,
+   -76.8254
+  ],
+  [
+   -12.381,
+   -76.7909
+  ],
+  [
+   -12.4192,
+   -76.7824
+  ],
+  [
+   -12.4567,
+   -76.7911
+  ],
+  [
+   -12.4827,
+   -76.8118
+  ],
+  [
+   -12.5093,
+   -76.7991
+  ],
+  [
+   -12.5524,
+   -76.7362
+  ],
+  [
+   -12.5944,
+   -76.7048
+  ]
+ ],
+ "coast_source": "Natural Earth 1:10m coastline (ne_10m_coastline), simplificada a ~0.4 NM",
+ "terrain": [
+  {
+   "top_ft": 2000,
+   "poly": [
+    [
+     -10.45,
+     -77.45
+    ],
+    [
+     -11.0,
+     -77.25
+    ],
+    [
+     -11.5,
+     -77.05
+    ],
+    [
+     -12.0,
+     -76.85
+    ],
+    [
+     -12.55,
+     -76.65
+    ],
+    [
+     -12.55,
+     -76.45
+    ],
+    [
+     -10.45,
+     -76.45
+    ]
+   ]
+  },
+  {
+   "top_ft": 5000,
+   "poly": [
+    [
+     -10.45,
+     -77.2
+    ],
+    [
+     -11.0,
+     -77.0
+    ],
+    [
+     -11.5,
+     -76.85
+    ],
+    [
+     -12.0,
+     -76.7
+    ],
+    [
+     -12.55,
+     -76.55
+    ],
+    [
+     -12.55,
+     -76.45
+    ],
+    [
+     -10.45,
+     -76.45
+    ]
+   ]
+  },
+  {
+   "top_ft": 10000,
+   "poly": [
+    [
+     -10.45,
+     -77.0
+    ],
+    [
+     -11.0,
+     -76.8
+    ],
+    [
+     -11.5,
+     -76.66
+    ],
+    [
+     -12.0,
+     -76.57
+    ],
+    [
+     -12.55,
+     -76.45
+    ],
+    [
+     -10.45,
+     -76.45
+    ]
+   ]
+  }
+ ],
+ "airports": [
+  {
+   "id": "SPJC",
+   "name": "Lima · Jorge Chávez",
+   "lat": -12.0219,
+   "lon": -77.1143,
+   "tower": true,
+   "fuel": true,
+   "elev_ft": 113,
+   "rwy_len_ft": 11506,
+   "lighted": true,
+   "ct_freq": "118.1",
+   "source": "OurAirports airports.csv (descargado 2026-10-22) ident SPIM/gps SPJC; pista 16L/34R 11 506 ft (runways.csv); TWR 118.1 (airport-frequencies.csv)"
+  },
+  {
+   "id": "HUACHO",
+   "name": "Huacho",
+   "lat": -11.1101,
+   "lon": -77.5538,
+   "tower": false,
+   "fuel": false,
+   "elev_ft": 338,
+   "rwy_len_ft": null,
+   "lighted": false,
+   "ct_freq": null,
+   "source": "OurAirports airports.csv (descargado 2026-10-22) ident PE-0025 (pista de aviación general/ultraligeros, sin código OACI)"
+  },
+  {
+   "id": "SPLX",
+   "name": "Lib Mandi",
+   "lat": -12.3888,
+   "lon": -76.7583,
+   "tower": false,
+   "fuel": false,
+   "elev_ft": 200,
+   "rwy_len_ft": null,
+   "lighted": false,
+   "ct_freq": null,
+   "source": "OurAirports airports.csv (descargado 2026-10-22) ident SPLX"
+  },
+  {
+   "id": "PATIVILCA",
+   "name": "Pativilca",
+   "lat": -10.705,
+   "lon": -77.8009,
+   "tower": false,
+   "fuel": false,
+   "elev_ft": 144,
+   "rwy_len_ft": null,
+   "lighted": false,
+   "ct_freq": null,
+   "source": "OurAirports airports.csv (descargado 2026-10-22) ident PE-0010"
+  }
+ ],
+ "obstacles": [
+  {
+   "id": "ob1",
+   "name": "Antena",
+   "lat": -11.62,
+   "lon": -77.2,
+   "msl": 1249,
+   "agl": 349,
+   "lighted": true,
+   "group": false
+  },
+  {
+   "id": "ob2",
+   "name": "Grúas del puerto",
+   "lat": -11.585,
+   "lon": -77.255,
+   "msl": 449,
+   "agl": 399,
+   "lighted": true,
+   "group": true
+  },
+  {
+   "id": "ob3",
+   "name": "Antena",
+   "lat": -11.3,
+   "lon": -77.05,
+   "msl": 2149,
+   "agl": 449,
+   "lighted": false,
+   "group": false
+  },
+  {
+   "id": "ob4",
+   "name": "Antena",
+   "lat": -11.95,
+   "lon": -76.95,
+   "msl": 2749,
+   "agl": 549,
+   "lighted": true,
+   "group": false
+  }
+ ],
+ "checkpoints": [
+  {
+   "id": "cp-ancon",
+   "name": "Ancón",
+   "lat": -11.77,
+   "lon": -77.15
+  },
+  {
+   "id": "cp-huaral",
+   "name": "Huaral",
+   "lat": -11.495,
+   "lon": -77.205
+  }
+ ],
+ "airspace": [
+  {
+   "id": "lima-c",
+   "class": "C",
+   "center": "SPJC",
+   "name": "Lima",
+   "rings": [
+    {
+     "radius_nm": 5,
+     "floor": "SFC",
+     "ceiling": 4000
+    },
+    {
+     "radius_nm": 10,
+     "floor": 1200,
+     "ceiling": 4000
+    }
+   ]
+  }
+ ],
+ "mef": [
+  {
+   "lat_n": -10.5,
+   "lon_w": -78.0,
+   "ft": 1100
+  },
+  {
+   "lat_n": -10.5,
+   "lon_w": -77.5,
+   "ft": 5100
+  },
+  {
+   "lat_n": -10.5,
+   "lon_w": -77.0,
+   "ft": 10100
+  },
+  {
+   "lat_n": -11.0,
+   "lon_w": -78.0,
+   "ft": 1100
+  },
+  {
+   "lat_n": -11.0,
+   "lon_w": -77.5,
+   "ft": 5100
+  },
+  {
+   "lat_n": -11.0,
+   "lon_w": -77.0,
+   "ft": 10100
+  },
+  {
+   "lat_n": -11.5,
+   "lon_w": -78.0,
+   "ft": 0
+  },
+  {
+   "lat_n": -11.5,
+   "lon_w": -77.5,
+   "ft": 2100
+  },
+  {
+   "lat_n": -11.5,
+   "lon_w": -77.0,
+   "ft": 10100
+  },
+  {
+   "lat_n": -12.0,
+   "lon_w": -78.0,
+   "ft": 0
+  },
+  {
+   "lat_n": -12.0,
+   "lon_w": -77.5,
+   "ft": 1100
+  },
+  {
+   "lat_n": -12.0,
+   "lon_w": -77.0,
+   "ft": 10100
+  }
+ ],
+ "routes": [
+  {
+   "id": "lima-huacho",
+   "from": "SPJC",
+   "to": "HUACHO"
+  }
+ ]
+}
