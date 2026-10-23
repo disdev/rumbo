@@ -6,7 +6,8 @@ import { derive, dayKey, weekday, addDays } from '../src/js/derive.js';
 import { generateProblem, FAMILY_IDS } from '../src/js/mathgen.js';
 import { earnedBadges } from '../src/js/badges.js';
 import { buildTimeline, lastSeen } from '../src/js/timeline.js';
-import { missionReport } from '../src/js/misiones-logic.js';
+import { unitReport, MISSION_SPEC } from '../src/js/misiones-logic.js';
+import { claseReport } from '../src/js/clase-logic.js';
 
 const app = document.getElementById('app');
 
@@ -27,13 +28,14 @@ function el(tag, attrs = {}, ...children) {
 }
 
 async function boot() {
-  const [config, chapters, bank, templates, progress, misiones] = await Promise.all([
+  const [config, chapters, bank, templates, progress, misiones, clase] = await Promise.all([
     fetch('../data/config.json').then(r => r.json()),
     fetch('../data/chapters.json').then(r => r.json()),
     fetch('../data/bank.json').then(r => r.json()),
     fetch('../data/math-templates.json').then(r => r.json()),
     fetch('/api/progress').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
     fetch('../data/misiones.json').then(r => r.json()).catch(() => null),
+    fetch('../data/clase-carta.json').then(r => r.json()).catch(() => null),
   ]).catch(e => {
     app.replaceChildren(el('div', { class: 'card center' }, el('p', {}, `Could not load (${e.message}). Are you signed in as the mentor?`)));
     throw e;
@@ -44,7 +46,7 @@ async function boot() {
   }));
   const today = dayKey(Date.now());
   const state = derive(rows, { config, chapters, bank }, today);
-  render({ config, chapters, bank, templates, rows, state, aggregates: progress.aggregates, today, misiones });
+  render({ config, chapters, bank, templates, rows, state, aggregates: progress.aggregates, today, misiones, clase });
 }
 
 const safeParse = (s) => { try { return JSON.parse(s) ?? {}; } catch { return {}; } };
@@ -63,7 +65,7 @@ function checkinInfo(rows, today) {
 }
 
 function render(ctx) {
-  const { config, chapters, bank, templates, rows, state, aggregates, today, misiones } = ctx;
+  const { config, chapters, bank, templates, rows, state, aggregates, today, misiones, clase } = ctx;
   const nodes = [el('h1', {}, 'Progreso — Mentor')];
 
   // ---- last sync + red flags (SPEC §7, §8) ----
@@ -137,7 +139,15 @@ function render(ctx) {
   }
 
   // ---- Vuelo en ruta missions (spec 2026-10-22): every step, every attempt ----
-  if (misiones) nodes.push(missionsSection(rows, misiones));
+  if (clase) {
+    // La carta, paso a paso (spec 2026-10-22 carta-paso-a-paso): la clase antes de las misiones
+    nodes.push(unitsSection('Chart class (La carta, paso a paso)', claseReport(rows, clase.chapters), clase.chapters,
+      { prefix: 'Ch', item: 'card', items: 'cards', questions: 'teaches' }));
+  }
+  if (misiones) {
+    nodes.push(unitsSection('Vuelo en ruta missions', unitReport(rows, misiones.missions, MISSION_SPEC), misiones.missions,
+      { prefix: 'M', item: 'step', items: 'steps', questions: 'questions' }));
+  }
 
   // ---- skipped blocks ----
   if (state.skips.length) {
@@ -280,46 +290,48 @@ function attemptText(step, a) {
   if (step.kind === 'place') return `dropped plane ${a.off_by} NM from target (${ans.lat?.toFixed(3)}, ${ans.lon?.toFixed(3)})`;
   if (step.kind === 'tap') return `tapped ${ans.feature}`;
   if (step.kind === 'choice') return `chose “${step.options?.[ans.option] ?? ans.option}”`;
+  if (step.kind === 'drag') return `dropped “${step.labels?.find(l => l.id === ans.label)?.text ?? ans.label}” on ${ans.part}`;
   return JSON.stringify(ans);
 }
 
-function missionsSection(rows, misiones) {
-  const report = missionReport(rows, misiones.missions);
-  const byId = Object.fromEntries(misiones.missions.map(m => [m.id, m]));
+/** Missions and chart-class chapters share one shape (unit → items, a prueba, attempts). */
+function unitsSection(title, report, units, { prefix, item, items, questions }) {
+  const byId = Object.fromEntries(units.map(m => [m.id, m]));
   const detail = el('div', { class: 'mis-detail' });
-  const blocks = report.missions.map(r => {
+  const blocks = report.units.map(r => {
     const m = byId[r.id];
-    if (!m.live) return el('div', { class: 'mis-row soon' }, el('b', {}, `M${m.n} · ${m.title}`), ' — not built yet');
+    if (!m.live) return el('div', { class: 'mis-row soon' }, el('b', {}, `${prefix}${m.n} · ${m.title}`), ' — not built yet');
     const status = { done: '✅ done', in_progress: '⏳ in progress', not_started: '○ not started' }[r.status];
     const head = el('div', { class: 'meta' },
       `${status} · ${mmss(r.seconds)} total`,
       r.prueba ? ` · prueba ${r.prueba.score}/${r.prueba.total}` : '',
-      r.status === 'done' ? ` · first-attempt accuracy on its ${m.questions.length} bank questions: before ${pct(r.accuracy.before)} → after ${pct(r.accuracy.after)}` : '');
-    const cells = r.steps.map((st, i) => {
-      const step = m.steps[i];
-      const mark = st.status !== 'done' ? '' : st.revealed ? '↺' : st.first_try_correct ? '✓' : '✗';
+      r.status === 'done' ? ` · first-attempt accuracy on its ${m[questions].length} bank questions: before ${pct(r.accuracy.before)} → after ${pct(r.accuracy.after)}` : '');
+    const cells = r.items.map((st, i) => {
+      const step = m[items][i];
+      // a «mira» card has no answer to judge: · instead of ✓/✗
+      const mark = st.status !== 'done' ? '' : st.revealed ? '↺' : st.first_try_correct == null ? '·' : st.first_try_correct ? '✓' : '✗';
       return el('button', {
         class: `mis-cell ${st.status}`, title: `${st.id} · ${st.title}`,
         onclick: () => detail.replaceChildren(
-          el('h4', {}, `M${m.n} · step ${i + 1} — ${st.title}`),
+          el('h4', {}, `${prefix}${m.n} · ${item} ${i + 1} — ${st.title}`),
           el('p', { class: 'meta' }, `${st.status} · ${mmss(st.seconds)} · ${st.tries} attempt${st.tries === 1 ? '' : 's'}${st.revealed ? ' · answer was revealed' : ''}`),
           st.attempts.length ? el('table', { class: 'plain' },
             el('tr', {}, el('th', {}, 'When'), el('th', {}, 'Answer'), el('th', {}, ''), el('th', {}, 'Took'), el('th', {}, 'Hint')),
             ...st.attempts.map(a => el('tr', {},
               el('td', {}, fmtTs(a.ts)), el('td', {}, attemptText(step, a)), el('td', {}, a.correct ? '✅' : '❌'),
               el('td', {}, a.ms_to_answer != null ? `${Math.round(a.ms_to_answer / 1000)} s` : '—'), el('td', {}, a.hint_shown ? 'seen' : ''))))
-            : el('p', { class: 'note' }, 'No answers yet.')),
+            : el('p', { class: 'note' }, step?.kind === 'mira' ? 'Explanation card — nothing to answer.' : 'No answers yet.')),
       }, el('span', { class: 'n' }, String(i + 1)), el('span', { class: 'meta' }, st.status === 'not_started' ? '' : `${mmss(st.seconds)} · ${st.tries}× ${mark}`));
     });
-    return el('div', { class: 'mis-row' }, el('b', {}, `M${m.n} · ${m.title}`), head, el('div', { class: 'mis-grid' }, ...cells));
+    return el('div', { class: 'mis-row' }, el('b', {}, `${prefix}${m.n} · ${m.title}`), head, el('div', { class: 'mis-grid' }, ...cells));
   });
   const stuck = report.stuck.length
     ? el('div', {}, el('h4', {}, 'Stuck — dig here at the Sunday check-in'),
       el('table', { class: 'plain' }, ...report.stuck.map(s => el('tr', {},
-        el('td', {}, `M${byId[s.mission].n} · ${s.title}`), el('td', {}, `${s.tries} attempts`), el('td', {}, s.revealed ? 'answer revealed' : '')))))
-    : el('p', { class: 'note' }, 'Nothing stuck yet (a step shows up here after 2+ attempts or a revealed answer).');
-  return section('Vuelo en ruta missions', ...blocks,
-    el('p', { class: 'note' }, 'Cells: step number, time spent, attempts, ✓ first try · ✗ needed a retry · ↺ answer revealed. Click a cell for every answer he gave.'),
+        el('td', {}, `${prefix}${byId[s.unit].n} · ${s.title}`), el('td', {}, `${s.tries} attempts`), el('td', {}, s.revealed ? 'answer revealed' : '')))))
+    : el('p', { class: 'note' }, `Nothing stuck yet (a ${item} shows up here after 2+ attempts or a revealed answer).`);
+  return section(title, ...blocks,
+    el('p', { class: 'note' }, `Cells: ${item} number, time spent, attempts, ✓ first try · ✗ needed a retry · ↺ answer revealed${item === 'card' ? ' · · explanation card' : ''}. Click a cell for every answer he gave.`),
     detail, stuck);
 }
 

@@ -81,3 +81,13 @@ test('unlockedTrucos: uno por tarjeta con truco terminada, aunque la repita', ()
 test('cardWords cuenta palabras del prompt', () => {
   assert.equal(cardWords({ prompt: 'Toca el aeropuerto  sin torre.' }), 5);
 });
+
+test('claseReport: tarjeta de arrastrar — manda su propia fila (varias soltadas no son «intentos»)', () => {
+  const drop = (part, correct) => row('clase_attempt', { clase: 'c1', card: 'c1-3', answer: { label: 'elev', part }, correct });
+  const rows = [drop('p-elev', true), drop('p-largo', false), drop('p-luces', true),
+    card('c1', 'c1-3', { multi: true, tries: 2, first_try_correct: false, drops: 3 })];
+  const it = claseReport(rows, chapters).units[0].items[2];
+  assert.equal(it.tries, 2);
+  assert.equal(it.first_try_correct, false);
+  assert.equal(it.attempts.length, 3); // el detalle sigue mostrando cada soltada
+});

@@ -176,14 +176,17 @@ export function unitReport(rows, units, spec) {
       // repeticiones suman respuestas al detalle, no «intentos» ni «atascado»
       const first = completions[0];
       const untilFirst = first ? attempts.filter(r => r.ts <= first.ts) : attempts;
+      // ítems de varias respuestas (arrastrar etiquetas): cada soltada no es un «intento»;
+      // su fila de terminado ya trae intentos y primer intento bien contados
+      const multi = !!first?.detail.multi;
       return {
         id: s.id,
         title: s.title,
         status: completions.length ? 'done' : opened ? 'opened' : 'not_started',
         seconds: completions.reduce((sum, r) => sum + (r.detail.seconds || 0), 0),
-        tries: untilFirst.length,
+        tries: multi ? first.detail.tries : untilFirst.length,
         // sin respuestas (una tarjeta «mira») no hay primer intento que juzgar
-        first_try_correct: first ? (attempts.length ? !!attempts[0].detail.correct : null) : null,
+        first_try_correct: !first ? null : multi ? !!first.detail.first_try_correct : attempts.length ? !!attempts[0].detail.correct : null,
         revealed: first ? !!first.detail.revealed : false,
         attempts: attempts.map(r => ({
           ts: r.ts, answer: r.detail.answer, correct: !!r.detail.correct, off_by: r.detail.off_by ?? null,

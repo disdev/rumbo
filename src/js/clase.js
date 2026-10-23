@@ -121,9 +121,9 @@ export async function claseView(root, ctx, chapterId, onExit, startAt = null) {
     return null;
   }
 
-  function logCard(card, { tries, firstTry, revealed, seconds }) {
+  function logCard(card, { tries, firstTry, revealed, seconds, extra = {} }) {
     ctx.append({ kind: 'clase_card', detail: {
-      clase: C.id, card: card.id, title: card.title, tries, first_try_correct: firstTry, revealed, seconds,
+      clase: C.id, card: card.id, title: card.title, tries, first_try_correct: firstTry, revealed, seconds, ...extra,
     } });
     cardsDone++; lastDone = card.id; currentCard = null;
   }
@@ -267,7 +267,7 @@ export async function claseView(root, ctx, chapterId, onExit, startAt = null) {
       // También sin arrastrar: toca una etiqueta y luego la parte (trackpad, teclado).
       function dragCard() {
         const placed = new Set(), wrongBy = {};
-        let drops = 0, anyWrong = false, anyRevealed = false, selected = null;
+        let drops = 0, wrong = 0, anyRevealed = false, selected = null;
         const tray = el('div', { class: 'clase-tray' });
         controls.append(el('p', { class: 'note' }, '✋ Arrastra cada etiqueta a su parte del dibujo (o tócala y luego toca la parte).'), tray);
 
@@ -280,7 +280,8 @@ export async function claseView(root, ctx, chapterId, onExit, startAt = null) {
           api.highlight([part], revealed ? 'hint' : 'ok');
           if (placed.size === card.labels.length) {
             done = true;
-            logCard(card, { tries: drops, firstTry: !anyWrong, revealed: anyRevealed, seconds: timer.seconds() });
+            // intentos = soltadas equivocadas + 1 (poner cada etiqueta no cuenta como intento)
+            logCard(card, { tries: wrong + 1, firstTry: wrong === 0, revealed: anyRevealed, seconds: timer.seconds(), extra: { multi: true, drops } });
             const go = next('Seguir →');
             feedback.replaceChildren(el('div', { class: `reveal ${anyRevealed ? 'bad' : 'ok'}` },
               el('p', { class: 'reason' }, anyRevealed ? 'Listo — algunas te las pusimos nosotros.' : '✅ ¡Todas en su lugar!'),
@@ -299,7 +300,7 @@ export async function claseView(root, ctx, chapterId, onExit, startAt = null) {
           } });
           shownAt = Date.now();
           if (correct) { feedback.replaceChildren(); api.hidePop?.(); return settle(label, chip, part, false); }
-          anyWrong = true;
+          wrong++;
           wrongBy[label.id] = (wrongBy[label.id] || 0) + 1;
           whatIs(api, card, part);
           if (wrongBy[label.id] >= 2) {
