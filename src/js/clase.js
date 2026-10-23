@@ -25,6 +25,7 @@ export async function loadClase(ctx) {
 }
 
 const progressOf = (ctx) => claseProgress(getLog(), ctx.data.clase.chapters);
+export const claseProgressNow = progressOf;
 
 /** Capítulo que toca: el primero en vivo sin terminar (o null). */
 export function currentChapter(ctx) {
@@ -453,7 +454,7 @@ export function claseCardView(root, ctx, backToTaller) {
     }
     for (const c of all) {
       const done = prog[c.id].completed;
-      nodes.push(el('button', { class: 'option', ...(c.live ? {} : { disabled: '' }), onclick: () => c.live && play(c, null) },
+      nodes.push(el('button', { class: 'option', ...(c.live ? {} : { disabled: '' }), onclick: () => c.live && play(c, prog[c.id].started && !prog[c.id].completed ? prog[c.id].next : null) },
         el('span', { class: 'plan-week-title' }, `${c.icon} Cap. ${c.n} · ${c.title}`),
         el('span', { class: 'plan-week-sub' }, !c.live ? 'Próximamente' : done ? '✓ Completo — tócalo para repetirlo' : prog[c.id].started ? 'En curso' : `${c.cards.length} tarjetas + prueba corta`)));
     }

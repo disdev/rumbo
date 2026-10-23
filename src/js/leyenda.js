@@ -49,8 +49,6 @@ export const SIMBOLOS = {
     draw(H) {
       const X0 = 90, X1 = 510, Y0 = 50, Y1 = 350; // 1° × 1°: 78°W–77°W, 11°S–12°S
       const ys = [Y0, (Y0 + Y1) / 2, Y1], xs = [X0, (X0 + X1) / 2, X1];
-      H.part('paralelo', ...ys.flatMap(y => [svg('line', { x1: X0 - 30, y1: y, x2: X1 + 30, y2: y, stroke: HIT, 'stroke-width': 22 }),
-        svg('line', { x1: X0 - 30, y1: y, x2: X1 + 30, y2: y, stroke: INK, 'stroke-width': 2 })]));
       H.part('meridiano', ...xs.flatMap(x => [svg('line', { x1: x, y1: Y0 - 25, x2: x, y2: Y1 + 25, stroke: HIT, 'stroke-width': 22 }),
         svg('line', { x1: x, y1: Y0 - 25, x2: x, y2: Y1 + 25, stroke: INK, 'stroke-width': 2 })]));
       const mx = xs[1], per = (Y1 - Y0) / 60, ticks = [svg('rect', { x: mx - 16, y: Y0, width: 32, height: Y1 - Y0, fill: HIT })];
@@ -60,6 +58,9 @@ export const SIMBOLOS = {
         ticks.push(svg('line', { x1: mx - len, y1: Y0 + m * per, x2: mx + len, y2: Y0 + m * per, stroke: INK, 'stroke-width': 1.6 }));
       }
       H.part('tick-minuto', ...ticks);
+      // los paralelos van encima: un toque en un cruce cuenta como paralelo (c1-4 pide tocar uno)
+      H.part('paralelo', ...ys.flatMap(y => [svg('line', { x1: X0 - 30, y1: y, x2: X1 + 30, y2: y, stroke: HIT, 'stroke-width': 22 }),
+        svg('line', { x1: X0 - 30, y1: y, x2: X1 + 30, y2: y, stroke: INK, 'stroke-width': 2 })]));
       H.part('rotulo-lat', ...['11°00′S', '11°30′S', '12°00′S'].map((s, i) => t(X0 - 26, ys[i] - 7, s, { 'text-anchor': 'end', 'font-weight': 700 })));
       H.part('rotulo-lon', ...['78°00′W', '77°30′W', '77°00′W'].map((s, i) => t(xs[i] + 6, Y0 - 30, s, { 'font-weight': 700 })));
       H.add(t(X1 + 34, Y0 + 5, 'N ↑', { 'font-weight': 800, fill: MUTED }),

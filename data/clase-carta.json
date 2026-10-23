@@ -277,7 +277,7 @@
       "azul",
       "magenta"
      ],
-     "prompt": "El color te dice si hay torre de control. Azul: hay torre (aeropuertos en Clase B, C, D o E). Magenta: no hay torre.",
+     "prompt": "El color te dice si hay torre de control. Azul: aeropuerto con torre (bajo espacio aéreo Clase B, C, D o E). Magenta: no hay torre.",
      "truco": {
       "icon": "🔵",
       "text": "Azul = Alguien te contesta (torre) · Magenta = Mudo (tú te anuncias)."
@@ -630,7 +630,7 @@
      ],
      "answer": 1,
      "hint": "En ruta manda el más alto de los cuadrantes que toca tu línea.",
-     "explain_ok": "10 100 ft: la cordillera está en tu camino. Ese es tu piso de seguridad."
+     "explain_ok": "10 100 ft: la cordillera está en tu camino. Es tu referencia mínima: vuela por encima, con margen."
     },
     {
      "id": "c3-5",
@@ -747,7 +747,7 @@
      "explain_ok": "Desde el mar. Los cuadros de precaución avisan lo que desde el aire no se ve.",
      "truco": {
       "icon": "⚠️",
-      "text": "Si no dice AGL, es MSL."
+      "text": "En cuadros y avisos, si no dice AGL, es MSL. (El paréntesis de un obstáculo sí es AGL.)"
      }
     },
     {

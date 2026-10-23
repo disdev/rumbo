@@ -12,7 +12,7 @@ import { guidedExample, practicaBurst } from './guided.js';
 import { lessonReview } from './lessons.js';
 import { hangarView } from './hangar.js';
 import { misionesCard } from './misiones.js';
-import { claseCardView, claseView, currentChapter } from './clase.js';
+import { claseCardView, claseView, currentChapter, claseProgressNow } from './clase.js';
 
 const TOOLS = [
   {
@@ -56,7 +56,9 @@ export function tallerView(root, ctx, onExit) {
         // Misión 1 cuesta → la clase de los capítulos 1–3 (spec carta-paso-a-paso)
         onRepaso: () => {
           const cur = currentChapter(ctx);
-          claseView(root, ctx, cur && cur.n <= 3 ? cur.id : 'c1', menu);
+          const ch = cur && cur.n <= 3 ? cur : null;
+          const p = ch && claseProgressNow(ctx)[ch.id];
+          claseView(root, ctx, ch ? ch.id : 'c1', menu, p?.started ? p.next : null);
         },
       }),
       el('h4', { class: 'section-title' }, 'Juegos'),
