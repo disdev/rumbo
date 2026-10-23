@@ -1,0 +1,972 @@
+{
+ "_nota": "La carta, paso a paso (spec 2026-10-22 carta-paso-a-paso). Tarjetas como datos; cada capítulo enseña sus preguntas `teaches` y termina con una prueba de 3–5 de ellas.",
+ "chapters": [
+  {
+   "id": "c1",
+   "n": 1,
+   "icon": "🌐",
+   "title": "La hoja",
+   "live": true,
+   "practice_mission": "m1",
+   "intro": "Antes de los símbolos, la hoja: dónde está el norte, cómo se mide y cómo se dice una posición.",
+   "cards": [
+    {
+     "id": "c1-1",
+     "kind": "mira",
+     "title": "Una carta seccional",
+     "surface": "carta",
+     "prompt": "Esto es una carta seccional: el terreno visto desde arriba, con todo lo que un piloto VFR necesita. Arriba siempre es el norte. Toca cualquier cosa y te dice qué es.",
+     "truco": null
+    },
+    {
+     "id": "c1-2",
+     "kind": "mira",
+     "title": "Las líneas acostadas: latitud",
+     "surface": {
+      "simbolo": "reticula"
+     },
+     "pulse": [
+      "paralelo"
+     ],
+     "prompt": "Las líneas que van de lado a lado son los paralelos: la LATITUD. Dicen qué tan al norte o al sur del ecuador estás.",
+     "truco": {
+      "icon": "🪜",
+      "text": "Latitud = los peldaños de una escalera: acostados, uno sobre otro."
+     }
+    },
+    {
+     "id": "c1-3",
+     "kind": "mira",
+     "title": "Las líneas largas: longitud",
+     "surface": {
+      "simbolo": "reticula"
+     },
+     "pulse": [
+      "meridiano"
+     ],
+     "prompt": "Las líneas de arriba abajo son los meridianos: la LONGITUD. Van de polo a polo y cruzan el ecuador en ángulo recto.",
+     "truco": {
+      "icon": "🌐",
+      "text": "LONGitud = líneas LARGAS, de polo a polo."
+     }
+    },
+    {
+     "id": "c1-4",
+     "kind": "tap",
+     "title": "Toca la latitud",
+     "surface": {
+      "simbolo": "reticula"
+     },
+     "prompt": "Toca una línea de LATITUD.",
+     "targets": [
+      "paralelo"
+     ],
+     "hint": "Latitud = peldaño acostado: va de lado a lado.",
+     "explain_ok": "Esa: un paralelo. Todo lo que está sobre ella tiene la misma latitud."
+    },
+    {
+     "id": "c1-5",
+     "kind": "choice",
+     "title": "Sur y oeste",
+     "surface": {
+      "simbolo": "reticula"
+     },
+     "pulse": [
+      "rotulo-lat"
+     ],
+     "prompt": "Perú está al sur del ecuador y al oeste de Greenwich. En esta carta, ¿hacia dónde CRECEN los grados de latitud?",
+     "options": [
+      "Hacia arriba (norte)",
+      "Hacia abajo (sur)",
+      "Hacia la derecha (este)"
+     ],
+     "answer": 1,
+     "hint": "Lee los rótulos: 11°00′S arriba, 12°00′S abajo.",
+     "explain_ok": "Hacia abajo: más al sur, más grados S. En las figuras del examen (EE. UU., N y W) crecen hacia arriba."
+    },
+    {
+     "id": "c1-6",
+     "kind": "mira",
+     "title": "La regla escondida",
+     "surface": {
+      "simbolo": "reticula"
+     },
+     "pulse": [
+      "tick-minuto"
+     ],
+     "prompt": "Cada grado tiene 60 minutos (60′). Las rayitas del meridiano marcan cada minuto de latitud, y 1′ de latitud mide 1 milla náutica.",
+     "truco": {
+      "icon": "📏",
+      "text": "Un minuto (de latitud), una milla."
+     }
+    },
+    {
+     "id": "c1-7",
+     "kind": "number",
+     "title": "Cuenta millas",
+     "surface": {
+      "simbolo": "reticula"
+     },
+     "unit": "nm",
+     "expected": 30,
+     "tol": 0,
+     "prompt": "¿Cuántas millas náuticas hay entre la línea de 11°00′S y la de 11°30′S?",
+     "hint": "Son 30 minutos de latitud. Un minuto, una milla.",
+     "explain_ok": "30 NM: 30′ de latitud. Por eso las distancias se miden sobre un meridiano."
+    },
+    {
+     "id": "c1-8",
+     "kind": "choice",
+     "title": "¿Y la longitud?",
+     "surface": {
+      "simbolo": "reticula"
+     },
+     "pulse": [
+      "meridiano"
+     ],
+     "prompt": "¿Un minuto de LONGITUD también mide 1 milla náutica?",
+     "options": [
+      "Sí, siempre",
+      "No: los meridianos se juntan hacia los polos, así que mide menos",
+      "Solo en Perú"
+     ],
+     "answer": 1,
+     "hint": "Los meridianos se juntan en los polos: el espacio entre ellos se achica.",
+     "explain_ok": "No. Solo la latitud sirve de regla: mide siempre sobre un meridiano."
+    },
+    {
+     "id": "c1-9",
+     "kind": "mira",
+     "title": "Cómo se dice una posición",
+     "surface": "carta",
+     "prompt": "Una posición se dice latitud primero, luego longitud: 11°40′S · 77°20′W. Grados, minutos y la letra.",
+     "truco": {
+      "icon": "🚶",
+      "text": "Primero subes la escalera (latitud), luego caminas (longitud)."
+     }
+    },
+    {
+     "id": "c1-10",
+     "kind": "place",
+     "title": "Ubícate",
+     "surface": "carta",
+     "readout": false,
+     "target": {
+      "lat": -11.8333,
+      "lon": -77.1667
+     },
+     "tol": 2,
+     "start": {
+      "lat": -11.45,
+      "lon": -77.75
+     },
+     "prompt": "Arrastra el avión a 11°50′S · 77°10′W. Primero la latitud, luego la longitud.",
+     "hint": "Desde la línea de 11°30′S baja 20 rayitas. Desde 77°00′W ve 10 rayitas hacia el oeste (izquierda).",
+     "explain_ok": "¡Ahí! Latitud primero, longitud después, y en Perú todo es S y W."
+    },
+    {
+     "id": "c1-11",
+     "kind": "tap",
+     "title": "«Refiérase a la Figura 20, área 3»",
+     "surface": {
+      "figure": "Figure 20.jpg",
+      "hotspots": [
+       {
+        "id": "a1",
+        "x": 455,
+        "y": 467,
+        "r": 26,
+        "says": "Ese es el círculo del área 1."
+       },
+       {
+        "id": "a2",
+        "x": 193,
+        "y": 761,
+        "r": 26,
+        "says": "Ese es el círculo del área 2."
+       },
+       {
+        "id": "a3",
+        "x": 442,
+        "y": 1020,
+        "r": 26,
+        "says": "Ese es el círculo del área 3."
+       },
+       {
+        "id": "a4",
+        "x": 108,
+        "y": 1251,
+        "r": 26,
+        "says": "Ese es el círculo del área 4."
+       },
+       {
+        "id": "a5",
+        "x": 607,
+        "y": 1289,
+        "r": 26,
+        "says": "Ese es el círculo del área 5."
+       },
+       {
+        "id": "a6",
+        "x": 546,
+        "y": 810,
+        "r": 26,
+        "says": "Ese es el círculo del área 6."
+       },
+       {
+        "id": "a7",
+        "x": 688,
+        "y": 813,
+        "r": 26,
+        "says": "Ese es el círculo del área 7."
+       }
+      ]
+     },
+     "prompt": "El examen dice «área 3»: es el círculo rojo con el número 3. Toca el área 3.",
+     "targets": [
+      "a3"
+     ],
+     "hint": "Los círculos rojos numerados. El 3 está abajo, hacia el centro.",
+     "explain_ok": "Ese. «Área 3» solo te dice dónde mirar en la figura."
+    },
+    {
+     "id": "c1-12",
+     "kind": "choice",
+     "title": "Coordenadas del examen",
+     "surface": {
+      "figure": "Figure 20.jpg",
+      "hotspots": []
+     },
+     "prompt": "La Figura 20 es de EE. UU.: al norte del ecuador y al oeste de Greenwich. ¿Cómo se escribe una posición ahí?",
+     "options": [
+      "36°40′N · 76°20′W",
+      "36°40′S · 76°20′W",
+      "76°20′N · 36°40′W"
+     ],
+     "answer": 0,
+     "hint": "Norte del ecuador = N. Y la latitud va primero.",
+     "explain_ok": "N y W, latitud primero. Allá la latitud crece hacia ARRIBA."
+    }
+   ],
+   "teaches": [
+    "q3530",
+    "x623",
+    "q3535",
+    "q3536",
+    "q3543",
+    "q3567"
+   ]
+  },
+  {
+   "id": "c2",
+   "n": 2,
+   "icon": "🛬",
+   "title": "Aeropuertos",
+   "live": true,
+   "practice_mission": "m1",
+   "intro": "El símbolo y su caja de datos dicen si hay torre, cómo es la pista, si hay combustible y con quién hablar.",
+   "cards": [
+    {
+     "id": "c2-1",
+     "kind": "mira",
+     "title": "Azul o magenta",
+     "surface": {
+      "simbolo": "apt-colores"
+     },
+     "pulse": [
+      "azul",
+      "magenta"
+     ],
+     "prompt": "El color te dice si hay torre de control. Azul: hay torre (aeropuertos en Clase B, C, D o E). Magenta: no hay torre.",
+     "truco": {
+      "icon": "🔵",
+      "text": "Azul = Alguien te contesta (torre) · Magenta = Mudo (tú te anuncias)."
+     }
+    },
+    {
+     "id": "c2-2",
+     "kind": "tap",
+     "title": "¿Dónde nadie te contesta?",
+     "surface": "carta",
+     "prompt": "Toca un aeropuerto donde nadie te contesta: sin torre.",
+     "targets": [
+      "HUACHO",
+      "SPLX",
+      "PATIVILCA"
+     ],
+     "hint": "Busca el color «mudo».",
+     "explain_ok": "Magenta = sin torre. Ahí te anuncias tú."
+    },
+    {
+     "id": "c2-3",
+     "kind": "mira",
+     "title": "La forma: cómo es la pista",
+     "surface": {
+      "simbolo": "apt-formas"
+     },
+     "pulse": [
+      "pista-larga",
+      "pista-pavimentada",
+      "sin-pavimento"
+     ],
+     "prompt": "La forma dice la pista. Pavimentada de más de 8 069 ft: se dibuja tal cual. De 1 500 a 8 069 ft: círculo con la pista adentro. Sin pavimentar: círculo vacío.",
+     "truco": {
+      "icon": "⭕",
+      "text": "Círculo vacío = pista sin pavimentar."
+     }
+    },
+    {
+     "id": "c2-4",
+     "kind": "tap",
+     "title": "La pista de tierra",
+     "surface": {
+      "simbolo": "apt-formas"
+     },
+     "prompt": "Toca el aeropuerto cuya pista es de tierra o pasto.",
+     "targets": [
+      "sin-pavimento"
+     ],
+     "hint": "Si no hay pista dibujada adentro…",
+     "explain_ok": "Círculo vacío: pista sin pavimentar."
+    },
+    {
+     "id": "c2-5",
+     "kind": "mira",
+     "title": "Lo que dice el símbolo además",
+     "surface": {
+      "simbolo": "apt-servicios"
+     },
+     "pulse": [
+      "combustible",
+      "faro",
+      "privado"
+     ],
+     "prompt": "Rayitas alrededor del círculo: hay combustible. Una estrella encima: faro rotativo. Una R adentro: aeropuerto privado.",
+     "truco": {
+      "icon": "⛽",
+      "text": "Con rayitas, hay gasolina."
+     }
+    },
+    {
+     "id": "c2-6",
+     "kind": "tap",
+     "title": "¿Dónde cargas combustible?",
+     "surface": {
+      "simbolo": "apt-servicios"
+     },
+     "prompt": "Necesitas cargar combustible. Toca el aeropuerto donde puedes.",
+     "targets": [
+      "combustible"
+     ],
+     "hint": "Busca las rayitas alrededor del círculo.",
+     "explain_ok": "Ese: las rayitas son combustible y servicios."
+    },
+    {
+     "id": "c2-7",
+     "kind": "mira",
+     "title": "La caja de datos",
+     "surface": {
+      "simbolo": "caja-datos"
+     },
+     "pulse": [
+      "nombre",
+      "ct",
+      "elev"
+     ],
+     "prompt": "Junto a cada aeropuerto va su caja de datos. De arriba abajo: quién es, con quién hablas y cómo es (elevación, luces, largo de pista).",
+     "truco": {
+      "icon": "📦",
+      "text": "Caja de datos de arriba abajo: quién es → con quién hablas → cuánto mide."
+     }
+    },
+    {
+     "id": "c2-8",
+     "kind": "drag",
+     "title": "Ponle nombre a cada parte",
+     "surface": {
+      "simbolo": "caja-datos"
+     },
+     "prompt": "Arrastra cada etiqueta a su parte de la caja de Puerto Azul.",
+     "labels": [
+      {
+       "id": "l-elev",
+       "text": "Elevación (ft)"
+      },
+      {
+       "id": "l-largo",
+       "text": "Largo de pista (×100 ft)"
+      },
+      {
+       "id": "l-ct",
+       "text": "Frecuencia de la torre"
+      },
+      {
+       "id": "l-luces",
+       "text": "Luces de pista"
+      }
+     ],
+     "slots": {
+      "l-elev": "elev",
+      "l-largo": "largo",
+      "l-ct": "ct",
+      "l-luces": "luces"
+     },
+     "hint": "La última línea va en orden: elevación, luces, largo, UNICOM.",
+     "explain_ok": "113 ft de elevación, L = luces, 72 = 7 200 ft de pista, CT = torre."
+    },
+    {
+     "id": "c2-9",
+     "kind": "choice",
+     "title": "La estrella de la caja",
+     "surface": {
+      "simbolo": "caja-datos"
+     },
+     "pulse": [
+      "estrella-pt"
+     ],
+     "prompt": "La caja dice «CT – 118.3 ★». ¿Qué te dice esa estrella?",
+     "options": [
+      "Que la torre funciona a tiempo parcial",
+      "Que hay faro rotativo",
+      "Que es un aeropuerto internacional"
+     ],
+     "answer": 0,
+     "hint": "La ★ del faro va ENCIMA del símbolo, no junto a una frecuencia.",
+     "explain_ok": "Torre a tiempo parcial. Cuando cierra, te anuncias en la CTAF.",
+     "truco": {
+      "icon": "⭐",
+      "text": "★ encima del símbolo = faro · ★ junto a una frecuencia = a tiempo parcial."
+     }
+    },
+    {
+     "id": "c2-10",
+     "kind": "choice",
+     "title": "La C en un círculo",
+     "surface": {
+      "simbolo": "caja-datos"
+     },
+     "pulse": [
+      "ctaf"
+     ],
+     "prompt": "La caja de Huaral termina en «122.9 Ⓒ». ¿Qué es esa frecuencia?",
+     "options": [
+      "La CTAF: donde te anuncias tú cuando no hay torre",
+      "La frecuencia de la torre",
+      "El ATIS: el informe grabado del tiempo"
+     ],
+     "answer": 0,
+     "hint": "Huaral es magenta: ahí no hay torre que te conteste.",
+     "explain_ok": "CTAF. En un aeropuerto sin torre, todos se anuncian en esa frecuencia.",
+     "truco": {
+      "icon": "📻",
+      "text": "Ⓒ = CTAF: aquí te anuncias tú."
+     }
+    },
+    {
+     "id": "c2-11",
+     "kind": "number",
+     "title": "Lee la elevación",
+     "surface": "carta",
+     "focus": "HUACHO",
+     "unit": "ft",
+     "expected": 338,
+     "tol": 0,
+     "prompt": "Mira la caja de datos de Huacho. ¿Cuál es su elevación, en pies?",
+     "hint": "Última línea de la caja, primer número.",
+     "explain_ok": "338 ft MSL: sobre el nivel del mar."
+    },
+    {
+     "id": "c2-12",
+     "kind": "tap",
+     "title": "Ahora en la Figura 20",
+     "surface": {
+      "figure": "Figure 20.jpg",
+      "hotspots": [
+       {
+        "id": "norfolk",
+        "x": 345,
+        "y": 520,
+        "r": 26,
+        "says": "Norfolk International es AZUL: tiene torre."
+       },
+       {
+        "id": "chesapeake",
+        "x": 252,
+        "y": 730,
+        "r": 26,
+        "says": "Chesapeake Regional: magenta, sin torre."
+       },
+       {
+        "id": "currituck",
+        "x": 472,
+        "y": 972,
+        "r": 26,
+        "says": "Currituck County: magenta, sin torre."
+       }
+      ]
+     },
+     "outline": true,
+     "prompt": "Mismo idioma en la carta del examen. Toca un aeropuerto SIN torre.",
+     "targets": [
+      "chesapeake",
+      "currituck"
+     ],
+     "hint": "Azul = torre. Busca el color «mudo».",
+     "explain_ok": "Magenta = sin torre, en Perú y en EE. UU."
+    },
+    {
+     "id": "c2-13",
+     "kind": "number",
+     "title": "La caja de Currituck",
+     "surface": {
+      "figure": "Figure 20.jpg",
+      "hotspots": [
+       {
+        "id": "norfolk",
+        "x": 345,
+        "y": 520,
+        "r": 26,
+        "says": "Norfolk International es AZUL: tiene torre."
+       },
+       {
+        "id": "chesapeake",
+        "x": 252,
+        "y": 730,
+        "r": 26,
+        "says": "Chesapeake Regional: magenta, sin torre."
+       },
+       {
+        "id": "currituck",
+        "x": 472,
+        "y": 972,
+        "r": 26,
+        "says": "Currituck County: magenta, sin torre."
+       }
+      ]
+     },
+     "pulse": [
+      "currituck"
+     ],
+     "unit": "ft",
+     "expected": 18,
+     "tol": 0,
+     "prompt": "La caja de Currituck (área 3) dice «18 *L 55 122.9 Ⓒ». ¿Cuál es su elevación, en pies?",
+     "hint": "Primer número de esa línea.",
+     "explain_ok": "18 ft MSL. *L = luces con limitaciones, 55 = 5 500 ft de pista, 122.9 Ⓒ = CTAF."
+    }
+   ],
+   "teaches": [
+    "q3637",
+    "q3633",
+    "q3635"
+   ]
+  },
+  {
+   "id": "c3",
+   "n": 3,
+   "icon": "⛰️",
+   "title": "Altura, obstáculos y puntos",
+   "live": true,
+   "practice_mission": "m1",
+   "intro": "Antes de volar una ruta: qué tan alto es el terreno, qué torres hay y dónde reportas tu posición.",
+   "cards": [
+    {
+     "id": "c3-1",
+     "kind": "mira",
+     "title": "Los colores del terreno",
+     "surface": "carta",
+     "focus": "legend",
+     "pulse": [
+      "legend"
+     ],
+     "prompt": "El color de la tierra es su altura. La leyenda dice cuántos pies MSL es cada color: verde abajo y, mientras más tostado, más alto.",
+     "truco": {
+      "icon": "🌄",
+      "text": "Verde al pie del cerro, tostado en la cumbre."
+     }
+    },
+    {
+     "id": "c3-2",
+     "kind": "choice",
+     "title": "¿Qué tan alto?",
+     "surface": "carta",
+     "focus": "legend",
+     "prompt": "Al este de la carta está el color más oscuro de todos. Según la leyenda, ¿a qué altura está ese terreno?",
+     "options": [
+      "0 – 1 000 ft MSL",
+      "2 000 – 5 000 ft MSL",
+      "5 000 – 10 000 ft MSL"
+     ],
+     "answer": 2,
+     "hint": "Busca en la leyenda el cuadrito más oscuro.",
+     "explain_ok": "5 000 – 10 000 ft MSL: la cordillera."
+    },
+    {
+     "id": "c3-3",
+     "kind": "mira",
+     "title": "El número azul grande: MEF",
+     "surface": "carta",
+     "focus": "mef:-11:-77.5",
+     "pulse": [
+      "mef:-11:-77.5"
+     ],
+     "prompt": "Cada cuadrante tiene su MEF: lo más alto que hay (terreno u obstáculo) más un colchón de 100 a 300 ft, redondeado hacia arriba. Se lee 2³ = 2 300 ft.",
+     "truco": {
+      "icon": "🏠",
+      "text": "MEF = el techo del cuadrante, con colchón."
+     }
+    },
+    {
+     "id": "c3-4",
+     "kind": "choice",
+     "title": "El MEF de tu ruta",
+     "surface": "carta",
+     "route": "lima-libmandi",
+     "prompt": "Vuelas de Lima a Lib Mandi y tu línea cruza dos cuadrantes. ¿Qué MEF te importa?",
+     "options": [
+      "1 100 ft, el del cuadrante de Lima",
+      "10 100 ft, el más alto de los que cruzas",
+      "El promedio de los dos"
+     ],
+     "answer": 1,
+     "hint": "En ruta manda el más alto de los cuadrantes que toca tu línea.",
+     "explain_ok": "10 100 ft: la cordillera está en tu camino. Ese es tu piso de seguridad."
+    },
+    {
+     "id": "c3-5",
+     "kind": "mira",
+     "title": "Los dos números de una antena",
+     "surface": {
+      "simbolo": "obstaculos"
+     },
+     "pulse": [
+      "msl",
+      "agl"
+     ],
+     "prompt": "Cada obstáculo trae dos números. En negrita: la punta, medida desde el nivel del mar (MSL). Entre paréntesis: cuánto mide desde el suelo (AGL).",
+     "truco": {
+      "icon": "📌",
+      "text": "Paréntesis = Piso (AGL). Lo de afuera cuenta desde el mar (MSL)."
+     }
+    },
+    {
+     "id": "c3-6",
+     "kind": "drag",
+     "title": "Ponle nombre",
+     "surface": {
+      "simbolo": "obstaculos"
+     },
+     "prompt": "Arrastra cada etiqueta a su parte.",
+     "labels": [
+      {
+       "id": "l-msl",
+       "text": "Desde el mar (MSL)"
+      },
+      {
+       "id": "l-agl",
+       "text": "Desde el suelo (AGL)"
+      },
+      {
+       "id": "l-grupo",
+       "text": "Grupo de obstáculos"
+      },
+      {
+       "id": "l-luz",
+       "text": "Iluminado"
+      }
+     ],
+     "slots": {
+      "l-msl": "msl",
+      "l-agl": "agl",
+      "l-grupo": "grupo",
+      "l-luz": "iluminado"
+     },
+     "hint": "Paréntesis = Piso. Dos «V» = grupo. Rayitas encima = luces.",
+     "explain_ok": "Negrita MSL, paréntesis AGL, dos V = grupo, rayitas = iluminado."
+    },
+    {
+     "id": "c3-7",
+     "kind": "number",
+     "title": "Librar la antena por 500",
+     "surface": "carta",
+     "focus": "ob4",
+     "unit": "ft",
+     "compute": "obstacle_clearance",
+     "obstacle": "ob4",
+     "clearance_ft": 500,
+     "tol": 0,
+     "prompt": "Vas a pasar sobre la antena 1349 (549). ¿Altitud mínima para librarla por 500 ft?",
+     "hint": "Toma el número en negrita (MSL) y súmale 500.",
+     "explain_ok": "1 349 + 500 = 1 849 ft MSL. Nunca le sumes al número del paréntesis."
+    },
+    {
+     "id": "c3-8",
+     "kind": "mira",
+     "title": "Sobre una ciudad: 1 000",
+     "surface": {
+      "simbolo": "obstaculos"
+     },
+     "pulse": [
+      "msl"
+     ],
+     "prompt": "Sobre una ciudad o zona congestionada vuelas 1 000 ft por encima del obstáculo más alto a menos de 2 000 ft de ti. En campo abierto, el examen usa +500.",
+     "truco": {
+      "icon": "🏙️",
+      "text": "Campo +500 · ciudad +1 000."
+     }
+    },
+    {
+     "id": "c3-9",
+     "kind": "number",
+     "title": "Ahora sobre un pueblo",
+     "surface": "carta",
+     "focus": "ob3",
+     "unit": "ft",
+     "compute": "obstacle_clearance",
+     "obstacle": "ob3",
+     "clearance_ft": 1000,
+     "tol": 0,
+     "prompt": "La antena 2149 (449) está en medio de un pueblo. ¿Altitud mínima para librarla con la regla de zona congestionada?",
+     "hint": "Zona congestionada: +1 000 sobre el número en negrita.",
+     "explain_ok": "2 149 + 1 000 = 3 149 ft MSL."
+    },
+    {
+     "id": "c3-10",
+     "kind": "choice",
+     "title": "El cuadro de precaución",
+     "surface": "carta",
+     "focus": "caution1",
+     "prompt": "El cuadro magenta avisa de un globo cautivo en cable a 1 200 MSL. ¿Desde dónde se mide ese 1 200?",
+     "options": [
+      "Desde el nivel del mar",
+      "Desde el suelo, debajo del globo",
+      "Desde la pista de Lima"
+     ],
+     "answer": 0,
+     "hint": "MSL = Mean Sea Level.",
+     "explain_ok": "Desde el mar. Los cuadros de precaución avisan lo que desde el aire no se ve.",
+     "truco": {
+      "icon": "⚠️",
+      "text": "Si no dice AGL, es MSL."
+     }
+    },
+    {
+     "id": "c3-11",
+     "kind": "mira",
+     "title": "La bandera magenta",
+     "surface": "carta",
+     "focus": "cp-ancon",
+     "pulse": [
+      "cp-ancon"
+     ],
+     "prompt": "Una bandera magenta es un punto de notificación visual: un lugar fácil de ver desde el aire donde reportas tu posición, por ejemplo al llamar a la aproximación.",
+     "truco": {
+      "icon": "🚩",
+      "text": "Bandera = «aquí reporto»."
+     }
+    },
+    {
+     "id": "c3-12",
+     "kind": "tap",
+     "title": "Encuentra la bandera",
+     "surface": "carta",
+     "prompt": "Toca el punto de notificación visual que está más al norte.",
+     "targets": [
+      "cp-huaral"
+     ],
+     "hint": "Busca las banderas magenta. Norte = arriba.",
+     "explain_ok": "Huaral: la bandera más al norte."
+    },
+    {
+     "id": "c3-13",
+     "kind": "tap",
+     "title": "Ahora en la Figura 20",
+     "surface": {
+      "figure": "Figure 20.jpg",
+      "hotspots": [
+       {
+        "id": "drummond",
+        "x": 137,
+        "y": 758,
+        "r": 22,
+        "says": "Esa es la bandera magenta: un punto de notificación visual."
+       },
+       {
+        "id": "chesapeake",
+        "x": 252,
+        "y": 730,
+        "r": 26,
+        "says": "Ese es Chesapeake Regional, un aeropuerto magenta."
+       },
+       {
+        "id": "t510",
+        "x": 289,
+        "y": 790,
+        "r": 22,
+        "says": "Esa es una torre (obstáculo): 510 (499)."
+       }
+      ]
+     },
+     "outline": true,
+     "prompt": "En el área 2 de la Figura 20 hay un punto de notificación visual. Toca su bandera.",
+     "targets": [
+      "drummond"
+     ],
+     "hint": "Una banderita magenta, junto a un lago.",
+     "explain_ok": "Esa bandera: un punto de notificación visual, igual que en tu carta."
+    },
+    {
+     "id": "c3-14",
+     "kind": "number",
+     "title": "Una torre del examen",
+     "surface": {
+      "figure": "Figure 20.jpg",
+      "hotspots": [
+       {
+        "id": "t1049",
+        "x": 273,
+        "y": 857,
+        "r": 24,
+        "says": "La torre 1049 (1036)."
+       }
+      ]
+     },
+     "pulse": [
+      "t1049"
+     ],
+     "unit": "ft",
+     "expected": 1549,
+     "tol": 0,
+     "prompt": "En el área 2 hay una torre que dice 1049 (1036). ¿Altitud mínima para librarla por 500 ft?",
+     "hint": "Negrita (MSL) + 500.",
+     "explain_ok": "1 049 + 500 = 1 549 ft MSL."
+    }
+   ],
+   "teaches": [
+    "x579",
+    "q3638",
+    "q3639",
+    "q3640",
+    "q3631",
+    "q3632",
+    "q3634",
+    "q3636",
+    "q3642"
+   ]
+  },
+  {
+   "id": "c4",
+   "n": 4,
+   "icon": "📡",
+   "title": "Radioayudas",
+   "live": false,
+   "practice_mission": null,
+   "cards": [],
+   "teaches": [
+    "q3643",
+    "q3552",
+    "q3559",
+    "q3553",
+    "q3560",
+    "q3539",
+    "q3533"
+   ],
+   "intro": ""
+  },
+  {
+   "id": "c5",
+   "n": 5,
+   "icon": "🧱",
+   "title": "Espacio aéreo",
+   "live": false,
+   "practice_mission": "m4",
+   "cards": [],
+   "teaches": [
+    "q2122",
+    "q3068",
+    "q3069",
+    "q3117",
+    "q3118",
+    "q3119",
+    "q3126",
+    "q3127",
+    "q3128",
+    "q3130",
+    "q3421",
+    "q3599",
+    "q3600",
+    "q3601",
+    "q3602",
+    "q3622",
+    "q3623",
+    "q3624",
+    "q3625",
+    "q3626",
+    "q3627",
+    "q3628",
+    "q3779",
+    "q3780",
+    "q3781",
+    "q3782",
+    "q3783",
+    "q3785",
+    "q3786",
+    "q3787",
+    "q3799",
+    "x618",
+    "x651"
+   ],
+   "intro": ""
+  },
+  {
+   "id": "c6",
+   "n": 6,
+   "icon": "🧭",
+   "title": "Navegar",
+   "live": false,
+   "practice_mission": "m2",
+   "cards": [],
+   "teaches": [
+    "q2001",
+    "q3529",
+    "q3531",
+    "q3556",
+    "q3568",
+    "q3571",
+    "q3572",
+    "q3573",
+    "q3574",
+    "q3575",
+    "q3576",
+    "q3816",
+    "q3817",
+    "x597",
+    "x598",
+    "x599",
+    "x638"
+   ],
+   "intro": ""
+  },
+  {
+   "id": "c7",
+   "n": 7,
+   "icon": "🎯",
+   "title": "Ensayo en la Figura 20",
+   "live": false,
+   "practice_mission": "m6",
+   "cards": [],
+   "teaches": [
+    "q3538",
+    "q3545",
+    "q3546",
+    "q3547",
+    "q3550",
+    "q3564",
+    "q3565",
+    "x640",
+    "x641"
+   ],
+   "intro": ""
+  }
+ ]
+}

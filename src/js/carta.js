@@ -32,7 +32,7 @@ function explainText(f, kind, chart) {
     case 'legend':
       return 'Leyenda de tintes: cada color es una banda de elevación del terreno, en pies MSL. Verde = lo más bajo; mientras más tostado, más alto.';
     case 'mef':
-      return `MEF ${Math.floor(f.ft / 1000)}${f.ft % 1000 / 100}: lo más alto de este cuadrante (terreno u obstáculo), redondeado hacia arriba = ${fmtFt(f.ft)} ft MSL.`;
+      return `MEF ${Math.floor(f.ft / 1000)}${f.ft % 1000 / 100}: lo más alto de este cuadrante (terreno u obstáculo) más un colchón de 100–300 ft, redondeado hacia arriba = ${fmtFt(f.ft)} ft MSL.`;
     default:
       return chart.label;
   }
@@ -192,7 +192,7 @@ export function renderCarta(container, chart, opts = {}) {
       svg('circle', { cx: c.x, cy: c.y, r: 10, fill: '#fff', 'fill-opacity': 0.5, stroke: col, 'stroke-width': 3.4 }),
       svg('rect', { x: c.x - 2.3, y: c.y - 13, width: 4.6, height: 26, fill: col, transform: `rotate(154 ${c.x} ${c.y})` })];
     if (a.fuel) for (let k = 0; k < 4; k++) {
-      const t = k * Math.PI / 2 + Math.PI / 4;
+      const t = k * Math.PI / 2; // rayitas en los cuatro puntos cardinales, como en la seccional
       kids.push(svg('line', { x1: c.x + 11.5 * Math.cos(t), y1: c.y + 11.5 * Math.sin(t), x2: c.x + 17 * Math.cos(t), y2: c.y + 17 * Math.sin(t), stroke: col, 'stroke-width': 3 }));
     }
     // caja de datos: a la izquierda (mar) o derecha; `label.dy` la sube/baja si choca con algo

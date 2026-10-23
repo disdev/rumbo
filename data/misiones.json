@@ -85,7 +85,7 @@
      ],
      "answer": 1,
      "hint": "En ruta manda el MEF más alto de los cuadrantes que TOCA tu línea. Ni más, ni menos.",
-     "explain_ok": "2³ = 2 300 ft: lo más alto de tu camino (esa antena de 2 149 ft lo sube), redondeado hacia arriba.",
+     "explain_ok": "2³ = 2 300 ft: lo más alto de tu camino (esa antena de 2 149 ft lo sube) más un colchón, redondeado hacia arriba.",
      "receta": "r-mef"
     },
     {
@@ -244,7 +244,7 @@
     {
      "id": "r-mef",
      "title": "El MEF en ruta",
-     "body": "Usa el MEF más alto de todos los cuadrantes que cruza tu línea. Es terreno u obstáculo, redondeado hacia arriba, en pies MSL."
+     "body": "Usa el MEF más alto de todos los cuadrantes que cruza tu línea. Es lo más alto (terreno u obstáculo) más un colchón de 100–300 ft, redondeado hacia arriba, en pies MSL."
     },
     {
      "id": "r-obst",

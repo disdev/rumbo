@@ -22,7 +22,7 @@ function airport(x, y, col, { fuel = false, runway = true, r = 32, inner = null 
   if (runway) kids.push(svg('rect', { x: x - 4, y: y - r + 5, width: 8, height: 2 * r - 10, rx: 1, fill: col, transform: `rotate(154 ${x} ${y})` }));
   if (inner) kids.push(t(x, y + 10, inner, { 'text-anchor': 'middle', fill: col, 'font-size': 30, 'font-weight': 800 }));
   if (fuel) for (let k = 0; k < 4; k++) {
-    const a = k * Math.PI / 2 + Math.PI / 4;
+    const a = k * Math.PI / 2; // los cuatro puntos cardinales, como en la seccional
     kids.push(svg('line', { x1: x + (r + 3) * Math.cos(a), y1: y + (r + 3) * Math.sin(a), x2: x + (r + 11) * Math.cos(a), y2: y + (r + 11) * Math.sin(a), stroke: col, 'stroke-width': 7 }));
   }
   return kids;
