@@ -8,7 +8,7 @@
 // (nunca vuelven a pedir CORE a la red). No la edites a mano: correr
 // `node scripts/sync-sw-version.mjs` después de bumpear content_version en
 // data/config.json la mantiene sincronizada (ver tests/sw-version.test.mjs).
-const SW_VERSION = '2026-10-22.1';
+const SW_VERSION = '2026-10-22.2';
 
 const CORE = [
   './', 'index.html', 'manifest.webmanifest',
@@ -19,6 +19,7 @@ const CORE = [
   'src/js/taller.js', 'src/js/widgets-ops.js', 'src/js/widget-kit.js', 'src/js/ops-logic.js',
   'src/js/misiones.js', 'src/js/misiones-logic.js', 'src/js/carta.js', 'src/js/figura-overlay.js',
   'data/misiones.json', 'data/misiones/carta-costa-central.json',
+  'src/js/clase.js', 'src/js/clase-logic.js', 'src/js/leyenda.js', 'data/clase-carta.json',
   'data/hangar.json',
   'data/config.json', 'data/chapters.json', 'data/bank.json', 'data/math-templates.json', 'data/scenarios.json',
   'data/lessons/index.json',
