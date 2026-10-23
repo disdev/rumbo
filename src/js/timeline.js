@@ -14,10 +14,12 @@ const SCREEN_LABELS = {
   plan: 'Plan de 8 semanas',
   repaso: 'Repaso de lecciones',
   mision: 'Misión',
+  clase: 'Clase',
 };
 
 // Misiones (spec 2026-10-22): ids 'm2' y 'm2-3' → «2» y «3».
 const missionNum = (id) => String(id || '').replace(/^m/, '');
+const claseNum = (id) => String(id || '').replace(/^c/, ''); // clase: 'c2' → «2»
 const stepNum = (id) => String(id || '').split('-').pop();
 function fmtDur(sec) {
   const s = Math.max(0, Math.round(sec || 0));
@@ -29,6 +31,8 @@ function navLabel(r) {
   const base = SCREEN_LABELS[d.screen] || d.screen || '?';
   const where = d.mission
     ? [missionNum(d.mission), d.step && `paso ${stepNum(d.step)}`, d.view && `(${d.view})`].filter(Boolean).join(' · ')
+    : d.clase
+    ? [claseNum(d.clase), d.card && `tarjeta ${stepNum(d.card)}`, d.view && `(${d.view})`].filter(Boolean).join(' · ')
     : [d.type, r.chapter && `cap. ${r.chapter}`, d.section && `§${d.section}`].filter(Boolean).join(' ');
   return where ? `${base} ${where}` : base;
 }
@@ -80,6 +84,18 @@ function entryFor(r) {
       return d.completed
         ? { icon: '🏁', label: `Misión ${missionNum(d.mission)} «${d.title || d.mission}» completa · ${Math.max(1, Math.round((d.seconds || 0) / 60))} min` }
         : { icon: '⚠️', label: `Misión ${missionNum(d.mission)} «${d.title || d.mission}»: salió en el paso ${stepNum(d.last_step) || '?'}` };
+    case 'clase_card': {
+      const bits = [`Clase · cap. ${claseNum(d.clase)} · tarjeta ${stepNum(d.card)} «${d.title || d.card}»`];
+      if (d.tries) bits.push(`${d.tries} intento${d.tries === 1 ? '' : 's'}`);
+      bits.push(fmtDur(d.seconds));
+      if (d.revealed) bits.push('mostrada');
+      return { icon: '📘', label: bits.join(' · ') };
+    }
+    case 'clase_progress':
+      return d.completed
+        ? { icon: '🏁', label: `Clase cap. ${claseNum(d.clase)} «${d.title || d.clase}» completa · ${Math.max(1, Math.round((d.seconds || 0) / 60))} min` }
+        : { icon: '⚠️', label: `Clase cap. ${claseNum(d.clase)} «${d.title || d.clase}»: salió en la tarjeta ${stepNum(d.last_card) || '?'}` };
+    case 'clase_attempt': // se ven en la sección de la clase del dashboard
     case 'mission_attempt': // se ven en la sección Misiones del dashboard, no en la línea de tiempo
     default:
       return null; // feedback y kinds futuros: invisibles
@@ -114,9 +130,12 @@ function collapseChecks(entries) {
 function flagAbandoned(sessionRows, entries) {
   const finished = new Set(sessionRows.filter(r => r.kind === 'lesson_progress').map(r => r.detail?.section));
   const stepDone = (step, ts) => sessionRows.some(r => r.kind === 'mission_step' && r.detail?.step === step && r.ts >= ts);
+  const cardDone = (card, ts) => sessionRows.some(r => r.kind === 'clase_card' && r.detail?.card === card && r.ts >= ts);
   for (const e of entries) {
     if (e._navSection && !finished.has(e._navSection)) e.abandoned = true;
     if (e._navStep && !stepDone(e._navStep, e.ts)) e.abandoned = true;
+    if (e._navCard && !cardDone(e._navCard, e.ts)) e.abandoned = true;
+    delete e._navCard;
     delete e._navSection;
     delete e._navStep;
   }
@@ -147,6 +166,7 @@ export function buildTimeline(rows, { gapMinutes = 25 } = {}) {
       e.ts = r.ts;
       if (r.kind === 'nav' && r.detail?.screen === 'leccion' && r.detail?.section) e._navSection = r.detail.section;
       if (r.kind === 'nav' && r.detail?.screen === 'mision' && r.detail?.view === 'step' && r.detail?.step) e._navStep = r.detail.step;
+      if (r.kind === 'nav' && r.detail?.screen === 'clase' && r.detail?.view === 'card' && r.detail?.card) e._navCard = r.detail.card;
       raw.push(e);
     }
     const entries = collapseChecks(raw);

@@ -107,3 +107,28 @@ test('misiones: completa con minutos; paso de menos de un minuto en segundos y �
   assert.ok(labels.includes('Misión 1 · paso 2 «Elevación» · 1 intento · 42 s · mostrada'), labels.join(' | '));
   assert.ok(labels.includes('Misión 1 «Leer el mapa» completa · 12 min'), labels.join(' | '));
 });
+
+test('clase de la carta: tarjeta, capítulo completo/abandonado y nav legibles', () => {
+  const rows = [
+    row(12, 'nav', { detail: { screen: 'clase', clase: 'c2', card: 'c2-4', view: 'card', action: 'enter' } }),
+    row(11, 'clase_attempt', { detail: { clase: 'c2', card: 'c2-4', try: 1, correct: false } }),
+    row(10, 'clase_card', { detail: { clase: 'c2', card: 'c2-4', title: 'La caja de datos', tries: 2, first_try_correct: false, revealed: false, seconds: 40 } }),
+    row(9, 'clase_progress', { detail: { clase: 'c2', title: 'Aeropuertos', completed: false, seconds: 300, cards_done: 4, last_card: 'c2-4' } }),
+    row(8, 'clase_progress', { detail: { clase: 'c2', title: 'Aeropuertos', completed: true, seconds: 600, cards_done: 12, last_card: 'c2-12' } }),
+  ];
+  const entries = buildTimeline(rows)[0].sessions[0].entries;
+  const labels = entries.map(e => e.label);
+  assert.ok(labels.includes('Clase 2 · tarjeta 4 · (card)'), labels.join(' | '));
+  const card = entries.find(e => e.label.startsWith('Clase · cap. 2'));
+  assert.equal(card.label, 'Clase · cap. 2 · tarjeta 4 «La caja de datos» · 2 intentos · 40 s');
+  assert.equal(card.icon, '📘');
+  assert.ok(labels.includes('Clase cap. 2 «Aeropuertos»: salió en la tarjeta 4'), labels.join(' | '));
+  assert.ok(labels.includes('Clase cap. 2 «Aeropuertos» completa · 10 min'), labels.join(' | '));
+  assert.equal(entries.length, 4); // el intento suelto no aparece
+  assert.ok(!entries.some(e => e.abandoned));
+});
+
+test('clase de la carta: tarjeta abierta sin clase_card posterior se marca abandonada', () => {
+  const rows = [row(5, 'nav', { detail: { screen: 'clase', clase: 'c1', card: 'c1-3', view: 'card', action: 'enter' } })];
+  assert.equal(buildTimeline(rows)[0].sessions[0].entries[0].abandoned, true);
+});

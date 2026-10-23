@@ -97,7 +97,7 @@ export async function quizPlayer(root, block, ctx) {
         : block.source === 'category' || block.source === 'ids' ? block.category
         : null,
       score, total: items.length,
-      detail: { items, ...(block.chapter ? { chapter: block.chapter } : {}), ...(block.mission ? { mission: block.mission } : {}) },
+      detail: { items, ...(block.chapter ? { chapter: block.chapter } : {}), ...(block.mission ? { mission: block.mission } : {}), ...(block.clase ? { clase: block.clase } : {}) },
     });
   }
   const missed = items.some(i => !i.correct);

@@ -82,6 +82,9 @@ test('filas de misión son inertes para el plan del día (spec 2026-10-22: «com
     row(0, 'mission_attempt', { detail: { mission: 'm1', step: 'm1-1', correct: true } }),
     row(0, 'mission_step', { detail: { mission: 'm1', step: 'm1-1', tries: 1 } }),
     row(0, 'mission_progress', { detail: { mission: 'm1', completed: false } }),
+    row(0, 'clase_attempt', { detail: { clase: 'c1', card: 'c1-2', correct: true } }),
+    row(0, 'clase_card', { detail: { clase: 'c1', card: 'c1-2', tries: 1 } }),
+    row(0, 'clase_progress', { detail: { clase: 'c1', completed: false } }),
   ], data, today);
   assert.ok(!st.activityToday.any);
   assert.equal(st.dayLog.get(today), 'perdido');

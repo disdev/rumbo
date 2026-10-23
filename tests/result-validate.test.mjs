@@ -47,3 +47,9 @@ test('acepta los kinds de misiones', () => {
     assert.equal(validateRow(row(k)), null, `kind ${k} debería ser válido`);
   }
 });
+
+test('acepta los kinds de la clase de la carta', () => {
+  for (const k of ['clase_attempt', 'clase_card', 'clase_progress']) {
+    assert.equal(validateRow(row(k)), null, `kind ${k} debería ser válido`);
+  }
+});
