@@ -84,7 +84,7 @@ export function renderFigura(container, surface) {
       const draw = () => {
         for (const id of ids) {
           const hs = (surface.hotspots || []).find(h => h.id === id);
-          if (hs) gHot.prepend(svg('circle', { cx: hs.x, cy: hs.y, r: (hs.r || 18) + 6, fill: 'none', stroke: '#c96442', 'stroke-width': 3, 'stroke-dasharray': '7 5', 'pointer-events': 'none' }));
+          if (hs) gHot.prepend(svg('circle', { cx: hs.x, cy: hs.y, r: (hs.r || 18) + 8, fill: 'none', stroke: '#c96442', 'stroke-width': 6, 'stroke-dasharray': '12 8', 'pointer-events': 'none' }));
         }
       };
       if (img.complete && img.naturalWidth) draw(); else img.addEventListener('load', draw, { once: true });
