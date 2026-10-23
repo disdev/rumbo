@@ -35,7 +35,7 @@ export function currentMission(ctx) {
 }
 
 /** Cronómetro de tiempo VISIBLE: se pausa si la app pasa a segundo plano. */
-function activeTimer() {
+export function activeTimer() {
   let total = 0, since = document.hidden ? null : Date.now();
   const onVis = () => {
     if (document.hidden && since != null) { total += Date.now() - since; since = null; }
@@ -340,7 +340,8 @@ export function unlockedRecetas(ctx) {
 }
 
 /** Tarjeta del taller: progreso de las 6 misiones y «Continuar» a un clic. */
-export function misionesCard(root, ctx, backToTaller) {
+/** opts.onRepaso: abre la clase de la carta («¿Te costó? Repasa…») cuando ya empezó la Misión 1. */
+export function misionesCard(root, ctx, backToTaller, opts = {}) {
   const box = el('div', { class: 'mision-card' }, el('p', { class: 'note' }, 'Cargando misiones…'));
   loadMisiones(ctx).then(() => {
     const prog = progressOf(ctx);
@@ -352,6 +353,9 @@ export function misionesCard(root, ctx, backToTaller) {
       title: `Misión ${m.n} · ${m.title}${m.live ? '' : ' (próximamente)'}`,
     }, prog[m.id].completed ? '✓' : String(m.n))));
     const nodes = [chips];
+    if (opts.onRepaso && prog.m1?.started) {
+      nodes.push(el('button', { class: 'ghost', onclick: opts.onRepaso }, '📘 ¿Te costó la Misión 1? Repasa los capítulos 1–3 de «La carta, paso a paso»'));
+    }
     if (cur) {
       const p = prog[cur.id];
       const stepIdx = cur.steps.findIndex(s => s.id === p.next);

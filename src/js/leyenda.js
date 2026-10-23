@@ -201,12 +201,14 @@ export function renderSimbolo(container, id) {
   const frame = el('div', { class: 'carta-frame leyenda-frame' }, root, pop);
   container.replaceChildren(frame);
 
+  // resaltar = la parte misma brilla (no un marco): así se ve justo qué línea o
+  // qué número es, y el color propio del símbolo (azul/magenta) no se pierde
+  const TONE_CLASSES = Object.keys(TONES).map(k => `hl-${k}`);
   function ring(pid, tone) {
     const g = parts.get(pid);
     if (!g) return;
-    const b = g.getBBox(), pad = 8;
-    gMarks.append(svg('rect', { class: 'c-pulse', x: b.x - pad, y: b.y - pad, width: b.width + 2 * pad, height: b.height + 2 * pad, rx: 10,
-      fill: 'none', stroke: TONES[tone] || tone, 'stroke-width': 4 }));
+    g.classList.remove(...TONE_CLASSES);
+    g.classList.add(`hl-${TONES[tone] ? tone : 'hint'}`);
   }
 
   const api = {
@@ -215,7 +217,7 @@ export function renderSimbolo(container, id) {
     onTap(fn) { tapFn = fn; },
     highlight(ids, tone = 'hint') { for (const pid of ids || []) ring(pid, tone); },
     pulse(ids) { api.highlight(ids, 'hint'); },
-    clearMarks() { gMarks.replaceChildren(); pop.classList.add('hidden'); },
+    clearMarks() { gMarks.replaceChildren(); for (const g of parts.values()) g.classList.remove(...TONE_CLASSES); pop.classList.add('hidden'); },
     explainFeature(pid) {
       const says = def.parts[pid]?.says;
       if (!says) return;
@@ -226,6 +228,7 @@ export function renderSimbolo(container, id) {
       pop.style.left = `${Math.min(Math.max(8, x - 140), fr.width - 288)}px`;
       pop.style.top = `${Math.min(y + 12, fr.height - pop.offsetHeight - 8)}px`;
     },
+    hidePop() { pop.classList.add('hidden'); },
     /** Rectángulo en pantalla de una parte, para soltar etiquetas encima. */
     partRect(pid) { return parts.get(pid)?.getBoundingClientRect() || null; },
     destroy() { container.replaceChildren(); },

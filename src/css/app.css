@@ -295,3 +295,32 @@ body.misiones-wide #app { max-width: 1440px; }
   .mision-grid { grid-template-columns: 1fr; height: auto; }
   .mision-surface { height: 62vh; }
 }
+
+/* ---- La carta, paso a paso (spec 2026-10-22 carta-paso-a-paso) ---- */
+.leyenda-frame { background: #f6f1e1; }
+.leyenda-svg .leyenda-part { cursor: pointer; }
+.leyenda-svg .leyenda-part.hl-hint { filter: drop-shadow(0 0 3px #d08a1e) drop-shadow(0 0 7px #d08a1e); animation: carta-pulse 1.4s ease-in-out infinite; }
+.leyenda-svg .leyenda-part.hl-ok { filter: drop-shadow(0 0 3px #3f7d3a) drop-shadow(0 0 7px #3f7d3a); }
+.leyenda-svg .leyenda-part.hl-bad { filter: drop-shadow(0 0 3px #b8442f) drop-shadow(0 0 7px #b8442f); }
+.leyenda-svg .leyenda-part.hl-me { filter: drop-shadow(0 0 3px #c96442) drop-shadow(0 0 7px #c96442); }
+@media (prefers-reduced-motion: reduce) { .leyenda-svg .leyenda-part.hl-hint { animation: none; } }
+.clase-truco h4 { font-size: 18px; line-height: 1.35; }
+.clase-tray { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 12px; }
+.clase-chip { padding: 9px 13px; border-radius: 18px; border: 1px solid var(--border); background: var(--bg); color: var(--text);
+  font-size: 15px; font-weight: 600; cursor: grab; touch-action: none; box-shadow: var(--shadow); }
+.clase-chip.sel { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent); }
+.clase-chip.placed { background: var(--ok); border-color: var(--ok); color: var(--on-ok); cursor: default; }
+.clase-chip.revealed { background: var(--warn); border-color: var(--warn); color: var(--on-warn); cursor: default; }
+.clase-chip.bounce { animation: clase-bounce .35s ease; }
+@keyframes clase-bounce { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.ghost-chip { position: fixed; z-index: 50; pointer-events: none; transform: translate(-50%, -50%); cursor: grabbing; opacity: .92; }
+@media (prefers-reduced-motion: reduce) { .clase-chip.bounce { animation: none; } }
+.clase-trucos-ch { margin: 14px 0; }
+.clase-trucos-ch h4 { margin: 6px 0; }
+.clase-truco-line { font-family: var(--serif); font-size: 17px; margin: 6px 0; }
+.clase-truco-line .ic { display: inline-block; width: 1.6em; }
+@media print {
+  .no-print, header, footer, .app-header, .app-footer { display: none !important; }
+  body { background: #fff; color: #000; }
+  .clase-trucos { border: none; box-shadow: none; }
+}

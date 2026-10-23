@@ -12,6 +12,7 @@ import { guidedExample, practicaBurst } from './guided.js';
 import { lessonReview } from './lessons.js';
 import { hangarView } from './hangar.js';
 import { misionesCard } from './misiones.js';
+import { claseCardView, claseView, currentChapter } from './clase.js';
 
 const TOOLS = [
   {
@@ -47,8 +48,17 @@ export function tallerView(root, ctx, onExit) {
     root.replaceChildren(el('div', { class: 'card' },
       el('h3', {}, '🧪 El taller'),
       el('p', { class: 'note' }, 'Para jugar con el patrón, el aeropuerto y la navegación hasta que se sientan fáciles. Cuando quieras, las veces que quieras — fuera del plan de hoy.'),
+      el('h4', { class: 'section-title' }, '📘 La carta, paso a paso'),
+      el('p', { class: 'note' }, 'Aprende a leer la carta símbolo por símbolo, con trucos para recordarlos. Empieza aquí antes de las misiones.'),
+      claseCardView(root, ctx, menu),
       el('h4', { class: 'section-title' }, '🛩️ Vuelo en ruta — misiones'),
-      misionesCard(root, ctx, menu),
+      misionesCard(root, ctx, menu, {
+        // Misión 1 cuesta → la clase de los capítulos 1–3 (spec carta-paso-a-paso)
+        onRepaso: () => {
+          const cur = currentChapter(ctx);
+          claseView(root, ctx, cur && cur.n <= 3 ? cur.id : 'c1', menu);
+        },
+      }),
       el('h4', { class: 'section-title' }, 'Juegos'),
       ...TOOLS.map(t => el('button', { class: 'option', onclick: () => tool(t) },
         el('span', { class: 'plan-week-title' }, `${t.icon} ${t.title}`),
