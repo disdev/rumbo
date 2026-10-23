@@ -104,17 +104,24 @@ export function gradeAnswer(step, answer, chart) {
   }
 }
 
-const isMission = (r, id) => r.detail?.mission === id;
+// Misiones y capítulos de la clase (spec carta-paso-a-paso) comparten la misma
+// forma: una unidad con ítems en orden, filas attempt/ítem/progreso y una prueba.
+export const MISSION_SPEC = {
+  unit: 'mission', item: 'step', items: 'steps', questions: 'questions',
+  kinds: { attempt: 'mission_attempt', item: 'mission_step', progress: 'mission_progress' },
+};
 
-/** Dónde va cada misión, derivado del log (nunca guardado aparte). */
-export function missionProgress(rows, missions) {
+const ofUnit = (r, spec, id) => r.detail?.[spec.unit] === id;
+
+/** Dónde va cada unidad, derivado del log (nunca guardado aparte). */
+export function unitProgress(rows, units, spec) {
   const out = {};
-  for (const m of missions) {
-    const mine = rows.filter(r => isMission(r, m.id) && (r.kind === 'mission_step' || r.kind === 'mission_progress'));
-    const done = new Set(mine.filter(r => r.kind === 'mission_step').map(r => r.detail.step));
-    const completed = mine.some(r => r.kind === 'mission_progress' && r.detail.completed);
-    const pending = (m.steps || []).find(s => !done.has(s.id));
-    out[m.id] = {
+  for (const u of units) {
+    const mine = rows.filter(r => ofUnit(r, spec, u.id) && (r.kind === spec.kinds.item || r.kind === spec.kinds.progress));
+    const done = new Set(mine.filter(r => r.kind === spec.kinds.item).map(r => r.detail[spec.item]));
+    const completed = mine.some(r => r.kind === spec.kinds.progress && r.detail.completed);
+    const pending = (u[spec.items] || []).find(s => !done.has(s.id));
+    out[u.id] = {
       started: mine.length > 0,
       completed,
       done,
@@ -125,14 +132,16 @@ export function missionProgress(rows, missions) {
   return out;
 }
 
-/** Primer intento por pregunta antes y después de terminar la misión. */
-export function missionAccuracy(rows, mission, completedTs) {
-  const qs = new Set(mission.questions || []);
+export const missionProgress = (rows, missions) => unitProgress(rows, missions, MISSION_SPEC);
+
+/** Primer intento por pregunta antes y después de un corte (ts). */
+export function unitAccuracy(rows, qids, cutTs) {
+  const qs = new Set(qids || []);
   const before = new Map(), after = new Map();
   const sorted = [...rows].sort((a, b) => a.ts - b.ts);
   for (const r of sorted) {
     if (!['quiz', 'redo', 'simulacro'].includes(r.kind)) continue;
-    const side = completedTs != null && r.ts >= completedTs ? after : before;
+    const side = cutTs != null && r.ts >= cutTs ? after : before;
     for (const it of r.detail?.items || []) {
       if (it.qid && qs.has(it.qid) && !side.has(it.qid)) side.set(it.qid, !!it.correct);
     }
@@ -141,24 +150,28 @@ export function missionAccuracy(rows, mission, completedTs) {
   return { before: tally(before), after: tally(after) };
 }
 
-/** Todo lo que /progreso muestra de las misiones: estado, tiempos, cada respuesta. */
-export function missionReport(rows, missions) {
+/** Primer intento por pregunta antes y después de terminar la misión. */
+export const missionAccuracy = (rows, mission, completedTs) => unitAccuracy(rows, mission.questions, completedTs);
+
+/** Todo lo que /progreso muestra de unas unidades: estado, tiempos, cada respuesta. */
+export function unitReport(rows, units, spec) {
   const sorted = [...rows].sort((a, b) => a.ts - b.ts);
-  const reports = missions.map(m => {
-    const mine = sorted.filter(r => isMission(r, m.id));
-    const progressRows = mine.filter(r => r.kind === 'mission_progress');
+  const K = spec.kinds;
+  const reports = units.map(m => {
+    const mine = sorted.filter(r => ofUnit(r, spec, m.id));
+    const progressRows = mine.filter(r => r.kind === K.progress);
     const firstDone = progressRows.find(r => r.detail.completed);
     const pruebas = mine.filter(r => r.kind === 'quiz');
     const prueba = pruebas[pruebas.length - 1];
-    // corte antes/después: la primera prueba de la misión (ya es «después de enseñar»);
+    // corte antes/después: la primera prueba de la unidad (ya es «después de enseñar»);
     // la fila quiz se escribe al terminar la prueba, así que sus respuestas caen del lado «después»
     const cut = pruebas.length ? pruebas[0].ts : firstDone ? firstDone.ts : null;
-    const stepSeconds = mine.filter(r => r.kind === 'mission_step').reduce((s, r) => s + (r.detail.seconds || 0), 0);
-    const steps = (m.steps || []).map(s => {
-      const stepRows = mine.filter(r => r.detail.step === s.id);
-      const completions = stepRows.filter(r => r.kind === 'mission_step');
-      const attempts = stepRows.filter(r => r.kind === 'mission_attempt');
-      const opened = stepRows.some(r => r.kind === 'nav' || r.kind === 'mission_attempt');
+    const itemSeconds = mine.filter(r => r.kind === K.item).reduce((s, r) => s + (r.detail.seconds || 0), 0);
+    const items = (m[spec.items] || []).map(s => {
+      const itemRows = mine.filter(r => r.detail[spec.item] === s.id);
+      const completions = itemRows.filter(r => r.kind === K.item);
+      const attempts = itemRows.filter(r => r.kind === K.attempt);
+      const opened = itemRows.some(r => r.kind === 'nav' || r.kind === K.attempt);
       // la primera vez que lo terminó manda (aunque haya reanudado a medias): las
       // repeticiones suman respuestas al detalle, no «intentos» ni «atascado»
       const first = completions[0];
@@ -169,7 +182,8 @@ export function missionReport(rows, missions) {
         status: completions.length ? 'done' : opened ? 'opened' : 'not_started',
         seconds: completions.reduce((sum, r) => sum + (r.detail.seconds || 0), 0),
         tries: untilFirst.length,
-        first_try_correct: first ? !!attempts[0]?.detail.correct : null,
+        // sin respuestas (una tarjeta «mira») no hay primer intento que juzgar
+        first_try_correct: first ? (attempts.length ? !!attempts[0].detail.correct : null) : null,
         revealed: first ? !!first.detail.revealed : false,
         attempts: attempts.map(r => ({
           ts: r.ts, answer: r.detail.answer, correct: !!r.detail.correct, off_by: r.detail.off_by ?? null,
@@ -181,17 +195,26 @@ export function missionReport(rows, missions) {
       id: m.id,
       title: m.title,
       status: firstDone ? 'done' : mine.length ? 'in_progress' : 'not_started',
-      seconds: progressRows.length ? progressRows.reduce((s, r) => s + (r.detail.seconds || 0), 0) : stepSeconds,
+      seconds: progressRows.length ? progressRows.reduce((s, r) => s + (r.detail.seconds || 0), 0) : itemSeconds,
       prueba: prueba ? { score: prueba.score, total: prueba.total } : null,
-      accuracy: missionAccuracy(rows, m, cut),
-      steps,
+      accuracy: unitAccuracy(rows, m[spec.questions], cut),
+      items,
     };
   });
-  const stuck = reports.flatMap(m => m.steps.map(s => ({ mission: m.id, step: s.id, title: s.title, tries: s.tries, revealed: s.revealed })))
+  const stuck = reports.flatMap(m => m.items.map(s => ({ unit: m.id, item: s.id, title: s.title, tries: s.tries, revealed: s.revealed })))
     .filter(s => s.tries > 1 || s.revealed)
     .map((s, i) => ({ s, i, score: s.tries + (s.revealed ? 2 : 0) }))
     .sort((a, b) => b.score - a.score || a.i - b.i)
     .slice(0, 5)
     .map(x => x.s);
-  return { missions: reports, stuck };
+  return { units: reports, stuck };
+}
+
+/** El reporte de misiones con sus nombres de siempre (missions/steps, mission/step). */
+export function missionReport(rows, missions) {
+  const { units, stuck } = unitReport(rows, missions, MISSION_SPEC);
+  return {
+    missions: units.map(({ items, ...u }) => ({ ...u, steps: items })),
+    stuck: stuck.map(({ unit, item, ...s }) => ({ mission: unit, step: item, ...s })),
+  };
 }
