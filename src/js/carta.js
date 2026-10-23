@@ -353,6 +353,7 @@ export function renderCarta(container, chart, opts = {}) {
         gMarks.append(svg('circle', { class: 'c-pulse', cx: f.at.x, cy: f.at.y, r: 30, fill: 'none', stroke: TONES[tone], 'stroke-width': 4 }));
       }
     },
+    pulse(ids) { api.highlight(ids, 'hint'); }, // clase: «mira esto» (el anillo ya late, .c-pulse)
     clearMarks() { gMarks.replaceChildren(); hidePop(); },
     drawRoute(routeId) {
       const r = chart.routes.find(x => x.id === routeId);
