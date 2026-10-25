@@ -23,13 +23,27 @@ export function renderFigura(container, surface) {
   let tapFn = null;
   const spots = new Map();
 
+  // trazos en px de la imagen: escalan con su tamaño para verse igual en una figura más nítida
+  const k = () => (img.naturalWidth || 1000) / 1000;
+  const whenLoaded = (fn) => { if (img.complete && img.naturalWidth) fn(); else img.addEventListener('load', fn, { once: true }); };
+
   function size() {
     const w = img.naturalWidth || 1000, h = img.naturalHeight || 1400;
     layer.setAttribute('viewBox', `0 0 ${w} ${h}`);
     return { w, h };
   }
+  /** Desplaza el marco para que los puntos de la tarjeta queden a la vista. */
+  function reveal(list) {
+    if (!list.length) return;
+    const ys = list.map(h => h.y), xs = list.map(h => h.x);
+    const s = stage.clientWidth / (img.naturalWidth || 1);
+    const cy = (Math.min(...ys) + Math.max(...ys)) / 2 * s, cx = (Math.min(...xs) + Math.max(...xs)) / 2 * s;
+    frame.scrollTop = Math.max(0, cy - frame.clientHeight / 2);
+    frame.scrollLeft = Math.max(0, cx - frame.clientWidth / 2);
+  }
   img.addEventListener('load', () => {
     size();
+    requestAnimationFrame(() => reveal(surface.hotspots || []));
     for (const hs of surface.hotspots || []) {
       const r = hs.r || 18;
       const node = svg('circle', { class: 'figura-hot', cx: hs.x, cy: hs.y, r, fill: 'transparent', tabindex: 0, 'data-id': hs.id });
@@ -64,30 +78,32 @@ export function renderFigura(container, surface) {
 
   zoomBtn.addEventListener('click', () => {
     frame.classList.toggle('zoomed');
+    requestAnimationFrame(() => reveal(surface.hotspots || []));
     zoomBtn.textContent = frame.classList.contains('zoomed') ? '↙' : '⤢';
   });
 
   return {
     onTap(fn) { tapFn = fn; },
     highlight(ids, tone = 'hint') {
-      for (const id of ids) {
-        const hs = spots.get(id) || (surface.hotspots || []).find(h => h.id === id);
-        if (!hs) continue;
-        gMarks.append(svg('circle', { class: 'c-pulse', cx: hs.x, cy: hs.y, r: (hs.r || 18) + 10, fill: 'none', stroke: TONES[tone], 'stroke-width': 5 }));
-      }
+      whenLoaded(() => {
+        for (const id of ids) {
+          const hs = spots.get(id) || (surface.hotspots || []).find(h => h.id === id);
+          if (!hs) continue;
+          gMarks.append(svg('circle', { class: 'c-pulse', cx: hs.x, cy: hs.y, r: (hs.r || 18) + 10 * k(), fill: 'none', stroke: TONES[tone], 'stroke-width': 5 * k() }));
+        }
+      });
     },
     drawLine(a, b, tone = 'me') {
-      gMarks.append(svg('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, stroke: TONES[tone] || tone, 'stroke-width': 5, 'stroke-linecap': 'round' }));
+      whenLoaded(() => gMarks.append(svg('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, stroke: TONES[tone] || tone, 'stroke-width': 5 * k(), 'stroke-linecap': 'round' })));
     },
     /** Círculos neutros: «estos son los candidatos» (no delatan la respuesta). */
     outline(ids) {
-      const draw = () => {
+      whenLoaded(() => {
         for (const id of ids) {
           const hs = (surface.hotspots || []).find(h => h.id === id);
-          if (hs) gHot.prepend(svg('circle', { cx: hs.x, cy: hs.y, r: (hs.r || 18) + 8, fill: 'none', stroke: '#c96442', 'stroke-width': 6, 'stroke-dasharray': '12 8', 'pointer-events': 'none' }));
+          if (hs) gHot.prepend(svg('circle', { cx: hs.x, cy: hs.y, r: (hs.r || 18) + 8 * k(), fill: 'none', stroke: '#c96442', 'stroke-width': 6 * k(), 'stroke-dasharray': `${12 * k()} ${8 * k()}`, 'pointer-events': 'none' }));
         }
-      };
-      if (img.complete && img.naturalWidth) draw(); else img.addEventListener('load', draw, { once: true });
+      });
     },
     clearMarks() { gMarks.replaceChildren(); },
     destroy() { container.replaceChildren(); },

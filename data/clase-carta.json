@@ -173,51 +173,51 @@
       "hotspots": [
        {
         "id": "a1",
-        "x": 455,
-        "y": 467,
-        "r": 26,
+        "x": 867,
+        "y": 894,
+        "r": 49,
         "says": "Ese es el círculo del área 1."
        },
        {
         "id": "a2",
-        "x": 193,
-        "y": 761,
-        "r": 26,
+        "x": 368,
+        "y": 1441,
+        "r": 49,
         "says": "Ese es el círculo del área 2."
        },
        {
         "id": "a3",
-        "x": 442,
-        "y": 1020,
-        "r": 26,
+        "x": 838,
+        "y": 1936,
+        "r": 49,
         "says": "Ese es el círculo del área 3."
        },
        {
         "id": "a4",
-        "x": 108,
-        "y": 1251,
-        "r": 26,
+        "x": 208,
+        "y": 2375,
+        "r": 49,
         "says": "Ese es el círculo del área 4."
        },
        {
         "id": "a5",
-        "x": 607,
-        "y": 1289,
-        "r": 26,
+        "x": 1156,
+        "y": 2445,
+        "r": 49,
         "says": "Ese es el círculo del área 5."
        },
        {
         "id": "a6",
-        "x": 546,
-        "y": 810,
-        "r": 26,
+        "x": 1041,
+        "y": 1541,
+        "r": 49,
         "says": "Ese es el círculo del área 6."
        },
        {
         "id": "a7",
-        "x": 688,
-        "y": 813,
-        "r": 26,
+        "x": 1310,
+        "y": 1549,
+        "r": 49,
         "says": "Ese es el círculo del área 7."
        }
       ]
@@ -484,23 +484,23 @@
       "hotspots": [
        {
         "id": "norfolk",
-        "x": 345,
-        "y": 520,
-        "r": 26,
+        "x": 654,
+        "y": 984,
+        "r": 49,
         "says": "Norfolk International es AZUL: tiene torre."
        },
        {
         "id": "chesapeake",
-        "x": 252,
-        "y": 730,
-        "r": 26,
+        "x": 477,
+        "y": 1381,
+        "r": 49,
         "says": "Chesapeake Regional: magenta, sin torre."
        },
        {
         "id": "currituck",
-        "x": 472,
-        "y": 972,
-        "r": 26,
+        "x": 895,
+        "y": 1839,
+        "r": 49,
         "says": "Currituck County: magenta, sin torre."
        }
       ]
@@ -523,23 +523,23 @@
       "hotspots": [
        {
         "id": "norfolk",
-        "x": 345,
-        "y": 520,
-        "r": 26,
+        "x": 654,
+        "y": 984,
+        "r": 49,
         "says": "Norfolk International es AZUL: tiene torre."
        },
        {
         "id": "chesapeake",
-        "x": 252,
-        "y": 730,
-        "r": 26,
+        "x": 477,
+        "y": 1381,
+        "r": 49,
         "says": "Chesapeake Regional: magenta, sin torre."
        },
        {
         "id": "currituck",
-        "x": 472,
-        "y": 972,
-        "r": 26,
+        "x": 895,
+        "y": 1839,
+        "r": 49,
         "says": "Currituck County: magenta, sin torre."
        }
       ]
@@ -786,23 +786,23 @@
       "hotspots": [
        {
         "id": "drummond",
-        "x": 137,
-        "y": 758,
-        "r": 22,
+        "x": 259,
+        "y": 1434,
+        "r": 42,
         "says": "Esa es la bandera magenta: un punto de notificación visual."
        },
        {
         "id": "chesapeake",
-        "x": 252,
-        "y": 730,
-        "r": 26,
+        "x": 477,
+        "y": 1381,
+        "r": 49,
         "says": "Ese es Chesapeake Regional, un aeropuerto magenta."
        },
        {
         "id": "t510",
-        "x": 289,
-        "y": 790,
-        "r": 22,
+        "x": 548,
+        "y": 1495,
+        "r": 42,
         "says": "Esa es una torre (obstáculo): 510 (499)."
        }
       ]
@@ -824,9 +824,9 @@
       "hotspots": [
        {
         "id": "t1049",
-        "x": 273,
-        "y": 857,
-        "r": 24,
+        "x": 517,
+        "y": 1621,
+        "r": 45,
         "says": "La torre 1049 (1036)."
        }
       ]

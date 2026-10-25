@@ -125,6 +125,7 @@ test('figura 20: frecuencia de Norfolk y posición de Chesapeake verificadas con
   assert.ok(!JSON.stringify(M).includes('128.8'));
   for (const s of M.missions.flatMap(m => m.steps)) {
     const h = s.surface?.hotspots?.find(x => x.id === 'chesapeake');
-    if (h) assert.deepEqual([h.x, h.y], [251, 731], s.id);
+    // px de la Figura 20 del suplemento FAA-CT-8080-2H (render 4×, 1899×2649; antes la copia ASA de 1002×1400)
+    if (h) assert.deepEqual([h.x, h.y], [476, 1383], s.id);
   }
 });
